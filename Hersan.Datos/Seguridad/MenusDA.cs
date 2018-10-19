@@ -73,7 +73,7 @@ namespace Hersan.Datos.Seguridad
         /// Obtiene el menu por rol
         /// </summary>
         /// <returns></returns>
-        public List<MenusBE> ObtenerMenuRol(int Rol, int Aplicacion, int Padre, int Menu)
+        public List<MenusBE> ObtenerMenuRol(int Rol, int Padre, int Menu)
         {
             try
             {

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Hersan.Entidades.Seguridad;
+using Hersan.Entidades.Comun;
+using Hersan.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +11,6 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
-//using SIAC.Entidades.Seguridad;
-//using SIAC.Entidades.Comun;
-//using SIAC.Negocio;
-//using SIAC.UI.Base;
-//using SIAC.UI.Tools;
 
 namespace Hersan.UI.Seguridad
 {
@@ -21,7 +19,7 @@ namespace Hersan.UI.Seguridad
         #region Variables
         //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
         private int Id = 0;
-        //private List<MenusBE> lstMnu;
+        private List<MenusBE> lstMnu;
         private bool EsCambio = false;
         #endregion
 
@@ -35,10 +33,6 @@ namespace Hersan.UI.Seguridad
             try
             {
                 EsCambio = false;
-                cboAplicacion.DisplayMember = "Aplicacion";
-                cboAplicacion.ValueMember = "ID";
-                cboAplicacion.DataSource = wcf.ObtieneAplicaciones();
-                cboAplicacion.Enabled = true;
                 cargaGrid();
             }
             catch (Exception ex)
@@ -82,7 +76,7 @@ namespace Hersan.UI.Seguridad
                 {
                     if (Id.Equals(0))
                     {
-                        ResultadoBE res = wcf.GuardaRoles(rtxtNombre.Text.Trim(), BaseWin.UsuarioLogueado.ID, rchkActivo.Checked, 1);
+                        ResultadoBE res = wcf.GuardaRoles(rtxtNombre.Text.Trim(), BaseWinBP.UsuarioLogueado.ID, rchkActivo.Checked, 1);
 
                         if (res.EsValido)
                         {
@@ -94,7 +88,7 @@ namespace Hersan.UI.Seguridad
                     }
                     else
                     {
-                        ResultadoBE res = wcf.ActualizaRoles(Id, rtxtNombre.Text.Trim(), BaseWin.UsuarioLogueado.ID, rchkActivo.Checked);
+                        ResultadoBE res = wcf.ActualizaRoles(Id, rtxtNombre.Text.Trim(), BaseWinBP.UsuarioLogueado.ID, rchkActivo.Checked);
 
                         if (res.EsValido)
                         {
@@ -383,22 +377,16 @@ namespace Hersan.UI.Seguridad
         }
         private void CargaPermisos()
         {
-            try
-            {
-                if (cboAplicacion.SelectedIndex > -1)
-                {
-                    lstMnu = wcf.ObtenerMenuRol(Id, int.Parse(cboAplicacion.SelectedValue.ToString()), 0, 0);
+            try { 
+                lstMnu = wcf.ObtenerMenuRol(Id, 0, 0);
 
-                    cboEmpresas.DisplayMember = "Menu";
-                    cboEmpresas.ValueMember = "ID";
-                    cboEmpresas.DataSource = lstMnu;
-                    cboEmpresas.Enabled = false;
+                cboEmpresas.DisplayMember = "Menu";
+                cboEmpresas.ValueMember = "ID";
+                cboEmpresas.DataSource = lstMnu;
+                cboEmpresas.Enabled = false;
 
-                    MuestraPermisos();
-                }
-            }
-            catch
-            {
+                MuestraPermisos();
+            }catch {
                 RadMessageBox.Show("CargaPermisos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }

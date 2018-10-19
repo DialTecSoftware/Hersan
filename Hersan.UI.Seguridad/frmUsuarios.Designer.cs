@@ -1,4 +1,4 @@
-﻿namespace SIAC.UI.Seguridad
+﻿namespace Hersan.UI.Seguridad
 {
     partial class frmUsuarios
     {
@@ -589,8 +589,8 @@
             // 
             // rtvPerfiles
             // 
-            this.rtvPerfiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.rtvPerfiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtvPerfiles.Location = new System.Drawing.Point(3, 57);
             this.rtvPerfiles.Name = "rtvPerfiles";

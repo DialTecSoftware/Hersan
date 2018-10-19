@@ -8,19 +8,18 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using System.Text.RegularExpressions;
-using SIAC.Entidades.Seguridad;
-using SIAC.Entidades.Comun;
-using SIAC.Negocio;
-using SIAC.Negocio.Seguridad;
-using SIAC.UI.Base;
-//using SIAC.UI.Tools;
+using Hersan.Entidades.Seguridad;
+using Hersan.Entidades.Comun;
+using Hersan.Negocio;
+using Hersan.Negocio.Seguridad;
+
 
 namespace Hersan.UI.Seguridad
 {
     public partial class frmUsuarios : Telerik.WinControls.UI.RadForm
     {
         #region Variables
-        WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();        
+        //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();        
         List<UsuariosBE> lstUsuarios;
         Regex reg = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
 
@@ -181,10 +180,10 @@ namespace Hersan.UI.Seguridad
 
                     //Si Id = 0, entonces es un usuario nuevo
                     if (Id.Equals(0)){
-                        res = wcf.GuardaUsuario(us, BaseWin.UsuarioLogueado.ID);
+                        res = wcf.GuardaUsuario(us, BaseWinBP.UsuarioLogueado.ID);
                         msg = "Se guardo correctamente el nuevo usuario";
                     }else{
-                        res = wcf.ActualizaUsuario(us, BaseWin.UsuarioLogueado.ID);
+                        res = wcf.ActualizaUsuario(us, BaseWinBP.UsuarioLogueado.ID);
                         msg = "Se actualizo correctamente el usuario";
                     }
 

@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Hersan.Entidades.Seguridad;
+using Hersan.Negocio;
+using Hersan.Negocio.Seguridad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-//using SIAC.Entidades.Seguridad;
-//using SIAC.Negocio;
-//using SIAC.Negocio.Seguridad;
-//using SIAC.UI.Base;
 using Telerik.WinControls;
 
 namespace Hersan.UI.Seguridad
@@ -31,7 +30,7 @@ namespace Hersan.UI.Seguridad
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             try {
-                UsuariosBE Usuario = BaseWin.UsuarioLogueado;
+                UsuariosBE Usuario = BaseWinBP.UsuarioLogueado;
                 errorProvider1.SetError(rtxtUsuario, "");
                 errorProvider1.SetError(rtxtContrasenia, "");
                 errorProvider1.SetError(txtNuevaContra, "");
@@ -60,7 +59,7 @@ namespace Hersan.UI.Seguridad
 
                 if (msg.Length.Equals(0)) {
                     if (RadMessageBox.Show("Esta acción cambiará la contraseña y cerrará el sistema\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == System.Windows.Forms.DialogResult.Yes) {
-                        WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
+                        //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
 
                         //Se valida primero el usuario
                         ValidaIngresoBE val = wcf.ValidaUsuario(Usuario.Usuario, new EncriptadorBP().EncriptarTexto(rtxtUsuario.Text.Trim()));

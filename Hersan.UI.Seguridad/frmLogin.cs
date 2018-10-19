@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Hersan.Entidades;
+using Hersan.Entidades.Seguridad;
+using Hersan.Negocio;
+using Hersan.Negocio.Seguridad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,64 +10,66 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
-//using SIAC.Negocio;
-//using SIAC.Negocio.Seguridad;
-//using SIAC.Entidades.Seguridad;
-//using SIAC.UI.Base;
 
 namespace Hersan.UI.Seguridad
 {
     public partial class frmLogin : Telerik.WinControls.UI.RadForm
     {        
-        public frmLogin(bool _isTrial)
+        public frmLogin()
         {
             InitializeComponent();            
         }       
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             try {
-                if (!_Trial) {
-                    #region Validaciones Sistema con Licencia
-                    string msg = string.Empty;
-                    errorProvider1.SetError(rtxtUsuario, "");
-                    errorProvider1.SetError(rtxtContrasenia, "");
+                #region Validaciones Acceso Al Sistema
+                string msg = string.Empty;
+                errorProvider1.SetError(rtxtUsuario, "");
+                errorProvider1.SetError(rtxtContrasenia, "");
 
-                    if (rtxtUsuario.Text.Trim().Length.Equals(0)) {
-                        msg = "- Ingrese el usuario" + Environment.NewLine;
-                        errorProvider1.SetError(rtxtUsuario, "Ingrese el usuario");
+                if (rtxtUsuario.Text.Trim().Length.Equals(0))
+                {
+                    msg = "- Ingrese el usuario" + Environment.NewLine;
+                    errorProvider1.SetError(rtxtUsuario, "Ingrese el usuario");
+                }
+
+                if (rtxtContrasenia.Text.Trim().Length.Equals(0))
+                {
+                    msg += "- Ingrese la contraseña";
+                    errorProvider1.SetError(rtxtContrasenia, "Ingrese la contraseña");
+                }
+
+                if (msg.Length.Equals(0))
+                {
+                    //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
+                    ValidaIngresoBE val = wcf.ValidaUsuario(rtxtUsuario.Text.Trim(), new EncriptadorBP().EncriptarTexto(rtxtContrasenia.Text.Trim()));
+
+                    if (val.EsIngresoValido)
+                    {
+                        BaseWinBP.ListadoMenu = wcf.ObtenerMenuUsuario(rtxtUsuario.Text.Trim(), BaseWinBP.Sistema);
+                        BaseWinBP.UsuarioLogueado = wcf.ObtieneDatosUsuario(rtxtUsuario.Text.Trim());
                     }
-
-                    if (rtxtContrasenia.Text.Trim().Length.Equals(0)) {
-                        msg += "- Ingrese la contraseña";
-                        errorProvider1.SetError(rtxtContrasenia, "Ingrese la contraseña");
-                    }
-
-                    if (msg.Length.Equals(0)) {
-                        WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
-                        ValidaIngresoBE val = wcf.ValidaUsuario(rtxtUsuario.Text.Trim(), new EncriptadorBP().EncriptarTexto(rtxtContrasenia.Text.Trim()));
-
-                        if (val.EsIngresoValido) {
-                            //obtenemos el menu del usuario para esta aplicación
-                            BaseWin.ListadoMenu = wcf.ObtenerMenuUsuario(rtxtUsuario.Text.Trim(), BaseWin.Sistema);
-                            BaseWin.UsuarioLogueado = wcf.ObtieneDatosUsuario(rtxtUsuario.Text.Trim());
-                        } else {
-                            RadMessageBox.Show(val.ErrorIngreso, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                            this.DialogResult = DialogResult.None;
-                        }
-                    } else {
-                        RadMessageBox.Show("Datos Obligatorios" + Environment.NewLine + msg, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    else
+                    {
+                        RadMessageBox.Show(val.ErrorIngreso, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         this.DialogResult = DialogResult.None;
                     }
-                    #endregion
-                } else {
-                    WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
+                }
+                else
+                {
+                    RadMessageBox.Show("Datos Obligatorios" + Environment.NewLine + msg, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    this.DialogResult = DialogResult.None;
+                }
+                #endregion
 
-                    BaseWin.ListadoMenu = wcf.ObtenerMenusDemo();
-                    BaseWin.UsuarioLogueado = wcf.ObtieneDatosUsuario("admin");
 
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }        
+                //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
+
+                BaseWinBP.ListadoMenu = wcf.ObtenerMenusDemo();
+                BaseWinBP.UsuarioLogueado = wcf.ObtieneDatosUsuario("admin");
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();                   
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al validar al usuario:" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 this.DialogResult = DialogResult.None;

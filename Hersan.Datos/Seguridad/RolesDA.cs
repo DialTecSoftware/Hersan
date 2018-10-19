@@ -63,7 +63,7 @@ namespace Hersan.Datos.Seguridad
         /// <param name="IdUsuario">Id del usuario que guarda el nuevo rol</param>
         /// <param name="Estatus">Estatus del nuevo rol</param>
         /// <returns></returns>
-        public ResultadoBE GuardaRoles(string Rol, int IdEmpresa, int IdUsuario, Boolean Estatus)
+        public ResultadoBE GuardaRoles(string Rol, int IdEmpresa, int IdUsuario, bool Estatus)
         {
             ResultadoBE res = new ResultadoBE();
             try{
@@ -99,7 +99,7 @@ namespace Hersan.Datos.Seguridad
         /// <param name="IdUsuario">Usuario que actualiza</param>
         /// <param name="Estatus">Estatus del rol</param>
         /// <returns></returns>
-        public ResultadoBE ActualizaRoles(int IdRol, string Rol, int IdEmpresa, int IdUsuario, Boolean Estatus)
+        public ResultadoBE ActualizaRoles(int IdRol, string Rol, int IdEmpresa, int IdUsuario, bool Estatus)
         {
             ResultadoBE res = new ResultadoBE();
             try

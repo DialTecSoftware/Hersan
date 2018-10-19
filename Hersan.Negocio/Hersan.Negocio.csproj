@@ -43,8 +43,16 @@
     <Compile Include="BaseWinBP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\EncriptadorBP.cs" />
+    <Compile Include="Seguridad\MenusBP.cs" />
+    <Compile Include="Seguridad\RolesBP.cs" />
+    <Compile Include="Seguridad\RolesUsuarioBP.cs" />
+    <Compile Include="Seguridad\UsuariosBP.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hersan.Datos\Hersan.Datos.csproj">
+      <Project>{220A1C2F-41CE-44CC-A90B-32EC8DBC535A}</Project>
+      <Name>Hersan.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
       <Project>{4E3994EF-5056-4289-9C62-DC1140FD764E}</Project>
       <Name>Hersan.Entidades</Name>

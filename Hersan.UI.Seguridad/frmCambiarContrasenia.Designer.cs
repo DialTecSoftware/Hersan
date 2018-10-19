@@ -1,4 +1,4 @@
-﻿namespace SIAC.UI.Seguridad
+﻿namespace Hersan.UI.Seguridad
 {
     partial class frmCambiarContrasenia
     {

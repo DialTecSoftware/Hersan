@@ -5,13 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SIAC.Entidades.Seguridad;
-using SIAC.Negocio;
-using SIAC.Negocio.Seguridad;
-using SIAC.UI.Base;
+//using SIAC.Entidades.Seguridad;
+//using SIAC.Negocio;
+//using SIAC.Negocio.Seguridad;
+//using SIAC.UI.Base;
 using Telerik.WinControls;
 
-namespace SIAC.UI.Seguridad
+namespace Hersan.UI.Seguridad
 {
     public partial class frmCambiarContrasenia : Telerik.WinControls.UI.RadForm
     {

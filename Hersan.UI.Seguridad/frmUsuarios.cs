@@ -15,7 +15,7 @@ using SIAC.Negocio.Seguridad;
 using SIAC.UI.Base;
 //using SIAC.UI.Tools;
 
-namespace SIAC.UI.Seguridad
+namespace Hersan.UI.Seguridad
 {
     public partial class frmUsuarios : Telerik.WinControls.UI.RadForm
     {

@@ -6,12 +6,12 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using SIAC.Negocio;
-using SIAC.Negocio.Seguridad;
-using SIAC.Entidades.Seguridad;
-using SIAC.UI.Base;
+//using SIAC.Negocio;
+//using SIAC.Negocio.Seguridad;
+//using SIAC.Entidades.Seguridad;
+//using SIAC.UI.Base;
 
-namespace SIAC.UI.Seguridad
+namespace Hersan.UI.Seguridad
 {
     public partial class frmLogin : Telerik.WinControls.UI.RadForm
     {        

@@ -22,7 +22,7 @@ namespace Hersan.Datos.Seguridad
         /// Obtener Listado de Roles
         /// </summary>
         /// <returns></returns>
-        public List<RolesBE> ObtieneRoles()
+        public List<RolesBE> ObtieneRoles(int IdEmpresa)
         {
             try
             {
@@ -32,6 +32,7 @@ namespace Hersan.Datos.Seguridad
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CSTR_SP_OBTIENEROLES, conn))
                     {
+                        cmd.Parameters.AddWithValue("@Emp_Id", IdEmpresa);
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader())

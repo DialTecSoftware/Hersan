@@ -11,11 +11,13 @@ namespace Hersan.Datos.Seguridad
 {
     public class MenusDA : BaseDA
     {
+        #region Constantes
         const string CONST_USP_USUARIOS_OBTIENEMENUUSUARIO = "SEG_Usuarios_ObtieneMenuUsuario";        
         const string CONST_USP_MENUROL_OBTIENE = "SEG_MenuRol_Obtiene";
         const string CONST_USP_MENUROL_ELIMINA = "SEG_MenuRol_Elimina";
         const string CONST_USP_MENUROL_GUARDA = "SEG_MenuRol_Guarda";
         //const string CONST_USP_PROCESOS_OBTIENE = "USP_Procesos_Obtiene";
+        #endregion
 
         /// <summary>
         /// Obtiene el menu asignado al usuario

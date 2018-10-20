@@ -8,5 +8,7 @@ namespace Hersan.Entidades.Catalogos
 {
     public class EmpresasBE
     {
+
+        public int Id { get; set; }
     }
 }

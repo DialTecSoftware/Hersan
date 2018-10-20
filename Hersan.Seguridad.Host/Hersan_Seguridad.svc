@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Hersan.Seguridad.Host.Service1" CodeBehind="Hersan_Seguridad.svc.cs" %>

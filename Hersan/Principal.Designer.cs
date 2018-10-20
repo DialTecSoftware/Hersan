@@ -1,4 +1,4 @@
-﻿namespace SIAC.UI.Principal
+﻿namespace Hersan.UI.Principal
 {
     partial class Principal
     {

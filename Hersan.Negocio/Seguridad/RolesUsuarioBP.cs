@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Hersan.Negocio.Seguridad
 {
-    public class RolesUsuarioDA
+    public class RolesUsuarioBP
     {
         /// <summary>
         /// Obtener Listado de Roles usuario
         /// </summary>
         /// <returns></returns>
-        public List<RolesBE> ObtieneRolesUsuario(int IdUsuario)
+        public List<RolesBE> ObtieneRolesUsuario(int IdUsuario, int IdEmpresa)
         {
-            return new RolesUsuarioDA().ObtieneRolesUsuario(IdUsuario);
+            return new RolesUsuarioDA().ObtieneRolesUsuario(IdUsuario, IdEmpresa);
         }
 
         /// <summary>

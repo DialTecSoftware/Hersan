@@ -9,7 +9,7 @@ using Hersan.Entidades.Comun;
 
 namespace Hersan.Negocio.Seguridad
 {
-    public class UsuariosDA
+    public class UsuariosBP
     {
         /// <summary>
         /// Valida que las credenciales del usuario sean correctas
@@ -17,9 +17,9 @@ namespace Hersan.Negocio.Seguridad
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <param name="Pswd">Contraseña Encriptada</param>
         /// <returns></returns>
-        public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd)
+        public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa)
         {
-            return new UsuariosDA().ValidaUsuario(nomUsr, Pswd);
+            return new UsuariosDA().ValidaUsuario(nomUsr, Pswd, IdEmpresa);
         }
 
         /// <summary>
@@ -27,9 +27,9 @@ namespace Hersan.Negocio.Seguridad
         /// </summary>
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <returns></returns>
-        public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr)
+        public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr, int IdEmpresa)
         {
-            return new UsuariosDA().ObtienBloqueoUsuario(nomUsr);
+            return new UsuariosDA().ObtienBloqueoUsuario(nomUsr, IdEmpresa);
         }
 
         /// <summary>
@@ -50,9 +50,9 @@ namespace Hersan.Negocio.Seguridad
         /// Obtiene los usuarios dados de alto en el sistema
         /// </summary>
         /// <returns></returns>
-        public List<UsuariosBE> ObtieneUsuarios()
+        public List<UsuariosBE> ObtieneUsuarios(int IdEmpresa)
         {
-            return new UsuariosDA().ObtieneUsuarios();
+            return new UsuariosDA().ObtieneUsuarios(IdEmpresa);
         }
 
         /// <summary>
@@ -81,9 +81,9 @@ namespace Hersan.Negocio.Seguridad
         /// </summary>
         /// <param name="Usuario">usuario a consultar</param>
         /// <returns></returns>
-        public UsuariosBE ObtieneDatosUsuario(string Usuario)
+        public UsuariosBE ObtieneDatosUsuario(string Usuario, int IdEmpresa)
         {
-            return new UsuariosDA().ObtieneDatosUsuario(Usuario);
+            return new UsuariosDA().ObtieneDatosUsuario(Usuario, IdEmpresa);
         }
 
     }

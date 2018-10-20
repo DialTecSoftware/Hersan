@@ -28,15 +28,15 @@ namespace Hersan.Negocio.Seguridad
             return new MenusDA().ObtenerMenuRol(Rol, Padre, Menu);
         }
 
-        /// <summary>
-        /// Guarda la asinagción de permisos en el menu al rol seleccionado
-        /// </summary>
-        /// <param name="lstMnu">listado de menus</param>
-        /// <param name="Rol">Rol a asignar</param>
-        /// <param name="Aplicacion">Aplicacion del menu</param>
-        //public void GuardaMenuRol(List<MenusBE> lstMnu, int Rol, int Aplicacion)
+        ///// <summary>
+        ///// Guarda la asinagción de permisos en el menu al rol seleccionado
+        ///// </summary>
+        ///// <param name="lstMnu">listado de menus</param>
+        ///// <param name="Rol">Rol a asignar</param>
+        ///// <param name="Aplicacion">Aplicacion del menu</param>
+        //public int GuardaMenuRol(List<MenusBE> lstMnu, int Rol, int Menu)
         //{
-        //    new MenusDA().GuardaMenuRol(lstMnu, Rol, Aplicacion);
+        //    return new MenusDA().GuardaMenuRol(lstMnu, Rol, Menu);
         //}
 
         /// <summary>
@@ -74,13 +74,9 @@ namespace Hersan.Negocio.Seguridad
                     oList = new MenusDA().ObtenerMenuRol(Rol, oItem.ID, 0);
 
                     IdMenu = oItem.ID;
-                    if (oItemActivo == true)
-                    {
-
+                    if (oItemActivo == true) { 
                         new MenusDA().GuardaMenuRol(lstMnu, Rol, Menu);
-                    }
-                    else
-                    {
+                    } else {                     
                         new MenusDA().EliminaMenuRol(Rol, IdMenu);
                     }
 

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hersan.Seguridad.Service</RootNamespace>
     <AssemblyName>Hersan.Seguridad.Service</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,11 +37,25 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hersan_Seguridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
+      <Project>{4E3994EF-5056-4289-9C62-DC1140FD764E}</Project>
+      <Name>Hersan.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.Negocio\Hersan.Negocio.csproj">
+      <Project>{9DC9D350-B0E3-4481-AC7A-DBE3729C8955}</Project>
+      <Name>Hersan.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.Seguridad.Contract\Hersan.Seguridad.Contract.csproj">
+      <Project>{A46CD9DA-66C5-4471-B0EB-75C2A1EFFF10}</Project>
+      <Name>Hersan.Seguridad.Contract</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

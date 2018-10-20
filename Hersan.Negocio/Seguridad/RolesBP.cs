@@ -16,9 +16,9 @@ namespace Hersan.Negocio.Seguridad
         /// Obtener Listado de Roles
         /// </summary>
         /// <returns></returns>
-        public List<RolesBE> ObtieneRoles()
+        public List<RolesBE> ObtieneRoles(int IdEmpresa)
         {
-            return new RolesDA().ObtieneRoles();
+            return new RolesDA().ObtieneRoles(IdEmpresa);
         }
 
         /// <summary>

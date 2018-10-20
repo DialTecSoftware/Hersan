@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hersan.Entidades.Seguridad;
+using Hersan.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SIAC.Entidades.Seguridad;
-using SIAC.UI.Base;
 using Telerik.WinControls;
 
 namespace Hersan.UI.Principal
@@ -21,17 +21,10 @@ namespace Hersan.UI.Principal
 
             try {
                 /* Llamada a pantalla de Logueo */
-                Form frm = new SIAC.UI.Seguridad.frmLogin(isTrial);
+                Form frm = new Hersan.UI.Seguridad.frmLogin();
                 frm.ShowDialog();
-
-                if (frm.DialogResult == DialogResult.OK) {
-                    /* Llamanda a pantalla de Periodos */
-                    Form aux = new SIAC.UI.Tools.frmPeriodo();
-                    aux.ShowDialog();
-                    if (aux.DialogResult == DialogResult.OK)
-                        cargaMenuPrincipal();
-                    else
-                        this.Close();
+                if (frm.DialogResult == DialogResult.OK) {                    
+                        cargaMenuPrincipal();                    
                 } else {
                     this.Close();
                 }
@@ -41,19 +34,18 @@ namespace Hersan.UI.Principal
         }
         private void cargaMenuPrincipal()
         {
-            lblUsuario.Text = "Usuario: " + BaseWin.UsuarioLogueado.nombreCompleto.Replace('.', ' ');
-            lblPerfil.Text = "Perfil: " + BaseWin.UsuarioLogueado.Rol.Nombre;
-            lblPeriodo.Text = "Periodo de Trabajo: " + BaseWin.Periodo.Mes.ToString() + " - " + BaseWin.Periodo.Anio.ToString();
+            lblUsuario.Text = "Usuario: " + BaseWinBP.UsuarioLogueado.Nombre.Replace('.', ' ');
+            lblPerfil.Text = "Perfil: " + BaseWinBP.UsuarioLogueado.Rol.Nombre;            
             
             ToolStripMenuItem menu, submenu, item;
             //Filtramos todos los menu principales y lo recorremos
-            var temp = BaseWin.ListadoMenu.FindAll(delegate(MenusBE p){
+            var temp = BaseWinBP.ListadoMenu.FindAll(delegate(MenusBE p){
                 return p.IDPadre == 0;
             });
 
             foreach (MenusBE mnu in temp) {
                 //Filtramos todos los grupos de menu o submenu y lo recorremos
-                var tempBar = BaseWin.ListadoMenu.FindAll(delegate(MenusBE p)
+                var tempBar = BaseWinBP.ListadoMenu.FindAll(delegate(MenusBE p)
                 {
                     return p.IDPadre.Equals(mnu.ID);
                 });
@@ -64,7 +56,7 @@ namespace Hersan.UI.Principal
                 menu.Tag = mnu.ID.ToString();
                 foreach (MenusBE mnuBar in tempBar) {
                     //Filtramos las opciones para cada grupo y las recorremos
-                    var tempBoton = BaseWin.ListadoMenu.FindAll(delegate(MenusBE p)
+                    var tempBoton = BaseWinBP.ListadoMenu.FindAll(delegate(MenusBE p)
                     {
                         return p.IDPadre.Equals(mnuBar.ID);
                     });
@@ -103,7 +95,7 @@ namespace Hersan.UI.Principal
                 string id = ((ToolStripMenuItem)sender).Tag.ToString();
 
                 if (id != "0") {
-                    var temp = BaseWin.ListadoMenu.FirstOrDefault(p => p.ID.ToString().Equals(id));
+                    var temp = BaseWinBP.ListadoMenu.FirstOrDefault(p => p.ID.ToString().Equals(id));
 
                     if (temp != null) {
                         if (!EstaAbiertoFormulario(temp.NombreForma)) {
@@ -150,20 +142,6 @@ namespace Hersan.UI.Principal
             }
 
             return isOpen;
-        }
-        private void ValidaRegistro()
-        {
-            try {
-                /* Se obtiene el Valor de registro */
-                Tools.Registro obj = new Tools.Registro();
-                /* Validar que el registro sea correcto */
-                if (BaseWin.ValidaRegistro() != obj.ObtenerRegistro() && BaseWin.ValidaRegistro() != string.Empty) {
-                    RadMessageBox.Show("El registro no es correcto, reporte al administrador", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question);
-                    this.Close();
-                }
-            } catch (Exception ex) {                
-                throw ex;
-            }
-        }
+        }        
     }
 }

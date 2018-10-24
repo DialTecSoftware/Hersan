@@ -103,10 +103,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hersan.Seguridad.Contract\Hersan.Seguridad.Contract.csproj">
-      <Project>{a46cd9da-66c5-4471-b0eb-75c2a1efff10}</Project>
-      <Name>Hersan.Seguridad.Contract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Hersan.Seguridad.Service\Hersan.Seguridad.Service.csproj">
       <Project>{1837a663-eec5-4732-929b-fa824536234a}</Project>
       <Name>Hersan.Seguridad.Service</Name>

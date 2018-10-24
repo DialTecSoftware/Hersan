@@ -54,10 +54,6 @@
       <Project>{9DC9D350-B0E3-4481-AC7A-DBE3729C8955}</Project>
       <Name>Hersan.Negocio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hersan.Seguridad.Contract\Hersan.Seguridad.Contract.csproj">
-      <Project>{A46CD9DA-66C5-4471-B0EB-75C2A1EFFF10}</Project>
-      <Name>Hersan.Seguridad.Contract</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

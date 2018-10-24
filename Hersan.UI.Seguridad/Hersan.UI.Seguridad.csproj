@@ -113,6 +113,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
       <Project>{4e3994ef-5056-4289-9c62-dc1140fd764e}</Project>
       <Name>Hersan.Entidades</Name>
@@ -121,9 +124,6 @@
       <Project>{9dc9d350-b0e3-4481-ac7a-dbe3729c8955}</Project>
       <Name>Hersan.Negocio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

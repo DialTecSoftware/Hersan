@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hersan.Entidades</RootNamespace>
     <AssemblyName>Hersan.Entidades</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +48,8 @@
     <Compile Include="Comun\ResultadoBE.cs" />
     <Compile Include="Conexion\CadenaConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pruebas\Usuario.cs" />
+    <Compile Include="Pruebas\UsuarioNombre.cs" />
     <Compile Include="Seguridad\Menus.cs" />
     <Compile Include="Seguridad\RolesBE.cs" />
     <Compile Include="Seguridad\UsuariosBE.cs" />

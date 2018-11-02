@@ -15,17 +15,7 @@ namespace Hersan.Data.Connection
         /// </summary>
         private readonly DataConnection<T> dataConnection;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        //public IDbConnection DataConnection => dataConnection.GetGeneric();
-
-        /// <summary>
-        /// Cadena de conexión
-        /// </summary>
-        /// 
-        //private string baseConnectionString = CadenaConexion.SqlDbxConexion;
-
+       
         public DataConnection(string connectionString, string connectionUser = "")
         {
             //if (string.IsNullOrEmpty(connectionString))

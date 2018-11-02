@@ -14,7 +14,7 @@ namespace Hersan.Negocio.Resolver
     {
         public void SetUp(IRegisterComponent registerComponent)
         {
-            registerComponent.RegisterType<IUsuariosBP, IUsuariosBP>();
+            registerComponent.RegisterType<IUsuariosBP, UsuariosBP>();
         }
     }
 }

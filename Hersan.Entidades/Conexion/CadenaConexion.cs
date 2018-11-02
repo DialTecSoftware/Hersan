@@ -8,7 +8,7 @@ namespace Hersan.Entidades.Conexion
 {
     public class CadenaConexion
     {
-        public static string SqlServeConexion = ConfigurationManager.ConnectionStrings["Hersan_Dev"].ConnectionString;        
+        public static string SqlServeConexion = ConfigurationManager.ConnectionStrings["coneccionSQL"].ConnectionString;        
         public static string Password = "";
     }
 }

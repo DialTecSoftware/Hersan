@@ -1,4 +1,4 @@
-﻿using Hersan.Datos.Demo;
+﻿using Hersan.Entidades.Pruebas;
 using Hersan.Entidades.Seguridad;
 using System;
 using System.Collections.Generic;
@@ -18,9 +18,14 @@ namespace Hersan.Negocio.Demo
         }
 
 
-        public async Task<List<UsuariosBE>> Usuarios_Obtiene()
+        public async Task<List<UsuarioNombre>> Usuarios_Obtiene()
         {
             return await _Datos.Usuarios_Obtiene();
+        }
+
+        public int InsertarParametros(UsuarioNombre UsuarioNombre)
+        {
+            return _Datos.InsertarParametros(UsuarioNombre);
         }
 
     }

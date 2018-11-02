@@ -1,5 +1,4 @@
-﻿using Hersan.Entidades.Pruebas;
-using Hersan.Negocio.Demo;
+﻿using Hersan.Negocio.Demo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,27 +13,23 @@ namespace Hersan.Web.API.Controllers
     /// <summary>
     /// 
     /// </summary>
-    [RoutePrefix("Usuarios")]
-    public class UsuariosController : ApiController
+    [RoutePrefix("Demo")]
+    public class DemoController : ApiController
     {
         #region Campos y propiedades
-        private readonly IUsuariosBP _Negocio;
+        private readonly IDemoBP _Negocio;
         #endregion
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        //public UsuariosController()
-        //{
-
-        //}
+        /// <summary>
+        /// 
+        /// </summary>
 
         #region Constructor
         /// <summary>
         /// 
         /// </summary>
         /// <param name="parametroServicio"></param>
-        public UsuariosController (IUsuariosBP parametroServicio)
+        public DemoController(IDemoBP parametroServicio)
         {
             _Negocio = parametroServicio;
         }
@@ -56,24 +51,6 @@ namespace Hersan.Web.API.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="UsuarioNombre"></param>
-        /// <returns></returns>
-        [Route("InsertarParametros")]
-        [HttpPost]
-        public async Task<HttpResponseMessage> InsertarParametros(UsuarioNombre UsuarioNombre)
-        {
-            var result =  _Negocio.InsertarParametros(UsuarioNombre);
-            if (result != 0)
-            {
-                return Request.CreateResponse(HttpStatusCode.OK, result);
-            }
-            else
-            {
-                return Request.CreateResponse(HttpStatusCode.OK, result);
-            }
-        }
+
     }
 }

@@ -14,7 +14,7 @@ namespace Hersan.Datos.Resolver
     {
         public void SetUp(IRegisterComponent registerComponent)
         {
-            registerComponent.RegisterType<IUsuariosDA, IUsuariosDA>();
+            registerComponent.RegisterType<IUsuariosDA, UsuariosDA>();
         }
     }
 }

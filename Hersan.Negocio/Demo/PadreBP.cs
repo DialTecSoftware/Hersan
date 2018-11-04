@@ -1,6 +1,5 @@
 ﻿using Hersan.Datos.Demo;
 using Hersan.Entidades.Pruebas;
-using Hersan.Entidades.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +8,17 @@ using System.Threading.Tasks;
 
 namespace Hersan.Negocio.Demo
 {
-    public class UsuariosBP : IUsuariosBP
+    public class PadreBP : IPadreBP
     {
-        private readonly IUsuariosDA _Datos = null;
+        private readonly IPadreDA _Datos = null;
 
-        public UsuariosBP(IUsuariosDA parametroServicio)
+        public PadreBP(IPadreDA parametroServicio)
         {
             _Datos = parametroServicio;
         }
 
-        public async Task<List<UsuarioNombre>> Usuarios_Obtiene()
+
+        public async Task<List<Hijo>> Usuarios_Obtiene()
         {
             return await _Datos.Usuarios_Obtiene();
         }

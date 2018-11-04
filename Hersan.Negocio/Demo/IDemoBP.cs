@@ -1,5 +1,4 @@
-﻿using Hersan.Entidades.Pruebas;
-using Hersan.Entidades.Seguridad;
+﻿using Hersan.Entidades.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Hersan.Negocio.Demo
 {
-    public interface IUsuariosBP
+    public interface IDemoBP
     {
-        Task<List<UsuarioNombre>> Usuarios_Obtiene();
+        Task<List<UsuariosBE>> Usuarios_Obtiene();
     }
 }

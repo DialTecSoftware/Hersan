@@ -17,25 +17,32 @@ namespace Hersan.Resolver
         {
             var dirCat = new DirectoryCatalog(path, pattern);
             var importDef = BuildImportDefinition();
-            try {
-                using (var aggregateCatalog = new AggregateCatalog()) {
+            try
+            {
+                using (var aggregateCatalog = new AggregateCatalog())
+                {
                     aggregateCatalog.Catalogs.Add(dirCat);
 
-                    using (var componsitionContainer = new CompositionContainer(aggregateCatalog)) {
+                    using (var componsitionContainer = new CompositionContainer(aggregateCatalog))
+                    {
                         IEnumerable<Export> exports = componsitionContainer.GetExports(importDef);
 
                         IEnumerable<IComponent> modules =
                             exports.Select(export => export.Value as IComponent).Where(m => m != null);
 
                         var registerComponent = new RegisterComponent(container);
-                        foreach (IComponent module in modules) {
+                        foreach (IComponent module in modules)
+                        {
                             module.SetUp(registerComponent);
                         }
                     }
                 }
-            } catch (ReflectionTypeLoadException typeLoadException) {
+            }
+            catch (ReflectionTypeLoadException typeLoadException)
+            {
                 var builder = new StringBuilder();
-                foreach (Exception loaderException in typeLoadException.LoaderExceptions) {
+                foreach (Exception loaderException in typeLoadException.LoaderExceptions)
+                {
                     builder.AppendFormat("{0}\n", loaderException.Message);
                 }
 
@@ -62,18 +69,24 @@ namespace Hersan.Resolver
 
         public void RegisterType<TFrom, TTo>(bool withInterception = false) where TTo : TFrom
         {
-            if (withInterception) {
+            if (withInterception)
+            {
                 //register with interception
-            } else {
+            }
+            else
+            {
                 this._container.RegisterType<TFrom, TTo>();
             }
         }
 
         public void RegisterTypeHierarchicalLifetime<TFrom, TTo>(bool withInterception = false) where TTo : TFrom
         {
-            if (withInterception) {
+            if (withInterception)
+            {
                 //register with interception
-            } else {
+            }
+            else
+            {
                 this._container.RegisterType<TFrom, TTo>();
             }
         }

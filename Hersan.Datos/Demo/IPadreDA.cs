@@ -1,5 +1,4 @@
 ﻿using Hersan.Entidades.Pruebas;
-using Hersan.Entidades.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Hersan.Datos.Demo
 {
-    public interface IUsuariosDA
+    public interface IPadreDA
     {
-        Task<List<UsuarioNombre>> Usuarios_Obtiene();
+        Task<List<Hijo>> Usuarios_Obtiene();
     }
 }

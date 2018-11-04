@@ -42,7 +42,7 @@ namespace Hersan.Web.API
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            ComponentLoader.LoadContainer(container, @".\bin", "Hersa*.dll");
+            ComponentLoader.LoadContainer(container, @".\bin", "Hersan.*.dll");
         }
     }
 }

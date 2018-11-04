@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.UI.Principal", "Hersan\Hersan.UI.Principal.csproj", "{D65CE714-2FB2-4123-B88F-8A4B5FFBC5E0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.UI.Seguridad", "Hersan.UI.Seguridad\Hersan.UI.Seguridad.csproj", "{63CBF2E1-5E97-4F81-BF0C-DDDA05B444AF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Datos", "Hersan.Datos\Hersan.Datos.csproj", "{220A1C2F-41CE-44CC-A90B-32EC8DBC535A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Entidades", "Hersan.Entidades\Hersan.Entidades.csproj", "{4E3994EF-5056-4289-9C62-DC1140FD764E}"
@@ -19,10 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entidades", "Entidades", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Negocio", "Negocio", "{7E9806D0-6778-4DCD-AF1F-013ACEE01569}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hersan.Seguridad", "Hersan.Seguridad", "{B946A914-E30E-4A42-9A74-E8D773D56495}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WCF_Serivices", "WCF_Serivices", "{F035CD15-29AE-49E8-87CB-4593EE81E043}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Data.Connection", "Hersan.Data.Connection\Hersan.Data.Connection.csproj", "{97B0819E-05D3-4C96-B68A-D7359FE24DEC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{0567ECB9-28D1-49C0-B537-8BF3A6F5D730}"
@@ -31,26 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Web.API", "Hersan.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Resolver", "Hersan.Resolver\Hersan.Resolver.csproj", "{F1385A97-D414-47EC-9266-FF1487B3A1B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Seguridad.Contract", "Hersan.Seguridad.Contract\Hersan.Seguridad.Contract.csproj", "{A46CD9DA-66C5-4471-B0EB-75C2A1EFFF10}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Seguridad.Host", "Hersan.Seguridad.Host\Hersan.Seguridad.Host.csproj", "{EB0A5546-6267-4112-B724-EF390827E802}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Seguridad.Service", "Hersan.Seguridad.Service\Hersan.Seguridad.Service.csproj", "{1837A663-EEC5-4732-929B-FA824536234A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D65CE714-2FB2-4123-B88F-8A4B5FFBC5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D65CE714-2FB2-4123-B88F-8A4B5FFBC5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D65CE714-2FB2-4123-B88F-8A4B5FFBC5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D65CE714-2FB2-4123-B88F-8A4B5FFBC5E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63CBF2E1-5E97-4F81-BF0C-DDDA05B444AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63CBF2E1-5E97-4F81-BF0C-DDDA05B444AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63CBF2E1-5E97-4F81-BF0C-DDDA05B444AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63CBF2E1-5E97-4F81-BF0C-DDDA05B444AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{220A1C2F-41CE-44CC-A90B-32EC8DBC535A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{220A1C2F-41CE-44CC-A90B-32EC8DBC535A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{220A1C2F-41CE-44CC-A90B-32EC8DBC535A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,18 +53,6 @@ Global
 		{F1385A97-D414-47EC-9266-FF1487B3A1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1385A97-D414-47EC-9266-FF1487B3A1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1385A97-D414-47EC-9266-FF1487B3A1B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A46CD9DA-66C5-4471-B0EB-75C2A1EFFF10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A46CD9DA-66C5-4471-B0EB-75C2A1EFFF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A46CD9DA-66C5-4471-B0EB-75C2A1EFFF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A46CD9DA-66C5-4471-B0EB-75C2A1EFFF10}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB0A5546-6267-4112-B724-EF390827E802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB0A5546-6267-4112-B724-EF390827E802}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB0A5546-6267-4112-B724-EF390827E802}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB0A5546-6267-4112-B724-EF390827E802}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1837A663-EEC5-4732-929B-FA824536234A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1837A663-EEC5-4732-929B-FA824536234A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1837A663-EEC5-4732-929B-FA824536234A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1837A663-EEC5-4732-929B-FA824536234A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,13 +61,9 @@ Global
 		{220A1C2F-41CE-44CC-A90B-32EC8DBC535A} = {56638BCA-E00D-4AFE-8390-C3E572A9C339}
 		{4E3994EF-5056-4289-9C62-DC1140FD764E} = {E0C94E7C-CFD0-423C-9F08-F6CF492FBE28}
 		{9DC9D350-B0E3-4481-AC7A-DBE3729C8955} = {7E9806D0-6778-4DCD-AF1F-013ACEE01569}
-		{B946A914-E30E-4A42-9A74-E8D773D56495} = {F035CD15-29AE-49E8-87CB-4593EE81E043}
 		{97B0819E-05D3-4C96-B68A-D7359FE24DEC} = {56638BCA-E00D-4AFE-8390-C3E572A9C339}
 		{7A3EB3CD-D805-434C-9634-3BCC1482F661} = {0567ECB9-28D1-49C0-B537-8BF3A6F5D730}
 		{F1385A97-D414-47EC-9266-FF1487B3A1B3} = {7E9806D0-6778-4DCD-AF1F-013ACEE01569}
-		{A46CD9DA-66C5-4471-B0EB-75C2A1EFFF10} = {B946A914-E30E-4A42-9A74-E8D773D56495}
-		{EB0A5546-6267-4112-B724-EF390827E802} = {B946A914-E30E-4A42-9A74-E8D773D56495}
-		{1837A663-EEC5-4732-929B-FA824536234A} = {B946A914-E30E-4A42-9A74-E8D773D56495}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81F60B3B-238B-4DAA-994C-46F6F7DDB01C}

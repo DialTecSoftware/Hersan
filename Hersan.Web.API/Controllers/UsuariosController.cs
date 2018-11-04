@@ -1,4 +1,5 @@
-﻿using Hersan.Negocio.Demo;
+﻿using Hersan.Entidades.Pruebas;
+using Hersan.Negocio.Demo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,25 @@ namespace Hersan.Web.API.Controllers
             } else {
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
-        }       
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="UsuarioNombre"></param>
+        /// <returns></returns>
+        [Route("InsertarParametros")]
+        [HttpPost]
+        public async Task<HttpResponseMessage> InsertarParametros(UsuarioNombre UsuarioNombre)
+        {
+            var result =  _Negocio.InsertarParametros(UsuarioNombre);
+            if (result != 0)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            }
+        }
     }
 }

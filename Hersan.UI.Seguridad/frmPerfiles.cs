@@ -3,11 +3,7 @@ using Hersan.Entidades.Comun;
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -17,10 +13,11 @@ namespace Hersan.UI.Seguridad
     public partial class frmPerfiles : Telerik.WinControls.UI.RadForm
     {
         #region Variables
-        //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
+        WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();        
         private int Id = 0;
         private List<MenusBE> lstMnu;
-        private bool EsCambio = false;
+        private bool EsCambio = true;
+        int Empresa = 1;
         #endregion
 
         #region Eventos
@@ -76,7 +73,7 @@ namespace Hersan.UI.Seguridad
                 {
                     if (Id.Equals(0))
                     {
-                        ResultadoBE res = wcf.GuardaRoles(rtxtNombre.Text.Trim(), BaseWinBP.UsuarioLogueado.ID, rchkActivo.Checked, 1);
+                        ResultadoBE res = wcf.GuardaRoles(rtxtNombre.Text.Trim(), Empresa, BaseWinBP.UsuarioLogueado.ID, rchkActivo.Checked);
 
                         if (res.EsValido)
                         {
@@ -88,7 +85,7 @@ namespace Hersan.UI.Seguridad
                     }
                     else
                     {
-                        ResultadoBE res = wcf.ActualizaRoles(Id, rtxtNombre.Text.Trim(), BaseWinBP.UsuarioLogueado.ID, rchkActivo.Checked);
+                        ResultadoBE res = wcf.ActualizaRoles(Id, rtxtNombre.Text.Trim(), Empresa, BaseWinBP.UsuarioLogueado.ID, rchkActivo.Checked);
 
                         if (res.EsValido)
                         {
@@ -372,7 +369,7 @@ namespace Hersan.UI.Seguridad
         }
         private void cargaGrid()
         {
-            List<RolesBE> roles = wcf.ObtieneRoles();
+            List<RolesBE> roles = wcf.ObtieneRoles(Empresa);
             rgvPerfiles.DataSource = roles;
         }
         private void CargaPermisos()

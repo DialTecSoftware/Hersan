@@ -5,11 +5,11 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{63CBF2E1-5E97-4F81-BF0C-DDDA05B444AF}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hersan.UI.Seguridad</RootNamespace>
     <AssemblyName>Hersan.UI.Seguridad</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -39,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -93,10 +97,37 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WCF_Seguridad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="llave_privada.xml" />
     <Content Include="llave_publica.xml" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Comun.ResultadoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.MenusBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.RolesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.UsuariosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.ValidaIngresoBE.datasource" />
+    <None Include="Service References\WCF_Seguridad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WCF_Seguridad\configuration.svcinfo" />
+    <None Include="Service References\WCF_Seguridad\configuration91.svcinfo" />
+    <None Include="Service References\WCF_Seguridad\Hersan_Seguridad.disco" />
+    <None Include="Service References\WCF_Seguridad\Hersan_Seguridad.wsdl" />
+    <None Include="Service References\WCF_Seguridad\Hersan_Seguridad2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Seguridad\Hersan_Seguridad3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Seguridad\Hersan_Seguridad4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmCambiarContrasenia.resx">
@@ -111,6 +142,7 @@
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -124,6 +156,18 @@
       <Project>{9dc9d350-b0e3-4481-ac7a-dbe3729c8955}</Project>
       <Name>Hersan.Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\WCF_Seguridad\Hersan_Seguridad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Seguridad\Hersan_Seguridad1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WCF_Seguridad\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

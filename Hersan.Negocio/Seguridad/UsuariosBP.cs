@@ -19,7 +19,7 @@ namespace Hersan.Negocio.Seguridad
         /// <returns></returns>
         public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa)
         {
-            return new UsuariosDA_1().ValidaUsuario(nomUsr, Pswd, IdEmpresa);
+            return new UsuariosDA().ValidaUsuario(nomUsr, Pswd, IdEmpresa);
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Hersan.Negocio.Seguridad
         /// <returns></returns>
         public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr, int IdEmpresa)
         {
-            return new UsuariosDA_1().ObtienBloqueoUsuario(nomUsr, IdEmpresa);
+            return new UsuariosDA().ObtienBloqueoUsuario(nomUsr, IdEmpresa);
         }
 
         /// <summary>
@@ -38,12 +38,12 @@ namespace Hersan.Negocio.Seguridad
         /// <param name="nomUsr">Cuenta usuario</param>
         public void DesbloqueaUsuario(string nomUsr)
         {
-            new UsuariosDA_1().DesbloqueaUsuario(nomUsr);
+            new UsuariosDA().DesbloqueaUsuario(nomUsr);
         }
 
         public int CambiaContrasenia(UsuariosBE Usuario)
         {
-            return new UsuariosDA_1().CambiaContrasenia(Usuario);
+            return new UsuariosDA().CambiaContrasenia(Usuario);
         }             
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Hersan.Negocio.Seguridad
         /// <returns></returns>
         public List<UsuariosBE> ObtieneUsuarios(int IdEmpresa)
         {
-            return new UsuariosDA_1().ObtieneUsuarios(IdEmpresa);
+            return new UsuariosDA().ObtieneUsuarios(IdEmpresa);
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Hersan.Negocio.Seguridad
         /// <param name="IdUsuarioCrea">Usuario que guarda el nuevo usuario</param>
         public ResultadoBE GuardaUsuario(UsuariosBE Usuario, int IdUsuarioCrea)
         {
-            return new UsuariosDA_1().GuardaUsuario(Usuario, IdUsuarioCrea);
+            return new UsuariosDA().GuardaUsuario(Usuario, IdUsuarioCrea);
         }
 
 
@@ -73,7 +73,7 @@ namespace Hersan.Negocio.Seguridad
         /// <param name="IdUsuarioMod">Usuario que actualiza</param>
         public ResultadoBE ActualizaUsuario(UsuariosBE Usuario, int IdUsuarioMod)
         {
-            return new UsuariosDA_1().ActualizaUsuario(Usuario, IdUsuarioMod);
+            return new UsuariosDA().ActualizaUsuario(Usuario, IdUsuarioMod);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Hersan.Negocio.Seguridad
         /// <returns></returns>
         public UsuariosBE ObtieneDatosUsuario(string Usuario, int IdEmpresa)
         {
-            return new UsuariosDA_1().ObtieneDatosUsuario(Usuario, IdEmpresa);
+            return new UsuariosDA().ObtieneDatosUsuario(Usuario, IdEmpresa);
         }
 
     }

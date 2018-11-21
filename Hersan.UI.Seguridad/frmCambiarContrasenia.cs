@@ -2,11 +2,6 @@
 using Hersan.Negocio;
 using Hersan.Negocio.Seguridad;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -14,6 +9,9 @@ namespace Hersan.UI.Seguridad
 {
     public partial class frmCambiarContrasenia : Telerik.WinControls.UI.RadForm
     {
+        WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();
+        int Empresa = 1;
+
         public frmCambiarContrasenia()
         {
             InitializeComponent();
@@ -62,7 +60,7 @@ namespace Hersan.UI.Seguridad
                         //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
 
                         //Se valida primero el usuario
-                        ValidaIngresoBE val = wcf.ValidaUsuario(Usuario.Usuario, new EncriptadorBP().EncriptarTexto(rtxtUsuario.Text.Trim()));
+                        ValidaIngresoBE val = wcf.ValidaUsuario(Usuario.Usuario, new EncriptadorBP().EncriptarTexto(rtxtUsuario.Text.Trim()),Empresa);
                         if (val.EsIngresoValido) {
                             //Se cambia el password y se sale de la aplicación
                             Usuario.Contrasena = new EncriptadorBP().EncriptarTexto(txtNuevaContra.Text.Trim());

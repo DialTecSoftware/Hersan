@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Hersan.Datos.Seguridad
 {
-    public class UsuariosDA_1 : BaseDA
+    public class UsuariosDA : BaseDA
     {
         #region Constantes
         private const string CSTR_SP_USUARIOS_DATOSVALIDACION = "SEG_Usuarios_DatosValidacion";

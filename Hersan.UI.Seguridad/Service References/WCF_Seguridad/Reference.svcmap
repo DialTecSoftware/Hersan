@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="94a8c92f-b378-468d-90c7-f1fe2190a2a6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:5462/Hersan_Seguridad.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Hersan_Seguridad.xsd" MetadataType="Schema" ID="68a18c85-21c1-475a-a66a-c607277a0d12" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd2" />
+    <MetadataFile FileName="Hersan_Seguridad1.xsd" MetadataType="Schema" ID="5c14eb90-6a56-4e18-b2bb-abe57b87ed6d" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd3" />
+    <MetadataFile FileName="Hersan_Seguridad.disco" MetadataType="Disco" ID="fff51c59-5697-4b31-9f98-ddbc04eab6e1" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?disco" />
+    <MetadataFile FileName="Hersan_Seguridad2.xsd" MetadataType="Schema" ID="7170b635-c077-45e5-831d-90e4ae331407" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd0" />
+    <MetadataFile FileName="Hersan_Seguridad.wsdl" MetadataType="Wsdl" ID="dbb3bca6-3974-4d25-986c-8670faf17025" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?wsdl" />
+    <MetadataFile FileName="Hersan_Seguridad3.xsd" MetadataType="Schema" ID="5e86209d-eccd-4cda-b582-b9815d180fac" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd1" />
+    <MetadataFile FileName="Hersan_Seguridad4.xsd" MetadataType="Schema" ID="096119a0-e9db-4497-b940-fadc7213e88d" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

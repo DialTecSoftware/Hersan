@@ -38,12 +38,15 @@
             this.lblContrasenia = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboEmpresas = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtContrasenia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmpresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,41 +58,41 @@
             // 
             this.btnCancelar.CausesValidation = false;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(183, 91);
+            this.btnCancelar.Location = new System.Drawing.Point(300, 110);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(110, 36);
-            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAceptar.Location = new System.Drawing.Point(299, 91);
+            this.btnAceptar.Location = new System.Drawing.Point(184, 110);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(110, 36);
-            this.btnAceptar.TabIndex = 12;
+            this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // rtxtContrasenia
             // 
-            this.rtxtContrasenia.Location = new System.Drawing.Point(238, 53);
+            this.rtxtContrasenia.Location = new System.Drawing.Point(238, 72);
             this.rtxtContrasenia.MaxLength = 15;
             this.rtxtContrasenia.Name = "rtxtContrasenia";
             this.rtxtContrasenia.PasswordChar = '*';
             this.rtxtContrasenia.Size = new System.Drawing.Size(172, 20);
-            this.rtxtContrasenia.TabIndex = 11;
+            this.rtxtContrasenia.TabIndex = 3;
             this.rtxtContrasenia.ThemeName = "Windows7";
             this.rtxtContrasenia.Enter += new System.EventHandler(this.rtxtContrasenia_Enter);
             // 
             // rtxtUsuario
             // 
-            this.rtxtUsuario.Location = new System.Drawing.Point(238, 26);
+            this.rtxtUsuario.Location = new System.Drawing.Point(238, 45);
             this.rtxtUsuario.MaxLength = 15;
             this.rtxtUsuario.Name = "rtxtUsuario";
             this.rtxtUsuario.Size = new System.Drawing.Size(172, 20);
-            this.rtxtUsuario.TabIndex = 10;
+            this.rtxtUsuario.TabIndex = 2;
             this.rtxtUsuario.ThemeName = "Windows7";
             this.rtxtUsuario.Enter += new System.EventHandler(this.rtxtUsuario_Enter);
             // 
@@ -97,7 +100,7 @@
             // 
             this.lblContrasenia.AutoSize = true;
             this.lblContrasenia.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrasenia.Location = new System.Drawing.Point(145, 53);
+            this.lblContrasenia.Location = new System.Drawing.Point(145, 72);
             this.lblContrasenia.Name = "lblContrasenia";
             this.lblContrasenia.Size = new System.Drawing.Size(93, 16);
             this.lblContrasenia.TabIndex = 9;
@@ -107,11 +110,12 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(145, 26);
+            this.lblUsuario.Location = new System.Drawing.Point(145, 46);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(66, 16);
             this.lblUsuario.TabIndex = 8;
             this.lblUsuario.Text = "Usuario:";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // pictureBox1
             // 
@@ -123,6 +127,24 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(144, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Usuario:";
+            // 
+            // cboEmpresas
+            // 
+            this.cboEmpresas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboEmpresas.Location = new System.Drawing.Point(238, 19);
+            this.cboEmpresas.Name = "cboEmpresas";
+            this.cboEmpresas.Size = new System.Drawing.Size(172, 20);
+            this.cboEmpresas.TabIndex = 1;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnAceptar;
@@ -131,6 +153,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(440, 153);
+            this.Controls.Add(this.cboEmpresas);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.rtxtContrasenia);
@@ -156,6 +180,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rtxtContrasenia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmpresas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -172,5 +197,7 @@
         private System.Windows.Forms.Label lblContrasenia;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private Telerik.WinControls.UI.RadDropDownList cboEmpresas;
     }
 }

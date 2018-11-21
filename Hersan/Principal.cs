@@ -15,7 +15,7 @@ namespace Hersan.UI.Principal
 {
     public partial class Principal : Telerik.WinControls.UI.RadForm
     {
-        public Principal(bool isTrial)
+        public Principal()
         {
             InitializeComponent();
 
@@ -24,7 +24,7 @@ namespace Hersan.UI.Principal
                 Form frm = new Hersan.UI.Seguridad.frmLogin();
                 frm.ShowDialog();
                 if (frm.DialogResult == DialogResult.OK) {                    
-                        cargaMenuPrincipal();                    
+                    cargaMenuPrincipal();                    
                 } else {
                     this.Close();
                 }

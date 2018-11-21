@@ -39,10 +39,12 @@ namespace Hersan.Datos.Seguridad
                         {
                             while (reader.Read())
                             {
-                                RolesBE obj = new RolesBE();
-                                obj.ID = int.Parse(reader["ROL_IdRol"].ToString());
-                                obj.Nombre = reader["ROL_Rol"].ToString();
-                                obj.Activo = bool.Parse(reader["ROL_Estatus"].ToString());
+                                RolesBE obj = new RolesBE
+                                {
+                                    ID = int.Parse(reader["ROL_IdRol"].ToString()),
+                                    Nombre = reader["ROL_Rol"].ToString(),
+                                    Activo = bool.Parse(reader["ROL_Estatus"].ToString())
+                                };
 
                                 lst.Add(obj);
                             }
@@ -110,7 +112,7 @@ namespace Hersan.Datos.Seguridad
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CSTR_SP_ACTUALIZAROLES, conn))
                     {
-                        int param = 0;
+                        
                         cmd.Parameters.AddWithValue("@IdRol", IdRol);
                         cmd.Parameters.AddWithValue("@Rol", Rol);
                         cmd.Parameters.AddWithValue("@EMP_Id", IdEmpresa);

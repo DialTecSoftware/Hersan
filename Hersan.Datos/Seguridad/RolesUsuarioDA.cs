@@ -35,10 +35,12 @@ namespace Hersan.Datos.Seguridad
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
-                                RolesBE obj = new RolesBE();
-                                obj.ID = int.Parse(reader["Rol_IdRol"].ToString());
-                                obj.Nombre = reader["Rol_Rol"].ToString();
-                                obj.EsAsignado = bool.Parse(reader["Asignado"].ToString());
+                                RolesBE obj = new RolesBE
+                                {
+                                    ID = int.Parse(reader["Rol_IdRol"].ToString()),
+                                    Nombre = reader["Rol_Rol"].ToString(),
+                                    EsAsignado = bool.Parse(reader["Asignado"].ToString())
+                                };
                                 lst.Add(obj);
                             }
                         }
@@ -70,7 +72,6 @@ namespace Hersan.Datos.Seguridad
                         }
 
                         using (SqlCommand cmd = new SqlCommand(CSTR_SP_ROLESUSUARIOS_GUARDA, conn)) {
-                            int param = 0;
                             cmd.Parameters.AddWithValue("@IdRol", IdRol);
                             cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);
 

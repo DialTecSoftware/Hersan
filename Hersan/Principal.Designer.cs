@@ -33,7 +33,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblPerfil = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblPeriodo = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -51,8 +50,7 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblUsuario,
-            this.lblPerfil,
-            this.lblPeriodo});
+            this.lblPerfil});
             this.statusStrip.Location = new System.Drawing.Point(0, 381);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(632, 22);
@@ -75,13 +73,6 @@
             this.lblPerfil.Text = "Perfil";
             this.lblPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblPerfil.Visible = false;
-            // 
-            // lblPeriodo
-            // 
-            this.lblPeriodo.BackColor = System.Drawing.Color.Transparent;
-            this.lblPeriodo.Name = "lblPeriodo";
-            this.lblPeriodo.Size = new System.Drawing.Size(51, 17);
-            this.lblPeriodo.Text = "Periodo:";
             // 
             // Principal
             // 
@@ -116,7 +107,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripStatusLabel lblPerfil;
-        public System.Windows.Forms.ToolStripStatusLabel lblPeriodo;
     }
 }
 

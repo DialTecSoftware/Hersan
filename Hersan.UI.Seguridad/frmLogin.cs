@@ -1,20 +1,17 @@
-﻿using Hersan.Entidades;
-using Hersan.Entidades.Seguridad;
+﻿using Hersan.Entidades.Seguridad;
 using Hersan.Negocio;
 using Hersan.Negocio.Seguridad;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
 namespace Hersan.UI.Seguridad
 {
     public partial class frmLogin : Telerik.WinControls.UI.RadForm
-    {        
+    {
+        WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();
+        int Empresa = 1;
+
         public frmLogin()
         {
             InitializeComponent();            
@@ -42,12 +39,12 @@ namespace Hersan.UI.Seguridad
                 if (msg.Length.Equals(0))
                 {
                     //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
-                    ValidaIngresoBE val = wcf.ValidaUsuario(rtxtUsuario.Text.Trim(), new EncriptadorBP().EncriptarTexto(rtxtContrasenia.Text.Trim()));
+                    ValidaIngresoBE val = wcf.ValidaUsuario(rtxtUsuario.Text.Trim(), new EncriptadorBP().EncriptarTexto(rtxtContrasenia.Text.Trim()),Empresa);
 
                     if (val.EsIngresoValido)
                     {
-                        BaseWinBP.ListadoMenu = wcf.ObtenerMenuUsuario(rtxtUsuario.Text.Trim(), BaseWinBP.Sistema);
-                        BaseWinBP.UsuarioLogueado = wcf.ObtieneDatosUsuario(rtxtUsuario.Text.Trim());
+                        BaseWinBP.ListadoMenu = wcf.ObtenerMenuUsuario(rtxtUsuario.Text.Trim(), Empresa);
+                        BaseWinBP.UsuarioLogueado = wcf.ObtieneDatosUsuario(rtxtUsuario.Text.Trim(),Empresa);
                     }
                     else
                     {
@@ -61,12 +58,6 @@ namespace Hersan.UI.Seguridad
                     this.DialogResult = DialogResult.None;
                 }
                 #endregion
-
-
-                //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
-
-                BaseWinBP.ListadoMenu = wcf.ObtenerMenusDemo();
-                BaseWinBP.UsuarioLogueado = wcf.ObtieneDatosUsuario("admin");
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();                   
@@ -97,6 +88,11 @@ namespace Hersan.UI.Seguridad
             } catch {
                 RadMessageBox.Show("Ocurrio un error al Seleccionar la Contraseña");
             }
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using System.Text.RegularExpressions;
@@ -19,10 +15,11 @@ namespace Hersan.UI.Seguridad
     public partial class frmUsuarios : Telerik.WinControls.UI.RadForm
     {
         #region Variables
-        //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();        
+        WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();      
         List<UsuariosBE> lstUsuarios;
         Regex reg = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
 
+        int Empresa = 1;
         private int Id = 0;
         private string usr = string.Empty;
         private List<RolesBE> lstRoles;
@@ -256,7 +253,7 @@ namespace Hersan.UI.Seguridad
         }
         private void MuestraPefiles()
         {
-            lstRoles = wcf.ObtieneRolesUsuario(Id);
+            lstRoles = wcf.ObtieneRolesUsuario(Id,Empresa);
             rtvPerfiles.DisplayMember = "Nombre";
             rtvPerfiles.ValueMember = "ID";
             rtvPerfiles.DataSource = lstRoles;
@@ -268,7 +265,7 @@ namespace Hersan.UI.Seguridad
         }
         private void cargaGrid()
         {
-            lstUsuarios = wcf.ObtieneUsuarios();
+            lstUsuarios = wcf.ObtieneUsuarios(Empresa);
             rgvUsuarios.DataSource = null;
             rgvUsuarios.DataSource = lstUsuarios;
             rgvUsuarios.Columns["Activo"].BestFit();

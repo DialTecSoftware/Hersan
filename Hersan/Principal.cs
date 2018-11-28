@@ -18,7 +18,6 @@ namespace Hersan.UI.Principal
         public Principal()
         {
             InitializeComponent();
-
             try {
                 /* Llamada a pantalla de Logueo */
                 Form frm = new Hersan.UI.Seguridad.frmLogin();
@@ -27,8 +26,9 @@ namespace Hersan.UI.Principal
                     cargaMenuPrincipal();                    
                 } else {
                     this.Close();
-                }
-            } catch (Exception ex){
+                }                
+            }
+            catch (Exception ex){
                 throw ex;
             }
         }
@@ -142,6 +142,6 @@ namespace Hersan.UI.Principal
             }
 
             return isOpen;
-        }        
+        }
     }
 }

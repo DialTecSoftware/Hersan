@@ -133,9 +133,9 @@
             this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(144, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Usuario:";
+            this.label1.Text = "Empresa:";
             // 
             // cboEmpresas
             // 
@@ -172,7 +172,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema de Información Administrativa";
+            this.Text = "ERP Hersan Hitec";
             this.ThemeName = "ControlDefault";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();

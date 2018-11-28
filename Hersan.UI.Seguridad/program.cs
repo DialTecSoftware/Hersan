@@ -17,7 +17,7 @@ namespace Hersan.UI.Seguridad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmPerfiles());
         }
     }
 }

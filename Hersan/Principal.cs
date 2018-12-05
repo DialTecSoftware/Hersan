@@ -87,6 +87,7 @@ namespace Hersan.UI.Principal
                 }
                 //Por cada menu padre generamos un Menu 
                 mnMenu.Items.Add(menu);
+
             }
         }            
         private void menu_Click(object sender, EventArgs e)

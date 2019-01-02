@@ -61,5 +61,9 @@
       <Name>Hersan.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CapitalHumano\" />
+    <Folder Include="Catalogos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

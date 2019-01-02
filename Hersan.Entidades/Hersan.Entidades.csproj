@@ -44,7 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\CiudadesBE.cs" />
+    <Compile Include="Catalogos\ColoniasBE.cs" />
     <Compile Include="Catalogos\EmpresasBE.cs" />
+    <Compile Include="Catalogos\EstadosBE.cs" />
+    <Compile Include="Catalogos\PaisesBE.cs" />
+    <Compile Include="Comun\GeneralBE.cs" />
     <Compile Include="Comun\ResultadoBE.cs" />
     <Compile Include="Conexion\CadenaConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

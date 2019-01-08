@@ -2,20 +2,29 @@
 using Hersan.Negocio;
 using Hersan.Negocio.Seguridad;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
 namespace Hersan.UI.Seguridad
 {
     public partial class frmLogin : Telerik.WinControls.UI.RadForm
-    {
-        WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();
-        int Empresa = 1;
+    {        
+        WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
+        int Empresa = 0;
 
         public frmLogin()
         {
             InitializeComponent();            
-        }       
+        }
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            try {
+                ObtenerEmpresas();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar la pantalla:" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            }
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             try {
@@ -35,10 +44,13 @@ namespace Hersan.UI.Seguridad
                     msg += "- Ingrese la contraseña";
                     errorProvider1.SetError(rtxtContrasenia, "Ingrese la contraseña");
                 }
+                
+                //SE OBTIENE EL ID DE LA EMPRESA SELECCIONADA
+                Empresa = int.Parse(cboEmpresas.SelectedValue.ToString());
 
                 if (msg.Length.Equals(0))
                 {
-                    //WCF_Seguridad.SIAC_SeguridadClient wcf = new WCF_Seguridad.SIAC_SeguridadClient();
+                    WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();
                     ValidaIngresoBE val = wcf.ValidaUsuario(rtxtUsuario.Text.Trim(), new EncriptadorBP().EncriptarTexto(rtxtContrasenia.Text.Trim()),Empresa);
 
                     if (val.EsIngresoValido)
@@ -94,6 +106,21 @@ namespace Hersan.UI.Seguridad
         {
 
         }
+        private void ObtenerEmpresas()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboEmpresas.DataSource = oCatalogos.ABCEmpresas_Cbo();
+                cboEmpresas.DisplayMember = "NombreComercial";
+                cboEmpresas.ValueMember = "Id";
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar las empresas:" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            } finally {
+                oCatalogos = null;
+            }
+
+        }
+
     }
 
 }

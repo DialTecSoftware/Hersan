@@ -9,6 +9,7 @@ namespace Hersan.Datos.Catalogos {
     {
         #region Constantes
         const string CONST_ABC_EMPRESAS_OBTENER = "ABC_Empresas_Obtener";
+        const string CONST_ABC_EMPRESAS_COMBO = "ABC_Empresas_Combo";
         #endregion
 
         /// <summary>
@@ -31,7 +32,7 @@ namespace Hersan.Datos.Catalogos {
                             while (reader.Read()) {
                                 EmpresasBE obj = new EmpresasBE();
 
-                                obj.ID = int.Parse(reader["EMP_ID"].ToString());
+                                obj.Id = int.Parse(reader["EMP_ID"].ToString());
                                 obj.NombreComercial = reader["EMP_NombreComercial"].ToString();
                                 obj.NombreFiscal = reader["EMP_NombreFiscal"].ToString();
                                 obj.Direccion = reader["EMP_Direccion"].ToString();
@@ -42,9 +43,41 @@ namespace Hersan.Datos.Catalogos {
                                 obj.RegimenFiscal = reader["EMP_RegimenFiscal"].ToString();
                                 obj.NoExterior = reader["EMP_NoExterior"].ToString();
                                 obj.NoInterior = reader["EMP_NoInterior"].ToString();
-                                obj.Estado.Id = int.Parse(reader["EMP_NoInterior"].ToString());
+                                obj.Estado.Id = int.Parse(reader["EST_ID"].ToString());
+                                obj.Estado.Nombre = reader["EST_Nombre"].ToString();
 
                                 oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Obtiene el listado de Empresas Para Combo
+        /// </summary>
+        /// <returns></returns>
+        public List<EmpresasBE> ABCEmpresas_Cbo()
+        {
+            try {
+                List<EmpresasBE> oList = new List<EmpresasBE>();
+
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_EMPRESAS_COMBO, conn)) {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                EmpresasBE obj = new EmpresasBE();
+                                oList.Add(new EmpresasBE {
+                                    Id = int.Parse(reader["EMP_ID"].ToString()),
+                                    NombreComercial = reader["EMP_NombreComercial"].ToString(),
+                                });
                             }
                         }
                     }

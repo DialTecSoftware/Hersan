@@ -1,11 +1,8 @@
 ﻿using Hersan.Entidades.Comun;
 using Hersan.Entidades.Seguridad;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Hersan.Seguridad.Contract
 {

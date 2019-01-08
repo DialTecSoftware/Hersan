@@ -139,7 +139,7 @@
             // 
             // cboEmpresas
             // 
-            this.cboEmpresas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboEmpresas.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cboEmpresas.Location = new System.Drawing.Point(238, 19);
             this.cboEmpresas.Name = "cboEmpresas";
             this.cboEmpresas.Size = new System.Drawing.Size(172, 20);
@@ -174,6 +174,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ERP Hersan Hitec";
             this.ThemeName = "ControlDefault";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).EndInit();

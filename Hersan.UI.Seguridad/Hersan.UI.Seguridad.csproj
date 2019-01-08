@@ -97,6 +97,11 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WCF_Catalogos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WCF_Seguridad\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,11 +111,32 @@
   <ItemGroup>
     <Content Include="llave_privada.xml" />
     <Content Include="llave_publica.xml" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
+    <None Include="Service References\WCF_Catalogos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WCF_Catalogos\configuration.svcinfo" />
+    <None Include="Service References\WCF_Catalogos\configuration91.svcinfo" />
+    <None Include="Service References\WCF_Catalogos\Hersan_Catalogos.disco" />
     <None Include="Properties\DataSources\Hersan.Entidades.Comun.ResultadoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.MenusBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.RolesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.UsuariosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.ValidaIngresoBE.datasource" />
+    <None Include="Service References\WCF_Catalogos\Hersan_Catalogos.wsdl" />
+    <None Include="Service References\WCF_Catalogos\Hersan_Catalogos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Catalogos\Hersan_Catalogos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Catalogos\Hersan_Catalogos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Catalogos\Hersan_Catalogos3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WCF_Seguridad\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -167,6 +193,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WCF_Catalogos\" />
     <WCFMetadataStorage Include="Service References\WCF_Seguridad\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

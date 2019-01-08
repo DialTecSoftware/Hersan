@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseWinBP.cs" />
+    <Compile Include="Catalogos\DepartamentosBP.cs" />
     <Compile Include="Catalogos\EmpresasBP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\EncriptadorBP.cs" />

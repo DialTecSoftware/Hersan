@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Hersan_Catalogos" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IHersan_Catalogos_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEmpresas_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEmpresas_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Cbo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEmpresas_Cbo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Cbo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEmpresas_CboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDepartamentos_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDepartamentos_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDepartamentos_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDepartamentos_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHersan_Catalogos">
+    <wsdl:operation name="ABCEmpresas_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEmpresas_Cbo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Cbo" message="tns:IHersan_Catalogos_ABCEmpresas_Cbo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_CboResponse" message="tns:IHersan_Catalogos_ABCEmpresas_Cbo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDepartamentos_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener" message="tns:IHersan_Catalogos_ABCDepartamentos_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_ObtenerResponse" message="tns:IHersan_Catalogos_ABCDepartamentos_Obtener_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IHersan_Catalogos" type="tns:IHersan_Catalogos">
+    <wsp:PolicyReference URI="#WSHttpBinding_IHersan_Catalogos_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ABCEmpresas_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEmpresas_Cbo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Cbo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDepartamentos_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Hersan_Catalogos">
+    <wsdl:port name="WSHttpBinding_IHersan_Catalogos" binding="tns:WSHttpBinding_IHersan_Catalogos">
+      <soap12:address location="http://localhost:56779/Hersan_Catalogos.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:56779/Hersan_Catalogos.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

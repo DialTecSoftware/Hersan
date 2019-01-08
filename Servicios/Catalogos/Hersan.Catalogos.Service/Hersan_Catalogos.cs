@@ -7,6 +7,7 @@ namespace Hersan.Catalogos.Service
 {
     public class Hersan_Catalogos : IHersan_Catalogos
     {
+        #region Empresas
         public List<EmpresasBE> ABCEmpresas_Obtener(int IdEmpresa)
         {
             return new EmpresasBP().ABCEmpresas_Obtener(IdEmpresa);
@@ -15,6 +16,13 @@ namespace Hersan.Catalogos.Service
         {
             return new EmpresasBP().ABCEmpresas_Cbo();
         }
+        #endregion
 
+        #region Deptos
+        public List<DepartamentosBE> ABCDepartamentos_Obtener()
+        {
+            return new DepartamentosBP().ABCDepartamentos_Obtener();
+        }
+        #endregion
     }
 }

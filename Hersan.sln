@@ -42,6 +42,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CapitalHumano", "CapitalHumano", "{BF403A98-155B-4420-B21A-42560B79797C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.UI.Catalogos", "Hersan.UI.Catalogos\Hersan.UI.Catalogos.csproj", "{C7A0E85C-70A0-40CC-A42C-D917C1C99827}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8C02FB69-6302-48AF-A633-EC38BB23BD5F} = {8C02FB69-6302-48AF-A633-EC38BB23BD5F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.UI.CapitalHumano", "Hersan.UI.CapitalHumano\Hersan.UI.CapitalHumano.csproj", "{EE64995C-6BCC-43D1-8E12-43125E2DB6C2}"
 EndProject

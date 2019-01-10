@@ -53,6 +53,7 @@ namespace Hersan.UI.Catalogos
         {
             try {
                 this.Close();
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }

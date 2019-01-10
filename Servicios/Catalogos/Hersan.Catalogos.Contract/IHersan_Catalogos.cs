@@ -20,5 +20,19 @@ namespace Hersan.Catalogos.Contract
         List<DepartamentosBE> ABCDepartamentos_Obtener();
 
         #endregion
+
+        #region TiposContrato
+        [OperationContract]
+        List<TiposContratoBE> TiposContrato_Obtener();
+
+        #endregion
+
+        #region Puestos
+        [OperationContract]
+        List<PuestosBE> ABCPuestos_Obtener();
+
+        #endregion
+
+      
     }
 }

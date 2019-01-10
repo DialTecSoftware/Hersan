@@ -111,6 +111,8 @@
   <ItemGroup>
     <Content Include="llave_privada.xml" />
     <Content Include="llave_publica.xml" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
     <None Include="Service References\WCF_Catalogos\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>

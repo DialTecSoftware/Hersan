@@ -33,6 +33,18 @@
   <wsdl:message name="IHersan_Catalogos_ABCDepartamentos_Obtener_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABCDepartamentos_ObtenerResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_TiposContrato_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:TiposContrato_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_TiposContrato_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TiposContrato_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_ObtenerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_Catalogos">
     <wsdl:operation name="ABCEmpresas_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage" />
@@ -45,6 +57,14 @@
     <wsdl:operation name="ABCDepartamentos_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener" message="tns:IHersan_Catalogos_ABCDepartamentos_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_ObtenerResponse" message="tns:IHersan_Catalogos_ABCDepartamentos_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposContrato_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener" message="tns:IHersan_Catalogos_TiposContrato_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_ObtenerResponse" message="tns:IHersan_Catalogos_TiposContrato_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Obtener" message="tns:IHersan_Catalogos_ABCPuestos_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ObtenerResponse" message="tns:IHersan_Catalogos_ABCPuestos_Obtener_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Catalogos" type="tns:IHersan_Catalogos">
@@ -70,6 +90,24 @@
     </wsdl:operation>
     <wsdl:operation name="ABCDepartamentos_Obtener">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposContrato_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Obtener" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

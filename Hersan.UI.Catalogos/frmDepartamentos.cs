@@ -24,7 +24,7 @@ namespace Hersan.UI.Catalogos
                 CargarDatos();
             } catch (Exception ex) {
 
-                throw;
+                throw ex;
             }
         }
         private void gvDatos_Click(object sender, EventArgs e)
@@ -73,6 +73,9 @@ namespace Hersan.UI.Catalogos
             }
         }
 
-       
+        private void radPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

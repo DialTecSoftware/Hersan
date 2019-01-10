@@ -21,26 +21,25 @@ namespace Hersan.UI.Seguridad
         {
             try {
                 ObtenerEmpresas();
+                rtxtUsuario.Focus();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar la pantalla:" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
             }
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            string msg = string.Empty;
+            errorProvider1.SetError(rtxtUsuario, "");
+            errorProvider1.SetError(rtxtContrasenia, "");
+
             try {
                 #region Validaciones Acceso Al Sistema
-                string msg = string.Empty;
-                errorProvider1.SetError(rtxtUsuario, "");
-                errorProvider1.SetError(rtxtContrasenia, "");
-
-                if (rtxtUsuario.Text.Trim().Length.Equals(0))
-                {
+                if (rtxtUsuario.Text.Trim().Length.Equals(0)) { 
                     msg = "- Ingrese el usuario" + Environment.NewLine;
                     errorProvider1.SetError(rtxtUsuario, "Ingrese el usuario");
                 }
 
-                if (rtxtContrasenia.Text.Trim().Length.Equals(0))
-                {
+                if (rtxtContrasenia.Text.Trim().Length.Equals(0)) { 
                     msg += "- Ingrese la contraseña";
                     errorProvider1.SetError(rtxtContrasenia, "Ingrese la contraseña");
                 }
@@ -48,31 +47,24 @@ namespace Hersan.UI.Seguridad
                 //SE OBTIENE EL ID DE LA EMPRESA SELECCIONADA
                 Empresa = int.Parse(cboEmpresas.SelectedValue.ToString());
 
-                if (msg.Length.Equals(0))
-                {
+                if (msg.Length.Equals(0))  {
                     WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();
                     ValidaIngresoBE val = wcf.ValidaUsuario(rtxtUsuario.Text.Trim(), new EncriptadorBP().EncriptarTexto(rtxtContrasenia.Text.Trim()),Empresa);
 
-                    if (val.EsIngresoValido)
-                    {
+                    if (val.EsIngresoValido)  {
                         BaseWinBP.ListadoMenu = wcf.ObtenerMenuUsuario(rtxtUsuario.Text.Trim(), Empresa);
                         BaseWinBP.UsuarioLogueado = wcf.ObtieneDatosUsuario(rtxtUsuario.Text.Trim(),Empresa);
-                    }
-                    else
-                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    } else  {
                         RadMessageBox.Show(val.ErrorIngreso, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         this.DialogResult = DialogResult.None;
                     }
-                }
-                else
-                {
+                } else {
                     RadMessageBox.Show("Datos Obligatorios" + Environment.NewLine + msg, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     this.DialogResult = DialogResult.None;
                 }
                 #endregion
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();                   
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al validar al usuario:" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 this.DialogResult = DialogResult.None;
@@ -102,10 +94,6 @@ namespace Hersan.UI.Seguridad
             }
         }
 
-        private void lblUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
         private void ObtenerEmpresas()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -120,7 +108,6 @@ namespace Hersan.UI.Seguridad
             }
 
         }
-
     }
 
 }

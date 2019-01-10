@@ -33,17 +33,17 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_ObtenerResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.DepartamentosBE>> ABCDepartamentos_ObtenerAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/TiposContrato_ObtenerResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE> TiposContrato_Obtener();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_GuardarResponse")]
+        int ABCDEpartamentos_Guardar(Hersan.Entidades.Catalogos.DepartamentosBE obj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/TiposContrato_ObtenerResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>> TiposContrato_ObtenerAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABCDEpartamentos_GuardarAsync(Hersan.Entidades.Catalogos.DepartamentosBE obj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ObtenerResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> ABCPuestos_Obtener();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_ActualizarResponse")]
+        int ABCDEpartamentos_Actualizar(Hersan.Entidades.Catalogos.DepartamentosBE obj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ObtenerResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> ABCPuestos_ObtenerAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCDEpartamentos_ActualizarAsync(Hersan.Entidades.Catalogos.DepartamentosBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,20 +97,20 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
             return base.Channel.ABCDepartamentos_ObtenerAsync();
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE> TiposContrato_Obtener() {
-            return base.Channel.TiposContrato_Obtener();
+        public int ABCDEpartamentos_Guardar(Hersan.Entidades.Catalogos.DepartamentosBE obj) {
+            return base.Channel.ABCDEpartamentos_Guardar(obj);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>> TiposContrato_ObtenerAsync() {
-            return base.Channel.TiposContrato_ObtenerAsync();
+        public System.Threading.Tasks.Task<int> ABCDEpartamentos_GuardarAsync(Hersan.Entidades.Catalogos.DepartamentosBE obj) {
+            return base.Channel.ABCDEpartamentos_GuardarAsync(obj);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> ABCPuestos_Obtener() {
-            return base.Channel.ABCPuestos_Obtener();
+        public int ABCDEpartamentos_Actualizar(Hersan.Entidades.Catalogos.DepartamentosBE obj) {
+            return base.Channel.ABCDEpartamentos_Actualizar(obj);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> ABCPuestos_ObtenerAsync() {
-            return base.Channel.ABCPuestos_ObtenerAsync();
+        public System.Threading.Tasks.Task<int> ABCDEpartamentos_ActualizarAsync(Hersan.Entidades.Catalogos.DepartamentosBE obj) {
+            return base.Channel.ABCDEpartamentos_ActualizarAsync(obj);
         }
     }
 }

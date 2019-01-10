@@ -23,6 +23,14 @@ namespace Hersan.Catalogos.Service
         {
             return new DepartamentosBP().ABCDepartamentos_Obtener();
         }
+        public int ABCDEpartamentos_Guardar(DepartamentosBE obj)
+        {
+            return new DepartamentosBP().ABCDEpartamentos_Guardar(obj);
+        }
+        public int ABCDEpartamentos_Actualizar(DepartamentosBE obj)
+        {
+            return new DepartamentosBP().ABCDEpartamentos_Actualizar(obj);
+        }
         #endregion
 
         #region Deptos

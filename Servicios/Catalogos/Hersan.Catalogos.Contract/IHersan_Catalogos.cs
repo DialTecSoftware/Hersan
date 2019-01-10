@@ -19,6 +19,12 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         List<DepartamentosBE> ABCDepartamentos_Obtener();
 
+        [OperationContract]
+        int ABCDEpartamentos_Guardar(DepartamentosBE obj);
+
+        [OperationContract]
+        int ABCDEpartamentos_Actualizar(DepartamentosBE obj);
+
         #endregion
 
         #region TiposContrato

@@ -131,6 +131,7 @@
             this.radDock2.Location = new System.Drawing.Point(0, 0);
             this.radDock2.MainDocumentContainer = this.documentContainer2;
             this.radDock2.Name = "radDock2";
+            this.radDock2.Padding = new System.Windows.Forms.Padding(0);
             // 
             // 
             // 
@@ -143,6 +144,7 @@
             // documentContainer2
             // 
             this.documentContainer2.Name = "documentContainer2";
+            this.documentContainer2.Padding = new System.Windows.Forms.Padding(0);
             // 
             // 
             // 
@@ -158,14 +160,14 @@
             this.radDock1.Controls.Add(this.toolTabStrip2);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 81);
+            this.radDock1.Location = new System.Drawing.Point(0, 56);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(802, 303);
+            this.radDock1.Size = new System.Drawing.Size(802, 328);
             this.radDock1.TabIndex = 1;
             this.radDock1.TabStop = false;
             // 
@@ -178,7 +180,7 @@
             this.dwPerfiles.Location = new System.Drawing.Point(6, 29);
             this.dwPerfiles.Name = "dwPerfiles";
             this.dwPerfiles.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.dwPerfiles.Size = new System.Drawing.Size(434, 258);
+            this.dwPerfiles.Size = new System.Drawing.Size(434, 283);
             this.dwPerfiles.Text = "Perfiles";
             // 
             // rgvPerfiles
@@ -226,7 +228,7 @@
             // 
             this.rgvPerfiles.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
             this.rgvPerfiles.ShowGroupPanel = false;
-            this.rgvPerfiles.Size = new System.Drawing.Size(434, 179);
+            this.rgvPerfiles.Size = new System.Drawing.Size(434, 204);
             this.rgvPerfiles.TabIndex = 0;
             this.rgvPerfiles.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.rgvPerfiles_CurrentRowChanged);
             // 
@@ -250,12 +252,11 @@
             this.cboEmpresas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboEmpresas.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cboEmpresas.Enabled = false;
-            this.cboEmpresas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEmpresas.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.cboEmpresas.Location = new System.Drawing.Point(61, 13);
             this.cboEmpresas.Name = "cboEmpresas";
-            this.cboEmpresas.Size = new System.Drawing.Size(249, 23);
+            this.cboEmpresas.Size = new System.Drawing.Size(249, 20);
             this.cboEmpresas.TabIndex = 1;
-            this.cboEmpresas.Visible = false;
             // 
             // radLabel3
             // 
@@ -269,7 +270,7 @@
             // rchkActivo
             // 
             this.rchkActivo.CheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.rchkActivo.Location = new System.Drawing.Point(326, 15);
+            this.rchkActivo.Location = new System.Drawing.Point(316, 45);
             this.rchkActivo.Name = "rchkActivo";
             this.rchkActivo.Size = new System.Drawing.Size(51, 18);
             this.rchkActivo.TabIndex = 2;
@@ -316,7 +317,7 @@
             this.documentTabStrip1.RootElement.ApplyShapeToControl = false;
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(446, 293);
+            this.documentTabStrip1.Size = new System.Drawing.Size(446, 318);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -332,7 +333,7 @@
             // 
             this.toolTabStrip2.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip2.SelectedIndex = 0;
-            this.toolTabStrip2.Size = new System.Drawing.Size(342, 293);
+            this.toolTabStrip2.Size = new System.Drawing.Size(342, 318);
             this.toolTabStrip2.SizeInfo.AbsoluteSize = new System.Drawing.Size(342, 200);
             this.toolTabStrip2.SizeInfo.SplitterCorrection = new System.Drawing.Size(142, 0);
             this.toolTabStrip2.TabIndex = 2;
@@ -348,7 +349,7 @@
             this.twPermisos.Location = new System.Drawing.Point(1, 22);
             this.twPermisos.Name = "twPermisos";
             this.twPermisos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.twPermisos.Size = new System.Drawing.Size(340, 269);
+            this.twPermisos.Size = new System.Drawing.Size(340, 294);
             this.twPermisos.Text = "Permisos";
             this.twPermisos.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide;
             // 
@@ -360,11 +361,11 @@
             this.rtvPermisos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtvPermisos.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.rtvPermisos.ForeColor = System.Drawing.Color.Black;
-            this.rtvPermisos.Location = new System.Drawing.Point(0, 136);
+            this.rtvPermisos.Location = new System.Drawing.Point(0, 122);
             this.rtvPermisos.MultiSelect = true;
             this.rtvPermisos.Name = "rtvPermisos";
             this.rtvPermisos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rtvPermisos.Size = new System.Drawing.Size(340, 133);
+            this.rtvPermisos.Size = new System.Drawing.Size(340, 172);
             this.rtvPermisos.SpacingBetweenNodes = -1;
             this.rtvPermisos.TabIndex = 0;
             this.rtvPermisos.TriStateMode = true;
@@ -385,15 +386,15 @@
             this.rgbPermisos.Controls.Add(this.chkAgregar);
             this.rgbPermisos.Dock = System.Windows.Forms.DockStyle.Top;
             this.rgbPermisos.HeaderText = "";
-            this.rgbPermisos.Location = new System.Drawing.Point(0, 56);
+            this.rgbPermisos.Location = new System.Drawing.Point(0, 81);
             this.rgbPermisos.Name = "rgbPermisos";
-            this.rgbPermisos.Size = new System.Drawing.Size(340, 80);
+            this.rgbPermisos.Size = new System.Drawing.Size(340, 41);
             this.rgbPermisos.TabIndex = 5;
             // 
             // radLabel5
             // 
             this.radLabel5.Enabled = false;
-            this.radLabel5.Location = new System.Drawing.Point(9, 30);
+            this.radLabel5.Location = new System.Drawing.Point(196, 47);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(38, 18);
             this.radLabel5.TabIndex = 19;
@@ -402,7 +403,7 @@
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(10, 5);
+            this.radLabel4.Location = new System.Drawing.Point(14, 44);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(37, 18);
             this.radLabel4.TabIndex = 18;
@@ -412,7 +413,7 @@
             // txtMenu
             // 
             this.txtMenu.Enabled = false;
-            this.txtMenu.Location = new System.Drawing.Point(54, 32);
+            this.txtMenu.Location = new System.Drawing.Point(241, 49);
             this.txtMenu.Name = "txtMenu";
             this.txtMenu.Size = new System.Drawing.Size(63, 20);
             this.txtMenu.TabIndex = 5;
@@ -421,7 +422,7 @@
             // 
             // txtNodo
             // 
-            this.txtNodo.Location = new System.Drawing.Point(53, 6);
+            this.txtNodo.Location = new System.Drawing.Point(57, 45);
             this.txtNodo.Name = "txtNodo";
             this.txtNodo.Size = new System.Drawing.Size(64, 20);
             this.txtNodo.TabIndex = 4;
@@ -431,7 +432,7 @@
             // ChkActivo
             // 
             this.ChkActivo.Enabled = false;
-            this.ChkActivo.Location = new System.Drawing.Point(123, 8);
+            this.ChkActivo.Location = new System.Drawing.Point(127, 47);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(51, 18);
             this.ChkActivo.TabIndex = 15;
@@ -440,7 +441,7 @@
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(16, 52);
+            this.radLabel1.Location = new System.Drawing.Point(14, 11);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(54, 18);
             this.radLabel1.TabIndex = 8;
@@ -449,7 +450,7 @@
             // 
             // chkEliminar
             // 
-            this.chkEliminar.Location = new System.Drawing.Point(201, 53);
+            this.chkEliminar.Location = new System.Drawing.Point(199, 12);
             this.chkEliminar.Name = "chkEliminar";
             this.chkEliminar.Size = new System.Drawing.Size(60, 18);
             this.chkEliminar.TabIndex = 8;
@@ -459,7 +460,7 @@
             // 
             // chkEditar
             // 
-            this.chkEditar.Location = new System.Drawing.Point(146, 53);
+            this.chkEditar.Location = new System.Drawing.Point(144, 12);
             this.chkEditar.Name = "chkEditar";
             this.chkEditar.Size = new System.Drawing.Size(49, 18);
             this.chkEditar.TabIndex = 7;
@@ -469,7 +470,7 @@
             // 
             // chkAgregar
             // 
-            this.chkAgregar.Location = new System.Drawing.Point(80, 53);
+            this.chkAgregar.Location = new System.Drawing.Point(78, 12);
             this.chkAgregar.Name = "chkAgregar";
             this.chkAgregar.Size = new System.Drawing.Size(60, 18);
             this.chkAgregar.TabIndex = 6;
@@ -489,7 +490,7 @@
             this.radCommandBar2.RootElement.FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent;
             this.radCommandBar2.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement2});
-            this.radCommandBar2.Size = new System.Drawing.Size(340, 56);
+            this.radCommandBar2.Size = new System.Drawing.Size(340, 81);
             this.radCommandBar2.TabIndex = 1;
             ((Telerik.WinControls.UI.RadCommandBarElement)(this.radCommandBar2.GetChildAt(0))).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
             // 
@@ -704,7 +705,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(802, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(802, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarStripElement4

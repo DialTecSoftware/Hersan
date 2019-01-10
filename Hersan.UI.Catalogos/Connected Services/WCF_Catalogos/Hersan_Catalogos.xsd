@@ -39,27 +39,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="TiposContrato_Obtener">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="TiposContrato_ObtenerResponse">
+  <xs:element name="ABCDEpartamentos_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="TiposContrato_ObtenerResult" nillable="true" type="q4:ArrayOfTiposContratoBE" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q4:DepartamentosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCPuestos_Obtener">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ABCPuestos_ObtenerResponse">
+  <xs:element name="ABCDEpartamentos_GuardarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABCPuestos_ObtenerResult" nillable="true" type="q5:ArrayOfPuestosBE" />
+        <xs:element minOccurs="0" name="ABCDEpartamentos_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCDEpartamentos_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q5:DepartamentosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCDEpartamentos_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABCDEpartamentos_ActualizarResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

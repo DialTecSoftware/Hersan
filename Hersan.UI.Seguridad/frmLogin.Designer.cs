@@ -82,7 +82,7 @@
             this.rtxtContrasenia.Name = "rtxtContrasenia";
             this.rtxtContrasenia.PasswordChar = '*';
             this.rtxtContrasenia.Size = new System.Drawing.Size(172, 20);
-            this.rtxtContrasenia.TabIndex = 3;
+            this.rtxtContrasenia.TabIndex = 2;
             this.rtxtContrasenia.ThemeName = "Windows7";
             this.rtxtContrasenia.Enter += new System.EventHandler(this.rtxtContrasenia_Enter);
             // 
@@ -92,7 +92,7 @@
             this.rtxtUsuario.MaxLength = 15;
             this.rtxtUsuario.Name = "rtxtUsuario";
             this.rtxtUsuario.Size = new System.Drawing.Size(172, 20);
-            this.rtxtUsuario.TabIndex = 2;
+            this.rtxtUsuario.TabIndex = 1;
             this.rtxtUsuario.ThemeName = "Windows7";
             this.rtxtUsuario.Enter += new System.EventHandler(this.rtxtUsuario_Enter);
             // 
@@ -115,7 +115,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(66, 16);
             this.lblUsuario.TabIndex = 8;
             this.lblUsuario.Text = "Usuario:";
-            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // pictureBox1
             // 
@@ -143,7 +142,7 @@
             this.cboEmpresas.Location = new System.Drawing.Point(238, 19);
             this.cboEmpresas.Name = "cboEmpresas";
             this.cboEmpresas.Size = new System.Drawing.Size(172, 20);
-            this.cboEmpresas.TabIndex = 1;
+            this.cboEmpresas.TabIndex = 3;
             // 
             // frmLogin
             // 

@@ -29,7 +29,7 @@ namespace Hersan.UI.Principal
                 }                
             }
             catch (Exception ex){
-                throw ex;
+                RadMessageBox.Show("Ha ocurrido un error\n"+ ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void cargaMenuPrincipal()

@@ -31,7 +31,7 @@ namespace Hersan.Datos.Catalogos
                                 obj.Id = int.Parse(reader["COM_ID"].ToString());
                                 obj.Nombre = reader["COM_Nombre"].ToString();
                                 obj.Abrev = reader["COM_Abrev"].ToString();
-                                obj.Descripcion = reader["COM_Descripcion"].ToString();
+                                
                                 obj.AniosExp = int.Parse(reader["COM_AniosExp"].ToString());
 
                                 oList.Add(obj);

@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompetencias.Designer.cs">
+      <DependentUpon>frmCompetencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDepartamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCompetencias.resx">
+      <DependentUpon>frmCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDepartamentos.resx">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,12 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Connected Services\WCF_Catalogos\Hersan.UI.Catalogos.WCF_Catalogos.DepartamentosBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\WCF_Catalogos\Hersan.UI.Catalogos.WCF_Catalogos.EmpresasBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos.wsdl" />
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos.xsd">
       <SubType>Designer</SubType>
@@ -125,6 +128,8 @@
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WCF_Catalogos\" />
@@ -148,6 +153,10 @@
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
       <Project>{4E3994EF-5056-4289-9C62-DC1140FD764E}</Project>
       <Name>Hersan.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.Negocio\Hersan.Negocio.csproj">
+      <Project>{9DC9D350-B0E3-4481-AC7A-DBE3729C8955}</Project>
+      <Name>Hersan.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

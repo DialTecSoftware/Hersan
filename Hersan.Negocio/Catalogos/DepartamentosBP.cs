@@ -14,5 +14,13 @@ namespace Hersan.Negocio.Catalogos
         {
             return new DepartamentosDA().ABCDepartamentos_Obtener();
         }
+        public int ABCDEpartamentos_Guardar(DepartamentosBE obj)
+        {
+            return new DepartamentosDA().ABCDEpartamentos_Guardar(obj);
+        }
+        public int ABCDEpartamentos_Actualizar(DepartamentosBE obj)
+        {
+            return new DepartamentosDA().ABCDEpartamentos_Actualizar(obj);
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace Hersan.UI.Seguridad
     public partial class frmPerfiles : Telerik.WinControls.UI.RadForm
     {
         #region Variables
-        WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();        
+        WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();
+        WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
         private int Id = 0;
         private List<MenusBE> lstMnu;
         private bool EsCambio = true;
@@ -30,6 +31,7 @@ namespace Hersan.UI.Seguridad
             try
             {
                 EsCambio = false;
+                ObtenerEmpresas();
                 cargaGrid();
             }
             catch (Exception ex)
@@ -44,8 +46,8 @@ namespace Hersan.UI.Seguridad
                 Id = int.Parse(e.CurrentRow.Cells["ID"].Value.ToString());
                 rtxtNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
                 rchkActivo.Checked = (bool)e.CurrentRow.Cells["Activo"].Value;
-
-                CargaPermisos();
+                MuestraPermisos();
+                //CargaPermisos();
                 EsCambio = false;
             }
             catch
@@ -106,7 +108,8 @@ namespace Hersan.UI.Seguridad
         {
             try
             {
-                CargaPermisos();
+                MuestraPermisos();
+                    //CargaPermisos();
                 EsCambio = false;
             }
             catch
@@ -117,7 +120,8 @@ namespace Hersan.UI.Seguridad
         {
             try
             {
-                CargaPermisos();
+                MuestraPermisos();
+                //CargaPermisos();
                 EsCambio = false;
             }
             catch
@@ -186,7 +190,8 @@ namespace Hersan.UI.Seguridad
                     lstM.Add(obj);
                     //wcf.GuardaMenuRol(lstM, Id, int.Parse(cboAplicacion.SelectedValue.ToString()));
                     wcf.GuardaMenuRol(lstM, Id, 0);
-                    CargaPermisos();
+                    MuestraPermisos(); 
+                    //CargaPermisos();
                 }
                 EsCambio = true;
             }
@@ -314,7 +319,8 @@ namespace Hersan.UI.Seguridad
         }
         private void cboAplicacion_SelectedIndexChanged_1(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-            CargaPermisos();
+            MuestraPermisos();
+            //CargaPermisos();
         }
         private void frmPerfiles_Shown(object sender, EventArgs e)
         {
@@ -372,23 +378,24 @@ namespace Hersan.UI.Seguridad
             List<RolesBE> roles = wcf.ObtieneRoles(Empresa);
             rgvPerfiles.DataSource = roles;
         }
-        private void CargaPermisos()
-        {
-            try { 
-                lstMnu = wcf.ObtenerMenuRol(Id, 0, 0);
+        //private void CargaPermisos()
+        //{
+        //    try { 
+        //        //lstMnu = wcf.ObtenerMenuRol(Id, 0, 0);
 
-                cboEmpresas.DisplayMember = "Menu";
-                cboEmpresas.ValueMember = "ID";
-                cboEmpresas.DataSource = lstMnu;
-                cboEmpresas.Enabled = false;
+        //        //cboEmpresas.DisplayMember = "Menu";
+        //        //cboEmpresas.ValueMember = "ID";
+        //        //cboEmpresas.DataSource = lstMnu;
+        //        //cboEmpresas.Enabled = false;
 
-                MuestraPermisos();
-            }catch {
-                RadMessageBox.Show("CargaPermisos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+        //        MuestraPermisos();
+        //    }catch {
+        //        RadMessageBox.Show("CargaPermisos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+        //    }
+        //}
         private void MuestraPermisos()
         {
+            lstMnu = wcf.ObtenerMenuRol(Id, 0, 0);
             try
             {
                 rtvPermisos.ChildMember = "ID";
@@ -407,11 +414,11 @@ namespace Hersan.UI.Seguridad
                     {
                         nodo.Checked = mnu.Asignado;
 
-                        //string Permisos = string.Empty;
-                        //string Proc = string.Empty;
-                        //Permisos = mnu.PuedeAgregar ? "Agregar" : "";
-                        //Permisos += mnu.PuedeEditar ? ", Editar" : "";
-                        //Permisos += mnu.PuedeEliminar ? ", Eliminar" : "";
+                        string Permisos = string.Empty;
+                        string Proc = string.Empty;
+                        Permisos = mnu.PuedeAgregar ? "Agregar" : "";
+                        Permisos += mnu.PuedeEditar ? ", Editar" : "";
+                        Permisos += mnu.PuedeEliminar ? ", Eliminar" : "";
 
                         //Permisos = Permisos.TrimStart(',').Trim();
                         mnu.Menu = mnu.Auxiliar;
@@ -421,8 +428,8 @@ namespace Hersan.UI.Seguridad
                         //} else {
                         int IdMenu = int.Parse(nodo.Value.ToString());
                         //}
-                        //nodo.Text = string.Format("{0} ({1}) {2}", mnu.Menu, Permisos, Proc);
-                        nodo.Text = string.Format("{0}", mnu.Menu);
+                        nodo.Text = string.Format("{0} ({1}) {2}", mnu.Menu, Permisos, Proc);
+                        //nodo.Text = string.Format("{0}", mnu.Menu);
                     }
                     string st = string.Empty;
                 }
@@ -441,6 +448,20 @@ namespace Hersan.UI.Seguridad
             chkEliminar.Checked = false;
             txtMenu.Text = string.Empty;
             txtNodo.Text = string.Empty;
+        }
+        private void ObtenerEmpresas()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboEmpresas.DataSource = oCatalogos.ABCEmpresas_Cbo();
+                cboEmpresas.DisplayMember = "NombreComercial";
+                cboEmpresas.ValueMember = "Id";
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar las empresas:" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            } finally {
+                oCatalogos = null;
+            }
+
         }
         #endregion
     }

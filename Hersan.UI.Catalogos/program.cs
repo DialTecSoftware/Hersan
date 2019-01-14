@@ -11,7 +11,7 @@ namespace Hersan.UI.Catalogos {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPuestos());
+            Application.Run(new frmTiposContrato());
         }
     }
 }

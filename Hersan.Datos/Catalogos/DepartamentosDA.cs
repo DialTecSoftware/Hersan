@@ -10,7 +10,7 @@ namespace Hersan.Datos.Catalogos
     {
         #region Constantes
         const string CONST_ABC_DEPARTAMENTOS_OBTENER = "ABC_Departamentos_Obtener";
-        const string CONST_ABC_DEPARTAMENTOS_GUARDAR = "ABC_Departamentos_Guardar";
+        const string CONST_ABC_DEPARTAMENTOS_GUARDAR = "ABC_Departamentos_Guarda";
         const string CONST_ABC_DEPARTAMENTOS_ACTUALIZA = "ABC_Departamentos_Actualiza";
         #endregion
 

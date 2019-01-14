@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Catalogos;
+﻿using Hersan.Entidades.CapitalHumano;
+using Hersan.Entidades.Catalogos;
 using System.Collections.Generic;
 using System.ServiceModel;
 
@@ -31,6 +32,12 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         List<TiposContratoBE> TiposContrato_Obtener();
 
+        [OperationContract]
+        int ABCTiposContrato_Guardar(TiposContratoBE obj);
+
+        [OperationContract]
+        int ABCTiposContrato_Actualizar(TiposContratoBE obj);
+
         #endregion
 
         #region Puestos
@@ -39,6 +46,18 @@ namespace Hersan.Catalogos.Contract
 
         #endregion
 
-      
+        #region Competencias
+        [OperationContract]
+        List<CompetenciasBE> ABCCompetencias_Obtener();
+
+        [OperationContract]
+        int ABC_Competencias_Guardar(CompetenciasBE obj);
+
+        [OperationContract]
+        int ABCCompetencias_Actualizar(CompetenciasBE obj);
+
+        #endregion
+
+
     }
 }

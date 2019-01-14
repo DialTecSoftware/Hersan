@@ -45,7 +45,8 @@ namespace Hersan.UI.Catalogos
                 obj.Nombre = txtNombre.Text;
                 obj.Abrev = txtAbrev.Text;
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                obj.DatosUsuario.IdUsuarioCreo = 1;
 
                 //PROCESO DE GUARDADO Y ACTUALIZACION
                 if (txtId.Text == "0") {
@@ -68,7 +69,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                throw ex;
+                throw ;
             } finally {
                 oCatalogos = null;
             }
@@ -145,6 +146,11 @@ namespace Hersan.UI.Catalogos
             } catch (Exception ex) {
                 throw;
             }
+        }
+
+        private void gvDatos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

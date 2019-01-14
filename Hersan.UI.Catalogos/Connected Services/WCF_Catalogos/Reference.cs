@@ -44,6 +44,48 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCDEpartamentos_ActualizarAsync(Hersan.Entidades.Catalogos.DepartamentosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/TiposContrato_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE> TiposContrato_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/TiposContrato_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>> TiposContrato_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_GuardarResponse")]
+        int ABCTiposContrato_Guardar(Hersan.Entidades.Catalogos.TiposContratoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABCTiposContrato_GuardarAsync(Hersan.Entidades.Catalogos.TiposContratoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_ActualizarResponse")]
+        int ABCTiposContrato_Actualizar(Hersan.Entidades.Catalogos.TiposContratoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCTiposContrato_ActualizarAsync(Hersan.Entidades.Catalogos.TiposContratoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> ABCPuestos_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> ABCPuestos_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE>> ABCCompetencias_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Competencias_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Competencias_GuardarResponse")]
+        int ABC_Competencias_Guardar(Hersan.Entidades.CapitalHumano.CompetenciasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Competencias_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Competencias_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABC_Competencias_GuardarAsync(Hersan.Entidades.CapitalHumano.CompetenciasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ActualizarResponse")]
+        int ABCCompetencias_Actualizar(Hersan.Entidades.CapitalHumano.CompetenciasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCCompetencias_ActualizarAsync(Hersan.Entidades.CapitalHumano.CompetenciasBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +153,62 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<int> ABCDEpartamentos_ActualizarAsync(Hersan.Entidades.Catalogos.DepartamentosBE obj) {
             return base.Channel.ABCDEpartamentos_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE> TiposContrato_Obtener() {
+            return base.Channel.TiposContrato_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>> TiposContrato_ObtenerAsync() {
+            return base.Channel.TiposContrato_ObtenerAsync();
+        }
+        
+        public int ABCTiposContrato_Guardar(Hersan.Entidades.Catalogos.TiposContratoBE obj) {
+            return base.Channel.ABCTiposContrato_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCTiposContrato_GuardarAsync(Hersan.Entidades.Catalogos.TiposContratoBE obj) {
+            return base.Channel.ABCTiposContrato_GuardarAsync(obj);
+        }
+        
+        public int ABCTiposContrato_Actualizar(Hersan.Entidades.Catalogos.TiposContratoBE obj) {
+            return base.Channel.ABCTiposContrato_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCTiposContrato_ActualizarAsync(Hersan.Entidades.Catalogos.TiposContratoBE obj) {
+            return base.Channel.ABCTiposContrato_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> ABCPuestos_Obtener() {
+            return base.Channel.ABCPuestos_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> ABCPuestos_ObtenerAsync() {
+            return base.Channel.ABCPuestos_ObtenerAsync();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener() {
+            return base.Channel.ABCCompetencias_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE>> ABCCompetencias_ObtenerAsync() {
+            return base.Channel.ABCCompetencias_ObtenerAsync();
+        }
+        
+        public int ABC_Competencias_Guardar(Hersan.Entidades.CapitalHumano.CompetenciasBE obj) {
+            return base.Channel.ABC_Competencias_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABC_Competencias_GuardarAsync(Hersan.Entidades.CapitalHumano.CompetenciasBE obj) {
+            return base.Channel.ABC_Competencias_GuardarAsync(obj);
+        }
+        
+        public int ABCCompetencias_Actualizar(Hersan.Entidades.CapitalHumano.CompetenciasBE obj) {
+            return base.Channel.ABCCompetencias_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCCompetencias_ActualizarAsync(Hersan.Entidades.CapitalHumano.CompetenciasBE obj) {
+            return base.Channel.ABCCompetencias_ActualizarAsync(obj);
         }
     }
 }

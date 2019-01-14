@@ -17,6 +17,7 @@ namespace Hersan.Entidades.CapitalHumano
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public int Experiencia { get; set; }
+        public int Ponderacion { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
 }

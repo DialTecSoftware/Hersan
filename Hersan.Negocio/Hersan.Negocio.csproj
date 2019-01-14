@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseWinBP.cs" />
-    <Compile Include="Catalogos\CompetenciasBP.cs" />
+    <Compile Include="CapitalHumano\CompetenciasBP.cs" />
     <Compile Include="Catalogos\DepartamentosBP.cs" />
     <Compile Include="Catalogos\EmpresasBP.cs" />
     <Compile Include="Catalogos\PuestosBP.cs" />
@@ -66,8 +66,6 @@
       <Name>Hersan.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CapitalHumano\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

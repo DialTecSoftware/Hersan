@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Catalogos;
+﻿using Hersan.Entidades.CapitalHumano;
+using Hersan.Entidades.Catalogos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +13,9 @@ namespace Hersan.Datos.Catalogos
     public class CompetenciasDA : BaseDA
     {
         #region Constantes
-        const string CONST_USP_ABC_COMPETENCIAS_OBTENER = "USP_ABC_Competencias_Obtener";
+        const string CONST_USP_ABC_COMPETENCIAS_OBTENER = "ABC_Competencias_Obtener";
+        const string CONST_ABC_COMPETENCIAS_GUARDAR = "ABC_Competencias_Guarda";
+        const string CONST_ABC_COMPETENCIAS_ACTUALIZA = "ABC_Competencias_Actualiza";
         #endregion
 
         public List<CompetenciasBE> ABCCompetencias_Obtener()
@@ -30,9 +33,11 @@ namespace Hersan.Datos.Catalogos
 
                                 obj.Id = int.Parse(reader["COM_ID"].ToString());
                                 obj.Nombre = reader["COM_Nombre"].ToString();
-                                obj.Abrev = reader["COM_Abrev"].ToString();
-                                
-                                obj.AniosExp = int.Parse(reader["COM_AniosExp"].ToString());
+                                obj.Descripcion = reader["COM_Descripcion"].ToString();
+                                obj.Ponderacion= int.Parse(reader["COM_Ponderacion"].ToString());
+                                obj.Experiencia = int.Parse(reader["COM_AniosExp"].ToString());
+                                obj.DatosUsuario.Estatus = bool.Parse(reader["COM_Estatus"].ToString());
+
 
                                 oList.Add(obj);
                             }
@@ -44,6 +49,59 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
+
+        public int ABC_Competencias_Guardar(CompetenciasBE obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_COMPETENCIAS_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                        cmd.Parameters.AddWithValue("@AniosExp", obj.Experiencia);
+                        cmd.Parameters.AddWithValue("@Ponderacion", obj.Ponderacion);
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                
+throw ex;
+            }
+        }
+
+
+        public int ABCCompetencias_Actualizar(CompetenciasBE obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_COMPETENCIAS_ACTUALIZA, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", obj.Id);
+                        cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                        cmd.Parameters.AddWithValue("@Ponderacion", obj.Ponderacion);
+                        cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
     }
+
+
 }
+
+
 

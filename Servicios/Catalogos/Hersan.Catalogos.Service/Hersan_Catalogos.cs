@@ -1,4 +1,5 @@
 ﻿using Hersan.Catalogos.Contract;
+using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
 using Hersan.Negocio.Catalogos;
 using System.Collections.Generic;
@@ -31,16 +32,21 @@ namespace Hersan.Catalogos.Service
         {
             return new DepartamentosBP().ABCDEpartamentos_Actualizar(obj);
         }
-        public List<DepartamentosBE> ABCDepartamentos_Combo()
-        {
-            return new DepartamentosBP().ABCDepartamentos_Combo();
-        }
         #endregion
 
-        #region Tipos Contratos
+        #region TiposContrato
         public List<TiposContratoBE> TiposContrato_Obtener()
         {
             return new TiposContratoBP().TiposContrato_Obtener();
+        }
+        public int ABCTiposContrato_Guardar(TiposContratoBE obj)
+        {
+            return new TiposContratoBP().ABCTiposContrato_Guardar(obj);
+        }
+
+        public int ABCTiposContrato_Actualizar(TiposContratoBE obj)
+        {
+            return new TiposContratoBP().ABCTiposContrato_Actualizar(obj);
         }
         #endregion
 
@@ -49,15 +55,25 @@ namespace Hersan.Catalogos.Service
         {
             return new PuestosBP().ABCPuestos_Obtener();
         }
-        public int ABCPuestos_Guardar(PuestosBE obj)
+        #endregion
+
+         #region Competencias
+        public List<CompetenciasBE> ABCCompetencias_Obtener()
         {
-            return new PuestosBP().ABCPuestos_Guardar(obj);
+            return new CompetenciasBP().ABCCompetencias_Obtener();
         }
-        public int ABCPuestos_Actualizar(PuestosBE obj)
+
+        public int ABC_Competencias_Guardar(CompetenciasBE obj)
         {
-            return new PuestosBP().ABCPuestos_Actualizar(obj);
+            return new CompetenciasBP().ABC_Competencias_Guardar(obj);
+        }
+
+        public int ABCCompetencias_Actualizar(CompetenciasBE obj)
+        {
+            return new CompetenciasBP().ABCCompetencias_Actualizar(obj);
         }
         #endregion
+
 
 
     }

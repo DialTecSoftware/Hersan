@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
   <xs:element name="ABCEmpresas_Obtener">
     <xs:complexType>
       <xs:sequence>
@@ -67,18 +68,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCDepartamentos_Combo">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ABCDepartamentos_ComboResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABCDepartamentos_ComboResult" nillable="true" type="q6:ArrayOfDepartamentosBE" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="TiposContrato_Obtener">
     <xs:complexType>
       <xs:sequence />
@@ -87,7 +76,35 @@
   <xs:element name="TiposContrato_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="TiposContrato_ObtenerResult" nillable="true" type="q7:ArrayOfTiposContratoBE" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="TiposContrato_ObtenerResult" nillable="true" type="q6:ArrayOfTiposContratoBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCTiposContrato_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q7:TiposContratoBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCTiposContrato_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABCTiposContrato_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCTiposContrato_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q8:TiposContratoBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCTiposContrato_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABCTiposContrato_ActualizarResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -99,35 +116,47 @@
   <xs:element name="ABCPuestos_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABCPuestos_ObtenerResult" nillable="true" type="q8:ArrayOfPuestosBE" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABCPuestos_ObtenerResult" nillable="true" type="q9:ArrayOfPuestosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCPuestos_Guardar">
+  <xs:element name="ABCCompetencias_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCCompetencias_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q9:PuestosBE" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="ABCCompetencias_ObtenerResult" nillable="true" type="q10:ArrayOfCompetenciasBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCPuestos_GuardarResponse">
+  <xs:element name="ABC_Competencias_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ABCPuestos_GuardarResult" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q11:CompetenciasBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCPuestos_Actualizar">
+  <xs:element name="ABC_Competencias_GuardarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q10:PuestosBE" />
+        <xs:element minOccurs="0" name="ABC_Competencias_GuardarResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCPuestos_ActualizarResponse">
+  <xs:element name="ABCCompetencias_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ABCPuestos_ActualizarResult" type="xs:int" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q12:CompetenciasBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCCompetencias_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABCCompetencias_ActualizarResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

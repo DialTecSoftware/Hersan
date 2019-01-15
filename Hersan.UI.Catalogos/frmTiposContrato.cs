@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hersan.Entidades.Catalogos;
+using Hersan.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +34,7 @@ namespace Hersan.UI.Catalogos
         public void Cargar_TiposContrato()
         {
             try {
-                dgvTiposContrato.DataSource = oCatalogo.TiposContrato_Obtener();
+                gvDatos.DataSource = oCatalogo.TiposContrato_Obtener();
             } catch (Exception ex) {
                 throw ex;
             }
@@ -46,13 +48,124 @@ namespace Hersan.UI.Catalogos
 
         private void btn_TCONuevo_Click(object sender, EventArgs e)
         {
-
+            try {
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
 
         private void btn_TCOSalir_Click(object sender, EventArgs e)
         {
             try {
                 this.Close();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
+        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
+        {
+
+        }
+
+        private void gvDatos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void LimpiarCampos()
+        {
+            try {
+                txtNombre_TCO.Text = string.Empty;
+                txtId_TCO.Text = "0";
+                txtAbrev_TCO.Text = string.Empty;
+                chkEstatus.Checked = false;
+            } catch (Exception ex) {
+                throw;
+            }
+        }
+
+        private void btn_TCOGuardar_Click(object sender, EventArgs e)
+        {
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+            TiposContratoBE obj = new TiposContratoBE();
+            try {
+                obj.Id = int.Parse(txtId_TCO.Text);
+                obj.Nombre = txtNombre_TCO.Text;
+                obj.Abrev = txtAbrev_TCO.Text;
+                obj.DatosUsuario.Estatus = chkEstatus.Checked;
+                //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                obj.DatosUsuario.IdUsuarioCreo = 1;
+
+                //PROCESO DE GUARDADO Y ACTUALIZACION
+                if (txtId_TCO.Text == "0") {
+                    int Result = oCatalogo.ABCTiposContrato_Guardar(obj);
+                    if (Result == 0) {
+                        RadMessageBox.Show("Ocurrió un error al guardar el departamento", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    } else {
+                        RadMessageBox.Show("Departamento guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        LimpiarCampos();
+                        Cargar_TiposContrato();
+                    }
+                } else {
+                    int Result = oCatalogo.ABCTiposContrato_Actualizar(obj);
+                    if (Result == 0) {
+                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    } else {
+                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        LimpiarCampos();
+                        Cargar_TiposContrato();
+                    }
+                }
+            } catch (Exception ex) {
+                throw;
+            } finally {
+                oCatalogo = null;
+            }
+        }
+
+        private void btn_TCOEliminar_Click(object sender, EventArgs e)
+        {
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+            TiposContratoBE obj = new TiposContratoBE();
+            try {
+                if (chkEstatus.Checked) {
+                    if (RadMessageBox.Show("Esta acción dará de baja el departamento\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                        obj.Id = int.Parse(txtId_TCO.Text);
+                        obj.Nombre = txtNombre_TCO.Text;
+                        obj.Abrev = txtAbrev_TCO.Text;
+                        obj.DatosUsuario.Estatus = false;
+                        //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                        obj.DatosUsuario.IdUsuarioCreo = 2;
+
+                        int Result = oCatalogo.ABCTiposContrato_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            Cargar_TiposContrato();
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogo = null;
+            }
+        }
+
+        private void gvDatos_CurrentRowChanged_1(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
+        {
+            try {
+                if (gvDatos.RowCount > 0) {
+                    txtId_TCO.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
+                    txtNombre_TCO.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
+                    txtAbrev_TCO.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Abrev"].Value.ToString();
+                    chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
+                }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }

@@ -28,10 +28,28 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> ObtenerMenuRolAsync(int Rol, int Padre, int Menu);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/GuardaMenuRol", ReplyAction="http://tempuri.org/IHersan_Seguridad/GuardaMenuRolResponse")]
-        void GuardaMenuRol(System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> lstMnu, int Rol, int Menu);
+        int GuardaMenuRol(System.Data.DataTable oTabla);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/GuardaMenuRol", ReplyAction="http://tempuri.org/IHersan_Seguridad/GuardaMenuRolResponse")]
-        System.Threading.Tasks.Task GuardaMenuRolAsync(System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> lstMnu, int Rol, int Menu);
+        System.Threading.Tasks.Task<int> GuardaMenuRolAsync(System.Data.DataTable oTabla);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenus", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtenerMenusResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> ObtenerMenus();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenus", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtenerMenusResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> ObtenerMenusAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/MenusPadre_Combo", ReplyAction="http://tempuri.org/IHersan_Seguridad/MenusPadre_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> MenusPadre_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/MenusPadre_Combo", ReplyAction="http://tempuri.org/IHersan_Seguridad/MenusPadre_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> MenusPadre_ComboAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/Menu_Guardar", ReplyAction="http://tempuri.org/IHersan_Seguridad/Menu_GuardarResponse")]
+        int Menu_Guardar(Hersan.Entidades.Seguridad.MenusBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/Menu_Guardar", ReplyAction="http://tempuri.org/IHersan_Seguridad/Menu_GuardarResponse")]
+        System.Threading.Tasks.Task<int> Menu_GuardarAsync(Hersan.Entidades.Seguridad.MenusBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ValidaUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ValidaUsuarioResponse")]
         Hersan.Entidades.Seguridad.ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa);
@@ -155,12 +173,36 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
             return base.Channel.ObtenerMenuRolAsync(Rol, Padre, Menu);
         }
         
-        public void GuardaMenuRol(System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> lstMnu, int Rol, int Menu) {
-            base.Channel.GuardaMenuRol(lstMnu, Rol, Menu);
+        public int GuardaMenuRol(System.Data.DataTable oTabla) {
+            return base.Channel.GuardaMenuRol(oTabla);
         }
         
-        public System.Threading.Tasks.Task GuardaMenuRolAsync(System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> lstMnu, int Rol, int Menu) {
-            return base.Channel.GuardaMenuRolAsync(lstMnu, Rol, Menu);
+        public System.Threading.Tasks.Task<int> GuardaMenuRolAsync(System.Data.DataTable oTabla) {
+            return base.Channel.GuardaMenuRolAsync(oTabla);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> ObtenerMenus() {
+            return base.Channel.ObtenerMenus();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> ObtenerMenusAsync() {
+            return base.Channel.ObtenerMenusAsync();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> MenusPadre_Combo() {
+            return base.Channel.MenusPadre_Combo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> MenusPadre_ComboAsync() {
+            return base.Channel.MenusPadre_ComboAsync();
+        }
+        
+        public int Menu_Guardar(Hersan.Entidades.Seguridad.MenusBE obj) {
+            return base.Channel.Menu_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> Menu_GuardarAsync(Hersan.Entidades.Seguridad.MenusBE obj) {
+            return base.Channel.Menu_GuardarAsync(obj);
         }
         
         public Hersan.Entidades.Seguridad.ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa) {

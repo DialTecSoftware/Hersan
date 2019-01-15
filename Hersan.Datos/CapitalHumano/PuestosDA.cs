@@ -3,35 +3,39 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Hersan.Datos.Catalogos
 {
-    public class DepartamentosDA : BaseDA
+  public  class PuestosDA:BaseDA
     {
         #region Constantes
-        const string CONST_ABC_DEPARTAMENTOS_OBTENER = "ABC_Departamentos_Obtener";
-        const string CONST_ABC_DEPARTAMENTOS_GUARDAR = "ABC_Departamentos_Guardar";
-        const string CONST_ABC_DEPARTAMENTOS_ACTUALIZA = "ABC_Departamentos_Actualiza";
-        const string CONST_ABC_DEPARTAMENTOS_COMBO = "ABC_Departamentos_Combo";
+        const string CONST_USP_ABC_PUESTOS_OBTENER = "ABC_Puestos_Obtener";
+        const string CONST_USP_ABC_PUESTO_GUARDA = "ABC_Puesto_Guarda";
+        const string CONST_USP_ABC_PUESTO_ACTUALIZA = "ABC_Puesto_Actualiza";
         #endregion
 
-        public List<DepartamentosBE> ABCDepartamentos_Obtener()
+        public List<PuestosBE> ABCPuestos_Obtener()
         {
-            List<DepartamentosBE> oList = new List<DepartamentosBE>();
+            List<PuestosBE> oList = new List<PuestosBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_DEPARTAMENTOS_OBTENER, conn)) {
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ABC_PUESTOS_OBTENER, conn)) {
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
-                                DepartamentosBE obj = new DepartamentosBE();
+                                PuestosBE obj = new PuestosBE();
 
-                                obj.Id = int.Parse(reader["DEP_ID"].ToString());
-                                obj.Nombre = reader["DEP_Nombre"].ToString();
-                                obj.Abrev = reader["DEP_Abrev"].ToString();
-                                obj.DatosUsuario.Estatus = bool.Parse(reader["DEP_Estatus"].ToString());
+                                obj.Id = int.Parse(reader["PUE_Id"].ToString());                                
+                                obj.Nombre = reader["PUE_Nombre"].ToString();
+                                obj.Abrev = reader["PUE_Abrev"].ToString();
+                                obj.DatosUsuario.Estatus = bool.Parse(reader["PUE_Estatus"].ToString());
+                                obj.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
+                                obj.Departamentos.Nombre = reader["DEP_Nombre"].ToString();
 
                                 oList.Add(obj);
                             }
@@ -43,13 +47,14 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-        public int ABCDEpartamentos_Guardar(DepartamentosBE obj)
+        public int ABCPuestos_Guardar(PuestosBE obj)
         {
             int Result = 0;
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_DEPARTAMENTOS_GUARDAR, conn)) {
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ABC_PUESTO_GUARDA, conn)) {
+                        cmd.Parameters.AddWithValue("@IdDepto", obj.Departamentos.Id);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Abrev", obj.Abrev);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
@@ -63,14 +68,15 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-        public int ABCDEpartamentos_Actualizar(DepartamentosBE obj)
+        public int ABCPuestos_Actualizar(PuestosBE obj)
         {
             int Result = 0;
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_DEPARTAMENTOS_ACTUALIZA, conn)) {
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ABC_PUESTO_ACTUALIZA, conn)) {
                         cmd.Parameters.AddWithValue("@Id", obj.Id);
+                        cmd.Parameters.AddWithValue("@IdDepto", obj.Departamentos.Id);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Abrev", obj.Abrev);
                         cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
@@ -85,31 +91,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-        public List<DepartamentosBE> ABCDepartamentos_Combo()
-        {
-            List<DepartamentosBE> oList = new List<DepartamentosBE>();
-            try {
-                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_DEPARTAMENTOS_COMBO, conn)) {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        using (SqlDataReader reader = cmd.ExecuteReader()) {
-                            while (reader.Read()) {
-                                DepartamentosBE obj = new DepartamentosBE();
-
-                                obj.Id = int.Parse(reader["DEP_ID"].ToString());
-                                obj.Nombre = reader["DEP_Nombre"].ToString();
-
-                                oList.Add(obj);
-                            }
-                        }
-                    }
-                }
-                return oList;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
     }
 }
+

@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Catalogos;
+﻿using Hersan.Entidades.CapitalHumano;
+using Hersan.Entidades.Catalogos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,30 +10,30 @@ using System.Threading.Tasks;
 
 namespace Hersan.Datos.Catalogos
 {
-  public  class PuestosDA:BaseDA
+    public class CompetenciasDA : BaseDA
     {
-
         #region Constantes
-        const string CONST_USP_ABC_PUESTOS_OBTENER = "USP_ABC_Puestos_Obtener";
+        const string CONST_USP_ABC_COMPETENCIAS_OBTENER = "USP_ABC_Competencias_Obtener";
         #endregion
 
-        public List<PuestosBE> ABCPuestos_Obtener()
+        public List<CompetenciasBE> ABCCompetencias_Obtener()
         {
-            List<PuestosBE> oList = new List<PuestosBE>();
+            List<CompetenciasBE> oList = new List<CompetenciasBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ABC_PUESTOS_OBTENER, conn)) {
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ABC_COMPETENCIAS_OBTENER, conn)) {
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
-                                PuestosBE obj = new PuestosBE();
+                                CompetenciasBE obj = new CompetenciasBE();
 
-                                obj.Id_puesto = int.Parse(reader["PUE_Id"].ToString());
-                                obj.departamentos.Id= int.Parse(reader["DEP_Id"].ToString());
-                                obj.Nombre = reader["PUE_Nombre"].ToString();
-                                obj.Abrev = reader["PUE_Abrev"].ToString();
+                                obj.Id = int.Parse(reader["COM_ID"].ToString());
+                                obj.Nombre = reader["COM_Nombre"].ToString();
+                                //obj.Abrev = reader["COM_Abrev"].ToString();
+                                
+                                obj.Experiencia = int.Parse(reader["COM_AniosExp"].ToString());
 
                                 oList.Add(obj);
                             }

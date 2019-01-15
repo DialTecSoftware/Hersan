@@ -31,8 +31,16 @@ namespace Hersan.Seguridad.Contract
         /// <param name="Rol">Rol a asignar</param>
         /// <param name="Aplicacion">Aplicacion del menu</param>
         [OperationContract]
-        void GuardaMenuRol(List<MenusBE> lstMnu, int Rol, int Menu);
+        int GuardaMenuRol(System.Data.DataTable oTabla);
 
+        [OperationContract]
+        List<MenusBE> ObtenerMenus();
+
+        [OperationContract]
+        List<MenusBE> MenusPadre_Combo();
+
+        [OperationContract]
+        int Menu_Guardar(MenusBE obj);
         #endregion
 
         #region Validacion Usuario

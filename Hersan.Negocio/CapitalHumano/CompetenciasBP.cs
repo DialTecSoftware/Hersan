@@ -1,4 +1,5 @@
 ﻿using Hersan.Datos.Catalogos;
+using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
 using System;
 using System.Collections.Generic;

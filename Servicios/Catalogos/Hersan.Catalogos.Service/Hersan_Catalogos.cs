@@ -31,9 +31,13 @@ namespace Hersan.Catalogos.Service
         {
             return new DepartamentosBP().ABCDEpartamentos_Actualizar(obj);
         }
+        public List<DepartamentosBE> ABCDepartamentos_Combo()
+        {
+            return new DepartamentosBP().ABCDepartamentos_Combo();
+        }
         #endregion
 
-        #region Deptos
+        #region Tipos Contratos
         public List<TiposContratoBE> TiposContrato_Obtener()
         {
             return new TiposContratoBP().TiposContrato_Obtener();
@@ -45,8 +49,16 @@ namespace Hersan.Catalogos.Service
         {
             return new PuestosBP().ABCPuestos_Obtener();
         }
+        public int ABCPuestos_Guardar(PuestosBE obj)
+        {
+            return new PuestosBP().ABCPuestos_Guardar(obj);
+        }
+        public int ABCPuestos_Actualizar(PuestosBE obj)
+        {
+            return new PuestosBP().ABCPuestos_Actualizar(obj);
+        }
         #endregion
 
-    
+
     }
 }

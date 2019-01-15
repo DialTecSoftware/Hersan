@@ -14,5 +14,13 @@ namespace Hersan.Negocio.Catalogos
         {
             return new PuestosDA().ABCPuestos_Obtener();
         }
+        public int ABCPuestos_Guardar(PuestosBE obj)
+        {
+            return new PuestosDA().ABCPuestos_Guardar(obj);
+        }
+        public int ABCPuestos_Actualizar(PuestosBE obj)
+        {
+            return new PuestosDA().ABCPuestos_Actualizar(obj);
+        }
     }
 }

@@ -76,7 +76,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al actualizar la inforación\n"+ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -147,7 +147,7 @@ namespace Hersan.UI.Catalogos
                 cboDeptos.DisplayMember = "Nombre";
                 cboDeptos.DataSource = oCatalogo.ABCDepartamentos_Combo();
             } catch (Exception ex) {
-                throw;
+                RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }

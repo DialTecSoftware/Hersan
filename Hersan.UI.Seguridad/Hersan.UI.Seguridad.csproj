@@ -117,10 +117,14 @@
   <ItemGroup>
     <Content Include="llave_privada.xml" />
     <Content Include="llave_publica.xml" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
+    <None Include="Service References\WCF_Catalogos\Hersan_Catalogos4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WCF_Catalogos\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

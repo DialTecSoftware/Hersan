@@ -29,6 +29,7 @@
     <MetadataFile FileName="Hersan_Catalogos1.xsd" MetadataType="Schema" ID="090e9270-5fee-4afc-9a89-85aecab10657" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd2" />
     <MetadataFile FileName="Hersan_Catalogos.disco" MetadataType="Disco" ID="26fb66b8-2567-4233-8bef-9b7572b2859a" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?disco" />
     <MetadataFile FileName="Hersan_Catalogos2.xsd" MetadataType="Schema" ID="bf862e6c-98e1-46a8-9dc7-ada3ba052e15" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd1" />
+    <MetadataFile FileName="Hersan_Catalogos4.xsd" MetadataType="Schema" ID="c5f29e3f-2f55-4350-a516-f2c1ed9d1856" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" />
     <MetadataFile FileName="Hersan_Catalogos3.xsd" MetadataType="Schema" ID="b5543491-c0e7-4750-907b-f3fc3f97a050" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>

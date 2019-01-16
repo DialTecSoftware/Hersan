@@ -26,6 +26,7 @@
   <Metadata>
     <MetadataFile FileName="Hersan_Seguridad.xsd" MetadataType="Schema" ID="68a18c85-21c1-475a-a66a-c607277a0d12" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd2" />
     <MetadataFile FileName="Hersan_Seguridad1.xsd" MetadataType="Schema" ID="5c14eb90-6a56-4e18-b2bb-abe57b87ed6d" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd3" />
+    <MetadataFile FileName="Hersan_Seguridad5.xsd" MetadataType="Schema" ID="af616724-b1b8-4290-adab-c36e66a71a92" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd5" />
     <MetadataFile FileName="Hersan_Seguridad.disco" MetadataType="Disco" ID="fff51c59-5697-4b31-9f98-ddbc04eab6e1" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?disco" />
     <MetadataFile FileName="Hersan_Seguridad2.xsd" MetadataType="Schema" ID="7170b635-c077-45e5-831d-90e4ae331407" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd0" />
     <MetadataFile FileName="Hersan_Seguridad.wsdl" MetadataType="Wsdl" ID="dbb3bca6-3974-4d25-986c-8670faf17025" SourceId="1" SourceUrl="http://localhost:5462/Hersan_Seguridad.svc?wsdl" />

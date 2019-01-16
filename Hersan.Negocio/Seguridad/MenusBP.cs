@@ -53,145 +53,162 @@ namespace Hersan.Negocio.Seguridad
         /// Actualizar Menu_Rol Seleccionado
         /// </summary>
         /// <returns></returns>
-        public void GuardaMenuRol(List<MenusBE> lstMnu, int Rol, int Menu)
+        public int GuardaMenuRol(System.Data.DataTable oTabla)
         {
-            int IdMenu = 0;
-            int IdPadre = 0;
-            int IdPrimog = 0;
-            int oItemID = 0;
-            bool oItemActivo = false;
-            List<MenusBE> oList = new List<MenusBE>();
-            List<MenusBE> oListH = new List<MenusBE>();
-            List<MenusBE> oListTEMPH = new List<MenusBE>();
-            try
-            {
-                foreach (MenusBE oItem in lstMnu)
-                {
-                    //Actualiza el Registro Seleccionado
-                    oItemID = oItem.ID;
-                    oItemActivo = oItem.Activo;
+            return new MenusDA().GuardaMenuRol(oTabla);
 
-                    oList = new MenusDA().ObtenerMenuRol(Rol, oItem.ID, 0);
+            //int IdMenu = 0;
+            //int IdPadre = 0;
+            //int IdPrimog = 0;
+            //int oItemID = 0;
+            //bool oItemActivo = false;
+            //List<MenusBE> oList = new List<MenusBE>();
+            //List<MenusBE> oListH = new List<MenusBE>();
+            //List<MenusBE> oListTEMPH = new List<MenusBE>();
+            //try
+            //{
+            //    foreach (MenusBE oItem in lstMnu)
+            //    {
+            //        //Actualiza el Registro Seleccionado
+            //        oItemID = oItem.ID;
+            //        oItemActivo = oItem.Activo;
 
-                    IdMenu = oItem.ID;
-                    if (oItemActivo == true) { 
-                        new MenusDA().GuardaMenuRol(lstMnu, Rol, Menu);
-                    } else {                     
-                        new MenusDA().EliminaMenuRol(Rol, IdMenu);
-                    }
+            //        oList = new MenusDA().ObtenerMenuRol(Rol, oItem.ID, 0);
 
-                    //Si oItem.Activo = true (Seleccionado) , selecciona los Padres
-                    if (oItemActivo == true)
-                    {
-                        IdPadre = 0;
-                        oListH = new MenusDA().ObtenerMenuRol(Rol, 0, oItem.IDPadre);
-                        if (oListH.Count > 0 && oItem.IDPadre > 0)
-                        {
-                            foreach (MenusBE oItemP in oListH)
-                            {
-                                IdPadre = oItemP.IDPadre;
-                                IdPrimog = oItemP.ID;
-                                oListTEMPH = new List<MenusBE>();
-                                MenusBE objTempP = new MenusBE();
-                                objTempP.ID = oItemP.ID;
-                                objTempP.IDPadre = oItemP.IDPadre;
-                                objTempP.Menu = oItemP.Menu;
-                                objTempP.PuedeAgregar = false;
-                                objTempP.PuedeEditar = false;
-                                objTempP.PuedeEliminar = false;
-                                oListTEMPH.Add(objTempP);
-                                new MenusDA().GuardaMenuRol(oListTEMPH, Rol, Menu);
-                            }
-                            oListH = new MenusDA().ObtenerMenuRol(Rol, 0, IdPadre);
-                            if (oListH.Count > 0 && IdPadre > 0)
-                            {
-                                foreach (MenusBE oItemP in oListH)
-                                {
-                                    oListTEMPH = new List<MenusBE>();
-                                    MenusBE objTempP = new MenusBE();
-                                    objTempP.ID = oItemP.ID;
-                                    objTempP.IDPadre = oItemP.IDPadre;
-                                    objTempP.Menu = oItemP.Menu;
-                                    objTempP.PuedeAgregar = false;
-                                    objTempP.PuedeEditar = false;
-                                    objTempP.PuedeEliminar = false;
-                                    //objTempP.proceso = new ProcesosMenuBE();
-                                    //objTempP.proceso.ID = oItem.proceso.ID;
-                                    oListTEMPH.Add(objTempP);
-                                    new MenusDA().GuardaMenuRol(oListTEMPH, Rol, Menu);
-                                    break;
-                                }
-                            }
-                        }
+            //        IdMenu = oItem.ID;
+            //        if (oItemActivo == true) { 
+            //            new MenusDA().GuardaMenuRol(lstMnu, Rol, Menu);
+            //        } else {                     
+            //            new MenusDA().EliminaMenuRol(Rol, IdMenu);
+            //        }
 
-                    }
-                    // Fin de actualizacion de Lo Padres
+            //        //Si oItem.Activo = true (Seleccionado) , selecciona los Padres
+            //        if (oItemActivo == true)
+            //        {
+            //            IdPadre = 0;
+            //            oListH = new MenusDA().ObtenerMenuRol(Rol, 0, oItem.IDPadre);
+            //            if (oListH.Count > 0 && oItem.IDPadre > 0)
+            //            {
+            //                foreach (MenusBE oItemP in oListH)
+            //                {
+            //                    IdPadre = oItemP.IDPadre;
+            //                    IdPrimog = oItemP.ID;
+            //                    oListTEMPH = new List<MenusBE>();
+            //                    MenusBE objTempP = new MenusBE();
+            //                    objTempP.ID = oItemP.ID;
+            //                    objTempP.IDPadre = oItemP.IDPadre;
+            //                    objTempP.Menu = oItemP.Menu;
+            //                    objTempP.PuedeAgregar = false;
+            //                    objTempP.PuedeEditar = false;
+            //                    objTempP.PuedeEliminar = false;
+            //                    oListTEMPH.Add(objTempP);
+            //                    new MenusDA().GuardaMenuRol(oListTEMPH, Rol, Menu);
+            //                }
+            //                oListH = new MenusDA().ObtenerMenuRol(Rol, 0, IdPadre);
+            //                if (oListH.Count > 0 && IdPadre > 0)
+            //                {
+            //                    foreach (MenusBE oItemP in oListH)
+            //                    {
+            //                        oListTEMPH = new List<MenusBE>();
+            //                        MenusBE objTempP = new MenusBE();
+            //                        objTempP.ID = oItemP.ID;
+            //                        objTempP.IDPadre = oItemP.IDPadre;
+            //                        objTempP.Menu = oItemP.Menu;
+            //                        objTempP.PuedeAgregar = false;
+            //                        objTempP.PuedeEditar = false;
+            //                        objTempP.PuedeEliminar = false;
+            //                        //objTempP.proceso = new ProcesosMenuBE();
+            //                        //objTempP.proceso.ID = oItem.proceso.ID;
+            //                        oListTEMPH.Add(objTempP);
+            //                        new MenusDA().GuardaMenuRol(oListTEMPH, Rol, Menu);
+            //                        break;
+            //                    }
+            //                }
+            //            }
 
-                    //Actualiza los dependientes en descendente
+            //        }
+            //        // Fin de actualizacion de Lo Padres
 
-                    foreach (MenusBE oItemT in oList)
-                    {
-                        if (oList.Count > 0)
-                        {
-                            oListH = new MenusDA().ObtenerMenuRol(Rol, oItemT.ID, 0);
-                            IdMenu = oItemT.ID;
-                            if (oItemActivo == true)
-                            {
-                                oListTEMPH = new List<MenusBE>();
-                                MenusBE objTempH = new MenusBE();
-                                objTempH.ID = oItemT.ID;
-                                objTempH.IDPadre = oItemT.IDPadre;
-                                objTempH.Menu = oItemT.Menu;
-                                objTempH.PuedeAgregar = oItem.PuedeAgregar;
-                                objTempH.PuedeEditar = oItem.PuedeEditar;
-                                objTempH.PuedeEliminar = oItem.PuedeEliminar;
-                                //objTempH.proceso = new ProcesosMenuBE();
-                                //objTempH.proceso.ID = oItem.proceso.ID;
-                                oListTEMPH.Add(objTempH);
-                                new MenusDA().GuardaMenuRol(oListTEMPH, Rol, Menu);
-                            }
-                            else
-                            {
-                                new MenusDA().EliminaMenuRol(Rol, IdMenu);
-                            }
+            //        //Actualiza los dependientes en descendente
 
-                            foreach (MenusBE oItemH in oListH)
-                            {
-                                if (oListH.Count > 0)
-                                {
-                                    IdMenu = oItemH.ID;
-                                    if (oItemActivo == true)
-                                    {
-                                        oListTEMPH = new List<MenusBE>();
-                                        MenusBE objTempH = new MenusBE();
-                                        objTempH.ID = oItemH.ID;
-                                        objTempH.IDPadre = oItemH.IDPadre;
-                                        objTempH.Menu = oItemH.Menu;
-                                        objTempH.PuedeAgregar = oItem.PuedeAgregar;
-                                        objTempH.PuedeEditar = oItem.PuedeEditar;
-                                        objTempH.PuedeEliminar = oItem.PuedeEliminar;
-                                        //objTempH.proceso = new ProcesosMenuBE();
-                                        //objTempH.proceso.ID = oItem.proceso.ID;
-                                        oListTEMPH.Add(objTempH);
-                                        new MenusDA().GuardaMenuRol(oListTEMPH, Rol, Menu);
-                                    }
-                                    else
-                                    {
-                                        new MenusDA().EliminaMenuRol(Rol, IdMenu);
-                                    }
-                                }
-                            }
-                        }
+            //        foreach (MenusBE oItemT in oList)
+            //        {
+            //            if (oList.Count > 0)
+            //            {
+            //                oListH = new MenusDA().ObtenerMenuRol(Rol, oItemT.ID, 0);
+            //                IdMenu = oItemT.ID;
+            //                if (oItemActivo == true)
+            //                {
+            //                    oListTEMPH = new List<MenusBE>();
+            //                    MenusBE objTempH = new MenusBE();
+            //                    objTempH.ID = oItemT.ID;
+            //                    objTempH.IDPadre = oItemT.IDPadre;
+            //                    objTempH.Menu = oItemT.Menu;
+            //                    objTempH.PuedeAgregar = oItem.PuedeAgregar;
+            //                    objTempH.PuedeEditar = oItem.PuedeEditar;
+            //                    objTempH.PuedeEliminar = oItem.PuedeEliminar;
+            //                    //objTempH.proceso = new ProcesosMenuBE();
+            //                    //objTempH.proceso.ID = oItem.proceso.ID;
+            //                    oListTEMPH.Add(objTempH);
+            //                    new MenusDA().GuardaMenuRol(oListTEMPH, Rol, Menu);
+            //                }
+            //                else
+            //                {
+            //                    new MenusDA().EliminaMenuRol(Rol, IdMenu);
+            //                }
+
+            //                foreach (MenusBE oItemH in oListH)
+            //                {
+            //                    if (oListH.Count > 0)
+            //                    {
+            //                        IdMenu = oItemH.ID;
+            //                        if (oItemActivo == true)
+            //                        {
+            //                            oListTEMPH = new List<MenusBE>();
+            //                            MenusBE objTempH = new MenusBE();
+            //                            objTempH.ID = oItemH.ID;
+            //                            objTempH.IDPadre = oItemH.IDPadre;
+            //                            objTempH.Menu = oItemH.Menu;
+            //                            objTempH.PuedeAgregar = oItem.PuedeAgregar;
+            //                            objTempH.PuedeEditar = oItem.PuedeEditar;
+            //                            objTempH.PuedeEliminar = oItem.PuedeEliminar;
+            //                            //objTempH.proceso = new ProcesosMenuBE();
+            //                            //objTempH.proceso.ID = oItem.proceso.ID;
+            //                            oListTEMPH.Add(objTempH);
+            //                            new MenusDA().GuardaMenuRol(oListTEMPH, Rol, Menu);
+            //                        }
+            //                        else
+            //                        {
+            //                            new MenusDA().EliminaMenuRol(Rol, IdMenu);
+            //                        }
+            //                    }
+            //                }
+            //            }
 
 
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
 
+        }
+
+        public List<MenusBE> ObtenerMenus()
+        {
+            return new MenusDA().ObtenerMenus();
+        }
+
+        public List<MenusBE> MenusPadre_Combo()
+        {
+            return new MenusDA().MenusPadre_Combo();
+        }
+
+        public int Menu_Guardar(MenusBE obj)
+        {
+            return new MenusDA().Menu_Guardar(obj);
         }
     }
 }

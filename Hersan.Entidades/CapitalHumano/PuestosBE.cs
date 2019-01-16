@@ -12,16 +12,16 @@ namespace Hersan.Entidades.Catalogos
 
         public PuestosBE()
         {
-            Id_puesto = 0;
+            Id = 0;
             Nombre = string.Empty;
             Abrev = string.Empty;
             DatosUsuario = new GeneralBE();
-            departamentos = new DepartamentosBE();
+            Departamentos = new DepartamentosBE();
         }
-        public int Id_puesto { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Abrev { get; set; }
         public GeneralBE DatosUsuario { get; set; }
-        public DepartamentosBE departamentos { get; set; }
+        public DepartamentosBE Departamentos { get; set; }
     }
 }

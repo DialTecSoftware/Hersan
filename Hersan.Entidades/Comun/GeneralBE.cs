@@ -8,6 +8,7 @@ namespace Hersan.Entidades.Comun {
             FechaCreacion = DateTime.Today;
             IdUsuarioModif = 0;
             FechaModif = DateTime.Today;
+            Estatus = true;
         }
         
         public int IdUsuarioCreo { get; set; }

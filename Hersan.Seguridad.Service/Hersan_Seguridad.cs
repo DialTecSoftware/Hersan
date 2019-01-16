@@ -36,11 +36,24 @@ namespace Hersan.Seguridad.Service
         /// <param name="lstMnu">listado de menus</param>
         /// <param name="Rol">Rol a asignar</param>
         /// <param name="Aplicacion">Aplicacion del menu</param>
-        public void GuardaMenuRol(List<MenusBE> lstMnu, int Rol, int Menu)
+        public int GuardaMenuRol(System.Data.DataTable oTabla)
         {
-            new MenusBP().GuardaMenuRol(lstMnu, Rol, Menu);
+            return new MenusBP().GuardaMenuRol(oTabla);
         }
 
+        public List<MenusBE> ObtenerMenus()
+        {
+            return new MenusBP().ObtenerMenus();
+        }
+
+        public List<MenusBE> MenusPadre_Combo()
+        {
+            return new MenusBP().MenusPadre_Combo();
+        }
+        public int Menu_Guardar(MenusBE obj)
+        {
+            return new MenusBP().Menu_Guardar(obj);
+        }
         #endregion
 
         #region Validacion Usuario

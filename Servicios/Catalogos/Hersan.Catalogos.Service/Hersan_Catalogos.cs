@@ -1,7 +1,6 @@
 ﻿using Hersan.Catalogos.Contract;
 using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
-using Hersan.Negocio.CapitalHumano;
 using Hersan.Negocio.Catalogos;
 using System.Collections.Generic;
 
@@ -33,6 +32,10 @@ namespace Hersan.Catalogos.Service
         {
             return new DepartamentosBP().ABCDEpartamentos_Actualizar(obj);
         }
+        public List<DepartamentosBE> ABCDepartamentos_Combo()
+        {
+            return new DepartamentosBP().ABCDepartamentos_Combo();
+        }
         #endregion
 
         #region TiposContrato
@@ -44,6 +47,7 @@ namespace Hersan.Catalogos.Service
         {
             return new TiposContratoBP().ABCTiposContrato_Guardar(obj);
         }
+
         public int ABCTiposContrato_Actualizar(TiposContratoBE obj)
         {
             return new TiposContratoBP().ABCTiposContrato_Actualizar(obj);
@@ -54,6 +58,14 @@ namespace Hersan.Catalogos.Service
         public List<PuestosBE> ABCPuestos_Obtener()
         {
             return new PuestosBP().ABCPuestos_Obtener();
+        }
+        public int ABCPuestos_Guardar(PuestosBE obj)
+        {
+            return new PuestosBP().ABCPuestos_Guardar(obj);
+        }
+        public int ABCPuestos_Actualizar(PuestosBE obj)
+        {
+            return new PuestosBP().ABCPuestos_Actualizar(obj);
         }
         #endregion
 
@@ -72,41 +84,5 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
-        #region Entidades
-        public List<EntidadesBE> Entidades_Obtener()
-        {
-            return new EntidadesBP().Entidades_Obtener();
-        }
-        public int ABCEntidades_Guardar(EntidadesBE obj)
-        {
-            return new EntidadesBP().ABCEntidades_Guardar(obj);
-        }
-        public int ABCEntidades_Actualizar(EntidadesBE obj)
-        {
-            return new EntidadesBP().ABCEntidades_Actualizar(obj);
-        }
-        #endregion
-
-        #region Educacion
-        public List<EducacionBE> ABCEducacion_Obtener()
-        {
-            return new EducacionBP().ABCEducacion_Obtener();
-        }
-        public int ABCEducacion_Guardar(EducacionBE obj)
-        {
-            return new EducacionBP().ABCEducacion_Guardar(obj);
-        }
-        public int ABCEducacion_Actualizar(EducacionBE obj)
-        {
-            return new EducacionBP().ABCEducacion_Actualizar(obj);
-        }
-        #endregion
-
-        #region Funciones
-        public List<FuncionesBE> ABCFunciones_Obtener()
-        {
-            return new FuncionesBP().ABCFunciones_Obtener();
-        }
-        #endregion
     }
 }

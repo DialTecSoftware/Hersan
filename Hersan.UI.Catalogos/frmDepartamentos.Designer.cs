@@ -314,7 +314,7 @@
             gridViewTextBoxColumn3.Name = "Abrev";
             gridViewTextBoxColumn3.Width = 80;
             gridViewCheckBoxColumn1.FieldName = "DatosUsuario.Estatus";
-            gridViewCheckBoxColumn1.HeaderText = "Estatus";
+            gridViewCheckBoxColumn1.HeaderText = "Activo";
             gridViewCheckBoxColumn1.MaxWidth = 100;
             gridViewCheckBoxColumn1.MinWidth = 100;
             gridViewCheckBoxColumn1.Name = "Estatus";

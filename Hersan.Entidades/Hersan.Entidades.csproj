@@ -54,8 +54,8 @@
     <Compile Include="Catalogos\EntidadesBE.cs" />
     <Compile Include="Catalogos\EstadosBE.cs" />
     <Compile Include="Catalogos\PaisesBE.cs" />
-    <Compile Include="Catalogos\PuestosBE.cs" />
-    <Compile Include="Catalogos\TiposContratoBE.cs" />
+    <Compile Include="CapitalHumano\PuestosBE.cs" />
+    <Compile Include="CapitalHumano\TiposContratoBE.cs" />
     <Compile Include="Comun\GeneralBE.cs" />
     <Compile Include="Comun\ResultadoBE.cs" />
     <Compile Include="Conexion\CadenaConexion.cs" />

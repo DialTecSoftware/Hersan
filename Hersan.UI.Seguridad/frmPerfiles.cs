@@ -7,6 +7,8 @@ using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using Hersan.Entidades.Catalogos;
+using System.Data;
 
 namespace Hersan.UI.Seguridad
 {
@@ -17,7 +19,6 @@ namespace Hersan.UI.Seguridad
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
         private int Id = 0;
         private List<MenusBE> lstMnu;
-        private bool EsCambio = true;
         int Empresa = 1;
         #endregion
 
@@ -28,30 +29,32 @@ namespace Hersan.UI.Seguridad
         }
         private void frmPerfiles_Load(object sender, EventArgs e)
         {
-            try
-            {
-                EsCambio = false;
+            try{
                 ObtenerEmpresas();
                 cargaGrid();
-            }
-            catch (Exception ex)
-            {
+            }catch (Exception ex){
                 RadMessageBox.Show("Ocurrión un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            }
+        }
+        private void cboEmpresas_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                if (int.Parse(cboEmpresas.SelectedValue.ToString()) > 0) {
+                    cargaGrid();
+                }
+            } catch (Exception ex) {
+                throw ex;
             }
         }
         private void rgvPerfiles_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
-            try
-            {
+            try{
                 Id = int.Parse(e.CurrentRow.Cells["ID"].Value.ToString());
                 rtxtNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
                 rchkActivo.Checked = (bool)e.CurrentRow.Cells["Activo"].Value;
                 MuestraPermisos();
-                //CargaPermisos();
-                EsCambio = false;
-            }
-            catch
-            {
+            }catch(Exception ex){
+                throw ex;
             }
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -62,269 +65,100 @@ namespace Hersan.UI.Seguridad
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            try {
                 errorProvider1.SetError(rtxtNombre, "");
-
-                if (rtxtNombre.Text.Trim().Equals(string.Empty))
-                {
+                if (rtxtNombre.Text.Trim().Equals(string.Empty)) {
                     errorProvider1.SetError(rtxtNombre, "Ingrese el nombre del perfil");
                     RadMessageBox.Show("Ingrese el nombre del perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                }
-                else
-                {
-                    if (Id.Equals(0))
-                    {
+                } else {
+                    if (Id.Equals(0)) {
                         ResultadoBE res = wcf.GuardaRoles(rtxtNombre.Text.Trim(), Empresa, BaseWinBP.UsuarioLogueado.ID, rchkActivo.Checked);
 
-                        if (res.EsValido)
-                        {
+                        if (res.EsValido) {
                             cargaGrid();
                             RadMessageBox.Show("Se guardo correctamente el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        }
-                        else
+                        } else
                             RadMessageBox.Show(res.Error, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    }
-                    else
-                    {
+                    } else {
                         ResultadoBE res = wcf.ActualizaRoles(Id, rtxtNombre.Text.Trim(), Empresa, BaseWinBP.UsuarioLogueado.ID, rchkActivo.Checked);
 
-                        if (res.EsValido)
-                        {
+                        if (res.EsValido) {
                             cargaGrid();
                             RadMessageBox.Show("Se actualizo correctamente el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        }
-                        else
+                        } else
                             RadMessageBox.Show(res.Error, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     }
                 }
-            }
-            catch
-            {
-                RadMessageBox.Show("Guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void btnCancelarPermiso_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MuestraPermisos();
-                    //CargaPermisos();
-                EsCambio = false;
-            }
-            catch
-            {
-            }
-        }
-        private void cboAplicacion_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            try
-            {
-                MuestraPermisos();
-                //CargaPermisos();
-                EsCambio = false;
-            }
-            catch
-            {
-            }
-        }
-        private void chk_ToggleStateChanged(object sender, StateChangedEventArgs args)
-        {
-            //if (rtvPermisos.SelectedNodes.Count > 0)
-            //{
-            //    RadTreeNode rtnAux = new RadTreeNode();
-            //    foreach (RadTreeNode rtn in rtvPermisos.SelectedNodes)
-            //    {
-            //        rtnAux = rtn;
-            //        txtMenu.Text = string.Empty;
-            //        txtNodo.Text = string.Empty;
-
-            //        int IdMenu = int.Parse(rtn.Value.ToString());
-            //        txtMenu.Text = IdMenu.ToString();
-
-            //        var tempMnu = lstMnu.FirstOrDefault(p => p.ID.Equals(IdMenu));
-            //        if (tempMnu != null)
-            //        {
-            //            txtNodo.Text = tempMnu.IDPadre.ToString();
-            //            if (rtn.GetNodeCount(true).Equals(0))
-            //            {
-            //                if (rtn.Checked)
-            //                {
-            //                    tempMnu.PuedeAgregar = chkAgregar.Checked;
-            //                    tempMnu.PuedeEditar = chkEditar.Checked;
-            //                    tempMnu.PuedeEliminar = chkEliminar.Checked;
-            //                }
-            //            }
-            //            else
-            //            {
-            //                tempMnu.PuedeAgregar = true;
-            //                tempMnu.PuedeEditar = true;
-            //                tempMnu.PuedeEliminar = true;
-            //            }
-            //        }
-            //    }
-
-            //    //MuestraPermisos();
-
-            //    rtvPermisos.TreeViewElement.Update(RadTreeViewElement.UpdateActions.Reset);
-
-            //    rtvPermisos.BringIntoView(rtnAux);
-            //    EsCambio = true;
-            //}
-        }
-        private void btnGuardarPermiso_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                List<MenusBE> lstM = new List<MenusBE>();
-                if (cboEmpresas.SelectedIndex > -1)
-                {
-                    MenusBE obj = new MenusBE();
-                    obj.ID = (int)cboEmpresas.SelectedValue;
-                    obj.IDPadre = int.Parse(txtNodo.Text);
-                    obj.Menu = txtMenu.Text.ToString();
-                    obj.Activo = ChkActivo.Checked;
-                    obj.PuedeAgregar = chkAgregar.Checked;
-                    obj.PuedeEditar = chkEditar.Checked;
-                    obj.PuedeEliminar = chkEliminar.Checked;
-                    lstM.Add(obj);
-                    //wcf.GuardaMenuRol(lstM, Id, int.Parse(cboAplicacion.SelectedValue.ToString()));
-                    wcf.GuardaMenuRol(lstM, Id, 0);
-                    MuestraPermisos(); 
-                    //CargaPermisos();
-                }
-                EsCambio = true;
-            }
-            catch
-            {
-                RadMessageBox.Show("GuardarPermiso", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-            }
-        }
-        private void rtvPermisos_NodeCheckedChanged(object sender, TreeNodeCheckedEventArgs e)
-        {
-            try
-            {
-                int IdMenu = int.Parse(e.Node.Value.ToString());
-
-                LimpiaSelec();
-
-                var tempMnu = lstMnu.FirstOrDefault(p => p.ID.Equals(IdMenu));
-                if (tempMnu != null)
-                {
-                    cboEmpresas.SelectedValue = tempMnu.ID;
-                    //cboProceso.SelectedValue = tempMnu.proceso.ID;
-                    chkAgregar.Checked = tempMnu.PuedeAgregar;
-                    chkEditar.Checked = tempMnu.PuedeEditar;
-                    chkEliminar.Checked = tempMnu.PuedeEliminar;
-                    txtMenu.Text = tempMnu.ID.ToString();
-                    txtNodo.Text = tempMnu.IDPadre.ToString();
-                    if (e.Node.CheckState == Telerik.WinControls.Enumerations.ToggleState.Indeterminate)
-                    {
-                        tempMnu.Asignado = true;
-                        ChkActivo.Checked = tempMnu.Asignado;
-                    }
-                    else
-                    {
-                        tempMnu.Asignado = e.Node.Checked;
-                        ChkActivo.Checked = tempMnu.Asignado;
-                    }
-                }
-
-                EsCambio = true;
-
-            }
-            catch
-            {
-                RadMessageBox.Show("rtvPermisos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            } catch (Exception ex) {
+                RadMessageBox.Show("Guardar\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void rtvPermisos_SelectedNodeChanged(object sender, RadTreeViewEventArgs e)
+
+        private void btnCancelarPermiso_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    int IdMenu = int.Parse(e.Node.Value.ToString());
-            //    LimpiaSelec();
-
-            //    //var tempMnu = from p in lstPro where p.IdMenu.Equals(IdMenu) || p.ID.Equals(0) select p;
-
-            //    foreach (MenusBE tempMnu in lstMnu)
-            //     {
-            //         if (tempMnu.ID == IdMenu)
-            //        {
-            //            cboPrograma.SelectedValue = tempMnu.ID;
-            //            //cboProceso.SelectedValue = tempMnu.proceso.ID;
-            //            chkAgregar.Checked = tempMnu.PuedeAgregar;
-            //            chkEditar.Checked = tempMnu.PuedeEditar;
-            //            chkEliminar.Checked = tempMnu.PuedeEliminar;
-            //            txtMenu.Text = tempMnu.ID.ToString();
-            //            txtNodo.Text = tempMnu.IDPadre.ToString();
-
-            //            if (e.Node.CheckState == Telerik.WinControls.Enumerations.ToggleState.Indeterminate)
-            //            {
-            //                tempMnu.Asignado = true;
-            //                ChkActivo.Checked = tempMnu.Asignado;
-            //            }
-            //            else
-            //            {
-            //                tempMnu.Asignado = e.Node.Checked;
-            //                ChkActivo.Checked = tempMnu.Asignado;
-            //            }
-
-
-            //            break;
-            //        }
-            //     }
-            //}
-            //catch
-            //{
-            //    RadMessageBox.Show("Permisos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-            //}
-        }
-        private void cboProceso_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            try
-            {
-                //if (rtvPermisos.SelectedNodes.Count > 0)
-                //{
-                //    RadTreeNode rtn = rtvPermisos.SelectedNode;
-                //    int IdMenu = int.Parse(rtn.Value.ToString());
-                //    var tempProc = from p in lstPro where p.IdMenu.Equals(IdMenu) || p.ID.Equals(0) select p;
-
-                //    if (tempProc != null && tempProc.Count() > 1)
-                //    {
-                //        var tempMnu = lstMnu.FirstOrDefault(p => p.ID.Equals(IdMenu));
-                //        if (tempMnu != null)
-                //        {
-                //            tempMnu.proceso.ID = int.Parse(cboProceso.SelectedValue.ToString());
-                //            tempMnu.proceso.Proceso = cboProceso.Text;
-                //        }
-                //    }
-
-                //MuestraPermisos();
-
-                //rtvPermisos.TreeViewElement.Update(RadTreeViewElement.UpdateActions.Reset);
-
-                //rtvPermisos.BringIntoView(rtn);
-                //EsCambio = true;
-                //}
-
-            }
-            catch
-            {
+            try{
+                MuestraPermisos();
+            }catch(Exception ex){
+                RadMessageBox.Show("Ocurripo un error al cancelar los cambios\n"+ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-        private void cboAplicacion_SelectedIndexChanged_1(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        private void btnGuardarPermiso_Click(object sender, EventArgs e)
         {
-            MuestraPermisos();
-            //CargaPermisos();
+            DataTable oData = new DataTable("Datos");
+            try{
+                oData.Columns.Add("IdRol");
+                oData.Columns.Add("IdMenu");
+                oData.Columns.Add("IdPadre");
+                oData.Columns.Add("Estatus");
+
+                lstMnu.ForEach(item => {
+                    DataRow oRow = oData.NewRow();
+                    oRow["IdRol"] = Id;
+                    oRow["IdMenu"] = item.ID;
+                    oRow["IdPadre"] = item.IDPadre;
+                    oRow["Estatus"] = item.Asignado;
+
+                    oData.Rows.Add(oRow);
+                });
+
+                /* SE GUARDAN LOS CAMBIOS */
+                int Result = wcf.GuardaMenuRol(oData);
+
+                if(Result != 0) {
+                    RadMessageBox.Show("Permisos asignados correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                } else {
+                    RadMessageBox.Show("Ocurrió un error al guardar los permisos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                }
+                MuestraPermisos();
+            }catch (Exception ex){
+                RadMessageBox.Show("Ocurrió un error al guardar los permisos\n"+ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
-        private void frmPerfiles_Shown(object sender, EventArgs e)
+        private void rtvPermisos_NodeCheckedChanged(object sender, TreeNodeCheckedEventArgs e)
         {
-            PermisosSeguridad();
+            try {
+                LimpiaSelec();
+                int IdMenu = int.Parse(e.Node.Value.ToString());
+
+                MenusBE tempMnu = lstMnu.Find(p => p.ID.Equals(IdMenu));
+                if (tempMnu != null) {
+                    txtMenu.Text = tempMnu.ID.ToString();
+                    txtNodo.Text = tempMnu.IDPadre.ToString();
+                    if (e.Node.CheckState == Telerik.WinControls.Enumerations.ToggleState.Indeterminate) {
+                        tempMnu.Asignado = true;
+                        ChkActivo.Checked = tempMnu.Asignado;
+                    } else {
+                        tempMnu.Asignado = e.Node.Checked;
+                        ChkActivo.Checked = tempMnu.Asignado;
+                    }
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al seleccionar el menú\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            }
         }
         #endregion
 
@@ -375,29 +209,16 @@ namespace Hersan.UI.Seguridad
         }
         private void cargaGrid()
         {
-            List<RolesBE> roles = wcf.ObtieneRoles(Empresa);
-            rgvPerfiles.DataSource = roles;
+            try {
+                rgvPerfiles.DataSource = wcf.ObtieneRoles(Empresa);
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
-        //private void CargaPermisos()
-        //{
-        //    try { 
-        //        //lstMnu = wcf.ObtenerMenuRol(Id, 0, 0);
-
-        //        //cboEmpresas.DisplayMember = "Menu";
-        //        //cboEmpresas.ValueMember = "ID";
-        //        //cboEmpresas.DataSource = lstMnu;
-        //        //cboEmpresas.Enabled = false;
-
-        //        MuestraPermisos();
-        //    }catch {
-        //        RadMessageBox.Show("CargaPermisos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-        //    }
-        //}
         private void MuestraPermisos()
         {
             lstMnu = wcf.ObtenerMenuRol(Id, 0, 0);
-            try
-            {
+            try{
                 rtvPermisos.ChildMember = "ID";
                 rtvPermisos.DisplayMember = "Menu";
                 rtvPermisos.ValueMember = "ID";
@@ -405,47 +226,23 @@ namespace Hersan.UI.Seguridad
                 rtvPermisos.DataSource = lstMnu;
                 rtvPermisos.ExpandAll();
 
-                foreach (MenusBE mnu in lstMnu)
-                {
-
+                lstMnu.ForEach(mnu => {
                     var nodo = rtvPermisos.FindNodes(p => int.Parse(p.Value.ToString()).Equals(mnu.ID)).FirstOrDefault();
 
-                    if (nodo != null && nodo.Nodes.Count.Equals(0))
-                    {
+                    if (nodo != null && nodo.Nodes.Count.Equals(0)) {
                         nodo.Checked = mnu.Asignado;
-
-                        string Permisos = string.Empty;
-                        string Proc = string.Empty;
-                        Permisos = mnu.PuedeAgregar ? "Agregar" : "";
-                        Permisos += mnu.PuedeEditar ? ", Editar" : "";
-                        Permisos += mnu.PuedeEliminar ? ", Eliminar" : "";
-
-                        //Permisos = Permisos.TrimStart(',').Trim();
                         mnu.Menu = mnu.Auxiliar;
-
-                        //if (mnu.proceso.ID > 0) {
-                        //    Proc = " - Proceso: " + mnu.proceso.Proceso;
-                        //} else {
                         int IdMenu = int.Parse(nodo.Value.ToString());
-                        //}
-                        nodo.Text = string.Format("{0} ({1}) {2}", mnu.Menu, Permisos, Proc);
-                        //nodo.Text = string.Format("{0}", mnu.Menu);
+                        nodo.Text = string.Format("{0}", mnu.Menu);
                     }
-                    string st = string.Empty;
-                }
-            }
-            catch
-            {
-                RadMessageBox.Show("CargaPermisos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                });
+                   
+            }catch(Exception ex){
+                RadMessageBox.Show("CargaPermisos\n"+ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void LimpiaSelec()
         {
-            cboEmpresas.SelectedValue = null;
-            //cboProceso.SelectedValue = null;
-            chkAgregar.Checked = false;
-            chkEditar.Checked = false;
-            chkEliminar.Checked = false;
             txtMenu.Text = string.Empty;
             txtNodo.Text = string.Empty;
         }
@@ -453,9 +250,9 @@ namespace Hersan.UI.Seguridad
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                cboEmpresas.DataSource = oCatalogos.ABCEmpresas_Cbo();
                 cboEmpresas.DisplayMember = "NombreComercial";
                 cboEmpresas.ValueMember = "Id";
+                cboEmpresas.DataSource = oCatalogos.ABCEmpresas_Cbo();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las empresas:" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
             } finally {

@@ -113,4 +113,34 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PuestosBE" nillable="true" type="tns:PuestosBE" />
+  <xs:complexType name="ArrayOfEntidadesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntidadesBE" nillable="true" type="tns:EntidadesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntidadesBE" nillable="true" type="tns:ArrayOfEntidadesBE" />
+  <xs:complexType name="EntidadesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abrev" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q9:GeneralBE" />
+      <xs:element minOccurs="0" name="Empresas" nillable="true" type="tns:EmpresasBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntidadesBE" nillable="true" type="tns:EntidadesBE" />
+  <xs:complexType name="ArrayOfEducacionBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EducacionBE" nillable="true" type="tns:EducacionBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEducacionBE" nillable="true" type="tns:ArrayOfEducacionBE" />
+  <xs:complexType name="EducacionBE">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q10:GeneralBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EducacionBE" nillable="true" type="tns:EducacionBE" />
 </xs:schema>

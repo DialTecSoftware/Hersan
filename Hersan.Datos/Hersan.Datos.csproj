@@ -62,7 +62,10 @@
     <Compile Include="BaseDA.cs" />
     <Compile Include="Catalogos\CompetenciasDA.cs" />
     <Compile Include="Catalogos\DepartamentosDA.cs" />
+    <Compile Include="Catalogos\EducacionDA.cs" />
     <Compile Include="Catalogos\EmpresasDA.cs" />
+    <Compile Include="Catalogos\EntidadesDA.cs" />
+    <Compile Include="Catalogos\FuncionesDA.cs" />
     <Compile Include="Catalogos\PuestosDA.cs" />
     <Compile Include="Catalogos\TiposContratoDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

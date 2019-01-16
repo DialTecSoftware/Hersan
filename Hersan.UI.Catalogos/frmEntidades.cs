@@ -167,6 +167,11 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
+
+        private void commandBarLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

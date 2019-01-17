@@ -48,6 +48,8 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.chkEstatus = new System.Windows.Forms.CheckBox();
             this.txtIdEmpresa = new System.Windows.Forms.TextBox();
             this.txtAbrev = new System.Windows.Forms.TextBox();
@@ -55,13 +57,14 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
+            this.cboEmp = new Telerik.WinControls.UI.RadDropDownList();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,6 +181,8 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.cboEmp);
+            this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Controls.Add(this.lblID);
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.chkEstatus);
@@ -192,10 +197,27 @@
             this.radPanel1.Size = new System.Drawing.Size(579, 86);
             this.radPanel1.TabIndex = 1;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(281, 22);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(47, 13);
+            this.lblID.TabIndex = 13;
+            this.lblID.Text = "Id_Emp:";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(334, 46);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(58, 20);
+            this.txtId.TabIndex = 12;
+            this.txtId.Visible = false;
+            // 
             // chkEstatus
             // 
             this.chkEstatus.AutoSize = true;
-            this.chkEstatus.Location = new System.Drawing.Point(166, 49);
+            this.chkEstatus.Location = new System.Drawing.Point(175, 61);
             this.chkEstatus.Name = "chkEstatus";
             this.chkEstatus.Size = new System.Drawing.Size(57, 17);
             this.chkEstatus.TabIndex = 11;
@@ -212,7 +234,7 @@
             // txtAbrev
             // 
             this.txtAbrev.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAbrev.Location = new System.Drawing.Point(80, 46);
+            this.txtAbrev.Location = new System.Drawing.Point(81, 59);
             this.txtAbrev.MaxLength = 5;
             this.txtAbrev.Name = "txtAbrev";
             this.txtAbrev.Size = new System.Drawing.Size(67, 20);
@@ -221,7 +243,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 46);
+            this.label4.Location = new System.Drawing.Point(27, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 8;
@@ -230,7 +252,7 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(80, 22);
+            this.txtNombre.Location = new System.Drawing.Point(81, 35);
             this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(166, 20);
@@ -239,7 +261,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 22);
+            this.label3.Location = new System.Drawing.Point(27, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 6;
@@ -303,22 +325,22 @@
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             this.gvDatos.Click += new System.EventHandler(this.gvDatos_Click);
             // 
-            // txtId
+            // cboEmp
             // 
-            this.txtId.Location = new System.Drawing.Point(334, 46);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(58, 20);
-            this.txtId.TabIndex = 12;
-            this.txtId.Visible = false;
+            this.cboEmp.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboEmp.Location = new System.Drawing.Point(81, 11);
+            this.cboEmp.Name = "cboEmp";
+            this.cboEmp.Size = new System.Drawing.Size(166, 20);
+            this.cboEmp.TabIndex = 14;
             // 
-            // lblID
+            // label1
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(281, 22);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(47, 13);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "Id_Emp:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Emp.:";
             // 
             // frmEntidades
             // 
@@ -341,6 +363,7 @@
             this.radPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -371,5 +394,7 @@
         private Telerik.WinControls.UI.RadGridView gvDatos;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtId;
+        private Telerik.WinControls.UI.RadDropDownList cboEmp;
+        private System.Windows.Forms.Label label1;
     }
 }

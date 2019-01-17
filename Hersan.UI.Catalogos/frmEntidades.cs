@@ -22,19 +22,19 @@ namespace Hersan.UI.Catalogos
         private void frmEntidades_Load(object sender, EventArgs e)
         {
             try {
-                Cargar();
+                CargarEntidades();
+                CargarEmpresas();
             } catch (Exception ex) {
 
                 throw ex;
             }
         }
 
-        public void Cargar()
+        public void CargarEntidades()
         {
             try {
                 gvDatos.DataSource = oCatalogo.Entidades_Obtener();
-                txtIdEmpresa.Visible = false;
-                lblID.Visible = false;
+               
             } catch (Exception ex) {
                 throw ex;
             }
@@ -49,14 +49,15 @@ namespace Hersan.UI.Catalogos
         {
             try {
                 if (gvDatos.RowCount > 0) {
-                    txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
-                    txtIdEmpresa.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id_Emp"].Value.ToString();
-                    txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
-                    txtAbrev.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Abrev"].Value.ToString();
-                    chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
+                    txtId.Text = gvDatos.CurrentRow.Cells["Id"].Value.ToString();
+                    txtIdEmpresa.Text = gvDatos.CurrentRow.Cells["Id_Emp"].Value.ToString();
+                    txtNombre.Text = gvDatos.CurrentRow.Cells["Nombre"].Value.ToString();
+                    txtAbrev.Text = gvDatos.CurrentRow.Cells["Abrev"].Value.ToString();
+                    cboEmp.SelectedValue = int.Parse(txtIdEmpresa.Text);
+                    chkEstatus.Checked = bool.Parse(gvDatos.CurrentRow.Cells["Estatus"].Value.ToString());
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -65,6 +66,7 @@ namespace Hersan.UI.Catalogos
             try {
                 txtNombre.Text = string.Empty;
                 txtIdEmpresa.Text = "0";
+                cboEmp.SelectedIndex = -1;
                 txtId.Text = "0";
                 txtAbrev.Text = string.Empty;
                 chkEstatus.Checked = false;
@@ -80,8 +82,7 @@ namespace Hersan.UI.Catalogos
         {
             try {
                 LimpiarCampos();
-                txtIdEmpresa.Visible = true;
-                lblID.Visible = true;
+               
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -102,7 +103,7 @@ namespace Hersan.UI.Catalogos
             EntidadesBE obj = new EntidadesBE();
             try {
                 obj.Id = int.Parse(txtId.Text);
-                obj.Empresas.Id=int.Parse(txtIdEmpresa.Text);
+                obj.Empresas.Id = int.Parse(cboEmp.SelectedValue.ToString());
                 obj.Nombre = txtNombre.Text;
                 obj.Abrev = txtAbrev.Text;
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
@@ -117,7 +118,7 @@ namespace Hersan.UI.Catalogos
                     } else {
                         RadMessageBox.Show("Departamento guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         LimpiarCampos();
-                        Cargar();
+                        CargarEntidades();
                     }
                 } else {
                     int Result = oCatalogo.ABCEntidades_Actualizar(obj);
@@ -126,7 +127,7 @@ namespace Hersan.UI.Catalogos
                     } else {
                         RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         LimpiarCampos();
-                        Cargar();
+                        CargarEntidades();
                     }
                 }
             } catch (Exception ex) {
@@ -157,12 +158,27 @@ namespace Hersan.UI.Catalogos
                         } else {
                             RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                             LimpiarCampos();
-                            Cargar();
+                            CargarEntidades();
                         }
                     }
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogo = null;
+            }
+        }
+
+
+        private void CargarEmpresas()
+        {
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboEmp.ValueMember = "ID";
+                cboEmp.DisplayMember = "NombreComercial";
+                cboEmp.DataSource = oCatalogo.ABCEmpresas_Cbo();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }

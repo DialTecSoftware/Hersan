@@ -208,14 +208,14 @@
   <xs:element name="Entidades_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades_ObtenerResult" nillable="true" type="q13:ArrayOfEntidadesBE" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades_ObtenerResult" nillable="true" type="q16:ArrayOfEntidadesBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ABCEntidades_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q14:EntidadesBE" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q17:EntidadesBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -229,7 +229,7 @@
   <xs:element name="ABCEntidades_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q15:EntidadesBE" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q18:EntidadesBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -248,14 +248,14 @@
   <xs:element name="ABCEducacion_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABCEducacion_ObtenerResult" nillable="true" type="q16:ArrayOfEducacionBE" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABCEducacion_ObtenerResult" nillable="true" type="q19:ArrayOfEducacionBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ABCEducacion_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q17:EducacionBE" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q20:EducacionBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -269,7 +269,7 @@
   <xs:element name="ABCEducacion_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q18:EducacionBE" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q21:EducacionBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -288,7 +288,35 @@
   <xs:element name="ABCFunciones_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="ABCFunciones_ObtenerResult" nillable="true" type="q19:ArrayOfFuncionesBE" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="ABCFunciones_ObtenerResult" nillable="true" type="q22:ArrayOfFuncionesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCFunciones_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q23:FuncionesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCFunciones_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABCFunciones_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCFunciones_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q24:FuncionesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABCFunciones_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABCFunciones_ActualizarResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

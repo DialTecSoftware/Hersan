@@ -74,10 +74,12 @@ namespace Hersan.Datos.Catalogos {
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
                                 EmpresasBE obj = new EmpresasBE();
-                                oList.Add(new EmpresasBE {
-                                    Id = int.Parse(reader["EMP_ID"].ToString()),
-                                    NombreComercial = reader["EMP_NombreComercial"].ToString(),
-                                });
+
+                                obj.Id = int.Parse(reader["EMP_ID"].ToString());
+                                    obj.NombreComercial = reader["EMP_NombreComercial"].ToString();
+                                oList.Add(obj);
+
+                               
                             }
                         }
                     }

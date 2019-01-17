@@ -32,10 +32,12 @@ namespace Hersan.Datos.Catalogos
                                 EntidadesBE obj = new EntidadesBE();
 
                                 obj.Id = int.Parse(reader["ENT_Id"].ToString());
-                                obj.Empresas.Id = int.Parse(reader["EMP_Id"].ToString());
+                               
                                 obj.Nombre = reader["ENT_Nombre"].ToString();
                                 obj.Abrev = reader["ENT_Abrev"].ToString();
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["ENT_Estatus"].ToString());
+                                obj.Empresas.Id = int.Parse(reader["EMP_Id"].ToString());
+                                obj.Empresas.NombreComercial= reader["EMP_NombreComercial"].ToString();
 
                                 oList.Add(obj);
                             }

@@ -166,5 +166,9 @@ namespace Hersan.UI.Catalogos
             }
         }
 
+        private void cboDeptos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -14,5 +14,13 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new FuncionesDA().ABCFunciones_Obtener();
         }
+        public int ABCFunciones_Guardar(FuncionesBE obj)
+        {
+            return new FuncionesDA().ABCFunciones_Guardar(obj);
+        }
+        public int ABCFunciones_Actualizar(FuncionesBE obj)
+        {
+            return new FuncionesDA().ABCFunciones_Actualizar(obj);
+        }
     }
 }

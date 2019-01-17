@@ -33,6 +33,7 @@ namespace Hersan.Datos.Catalogos
 
                                 obj.Id = int.Parse(reader["EDU_ID"].ToString());
                                 obj.Nombre = reader["EDU_Nombre"].ToString();
+                                obj.Abrev = reader["EDU_Abrev"].ToString();
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["EDU_Estatus"].ToString());
 
                                 oList.Add(obj);
@@ -54,6 +55,7 @@ namespace Hersan.Datos.Catalogos
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_EDUCACION_GUARDAR, conn)) {
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Abrev", obj.Abrev);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -76,6 +78,7 @@ namespace Hersan.Datos.Catalogos
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_EDUCACION_ACTUALIZAR, conn)) {
                         cmd.Parameters.AddWithValue("@Id", obj.Id);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Abrev", obj.Abrev);
                         cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 

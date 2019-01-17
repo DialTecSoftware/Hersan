@@ -69,7 +69,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                throw ;
+                RadMessageBox.Show("Ocurrió un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogos = null;
             }
@@ -131,7 +131,7 @@ namespace Hersan.UI.Catalogos
             try {
                 gvDatos.DataSource = oCatalogos.ABCDepartamentos_Obtener();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogos = null;
             }
@@ -144,7 +144,7 @@ namespace Hersan.UI.Catalogos
                 txtNombre.Text = string.Empty;
                 chkEstatus.Checked = false;
             } catch (Exception ex) {
-                throw;
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 

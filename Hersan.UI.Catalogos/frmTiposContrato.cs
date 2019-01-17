@@ -27,7 +27,7 @@ namespace Hersan.UI.Catalogos
                 Cargar_TiposContrato();
             } catch (Exception ex) {
 
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -36,7 +36,7 @@ namespace Hersan.UI.Catalogos
             try {
                 gvDatos.DataSource = oCatalogo.TiposContrato_Obtener();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al cargar los tipos de contrato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void dgvTiposContrato_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace Hersan.UI.Catalogos
                 txtAbrev_TCO.Text = string.Empty;
                 chkEstatus.Checked = false;
             } catch (Exception ex) {
-                throw;
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -103,7 +103,7 @@ namespace Hersan.UI.Catalogos
                 if (txtId_TCO.Text == "0") {
                     int Result = oCatalogo.ABCTiposContrato_Guardar(obj);
                     if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar el departamento", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        RadMessageBox.Show("Ocurrió un error al guardar el tipo de contrato", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     } else {
                         RadMessageBox.Show("Departamento guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         LimpiarCampos();
@@ -120,7 +120,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                throw;
+                RadMessageBox.Show("Ocurrió un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -132,7 +132,7 @@ namespace Hersan.UI.Catalogos
             TiposContratoBE obj = new TiposContratoBE();
             try {
                 if (chkEstatus.Checked) {
-                    if (RadMessageBox.Show("Esta acción dará de baja el departamento\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    if (RadMessageBox.Show("Esta acción dará de baja el tipo de contrato\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         obj.Id = int.Parse(txtId_TCO.Text);
                         obj.Nombre = txtNombre_TCO.Text;
                         obj.Abrev = txtAbrev_TCO.Text;
@@ -151,7 +151,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al dar de baja el tipo de contrato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -167,7 +167,7 @@ namespace Hersan.UI.Catalogos
                     chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 

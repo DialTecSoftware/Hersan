@@ -47,13 +47,13 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.txtAbrev = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.chkEstatus = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
-            this.txtAbrev = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radcommonbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -69,7 +69,7 @@
             this.radcommonbar.Name = "radcommonbar";
             this.radcommonbar.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radcommonbar.Size = new System.Drawing.Size(484, 81);
+            this.radcommonbar.Size = new System.Drawing.Size(484, 56);
             this.radcommonbar.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -175,10 +175,28 @@
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.txtNombre);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 81);
+            this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(484, 88);
             this.radPanel1.TabIndex = 1;
+            // 
+            // txtAbrev
+            // 
+            this.txtAbrev.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAbrev.Location = new System.Drawing.Point(73, 50);
+            this.txtAbrev.MaxLength = 5;
+            this.txtAbrev.Name = "txtAbrev";
+            this.txtAbrev.Size = new System.Drawing.Size(67, 20);
+            this.txtAbrev.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Abrev.";
             // 
             // chkEstatus
             // 
@@ -219,7 +237,7 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 169);
+            this.gvDatos.Location = new System.Drawing.Point(0, 144);
             // 
             // 
             // 
@@ -262,27 +280,10 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(484, 199);
+            this.gvDatos.Size = new System.Drawing.Size(484, 224);
             this.gvDatos.TabIndex = 3;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
-            // 
-            // txtAbrev
-            // 
-            this.txtAbrev.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAbrev.Location = new System.Drawing.Point(73, 50);
-            this.txtAbrev.MaxLength = 5;
-            this.txtAbrev.Name = "txtAbrev";
-            this.txtAbrev.Size = new System.Drawing.Size(67, 20);
-            this.txtAbrev.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Abrev.";
+            this.gvDatos.Click += new System.EventHandler(this.gvDatos_Click);
             // 
             // frmEducacion
             // 

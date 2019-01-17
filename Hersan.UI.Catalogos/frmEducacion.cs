@@ -33,7 +33,7 @@ namespace Hersan.UI.Catalogos
             try {
                 gvDatos.DataSource = oCatalogo.ABCEducacion_Obtener();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al cargar las educaciones\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -46,7 +46,7 @@ namespace Hersan.UI.Catalogos
                 txtId.Text = "0";
                 chkEstatus.Checked = false;
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -56,7 +56,7 @@ namespace Hersan.UI.Catalogos
                 Cargar();
             } catch (Exception ex) {
 
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -70,7 +70,7 @@ namespace Hersan.UI.Catalogos
                     chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -98,7 +98,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al dar de baja la educación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -137,7 +137,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                throw;
+                RadMessageBox.Show("Ocurrió un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -150,6 +150,11 @@ namespace Hersan.UI.Catalogos
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
+        }
+
+        private void gvDatos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

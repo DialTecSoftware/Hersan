@@ -26,7 +26,7 @@ namespace Hersan.UI.Catalogos
                 CargarEmpresas();
             } catch (Exception ex) {
 
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -36,7 +36,7 @@ namespace Hersan.UI.Catalogos
                 gvDatos.DataSource = oCatalogo.Entidades_Obtener();
                
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al cargar las entidades\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -71,7 +71,7 @@ namespace Hersan.UI.Catalogos
                 txtAbrev.Text = string.Empty;
                 chkEstatus.Checked = false;
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -114,9 +114,9 @@ namespace Hersan.UI.Catalogos
                 if (txtId.Text == "0") {
                     int Result = oCatalogo.ABCEntidades_Guardar(obj);
                     if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar el departamento", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        RadMessageBox.Show("Ocurrió un error al guardar la entidad", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     } else {
-                        RadMessageBox.Show("Departamento guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        RadMessageBox.Show("Entidad guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         LimpiarCampos();
                         CargarEntidades();
                     }
@@ -131,7 +131,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                throw;
+                RadMessageBox.Show("Ocurrió un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -143,7 +143,7 @@ namespace Hersan.UI.Catalogos
             EntidadesBE obj = new EntidadesBE();
             try {
                 if (chkEstatus.Checked) {
-                    if (RadMessageBox.Show("Esta acción dará de baja el departamento\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    if (RadMessageBox.Show("Esta acción dará de baja la entidad\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         obj.Id = int.Parse(txtId.Text);
                         obj.Empresas.Id = int.Parse(txtIdEmpresa.Text);
                         obj.Nombre = txtNombre.Text;
@@ -163,7 +163,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al dar de baja la entidad\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -178,7 +178,7 @@ namespace Hersan.UI.Catalogos
                 cboEmp.DisplayMember = "NombreComercial";
                 cboEmp.DataSource = oCatalogo.ABCEmpresas_Cbo();
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrió un error al cargar las empresas\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }

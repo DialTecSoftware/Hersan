@@ -392,6 +392,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.Text = "Puestos";
             this.Load += new System.EventHandler(this.frmPuestos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

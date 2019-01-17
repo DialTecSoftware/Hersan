@@ -114,7 +114,7 @@ namespace Hersan.UI.Catalogos
         private void gvPuestos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
-                if (gvPuestos.RowCount > 0) {
+                if (gvPuestos.RowCount > 0 && gvPuestos.CurrentRow.ChildRows.Count == 0) {
                     txtIdPuesto.Text = gvPuestos.CurrentRow.Cells["Id"].Value.ToString();
                     txtIdDep.Text = gvPuestos.CurrentRow.Cells["IdDepto"].Value.ToString();
                     txtNombre.Text = gvPuestos.CurrentRow.Cells["Nombre"].Value.ToString();

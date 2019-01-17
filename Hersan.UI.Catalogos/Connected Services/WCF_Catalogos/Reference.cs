@@ -146,6 +146,18 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ObtenerResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE>> ABCFunciones_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_GuardarResponse")]
+        int ABCFunciones_Guardar(Hersan.Entidades.CapitalHumano.FuncionesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABCFunciones_GuardarAsync(Hersan.Entidades.CapitalHumano.FuncionesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ActualizarResponse")]
+        int ABCFunciones_Actualizar(Hersan.Entidades.CapitalHumano.FuncionesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCFunciones_ActualizarAsync(Hersan.Entidades.CapitalHumano.FuncionesBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -349,6 +361,22 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE>> ABCFunciones_ObtenerAsync() {
             return base.Channel.ABCFunciones_ObtenerAsync();
+        }
+        
+        public int ABCFunciones_Guardar(Hersan.Entidades.CapitalHumano.FuncionesBE obj) {
+            return base.Channel.ABCFunciones_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCFunciones_GuardarAsync(Hersan.Entidades.CapitalHumano.FuncionesBE obj) {
+            return base.Channel.ABCFunciones_GuardarAsync(obj);
+        }
+        
+        public int ABCFunciones_Actualizar(Hersan.Entidades.CapitalHumano.FuncionesBE obj) {
+            return base.Channel.ABCFunciones_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCFunciones_ActualizarAsync(Hersan.Entidades.CapitalHumano.FuncionesBE obj) {
+            return base.Channel.ABCFunciones_ActualizarAsync(obj);
         }
     }
 }

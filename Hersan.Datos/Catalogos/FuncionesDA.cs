@@ -45,5 +45,50 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
+
+        public int ABCFunciones_Guardar(FuncionesBE obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_FUNCIONES_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+
+        public int ABCFunciones_Actualizar(FuncionesBE obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_FUNCIONES_ACTUALIZAR, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", obj.Id);
+                        cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Continua", obj.Continua);
+                        cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
     }
 }
+    

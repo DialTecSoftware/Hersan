@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hersan.Entidades.CapitalHumano;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,6 +62,98 @@ namespace Hersan.UI.Catalogos
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            try {
+                this.Close();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+            FuncionesBE obj = new FuncionesBE();
+            try {
+                obj.Id = int.Parse(txtId.Text);
+                obj.Nombre = txtNombre.Text;
+                obj.Continua = chkContinua.Checked;
+                obj.DatosUsuario.Estatus = chkEstatus.Checked;
+                //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                obj.DatosUsuario.IdUsuarioCreo = 1;
+
+                //PROCESO DE GUARDADO Y ACTUALIZACION
+                if (txtId.Text == "0") {
+                    int Result = oCatalogo.ABCFunciones_Guardar(obj);
+                    if (Result == 0) {
+                        RadMessageBox.Show("Ocurrió un error al guardar la función", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    } else {
+                        RadMessageBox.Show("Educacion guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        LimpiarCampos();
+                        Cargar();
+                    }
+                } else {
+                    int Result = oCatalogo.ABCFunciones_Actualizar(obj);
+                    if (Result == 0) {
+                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    } else {
+                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        LimpiarCampos();
+                        Cargar();
+                    }
+                }
+            } catch (Exception ex) {
+                throw;
+            } finally {
+                oCatalogo = null;
+            }
+        
+    }
+
+
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            FuncionesBE obj = new FuncionesBE();
+            try {
+                if (chkEstatus.Checked) {
+                    if (RadMessageBox.Show("Esta acción dará de baja la función\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                        obj.Id = int.Parse(txtId.Text);
+                        obj.Nombre = txtNombre.Text;
+                        obj.Continua = false;
+                        obj.DatosUsuario.Estatus = false;
+                        //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                        obj.DatosUsuario.IdUsuarioCreo = 2;
+
+                        int Result = oCatalogo.ABCFunciones_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            Cargar();
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogo = null;
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+            try {
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
     }

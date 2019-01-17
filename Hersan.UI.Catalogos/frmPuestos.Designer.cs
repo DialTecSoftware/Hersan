@@ -86,7 +86,7 @@
             this.radPanel1.Controls.Add(this.txtNombre);
             this.radPanel1.Controls.Add(this.txtAbrev);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 53);
+            this.radPanel1.Location = new System.Drawing.Point(0, 78);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(653, 91);
             this.radPanel1.TabIndex = 1;
@@ -108,6 +108,7 @@
             this.cboDeptos.Name = "cboDeptos";
             this.cboDeptos.Size = new System.Drawing.Size(166, 20);
             this.cboDeptos.TabIndex = 1;
+            this.cboDeptos.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboDeptos_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -175,7 +176,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(653, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(653, 78);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -289,7 +290,7 @@
             // gvPuestos
             // 
             this.gvPuestos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvPuestos.Location = new System.Drawing.Point(0, 144);
+            this.gvPuestos.Location = new System.Drawing.Point(0, 169);
             // 
             // 
             // 
@@ -354,7 +355,7 @@
             this.gvPuestos.ReadOnly = true;
             this.gvPuestos.ShowGroupPanel = false;
             this.gvPuestos.ShowNoDataText = false;
-            this.gvPuestos.Size = new System.Drawing.Size(653, 229);
+            this.gvPuestos.Size = new System.Drawing.Size(653, 204);
             this.gvPuestos.TabIndex = 4;
             this.gvPuestos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvPuestos_CurrentRowChanged);
             // 

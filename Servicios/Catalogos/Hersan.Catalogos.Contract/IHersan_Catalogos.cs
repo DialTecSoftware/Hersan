@@ -86,10 +86,10 @@ namespace Hersan.Catalogos.Contract
         #region Funciones
         [OperationContract]
         List<FuncionesBE> ABCFunciones_Obtener();
-        //[OperationContract]
-        //int ABCEducacion_Guardar(EducacionBE obj);
-        //[OperationContract]
-        //int ABCEducacion_Actualizar(EducacionBE obj);
+        [OperationContract]
+        int ABCFunciones_Guardar(FuncionesBE obj);
+        [OperationContract]
+        int ABCFunciones_Actualizar(FuncionesBE obj);
 
         #endregion
 

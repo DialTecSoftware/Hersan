@@ -42,6 +42,7 @@ namespace Hersan.UI.Catalogos
         {
             try {
                 txtNombre.Text = string.Empty;
+                txtAbrev.Text = string.Empty;
                 txtId.Text = "0";
                 chkEstatus.Checked = false;
             } catch (Exception ex) {
@@ -65,6 +66,7 @@ namespace Hersan.UI.Catalogos
                 if (gvDatos.RowCount > 0) {
                     txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
                     txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
+                    txtAbrev.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Abrev"].Value.ToString();
                     chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
                 }
             } catch (Exception ex) {
@@ -80,6 +82,7 @@ namespace Hersan.UI.Catalogos
                     if (RadMessageBox.Show("Esta acción dará de baja la educación\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         obj.Id = int.Parse(txtId.Text);
                         obj.Nombre = txtNombre.Text;
+                        obj.Abrev = txtAbrev.Text;
                         obj.DatosUsuario.Estatus = false;
                         //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                         obj.DatosUsuario.IdUsuarioCreo = 2;
@@ -108,6 +111,7 @@ namespace Hersan.UI.Catalogos
             try {
                 obj.Id = int.Parse(txtId.Text);
                 obj.Nombre = txtNombre.Text;
+                obj.Abrev = txtAbrev.Text;
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
                 //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                 obj.DatosUsuario.IdUsuarioCreo = 1;

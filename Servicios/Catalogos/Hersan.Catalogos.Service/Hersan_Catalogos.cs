@@ -1,6 +1,7 @@
 ﻿using Hersan.Catalogos.Contract;
 using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
+using Hersan.Negocio.CapitalHumano;
 using Hersan.Negocio.Catalogos;
 using System.Collections.Generic;
 
@@ -83,6 +84,54 @@ namespace Hersan.Catalogos.Service
             return new CompetenciasBP().ABCCompetencias_Actualizar(obj);
         }
         #endregion
+
+        #region Entidades
+        public List<EntidadesBE> Entidades_Obtener()
+        {
+            return new EntidadesBP().Entidades_Obtener();
+        }
+        public int ABCEntidades_Guardar(EntidadesBE obj)
+        {
+            return new EntidadesBP().ABCEntidades_Guardar(obj);
+        }
+        public int ABCEntidades_Actualizar(EntidadesBE obj)
+        {
+            return new EntidadesBP().ABCEntidades_Actualizar(obj);
+        }
+        #endregion
+
+        #region Educacion
+        public List<EducacionBE> ABCEducacion_Obtener()
+        {
+            return new EducacionBP().ABCEducacion_Obtener();
+        }
+        public int ABCEducacion_Guardar(EducacionBE obj)
+        {
+            return new EducacionBP().ABCEducacion_Guardar(obj);
+        }
+        public int ABCEducacion_Actualizar(EducacionBE obj)
+        {
+            return new EducacionBP().ABCEducacion_Actualizar(obj);
+        }
+        #endregion
+
+        #region Funciones
+        public List<FuncionesBE> ABCFunciones_Obtener()
+        {
+            return new FuncionesBP().ABCFunciones_Obtener();
+        }
+        public int ABCFunciones_Guardar(FuncionesBE obj)
+        {
+            return new FuncionesBP().ABCFunciones_Guardar(obj);
+        }
+        public int ABCFunciones_Actualizar(FuncionesBE obj)
+        {
+            return new FuncionesBP().ABCFunciones_Actualizar(obj);
+        }
+        #endregion
+
+
+
 
     }
 }

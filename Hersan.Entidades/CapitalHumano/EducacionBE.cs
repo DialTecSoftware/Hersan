@@ -19,6 +19,7 @@ namespace Hersan.Entidades.Catalogos
         }
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public string Abrev { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
 }

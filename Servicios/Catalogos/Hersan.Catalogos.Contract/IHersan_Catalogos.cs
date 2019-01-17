@@ -63,6 +63,35 @@ namespace Hersan.Catalogos.Contract
 
         #endregion
 
+        #region Entidades
+        [OperationContract]
+        List<EntidadesBE> Entidades_Obtener();
+        [OperationContract]
+        int ABCEntidades_Guardar(EntidadesBE obj);
+        [OperationContract]
+        int ABCEntidades_Actualizar(EntidadesBE obj);
+
+        #endregion
+
+        #region Educacion
+        [OperationContract]
+        List<EducacionBE> ABCEducacion_Obtener();
+        [OperationContract]
+        int ABCEducacion_Guardar(EducacionBE obj);
+        [OperationContract]
+        int ABCEducacion_Actualizar(EducacionBE obj);
+
+        #endregion
+
+        #region Funciones
+        [OperationContract]
+        List<FuncionesBE> ABCFunciones_Obtener();
+        //[OperationContract]
+        //int ABCEducacion_Guardar(EducacionBE obj);
+        //[OperationContract]
+        //int ABCEducacion_Actualizar(EducacionBE obj);
+
+        #endregion
 
     }
 }

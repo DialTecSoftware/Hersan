@@ -104,6 +104,48 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCCompetencias_ActualizarAsync(Hersan.Entidades.CapitalHumano.CompetenciasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/Entidades_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/Entidades_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE> Entidades_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/Entidades_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/Entidades_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE>> Entidades_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEntidades_GuardarResponse")]
+        int ABCEntidades_Guardar(Hersan.Entidades.Catalogos.EntidadesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEntidades_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABCEntidades_GuardarAsync(Hersan.Entidades.Catalogos.EntidadesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEntidades_ActualizarResponse")]
+        int ABCEntidades_Actualizar(Hersan.Entidades.Catalogos.EntidadesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEntidades_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCEntidades_ActualizarAsync(Hersan.Entidades.Catalogos.EntidadesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE> ABCEducacion_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE>> ABCEducacion_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_GuardarResponse")]
+        int ABCEducacion_Guardar(Hersan.Entidades.Catalogos.EducacionBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABCEducacion_GuardarAsync(Hersan.Entidades.Catalogos.EducacionBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ActualizarResponse")]
+        int ABCEducacion_Actualizar(Hersan.Entidades.Catalogos.EducacionBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCEducacion_ActualizarAsync(Hersan.Entidades.Catalogos.EducacionBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE> ABCFunciones_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE>> ABCFunciones_ObtenerAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -251,6 +293,62 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<int> ABCCompetencias_ActualizarAsync(Hersan.Entidades.CapitalHumano.CompetenciasBE obj) {
             return base.Channel.ABCCompetencias_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE> Entidades_Obtener() {
+            return base.Channel.Entidades_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE>> Entidades_ObtenerAsync() {
+            return base.Channel.Entidades_ObtenerAsync();
+        }
+        
+        public int ABCEntidades_Guardar(Hersan.Entidades.Catalogos.EntidadesBE obj) {
+            return base.Channel.ABCEntidades_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCEntidades_GuardarAsync(Hersan.Entidades.Catalogos.EntidadesBE obj) {
+            return base.Channel.ABCEntidades_GuardarAsync(obj);
+        }
+        
+        public int ABCEntidades_Actualizar(Hersan.Entidades.Catalogos.EntidadesBE obj) {
+            return base.Channel.ABCEntidades_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCEntidades_ActualizarAsync(Hersan.Entidades.Catalogos.EntidadesBE obj) {
+            return base.Channel.ABCEntidades_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE> ABCEducacion_Obtener() {
+            return base.Channel.ABCEducacion_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE>> ABCEducacion_ObtenerAsync() {
+            return base.Channel.ABCEducacion_ObtenerAsync();
+        }
+        
+        public int ABCEducacion_Guardar(Hersan.Entidades.Catalogos.EducacionBE obj) {
+            return base.Channel.ABCEducacion_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCEducacion_GuardarAsync(Hersan.Entidades.Catalogos.EducacionBE obj) {
+            return base.Channel.ABCEducacion_GuardarAsync(obj);
+        }
+        
+        public int ABCEducacion_Actualizar(Hersan.Entidades.Catalogos.EducacionBE obj) {
+            return base.Channel.ABCEducacion_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCEducacion_ActualizarAsync(Hersan.Entidades.Catalogos.EducacionBE obj) {
+            return base.Channel.ABCEducacion_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE> ABCFunciones_Obtener() {
+            return base.Channel.ABCFunciones_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE>> ABCFunciones_ObtenerAsync() {
+            return base.Channel.ABCFunciones_ObtenerAsync();
         }
     }
 }

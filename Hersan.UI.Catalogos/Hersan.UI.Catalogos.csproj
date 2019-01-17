@@ -80,11 +80,29 @@
     <Compile Include="frmDepartamentos.Designer.cs">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEducacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEducacion.Designer.cs">
+      <DependentUpon>frmEducacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmpresas.Designer.cs">
       <DependentUpon>frmEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEntidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntidades.Designer.cs">
+      <DependentUpon>frmEntidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFunciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFunciones.Designer.cs">
+      <DependentUpon>frmFunciones.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPuestos.cs">
       <SubType>Form</SubType>
@@ -113,8 +131,17 @@
     <EmbeddedResource Include="frmDepartamentos.resx">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEducacion.resx">
+      <DependentUpon>frmEducacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpresas.resx">
       <DependentUpon>frmEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEntidades.resx">
+      <DependentUpon>frmEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFunciones.resx">
+      <DependentUpon>frmFunciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPuestos.resx">
       <DependentUpon>frmPuestos.cs</DependentUpon>
@@ -150,8 +177,11 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EducacionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EntidadesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE1.datasource" />
   </ItemGroup>

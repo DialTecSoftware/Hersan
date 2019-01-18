@@ -199,12 +199,12 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(687, 118);
+            this.radPanel1.Size = new System.Drawing.Size(687, 96);
             this.radPanel1.TabIndex = 1;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(436, 74);
+            this.txtId.Location = new System.Drawing.Point(436, 44);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(71, 20);
             this.txtId.TabIndex = 8;
@@ -215,15 +215,15 @@
             this.txtPonderacion.Location = new System.Drawing.Point(436, 16);
             this.txtPonderacion.Name = "txtPonderacion";
             this.txtPonderacion.Size = new System.Drawing.Size(71, 20);
-            this.txtPonderacion.TabIndex = 7;
+            this.txtPonderacion.TabIndex = 3;
+            this.txtPonderacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPonderacion_KeyPress);
             // 
             // chkEstatus
             // 
-            this.chkEstatus.AutoSize = true;
             this.chkEstatus.Location = new System.Drawing.Point(355, 46);
             this.chkEstatus.Name = "chkEstatus";
             this.chkEstatus.Size = new System.Drawing.Size(57, 17);
-            this.chkEstatus.TabIndex = 6;
+            this.chkEstatus.TabIndex = 4;
             this.chkEstatus.Text = "Activo";
             this.chkEstatus.UseVisualStyleBackColor = true;
             // 
@@ -243,9 +243,8 @@
             this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(229, 52);
-            this.txtDescripcion.TabIndex = 3;
-            this.txtDescripcion.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtDescripcion.Size = new System.Drawing.Size(229, 39);
+            this.txtDescripcion.TabIndex = 2;
             // 
             // label2
             // 
@@ -278,9 +277,9 @@
             // 
             this.radPanel2.Controls.Add(this.gvDatos);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel2.Location = new System.Drawing.Point(0, 171);
+            this.radPanel2.Location = new System.Drawing.Point(0, 149);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(687, 204);
+            this.radPanel2.Size = new System.Drawing.Size(687, 226);
             this.radPanel2.TabIndex = 2;
             // 
             // gvDatos
@@ -342,10 +341,9 @@
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(687, 204);
+            this.gvDatos.Size = new System.Drawing.Size(687, 226);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
-            this.gvDatos.Click += new System.EventHandler(this.gvDatos_Click);
             // 
             // commandBarStripElement2
             // 

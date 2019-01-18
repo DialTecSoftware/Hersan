@@ -148,9 +148,5 @@ namespace Hersan.UI.Catalogos
             }
         }
 
-        private void gvDatos_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

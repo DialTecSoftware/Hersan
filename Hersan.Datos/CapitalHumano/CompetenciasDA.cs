@@ -35,7 +35,6 @@ namespace Hersan.Datos.Catalogos
                                 obj.Nombre = reader["COM_Nombre"].ToString();
                                 obj.Descripcion = reader["COM_Descripcion"].ToString();
                                 obj.Ponderacion= int.Parse(reader["COM_Ponderacion"].ToString());
-                                obj.Experiencia = int.Parse(reader["COM_AniosExp"].ToString());
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["COM_Estatus"].ToString());
 
 
@@ -59,7 +58,6 @@ namespace Hersan.Datos.Catalogos
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_COMPETENCIAS_GUARDAR, conn)) {
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
-                        cmd.Parameters.AddWithValue("@AniosExp", obj.Experiencia);
                         cmd.Parameters.AddWithValue("@Ponderacion", obj.Ponderacion);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 

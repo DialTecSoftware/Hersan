@@ -1,11 +1,6 @@
 ﻿using Hersan.Entidades.CapitalHumano;
 using Hersan.Negocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -23,13 +18,12 @@ namespace Hersan.UI.Catalogos
         private void frmCompetencias_Load(object sender, EventArgs e)
         {
             try {
-                //LimpiarCampos();
+                LimpiarCampos();
                 CargarDatos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -38,7 +32,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -47,9 +40,9 @@ namespace Hersan.UI.Catalogos
                 obj.Id = int.Parse(txtId.Text);
                 obj.Nombre = txtNombre.Text;
                 obj.Descripcion = txtDescripcion.Text;
-                obj.Ponderacion = int.Parse(txtPonderacion.Text);
+                obj.Ponderacion = int.Parse(txtPonderacion.Text.Length == 0 ? "0" : txtPonderacion.Text);
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = 1;
+                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                 //PROCESO DE GUARDADO Y ACTUALIZACION
                 if (txtId.Text=="0") {
@@ -72,12 +65,11 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al actualizar los datos\n"+ ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogos = null;
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -108,13 +100,36 @@ namespace Hersan.UI.Catalogos
                 oCatalogos = null;
             }
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
                 this.Close();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
+        {
+            try {
+                if (gvDatos.RowCount > 0) {
+                    txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
+                    txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
+                    txtDescripcion.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Descripcion"].Value.ToString();
+                    txtPonderacion.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Ponderacion"].Value.ToString();
+                    chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void txtPonderacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (!BaseWinBP.isNumero(e.KeyChar)) {
+                    e.Handled = true;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -129,42 +144,16 @@ namespace Hersan.UI.Catalogos
                 oCatalogos = null;
             }
         }
-
         private void LimpiarCampos()
         {
             try {
                 txtId.Text = "0";
                 txtNombre.Text = string.Empty;
-                txtPonderacion.Text = string.Empty;
+                txtPonderacion.Text = "0";
                 txtDescripcion.Text = string.Empty;
                 chkEstatus.Checked = false;
             } catch (Exception ex) {
                 throw ex;
-            }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gvDatos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
-        {
-            try {
-                if (gvDatos.RowCount > 0) {
-                    txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
-                    txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
-                    txtDescripcion.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Descripcion"].Value.ToString();
-                    txtPonderacion.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Ponderacion"].Value.ToString();
-                    chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
     }

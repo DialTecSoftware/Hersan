@@ -158,6 +158,42 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCFunciones_ActualizarAsync(Hersan.Entidades.CapitalHumano.FuncionesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE> ABCContactos_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE>> ABCContactos_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_GuardarResponse")]
+        int ABCContactos_Guardar(Hersan.Entidades.Catalogos.ContactosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABCContactos_GuardarAsync(Hersan.Entidades.Catalogos.ContactosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_ActualizarResponse")]
+        int ABCContactos_Actualizar(Hersan.Entidades.Catalogos.ContactosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCContactos_ActualizarAsync(Hersan.Entidades.Catalogos.ContactosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.EquipoHerramientasBE> ABCEquipoHerramientas_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.EquipoHerramientasBE>> ABCEquipoHerramientas_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_GuardarResponse")]
+        int ABCEquipoHerramientas_Guardar(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABCEquipoHerramientas_GuardarAsync(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_ActualizarResponse")]
+        int ABCEquipoHerramientas_Actualizar(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCEquipoHerramientas_ActualizarAsync(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -377,6 +413,54 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<int> ABCFunciones_ActualizarAsync(Hersan.Entidades.CapitalHumano.FuncionesBE obj) {
             return base.Channel.ABCFunciones_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE> ABCContactos_Obtener() {
+            return base.Channel.ABCContactos_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE>> ABCContactos_ObtenerAsync() {
+            return base.Channel.ABCContactos_ObtenerAsync();
+        }
+        
+        public int ABCContactos_Guardar(Hersan.Entidades.Catalogos.ContactosBE obj) {
+            return base.Channel.ABCContactos_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCContactos_GuardarAsync(Hersan.Entidades.Catalogos.ContactosBE obj) {
+            return base.Channel.ABCContactos_GuardarAsync(obj);
+        }
+        
+        public int ABCContactos_Actualizar(Hersan.Entidades.Catalogos.ContactosBE obj) {
+            return base.Channel.ABCContactos_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCContactos_ActualizarAsync(Hersan.Entidades.Catalogos.ContactosBE obj) {
+            return base.Channel.ABCContactos_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EquipoHerramientasBE> ABCEquipoHerramientas_Obtener() {
+            return base.Channel.ABCEquipoHerramientas_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.EquipoHerramientasBE>> ABCEquipoHerramientas_ObtenerAsync() {
+            return base.Channel.ABCEquipoHerramientas_ObtenerAsync();
+        }
+        
+        public int ABCEquipoHerramientas_Guardar(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj) {
+            return base.Channel.ABCEquipoHerramientas_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCEquipoHerramientas_GuardarAsync(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj) {
+            return base.Channel.ABCEquipoHerramientas_GuardarAsync(obj);
+        }
+        
+        public int ABCEquipoHerramientas_Actualizar(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj) {
+            return base.Channel.ABCEquipoHerramientas_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCEquipoHerramientas_ActualizarAsync(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj) {
+            return base.Channel.ABCEquipoHerramientas_ActualizarAsync(obj);
         }
     }
 }

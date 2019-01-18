@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C7A0E85C-70A0-40CC-A42C-D917C1C99827}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hersan.UI.Catalogos</RootNamespace>
     <AssemblyName>Hersan.UI.Catalogos</AssemblyName>
@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContactos.Designer.cs">
+      <DependentUpon>frmContactos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCompetencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     <Compile Include="frmEntidades.Designer.cs">
       <DependentUpon>frmEntidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEquipoHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEquipoHerramientas.Designer.cs">
+      <DependentUpon>frmEquipoHerramientas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFunciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmContactos.resx">
+      <DependentUpon>frmContactos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCompetencias.resx">
       <DependentUpon>frmCompetencias.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEntidades.resx">
       <DependentUpon>frmEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEquipoHerramientas.resx">
+      <DependentUpon>frmEquipoHerramientas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFunciones.resx">
       <DependentUpon>frmFunciones.cs</DependentUpon>
@@ -178,10 +196,12 @@
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EducacionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EntidadesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EquipoHerramientasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE1.datasource" />
   </ItemGroup>

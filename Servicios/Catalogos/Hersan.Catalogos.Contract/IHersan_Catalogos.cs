@@ -93,5 +93,25 @@ namespace Hersan.Catalogos.Contract
 
         #endregion
 
-    }
+        #region Contactos
+        [OperationContract]
+        List<ContactosBE> ABCContactos_Obtener();
+        [OperationContract]
+        int ABCContactos_Guardar(ContactosBE obj);
+        [OperationContract]
+        int ABCContactos_Actualizar(ContactosBE obj);
+
+        #endregion
+
+        #region EquipoHerramientas
+        [OperationContract]
+        List<EquipoHerramientasBE> ABCEquipoHerramientas_Obtener();
+        [OperationContract]
+        int ABCEquipoHerramientas_Guardar(EquipoHerramientasBE obj);
+        [OperationContract]
+        int ABCEquipoHerramientas_Actualizar(EquipoHerramientasBE obj);
+
+        #endregion
+
+    } 
 }

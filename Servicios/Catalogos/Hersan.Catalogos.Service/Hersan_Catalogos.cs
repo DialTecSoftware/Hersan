@@ -130,6 +130,35 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
+        #region Contactos
+        public List<ContactosBE> ABCContactos_Obtener()
+        {
+            return new ContactosBP().ABCContactos_Obtener();
+        }
+        public int ABCContactos_Guardar(ContactosBE obj)
+        {
+            return new ContactosBP().ABCContactos_Guardar(obj);
+        }
+        public int ABCContactos_Actualizar(ContactosBE obj)
+        {
+            return new ContactosBP().ABCContactos_Actualizar(obj);
+        }
+        #endregion
+
+        #region EquipoHerramientas
+        public List<EquipoHerramientasBE> ABCEquipoHerramientas_Obtener()
+        {
+            return new EquipoHerramientasBP().ABCEquipoHerramientas_Obtener();
+        }
+        public int ABCEquipoHerramientas_Guardar(EquipoHerramientasBE obj)
+        {
+            return new EquipoHerramientasBP().ABCEquipoHerramientas_Guardar(obj);
+        }
+        public int ABCEquipoHerramientas_Actualizar(EquipoHerramientasBE obj)
+        {
+            return new EquipoHerramientasBP().ABCEquipoHerramientas_Actualizar(obj);
+        }
+        #endregion
 
 
 

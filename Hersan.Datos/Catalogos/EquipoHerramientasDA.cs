@@ -1,4 +1,4 @@
-﻿using Hersan.Entidades.CapitalHumano;
+﻿using Hersan.Entidades.Catalogos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,31 +9,33 @@ using System.Threading.Tasks;
 
 namespace Hersan.Datos.Catalogos
 {
-    public class FuncionesDA:BaseDA
+   public class EquipoHerramientasDA: BaseDA
     {
+
+
         #region Constantes
-        const string CONST_USP_ABC_FUNCIONES_OBTENER = "ABC_Funciones_Obtener";
-        const string CONST_ABC_FUNCIONES_GUARDAR = "ABC_Funciones_Guarda";
-        const string CONST_ABC_FUNCIONES_ACTUALIZAR = "ABC_Funciones_Actualiza";
+        const string CONST_USP_ABC_EHE_OBTENER = "ABC_EquipoHerramientas_Obtener";
+        const string CONST_ABC_EHE_GUARDAR = "ABC_EquipoHerramientas_Guarda";
+        const string CONST_ABC_EHE_ACTUALIZAR = "[ABC_EquipoHerramientas_Actualiza]";
         #endregion
 
-        public List<FuncionesBE> ABCFunciones_Obtener()
+        public List<EquipoHerramientasBE> ABCEquipoHerramientas_Obtener()
         {
-            List<FuncionesBE> oList = new List<FuncionesBE>();
+            List<EquipoHerramientasBE> oList = new List<EquipoHerramientasBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ABC_FUNCIONES_OBTENER, conn)) {
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ABC_EHE_OBTENER, conn)) {
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
-                                FuncionesBE obj = new FuncionesBE();
+                                EquipoHerramientasBE obj = new EquipoHerramientasBE();
 
-                                obj.Id = int.Parse(reader["FUN_Id"].ToString());
-                                obj.Nombre = reader["FUN_Nombre"].ToString();
-                                obj.Continua = bool.Parse(reader["FUN_Continua"].ToString());
-                                obj.DatosUsuario.Estatus = bool.Parse(reader["FUN_Estatus"].ToString());
+                                obj.Id = int.Parse(reader["EHE_Id"].ToString());
+                                obj.Nombre = reader["EHE_Nombre"].ToString();
+                                obj.Equipo = bool.Parse(reader["EHE_Equipo"].ToString());
+                                obj.DatosUsuario.Estatus = bool.Parse(reader["EHE_Estatus"].ToString());
 
                                 oList.Add(obj);
                             }
@@ -45,16 +47,15 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
-        public int ABCFunciones_Guardar(FuncionesBE obj)
+        public int ABCEquipoHerramientas_Guardar(EquipoHerramientasBE obj)
         {
             int Result = 0;
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_FUNCIONES_GUARDAR, conn)) {
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_EHE_GUARDAR, conn)) {
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
-                        cmd.Parameters.AddWithValue("@Continua", obj.Continua);
+                        cmd.Parameters.AddWithValue("@Equipo", obj.Equipo);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -68,16 +69,16 @@ namespace Hersan.Datos.Catalogos
         }
 
 
-        public int ABCFunciones_Actualizar(FuncionesBE obj)
+        public int ABCEquipoHerramientas_Actualizar(EquipoHerramientasBE obj)
         {
             int Result = 0;
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_FUNCIONES_ACTUALIZAR, conn)) {
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_EHE_ACTUALIZAR, conn)) {
                         cmd.Parameters.AddWithValue("@Id", obj.Id);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
-                        cmd.Parameters.AddWithValue("@Continua", obj.Continua);
+                        cmd.Parameters.AddWithValue("@Equipo", obj.Equipo);
                         cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
@@ -92,4 +93,3 @@ namespace Hersan.Datos.Catalogos
         }
     }
 }
-    

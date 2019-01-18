@@ -76,7 +76,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al actualizar la inforación\n"+ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrió un error al actualizar la información\n"+ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -87,7 +87,7 @@ namespace Hersan.UI.Catalogos
             PuestosBE obj = new PuestosBE();
             try {
                 if (chkEstatus.Checked) {
-                    if (RadMessageBox.Show("Esta acción dará de baja el departamento\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    if (RadMessageBox.Show("Esta acción dará de baja el puesto\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         obj.Id = int.Parse(txtIdPuesto.Text);
                         obj.Departamentos.Id = int.Parse(txtIdDep.Text);
                         obj.Nombre = txtNombre.Text;

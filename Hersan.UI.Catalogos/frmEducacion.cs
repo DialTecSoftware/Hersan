@@ -1,4 +1,5 @@
 ﻿using Hersan.Entidades.Catalogos;
+using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,21 @@ namespace Hersan.UI.Catalogos
     public partial class frmEducacion : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+
         public frmEducacion()
         {
             InitializeComponent();
         }
+        private void frmEducacion_Load(object sender, EventArgs e)
+        {
+            try {
+                LimpiarCampos();
+                Cargar();
+            } catch (Exception ex) {
 
+                throw ex;
+            }
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -26,40 +37,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-
-        public void Cargar()
-        {
-            try {
-                gvDatos.DataSource = oCatalogo.ABCEducacion_Obtener();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar las educaciones\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-
-        private void LimpiarCampos()
-        {
-            try {
-                txtNombre.Text = string.Empty;
-                txtAbrev.Text = string.Empty;
-                txtId.Text = "0";
-                chkEstatus.Checked = false;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void frmEducacion_Load(object sender, EventArgs e)
-        {
-            try {
-                Cargar();
-            } catch (Exception ex) {
-
-                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -70,10 +47,9 @@ namespace Hersan.UI.Catalogos
                     chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EducacionBE obj = new EducacionBE();
@@ -84,8 +60,7 @@ namespace Hersan.UI.Catalogos
                         obj.Nombre = txtNombre.Text;
                         obj.Abrev = txtAbrev.Text;
                         obj.DatosUsuario.Estatus = false;
-                        //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                        obj.DatosUsuario.IdUsuarioCreo = 2;
+                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                         int Result = oCatalogo.ABCEducacion_Actualizar(obj);
                         if (Result == 0) {
@@ -98,12 +73,11 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al dar de baja la educación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al guardar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -137,12 +111,11 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                throw;
             } finally {
                 oCatalogo = null;
             }
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -151,10 +124,26 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-        private void gvDatos_Click(object sender, EventArgs e)
+        
+        public void Cargar()
         {
-
+            try {
+                gvDatos.DataSource = oCatalogo.ABCEducacion_Obtener();
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
+        private void LimpiarCampos()
+        {
+            try {
+                txtId.Text = "0";
+                txtNombre.Text = string.Empty;
+                txtAbrev.Text = string.Empty;
+                chkEstatus.Checked = false;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
     }
 }

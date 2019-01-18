@@ -54,7 +54,7 @@ namespace Hersan.UI.Seguridad
                     Orden = int.Parse(txtOrden.Text),
                     NombreForma = txtForma.Text,
                     AssemblyDll = txtEnsamblado.Text,
-                    AssemblyNamespace = txtEnsamblado.Text.Replace("DLL", "") + txtForma.Text,
+                    AssemblyNamespace = txtEnsamblado.Text.Replace("dll", "") + txtForma.Text,
                 };
 
                 if (oSeguridad.Menu_Guardar(obj) > 0) {

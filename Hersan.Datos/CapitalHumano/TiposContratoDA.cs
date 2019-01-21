@@ -16,6 +16,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_TIPOSCONTRATO_OBTENER = "ABC_TiposContrato_Obtener";
         const string CONST_ABC_TIPOSCONTRATO_GUARDAR = "ABC_TiposContrato_Guarda";
         const string CONST_ABC_TIPOSCONTRATO_ACTUALIZAR = "ABC_TiposContrato_Actualiza";
+        const string CONST_ABC_TIPOSCONTRATO_COMBO = "ABC_TiposContrato_Combo";
         #endregion
 
         public List<TiposContratoBE> TiposContrato_Obtener()
@@ -87,6 +88,33 @@ namespace Hersan.Datos.Catalogos
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public List<TiposContratoBE> ABCTiposcontrato_Combo()
+        {
+            List<TiposContratoBE> oList = new List<TiposContratoBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_TIPOSCONTRATO_COMBO, conn)) {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                TiposContratoBE obj = new TiposContratoBE();
+
+                                obj.Id = int.Parse(reader["TCO_ID"].ToString());
+                                obj.Nombre = reader["TCO_Nombre"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
             } catch (Exception ex) {
                 throw ex;
             }

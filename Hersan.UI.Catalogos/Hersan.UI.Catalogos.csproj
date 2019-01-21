@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C7A0E85C-70A0-40CC-A42C-D917C1C99827}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hersan.UI.Catalogos</RootNamespace>
     <AssemblyName>Hersan.UI.Catalogos</AssemblyName>
@@ -80,6 +80,12 @@
     <Compile Include="frmCompetencias.Designer.cs">
       <DependentUpon>frmCompetencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContratos.Designer.cs">
+      <DependentUpon>frmContratos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDepartamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     <EmbeddedResource Include="frmCompetencias.resx">
       <DependentUpon>frmCompetencias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmContratos.resx">
+      <DependentUpon>frmContratos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDepartamentos.resx">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +204,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />

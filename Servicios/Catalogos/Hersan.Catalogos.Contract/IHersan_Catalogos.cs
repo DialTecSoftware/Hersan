@@ -33,10 +33,10 @@ namespace Hersan.Catalogos.Contract
         #region TiposContrato
         [OperationContract]
         List<TiposContratoBE> TiposContrato_Obtener();
-
+        [OperationContract]
+        List<TiposContratoBE> ABCTiposcontrato_Combo();
         [OperationContract]
         int ABCTiposContrato_Guardar(TiposContratoBE obj);
-
         [OperationContract]
         int ABCTiposContrato_Actualizar(TiposContratoBE obj);
 
@@ -113,5 +113,15 @@ namespace Hersan.Catalogos.Contract
 
         #endregion
 
-    } 
+        #region Contratos
+        [OperationContract]
+        List<ContratosBE> ABCContratos_Obtener();
+        [OperationContract]
+        int ABCContratos_Actualizar(ContratosBE obj);
+        [OperationContract]
+        int ABCContratos_Guardar(ContratosBE obj);
+
+        #endregion
+
+    }
 }

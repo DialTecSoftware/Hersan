@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
+    <Compile Include="CapitalHumano\ContratosBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
     <Compile Include="Catalogos\CiudadesBE.cs" />
     <Compile Include="Catalogos\ColoniasBE.cs" />

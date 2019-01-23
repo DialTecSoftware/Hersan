@@ -67,8 +67,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
-
         public int ABCEquipoHerramientas_Actualizar(EquipoHerramientasBE obj)
         {
             int Result = 0;

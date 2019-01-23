@@ -67,7 +67,6 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-
         public int ABCFunciones_Actualizar(FuncionesBE obj)
         {
             int Result = 0;

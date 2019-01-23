@@ -19,6 +19,29 @@ namespace Hersan.UI.Catalogos
         {
             InitializeComponent();
         }
+        private void CargarDatos()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                gvDatos.DataSource = oCatalogos.ABCDepartamentos_Obtener();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogos = null;
+            }
+        }
+        private void LimpiarCampos()
+        {
+            try {
+                txtAbrev.Text = string.Empty;
+                txtId.Text = "0";
+                txtNombre.Text = string.Empty;
+                chkEstatus.Checked = false;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
         private void frmDepartamentos_Load(object sender, EventArgs e)
         {
             try {
@@ -125,28 +148,7 @@ namespace Hersan.UI.Catalogos
             }
         }
 
-        private void CargarDatos()
-        {
-            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
-            try {
-                gvDatos.DataSource = oCatalogos.ABCDepartamentos_Obtener();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCatalogos = null;
-            }
-        }
-        private void LimpiarCampos()
-        {
-            try {
-                txtAbrev.Text = string.Empty;
-                txtId.Text = "0";
-                txtNombre.Text = string.Empty;
-                chkEstatus.Checked = false;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+       
 
     }
 }

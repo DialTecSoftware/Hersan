@@ -68,7 +68,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(493, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(493, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -171,7 +171,7 @@
             this.commandBarLabel1.Name = "commandBarLabel1";
             this.commandBarLabel1.StretchHorizontally = true;
             this.commandBarLabel1.Text = "CATALOGO DE CONTACTOS";
-            this.commandBarLabel1.Click += new System.EventHandler(this.commandBarLabel1_Click);
+          
             // 
             // radPanel1
             // 
@@ -181,7 +181,7 @@
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.txtNombre);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 81);
+            this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(493, 73);
             this.radPanel1.TabIndex = 1;
@@ -195,7 +195,7 @@
             this.chkInterno.TabIndex = 13;
             this.chkInterno.Text = "Interno";
             this.chkInterno.UseVisualStyleBackColor = true;
-            this.chkInterno.CheckedChanged += new System.EventHandler(this.chkContinua_CheckedChanged);
+           
             // 
             // chkEstatus
             // 
@@ -235,7 +235,7 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 154);
+            this.gvDatos.Location = new System.Drawing.Point(0, 129);
             // 
             // 
             // 
@@ -278,7 +278,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(493, 169);
+            this.gvDatos.Size = new System.Drawing.Size(493, 194);
             this.gvDatos.TabIndex = 5;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 

@@ -108,7 +108,7 @@
             this.cboDeptos.Name = "cboDeptos";
             this.cboDeptos.Size = new System.Drawing.Size(166, 20);
             this.cboDeptos.TabIndex = 1;
-            this.cboDeptos.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboDeptos_SelectedIndexChanged);
+          
             // 
             // label3
             // 

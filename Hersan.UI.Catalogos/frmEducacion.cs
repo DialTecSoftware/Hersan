@@ -19,6 +19,26 @@ namespace Hersan.UI.Catalogos
         {
             InitializeComponent();
         }
+        public void Cargar()
+        {
+            try {
+                gvDatos.DataSource = oCatalogo.ABCEducacion_Obtener();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void LimpiarCampos()
+        {
+            try {
+                txtId.Text = "0";
+                txtNombre.Text = string.Empty;
+                txtAbrev.Text = string.Empty;
+                chkEstatus.Checked = false;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
         private void frmEducacion_Load(object sender, EventArgs e)
         {
             try {
@@ -125,25 +145,7 @@ namespace Hersan.UI.Catalogos
             }
         }
         
-        public void Cargar()
-        {
-            try {
-                gvDatos.DataSource = oCatalogo.ABCEducacion_Obtener();
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-        private void LimpiarCampos()
-        {
-            try {
-                txtId.Text = "0";
-                txtNombre.Text = string.Empty;
-                txtAbrev.Text = string.Empty;
-                chkEstatus.Checked = false;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
+     
 
     }
 }

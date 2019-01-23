@@ -68,7 +68,6 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-
         public int ABCEducacion_Actualizar(EducacionBE obj)
         {
             int Result = 0;

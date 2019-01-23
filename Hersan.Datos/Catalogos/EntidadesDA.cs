@@ -50,7 +50,6 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-
         public int ABCEntidades_Guardar(EntidadesBE obj)
         {
             int Result = 0;

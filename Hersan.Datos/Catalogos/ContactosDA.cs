@@ -68,7 +68,6 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-
         public int ABCContactos_Actualizar(ContactosBE obj)
         {
             int Result = 0;

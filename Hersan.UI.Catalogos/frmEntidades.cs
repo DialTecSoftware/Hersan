@@ -14,53 +14,24 @@ namespace Hersan.UI.Catalogos
     {
 
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+
         public frmEntidades()
         {
             InitializeComponent();
         }
-
-        private void frmEntidades_Load(object sender, EventArgs e)
+        private void CargarEmpresas()
         {
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                CargarEntidades();
-                CargarEmpresas();
+                cboEmp.ValueMember = "ID";
+                cboEmp.DisplayMember = "NombreComercial";
+                cboEmp.DataSource = oCatalogo.ABCEmpresas_Cbo();
             } catch (Exception ex) {
-
-                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrió un error al cargar las empresas\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogo = null;
             }
         }
-
-        public void CargarEntidades()
-        {
-            try {
-                gvDatos.DataSource = oCatalogo.Entidades_Obtener();
-               
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cargar las entidades\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void gvDatos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
-        {
-            try {
-                if (gvDatos.RowCount > 0) {
-                    txtId.Text = gvDatos.CurrentRow.Cells["Id"].Value.ToString();
-                    txtIdEmpresa.Text = gvDatos.CurrentRow.Cells["Id_Emp"].Value.ToString();
-                    txtNombre.Text = gvDatos.CurrentRow.Cells["Nombre"].Value.ToString();
-                    txtAbrev.Text = gvDatos.CurrentRow.Cells["Abrev"].Value.ToString();
-                    cboEmp.SelectedValue = int.Parse(txtIdEmpresa.Text);
-                    chkEstatus.Checked = bool.Parse(gvDatos.CurrentRow.Cells["Estatus"].Value.ToString());
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
         private void LimpiarCampos()
         {
             try {
@@ -74,9 +45,16 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        public void CargarEntidades()
+        {
+            try {
+                gvDatos.DataSource = oCatalogo.Entidades_Obtener();
 
-      
-
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar las entidades\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+                          
 
         private void btnNuevo(object sender, EventArgs e)
         {
@@ -87,7 +65,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -96,7 +73,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -136,7 +112,6 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -168,26 +143,37 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
-
-
-        private void CargarEmpresas()
+        private void frmEntidades_Load(object sender, EventArgs e)
         {
-            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                cboEmp.ValueMember = "ID";
-                cboEmp.DisplayMember = "NombreComercial";
-                cboEmp.DataSource = oCatalogo.ABCEmpresas_Cbo();
+                CargarEntidades();
+                CargarEmpresas();
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar las empresas\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCatalogo = null;
+
+                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
+        {
+            try {
+                if (gvDatos.RowCount > 0) {
+                    txtId.Text = gvDatos.CurrentRow.Cells["Id"].Value.ToString();
+                    txtIdEmpresa.Text = gvDatos.CurrentRow.Cells["Id_Emp"].Value.ToString();
+                    txtNombre.Text = gvDatos.CurrentRow.Cells["Nombre"].Value.ToString();
+                    txtAbrev.Text = gvDatos.CurrentRow.Cells["Abrev"].Value.ToString();
+                    cboEmp.SelectedValue = int.Parse(txtIdEmpresa.Text);
+                    chkEstatus.Checked = bool.Parse(gvDatos.CurrentRow.Cells["Estatus"].Value.ToString());
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
-        private void commandBarLabel1_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
+
     }
     }
+    
 

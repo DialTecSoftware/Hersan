@@ -13,42 +13,11 @@ namespace Hersan.UI.Catalogos
     public partial class frmContactos : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+
         public frmContactos()
         {
             InitializeComponent();
         }
-
-        private void commandBarLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkContinua_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-
-            try {
-                LimpiarCampos();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            try {
-                this.Close();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-
-
         private void LimpiarCampos()
         {
             try {
@@ -60,7 +29,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         public void Cargar()
         {
             try {
@@ -69,6 +37,24 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al cargar las funciones\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+            try {
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            try {
+                this.Close();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }    
         private void Contactos_Load(object sender, EventArgs e)
         {
             try {
@@ -79,7 +65,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -93,7 +78,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -140,7 +124,6 @@ namespace Hersan.UI.Catalogos
             }
 
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ContactosBE obj = new ContactosBE();

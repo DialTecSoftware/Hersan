@@ -20,61 +20,6 @@ namespace Hersan.UI.Catalogos
         {
             InitializeComponent();
         }
-
-        private void frmTiposContrato_Load(object sender, EventArgs e)
-        {
-            try {
-                Cargar_TiposContrato();
-            } catch (Exception ex) {
-
-                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        public void Cargar_TiposContrato()
-        {
-            try {
-                gvDatos.DataSource = oCatalogo.TiposContrato_Obtener();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar los tipos de contrato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void dgvTiposContrato_Click(object sender, EventArgs e)
-        {
-
-        }
-
-     
-
-        private void btn_TCONuevo_Click(object sender, EventArgs e)
-        {
-            try {
-                LimpiarCampos();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void btn_TCOSalir_Click(object sender, EventArgs e)
-        {
-            try {
-                this.Close();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
-        {
-
-        }
-
-        private void gvDatos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void LimpiarCampos()
         {
             try {
@@ -86,7 +31,24 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        public void Cargar_TiposContrato()
+        {
+            try {
+                gvDatos.DataSource = oCatalogo.TiposContrato_Obtener();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar los tipos de contrato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }                 
 
+        private void frmTiposContrato_Load(object sender, EventArgs e)
+        {
+            try {
+                Cargar_TiposContrato();
+            } catch (Exception ex) {
+
+                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void btn_TCOGuardar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -125,7 +87,22 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
-
+        private void btn_TCONuevo_Click(object sender, EventArgs e)
+        {
+            try {
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void btn_TCOSalir_Click(object sender, EventArgs e)
+        {
+            try {
+                this.Close();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void btn_TCOEliminar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -156,7 +133,6 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
-
         private void gvDatos_CurrentRowChanged_1(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -171,9 +147,6 @@ namespace Hersan.UI.Catalogos
             }
         }
 
-        private void gvDatos_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

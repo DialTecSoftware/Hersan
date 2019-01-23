@@ -695,7 +695,7 @@
             this.gvDatos.Size = new System.Drawing.Size(528, 175);
             this.gvDatos.TabIndex = 2;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged_1);
-            this.gvDatos.Click += new System.EventHandler(this.gvDatos_Click_1);
+          
             // 
             // frmTiposContrato
             // 

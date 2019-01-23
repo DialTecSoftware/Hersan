@@ -17,6 +17,45 @@ namespace Hersan.UI.Catalogos
         {
             InitializeComponent();
         }
+        private void CargarPuestos()
+        {
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                oList = oCatalogo.ABCPuestos_Obtener();
+                gvPuestos.DataSource = oList;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogo = null;
+            }
+        }
+        private void CargarDeptos()
+        {
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboDeptos.ValueMember = "Id";
+                cboDeptos.DisplayMember = "Nombre";
+                cboDeptos.DataSource = oCatalogo.ABCDepartamentos_Combo();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogo = null;
+            }
+        }
+        private void LimpiarCampos()
+        {
+            try {
+                cboDeptos.SelectedIndex = 0;
+                txtIdDep.Text = "0";
+                txtIdPuesto.Text = "0";
+                txtNombre.Text = string.Empty;
+                txtAbrev.Text = string.Empty;
+                chkEstatus.Checked = false;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
         private void frmPuestos_Load(object sender, EventArgs e)
         {
             try {
@@ -127,48 +166,8 @@ namespace Hersan.UI.Catalogos
             }
         }
 
-        private void CargarPuestos()
-        {
-            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
-            try {
-                oList = oCatalogo.ABCPuestos_Obtener();
-                gvPuestos.DataSource = oList;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCatalogo = null;
-            }
-        }
-        private void CargarDeptos()
-        {
-            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
-            try {
-                cboDeptos.ValueMember = "Id";
-                cboDeptos.DisplayMember = "Nombre";
-                cboDeptos.DataSource = oCatalogo.ABCDepartamentos_Combo();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCatalogo = null;
-            }
-        }
-        private void LimpiarCampos()
-        {
-            try {
-                cboDeptos.SelectedIndex = 0;
-                txtIdDep.Text = "0";
-                txtIdPuesto.Text = "0";
-                txtNombre.Text = string.Empty;
-                txtAbrev.Text = string.Empty;
-                chkEstatus.Checked = false;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+      
 
-        private void cboDeptos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-
-        }
+       
     }
 }

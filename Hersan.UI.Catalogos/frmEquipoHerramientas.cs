@@ -13,20 +13,11 @@ namespace Hersan.UI.Catalogos
     public partial class frmEquipoHerramientas : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+
         public frmEquipoHerramientas()
         {
             InitializeComponent();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            try {
-                LimpiarCampos();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-
-        }
+        }      
         private void LimpiarCampos()
         {
             try {
@@ -38,8 +29,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-
         public void Cargar()
         {
             try {
@@ -48,37 +37,7 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al cargar los equipos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-        private void frmEquipoHerramientas_Load(object sender, EventArgs e)
-        {
-            try {
-                Cargar();
-
-            } catch (Exception ex) {
-
-                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void gvDatos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
-        {
-
-            try {
-                if (gvDatos.RowCount > 0) {
-                    txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
-                    txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
-                    chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
-                    chkEquipo.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Equipo"].Value.ToString());
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+             
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -88,7 +47,15 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            try {
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
 
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -135,7 +102,6 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EquipoHerramientasBE obj = new EquipoHerramientasBE();
@@ -164,6 +130,30 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al dar de baja el contacto\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
+            }
+        }
+        private void frmEquipoHerramientas_Load(object sender, EventArgs e)
+        {
+            try {
+                Cargar();
+
+            } catch (Exception ex) {
+
+                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
+        {
+
+            try {
+                if (gvDatos.RowCount > 0) {
+                    txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
+                    txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
+                    chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
+                    chkEquipo.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Equipo"].Value.ToString());
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
     }

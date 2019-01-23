@@ -50,7 +50,6 @@ namespace Hersan.Datos.CapitalHumano
             }
         }
 
-
         public int ABCContratos_Guardar(ContratosBE obj)
         {
             int Result = 0;

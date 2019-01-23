@@ -178,7 +178,7 @@
             this.commandBarLabel1.Name = "commandBarLabel1";
             this.commandBarLabel1.StretchHorizontally = true;
             this.commandBarLabel1.Text = "CATALOGO DE ENTIDADES";
-            this.commandBarLabel1.Click += new System.EventHandler(this.commandBarLabel1_Click);
+      
             // 
             // radPanel1
             // 
@@ -340,7 +340,7 @@
             this.gvDatos.Size = new System.Drawing.Size(579, 207);
             this.gvDatos.TabIndex = 2;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
-            this.gvDatos.Click += new System.EventHandler(this.gvDatos_Click);
+          
             // 
             // frmEntidades
             // 

@@ -69,7 +69,6 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-
         public int ABCTiposContrato_Actualizar(TiposContratoBE obj)
         {
             int Result = 0;

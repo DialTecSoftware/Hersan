@@ -1,4 +1,5 @@
 ﻿using Hersan.Entidades.CapitalHumano;
+using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,7 +101,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -111,8 +111,8 @@ namespace Hersan.UI.Catalogos
                 obj.Nombre = txtNombre.Text;
                 obj.TiposContrato.Id = int.Parse(cboTipoCon.SelectedValue.ToString());
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                obj.DatosUsuario.IdUsuarioCreo = 2;
+                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                //obj.DatosUsuario.IdUsuarioCreo = 2;
 
                 //PROCESO DE GUARDADO Y ACTUALIZACION
                 if (txtIdCON.Text == "0") {
@@ -140,7 +140,6 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
-
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -157,7 +156,6 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();

@@ -14,6 +14,29 @@ namespace Hersan.UI.Catalogos
         {
             InitializeComponent();
         }
+        private void CargarDatos()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                gvDatos.DataSource = oCatalogos.ABCCompetencias_Obtener();
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oCatalogos = null;
+            }
+        }
+        private void LimpiarCampos()
+        {
+            try {
+                txtId.Text = "0";
+                txtNombre.Text = string.Empty;
+                txtPonderacion.Text = "0";
+                txtDescripcion.Text = string.Empty;
+                chkEstatus.Checked = false;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
 
         private void frmCompetencias_Load(object sender, EventArgs e)
         {
@@ -133,28 +156,6 @@ namespace Hersan.UI.Catalogos
             }
         }
 
-        private void CargarDatos()
-        {
-            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
-            try {
-                gvDatos.DataSource = oCatalogos.ABCCompetencias_Obtener();
-            } catch (Exception ex) {
-                throw ex;
-            } finally {
-                oCatalogos = null;
-            }
-        }
-        private void LimpiarCampos()
-        {
-            try {
-                txtId.Text = "0";
-                txtNombre.Text = string.Empty;
-                txtPonderacion.Text = "0";
-                txtDescripcion.Text = string.Empty;
-                chkEstatus.Checked = false;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
+        
     }
 }

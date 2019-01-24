@@ -34,19 +34,19 @@
             this.btnCancelar = new Telerik.WinControls.UI.RadButton();
             this.btnAceptar = new Telerik.WinControls.UI.RadButton();
             this.rtxtContrasenia = new Telerik.WinControls.UI.RadTextBox();
-            this.rtxtUsuario = new Telerik.WinControls.UI.RadTextBox();
             this.lblContrasenia = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cboEmpresas = new Telerik.WinControls.UI.RadDropDownList();
+            this.rtxtUsuario = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtContrasenia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtxtUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEmpresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,16 +85,6 @@
             this.rtxtContrasenia.TabIndex = 2;
             this.rtxtContrasenia.ThemeName = "Windows7";
             this.rtxtContrasenia.Enter += new System.EventHandler(this.rtxtContrasenia_Enter);
-            // 
-            // rtxtUsuario
-            // 
-            this.rtxtUsuario.Location = new System.Drawing.Point(238, 45);
-            this.rtxtUsuario.MaxLength = 15;
-            this.rtxtUsuario.Name = "rtxtUsuario";
-            this.rtxtUsuario.Size = new System.Drawing.Size(172, 20);
-            this.rtxtUsuario.TabIndex = 1;
-            this.rtxtUsuario.ThemeName = "Windows7";
-            this.rtxtUsuario.Enter += new System.EventHandler(this.rtxtUsuario_Enter);
             // 
             // lblContrasenia
             // 
@@ -144,6 +134,16 @@
             this.cboEmpresas.Size = new System.Drawing.Size(172, 20);
             this.cboEmpresas.TabIndex = 3;
             // 
+            // rtxtUsuario
+            // 
+            this.rtxtUsuario.Location = new System.Drawing.Point(238, 45);
+            this.rtxtUsuario.MaxLength = 15;
+            this.rtxtUsuario.Name = "rtxtUsuario";
+            this.rtxtUsuario.Size = new System.Drawing.Size(172, 20);
+            this.rtxtUsuario.TabIndex = 1;
+            this.rtxtUsuario.ThemeName = "Windows7";
+            this.rtxtUsuario.Enter += new System.EventHandler(this.rtxtUsuario_Enter);
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnAceptar;
@@ -178,9 +178,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtContrasenia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtxtUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEmpresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,11 +193,11 @@
         private Telerik.WinControls.UI.RadButton btnCancelar;
         private Telerik.WinControls.UI.RadButton btnAceptar;
         private Telerik.WinControls.UI.RadTextBox rtxtContrasenia;
-        private Telerik.WinControls.UI.RadTextBox rtxtUsuario;
         private System.Windows.Forms.Label lblContrasenia;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadDropDownList cboEmpresas;
+        private Telerik.WinControls.UI.RadTextBox rtxtUsuario;
     }
 }

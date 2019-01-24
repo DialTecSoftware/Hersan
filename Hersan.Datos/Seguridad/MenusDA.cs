@@ -25,7 +25,7 @@ namespace Hersan.Datos.Seguridad
         /// Obtiene el menu asignado al usuario
         /// </summary>
         /// <returns></returns>
-        public List<MenusBE> ObtenerMenuUsuario(string Usuario, int Empresa)
+        public List<MenusBE> ObtenerMenuUsuario(string Usuario)
         {
             try
             {
@@ -36,7 +36,6 @@ namespace Hersan.Datos.Seguridad
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_USUARIOS_OBTIENEMENUUSUARIO, conn))
                     {
                         cmd.Parameters.AddWithValue("@Usuario", Usuario);
-                        cmd.Parameters.AddWithValue("@Emp_Id", Empresa);
 
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -143,50 +142,6 @@ namespace Hersan.Datos.Seguridad
                 }
                 return Result;
             } catch (Exception ex) {
-                throw ex;
-            }
-
-            try {
-                //using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))){
-                //    conn.Open();
-                //    using (SqlTransaction tran = conn.BeginTransaction())
-                //    {
-                //        using (SqlCommand cmd = new SqlCommand(CONST_USP_MENUROL_ELIMINA, conn))
-                //        {
-                //            cmd.Parameters.AddWithValue("@IdMenu", Menu);
-                //            cmd.Parameters.AddWithValue("@IdRol", Rol);
-
-                //            cmd.CommandType = CommandType.StoredProcedure;
-                //            cmd.Transaction = tran;
-                //            Result = Convert.ToInt32(cmd.ExecuteScalar());
-                //        }
-
-                //        if (Result == 1)
-                //        {
-                //            foreach (MenusBE mnu in lstMnu)
-                //            {
-                //                using (SqlCommand cmd = new SqlCommand(CONST_USP_MENUROL_GUARDA, conn))
-                //                {
-                //                    cmd.Parameters.AddWithValue("@IdMenu", mnu.ID);
-                //                    cmd.Parameters.AddWithValue("@IdRol", Rol);
-                //                    cmd.Parameters.AddWithValue("@Agregar", mnu.PuedeAgregar);
-                //                    cmd.Parameters.AddWithValue("@Editar", mnu.PuedeEditar);
-                //                    cmd.Parameters.AddWithValue("@Eliminar", mnu.PuedeEliminar);
-
-                //                    cmd.CommandType = CommandType.StoredProcedure;
-                //                    cmd.Transaction = tran;
-                //                    Result = Convert.ToInt32(cmd.ExecuteScalar());
-                //                }
-                //            }
-                //            tran.Commit();
-                //        }
-                //        else {
-                //            tran.Rollback();                            
-                //        }
-                //    }
-                //}
-                return Result;
-            } catch (Exception ex) {             
                 throw ex;
             }
         }

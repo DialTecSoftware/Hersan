@@ -11,11 +11,26 @@
     <xs:sequence>
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q1:GeneralBE" />
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Experiencia" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Ponderacion" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CompetenciasBE" nillable="true" type="tns:CompetenciasBE" />
+  <xs:complexType name="ArrayOfFuncionesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FuncionesBE" nillable="true" type="tns:FuncionesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFuncionesBE" nillable="true" type="tns:ArrayOfFuncionesBE" />
+  <xs:complexType name="FuncionesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Continua" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q2:GeneralBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Periodica" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FuncionesBE" nillable="true" type="tns:FuncionesBE" />
 </xs:schema>

@@ -63,7 +63,6 @@
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(50, 17);
             this.lblUsuario.Text = "Usuario:";
-            this.lblUsuario.Visible = false;
             // 
             // lblPerfil
             // 
@@ -72,7 +71,6 @@
             this.lblPerfil.Size = new System.Drawing.Size(34, 17);
             this.lblPerfil.Text = "Perfil";
             this.lblPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPerfil.Visible = false;
             // 
             // Principal
             // 
@@ -90,7 +88,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hersan Hitec";
+            this.Text = "HERSAN HYTEC";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();

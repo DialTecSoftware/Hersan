@@ -320,6 +320,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.Text = "Educación";
             this.Load += new System.EventHandler(this.frmEducacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radcommonbar)).EndInit();

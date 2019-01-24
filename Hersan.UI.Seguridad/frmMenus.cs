@@ -9,6 +9,7 @@ namespace Hersan.UI.Seguridad
     public partial class frmMenus : Telerik.WinControls.UI.RadForm
     {
         WCF_Seguridad.Hersan_SeguridadClient oSeguridad;
+        int Aux_IdPadre = 0;
 
         public frmMenus()
         {
@@ -22,7 +23,7 @@ namespace Hersan.UI.Seguridad
                 LimpiarCampos();
 
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace Hersan.UI.Seguridad
             try {
                 this.Close();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
 
         }
@@ -39,7 +40,7 @@ namespace Hersan.UI.Seguridad
             try {
                 LimpiarCampos();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
 
         }
@@ -50,7 +51,7 @@ namespace Hersan.UI.Seguridad
                 MenusBE obj = new MenusBE() {
                     Menu = txtNombre.Text,
                     Descripcion = txtDescripcion.Text,
-                    IDPadre = int.Parse(cboPadre.SelectedValue.ToString()),
+                    IDPadre = Aux_IdPadre == -1 ? int.Parse(cboPadre.SelectedValue.ToString()) : Aux_IdPadre,
                     Orden = int.Parse(txtOrden.Text),
                     NombreForma = txtForma.Text,
                     AssemblyDll = txtEnsamblado.Text,
@@ -60,6 +61,7 @@ namespace Hersan.UI.Seguridad
                 if (oSeguridad.Menu_Guardar(obj) > 0) {
                     RadMessageBox.Show("Menu agregado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     LimpiarCampos();
+                    CargaCombo();
                     CargarGrid();
                 } else {
                     RadMessageBox.Show("Ocurrió un error al guardar la información", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
@@ -75,7 +77,7 @@ namespace Hersan.UI.Seguridad
             try {
 
             } catch (Exception ex) {
-                throw;
+                RadMessageBox.Show("Ocurrió un error al eliminar el menú\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void txtOrden_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,7 +87,18 @@ namespace Hersan.UI.Seguridad
                     e.Handled = true;
                 }
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al capturar el orden\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void chkPadre_CheckedChanged(object sender, EventArgs e)
+        {
+            try {
+                cboPadre.Enabled = !chkPadre.Checked;
+                Aux_IdPadre = chkPadre.Checked ? 0 : -1;
+                txtEnsamblado.Enabled = !chkPadre.Checked;
+                txtForma.Enabled = !chkPadre.Checked;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al hacer la selección\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -120,13 +133,12 @@ namespace Hersan.UI.Seguridad
                 txtEnsamblado.Text = string.Empty;
                 txtForma.Text = string.Empty;
                 txtNombre.Text = string.Empty;
+                chkPadre.Checked = false;
                 txtOrden.Text = "1";
                 txtId.Text = "0";
             } catch (Exception ex) {
                 throw ex;
             }
         }
-
-      
     }
 }

@@ -48,6 +48,10 @@ namespace Hersan.UI.Catalogos
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             PuestosBE obj = new PuestosBE();
             try {
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
                 obj.Id = int.Parse(txtIdPuesto.Text);
                 obj.Departamentos.Id = int.Parse(cboDeptos.SelectedValue.ToString());
                 obj.Nombre = txtNombre.Text;
@@ -165,10 +169,17 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-        private void cboDeptos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        private bool ValidarCampos()
         {
+            bool Flag = true;
+            try {
+                Flag = txtNombre.Text.Trim().Length == 0 ? false : true;
+                Flag = txtAbrev.Text.Trim().Length == 0 ? false : true;
 
+                return Flag;
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
     }
 }

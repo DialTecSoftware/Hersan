@@ -15,7 +15,7 @@ namespace Hersan.Seguridad.Contract
         /// </summary>
         /// <returns></returns>
         [OperationContract]
-        List<MenusBE> ObtenerMenuUsuario(string Usuario, int Empresa);
+        List<MenusBE> ObtenerMenuUsuario(string Usuario);
 
         /// <summary>
         /// Obtiene el menu por rol
@@ -51,7 +51,7 @@ namespace Hersan.Seguridad.Contract
         /// <param name="Pswd">Contraseña Encriptada</param>
         /// <returns></returns>
         [OperationContract]
-        ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa);
+        ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd);
 
         /// <summary>
         /// Verifica si hay bloqueo del usuario
@@ -59,7 +59,7 @@ namespace Hersan.Seguridad.Contract
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <returns></returns>
         [OperationContract]
-        ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr, int IdEmpresa);
+        ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr);
 
         /// <summary>
         /// Desbloquea usuario
@@ -70,13 +70,12 @@ namespace Hersan.Seguridad.Contract
         #endregion
 
         #region Usuarios
-
         /// <summary>
         /// Obtiene los usuarios dados de alto en el sistema
         /// </summary>
         /// <returns></returns>
         [OperationContract]
-        List<UsuariosBE> ObtieneUsuarios(int IdEmpresa);
+        List<UsuariosBE> ObtieneUsuarios();
 
         /// <summary>
         /// Guarda el nuevo usuario
@@ -100,7 +99,7 @@ namespace Hersan.Seguridad.Contract
         /// <param name="Usuario">usuario a consultar</param>
         /// <returns></returns>
         [OperationContract]
-        UsuariosBE ObtieneDatosUsuario(string Usuario, int IdEmpresa);
+        UsuariosBE ObtieneDatosUsuario(string Usuario);
 
         [OperationContract]
         int CambiaContrasenia(UsuariosBE Usuario);
@@ -144,7 +143,7 @@ namespace Hersan.Seguridad.Contract
         /// </summary>
         /// <returns></returns>
         [OperationContract]
-        List<RolesBE> ObtieneRolesUsuario(int IdUsuario, int IdEmpresa);
+        List<RolesBE> ObtieneRolesUsuario(int IdUsuario);
 
         /// <summary>
         /// Guarda el rol que se le asigno al usuario

@@ -15,9 +15,9 @@ namespace Hersan.Seguridad.Service
         /// Obtiene el menu asignado al usuario
         /// </summary>
         /// <returns></returns>
-        public List<MenusBE> ObtenerMenuUsuario(string Usuario, int Empresa)
+        public List<MenusBE> ObtenerMenuUsuario(string Usuario)
         {
-            return new MenusBP().ObtenerMenuUsuario(Usuario, Empresa);
+            return new MenusBP().ObtenerMenuUsuario(Usuario);
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace Hersan.Seguridad.Service
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <param name="Pswd">Contraseña Encriptada</param>
         /// <returns></returns>
-        public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa)
+        public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd)
         {
-            return new UsuariosBP().ValidaUsuario(nomUsr, Pswd, IdEmpresa);
+            return new UsuariosBP().ValidaUsuario(nomUsr, Pswd);
         }
 
         /// <summary>
@@ -73,9 +73,9 @@ namespace Hersan.Seguridad.Service
         /// </summary>
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <returns></returns>
-        public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr, int IdEmpresa)
+        public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr)
         {
-            return new UsuariosBP().ObtienBloqueoUsuario(nomUsr, IdEmpresa);
+            return new UsuariosBP().ObtienBloqueoUsuario(nomUsr);
         }
 
         /// <summary>
@@ -89,14 +89,13 @@ namespace Hersan.Seguridad.Service
         #endregion
 
         #region Usuarios
-
         /// <summary>
         /// Obtiene los usuarios dados de alto en el sistema
         /// </summary>
         /// <returns></returns>
-        public List<UsuariosBE> ObtieneUsuarios(int IdEmpresa)
+        public List<UsuariosBE> ObtieneUsuarios()
         {
-            return new UsuariosBP().ObtieneUsuarios(IdEmpresa);
+            return new UsuariosBP().ObtieneUsuarios();
         }
 
         /// <summary>
@@ -124,9 +123,9 @@ namespace Hersan.Seguridad.Service
         /// </summary>
         /// <param name="Usuario">usuario a consultar</param>
         /// <returns></returns>
-        public UsuariosBE ObtieneDatosUsuario(string Usuario, int IdEmpresa)
+        public UsuariosBE ObtieneDatosUsuario(string Usuario)
         {
-            return new UsuariosBP().ObtieneDatosUsuario(Usuario, IdEmpresa);
+            return new UsuariosBP().ObtieneDatosUsuario(Usuario);
         }
 
         public int CambiaContrasenia(UsuariosBE Usuario)
@@ -180,9 +179,9 @@ namespace Hersan.Seguridad.Service
         /// Obtener Listado de Roles usuario
         /// </summary>
         /// <returns></returns>
-        public List<RolesBE> ObtieneRolesUsuario(int IdUsuario, int IdEmpresa)
+        public List<RolesBE> ObtieneRolesUsuario(int IdUsuario)
         {
-            return new RolesUsuarioBP().ObtieneRolesUsuario(IdUsuario, IdEmpresa);
+            return new RolesUsuarioBP().ObtieneRolesUsuario(IdUsuario);
         }
 
         /// <summary>

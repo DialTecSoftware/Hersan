@@ -16,10 +16,10 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
     public interface IHersan_Seguridad {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenuUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtenerMenuUsuarioResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> ObtenerMenuUsuario(string Usuario, int Empresa);
+        System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> ObtenerMenuUsuario(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenuUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtenerMenuUsuarioResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> ObtenerMenuUsuarioAsync(string Usuario, int Empresa);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> ObtenerMenuUsuarioAsync(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenuRol", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtenerMenuRolResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> ObtenerMenuRol(int Rol, int Padre, int Menu);
@@ -52,16 +52,16 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
         System.Threading.Tasks.Task<int> Menu_GuardarAsync(Hersan.Entidades.Seguridad.MenusBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ValidaUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ValidaUsuarioResponse")]
-        Hersan.Entidades.Seguridad.ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa);
+        Hersan.Entidades.Seguridad.ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ValidaUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ValidaUsuarioResponse")]
-        System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.ValidaIngresoBE> ValidaUsuarioAsync(string nomUsr, string Pswd, int IdEmpresa);
+        System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.ValidaIngresoBE> ValidaUsuarioAsync(string nomUsr, string Pswd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtienBloqueoUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtienBloqueoUsuarioResponse")]
-        Hersan.Entidades.Seguridad.ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr, int IdEmpresa);
+        Hersan.Entidades.Seguridad.ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtienBloqueoUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtienBloqueoUsuarioResponse")]
-        System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.ValidaIngresoBE> ObtienBloqueoUsuarioAsync(string nomUsr, int IdEmpresa);
+        System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.ValidaIngresoBE> ObtienBloqueoUsuarioAsync(string nomUsr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/DesbloqueaUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/DesbloqueaUsuarioResponse")]
         void DesbloqueaUsuario(string nomUsr);
@@ -70,10 +70,10 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
         System.Threading.Tasks.Task DesbloqueaUsuarioAsync(string nomUsr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtieneUsuarios", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtieneUsuariosResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Seguridad.UsuariosBE> ObtieneUsuarios(int IdEmpresa);
+        System.Collections.Generic.List<Hersan.Entidades.Seguridad.UsuariosBE> ObtieneUsuarios();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtieneUsuarios", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtieneUsuariosResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.UsuariosBE>> ObtieneUsuariosAsync(int IdEmpresa);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.UsuariosBE>> ObtieneUsuariosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/GuardaUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/GuardaUsuarioResponse")]
         Hersan.Entidades.Comun.ResultadoBE GuardaUsuario(Hersan.Entidades.Seguridad.UsuariosBE Usuario, int IdUsuarioCrea);
@@ -88,10 +88,10 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
         System.Threading.Tasks.Task<Hersan.Entidades.Comun.ResultadoBE> ActualizaUsuarioAsync(Hersan.Entidades.Seguridad.UsuariosBE Usuario, int IdUsuarioMod);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtieneDatosUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtieneDatosUsuarioResponse")]
-        Hersan.Entidades.Seguridad.UsuariosBE ObtieneDatosUsuario(string Usuario, int IdEmpresa);
+        Hersan.Entidades.Seguridad.UsuariosBE ObtieneDatosUsuario(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtieneDatosUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtieneDatosUsuarioResponse")]
-        System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.UsuariosBE> ObtieneDatosUsuarioAsync(string Usuario, int IdEmpresa);
+        System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.UsuariosBE> ObtieneDatosUsuarioAsync(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/CambiaContrasenia", ReplyAction="http://tempuri.org/IHersan_Seguridad/CambiaContraseniaResponse")]
         int CambiaContrasenia(Hersan.Entidades.Seguridad.UsuariosBE Usuario);
@@ -118,10 +118,10 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
         System.Threading.Tasks.Task<Hersan.Entidades.Comun.ResultadoBE> ActualizaRolesAsync(int IdRol, string Rol, int IdEmpresa, int IdUsuario, bool Estatus);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtieneRolesUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtieneRolesUsuarioResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Seguridad.RolesBE> ObtieneRolesUsuario(int IdUsuario, int IdEmpresa);
+        System.Collections.Generic.List<Hersan.Entidades.Seguridad.RolesBE> ObtieneRolesUsuario(int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/ObtieneRolesUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/ObtieneRolesUsuarioResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.RolesBE>> ObtieneRolesUsuarioAsync(int IdUsuario, int IdEmpresa);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.RolesBE>> ObtieneRolesUsuarioAsync(int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Seguridad/GuardaRolesUsuario", ReplyAction="http://tempuri.org/IHersan_Seguridad/GuardaRolesUsuarioResponse")]
         void GuardaRolesUsuario(int IdRol, int IdUsuario);
@@ -157,12 +157,12 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> ObtenerMenuUsuario(string Usuario, int Empresa) {
-            return base.Channel.ObtenerMenuUsuario(Usuario, Empresa);
+        public System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> ObtenerMenuUsuario(string Usuario) {
+            return base.Channel.ObtenerMenuUsuario(Usuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> ObtenerMenuUsuarioAsync(string Usuario, int Empresa) {
-            return base.Channel.ObtenerMenuUsuarioAsync(Usuario, Empresa);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE>> ObtenerMenuUsuarioAsync(string Usuario) {
+            return base.Channel.ObtenerMenuUsuarioAsync(Usuario);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Seguridad.MenusBE> ObtenerMenuRol(int Rol, int Padre, int Menu) {
@@ -205,20 +205,20 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
             return base.Channel.Menu_GuardarAsync(obj);
         }
         
-        public Hersan.Entidades.Seguridad.ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa) {
-            return base.Channel.ValidaUsuario(nomUsr, Pswd, IdEmpresa);
+        public Hersan.Entidades.Seguridad.ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd) {
+            return base.Channel.ValidaUsuario(nomUsr, Pswd);
         }
         
-        public System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.ValidaIngresoBE> ValidaUsuarioAsync(string nomUsr, string Pswd, int IdEmpresa) {
-            return base.Channel.ValidaUsuarioAsync(nomUsr, Pswd, IdEmpresa);
+        public System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.ValidaIngresoBE> ValidaUsuarioAsync(string nomUsr, string Pswd) {
+            return base.Channel.ValidaUsuarioAsync(nomUsr, Pswd);
         }
         
-        public Hersan.Entidades.Seguridad.ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr, int IdEmpresa) {
-            return base.Channel.ObtienBloqueoUsuario(nomUsr, IdEmpresa);
+        public Hersan.Entidades.Seguridad.ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr) {
+            return base.Channel.ObtienBloqueoUsuario(nomUsr);
         }
         
-        public System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.ValidaIngresoBE> ObtienBloqueoUsuarioAsync(string nomUsr, int IdEmpresa) {
-            return base.Channel.ObtienBloqueoUsuarioAsync(nomUsr, IdEmpresa);
+        public System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.ValidaIngresoBE> ObtienBloqueoUsuarioAsync(string nomUsr) {
+            return base.Channel.ObtienBloqueoUsuarioAsync(nomUsr);
         }
         
         public void DesbloqueaUsuario(string nomUsr) {
@@ -229,12 +229,12 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
             return base.Channel.DesbloqueaUsuarioAsync(nomUsr);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Seguridad.UsuariosBE> ObtieneUsuarios(int IdEmpresa) {
-            return base.Channel.ObtieneUsuarios(IdEmpresa);
+        public System.Collections.Generic.List<Hersan.Entidades.Seguridad.UsuariosBE> ObtieneUsuarios() {
+            return base.Channel.ObtieneUsuarios();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.UsuariosBE>> ObtieneUsuariosAsync(int IdEmpresa) {
-            return base.Channel.ObtieneUsuariosAsync(IdEmpresa);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.UsuariosBE>> ObtieneUsuariosAsync() {
+            return base.Channel.ObtieneUsuariosAsync();
         }
         
         public Hersan.Entidades.Comun.ResultadoBE GuardaUsuario(Hersan.Entidades.Seguridad.UsuariosBE Usuario, int IdUsuarioCrea) {
@@ -253,12 +253,12 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
             return base.Channel.ActualizaUsuarioAsync(Usuario, IdUsuarioMod);
         }
         
-        public Hersan.Entidades.Seguridad.UsuariosBE ObtieneDatosUsuario(string Usuario, int IdEmpresa) {
-            return base.Channel.ObtieneDatosUsuario(Usuario, IdEmpresa);
+        public Hersan.Entidades.Seguridad.UsuariosBE ObtieneDatosUsuario(string Usuario) {
+            return base.Channel.ObtieneDatosUsuario(Usuario);
         }
         
-        public System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.UsuariosBE> ObtieneDatosUsuarioAsync(string Usuario, int IdEmpresa) {
-            return base.Channel.ObtieneDatosUsuarioAsync(Usuario, IdEmpresa);
+        public System.Threading.Tasks.Task<Hersan.Entidades.Seguridad.UsuariosBE> ObtieneDatosUsuarioAsync(string Usuario) {
+            return base.Channel.ObtieneDatosUsuarioAsync(Usuario);
         }
         
         public int CambiaContrasenia(Hersan.Entidades.Seguridad.UsuariosBE Usuario) {
@@ -293,12 +293,12 @@ namespace Hersan.UI.Seguridad.WCF_Seguridad {
             return base.Channel.ActualizaRolesAsync(IdRol, Rol, IdEmpresa, IdUsuario, Estatus);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Seguridad.RolesBE> ObtieneRolesUsuario(int IdUsuario, int IdEmpresa) {
-            return base.Channel.ObtieneRolesUsuario(IdUsuario, IdEmpresa);
+        public System.Collections.Generic.List<Hersan.Entidades.Seguridad.RolesBE> ObtieneRolesUsuario(int IdUsuario) {
+            return base.Channel.ObtieneRolesUsuario(IdUsuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.RolesBE>> ObtieneRolesUsuarioAsync(int IdUsuario, int IdEmpresa) {
-            return base.Channel.ObtieneRolesUsuarioAsync(IdUsuario, IdEmpresa);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Seguridad.RolesBE>> ObtieneRolesUsuarioAsync(int IdUsuario) {
+            return base.Channel.ObtieneRolesUsuarioAsync(IdUsuario);
         }
         
         public void GuardaRolesUsuario(int IdRol, int IdUsuario) {

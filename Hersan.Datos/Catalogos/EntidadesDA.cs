@@ -17,7 +17,6 @@ namespace Hersan.Datos.Catalogos
         const string CONST_ABC_ENTIDADES_ACTUALIZAR = "ABC_Entidades_Actualiza";
         #endregion
 
-
         public List<EntidadesBE>  Entidades_Obtener()
         {
             List<EntidadesBE> oList = new List<EntidadesBE>();
@@ -49,8 +48,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
-
         public int ABCEntidades_Guardar(EntidadesBE obj)
         {
             int Result = 0;
@@ -72,7 +69,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
         public int ABCEntidades_Actualizar(EntidadesBE obj)
         {
             int Result = 0;

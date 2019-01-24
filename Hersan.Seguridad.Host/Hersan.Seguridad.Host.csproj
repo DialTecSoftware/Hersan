@@ -33,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <PublishDatabases>false</PublishDatabases>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -86,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Hersan_Seguridad.svc" />
+    <Content Include="llave_privada.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="llave_publica.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,7 +102,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -104,6 +111,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hersan.Seguridad.Contract\Hersan.Seguridad.Contract.csproj">
+      <Project>{a46cd9da-66c5-4471-b0eb-75c2a1efff10}</Project>
+      <Name>Hersan.Seguridad.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hersan.Seguridad.Service\Hersan.Seguridad.Service.csproj">
       <Project>{1837a663-eec5-4732-929b-fa824536234a}</Project>
       <Name>Hersan.Seguridad.Service</Name>

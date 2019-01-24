@@ -2,7 +2,6 @@
 using Hersan.Negocio;
 using Hersan.Negocio.Seguridad;
 using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -49,11 +48,11 @@ namespace Hersan.UI.Seguridad
 
                 if (msg.Length.Equals(0))  {
                     WCF_Seguridad.Hersan_SeguridadClient wcf = new WCF_Seguridad.Hersan_SeguridadClient();
-                    ValidaIngresoBE val = wcf.ValidaUsuario(rtxtUsuario.Text.Trim(), new EncriptadorBP().EncriptarTexto(rtxtContrasenia.Text.Trim()),Empresa);
+                    ValidaIngresoBE val = wcf.ValidaUsuario(rtxtUsuario.Text.Trim(), new EncriptadorBP().EncriptarTexto(rtxtContrasenia.Text.Trim()));
 
                     if (val.EsIngresoValido)  {
-                        BaseWinBP.ListadoMenu = wcf.ObtenerMenuUsuario(rtxtUsuario.Text.Trim(), Empresa);
-                        BaseWinBP.UsuarioLogueado = wcf.ObtieneDatosUsuario(rtxtUsuario.Text.Trim(),Empresa);
+                        BaseWinBP.ListadoMenu = wcf.ObtenerMenuUsuario(rtxtUsuario.Text.Trim());
+                        BaseWinBP.UsuarioLogueado = wcf.ObtieneDatosUsuario(rtxtUsuario.Text.Trim());
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     } else  {

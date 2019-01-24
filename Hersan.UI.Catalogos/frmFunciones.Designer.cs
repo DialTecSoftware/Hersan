@@ -33,6 +33,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -47,7 +48,8 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.chkContinua = new System.Windows.Forms.CheckBox();
+            this.opPeriodica = new Telerik.WinControls.UI.RadRadioButton();
+            this.opContinua = new Telerik.WinControls.UI.RadRadioButton();
             this.chkEstatus = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -56,6 +58,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.opPeriodica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opContinua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -68,7 +72,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(544, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(544, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -177,41 +181,57 @@
             // 
             // radPanel1
             // 
-            this.radPanel1.Controls.Add(this.chkContinua);
+            this.radPanel1.Controls.Add(this.opPeriodica);
+            this.radPanel1.Controls.Add(this.opContinua);
             this.radPanel1.Controls.Add(this.chkEstatus);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.txtNombre);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 81);
+            this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(544, 80);
+            this.radPanel1.Size = new System.Drawing.Size(544, 68);
             this.radPanel1.TabIndex = 1;
             // 
-            // chkContinua
+            // opPeriodica
             // 
-            this.chkContinua.AutoSize = true;
-            this.chkContinua.Location = new System.Drawing.Point(224, 20);
-            this.chkContinua.Name = "chkContinua";
-            this.chkContinua.Size = new System.Drawing.Size(74, 17);
-            this.chkContinua.TabIndex = 9;
-            this.chkContinua.Text = "Continua";
-            this.chkContinua.UseVisualStyleBackColor = true;
+            this.opPeriodica.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
+            this.opPeriodica.Location = new System.Drawing.Point(87, 37);
+            this.opPeriodica.Name = "opPeriodica";
+            this.opPeriodica.RadioCheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.opPeriodica.Size = new System.Drawing.Size(66, 18);
+            this.opPeriodica.TabIndex = 3;
+            this.opPeriodica.TabStop = false;
+            this.opPeriodica.Text = "Periodica";
+            this.opPeriodica.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.op_ToggleStateChanged);
+            // 
+            // opContinua
+            // 
+            this.opContinua.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.opContinua.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
+            this.opContinua.Location = new System.Drawing.Point(15, 37);
+            this.opContinua.Name = "opContinua";
+            this.opContinua.RadioCheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.opContinua.Size = new System.Drawing.Size(65, 18);
+            this.opContinua.TabIndex = 2;
+            this.opContinua.Text = "Continua";
+            this.opContinua.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.opContinua.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.op_ToggleStateChanged);
             // 
             // chkEstatus
             // 
             this.chkEstatus.AutoSize = true;
-            this.chkEstatus.Location = new System.Drawing.Point(224, 43);
+            this.chkEstatus.Location = new System.Drawing.Point(267, 14);
             this.chkEstatus.Name = "chkEstatus";
             this.chkEstatus.Size = new System.Drawing.Size(57, 17);
-            this.chkEstatus.TabIndex = 9;
+            this.chkEstatus.TabIndex = 4;
             this.chkEstatus.Text = "Activo";
             this.chkEstatus.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(15, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 5;
@@ -219,7 +239,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(340, 24);
+            this.txtId.Location = new System.Drawing.Point(415, 16);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(54, 20);
             this.txtId.TabIndex = 4;
@@ -228,16 +248,16 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(70, 18);
+            this.txtNombre.Location = new System.Drawing.Point(70, 13);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(133, 42);
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.Size = new System.Drawing.Size(191, 19);
+            this.txtNombre.TabIndex = 1;
             // 
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 161);
+            this.gvDatos.Location = new System.Drawing.Point(0, 124);
             // 
             // 
             // 
@@ -258,29 +278,39 @@
             gridViewTextBoxColumn2.Width = 200;
             gridViewTextBoxColumn2.WrapText = true;
             gridViewCheckBoxColumn1.FieldName = "Continua";
-            gridViewCheckBoxColumn1.HeaderText = "Continua";
-            gridViewCheckBoxColumn1.MinWidth = 100;
+            gridViewCheckBoxColumn1.HeaderText = "Función Continua";
+            gridViewCheckBoxColumn1.MaxWidth = 90;
+            gridViewCheckBoxColumn1.MinWidth = 90;
             gridViewCheckBoxColumn1.Name = "Continua";
-            gridViewCheckBoxColumn1.Width = 100;
-            gridViewCheckBoxColumn2.FieldName = "DatosUsuario.Estatus";
-            gridViewCheckBoxColumn2.HeaderText = "Estatus";
-            gridViewCheckBoxColumn2.MaxWidth = 100;
-            gridViewCheckBoxColumn2.MinWidth = 100;
-            gridViewCheckBoxColumn2.Name = "Estatus";
-            gridViewCheckBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewCheckBoxColumn2.Width = 100;
+            gridViewCheckBoxColumn1.Width = 90;
+            gridViewCheckBoxColumn1.WrapText = true;
+            gridViewCheckBoxColumn2.FieldName = "Periodica";
+            gridViewCheckBoxColumn2.HeaderText = "Función Periodica";
+            gridViewCheckBoxColumn2.MaxWidth = 90;
+            gridViewCheckBoxColumn2.MinWidth = 90;
+            gridViewCheckBoxColumn2.Name = "Periodica";
+            gridViewCheckBoxColumn2.Width = 90;
+            gridViewCheckBoxColumn2.WrapText = true;
+            gridViewCheckBoxColumn3.FieldName = "DatosUsuario.Estatus";
+            gridViewCheckBoxColumn3.HeaderText = "Estatus";
+            gridViewCheckBoxColumn3.MaxWidth = 100;
+            gridViewCheckBoxColumn3.MinWidth = 100;
+            gridViewCheckBoxColumn3.Name = "Estatus";
+            gridViewCheckBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCheckBoxColumn3.Width = 100;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewCheckBoxColumn1,
-            gridViewCheckBoxColumn2});
+            gridViewCheckBoxColumn2,
+            gridViewCheckBoxColumn3});
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(544, 191);
+            this.gvDatos.Size = new System.Drawing.Size(544, 228);
             this.gvDatos.TabIndex = 4;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -304,6 +334,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.opPeriodica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opContinua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -330,8 +362,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.CheckBox chkContinua;
         private System.Windows.Forms.CheckBox chkEstatus;
         private Telerik.WinControls.UI.RadGridView gvDatos;
+        private Telerik.WinControls.UI.RadRadioButton opPeriodica;
+        private Telerik.WinControls.UI.RadRadioButton opContinua;
     }
 }

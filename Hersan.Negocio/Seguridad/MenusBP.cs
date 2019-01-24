@@ -14,9 +14,9 @@ namespace Hersan.Negocio.Seguridad
         /// Obtiene el menu asignado al usuario
         /// </summary>
         /// <returns></returns>
-        public List<Entidades.Seguridad.MenusBE> ObtenerMenuUsuario(string Usuario, int Empresa)
+        public List<Entidades.Seguridad.MenusBE> ObtenerMenuUsuario(string Usuario)
         {
-            return new MenusDA().ObtenerMenuUsuario(Usuario, Empresa);
+            return new MenusDA().ObtenerMenuUsuario(Usuario);
         }
 
         /// <summary>

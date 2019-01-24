@@ -171,7 +171,6 @@
             this.commandBarLabel1.Name = "commandBarLabel1";
             this.commandBarLabel1.StretchHorizontally = true;
             this.commandBarLabel1.Text = "CATALOGO DE CONTACTOS";
-            this.commandBarLabel1.Click += new System.EventHandler(this.commandBarLabel1_Click);
             // 
             // radPanel1
             // 
@@ -195,7 +194,6 @@
             this.chkInterno.TabIndex = 13;
             this.chkInterno.Text = "Interno";
             this.chkInterno.UseVisualStyleBackColor = true;
-            this.chkInterno.CheckedChanged += new System.EventHandler(this.chkContinua_CheckedChanged);
             // 
             // chkEstatus
             // 

@@ -33,6 +33,7 @@ namespace Hersan.Datos.Catalogos
                                 obj.Id = int.Parse(reader["FUN_Id"].ToString());
                                 obj.Nombre = reader["FUN_Nombre"].ToString();
                                 obj.Continua = bool.Parse(reader["FUN_Continua"].ToString());
+                                obj.Periodica = !obj.Continua;
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["FUN_Estatus"].ToString());
 
                                 oList.Add(obj);
@@ -45,7 +46,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
         public int ABCFunciones_Guardar(FuncionesBE obj)
         {
             int Result = 0;
@@ -66,8 +66,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
-
         public int ABCFunciones_Actualizar(FuncionesBE obj)
         {
             int Result = 0;

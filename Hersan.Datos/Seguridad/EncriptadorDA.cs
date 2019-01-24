@@ -19,9 +19,9 @@ namespace Hersan.Datos.Seguridad
             {
                 CspParameters cspParams;
                 cspParams = new CspParameters(1);   // PROV_RSA_FULL  
-                //cspParams.Flags = CspProviderFlags.UseMachineKeyStore;
-                cspParams.Flags = CspProviderFlags.UseDefaultKeyContainer;
-                cspParams.KeyContainerName = CONTAINER_NAME;
+                cspParams.Flags = CspProviderFlags.UseMachineKeyStore; //Aplicacion
+                //cspParams.Flags = CspProviderFlags.UseDefaultKeyContainer; //WCF
+                // cspParams.KeyContainerName = CONTAINER_NAME;
                 // Instanciar el algoritmo de cifrado RSA  
                 rsa = new RSACryptoServiceProvider(1024, cspParams);
             }

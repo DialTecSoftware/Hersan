@@ -46,7 +46,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
         public int ABCEducacion_Guardar(EducacionBE obj)
         {
             int Result = 0;
@@ -67,8 +66,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
-
         public int ABCEducacion_Actualizar(EducacionBE obj)
         {
             int Result = 0;

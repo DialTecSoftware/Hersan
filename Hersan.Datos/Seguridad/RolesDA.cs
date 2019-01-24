@@ -39,10 +39,10 @@ namespace Hersan.Datos.Seguridad
                         {
                             while (reader.Read())
                             {
-                                RolesBE obj = new RolesBE
-                                {
+                                RolesBE obj = new RolesBE {
                                     ID = int.Parse(reader["ROL_IdRol"].ToString()),
                                     Nombre = reader["ROL_Rol"].ToString(),
+                                    EsAsignado = false,
                                     Activo = bool.Parse(reader["ROL_Estatus"].ToString())
                                 };
 

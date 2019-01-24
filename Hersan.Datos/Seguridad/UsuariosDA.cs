@@ -31,19 +31,19 @@ namespace Hersan.Datos.Seguridad
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <param name="Pswd">Contraseña Encriptada</param>
         /// <returns></returns>
-        public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa)
+        public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd)
         {
             ValidaIngresoBE val = new ValidaIngresoBE();
             bool valida = false;
             string pssEncr = string.Empty;
             int intentos = int.Parse(ConfigurationManager.AppSettings["NumInten"].ToString());
             int minutos = int.Parse(ConfigurationManager.AppSettings["MinBloqueo"].ToString());
+
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion())) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CSTR_SP_USUARIOS_DATOSVALIDACION, conn)) {
                         cmd.Parameters.AddWithValue("@Usuario", nomUsr);
-                        cmd.Parameters.AddWithValue("@Emp_Id", IdEmpresa);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
@@ -63,12 +63,11 @@ namespace Hersan.Datos.Seguridad
                         if (intentos > 0) {
                             using (SqlCommand cmd = new SqlCommand(CSTR_SP_BLOQUEODESBLOQUEO, conn)) {
                                 cmd.Parameters.AddWithValue("@Usuario", nomUsr);
-                                cmd.Parameters.AddWithValue("@Emp_Id", IdEmpresa);
                                 cmd.Parameters.AddWithValue("@minutos", minutos);
                                 cmd.Parameters.AddWithValue("@intentos", intentos);
 
                                 if (valida)
-                                    valida = !((ValidaIngresoBE)ObtienBloqueoUsuario(nomUsr, IdEmpresa)).EsUsuarioBloqueado;
+                                    valida = !((ValidaIngresoBE)ObtienBloqueoUsuario(nomUsr)).EsUsuarioBloqueado;
 
                                 cmd.Parameters.Add("@bloquea", SqlDbType.Bit).Value = !valida;
 
@@ -89,11 +88,12 @@ namespace Hersan.Datos.Seguridad
                                                 double res = Math.Ceiling(dtFDBlo.Subtract(dtFActual).TotalMinutes);
                                                 val.ErrorIngreso = "La cuenta se encuentra bloqueda, intentelo de nuevo en " + res +
                                                     (res > 1 ? " minutos." : " minuto.");
-                                            } else {
-                                                val.ErrorIngreso = (intentos - numinten) > 0 ? "Usuario y/o contraseña invalidos. la cuenta será bloqueada al intento " +
-                                                                                                intentos.ToString() + ". Intento " + numinten.ToString() + " de " + intentos.ToString() :
-                                                                                                "Usuario y/o contraseña invalidos. la cuenta esta bloqueada.";
-                                            }
+                                            } 
+                                            //else {
+                                            //    val.ErrorIngreso = (intentos - numinten) > 0 ? "Usuario y/o contraseña invalidos. la cuenta será bloqueada al intento " +
+                                            //                                                    intentos.ToString() + ". Intento " + numinten.ToString() + " de " + intentos.ToString() :
+                                            //                                                    "Usuario y/o contraseña invalidos. la cuenta esta bloqueada.";
+                                            //}
                                         }
                                     }
                                 }
@@ -118,7 +118,7 @@ namespace Hersan.Datos.Seguridad
         /// </summary>
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <returns></returns>
-        public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr, int IdEmpresa)
+        public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr)
         {
             ValidaIngresoBE val = new ValidaIngresoBE();
             val.ErrorIngreso = string.Empty;
@@ -127,7 +127,6 @@ namespace Hersan.Datos.Seguridad
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CSTR_SP_OBTIENEBLOQUEOUSUARIO, conn)) {
                         cmd.Parameters.AddWithValue("@Usuario", nomUsr);
-                        cmd.Parameters.AddWithValue("@Emp_Id", IdEmpresa);
 
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -186,7 +185,6 @@ namespace Hersan.Datos.Seguridad
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CSTR_SP_USUARIOS_CAMBIACONTRASENIA, conn)) {
                         cmd.Parameters.AddWithValue("@Usuario", Usuario.ID);
-                        cmd.Parameters.AddWithValue("@Emp_Id", Usuario.Empresa.Id);
                         cmd.Parameters.AddWithValue("@Contrasenia", Usuario.Contrasena);
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -202,19 +200,17 @@ namespace Hersan.Datos.Seguridad
         #endregion
 
         #region Datos Usuarios
-
         /// <summary>
         /// Obtiene los usuarios dados de alto en el sistema
         /// </summary>
         /// <returns></returns>
-        public List<UsuariosBE> ObtieneUsuarios(int IdEmpresa)
+        public List<UsuariosBE> ObtieneUsuarios()
         {
             try {
                 List<UsuariosBE> lst = new List<UsuariosBE>();
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion())) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CSTR_SP_USUARIOS_OBTIENE, conn)) {
-                        cmd.Parameters.AddWithValue("@Emp_Id", IdEmpresa);
 
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -228,6 +224,11 @@ namespace Hersan.Datos.Seguridad
                                 obj.Contrasena = reader["USU_Contrasenia"].ToString();
                                 obj.Activo = Boolean.Parse(reader["USU_Estatus"].ToString());
                                 obj.Bloqueado = Boolean.Parse(reader["Bloqueado"].ToString());
+                                obj.Rol.ID = int.Parse(reader["IdRol"].ToString());
+                                obj.Rol.Nombre = reader["Rol"].ToString();
+                                obj.Empresa.Id = int.Parse(reader["Emp_Id"].ToString());
+                                obj.Empresa.NombreComercial = reader["EMP_NombreComercial"].ToString();
+
                                 lst.Add(obj);
                             }
                         }
@@ -256,9 +257,8 @@ namespace Hersan.Datos.Seguridad
                         cmd.Parameters.AddWithValue("@IdCrea", IdUsuarioCrea);
                         cmd.Parameters.AddWithValue("@Usuario", Usuario.Usuario);
                         cmd.Parameters.AddWithValue("@Contrasenia", Usuario.Contrasena);
-                        cmd.Parameters.AddWithValue("@estatus", Usuario.Activo);
-                        cmd.Parameters.AddWithValue("@Emp_Id", Usuario.Empresa.Id);
-                        //cmd.Parameters.Add("@IdDepto", SqlDbType.Int).Value = Usuario.Depto.ID;
+                        cmd.Parameters.AddWithValue("@Super", Usuario.EsSuper);
+                        cmd.Parameters.AddWithValue("@Estatus", Usuario.Activo);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.ExecuteNonQuery();
@@ -276,7 +276,6 @@ namespace Hersan.Datos.Seguridad
 
             return res;
         }
-
 
         /// <summary>
         /// Actualiza el usuario
@@ -297,8 +296,6 @@ namespace Hersan.Datos.Seguridad
                         cmd.Parameters.AddWithValue("@Usuario", Usuario.Usuario);
                         cmd.Parameters.AddWithValue("@Contrasenia", Usuario.Contrasena);
                         cmd.Parameters.AddWithValue("@estatus", Usuario.Activo);
-                        cmd.Parameters.AddWithValue("@Emp_Id", Usuario.Empresa.Id);
-                        //cmd.Parameters.Add("@IdDepto", SqlDbType.Int).Value = Usuario.Depto.ID;
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.ExecuteNonQuery();
@@ -317,13 +314,12 @@ namespace Hersan.Datos.Seguridad
             return res;
         }
 
-
         /// <summary>
         /// Obtiene los datos del usuario
         /// </summary>
         /// <param name="Usuario">usuario a consultar</param>
         /// <returns></returns>
-        public UsuariosBE ObtieneDatosUsuario(string Usuario, int IdEmpresa)
+        public UsuariosBE ObtieneDatosUsuario(string Usuario)
         {
             try {
                 UsuariosBE obj = new UsuariosBE();
@@ -331,7 +327,6 @@ namespace Hersan.Datos.Seguridad
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CSTR_SP_USUARIOS_OBTIENEUSUARIO, conn)) {
                         cmd.Parameters.AddWithValue("@Usuario", Usuario);
-                        cmd.Parameters.AddWithValue("@Emp_Id", IdEmpresa);
 
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -356,7 +351,6 @@ namespace Hersan.Datos.Seguridad
                 throw ex;
             }
         }
-
         #endregion
     }
 }

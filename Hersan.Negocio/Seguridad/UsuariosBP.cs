@@ -17,9 +17,9 @@ namespace Hersan.Negocio.Seguridad
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <param name="Pswd">Contraseña Encriptada</param>
         /// <returns></returns>
-        public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd, int IdEmpresa)
+        public ValidaIngresoBE ValidaUsuario(string nomUsr, string Pswd)
         {
-            return new UsuariosDA().ValidaUsuario(nomUsr, Pswd, IdEmpresa);
+            return new UsuariosDA().ValidaUsuario(nomUsr, Pswd);
         }
 
         /// <summary>
@@ -27,9 +27,9 @@ namespace Hersan.Negocio.Seguridad
         /// </summary>
         /// <param name="nomUsr">Cuenta usuario</param>
         /// <returns></returns>
-        public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr, int IdEmpresa)
+        public ValidaIngresoBE ObtienBloqueoUsuario(string nomUsr)
         {
-            return new UsuariosDA().ObtienBloqueoUsuario(nomUsr, IdEmpresa);
+            return new UsuariosDA().ObtienBloqueoUsuario(nomUsr);
         }
 
         /// <summary>
@@ -50,9 +50,9 @@ namespace Hersan.Negocio.Seguridad
         /// Obtiene los usuarios dados de alto en el sistema
         /// </summary>
         /// <returns></returns>
-        public List<UsuariosBE> ObtieneUsuarios(int IdEmpresa)
+        public List<UsuariosBE> ObtieneUsuarios()
         {
-            return new UsuariosDA().ObtieneUsuarios(IdEmpresa);
+            return new UsuariosDA().ObtieneUsuarios();
         }
 
         /// <summary>
@@ -81,9 +81,9 @@ namespace Hersan.Negocio.Seguridad
         /// </summary>
         /// <param name="Usuario">usuario a consultar</param>
         /// <returns></returns>
-        public UsuariosBE ObtieneDatosUsuario(string Usuario, int IdEmpresa)
+        public UsuariosBE ObtieneDatosUsuario(string Usuario)
         {
-            return new UsuariosDA().ObtieneDatosUsuario(Usuario, IdEmpresa);
+            return new UsuariosDA().ObtieneDatosUsuario(Usuario);
         }
 
     }

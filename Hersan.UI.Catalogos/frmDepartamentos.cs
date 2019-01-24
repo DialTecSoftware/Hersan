@@ -41,12 +41,15 @@ namespace Hersan.UI.Catalogos
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             DepartamentosBE obj = new DepartamentosBE();
             try {
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
                 obj.Id = int.Parse(txtId.Text);
                 obj.Nombre = txtNombre.Text;
                 obj.Abrev = txtAbrev.Text;
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                obj.DatosUsuario.IdUsuarioCreo = 1;
+                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                 //PROCESO DE GUARDADO Y ACTUALIZACION
                 if (txtId.Text == "0") {
@@ -147,6 +150,17 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private bool ValidarCampos()
+        {
+            bool Flag = true;
+            try {
+                Flag = txtNombre.Text.Trim().Length == 0 ? false : true;
+                Flag = txtAbrev.Text.Trim().Length == 0 ? false : true;
 
+                return Flag;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
     }
 }

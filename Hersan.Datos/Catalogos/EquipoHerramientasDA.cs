@@ -11,12 +11,10 @@ namespace Hersan.Datos.Catalogos
 {
    public class EquipoHerramientasDA: BaseDA
     {
-
-
         #region Constantes
         const string CONST_USP_ABC_EHE_OBTENER = "ABC_EquipoHerramientas_Obtener";
         const string CONST_ABC_EHE_GUARDAR = "ABC_EquipoHerramientas_Guarda";
-        const string CONST_ABC_EHE_ACTUALIZAR = "[ABC_EquipoHerramientas_Actualiza]";
+        const string CONST_ABC_EHE_ACTUALIZAR = "ABC_EquipoHerramientas_Actualiza";
         #endregion
 
         public List<EquipoHerramientasBE> ABCEquipoHerramientas_Obtener()
@@ -35,6 +33,7 @@ namespace Hersan.Datos.Catalogos
                                 obj.Id = int.Parse(reader["EHE_Id"].ToString());
                                 obj.Nombre = reader["EHE_Nombre"].ToString();
                                 obj.Equipo = bool.Parse(reader["EHE_Equipo"].ToString());
+                                obj.Herramienta = !obj.Equipo;                                
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["EHE_Estatus"].ToString());
 
                                 oList.Add(obj);
@@ -67,8 +66,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
-
         public int ABCEquipoHerramientas_Actualizar(EquipoHerramientasBE obj)
         {
             int Result = 0;

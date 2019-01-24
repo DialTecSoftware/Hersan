@@ -14,7 +14,6 @@ namespace Hersan.UI.Catalogos
         {
             InitializeComponent();
         }
-
         private void frmCompetencias_Load(object sender, EventArgs e)
         {
             try {
@@ -37,6 +36,11 @@ namespace Hersan.UI.Catalogos
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             CompetenciasBE obj = new CompetenciasBE();
             try {
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
                 obj.Id = int.Parse(txtId.Text);
                 obj.Nombre = txtNombre.Text;
                 obj.Descripcion = txtDescripcion.Text;
@@ -152,6 +156,19 @@ namespace Hersan.UI.Catalogos
                 txtPonderacion.Text = "0";
                 txtDescripcion.Text = string.Empty;
                 chkEstatus.Checked = false;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private bool ValidarCampos()
+        {
+            bool Flag = true;
+            try {
+                Flag = txtDescripcion.Text.Trim().Length == 0 ? false : true;
+                Flag = txtNombre.Text.Trim().Length == 0 ? false : true;
+                Flag = txtPonderacion.Text.Trim().Length == 0 ? false : true;
+
+                return Flag;
             } catch (Exception ex) {
                 throw ex;
             }

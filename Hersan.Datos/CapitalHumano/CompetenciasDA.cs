@@ -72,7 +72,6 @@ throw ex;
             }
         }
 
-
         public int ABCCompetencias_Actualizar(CompetenciasBE obj)
         {
             int Result = 0;

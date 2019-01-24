@@ -14,6 +14,10 @@ namespace Hersan.Negocio.Catalogos
         {
             return new TiposContratoDA().TiposContrato_Obtener();
         }
+        public List<TiposContratoBE> ABCTiposcontrato_Combo()
+        {
+            return new TiposContratoDA().ABCTiposcontrato_Combo();
+        }
         public int ABCTiposContrato_Guardar(TiposContratoBE obj)
         {
             return new TiposContratoDA().ABCTiposContrato_Guardar(obj);

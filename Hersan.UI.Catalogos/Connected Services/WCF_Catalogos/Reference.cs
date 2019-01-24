@@ -57,6 +57,12 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/TiposContrato_ObtenerResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>> TiposContrato_ObtenerAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCTiposcontrato_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCTiposcontrato_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE> ABCTiposcontrato_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCTiposcontrato_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCTiposcontrato_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>> ABCTiposcontrato_ComboAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_GuardarResponse")]
         int ABCTiposContrato_Guardar(Hersan.Entidades.Catalogos.TiposContratoBE obj);
         
@@ -194,6 +200,24 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCEquipoHerramientas_ActualizarAsync(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ContratosBE> ABCContratos_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ContratosBE>> ABCContratos_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_ActualizarResponse")]
+        int ABCContratos_Actualizar(Hersan.Entidades.CapitalHumano.ContratosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABCContratos_ActualizarAsync(Hersan.Entidades.CapitalHumano.ContratosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_GuardarResponse")]
+        int ABCContratos_Guardar(Hersan.Entidades.CapitalHumano.ContratosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABCContratos_GuardarAsync(Hersan.Entidades.CapitalHumano.ContratosBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -277,6 +301,14 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>> TiposContrato_ObtenerAsync() {
             return base.Channel.TiposContrato_ObtenerAsync();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE> ABCTiposcontrato_Combo() {
+            return base.Channel.ABCTiposcontrato_Combo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>> ABCTiposcontrato_ComboAsync() {
+            return base.Channel.ABCTiposcontrato_ComboAsync();
         }
         
         public int ABCTiposContrato_Guardar(Hersan.Entidades.Catalogos.TiposContratoBE obj) {
@@ -461,6 +493,30 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<int> ABCEquipoHerramientas_ActualizarAsync(Hersan.Entidades.Catalogos.EquipoHerramientasBE obj) {
             return base.Channel.ABCEquipoHerramientas_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ContratosBE> ABCContratos_Obtener() {
+            return base.Channel.ABCContratos_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ContratosBE>> ABCContratos_ObtenerAsync() {
+            return base.Channel.ABCContratos_ObtenerAsync();
+        }
+        
+        public int ABCContratos_Actualizar(Hersan.Entidades.CapitalHumano.ContratosBE obj) {
+            return base.Channel.ABCContratos_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCContratos_ActualizarAsync(Hersan.Entidades.CapitalHumano.ContratosBE obj) {
+            return base.Channel.ABCContratos_ActualizarAsync(obj);
+        }
+        
+        public int ABCContratos_Guardar(Hersan.Entidades.CapitalHumano.ContratosBE obj) {
+            return base.Channel.ABCContratos_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABCContratos_GuardarAsync(Hersan.Entidades.CapitalHumano.ContratosBE obj) {
+            return base.Channel.ABCContratos_GuardarAsync(obj);
         }
     }
 }

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BaseWinBP.cs" />
     <Compile Include="CapitalHumano\CompetenciasBP.cs" />
+    <Compile Include="CapitalHumano\ContratosBP.cs" />
     <Compile Include="CapitalHumano\EducacionBP.cs" />
     <Compile Include="CapitalHumano\FuncionesBP.cs" />
     <Compile Include="Catalogos\ContactosBP.cs" />

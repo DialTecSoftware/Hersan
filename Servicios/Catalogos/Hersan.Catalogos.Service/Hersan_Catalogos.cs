@@ -72,6 +72,11 @@ namespace Hersan.Catalogos.Service
         {
             return new PuestosBP().ABCPuestos_Actualizar(obj);
         }
+        public int ABCPuestos_Combo(int IdDepto)
+        {
+            return new PuestosBP().ABCPuestos_Combo(IdDepto);
+        }
+
         #endregion
 
         #region Competencias
@@ -86,6 +91,10 @@ namespace Hersan.Catalogos.Service
         public int ABCCompetencias_Actualizar(CompetenciasBE obj)
         {
             return new CompetenciasBP().ABCCompetencias_Actualizar(obj);
+        }
+        public List<CompetenciasBE> ABCCompetencias_Combo()
+        {
+            return new CompetenciasBP().ABCCompetencias_Combo();
         }
         #endregion
 
@@ -116,6 +125,10 @@ namespace Hersan.Catalogos.Service
         public int ABCEducacion_Actualizar(EducacionBE obj)
         {
             return new EducacionBP().ABCEducacion_Actualizar(obj);
+        }
+        public List<EducacionBE> ABCEducacion_Combo()
+        {
+            return new EducacionBP().ABCEducacion_Combo();
         }
         #endregion
 
@@ -193,7 +206,6 @@ namespace Hersan.Catalogos.Service
             return new DocumentosBP().ABCDocumentos_Actualizar(obj);
         }
         #endregion
-
 
     }
 }

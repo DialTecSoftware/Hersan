@@ -72,7 +72,7 @@ namespace Hersan.Catalogos.Service
         {
             return new PuestosBP().ABCPuestos_Actualizar(obj);
         }
-        public int ABCPuestos_Combo(int IdDepto)
+        public List<PuestosBE> ABCPuestos_Combo(int IdDepto)
         {
             return new PuestosBP().ABCPuestos_Combo(IdDepto);
         }

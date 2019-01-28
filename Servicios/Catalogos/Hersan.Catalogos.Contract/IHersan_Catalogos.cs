@@ -123,5 +123,14 @@ namespace Hersan.Catalogos.Contract
 
         #endregion
 
+        #region Documentos
+        [OperationContract]
+        List<DocumentosBE> ABCDocumentos_Obtener();
+        [OperationContract]
+        int ABCDocumentos_Guardar(DocumentosBE obj);
+        [OperationContract]
+        int ABCDocumentos_Actualizar(DocumentosBE obj);
+
+        #endregion
     }
 }

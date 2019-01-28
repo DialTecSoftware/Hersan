@@ -92,6 +92,12 @@
     <Compile Include="frmDepartamentos.Designer.cs">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocumentos.Designer.cs">
+      <DependentUpon>frmDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEducacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <EmbeddedResource Include="frmDepartamentos.resx">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDocumentos.resx">
+      <DependentUpon>frmDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEducacion.resx">
       <DependentUpon>frmEducacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +217,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DocumentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EducacionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EntidadesBE.datasource" />

@@ -187,7 +187,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
-            this.Text = "Empresas";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmEmpresas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

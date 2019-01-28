@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTiposContrato));
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.chkEstatus = new System.Windows.Forms.CheckBox();
-            this.txtAbrev = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
-            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
@@ -55,6 +46,15 @@
             this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.chkEstatus = new System.Windows.Forms.CheckBox();
+            this.txtAbrev = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
+            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -107,6 +107,79 @@
             this.commandBarStripElement1.OverflowButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             this.commandBarStripElement1.StretchHorizontally = true;
             ((Telerik.WinControls.UI.RadCommandBarOverflowButton)(this.commandBarStripElement1.GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.DisplayName = "commandBarButton1";
+            this.btnNuevo.DrawText = true;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // commandBarSeparator1
+            // 
+            this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
+            this.commandBarSeparator1.Name = "commandBarSeparator1";
+            this.commandBarSeparator1.VisibleInOverflowMenu = false;
+            // 
+            // commandBarButton2
+            // 
+            this.commandBarButton2.DisplayName = "commandBarButton2";
+            this.commandBarButton2.DrawText = true;
+            this.commandBarButton2.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton2.Image")));
+            this.commandBarButton2.Name = "commandBarButton2";
+            this.commandBarButton2.Text = "Guardar";
+            this.commandBarButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton2.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // commandBarSeparator2
+            // 
+            this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
+            this.commandBarSeparator2.Name = "commandBarSeparator2";
+            this.commandBarSeparator2.VisibleInOverflowMenu = false;
+            // 
+            // commandBarButton3
+            // 
+            this.commandBarButton3.DisplayName = "commandBarButton3";
+            this.commandBarButton3.DrawText = true;
+            this.commandBarButton3.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton3.Image")));
+            this.commandBarButton3.Name = "commandBarButton3";
+            this.commandBarButton3.Text = "Eliminar";
+            this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton3.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // commandBarSeparator3
+            // 
+            this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
+            this.commandBarSeparator3.Name = "commandBarSeparator3";
+            this.commandBarSeparator3.VisibleInOverflowMenu = false;
+            // 
+            // commandBarButton4
+            // 
+            this.commandBarButton4.DisplayName = "commandBarButton4";
+            this.commandBarButton4.DrawText = true;
+            this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
+            this.commandBarButton4.Name = "commandBarButton4";
+            this.commandBarButton4.Text = "Salir";
+            this.commandBarButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton4.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // commandBarSeparator4
+            // 
+            this.commandBarSeparator4.DisplayName = "commandBarSeparator4";
+            this.commandBarSeparator4.Name = "commandBarSeparator4";
+            this.commandBarSeparator4.VisibleInOverflowMenu = false;
+            // 
+            // commandBarLabel1
+            // 
+            this.commandBarLabel1.DisplayName = "commandBarLabel1";
+            this.commandBarLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.commandBarLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.commandBarLabel1.Name = "commandBarLabel1";
+            this.commandBarLabel1.StretchHorizontally = true;
+            this.commandBarLabel1.Text = "CATÁLOGO TIPOS DE CONTRATO";
             // 
             // radPanel1
             // 
@@ -195,120 +268,43 @@
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
             this.gvDatos.MasterTemplate.AllowEditRow = false;
-            gridViewTextBoxColumn4.FieldName = "Id";
-            gridViewTextBoxColumn4.HeaderText = "ID";
-            gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "Id";
-            gridViewTextBoxColumn5.FieldName = "Nombre";
-            gridViewTextBoxColumn5.HeaderText = "Nombre";
-            gridViewTextBoxColumn5.MaxWidth = 300;
-            gridViewTextBoxColumn5.MinWidth = 150;
-            gridViewTextBoxColumn5.Name = "Nombre";
-            gridViewTextBoxColumn5.Width = 150;
-            gridViewTextBoxColumn5.WrapText = true;
-            gridViewTextBoxColumn6.FieldName = "Abrev";
-            gridViewTextBoxColumn6.HeaderText = "Abreviatura";
-            gridViewTextBoxColumn6.MaxWidth = 100;
-            gridViewTextBoxColumn6.MinWidth = 80;
-            gridViewTextBoxColumn6.Name = "Abrev";
-            gridViewTextBoxColumn6.Width = 80;
-            gridViewCheckBoxColumn2.FieldName = "DatosUsuario.Estatus";
-            gridViewCheckBoxColumn2.HeaderText = "Estatus";
-            gridViewCheckBoxColumn2.MaxWidth = 100;
-            gridViewCheckBoxColumn2.MinWidth = 100;
-            gridViewCheckBoxColumn2.Name = "Estatus";
-            gridViewCheckBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewCheckBoxColumn2.Width = 100;
+            gridViewTextBoxColumn1.FieldName = "Id";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "Id";
+            gridViewTextBoxColumn2.FieldName = "Nombre";
+            gridViewTextBoxColumn2.HeaderText = "Nombre";
+            gridViewTextBoxColumn2.MaxWidth = 300;
+            gridViewTextBoxColumn2.MinWidth = 150;
+            gridViewTextBoxColumn2.Name = "Nombre";
+            gridViewTextBoxColumn2.Width = 150;
+            gridViewTextBoxColumn2.WrapText = true;
+            gridViewTextBoxColumn3.FieldName = "Abrev";
+            gridViewTextBoxColumn3.HeaderText = "Abreviatura";
+            gridViewTextBoxColumn3.MaxWidth = 100;
+            gridViewTextBoxColumn3.MinWidth = 80;
+            gridViewTextBoxColumn3.Name = "Abrev";
+            gridViewTextBoxColumn3.Width = 80;
+            gridViewCheckBoxColumn1.FieldName = "DatosUsuario.Estatus";
+            gridViewCheckBoxColumn1.HeaderText = "Estatus";
+            gridViewCheckBoxColumn1.MaxWidth = 100;
+            gridViewCheckBoxColumn1.MinWidth = 100;
+            gridViewCheckBoxColumn1.Name = "Estatus";
+            gridViewCheckBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCheckBoxColumn1.Width = 100;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewCheckBoxColumn2});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewCheckBoxColumn1});
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
             this.gvDatos.Size = new System.Drawing.Size(528, 203);
             this.gvDatos.TabIndex = 3;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.DisplayName = "commandBarButton1";
-            this.btnNuevo.DrawText = true;
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // commandBarSeparator1
-            // 
-            this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
-            this.commandBarSeparator1.Name = "commandBarSeparator1";
-            this.commandBarSeparator1.Text = "";
-            this.commandBarSeparator1.VisibleInOverflowMenu = false;
-            // 
-            // commandBarButton2
-            // 
-            this.commandBarButton2.DisplayName = "commandBarButton2";
-            this.commandBarButton2.DrawText = true;
-            this.commandBarButton2.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton2.Image")));
-            this.commandBarButton2.Name = "commandBarButton2";
-            this.commandBarButton2.Text = "Guardar";
-            this.commandBarButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.commandBarButton2.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // commandBarSeparator2
-            // 
-            this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
-            this.commandBarSeparator2.Name = "commandBarSeparator2";
-            this.commandBarSeparator2.Text = "";
-            this.commandBarSeparator2.VisibleInOverflowMenu = false;
-            // 
-            // commandBarButton3
-            // 
-            this.commandBarButton3.DisplayName = "commandBarButton3";
-            this.commandBarButton3.DrawText = true;
-            this.commandBarButton3.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton3.Image")));
-            this.commandBarButton3.Name = "commandBarButton3";
-            this.commandBarButton3.Text = "Eliminar";
-            this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.commandBarButton3.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // commandBarSeparator3
-            // 
-            this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
-            this.commandBarSeparator3.Name = "commandBarSeparator3";
-            this.commandBarSeparator3.Text = "";
-            this.commandBarSeparator3.VisibleInOverflowMenu = false;
-            // 
-            // commandBarButton4
-            // 
-            this.commandBarButton4.DisplayName = "commandBarButton4";
-            this.commandBarButton4.DrawText = true;
-            this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
-            this.commandBarButton4.Name = "commandBarButton4";
-            this.commandBarButton4.Text = "Salir";
-            this.commandBarButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.commandBarButton4.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // commandBarSeparator4
-            // 
-            this.commandBarSeparator4.DisplayName = "commandBarSeparator4";
-            this.commandBarSeparator4.Name = "commandBarSeparator4";
-            this.commandBarSeparator4.Text = "";
-            this.commandBarSeparator4.VisibleInOverflowMenu = false;
-            // 
-            // commandBarLabel1
-            // 
-            this.commandBarLabel1.DisplayName = "commandBarLabel1";
-            this.commandBarLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.commandBarLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.commandBarLabel1.Name = "commandBarLabel1";
-            this.commandBarLabel1.StretchHorizontally = true;
-            this.commandBarLabel1.Text = "CATÁLOGO TIPOS DE CONTRATO";
             // 
             // commandBarStripElement2
             // 

@@ -179,6 +179,20 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
+        #region Documentos
+        public List<DocumentosBE> ABCDocumentos_Obtener()
+        {
+            return new DocumentosBP().ABCDocumentos_Obtener();
+        }
+        public int ABCDocumentos_Guardar(DocumentosBE obj)
+        {
+            return new DocumentosBP().ABCDocumentos_Guardar(obj);
+        }
+        public int ABCDocumentos_Actualizar(DocumentosBE obj)
+        {
+            return new DocumentosBP().ABCDocumentos_Actualizar(obj);
+        }
+        #endregion
 
 
     }

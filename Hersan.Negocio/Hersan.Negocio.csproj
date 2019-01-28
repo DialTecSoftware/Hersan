@@ -50,6 +50,7 @@
     <Compile Include="CapitalHumano\FuncionesBP.cs" />
     <Compile Include="Catalogos\ContactosBP.cs" />
     <Compile Include="Catalogos\DepartamentosBP.cs" />
+    <Compile Include="Catalogos\DocumentosBP.cs" />
     <Compile Include="Catalogos\EmpresasBP.cs" />
     <Compile Include="CapitalHumano\PuestosBP.cs" />
     <Compile Include="CapitalHumano\TiposContratoBP.cs" />

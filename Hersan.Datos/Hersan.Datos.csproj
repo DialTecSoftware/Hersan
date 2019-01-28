@@ -64,6 +64,7 @@
     <Compile Include="CapitalHumano\ContratosDA.cs" />
     <Compile Include="Catalogos\ContactosDA.cs" />
     <Compile Include="Catalogos\DepartamentosDA.cs" />
+    <Compile Include="Catalogos\DocumentosDA.cs" />
     <Compile Include="Catalogos\EducacionDA.cs" />
     <Compile Include="Catalogos\EmpresasDA.cs" />
     <Compile Include="CapitalHumano\PuestosDA.cs" />

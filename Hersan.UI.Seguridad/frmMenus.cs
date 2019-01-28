@@ -9,7 +9,7 @@ namespace Hersan.UI.Seguridad
     public partial class frmMenus : Telerik.WinControls.UI.RadForm
     {
         WCF_Seguridad.Hersan_SeguridadClient oSeguridad;
-        int Aux_IdPadre = 0;
+        int Aux_IdPadre = -1;
 
         public frmMenus()
         {
@@ -106,8 +106,10 @@ namespace Hersan.UI.Seguridad
         {
             oSeguridad = new WCF_Seguridad.Hersan_SeguridadClient();
             try {
-                gvMenus.DataSource = null;
+                //gvMenus.DataSource = null;
+                gvMenus.MasterTemplate.BeginUpdate();
                 gvMenus.DataSource = oSeguridad.ObtenerMenus();
+                gvMenus.MasterTemplate.EndUpdate();
             } catch (Exception ex) {
                 throw ex;
             }

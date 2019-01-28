@@ -94,6 +94,12 @@
   <wsdl:message name="IHersan_Catalogos_ABCPuestos_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABCPuestos_ActualizarResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_ComboResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABCCompetencias_Obtener" />
   </wsdl:message>
@@ -111,6 +117,12 @@
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABCCompetencias_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCompetencias_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCompetencias_ComboResponse" />
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_Entidades_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:Entidades_Obtener" />
@@ -147,6 +159,12 @@
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCEducacion_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABCEducacion_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_ComboResponse" />
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCFunciones_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABCFunciones_Obtener" />
@@ -291,6 +309,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Actualizar" message="tns:IHersan_Catalogos_ABCPuestos_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ActualizarResponse" message="tns:IHersan_Catalogos_ABCPuestos_Actualizar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo" message="tns:IHersan_Catalogos_ABCPuestos_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ComboResponse" message="tns:IHersan_Catalogos_ABCPuestos_Combo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ABCCompetencias_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener" message="tns:IHersan_Catalogos_ABCCompetencias_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ObtenerResponse" message="tns:IHersan_Catalogos_ABCCompetencias_Obtener_OutputMessage" />
@@ -302,6 +324,10 @@
     <wsdl:operation name="ABCCompetencias_Actualizar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Actualizar" message="tns:IHersan_Catalogos_ABCCompetencias_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ActualizarResponse" message="tns:IHersan_Catalogos_ABCCompetencias_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCCompetencias_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Combo" message="tns:IHersan_Catalogos_ABCCompetencias_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ComboResponse" message="tns:IHersan_Catalogos_ABCCompetencias_Combo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Entidades_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/Entidades_Obtener" message="tns:IHersan_Catalogos_Entidades_Obtener_InputMessage" />
@@ -326,6 +352,10 @@
     <wsdl:operation name="ABCEducacion_Actualizar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Actualizar" message="tns:IHersan_Catalogos_ABCEducacion_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ActualizarResponse" message="tns:IHersan_Catalogos_ABCEducacion_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Combo" message="tns:IHersan_Catalogos_ABCEducacion_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ComboResponse" message="tns:IHersan_Catalogos_ABCEducacion_Combo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ABCFunciones_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Obtener" message="tns:IHersan_Catalogos_ABCFunciones_Obtener_InputMessage" />
@@ -508,6 +538,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ABCCompetencias_Obtener">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener" style="document" />
       <wsdl:input>
@@ -528,6 +567,15 @@
     </wsdl:operation>
     <wsdl:operation name="ABCCompetencias_Actualizar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCCompetencias_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Combo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -582,6 +630,15 @@
     </wsdl:operation>
     <wsdl:operation name="ABCEducacion_Actualizar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Combo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

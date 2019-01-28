@@ -71,6 +71,9 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Hersan_Logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -130,6 +133,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Hersan_Logo.ico" />
     <Content Include="llave_privada.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -145,6 +149,10 @@
     <ProjectReference Include="..\Hersan.Negocio\Hersan.Negocio.csproj">
       <Project>{9DC9D350-B0E3-4481-AC7A-DBE3729C8955}</Project>
       <Name>Hersan.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.UI.CapitalHumano\Hersan.UI.CapitalHumano.csproj">
+      <Project>{ee64995c-6bcc-43d1-8e12-43125e2db6c2}</Project>
+      <Name>Hersan.UI.CapitalHumano</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hersan.UI.Catalogos\Hersan.UI.Catalogos.csproj">
       <Project>{c7a0e85c-70a0-40cc-a42c-d917c1c99827}</Project>

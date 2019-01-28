@@ -47,6 +47,7 @@
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
     <Compile Include="CapitalHumano\ContratosBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
+    <Compile Include="CapitalHumano\PerfilesBE.cs" />
     <Compile Include="Catalogos\CiudadesBE.cs" />
     <Compile Include="Catalogos\ColoniasBE.cs" />
     <Compile Include="Catalogos\ContactosBE.cs" />

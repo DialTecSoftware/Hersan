@@ -15,6 +15,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_PUESTOS_OBTENER = "ABC_Puestos_Obtener";
         const string CONST_USP_ABC_PUESTO_GUARDA = "ABC_Puesto_Guarda";
         const string CONST_USP_ABC_PUESTO_ACTUALIZA = "ABC_Puesto_Actualiza";
+        const string CONST_USP_ABC_PUESTOS_COMBO = "ABC_Puestos_Combo";
         #endregion
 
         public List<PuestosBE> ABCPuestos_Obtener()
@@ -87,6 +88,34 @@ namespace Hersan.Datos.Catalogos
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<PuestosBE> ABCPuestos_Combo(int IdDepto)
+        {
+            List<PuestosBE> oList = new List<PuestosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ABC_PUESTOS_COMBO, conn)) {
+                        cmd.Parameters.AddWithValue("@DEP_Id", IdDepto);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                PuestosBE obj = new PuestosBE();
+
+                                obj.Id = int.Parse(reader["PUE_Id"].ToString());
+                                obj.Nombre = reader["PUE_Nombre"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
             } catch (Exception ex) {
                 throw ex;
             }

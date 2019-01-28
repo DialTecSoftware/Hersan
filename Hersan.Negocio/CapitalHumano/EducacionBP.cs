@@ -22,6 +22,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new EducacionDA().ABCEducacion_Actualizar(obj);
         }
-
+        public List<EducacionBE> ABCEducacion_Combo()
+        {
+            return new EducacionDA().ABCEducacion_Combo();
+        }
     }
 }

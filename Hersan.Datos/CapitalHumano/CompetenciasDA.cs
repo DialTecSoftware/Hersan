@@ -16,6 +16,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_COMPETENCIAS_OBTENER = "ABC_Competencias_Obtener";
         const string CONST_ABC_COMPETENCIAS_GUARDAR = "ABC_Competencias_Guarda";
         const string CONST_ABC_COMPETENCIAS_ACTUALIZA = "ABC_Competencias_Actualiza";
+        const string CONST_ABC_COMPETENCIAS_COMBO = "ABC_Competencias_Combo";
         #endregion
 
         public List<CompetenciasBE> ABCCompetencias_Obtener()
@@ -48,7 +49,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
         public int ABC_Competencias_Guardar(CompetenciasBE obj)
         {
             int Result = 0;
@@ -71,7 +71,6 @@ namespace Hersan.Datos.Catalogos
 throw ex;
             }
         }
-
         public int ABCCompetencias_Actualizar(CompetenciasBE obj)
         {
             int Result = 0;
@@ -95,9 +94,34 @@ throw ex;
                 throw ex;
             }
         }
+        public List<CompetenciasBE> ABCCompetencias_Combo()
+        {
+            List<CompetenciasBE> oList = new List<CompetenciasBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_COMPETENCIAS_COMBO, conn)) {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                CompetenciasBE obj = new CompetenciasBE();
+
+                                obj.Id = int.Parse(reader["COM_ID"].ToString());
+                                obj.Nombre = reader["COM_Nombre"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
     }
-
-
 }
 
 

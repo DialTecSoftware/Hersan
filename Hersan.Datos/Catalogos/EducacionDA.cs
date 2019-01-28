@@ -16,6 +16,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_EDUCACION_OBTENER = "ABC_Educacion_Obtener";
         const string CONST_ABC_EDUCACION_GUARDAR = "ABC_Educacion_Guarda";
         const string CONST_ABC_EDUCACION_ACTUALIZAR = "ABC_Educacion_Actualiza";
+        const string CONST_ABC_EDUCACION_COMBO = "ABC_Educacion_Combo";
         #endregion
 
         public List<EducacionBE> ABCEducacion_Obtener()
@@ -84,6 +85,32 @@ namespace Hersan.Datos.Catalogos
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<EducacionBE> ABCEducacion_Combo()
+        {
+            List<EducacionBE> oList = new List<EducacionBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_EDUCACION_COMBO, conn)) {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                EducacionBE obj = new EducacionBE();
+
+                                obj.Id = int.Parse(reader["EDU_ID"].ToString());
+                                obj.Nombre = reader["EDU_Nombre"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
             } catch (Exception ex) {
                 throw ex;
             }

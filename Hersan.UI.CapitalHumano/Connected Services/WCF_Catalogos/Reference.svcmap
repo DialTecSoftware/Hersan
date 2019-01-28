@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0ef8f5e4-651c-4d13-b2b2-b37d92192091" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56779/Hersan_Catalogos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Hersan_Catalogos.xsd" MetadataType="Schema" ID="c4b1a733-9ff2-4f53-9b77-36a37f9e7211" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd0" />
+    <MetadataFile FileName="Hersan_Catalogos.wsdl" MetadataType="Wsdl" ID="58cd0de1-a5bb-47e8-8235-bdb877906e2e" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?wsdl" />
+    <MetadataFile FileName="Hersan_Catalogos1.xsd" MetadataType="Schema" ID="e780e0b0-9251-4128-b432-4e80a14022c5" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd2" />
+    <MetadataFile FileName="Hersan_Catalogos.disco" MetadataType="Disco" ID="ea957065-39ab-4786-abb9-c044eaa29e81" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?disco" />
+    <MetadataFile FileName="Hersan_Catalogos2.xsd" MetadataType="Schema" ID="cbbab4be-b4c1-457c-8363-59210b64371b" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd1" />
+    <MetadataFile FileName="Hersan_Catalogos3.xsd" MetadataType="Schema" ID="d8850e2a-55b3-44ff-8409-60a9b068ce62" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" />
+    <MetadataFile FileName="Hersan_Catalogos4.xsd" MetadataType="Schema" ID="ccce3887-7a1a-4005-98c9-021bf3fcf3a4" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

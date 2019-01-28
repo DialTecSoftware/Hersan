@@ -23,5 +23,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new CompetenciasDA().ABCCompetencias_Actualizar(obj);
         }
+        public List<CompetenciasBE> ABCCompetencias_Combo()
+        {
+            return new CompetenciasDA().ABCCompetencias_Combo();
+        }
     }
 }

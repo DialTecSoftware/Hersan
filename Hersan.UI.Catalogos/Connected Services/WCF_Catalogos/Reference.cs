@@ -93,6 +93,12 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCPuestos_ActualizarAsync(Hersan.Entidades.Catalogos.PuestosBE obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> ABCPuestos_Combo(int IdDepto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> ABCPuestos_ComboAsync(int IdDepto);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener();
         
@@ -110,6 +116,12 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCCompetencias_ActualizarAsync(Hersan.Entidades.CapitalHumano.CompetenciasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE>> ABCCompetencias_ComboAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/Entidades_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/Entidades_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE> Entidades_Obtener();
@@ -146,6 +158,12 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCEducacion_ActualizarAsync(Hersan.Entidades.Catalogos.EducacionBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE> ABCEducacion_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE>> ABCEducacion_ComboAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE> ABCFunciones_Obtener();
@@ -351,6 +369,14 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
             return base.Channel.ABCPuestos_ActualizarAsync(obj);
         }
         
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> ABCPuestos_Combo(int IdDepto) {
+            return base.Channel.ABCPuestos_Combo(IdDepto);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> ABCPuestos_ComboAsync(int IdDepto) {
+            return base.Channel.ABCPuestos_ComboAsync(IdDepto);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener() {
             return base.Channel.ABCCompetencias_Obtener();
         }
@@ -373,6 +399,14 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<int> ABCCompetencias_ActualizarAsync(Hersan.Entidades.CapitalHumano.CompetenciasBE obj) {
             return base.Channel.ABCCompetencias_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Combo() {
+            return base.Channel.ABCCompetencias_Combo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE>> ABCCompetencias_ComboAsync() {
+            return base.Channel.ABCCompetencias_ComboAsync();
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE> Entidades_Obtener() {
@@ -421,6 +455,14 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<int> ABCEducacion_ActualizarAsync(Hersan.Entidades.Catalogos.EducacionBE obj) {
             return base.Channel.ABCEducacion_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE> ABCEducacion_Combo() {
+            return base.Channel.ABCEducacion_Combo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE>> ABCEducacion_ComboAsync() {
+            return base.Channel.ABCEducacion_ComboAsync();
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE> ABCFunciones_Obtener() {

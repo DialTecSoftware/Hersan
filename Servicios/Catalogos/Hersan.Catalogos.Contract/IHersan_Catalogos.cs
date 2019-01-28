@@ -49,6 +49,8 @@ namespace Hersan.Catalogos.Contract
         int ABCPuestos_Guardar(PuestosBE obj);
         [OperationContract]
         int ABCPuestos_Actualizar(PuestosBE obj);
+        [OperationContract]
+        List<PuestosBE> ABCPuestos_Combo(int IdDepto);
         #endregion
 
         #region Competencias
@@ -61,6 +63,8 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         int ABCCompetencias_Actualizar(CompetenciasBE obj);
 
+        [OperationContract]
+        List<CompetenciasBE> ABCCompetencias_Combo();
         #endregion
 
         #region Entidades
@@ -80,7 +84,8 @@ namespace Hersan.Catalogos.Contract
         int ABCEducacion_Guardar(EducacionBE obj);
         [OperationContract]
         int ABCEducacion_Actualizar(EducacionBE obj);
-
+        [OperationContract]
+        List<EducacionBE> ABCEducacion_Combo();
         #endregion
 
         #region Funciones

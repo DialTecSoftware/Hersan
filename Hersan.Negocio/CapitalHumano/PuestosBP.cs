@@ -22,5 +22,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new PuestosDA().ABCPuestos_Actualizar(obj);
         }
+        public List<PuestosBE> ABCPuestos_Combo(int IdDepto)
+        {
+            return new PuestosDA().ABCPuestos_Combo(IdDepto);
+        }
     }
 }

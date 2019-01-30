@@ -49,25 +49,25 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\RadControls for WinForms Q2 2013\Bin40\Telerik.WinControls.dll</HintPath>
+    <Reference Include="Telerik.WinControls, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.GridView, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\RadControls for WinForms Q2 2013\Bin40\Telerik.WinControls.GridView.dll</HintPath>
+    <Reference Include="Telerik.WinControls.GridView, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadDock, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\RadControls for WinForms Q2 2013\Bin40\Telerik.WinControls.RadDock.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.RadDock.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.UI, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\RadControls for WinForms Q2 2013\Bin40\Telerik.WinControls.UI.dll</HintPath>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="TelerikCommon, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\RadControls for WinForms Q2 2013\Bin40\TelerikCommon.dll</HintPath>
+    <Reference Include="TelerikCommon, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

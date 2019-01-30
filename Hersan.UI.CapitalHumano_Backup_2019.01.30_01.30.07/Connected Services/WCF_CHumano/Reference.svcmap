@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c20c3f25-4afe-422a-b696-a52837bdcbde" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60349/Hersan_CHumano.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Hersan_CHumano.disco" MetadataType="Disco" ID="caab1229-4f4b-449f-98be-448c6918d694" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?disco" />
+    <MetadataFile FileName="Hersan_CHumano.xsd" MetadataType="Schema" ID="d94e2d3c-55d6-48f7-9aa2-94564e3d9750" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd3" />
+    <MetadataFile FileName="Hersan_CHumano1.xsd" MetadataType="Schema" ID="e7a5458c-9106-48b6-a9e0-d01460a884b2" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd2" />
+    <MetadataFile FileName="Hersan_CHumano2.xsd" MetadataType="Schema" ID="096aa2ac-7e92-4d46-a141-b855292d0e07" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd5" />
+    <MetadataFile FileName="Hersan_CHumano3.xsd" MetadataType="Schema" ID="e542aaaf-74cd-4919-a0a2-c697f5cc32c3" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd4" />
+    <MetadataFile FileName="Hersan_CHumano4.xsd" MetadataType="Schema" ID="fe1becb3-34ef-468a-bb0f-0d56f62b6967" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd0" />
+    <MetadataFile FileName="Hersan_CHumano.wsdl" MetadataType="Wsdl" ID="d0bfd7bf-cd3a-485b-ae33-d38b5cc0a197" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?wsdl" />
+    <MetadataFile FileName="Hersan_CHumano6.xsd" MetadataType="Schema" ID="df42c149-561f-4a46-9316-23773c222acc" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd6" />
+    <MetadataFile FileName="Hersan_CHumano5.xsd" MetadataType="Schema" ID="1232d25c-1a43-4bfd-ab04-f8a65d82a705" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

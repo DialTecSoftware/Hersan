@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Hersan_Seguridad" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IHersan_Seguridad_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Seguridad" />
+      <xsd:import schemaLocation="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+      <xsd:import schemaLocation="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHersan_Seguridad_ObtenerMenuUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtenerMenuUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtenerMenuRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuRol" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtenerMenuRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_GuardaMenuRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaMenuRol" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_GuardaMenuRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaMenuRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtenerMenus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenus" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtenerMenus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_MenusPadre_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenusPadre_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_MenusPadre_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenusPadre_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_Menu_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Menu_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_Menu_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Menu_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ValidaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ValidaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtienBloqueoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtienBloqueoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtienBloqueoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtienBloqueoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_DesbloqueaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DesbloqueaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_DesbloqueaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DesbloqueaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtieneUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtieneUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtieneUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtieneUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_GuardaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_GuardaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ActualizaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ActualizaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtieneDatosUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtieneDatosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtieneDatosUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtieneDatosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_CambiaContrasenia_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiaContrasenia" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_CambiaContrasenia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiaContraseniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtieneRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtieneRoles" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtieneRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtieneRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_GuardaRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaRoles" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_GuardaRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ActualizaRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaRoles" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ActualizaRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtieneRolesUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtieneRolesUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_ObtieneRolesUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtieneRolesUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_GuardaRolesUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaRolesUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Seguridad_GuardaRolesUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaRolesUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHersan_Seguridad">
+    <wsdl:operation name="ObtenerMenuUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenuUsuario" message="tns:IHersan_Seguridad_ObtenerMenuUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenuUsuarioResponse" message="tns:IHersan_Seguridad_ObtenerMenuUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenuRol" message="tns:IHersan_Seguridad_ObtenerMenuRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenuRolResponse" message="tns:IHersan_Seguridad_ObtenerMenuRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaMenuRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/GuardaMenuRol" message="tns:IHersan_Seguridad_GuardaMenuRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/GuardaMenuRolResponse" message="tns:IHersan_Seguridad_GuardaMenuRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenus" message="tns:IHersan_Seguridad_ObtenerMenus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtenerMenusResponse" message="tns:IHersan_Seguridad_ObtenerMenus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenusPadre_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/MenusPadre_Combo" message="tns:IHersan_Seguridad_MenusPadre_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/MenusPadre_ComboResponse" message="tns:IHersan_Seguridad_MenusPadre_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Menu_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/Menu_Guardar" message="tns:IHersan_Seguridad_Menu_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/Menu_GuardarResponse" message="tns:IHersan_Seguridad_Menu_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ValidaUsuario" message="tns:IHersan_Seguridad_ValidaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ValidaUsuarioResponse" message="tns:IHersan_Seguridad_ValidaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtienBloqueoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtienBloqueoUsuario" message="tns:IHersan_Seguridad_ObtienBloqueoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtienBloqueoUsuarioResponse" message="tns:IHersan_Seguridad_ObtienBloqueoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DesbloqueaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/DesbloqueaUsuario" message="tns:IHersan_Seguridad_DesbloqueaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/DesbloqueaUsuarioResponse" message="tns:IHersan_Seguridad_DesbloqueaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtieneUsuarios" message="tns:IHersan_Seguridad_ObtieneUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtieneUsuariosResponse" message="tns:IHersan_Seguridad_ObtieneUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/GuardaUsuario" message="tns:IHersan_Seguridad_GuardaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/GuardaUsuarioResponse" message="tns:IHersan_Seguridad_GuardaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ActualizaUsuario" message="tns:IHersan_Seguridad_ActualizaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ActualizaUsuarioResponse" message="tns:IHersan_Seguridad_ActualizaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneDatosUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtieneDatosUsuario" message="tns:IHersan_Seguridad_ObtieneDatosUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtieneDatosUsuarioResponse" message="tns:IHersan_Seguridad_ObtieneDatosUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiaContrasenia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/CambiaContrasenia" message="tns:IHersan_Seguridad_CambiaContrasenia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/CambiaContraseniaResponse" message="tns:IHersan_Seguridad_CambiaContrasenia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtieneRoles" message="tns:IHersan_Seguridad_ObtieneRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtieneRolesResponse" message="tns:IHersan_Seguridad_ObtieneRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/GuardaRoles" message="tns:IHersan_Seguridad_GuardaRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/GuardaRolesResponse" message="tns:IHersan_Seguridad_GuardaRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ActualizaRoles" message="tns:IHersan_Seguridad_ActualizaRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ActualizaRolesResponse" message="tns:IHersan_Seguridad_ActualizaRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneRolesUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtieneRolesUsuario" message="tns:IHersan_Seguridad_ObtieneRolesUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/ObtieneRolesUsuarioResponse" message="tns:IHersan_Seguridad_ObtieneRolesUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaRolesUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Seguridad/GuardaRolesUsuario" message="tns:IHersan_Seguridad_GuardaRolesUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Seguridad/GuardaRolesUsuarioResponse" message="tns:IHersan_Seguridad_GuardaRolesUsuario_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IHersan_Seguridad" type="tns:IHersan_Seguridad">
+    <wsp:PolicyReference URI="#WSHttpBinding_IHersan_Seguridad_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerMenuUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ObtenerMenuUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuRol">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ObtenerMenuRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaMenuRol">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/GuardaMenuRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenus">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ObtenerMenus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenusPadre_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/MenusPadre_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Menu_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/Menu_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtienBloqueoUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ObtienBloqueoUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesbloqueaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/DesbloqueaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ObtieneUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/GuardaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ActualizaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneDatosUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ObtieneDatosUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiaContrasenia">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/CambiaContrasenia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneRoles">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ObtieneRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaRoles">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/GuardaRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaRoles">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ActualizaRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneRolesUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/ObtieneRolesUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaRolesUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Seguridad/GuardaRolesUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Hersan_Seguridad">
+    <wsdl:port name="WSHttpBinding_IHersan_Seguridad" binding="tns:WSHttpBinding_IHersan_Seguridad">
+      <soap12:address location="http://localhost:5462/Hersan_Seguridad.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:5462/Hersan_Seguridad.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

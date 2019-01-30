@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Seguridad" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Seguridad" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:5462/Hersan_Seguridad.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:complexType name="ArrayOfMenusBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MenusBE" nillable="true" type="tns:MenusBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenusBE" nillable="true" type="tns:ArrayOfMenusBE" />
+  <xs:complexType name="MenusBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Asignado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AssemblyDll" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssemblyNamespace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Auxiliar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Demo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IDPadre" type="xs:int" />
+      <xs:element minOccurs="0" name="Menu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreForma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orden" type="xs:int" />
+      <xs:element minOccurs="0" name="PuedeAgregar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PuedeEditar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PuedeEliminar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RutaIcono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlMenu" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenusBE" nillable="true" type="tns:MenusBE" />
+  <xs:complexType name="ValidaIngresoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorIngreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsIngresoValido" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EsUsuarioBloqueado" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidaIngresoBE" nillable="true" type="tns:ValidaIngresoBE" />
+  <xs:complexType name="ArrayOfUsuariosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuariosBE" nillable="true" type="tns:UsuariosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsuariosBE" nillable="true" type="tns:ArrayOfUsuariosBE" />
+  <xs:complexType name="UsuariosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Bloqueado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Contrasena" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Empresa" nillable="true" type="q1:EmpresasBE" />
+      <xs:element minOccurs="0" name="EsSuper" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rol" nillable="true" type="tns:RolesBE" />
+      <xs:element minOccurs="0" name="SesionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Validado" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsuariosBE" nillable="true" type="tns:UsuariosBE" />
+  <xs:complexType name="RolesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsAsignado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolesBE" nillable="true" type="tns:RolesBE" />
+  <xs:complexType name="ArrayOfRolesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolesBE" nillable="true" type="tns:RolesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolesBE" nillable="true" type="tns:ArrayOfRolesBE" />
+</xs:schema>

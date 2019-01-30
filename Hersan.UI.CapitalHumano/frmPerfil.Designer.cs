@@ -46,6 +46,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -60,6 +61,7 @@
             this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.cboDepto = new Telerik.WinControls.UI.RadDropDownList();
             this.label6 = new System.Windows.Forms.Label();
             this.cboExperiencia = new Telerik.WinControls.UI.RadDropDownList();
@@ -100,6 +102,7 @@
             this.commandBarStripElement7 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement8 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement9 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement10 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -253,6 +256,7 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.cboDepto);
             this.radPanel1.Controls.Add(this.label6);
             this.radPanel1.Controls.Add(this.cboExperiencia);
@@ -264,6 +268,14 @@
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(859, 75);
             this.radPanel1.TabIndex = 1;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(634, 17);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(78, 20);
+            this.txtId.TabIndex = 4;
+            this.txtId.Visible = false;
             // 
             // cboDepto
             // 
@@ -343,6 +355,7 @@
             this.cboPuestos.Name = "cboPuestos";
             this.cboPuestos.Size = new System.Drawing.Size(192, 20);
             this.cboPuestos.TabIndex = 2;
+            this.cboPuestos.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboPuestos_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -437,12 +450,17 @@
             gridViewTextBoxColumn4.ReadOnly = true;
             gridViewTextBoxColumn4.Width = 150;
             gridViewTextBoxColumn4.WrapText = true;
+            gridViewTextBoxColumn5.FieldName = "DatosUsuario.Estatus";
+            gridViewTextBoxColumn5.HeaderText = "Estatus";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "Estatus";
             this.grdDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewCheckBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.grdDatos.MasterTemplate.ShowGroupedColumns = true;
             this.grdDatos.MasterTemplate.ShowRowHeaderColumn = false;
             this.grdDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
@@ -581,12 +599,12 @@
             this.radGroupBox2.Controls.Add(this.cboFormacion);
             this.radGroupBox2.Controls.Add(this.label4);
             this.radGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radGroupBox2.HeaderText = "Formación";
+            this.radGroupBox2.HeaderText = "Funciones";
             this.radGroupBox2.Location = new System.Drawing.Point(0, 100);
             this.radGroupBox2.Name = "radGroupBox2";
             this.radGroupBox2.Size = new System.Drawing.Size(372, 93);
             this.radGroupBox2.TabIndex = 1;
-            this.radGroupBox2.Text = "Formación";
+            this.radGroupBox2.Text = "Funciones";
             // 
             // btnAdd_For
             // 
@@ -610,9 +628,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Formación:";
+            this.label4.Text = "Funciones:";
             // 
             // radGroupBox1
             // 
@@ -743,6 +761,11 @@
             this.commandBarStripElement9.DisplayName = "commandBarStripElement9";
             this.commandBarStripElement9.Name = "commandBarStripElement9";
             // 
+            // commandBarStripElement10
+            // 
+            this.commandBarStripElement10.DisplayName = "commandBarStripElement10";
+            this.commandBarStripElement10.Name = "commandBarStripElement10";
+            // 
             // frmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,5 +881,7 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement9;
         private Telerik.WinControls.UI.RadDropDownList cboDepto;
         private System.Windows.Forms.Label label6;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement10;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

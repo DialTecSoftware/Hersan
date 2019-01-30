@@ -44,5 +44,19 @@
     <Compile Include="Hersan_CHumano.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Hersan.Entidades\Hersan.Entidades.csproj">
+      <Project>{4E3994EF-5056-4289-9C62-DC1140FD764E}</Project>
+      <Name>Hersan.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Hersan.Negocio\Hersan.Negocio.csproj">
+      <Project>{9DC9D350-B0E3-4481-AC7A-DBE3729C8955}</Project>
+      <Name>Hersan.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.CH.Contract\Hersan.CH.Contract.csproj">
+      <Project>{b4a59419-8011-4689-b69d-1138b5568cca}</Project>
+      <Name>Hersan.CH.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

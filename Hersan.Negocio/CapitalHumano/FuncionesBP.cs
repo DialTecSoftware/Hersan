@@ -22,5 +22,9 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new FuncionesDA().ABCFunciones_Actualizar(obj);
         }
+        public List<FuncionesBE> ABCFunciones_Combo()
+        {
+            return new FuncionesDA().ABCFunciones_Combo();
+        }
     }
 }

@@ -78,7 +78,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(556, 78);
+            this.radCommandBar1.Size = new System.Drawing.Size(556, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -216,7 +216,7 @@
             this.radPanel1.Controls.Add(this.txtNombre);
             this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 78);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(556, 74);
             this.radPanel1.TabIndex = 1;
@@ -233,7 +233,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(261, 17);
+            this.txtId.Location = new System.Drawing.Point(407, 17);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(58, 20);
             this.txtId.TabIndex = 4;
@@ -263,7 +263,7 @@
             this.txtNombre.Location = new System.Drawing.Point(59, 17);
             this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(166, 20);
+            this.txtNombre.Size = new System.Drawing.Size(242, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // label3
@@ -279,9 +279,9 @@
             // 
             this.radPanel2.Controls.Add(this.gvDatos);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel2.Location = new System.Drawing.Point(0, 152);
+            this.radPanel2.Location = new System.Drawing.Point(0, 127);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(556, 184);
+            this.radPanel2.Size = new System.Drawing.Size(556, 209);
             this.radPanel2.TabIndex = 2;
             // 
             // gvDatos
@@ -302,10 +302,10 @@
             gridViewTextBoxColumn1.Name = "Id";
             gridViewTextBoxColumn2.FieldName = "Nombre";
             gridViewTextBoxColumn2.HeaderText = "Nombre";
-            gridViewTextBoxColumn2.MaxWidth = 300;
-            gridViewTextBoxColumn2.MinWidth = 150;
+            gridViewTextBoxColumn2.MaxWidth = 400;
+            gridViewTextBoxColumn2.MinWidth = 200;
             gridViewTextBoxColumn2.Name = "Nombre";
-            gridViewTextBoxColumn2.Width = 150;
+            gridViewTextBoxColumn2.Width = 200;
             gridViewTextBoxColumn2.WrapText = true;
             gridViewTextBoxColumn3.FieldName = "Abrev";
             gridViewTextBoxColumn3.HeaderText = "Abreviatura";
@@ -331,7 +331,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(556, 184);
+            this.gvDatos.Size = new System.Drawing.Size(556, 209);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 

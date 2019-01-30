@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Hersan.UI.Seguridad")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("DialTec Software")]
+[assembly: AssemblyDescription("Enterprise Resource Planning Hersan Hytec by DialTec Software")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("Hersan.UI.Seguridad")]
+[assembly: AssemblyCompany("Ing. Luis Mario Diaz A.")]
+[assembly: AssemblyProduct("ERP Hersan HyTec")]
 [assembly: AssemblyCopyright("Copyright © HP 2018")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("DIALTEC")]
 [assembly: AssemblyCulture("")]
 
 // Si establece ComVisible en false, los tipos de este ensamblado no estarán visibles 

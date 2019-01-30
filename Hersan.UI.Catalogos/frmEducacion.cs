@@ -14,6 +14,7 @@ namespace Hersan.UI.Catalogos
     public partial class frmEducacion : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
+        List<EducacionBE> oList = new List<EducacionBE>();
 
         public frmEducacion()
         {
@@ -48,30 +49,38 @@ namespace Hersan.UI.Catalogos
                     return;
                 }
 
-                obj.Id = int.Parse(txtId.Text);
-                obj.Nombre = txtNombre.Text;
-                obj.Abrev = txtAbrev.Text;
-                obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim()).Count > 0 && int.Parse(txtId.Text) == 0) {
+                    RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
+                    return;
+                }
 
-                //PROCESO DE GUARDADO Y ACTUALIZACION
-                if (txtId.Text == "0") {
-                    Result = oCatalogo.ABCEducacion_Guardar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar el departamento", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Nombre = txtNombre.Text;
+                    obj.Abrev = txtAbrev.Text;
+                    obj.DatosUsuario.Estatus = chkEstatus.Checked;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+
+                    //PROCESO DE GUARDADO Y ACTUALIZACION
+                    if (txtId.Text == "0") {
+                        Result = oCatalogo.ABCEducacion_Guardar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al guardar el departamento", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Educacion guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            Cargar();
+                        }
                     } else {
-                        RadMessageBox.Show("Educacion guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        Cargar();
-                    }
-                } else {
-                    Result = oCatalogo.ABCEducacion_Actualizar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        Cargar();
+                        Result = oCatalogo.ABCEducacion_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            Cargar();
+                        }
                     }
                 }
             } catch (Exception ex) {
@@ -135,7 +144,8 @@ namespace Hersan.UI.Catalogos
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                gvDatos.DataSource = oCatalogo.ABCEducacion_Obtener();
+                oList = oCatalogo.ABCEducacion_Obtener();
+                gvDatos.DataSource = oList;
             } catch (Exception ex) {
                 throw ex;
             } finally {

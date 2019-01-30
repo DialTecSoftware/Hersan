@@ -109,7 +109,7 @@ namespace Hersan.UI.Principal
                                     Form frm = ((Form)calcInstance);
                                     frm.MdiParent = this;
                                     frm.Name = temp.NombreForma;
-                                    frm.WindowState = FormWindowState.Maximized;
+                                    frm.WindowState = temp.NombreForma != "frmAbout" ? FormWindowState.Maximized : FormWindowState.Normal;
                                     frm.Tag = temp.ID.ToString();
                                     frm.Show();
                                 } else {

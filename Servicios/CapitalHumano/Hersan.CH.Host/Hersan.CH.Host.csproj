@@ -77,6 +77,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hersan.CH.Contract\Hersan.CH.Contract.csproj">
+      <Project>{b4a59419-8011-4689-b69d-1138b5568cca}</Project>
+      <Name>Hersan.CH.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.CH.Service\Hersan.CH.Service.csproj">
+      <Project>{1ec48a06-2866-4ae8-8f46-f9e5a16ce40a}</Project>
+      <Name>Hersan.CH.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

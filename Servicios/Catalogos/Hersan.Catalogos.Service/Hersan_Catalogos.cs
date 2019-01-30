@@ -145,6 +145,10 @@ namespace Hersan.Catalogos.Service
         {
             return new FuncionesBP().ABCFunciones_Actualizar(obj);
         }
+        public List<FuncionesBE> ABCFunciones_Combo()
+        {
+            return new FuncionesBP().ABCFunciones_Combo();
+        }
         #endregion
 
         #region Contactos

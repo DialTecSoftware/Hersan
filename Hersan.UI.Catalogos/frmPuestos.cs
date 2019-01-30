@@ -52,31 +52,40 @@ namespace Hersan.UI.Catalogos
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
-                obj.Id = int.Parse(txtIdPuesto.Text);
-                obj.Departamentos.Id = int.Parse(cboDeptos.SelectedValue.ToString());
-                obj.Nombre = txtNombre.Text;
-                obj.Abrev = txtAbrev.Text;
-                obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim() && item.Departamentos.Id == int.Parse(cboDeptos.SelectedValue.ToString())).Count > 0 
+                    && int.Parse(txtIdPuesto.Text) == 0) {
+                    RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
+                    return;
+                }
 
-                //PROCESO DE GUARDADO Y ACTUALIZACION
-                if (txtIdPuesto.Text == "0") {
-                    int Result = oCatalogo.ABCPuestos_Guardar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar el puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    obj.Id = int.Parse(txtIdPuesto.Text);
+                    obj.Departamentos.Id = int.Parse(cboDeptos.SelectedValue.ToString());
+                    obj.Nombre = txtNombre.Text;
+                    obj.Abrev = txtAbrev.Text;
+                    obj.DatosUsuario.Estatus = chkEstatus.Checked;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+
+                    //PROCESO DE GUARDADO Y ACTUALIZACION
+                    if (txtIdPuesto.Text == "0") {
+                        int Result = oCatalogo.ABCPuestos_Guardar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al guardar el puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Puesto guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarPuestos();
+                        }
                     } else {
-                        RadMessageBox.Show("Puesto guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        CargarPuestos();
-                    }
-                } else {
-                    int Result = oCatalogo.ABCPuestos_Actualizar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        CargarPuestos();
+                        int Result = oCatalogo.ABCPuestos_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarPuestos();
+                        }
                     }
                 }
             } catch (Exception ex) {

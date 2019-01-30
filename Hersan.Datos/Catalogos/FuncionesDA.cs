@@ -15,6 +15,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_FUNCIONES_OBTENER = "ABC_Funciones_Obtener";
         const string CONST_ABC_FUNCIONES_GUARDAR = "ABC_Funciones_Guarda";
         const string CONST_ABC_FUNCIONES_ACTUALIZAR = "ABC_Funciones_Actualiza";
+        const string CONST_ABC_FUNCIONES_COMBO = "ABC_Funciones_Combo";
         #endregion
 
         public List<FuncionesBE> ABCFunciones_Obtener()
@@ -84,6 +85,34 @@ namespace Hersan.Datos.Catalogos
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<FuncionesBE> ABCFunciones_Combo()
+        {
+            List<FuncionesBE> oList = new List<FuncionesBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_FUNCIONES_COMBO, conn)) {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                FuncionesBE obj = new FuncionesBE();
+
+                                obj.Id = int.Parse(reader["FUN_Id"].ToString());
+                                obj.Nombre = reader["FUN_Nombre"].ToString();
+                                obj.Continua = bool.Parse(reader["FUN_Continua"].ToString());
+                                obj.Periodica = !obj.Continua;
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
             } catch (Exception ex) {
                 throw ex;
             }

@@ -14,6 +14,7 @@ namespace Hersan.UI.Catalogos
     public partial class frmDepartamentos : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
+        List<DepartamentosBE> oList = new List<DepartamentosBE>();
 
         public frmDepartamentos()
         {
@@ -45,30 +46,38 @@ namespace Hersan.UI.Catalogos
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
-                obj.Id = int.Parse(txtId.Text);
-                obj.Nombre = txtNombre.Text;
-                obj.Abrev = txtAbrev.Text;
-                obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim()).Count > 0 && int.Parse(txtId.Text) == 0) {
+                    RadMessageBox.Show("El departamento capturado ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
+                    return;
+                }
 
-                //PROCESO DE GUARDADO Y ACTUALIZACION
-                if (txtId.Text == "0") {
-                    int Result = oCatalogos.ABCDEpartamentos_Guardar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar el departamento", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Nombre = txtNombre.Text;
+                    obj.Abrev = txtAbrev.Text;
+                    obj.DatosUsuario.Estatus = chkEstatus.Checked;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+
+                    //PROCESO DE GUARDADO Y ACTUALIZACION
+                    if (txtId.Text == "0") {
+                        int Result = oCatalogos.ABCDEpartamentos_Guardar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al guardar el departamento", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Departamento guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarDatos();
+                        }
                     } else {
-                        RadMessageBox.Show("Departamento guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        CargarDatos();
-                    }
-                } else {
-                    int Result = oCatalogos.ABCDEpartamentos_Actualizar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        CargarDatos();
+                        int Result = oCatalogos.ABCDEpartamentos_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarDatos();
+                        }
                     }
                 }
             } catch (Exception ex) {
@@ -132,7 +141,8 @@ namespace Hersan.UI.Catalogos
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                gvDatos.DataSource = oCatalogos.ABCDepartamentos_Obtener();
+                oList = oCatalogos.ABCDepartamentos_Obtener();
+                gvDatos.DataSource = oList;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {

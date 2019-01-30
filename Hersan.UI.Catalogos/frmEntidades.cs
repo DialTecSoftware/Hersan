@@ -1,6 +1,7 @@
 ﻿using Hersan.Entidades.Catalogos;
 using Hersan.Negocio;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -9,6 +10,7 @@ namespace Hersan.UI.Catalogos
     public partial class frmEntidades : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
+        List<EntidadesBE> oList = new List<EntidadesBE>();
 
         public frmEntidades()
         {
@@ -44,31 +46,40 @@ namespace Hersan.UI.Catalogos
                     return;
                 }
 
-                obj.Id = int.Parse(txtId.Text);
-                obj.Empresas.Id = int.Parse(cboEmp.SelectedValue.ToString());
-                obj.Nombre = txtNombre.Text;
-                obj.Abrev = txtAbrev.Text;
-                obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim() && item.Empresas.Id == int.Parse(cboEmp.SelectedValue.ToString())).Count > 0 
+                    && int.Parse(txtId.Text) == 0 ) {
+                    RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
+                    return;
+                }
 
-                //PROCESO DE GUARDADO Y ACTUALIZACION
-                if (txtId.Text == "0") {
-                    Result = oCatalogo.ABCEntidades_Guardar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar la entidad", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Empresas.Id = int.Parse(cboEmp.SelectedValue.ToString());
+                    obj.Nombre = txtNombre.Text;
+                    obj.Abrev = txtAbrev.Text;
+                    obj.DatosUsuario.Estatus = chkEstatus.Checked;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+
+                    //PROCESO DE GUARDADO Y ACTUALIZACION
+                    if (txtId.Text == "0") {
+                        Result = oCatalogo.ABCEntidades_Guardar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al guardar la entidad", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Entidad guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarEntidades();
+                        }
                     } else {
-                        RadMessageBox.Show("Entidad guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        CargarEntidades();
-                    }
-                } else {
-                    Result = oCatalogo.ABCEntidades_Actualizar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        CargarEntidades();
+                        Result = oCatalogo.ABCEntidades_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarEntidades();
+                        }
                     }
                 }
             } catch (Exception ex) {
@@ -153,7 +164,8 @@ namespace Hersan.UI.Catalogos
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                gvDatos.DataSource = oCatalogo.Entidades_Obtener();
+                oList = oCatalogo.Entidades_Obtener();
+                gvDatos.DataSource = oList;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las entidades\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally { oCatalogo = null; }

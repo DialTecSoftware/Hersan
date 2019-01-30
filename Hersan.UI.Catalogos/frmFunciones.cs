@@ -14,6 +14,7 @@ namespace Hersan.UI.Catalogos
     public partial class frmFunciones : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
+        List<FuncionesBE> oList = new List<FuncionesBE>();
 
         public frmFunciones()
         {
@@ -39,30 +40,38 @@ namespace Hersan.UI.Catalogos
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
-                obj.Id = int.Parse(txtId.Text);
-                obj.Nombre = txtNombre.Text;
-                obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                obj.Continua = opContinua.IsChecked ? true : false;
+                if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim()).Count > 0 && int.Parse(txtId.Text) == 0) {
+                    RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
+                    return;
+                }
 
-                //PROCESO DE GUARDADO Y ACTUALIZACION
-                if (txtId.Text == "0") {
-                    Result = oCatalogo.ABCFunciones_Guardar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar la función", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Nombre = txtNombre.Text;
+                    obj.DatosUsuario.Estatus = chkEstatus.Checked;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                    obj.Continua = opContinua.IsChecked ? true : false;
+
+                    //PROCESO DE GUARDADO Y ACTUALIZACION
+                    if (txtId.Text == "0") {
+                        Result = oCatalogo.ABCFunciones_Guardar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al guardar la función", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Función guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            Cargar();
+                        }
                     } else {
-                        RadMessageBox.Show("Función guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        Cargar();
-                    }
-                } else {
-                    Result = oCatalogo.ABCFunciones_Actualizar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        Cargar();
+                        Result = oCatalogo.ABCFunciones_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            Cargar();
+                        }
                     }
                 }
             } catch (Exception ex) {
@@ -145,7 +154,8 @@ namespace Hersan.UI.Catalogos
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                gvDatos.DataSource = oCatalogo.ABCFunciones_Obtener();
+                oList = oCatalogo.ABCFunciones_Obtener();
+                gvDatos.DataSource = oList;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las funciones\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally { oCatalogo = null; }

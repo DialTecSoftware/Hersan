@@ -224,7 +224,7 @@ namespace Hersan.UI.Seguridad
                 rtvPermisos.ValueMember = "ID";
                 rtvPermisos.ParentMember = "IDPadre";
                 rtvPermisos.DataSource = lstMnu;
-                rtvPermisos.ExpandAll();
+                //rtvPermisos.ExpandAll();
 
                 lstMnu.ForEach(mnu => {
                     var nodo = rtvPermisos.FindNodes(p => int.Parse(p.Value.ToString()).Equals(mnu.ID)).FirstOrDefault();

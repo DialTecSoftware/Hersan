@@ -14,6 +14,7 @@ namespace Hersan.UI.Catalogos
     public partial class frmEquipoHerramientas : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+        List<EquipoHerramientasBE> oList = new List<EquipoHerramientasBE>();
 
         public frmEquipoHerramientas()
         {
@@ -50,30 +51,43 @@ namespace Hersan.UI.Catalogos
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             EquipoHerramientasBE obj = new EquipoHerramientasBE();
             try {
-                obj.Id = int.Parse(txtId.Text);
-                obj.Nombre = txtNombre.Text;
-                obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                obj.Equipo = opEquipo.IsChecked ? true : false;
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
 
-                //PROCESO DE GUARDADO Y ACTUALIZACION
-                if (txtId.Text == "0") {
-                    int Result = oCatalogo.ABCEquipoHerramientas_Guardar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar el equipo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim()).Count > 0 && int.Parse(txtId.Text) == 0) {
+                    RadMessageBox.Show("La competencia capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
+                    return;
+                }
+
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Nombre = txtNombre.Text;
+                    obj.DatosUsuario.Estatus = chkEstatus.Checked;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                    obj.Equipo = opEquipo.IsChecked ? true : false;
+
+                    //PROCESO DE GUARDADO Y ACTUALIZACION
+                    if (txtId.Text == "0") {
+                        int Result = oCatalogo.ABCEquipoHerramientas_Guardar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al guardar el equipo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Equipo guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            Cargar();
+                        }
                     } else {
-                        RadMessageBox.Show("Equipo guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        Cargar();
-                    }
-                } else {
-                    int Result = oCatalogo.ABCEquipoHerramientas_Actualizar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        Cargar();
+                        int Result = oCatalogo.ABCEquipoHerramientas_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            Cargar();
+                        }
                     }
                 }
             } catch (Exception ex) {
@@ -112,14 +126,13 @@ namespace Hersan.UI.Catalogos
         }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
-
             try {
                 if (gvDatos.RowCount > 0) {
                     txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
                     txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
                     chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
                     opEquipo.IsChecked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Equipo"].Value.ToString());
-                    opHerr.IsChecked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Herramienta"].Value.ToString());
+                    opHerr.IsChecked = !opEquipo.IsChecked;
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

@@ -57,6 +57,9 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> ABCPuestos_Combo(int IdDepto);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUPuestos_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> CHUPuestos_Combo();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener();
         
@@ -220,6 +223,10 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> ABCPuestos_Combo(int IdDepto) {
             return base.Channel.ABCPuestos_Combo(IdDepto);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> CHUPuestos_Combo() {
+            return base.Channel.CHUPuestos_Combo();
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener() {

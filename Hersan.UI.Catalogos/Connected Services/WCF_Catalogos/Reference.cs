@@ -99,6 +99,12 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ComboResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> ABCPuestos_ComboAsync(int IdDepto);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUPuestos_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> CHUPuestos_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUPuestos_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> CHUPuestos_ComboAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener();
         
@@ -183,6 +189,12 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCFunciones_ActualizarAsync(Hersan.Entidades.CapitalHumano.FuncionesBE obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE> ABCFunciones_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE>> ABCFunciones_ComboAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE> ABCContactos_Obtener();
         
@@ -254,6 +266,24 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_ActualizarResponse")]
         System.Threading.Tasks.Task<int> ABCDocumentos_ActualizarAsync(Hersan.Entidades.Catalogos.DocumentosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.OrganigramaBE> CHUOrganigrama_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.OrganigramaBE>> CHUOrganigrama_ObtenerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_GuardarResponse")]
+        int CHUOrganigrama_Guardar(Hersan.Entidades.Catalogos.OrganigramaBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_GuardarResponse")]
+        System.Threading.Tasks.Task<int> CHUOrganigrama_GuardarAsync(Hersan.Entidades.Catalogos.OrganigramaBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ActualizarResponse")]
+        int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> CHUOrganigrama_ActualizarAsync(Hersan.Entidades.Catalogos.OrganigramaBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -395,6 +425,14 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
             return base.Channel.ABCPuestos_ComboAsync(IdDepto);
         }
         
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> CHUPuestos_Combo() {
+            return base.Channel.CHUPuestos_Combo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>> CHUPuestos_ComboAsync() {
+            return base.Channel.CHUPuestos_ComboAsync();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener() {
             return base.Channel.ABCCompetencias_Obtener();
         }
@@ -507,6 +545,14 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
             return base.Channel.ABCFunciones_ActualizarAsync(obj);
         }
         
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE> ABCFunciones_Combo() {
+            return base.Channel.ABCFunciones_Combo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE>> ABCFunciones_ComboAsync() {
+            return base.Channel.ABCFunciones_ComboAsync();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE> ABCContactos_Obtener() {
             return base.Channel.ABCContactos_Obtener();
         }
@@ -601,6 +647,30 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Threading.Tasks.Task<int> ABCDocumentos_ActualizarAsync(Hersan.Entidades.Catalogos.DocumentosBE obj) {
             return base.Channel.ABCDocumentos_ActualizarAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.OrganigramaBE> CHUOrganigrama_Obtener() {
+            return base.Channel.CHUOrganigrama_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.OrganigramaBE>> CHUOrganigrama_ObtenerAsync() {
+            return base.Channel.CHUOrganigrama_ObtenerAsync();
+        }
+        
+        public int CHUOrganigrama_Guardar(Hersan.Entidades.Catalogos.OrganigramaBE obj) {
+            return base.Channel.CHUOrganigrama_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> CHUOrganigrama_GuardarAsync(Hersan.Entidades.Catalogos.OrganigramaBE obj) {
+            return base.Channel.CHUOrganigrama_GuardarAsync(obj);
+        }
+        
+        public int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj) {
+            return base.Channel.CHUOrganigrama_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> CHUOrganigrama_ActualizarAsync(Hersan.Entidades.Catalogos.OrganigramaBE obj) {
+            return base.Channel.CHUOrganigrama_ActualizarAsync(obj);
         }
     }
 }

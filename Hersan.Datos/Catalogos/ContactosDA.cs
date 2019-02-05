@@ -34,6 +34,7 @@ namespace Hersan.Datos.Catalogos
                                 obj.Id = int.Parse(reader["CON_Id"].ToString());
                                 obj.Nombre = reader["CON_Nombre"].ToString();
                                 obj.Interno = bool.Parse(reader["CON_Interno"].ToString());
+                                obj.Externo = !obj.Interno;
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["CON_Estatus"].ToString());
 
                                 oList.Add(obj);

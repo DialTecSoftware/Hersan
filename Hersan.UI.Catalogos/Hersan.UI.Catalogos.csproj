@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C7A0E85C-70A0-40CC-A42C-D917C1C99827}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hersan.UI.Catalogos</RootNamespace>
     <AssemblyName>Hersan.UI.Catalogos</AssemblyName>
@@ -48,23 +48,23 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.GridView.dll</HintPath>
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.GridView.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.RadDock, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.RadDock.dll</HintPath>
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.RadDock.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="TelerikCommon, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2019.1.117.40\TelerikCommon.dll</HintPath>
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\TelerikCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -134,6 +134,12 @@
     <Compile Include="frmFunciones.Designer.cs">
       <DependentUpon>frmFunciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrganigrama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrganigrama.Designer.cs">
+      <DependentUpon>frmOrganigrama.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <EmbeddedResource Include="frmFunciones.resx">
       <DependentUpon>frmFunciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOrganigrama.resx">
+      <DependentUpon>frmOrganigrama.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPuestos.resx">
       <DependentUpon>frmPuestos.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +237,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EntidadesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EquipoHerramientasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.OrganigramaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE1.datasource" />
   </ItemGroup>

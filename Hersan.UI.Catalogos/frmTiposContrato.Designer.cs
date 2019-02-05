@@ -305,6 +305,7 @@
             this.gvDatos.ShowRowErrors = false;
             this.gvDatos.Size = new System.Drawing.Size(528, 203);
             this.gvDatos.TabIndex = 3;
+            this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged_1);
             // 
             // commandBarStripElement2
             // 

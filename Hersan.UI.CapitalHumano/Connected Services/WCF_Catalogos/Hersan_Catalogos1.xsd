@@ -155,6 +155,7 @@
   <xs:complexType name="ContactosBE">
     <xs:sequence>
       <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q11:GeneralBE" />
+      <xs:element minOccurs="0" name="Externo" type="xs:boolean" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Interno" type="xs:boolean" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />

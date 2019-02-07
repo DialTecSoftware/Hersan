@@ -76,7 +76,10 @@ namespace Hersan.Catalogos.Service
         {
             return new PuestosBP().ABCPuestos_Combo(IdDepto);
         }
-
+        public List<PuestosBE> CHUPuestos_Combo()
+        {
+            return new PuestosBP().CHUPuestos_Combo();
+        }
         #endregion
 
         #region Competencias
@@ -215,5 +218,22 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
+        #region Organigrama
+        public List<OrganigramaBE> CHUOrganigrama_Obtener()
+        {
+            return new OrganigramaBP().CHUOrganigrama_Obtener();
+        }
+        public int CHUOrganigrama_Guardar(OrganigramaBE obj)
+        {
+            return new OrganigramaBP().CHUOrganigrama_Guardar(obj);
+        }
+        public int CHUOrganigrama_Actualizar(OrganigramaBE obj)
+        {
+            return new OrganigramaBP().CHUOrganigrama_Actualizar(obj);
+        }
+        #endregion
+
     }
 }
+
+

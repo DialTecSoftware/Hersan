@@ -58,6 +58,7 @@
     <Compile Include="Catalogos\EntidadesBE.cs" />
     <Compile Include="Catalogos\EquipoHerramientasBE.cs" />
     <Compile Include="Catalogos\EstadosBE.cs" />
+    <Compile Include="Catalogos\OrganigramaBE.cs" />
     <Compile Include="Catalogos\PaisesBE.cs" />
     <Compile Include="CapitalHumano\PuestosBE.cs" />
     <Compile Include="CapitalHumano\TiposContratoBE.cs" />

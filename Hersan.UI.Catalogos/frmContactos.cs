@@ -22,6 +22,7 @@ namespace Hersan.UI.Catalogos
         private void Contactos_Load(object sender, EventArgs e)
         {
             try {
+                LimpiarCampos();
                 Cargar();
 
             } catch (Exception ex) {
@@ -45,17 +46,22 @@ namespace Hersan.UI.Catalogos
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
-        }        
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             ContactosBE obj = new ContactosBE();
             try {
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
                 obj.Id = int.Parse(txtId.Text);
                 obj.Nombre = txtNombre.Text;
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                obj.Interno = chkInterno.Checked;
+                //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                obj.DatosUsuario.IdUsuarioCreo = 1;
+                obj.Interno = opInterno.IsChecked ? true : false;
 
                 //PROCESO DE GUARDADO Y ACTUALIZACION
                 if (txtId.Text == "0") {
@@ -92,10 +98,11 @@ namespace Hersan.UI.Catalogos
                     if (RadMessageBox.Show("Esta acción dará de baja el contacto\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         obj.Id = int.Parse(txtId.Text);
                         obj.Nombre = txtNombre.Text;
-                        obj.Interno = false;
                         obj.DatosUsuario.Estatus = false;
                         //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                         obj.DatosUsuario.IdUsuarioCreo = 2;
+                        obj.Interno = true;
+                      
 
                         int Result = oCatalogo.ABCContactos_Actualizar(obj);
                         if (Result == 0) {
@@ -120,7 +127,8 @@ namespace Hersan.UI.Catalogos
                     txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
                     txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
                     chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
-                    chkInterno.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Interno"].Value.ToString());
+                    opInterno.IsChecked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Interno"].Value.ToString());
+                    opExterno.IsChecked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Externo"].Value.ToString());
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -133,7 +141,8 @@ namespace Hersan.UI.Catalogos
                 txtNombre.Text = string.Empty;
                 txtId.Text = "0";
                 chkEstatus.Checked = false;
-                chkInterno.Checked = false;
+                opInterno.IsChecked = false;
+                opExterno.IsChecked = false;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }

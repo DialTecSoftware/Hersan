@@ -23,6 +23,7 @@ namespace Hersan.UI.Catalogos
         private void frmTiposContrato_Load(object sender, EventArgs e)
         { try {
                 CargarDatos();
+            
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -116,19 +117,7 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
-        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
-        {
-            try {
-                if (gvDatos.RowCount > 0) {
-                    txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
-                    txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
-                    txtAbrev.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Abrev"].Value.ToString();
-                    chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+      
 
         public void CargarDatos()
         {
@@ -160,6 +149,20 @@ namespace Hersan.UI.Catalogos
                 return Flag;
             } catch (Exception ex) {
                 throw ex;
+            }
+        }
+
+        private void gvDatos_CurrentRowChanged_1(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
+        {
+            try {
+                if (gvDatos.RowCount > 0) {
+                    txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
+                    txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
+                    txtAbrev.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Abrev"].Value.ToString();
+                    chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
     }

@@ -100,6 +100,12 @@
   <wsdl:message name="IHersan_Catalogos_ABCPuestos_Combo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABCPuestos_ComboResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUPuestos_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUPuestos_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUPuestos_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUPuestos_ComboResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABCCompetencias_Obtener" />
   </wsdl:message>
@@ -324,6 +330,10 @@
     <wsdl:operation name="ABCPuestos_Combo">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo" message="tns:IHersan_Catalogos_ABCPuestos_Combo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ComboResponse" message="tns:IHersan_Catalogos_ABCPuestos_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUPuestos_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Combo" message="tns:IHersan_Catalogos_CHUPuestos_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_ComboResponse" message="tns:IHersan_Catalogos_CHUPuestos_Combo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ABCCompetencias_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener" message="tns:IHersan_Catalogos_ABCCompetencias_Obtener_InputMessage" />
@@ -560,6 +570,15 @@
     </wsdl:operation>
     <wsdl:operation name="ABCPuestos_Combo">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUPuestos_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Combo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -57,6 +57,7 @@
     <Compile Include="CapitalHumano\TiposContratoBP.cs" />
     <Compile Include="Catalogos\EntidadesBP.cs" />
     <Compile Include="Catalogos\EquipoHerramientasBP.cs" />
+    <Compile Include="Catalogos\OrganigramaBP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\EncriptadorBP.cs" />
     <Compile Include="Seguridad\MenusBP.cs" />

@@ -155,6 +155,7 @@
   <xs:complexType name="ContactosBE">
     <xs:sequence>
       <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q11:GeneralBE" />
+      <xs:element minOccurs="0" name="Externo" type="xs:boolean" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Interno" type="xs:boolean" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
@@ -192,4 +193,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DocumentosBE" nillable="true" type="tns:DocumentosBE" />
+  <xs:complexType name="ArrayOfOrganigramaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrganigramaBE" nillable="true" type="tns:OrganigramaBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrganigramaBE" nillable="true" type="tns:ArrayOfOrganigramaBE" />
+  <xs:complexType name="OrganigramaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id_padre" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_puesto" type="xs:int" />
+      <xs:element minOccurs="0" name="Nivel" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Padre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrganigramaBE" nillable="true" type="tns:OrganigramaBE" />
 </xs:schema>

@@ -47,7 +47,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
         public int ABCContactos_Guardar(ContactosBE obj)
         {
             int Result = 0;
@@ -68,7 +67,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
         public int ABCContactos_Actualizar(ContactosBE obj)
         {
             int Result = 0;

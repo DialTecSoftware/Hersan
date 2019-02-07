@@ -77,7 +77,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Abrev" nillable="true" type="xs:string" />
       <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q6:GeneralBE" />
-      <xs:element minOccurs="0" name="Entidad" nillable="true" type="tns:EntidadesBE" />
+      <xs:element minOccurs="0" name="Entidades" nillable="true" type="tns:EntidadesBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
     </xs:sequence>

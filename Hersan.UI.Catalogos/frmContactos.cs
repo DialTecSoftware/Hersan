@@ -59,8 +59,7 @@ namespace Hersan.UI.Catalogos
                 obj.Id = int.Parse(txtId.Text);
                 obj.Nombre = txtNombre.Text;
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                obj.DatosUsuario.IdUsuarioCreo = 1;
+                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                 obj.Interno = opInterno.IsChecked ? true : false;
 
                 //PROCESO DE GUARDADO Y ACTUALIZACION
@@ -99,8 +98,7 @@ namespace Hersan.UI.Catalogos
                         obj.Id = int.Parse(txtId.Text);
                         obj.Nombre = txtNombre.Text;
                         obj.DatosUsuario.Estatus = false;
-                        //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                        obj.DatosUsuario.IdUsuarioCreo = 2;
+                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                         obj.Interno = true;
                       
 
@@ -134,7 +132,23 @@ namespace Hersan.UI.Catalogos
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void op_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            try {
+                opExterno.IsChecked = !opInterno.IsChecked;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al realizar la selección\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
 
+        public void Cargar()
+        {
+            try {
+                gvDatos.DataSource = oCatalogo.ABCContactos_Obtener();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar las funciones\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void LimpiarCampos()
         {
             try {
@@ -145,14 +159,6 @@ namespace Hersan.UI.Catalogos
                 opExterno.IsChecked = false;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        public void Cargar()
-        {
-            try {
-                gvDatos.DataSource = oCatalogo.ABCContactos_Obtener();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cargar las funciones\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private bool ValidarCampos()

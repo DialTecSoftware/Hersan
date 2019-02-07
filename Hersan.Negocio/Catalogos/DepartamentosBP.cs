@@ -22,9 +22,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new DepartamentosDA().ABCDEpartamentos_Actualizar(obj);
         }
-        public List<DepartamentosBE> ABCDepartamentos_Combo()
+        public List<DepartamentosBE> ABCDepartamentos_Combo(int IdEntidad)
         {
-            return new DepartamentosDA().ABCDepartamentos_Combo();
+            return new DepartamentosDA().ABCDepartamentos_Combo(IdEntidad);
         }
     }
 }

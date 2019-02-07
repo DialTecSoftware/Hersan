@@ -88,12 +88,11 @@ namespace Hersan.Datos.Seguridad
                                                 double res = Math.Ceiling(dtFDBlo.Subtract(dtFActual).TotalMinutes);
                                                 val.ErrorIngreso = "La cuenta se encuentra bloqueda, intentelo de nuevo en " + res +
                                                     (res > 1 ? " minutos." : " minuto.");
-                                            } 
-                                            //else {
-                                            //    val.ErrorIngreso = (intentos - numinten) > 0 ? "Usuario y/o contraseña invalidos. la cuenta será bloqueada al intento " +
-                                            //                                                    intentos.ToString() + ". Intento " + numinten.ToString() + " de " + intentos.ToString() :
-                                            //                                                    "Usuario y/o contraseña invalidos. la cuenta esta bloqueada.";
-                                            //}
+                                            } else {
+                                                val.ErrorIngreso = (intentos - numinten) > 0 ? "Usuario y/o contraseña invalidos. la cuenta será bloqueada al intento " +
+                                                                                                intentos.ToString() + ". Intento " + numinten.ToString() + " de " + intentos.ToString() :
+                                                                                                "Usuario y/o contraseña invalidos. la cuenta esta bloqueada.";
+                                            }
                                         }
                                     }
                                 }
@@ -340,6 +339,8 @@ namespace Hersan.Datos.Seguridad
                                 obj.EsSuper = Boolean.Parse(reader["USU_Super"].ToString());
                                 obj.Rol.ID = int.Parse(reader["ROL_IdRol"].ToString());
                                 obj.Rol.Nombre = reader["ROL_Rol"].ToString();
+                                obj.Empresa.Id = int.Parse(reader["EMP_ID"].ToString());
+                                obj.Empresa.NombreComercial = reader["EMP_NombreComercial"].ToString();
 
                                 obj.Validado = true;
                             }

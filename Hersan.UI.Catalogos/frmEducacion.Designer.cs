@@ -71,7 +71,7 @@
             this.radcommonbar.Name = "radcommonbar";
             this.radcommonbar.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radcommonbar.Size = new System.Drawing.Size(596, 53);
+            this.radcommonbar.Size = new System.Drawing.Size(600, 53);
             this.radcommonbar.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -190,7 +190,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(596, 82);
+            this.radPanel1.Size = new System.Drawing.Size(600, 82);
             this.radPanel1.TabIndex = 1;
             // 
             // txtAbrev
@@ -293,7 +293,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(596, 130);
+            this.gvDatos.Size = new System.Drawing.Size(600, 132);
             this.gvDatos.TabIndex = 3;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -311,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 265);
+            this.ClientSize = new System.Drawing.Size(600, 267);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radcommonbar);
@@ -322,6 +322,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "Educación";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmEducacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radcommonbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

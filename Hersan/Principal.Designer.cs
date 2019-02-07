@@ -34,32 +34,38 @@
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblPerfil = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
+            this.lblEmpresa = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // mnMenu
             // 
+            this.mnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this.mnMenu.Location = new System.Drawing.Point(0, 0);
             this.mnMenu.Name = "mnMenu";
-            this.mnMenu.Size = new System.Drawing.Size(632, 24);
+            this.mnMenu.Size = new System.Drawing.Size(636, 24);
             this.mnMenu.TabIndex = 0;
             this.mnMenu.Text = "MenuStrip";
             // 
             // statusStrip
             // 
+            this.statusStrip.BackColor = System.Drawing.Color.CadetBlue;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblEmpresa,
             this.lblUsuario,
             this.lblPerfil});
             this.statusStrip.Location = new System.Drawing.Point(0, 381);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.Size = new System.Drawing.Size(636, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
             // lblUsuario
             // 
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(50, 17);
             this.lblUsuario.Text = "Usuario:";
@@ -67,10 +73,18 @@
             // lblPerfil
             // 
             this.lblPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.lblPerfil.ForeColor = System.Drawing.Color.White;
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(34, 17);
             this.lblPerfil.Text = "Perfil";
             this.lblPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(58, 17);
+            this.lblEmpresa.Text = "Empresa: ";
             // 
             // Principal
             // 
@@ -79,7 +93,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(632, 403);
+            this.ClientSize = new System.Drawing.Size(636, 403);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mnMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -92,6 +106,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HERSAN HYTEC";
+            this.ThemeName = "MaterialTeal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -108,6 +123,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripStatusLabel lblPerfil;
+        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
+        private System.Windows.Forms.ToolStripStatusLabel lblEmpresa;
     }
 }
 

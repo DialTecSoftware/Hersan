@@ -33,9 +33,6 @@ namespace Hersan.Negocio
             Etiquetas
         }
 
-        /// <summary>
-        /// Variable global para el manejo de los datos del usuario autenticado
-        /// </summary>
         private static UsuariosBE _usuarioLogueado;
         public static UsuariosBE UsuarioLogueado {
             get {

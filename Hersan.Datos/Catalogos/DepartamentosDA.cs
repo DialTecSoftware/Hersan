@@ -22,6 +22,7 @@ namespace Hersan.Datos.Catalogos
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_DEPARTAMENTOS_OBTENER, conn)) {
+
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
@@ -32,6 +33,8 @@ namespace Hersan.Datos.Catalogos
                                 obj.Nombre = reader["DEP_Nombre"].ToString();
                                 obj.Abrev = reader["DEP_Abrev"].ToString();
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["DEP_Estatus"].ToString());
+                                obj.Entidades.Id = int.Parse(reader["ENT_Id"].ToString());
+                                obj.Entidades.Nombre = reader["ENT_Nombre"].ToString();
 
                                 oList.Add(obj);
                             }
@@ -50,6 +53,7 @@ namespace Hersan.Datos.Catalogos
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_DEPARTAMENTOS_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEnt", obj.Entidades.Id);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Abrev", obj.Abrev);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
@@ -70,6 +74,7 @@ namespace Hersan.Datos.Catalogos
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_DEPARTAMENTOS_ACTUALIZA, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEnt", obj.Entidades.Id);
                         cmd.Parameters.AddWithValue("@Id", obj.Id);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Abrev", obj.Abrev);
@@ -85,13 +90,14 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-        public List<DepartamentosBE> ABCDepartamentos_Combo()
+        public List<DepartamentosBE> ABCDepartamentos_Combo(int IdEntidad)
         {
             List<DepartamentosBE> oList = new List<DepartamentosBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_DEPARTAMENTOS_COMBO, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEnt", IdEntidad);
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {

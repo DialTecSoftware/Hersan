@@ -73,7 +73,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(528, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(532, 53);
             this.radCommandBar1.TabIndex = 3;
             // 
             // commandBarRowElement1
@@ -192,7 +192,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(528, 81);
+            this.radPanel1.Size = new System.Drawing.Size(532, 81);
             this.radPanel1.TabIndex = 4;
             // 
             // chkEstatus
@@ -253,7 +253,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 134);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(528, 203);
+            this.radPanel2.Size = new System.Drawing.Size(532, 205);
             this.radPanel2.TabIndex = 5;
             // 
             // gvDatos
@@ -303,7 +303,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(528, 203);
+            this.gvDatos.Size = new System.Drawing.Size(532, 205);
             this.gvDatos.TabIndex = 3;
             // 
             // commandBarStripElement2
@@ -315,7 +315,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 337);
+            this.ClientSize = new System.Drawing.Size(532, 339);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -326,6 +326,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "Tipos De Contrato";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmTiposContrato_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

@@ -47,21 +47,21 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.opHerr = new Telerik.WinControls.UI.RadRadioButton();
+            this.opEquipo = new Telerik.WinControls.UI.RadRadioButton();
             this.chkEstatus = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.opHerr = new Telerik.WinControls.UI.RadRadioButton();
-            this.opEquipo = new Telerik.WinControls.UI.RadRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opHerr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opEquipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(727, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(731, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -191,8 +191,31 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(727, 61);
+            this.radPanel1.Size = new System.Drawing.Size(731, 61);
             this.radPanel1.TabIndex = 1;
+            // 
+            // opHerr
+            // 
+            this.opHerr.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
+            this.opHerr.Location = new System.Drawing.Point(97, 32);
+            this.opHerr.Name = "opHerr";
+            this.opHerr.RadioCheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.opHerr.Size = new System.Drawing.Size(82, 18);
+            this.opHerr.TabIndex = 19;
+            this.opHerr.TabStop = false;
+            this.opHerr.Text = "Herramienta";
+            // 
+            // opEquipo
+            // 
+            this.opEquipo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.opEquipo.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
+            this.opEquipo.Location = new System.Drawing.Point(25, 32);
+            this.opEquipo.Name = "opEquipo";
+            this.opEquipo.RadioCheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.opEquipo.Size = new System.Drawing.Size(55, 18);
+            this.opEquipo.TabIndex = 18;
+            this.opEquipo.Text = "Equipo";
+            this.opEquipo.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             // 
             // chkEstatus
             // 
@@ -275,7 +298,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(727, 131);
+            this.gvDatos.Size = new System.Drawing.Size(731, 133);
             this.gvDatos.TabIndex = 6;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -284,34 +307,11 @@
             this.commandBarStripElement2.DisplayName = "commandBarStripElement2";
             this.commandBarStripElement2.Name = "commandBarStripElement2";
             // 
-            // opHerr
-            // 
-            this.opHerr.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
-            this.opHerr.Location = new System.Drawing.Point(97, 32);
-            this.opHerr.Name = "opHerr";
-            this.opHerr.RadioCheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.opHerr.Size = new System.Drawing.Size(82, 18);
-            this.opHerr.TabIndex = 19;
-            this.opHerr.TabStop = false;
-            this.opHerr.Text = "Herramienta";
-            // 
-            // opEquipo
-            // 
-            this.opEquipo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.opEquipo.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
-            this.opEquipo.Location = new System.Drawing.Point(25, 32);
-            this.opEquipo.Name = "opEquipo";
-            this.opEquipo.RadioCheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.opEquipo.Size = new System.Drawing.Size(55, 18);
-            this.opEquipo.TabIndex = 18;
-            this.opEquipo.Text = "Equipo";
-            this.opEquipo.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            // 
             // frmEquipoHerramientas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 245);
+            this.ClientSize = new System.Drawing.Size(731, 247);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -322,15 +322,16 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "Equipo Y Herramientas";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmEquipoHerramientas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opHerr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opEquipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

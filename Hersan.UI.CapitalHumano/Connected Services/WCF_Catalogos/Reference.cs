@@ -31,7 +31,7 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         int ABCDEpartamentos_Actualizar(Hersan.Entidades.Catalogos.DepartamentosBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_ComboResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Catalogos.DepartamentosBE> ABCDepartamentos_Combo();
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.DepartamentosBE> ABCDepartamentos_Combo(int IdEntidad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/TiposContrato_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE> TiposContrato_Obtener();
@@ -77,6 +77,9 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEntidades_ActualizarResponse")]
         int ABCEntidades_Actualizar(Hersan.Entidades.Catalogos.EntidadesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/Entidades_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/Entidades_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE> Entidades_Combo(int IdEmpresa);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE> ABCEducacion_Obtener();
@@ -186,8 +189,8 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
             return base.Channel.ABCDEpartamentos_Actualizar(obj);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.DepartamentosBE> ABCDepartamentos_Combo() {
-            return base.Channel.ABCDepartamentos_Combo();
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.DepartamentosBE> ABCDepartamentos_Combo(int IdEntidad) {
+            return base.Channel.ABCDepartamentos_Combo(IdEntidad);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE> TiposContrato_Obtener() {
@@ -248,6 +251,10 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         
         public int ABCEntidades_Actualizar(Hersan.Entidades.Catalogos.EntidadesBE obj) {
             return base.Channel.ABCEntidades_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE> Entidades_Combo(int IdEmpresa) {
+            return base.Channel.Entidades_Combo(IdEmpresa);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE> ABCEducacion_Obtener() {

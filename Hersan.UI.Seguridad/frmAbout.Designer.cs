@@ -70,7 +70,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(436, 189);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(440, 191);
             this.tableLayoutPanel.TabIndex = 0;
             // 
             // logoPictureBox
@@ -80,7 +80,7 @@
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
-            this.logoPictureBox.Size = new System.Drawing.Size(137, 183);
+            this.logoPictureBox.Size = new System.Drawing.Size(139, 185);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
@@ -88,7 +88,7 @@
             // radLabelProductName
             // 
             this.radLabelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabelProductName.Location = new System.Drawing.Point(149, 0);
+            this.radLabelProductName.Location = new System.Drawing.Point(151, 0);
             this.radLabelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.radLabelProductName.MaximumSize = new System.Drawing.Size(0, 17);
             this.radLabelProductName.Name = "radLabelProductName";
@@ -103,7 +103,7 @@
             // radLabelVersion
             // 
             this.radLabelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabelVersion.Location = new System.Drawing.Point(149, 18);
+            this.radLabelVersion.Location = new System.Drawing.Point(151, 19);
             this.radLabelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.radLabelVersion.MaximumSize = new System.Drawing.Size(0, 17);
             this.radLabelVersion.Name = "radLabelVersion";
@@ -118,7 +118,7 @@
             // radLabelCopyright
             // 
             this.radLabelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabelCopyright.Location = new System.Drawing.Point(149, 36);
+            this.radLabelCopyright.Location = new System.Drawing.Point(151, 38);
             this.radLabelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.radLabelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
             this.radLabelCopyright.Name = "radLabelCopyright";
@@ -133,7 +133,7 @@
             // radLabelCompanyName
             // 
             this.radLabelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabelCompanyName.Location = new System.Drawing.Point(149, 54);
+            this.radLabelCompanyName.Location = new System.Drawing.Point(151, 57);
             this.radLabelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.radLabelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
             this.radLabelCompanyName.Name = "radLabelCompanyName";
@@ -148,7 +148,7 @@
             // radTextBoxDescription
             // 
             this.radTextBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radTextBoxDescription.Location = new System.Drawing.Point(149, 75);
+            this.radTextBoxDescription.Location = new System.Drawing.Point(151, 79);
             this.radTextBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.radTextBoxDescription.Multiline = true;
             this.radTextBoxDescription.Name = "radTextBoxDescription";
@@ -158,7 +158,7 @@
             // 
             this.radTextBoxDescription.RootElement.StretchVertically = true;
             this.radTextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.radTextBoxDescription.Size = new System.Drawing.Size(284, 88);
+            this.radTextBoxDescription.Size = new System.Drawing.Size(286, 89);
             this.radTextBoxDescription.TabIndex = 23;
             this.radTextBoxDescription.TabStop = false;
             this.radTextBoxDescription.Text = "Description";
@@ -167,9 +167,9 @@
             // 
             this.okRadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okRadButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okRadButton.Location = new System.Drawing.Point(358, 169);
+            this.okRadButton.Location = new System.Drawing.Point(362, 174);
             this.okRadButton.Name = "okRadButton";
-            this.okRadButton.Size = new System.Drawing.Size(75, 17);
+            this.okRadButton.Size = new System.Drawing.Size(75, 14);
             this.okRadButton.TabIndex = 24;
             this.okRadButton.Text = "&OK";
             this.okRadButton.Click += new System.EventHandler(this.okRadButton_Click);
@@ -179,7 +179,7 @@
             this.AcceptButton = this.okRadButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 207);
+            this.ClientSize = new System.Drawing.Size(458, 209);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -194,6 +194,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acerca de";
+            this.ThemeName = "MaterialTeal";
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();

@@ -17,6 +17,7 @@ namespace Hersan.UI.CapitalHumano
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
         WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<PerfilDescripcionBE> oList = new List<PerfilDescripcionBE>();
+        List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         PerfilDescripcionBE obj;
         bool Flag = true;
         #endregion
@@ -32,7 +33,7 @@ namespace Hersan.UI.CapitalHumano
                 descriptor.GroupNames.Add("Grupo",  ListSortDirection.Ascending);
                 grdDatos.GroupDescriptors.Add(descriptor);
 
-                CargarDeptos();
+                CargarEntidades();
                 CargarEducacion();
                 CargarFunciones();
                 CargarCompetencias();
@@ -220,6 +221,14 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al agregar la competencia\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                CargarDeptos();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -247,13 +256,26 @@ namespace Hersan.UI.CapitalHumano
             }
         }
 
+        private void CargarEntidades()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                oEntidades = oCatalogos.Entidades_Combo(BaseWinBP.UsuarioLogueado.Empresa.Id);
+                oEntidades.Add(new EntidadesBE { Id = 0, Nombre = "TODAS" });
+                cboEntidad.ValueMember = "Id";
+                cboEntidad.DisplayMember = "Nombre";
+                cboEntidad.DataSource = oEntidades;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void CargarDeptos()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
                 cboDepto.ValueMember = "Id";
                 cboDepto.DisplayMember = "Nombre";
-                cboDepto.DataSource = oCatalogos.ABCDepartamentos_Combo();
+                cboDepto.DataSource = oCatalogos.ABCDepartamentos_Combo(int.Parse(cboEntidad.SelectedValue.ToString()));
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -304,11 +326,11 @@ namespace Hersan.UI.CapitalHumano
             try {
                 oList.Clear();
                 txtId.Text = "0";
+                cboEntidad.SelectedIndex = 0;
                 cboCompetencia.SelectedIndex = -1;
                 cboEducacion.SelectedIndex = -1;
                 cboExperiencia.SelectedIndex = -1;
                 cboFormacion.SelectedIndex = -1;
-                cboDepto.SelectedIndex = -1;
                 grdDatos.DataSource = null;
             } catch (Exception ex) {
                 throw ex;
@@ -385,5 +407,6 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
+        
     }
 }

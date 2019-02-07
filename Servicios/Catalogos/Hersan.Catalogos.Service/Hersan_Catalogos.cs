@@ -33,9 +33,9 @@ namespace Hersan.Catalogos.Service
         {
             return new DepartamentosBP().ABCDEpartamentos_Actualizar(obj);
         }
-        public List<DepartamentosBE> ABCDepartamentos_Combo()
+        public List<DepartamentosBE> ABCDepartamentos_Combo(int IdEntidad)
         {
-            return new DepartamentosBP().ABCDepartamentos_Combo();
+            return new DepartamentosBP().ABCDepartamentos_Combo(IdEntidad);
         }
         #endregion
 
@@ -110,6 +110,10 @@ namespace Hersan.Catalogos.Service
         public int ABCEntidades_Actualizar(EntidadesBE obj)
         {
             return new EntidadesBP().ABCEntidades_Actualizar(obj);
+        }
+        public List<EntidadesBE> Entidades_Combo(int IdEmpresa)
+        {
+            return new EntidadesBP().Entidades_Combo(IdEmpresa);
         }
         #endregion
 

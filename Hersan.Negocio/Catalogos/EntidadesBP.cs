@@ -23,5 +23,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new EntidadesDA().ABCEntidades_Actualizar(obj);
         }
+        public List<EntidadesBE> Entidades_Combo(int IdEmpresa)
+        {
+            return new EntidadesDA().Entidades_Combo(IdEmpresa);
+        }
     }
 }

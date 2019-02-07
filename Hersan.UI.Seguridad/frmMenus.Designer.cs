@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenus));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.GroupDescriptor groupDescriptor2 = new Telerik.WinControls.Data.GroupDescriptor();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.GroupDescriptor groupDescriptor1 = new Telerik.WinControls.Data.GroupDescriptor();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -86,7 +86,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(680, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(684, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -213,7 +213,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(680, 95);
+            this.radPanel1.Size = new System.Drawing.Size(684, 95);
             this.radPanel1.TabIndex = 1;
             // 
             // chkPadre
@@ -344,7 +344,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 148);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(680, 192);
+            this.radPanel2.Size = new System.Drawing.Size(684, 194);
             this.radPanel2.TabIndex = 2;
             // 
             // gvMenus
@@ -360,56 +360,56 @@
             this.gvMenus.MasterTemplate.AllowEditRow = false;
             this.gvMenus.MasterTemplate.AutoExpandGroups = true;
             this.gvMenus.MasterTemplate.AutoGenerateColumns = false;
-            gridViewTextBoxColumn6.FieldName = "ID";
-            gridViewTextBoxColumn6.HeaderText = "Id";
-            gridViewTextBoxColumn6.IsVisible = false;
-            gridViewTextBoxColumn6.Name = "Id";
-            gridViewTextBoxColumn7.FieldName = "Auxiliar";
-            gridViewTextBoxColumn7.HeaderText = "Padre";
-            gridViewTextBoxColumn7.IsVisible = false;
-            gridViewTextBoxColumn7.MaxWidth = 200;
-            gridViewTextBoxColumn7.MinWidth = 100;
-            gridViewTextBoxColumn7.Name = "Padre";
-            gridViewTextBoxColumn7.Width = 100;
-            gridViewTextBoxColumn8.FieldName = "Menu";
-            gridViewTextBoxColumn8.HeaderText = "Menu";
-            gridViewTextBoxColumn8.MaxWidth = 200;
-            gridViewTextBoxColumn8.MinWidth = 150;
-            gridViewTextBoxColumn8.Name = "Menu";
-            gridViewTextBoxColumn8.Width = 150;
-            gridViewTextBoxColumn9.FieldName = "Descripcion";
-            gridViewTextBoxColumn9.HeaderText = "Descripción";
-            gridViewTextBoxColumn9.MaxWidth = 300;
-            gridViewTextBoxColumn9.MinWidth = 300;
-            gridViewTextBoxColumn9.Name = "Descrip";
-            gridViewTextBoxColumn9.Width = 300;
-            gridViewTextBoxColumn9.WrapText = true;
-            gridViewTextBoxColumn10.FieldName = "Orden";
-            gridViewTextBoxColumn10.HeaderText = "Orden";
-            gridViewTextBoxColumn10.MaxWidth = 100;
-            gridViewTextBoxColumn10.MinWidth = 100;
-            gridViewTextBoxColumn10.Name = "Orden";
-            gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn10.Width = 100;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "Id";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "Id";
+            gridViewTextBoxColumn2.FieldName = "Auxiliar";
+            gridViewTextBoxColumn2.HeaderText = "Padre";
+            gridViewTextBoxColumn2.IsVisible = false;
+            gridViewTextBoxColumn2.MaxWidth = 200;
+            gridViewTextBoxColumn2.MinWidth = 100;
+            gridViewTextBoxColumn2.Name = "Padre";
+            gridViewTextBoxColumn2.Width = 100;
+            gridViewTextBoxColumn3.FieldName = "Menu";
+            gridViewTextBoxColumn3.HeaderText = "Menu";
+            gridViewTextBoxColumn3.MaxWidth = 200;
+            gridViewTextBoxColumn3.MinWidth = 150;
+            gridViewTextBoxColumn3.Name = "Menu";
+            gridViewTextBoxColumn3.Width = 150;
+            gridViewTextBoxColumn4.FieldName = "Descripcion";
+            gridViewTextBoxColumn4.HeaderText = "Descripción";
+            gridViewTextBoxColumn4.MaxWidth = 300;
+            gridViewTextBoxColumn4.MinWidth = 300;
+            gridViewTextBoxColumn4.Name = "Descrip";
+            gridViewTextBoxColumn4.Width = 300;
+            gridViewTextBoxColumn4.WrapText = true;
+            gridViewTextBoxColumn5.FieldName = "Orden";
+            gridViewTextBoxColumn5.HeaderText = "Orden";
+            gridViewTextBoxColumn5.MaxWidth = 100;
+            gridViewTextBoxColumn5.MinWidth = 100;
+            gridViewTextBoxColumn5.Name = "Orden";
+            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn5.Width = 100;
             this.gvMenus.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.gvMenus.MasterTemplate.EnableAlternatingRowColor = true;
-            sortDescriptor2.PropertyName = "Padre";
-            groupDescriptor2.GroupNames.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
+            sortDescriptor1.PropertyName = "Padre";
+            groupDescriptor1.GroupNames.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            sortDescriptor1});
             this.gvMenus.MasterTemplate.GroupDescriptors.AddRange(new Telerik.WinControls.Data.GroupDescriptor[] {
-            groupDescriptor2});
+            groupDescriptor1});
             this.gvMenus.MasterTemplate.ShowGroupedColumns = true;
             this.gvMenus.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvMenus.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gvMenus.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvMenus.Name = "gvMenus";
             this.gvMenus.ReadOnly = true;
             this.gvMenus.ShowGroupPanel = false;
-            this.gvMenus.Size = new System.Drawing.Size(680, 192);
+            this.gvMenus.Size = new System.Drawing.Size(684, 194);
             this.gvMenus.TabIndex = 0;
             // 
             // commandBarStripElement3
@@ -421,7 +421,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 340);
+            this.ClientSize = new System.Drawing.Size(684, 342);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -432,6 +432,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "Administrar Menús";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmMenus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

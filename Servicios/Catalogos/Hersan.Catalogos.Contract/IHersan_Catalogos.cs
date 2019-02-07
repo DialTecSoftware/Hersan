@@ -27,7 +27,7 @@ namespace Hersan.Catalogos.Contract
         int ABCDEpartamentos_Actualizar(DepartamentosBE obj);
 
         [OperationContract]
-        List<DepartamentosBE> ABCDepartamentos_Combo();
+        List<DepartamentosBE> ABCDepartamentos_Combo(int IdEntidad);
         #endregion
 
         #region TiposContrato
@@ -74,7 +74,8 @@ namespace Hersan.Catalogos.Contract
         int ABCEntidades_Guardar(EntidadesBE obj);
         [OperationContract]
         int ABCEntidades_Actualizar(EntidadesBE obj);
-
+        [OperationContract]
+        List<EntidadesBE> Entidades_Combo(int IdEmpresa);
         #endregion
 
         #region Educacion

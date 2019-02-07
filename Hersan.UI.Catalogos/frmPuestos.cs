@@ -2,6 +2,7 @@
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -12,6 +13,7 @@ namespace Hersan.UI.Catalogos
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
         List<PuestosBE> oList = new List<PuestosBE>();
+        List<EntidadesBE> oEntidades = new List<EntidadesBE>();
 
         public frmPuestos()
         {
@@ -20,8 +22,15 @@ namespace Hersan.UI.Catalogos
         private void frmPuestos_Load(object sender, EventArgs e)
         {
             try {
+                GroupDescriptor Entidades = new GroupDescriptor();
+                Entidades.GroupNames.Add("Entidad", ListSortDirection.Ascending);
+                GroupDescriptor Depto = new GroupDescriptor();
+                Depto.GroupNames.Add("NombreDepto", ListSortDirection.Ascending);
+                this.gvPuestos.GroupDescriptors.Add(Entidades);
+                this.gvPuestos.GroupDescriptors.Add(Depto);
+
                 LimpiarCampos();
-                CargarDeptos();
+                CargarEntidades();
                 CargarPuestos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -52,7 +61,8 @@ namespace Hersan.UI.Catalogos
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
-                if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim() && item.Departamentos.Id == int.Parse(cboDeptos.SelectedValue.ToString())).Count > 0 
+                if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim() && item.Departamentos.Entidades.Id == int.Parse(cboEntidad.SelectedValue.ToString()) 
+                    && item.Departamentos.Id == int.Parse(cboDeptos.SelectedValue.ToString())).Count > 0
                     && int.Parse(txtIdPuesto.Text) == 0) {
                     RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     LimpiarCampos();
@@ -89,7 +99,7 @@ namespace Hersan.UI.Catalogos
                     }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al actualizar la información\n"+ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrió un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogo = null;
             }
@@ -127,19 +137,41 @@ namespace Hersan.UI.Catalogos
         private void gvPuestos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
-                if (gvPuestos.RowCount > 0 && gvPuestos.CurrentRow.ChildRows.Count == 0) {
-                    txtIdPuesto.Text = gvPuestos.CurrentRow.Cells["Id"].Value.ToString();
-                    txtIdDep.Text = gvPuestos.CurrentRow.Cells["IdDepto"].Value.ToString();
-                    txtNombre.Text = gvPuestos.CurrentRow.Cells["Nombre"].Value.ToString();
-                    txtAbrev.Text = gvPuestos.CurrentRow.Cells["Abrev"].Value.ToString();
+                if (gvPuestos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
+                    cboEntidad.SelectedValue = int.Parse(gvPuestos.CurrentRow.Cells["IdEntidad"].Value.ToString());
+                    txtIdPuesto.Text = e.CurrentRow.Cells["Id"].Value.ToString();
+                    txtIdDep.Text = e.CurrentRow.Cells["IdDepto"].Value.ToString();
+                    txtNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
+                    txtAbrev.Text = e.CurrentRow.Cells["Abrev"].Value.ToString();
                     cboDeptos.SelectedValue = int.Parse(txtIdDep.Text);
-                    chkEstatus.Checked = bool.Parse(gvPuestos.CurrentRow.Cells["Estatus"].Value.ToString());
+                    chkEstatus.Checked = bool.Parse(e.CurrentRow.Cells["Estatus"].Value.ToString());
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                CargarDeptos();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
 
+        private void CargarEntidades()
+        {
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                oEntidades = oCatalogo.Entidades_Combo(BaseWinBP.UsuarioLogueado.Empresa.Id);
+                oEntidades.Add(new EntidadesBE { Id = 0, Nombre = "TODAS" });
+                cboEntidad.ValueMember = "Id";
+                cboEntidad.DisplayMember = "Nombre";
+                cboEntidad.DataSource = oEntidades;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void CargarPuestos()
         {
             oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -158,7 +190,7 @@ namespace Hersan.UI.Catalogos
             try {
                 cboDeptos.ValueMember = "Id";
                 cboDeptos.DisplayMember = "Nombre";
-                cboDeptos.DataSource = oCatalogo.ABCDepartamentos_Combo();
+                cboDeptos.DataSource = oCatalogo.ABCDepartamentos_Combo(int.Parse(cboEntidad.SelectedValue.ToString()));
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -168,6 +200,7 @@ namespace Hersan.UI.Catalogos
         private void LimpiarCampos()
         {
             try {
+                cboEntidad.SelectedIndex = 0;
                 cboDeptos.SelectedIndex = 0;
                 txtIdDep.Text = "0";
                 txtIdPuesto.Text = "0";
@@ -190,5 +223,6 @@ namespace Hersan.UI.Catalogos
                 throw ex;
             }
         }
+       
     }
 }

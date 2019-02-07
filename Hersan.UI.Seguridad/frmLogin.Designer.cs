@@ -151,7 +151,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(440, 153);
+            this.ClientSize = new System.Drawing.Size(444, 155);
             this.Controls.Add(this.cboEmpresas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
@@ -172,7 +172,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ERP Hersan Hitec";
-            this.ThemeName = "ControlDefault";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();

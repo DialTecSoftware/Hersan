@@ -50,7 +50,7 @@ namespace Hersan.UI.Catalogos
             try {
                 cboDepto.ValueMember = "ID";
                 cboDepto.DisplayMember = "Nombre";
-                cboDepto.DataSource = oCatalogo.ABCDepartamentos_Combo();
+                cboDepto.DataSource = oCatalogo.ABCDepartamentos_Combo(1);
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {

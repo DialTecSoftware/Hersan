@@ -67,7 +67,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(491, 165);
+            this.radPanel1.Size = new System.Drawing.Size(495, 167);
             this.radPanel1.TabIndex = 1;
             // 
             // txtNuevaContra
@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(491, 165);
+            this.ClientSize = new System.Drawing.Size(495, 167);
             this.Controls.Add(this.radPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -184,7 +184,7 @@
             this.ShowItemToolTips = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambiar Contraseña";
-            this.ThemeName = "ControlDefault";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmCambiarContrasenia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);

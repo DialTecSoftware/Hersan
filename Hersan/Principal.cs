@@ -35,7 +35,9 @@ namespace Hersan.UI.Principal
         private void cargaMenuPrincipal()
         {
             lblUsuario.Text = "Usuario: " + BaseWinBP.UsuarioLogueado.Nombre.Replace('.', ' ');
-            lblPerfil.Text = "Perfil: " + BaseWinBP.UsuarioLogueado.Rol.Nombre;            
+            //lblPerfil.Text = "Perfil: " + BaseWinBP.UsuarioLogueado.Rol.Nombre;
+            lblPerfil.Text = string.Empty;
+            lblEmpresa.Text = "Empresa: " + BaseWinBP.UsuarioLogueado.Empresa.NombreComercial;
             
             ToolStripMenuItem menu, submenu, item;
             //Filtramos todos los menu principales y lo recorremos

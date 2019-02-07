@@ -15,6 +15,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_ENTIDADES_OBTENER = "ABC_Entidades_Obtener";
         const string CONST_ABC_ENTIDADES_GUARDAR = "ABC_Entidades_Guarda";
         const string CONST_ABC_ENTIDADES_ACTUALIZAR = "ABC_Entidades_Actualiza";
+        const string CONST_ABC_ENTIDADES_COMBO = "ABC_Entidades_Combo";
         #endregion
 
         public List<EntidadesBE>  Entidades_Obtener()
@@ -88,6 +89,34 @@ namespace Hersan.Datos.Catalogos
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<EntidadesBE> Entidades_Combo(int IdEmpresa)
+        {
+            List<EntidadesBE> oList = new List<EntidadesBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_ENTIDADES_COMBO, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEmp", IdEmpresa);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                EntidadesBE obj = new EntidadesBE();
+
+                                obj.Id = int.Parse(reader["ENT_Id"].ToString());
+                                obj.Nombre = reader["ENT_Nombre"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
             } catch (Exception ex) {
                 throw ex;
             }

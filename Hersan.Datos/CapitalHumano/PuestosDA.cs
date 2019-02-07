@@ -31,9 +31,11 @@ namespace Hersan.Datos.Catalogos
                             while (reader.Read()) {
                                 PuestosBE obj = new PuestosBE();
 
-                                obj.Id = int.Parse(reader["PUE_Id"].ToString());                                
+                                obj.Id = int.Parse(reader["PUE_Id"].ToString());
                                 obj.Nombre = reader["PUE_Nombre"].ToString();
                                 obj.Abrev = reader["PUE_Abrev"].ToString();
+                                obj.Departamentos.Entidades.Id = int.Parse(reader["ENT_Id"].ToString());
+                                obj.Departamentos.Entidades.Nombre = reader["ENT_Nombre"].ToString();
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["PUE_Estatus"].ToString());
                                 obj.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
                                 obj.Departamentos.Nombre = reader["DEP_Nombre"].ToString();

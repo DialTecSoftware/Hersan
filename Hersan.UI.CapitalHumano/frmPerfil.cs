@@ -354,53 +354,55 @@ namespace Hersan.UI.CapitalHumano
             Flag = false;
 
             try {
-                DataSet oAux = oCHumano.CHU_Perfiles_Obtener(int.Parse(cboDepto.SelectedValue.ToString()), int.Parse(cboPuestos.SelectedValue.ToString()));
-                if (oAux.Tables.Count > 0) {
-                    #region Detalle Grid
-                    /* EDUCACIÓN */
-                    if (oAux.Tables[1].Rows.Count > 0) {
-                        foreach(DataRow oRow in oAux.Tables[1].Rows) {
-                            oList.Add(new PerfilDescripcionBE() {
-                                Id = int.Parse(oRow["EDU_Id"].ToString()),
-                                Grupo = "1-EDUCACIÓN",
-                                Concepto = oRow["EDU_Nombre"].ToString(),
-                                Tipo = oRow["Tipo"].ToString()
-                            });
+                if (cboDepto.Items.Count > 0) {
+                    DataSet oAux = oCHumano.CHU_Perfiles_Obtener(int.Parse(cboDepto.SelectedValue.ToString()), int.Parse(cboPuestos.SelectedValue.ToString()));
+                    if (oAux.Tables.Count > 0) {
+                        #region Detalle Grid
+                        /* EDUCACIÓN */
+                        if (oAux.Tables[1].Rows.Count > 0) {
+                            foreach (DataRow oRow in oAux.Tables[1].Rows) {
+                                oList.Add(new PerfilDescripcionBE() {
+                                    Id = int.Parse(oRow["EDU_Id"].ToString()),
+                                    Grupo = "1-EDUCACIÓN",
+                                    Concepto = oRow["EDU_Nombre"].ToString(),
+                                    Tipo = oRow["Tipo"].ToString()
+                                });
+                            }
+                        }
+
+                        /* FUNCIONES */
+                        if (oAux.Tables[2].Rows.Count > 0) {
+                            foreach (DataRow oRow in oAux.Tables[2].Rows) {
+                                oList.Add(new PerfilDescripcionBE() {
+                                    Id = int.Parse(oRow["FUN_Id"].ToString()),
+                                    Grupo = "2-FUNCIONES",
+                                    Concepto = oRow["FUN_Nombre"].ToString()
+                                });
+                            }
+                        }
+
+                        /* FUNCIONES */
+                        if (oAux.Tables[3].Rows.Count > 0) {
+                            foreach (DataRow oRow in oAux.Tables[3].Rows) {
+                                oList.Add(new PerfilDescripcionBE() {
+                                    Id = int.Parse(oRow["COM_Id"].ToString()),
+                                    Grupo = "3-COMPETENCIAS",
+                                    Concepto = oRow["COM_Nombre"].ToString()
+                                });
+                            }
+                        }
+                        #endregion
+
+                        /* DATOS GENERALES DEL PERFIL */
+                        if (oAux.Tables[0].Rows.Count > 0) {
+                            txtId.Text = oAux.Tables[0].Rows[0]["PER_Id"].ToString();
+                            cboDepto.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DEP_Id"].ToString());
+                            cboPuestos.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["PUE_Id"].ToString());
+                            cboExperiencia.Text = oAux.Tables[0].Rows[0]["PER_Experiencia"].ToString();
                         }
                     }
-
-                    /* FUNCIONES */
-                    if (oAux.Tables[2].Rows.Count > 0) {
-                        foreach (DataRow oRow in oAux.Tables[2].Rows) {
-                            oList.Add(new PerfilDescripcionBE() {
-                                Id = int.Parse(oRow["FUN_Id"].ToString()),
-                                Grupo = "2-FUNCIONES",
-                                Concepto = oRow["FUN_Nombre"].ToString()
-                            });
-                        }
-                    }
-
-                    /* FUNCIONES */
-                    if (oAux.Tables[3].Rows.Count > 0) {
-                        foreach (DataRow oRow in oAux.Tables[3].Rows) {
-                            oList.Add(new PerfilDescripcionBE() {
-                                Id = int.Parse(oRow["COM_Id"].ToString()),
-                                Grupo = "3-COMPETENCIAS",
-                                Concepto = oRow["COM_Nombre"].ToString()
-                            });
-                        }
-                    }
-                    #endregion
-
-                    /* DATOS GENERALES DEL PERFIL */
-                    if (oAux.Tables[0].Rows.Count > 0) {
-                        txtId.Text = oAux.Tables[0].Rows[0]["PER_Id"].ToString();
-                        cboDepto.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DEP_Id"].ToString());
-                        cboPuestos.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["PUE_Id"].ToString());
-                        cboExperiencia.Text = oAux.Tables[0].Rows[0]["PER_Experiencia"].ToString();
-                    }
+                    ActualizaGrid();
                 }
-                ActualizaGrid();
             } catch (Exception ex) {
                 throw ex;
             } finally {

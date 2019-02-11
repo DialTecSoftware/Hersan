@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.mnMenu = new System.Windows.Forms.MenuStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.lblEmpresa = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblPerfil = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
-            this.lblEmpresa = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -62,12 +62,21 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(60, 17);
+            this.lblEmpresa.Text = "Empresa: ";
+            // 
             // lblUsuario
             // 
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(50, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(52, 17);
             this.lblUsuario.Text = "Usuario:";
             // 
             // lblPerfil
@@ -78,13 +87,6 @@
             this.lblPerfil.Size = new System.Drawing.Size(34, 17);
             this.lblPerfil.Text = "Perfil";
             this.lblPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblEmpresa
-            // 
-            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(58, 17);
-            this.lblEmpresa.Text = "Empresa: ";
             // 
             // Principal
             // 

@@ -112,7 +112,6 @@ namespace Hersan.UI.Catalogos
                 obj.TiposContrato.Id = int.Parse(cboTipoCon.SelectedValue.ToString());
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                //obj.DatosUsuario.IdUsuarioCreo = 2;
 
                 //PROCESO DE GUARDADO Y ACTUALIZACION
                 if (txtIdCON.Text == "0") {
@@ -168,8 +167,7 @@ namespace Hersan.UI.Catalogos
                         obj.Nombre = txtNombre.Text;
                         obj.TiposContrato.Id = int.Parse(cboTipoCon.SelectedValue.ToString());
                         obj.DatosUsuario.Estatus = false;
-                        //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                        obj.DatosUsuario.IdUsuarioCreo = 2;
+                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                         int Result = oCatalogo.ABCContratos_Actualizar(obj);
                         if (Result == 0) {

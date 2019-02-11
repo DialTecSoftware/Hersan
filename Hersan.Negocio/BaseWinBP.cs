@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Hersan.Negocio
@@ -13,6 +14,9 @@ namespace Hersan.Negocio
     public class BaseWinBP
     {
         public const string Sistema = "Hersan";
+        //public const string RegRFC = @"/^[a-zA-Z]{3,4}(\d{6})((\D|\d){2,3})?$/";
+        public const string RegRFC = @"^([A - Z\s]{4})\d{6}([A - Z\w]{3})$";
+        public const string RegCURP = @" /[a-zA-Z]{4,4}[0-9]{6}[a-zA-Z]{6,6}[0-9]{2}/";
 
         /// <summary>
         /// Procesos que están en la Base de Datos
@@ -198,6 +202,21 @@ namespace Hersan.Negocio
                 num = false;
             }
             return num;
+        }
+
+        public static bool isRegularExpresion(string Cadena, string ExpReg)
+        {
+            bool flag = false;
+            try {
+                if (Regex.IsMatch(Cadena, ExpReg)) {
+                    flag = true;
+                } else
+                    flag = false;
+
+            } catch  {
+                flag = false;
+            }
+            return flag;
         }
 
         /// <summary>

@@ -50,8 +50,7 @@ namespace Hersan.UI.Catalogos
                     obj.Id = int.Parse(txtId.Text);
                     obj.Nombre = txtNombre.Text;
                     obj.DatosUsuario.Estatus = chkEstatus.Checked;
-                    //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                    obj.DatosUsuario.IdUsuarioCreo = 7;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                     obj.Continua = opContinua.IsChecked ? true : false;
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
@@ -94,9 +93,7 @@ namespace Hersan.UI.Catalogos
                         obj.Nombre = txtNombre.Text;
                         obj.Continua = true;
                         obj.DatosUsuario.Estatus = false;
-                        //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                        obj.DatosUsuario.IdUsuarioCreo = 7;
-
+                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                         int Result = oCatalogo.ABCFunciones_Actualizar(obj);
                         if (Result == 0) {

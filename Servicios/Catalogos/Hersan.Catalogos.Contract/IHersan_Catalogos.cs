@@ -151,5 +151,20 @@ namespace Hersan.Catalogos.Contract
         int CHUOrganigrama_Actualizar(OrganigramaBE obj);
 
         #endregion
+
+        #region Estados
+        [OperationContract]
+        List<EstadosBE> ABCEstados_Obtener(int IdPais);
+        #endregion
+
+        #region Ciudades
+        [OperationContract]
+        List<CiudadesBE> ABCCiudades_Obtener(int IdEstado);
+        #endregion
+
+        #region Colonias
+        [OperationContract]
+        List<ColoniasBE> ABCColonias_Obtener(int IdEstado, int IdCiudad);
+        #endregion
     }
 }

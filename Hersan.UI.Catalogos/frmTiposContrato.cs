@@ -98,8 +98,7 @@ namespace Hersan.UI.Catalogos
                         obj.Nombre = txtNombre.Text;
                         obj.Abrev = txtAbrev.Text;
                         obj.DatosUsuario.Estatus = false;
-                        //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                        obj.DatosUsuario.IdUsuarioCreo = 2;
+                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                         int Result = oCatalogo.ABCTiposContrato_Actualizar(obj);
                         if (Result == 0) {

@@ -13,7 +13,7 @@ namespace Hersan.Datos.Catalogos
     {
 
         const string CONST_USP_CHU_ORGANIG_OBTENER = "CHU_Organigrama_GET";
-        const string CONST_USP_CHU_ORGANIG_GUARDA = "CHU_Organigrama_Guardar";
+        const string CONST_USP_CHU_ORGANIG_GUARDA = "CHU_Organigrama_Guarda";
         const string CONST_USP_CHU_ORGANIG_ACTUALIZA = "CHU_Organigrama_Actualiza";
 
 
@@ -29,12 +29,18 @@ namespace Hersan.Datos.Catalogos
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
                                 OrganigramaBE obj = new OrganigramaBE();
-                                obj.Nombre =reader["PUE_Nombre"].ToString();
-                                obj.Padre = reader["Padre"].ToString();
+                                obj.Id = int.Parse(reader["ORG_Id"].ToString());
+                                obj.NombreJefe = (reader["JefeInmediato"].ToString());
+                                obj.IdJefe = int.Parse(reader["PUE_Idjefe"].ToString());
+                                obj.Entidades.Nombre = (reader["ENT_Nombre"].ToString());
+                                obj.Departamentos.Nombre = reader["DEP_Nombre"].ToString();
+                                obj.Puestos.Nombre = reader["PUE_Nombre"].ToString();                              
+                                obj.Entidades.Id = int.Parse(reader["ENT_Id"].ToString());
+                                obj.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
+                                obj.Puestos.Id = int.Parse(reader["PUE_Id"].ToString());
                                 obj.Nivel = int.Parse(reader["ORG_Nivel"].ToString());
-                                obj.Id_padre = int.Parse(reader["IdPuesto"].ToString());
-                                obj.Id_puesto = int.Parse(reader["Idpadre"].ToString());
-                            
+                                obj.Estatus = bool.Parse(reader["ORG_Estatus"].ToString());
+
                                 oList.Add(obj);
                             }
                         }
@@ -52,9 +58,13 @@ namespace Hersan.Datos.Catalogos
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_ORGANIG_GUARDA, conn)) {
+                        cmd.Parameters.AddWithValue("@Id_ENT", obj.Entidades.Id);
+                        cmd.Parameters.AddWithValue("@Id_DEP", obj.Departamentos.Id);
+                        cmd.Parameters.AddWithValue("@Id_PUE", obj.Puestos.Id);
+                        cmd.Parameters.AddWithValue("@Id_Jefe", obj.IdJefe);
                         cmd.Parameters.AddWithValue("@Nivel", obj.Nivel);
-                        cmd.Parameters.AddWithValue("@IdPuesto", obj.Id_puesto);
-                        cmd.Parameters.AddWithValue("@IdPadre", obj.Id_padre);
+                    
+                      
                        
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -73,9 +83,14 @@ namespace Hersan.Datos.Catalogos
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_ORGANIG_ACTUALIZA, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", obj.Id);
+                        cmd.Parameters.AddWithValue("@Id_ENT", obj.Entidades.Id);
+                        cmd.Parameters.AddWithValue("@Id_DEP", obj.Departamentos.Id);
+                        cmd.Parameters.AddWithValue("@Id_PUE", obj.Puestos.Id);
+                        cmd.Parameters.AddWithValue("@Id_Jefe", obj.IdJefe);
                         cmd.Parameters.AddWithValue("@Nivel", obj.Nivel);
-                        cmd.Parameters.AddWithValue("@IdPuesto", obj.Id_puesto);
-                        cmd.Parameters.AddWithValue("@IdPadre", obj.Id_padre);
+                        cmd.Parameters.AddWithValue("@Estatus", obj.Estatus);
+
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         Result = Convert.ToInt32(cmd.ExecuteScalar());

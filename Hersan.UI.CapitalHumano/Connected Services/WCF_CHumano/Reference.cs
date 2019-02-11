@@ -26,6 +26,15 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_EliminaResponse")]
         int CHU_Perfiles_Elimina(int IdPerfil, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SolicitudPersonalBE> CHU_SolicitudP_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_GuardarResponse")]
+        int CHU_SolicitudP_Guardar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ActualizarResponse")]
+        int CHU_SolicitudP_Actualizar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +78,18 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_Perfiles_Elimina(int IdPerfil, int IdUsuario) {
             return base.Channel.CHU_Perfiles_Elimina(IdPerfil, IdUsuario);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SolicitudPersonalBE> CHU_SolicitudP_Obtener() {
+            return base.Channel.CHU_SolicitudP_Obtener();
+        }
+        
+        public int CHU_SolicitudP_Guardar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj) {
+            return base.Channel.CHU_SolicitudP_Guardar(obj);
+        }
+        
+        public int CHU_SolicitudP_Actualizar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj) {
+            return base.Channel.CHU_SolicitudP_Actualizar(obj);
         }
     }
 }

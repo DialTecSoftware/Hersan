@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPerfil));
-            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem16 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem17 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem18 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem19 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem20 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem21 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem22 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem23 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem24 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -61,6 +61,8 @@
             this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.cboEntidad = new Telerik.WinControls.UI.RadDropDownList();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.cboDepto = new Telerik.WinControls.UI.RadDropDownList();
             this.label6 = new System.Windows.Forms.Label();
@@ -104,11 +106,10 @@
             this.commandBarStripElement9 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement10 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
-            this.cboEntidad = new Telerik.WinControls.UI.RadDropDownList();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboExperiencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuestos)).BeginInit();
@@ -139,7 +140,6 @@
             this.documentContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
             this.documentTabStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,6 +275,24 @@
             this.radPanel1.Size = new System.Drawing.Size(849, 101);
             this.radPanel1.TabIndex = 1;
             // 
+            // cboEntidad
+            // 
+            this.cboEntidad.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboEntidad.Location = new System.Drawing.Point(102, 16);
+            this.cboEntidad.Name = "cboEntidad";
+            this.cboEntidad.Size = new System.Drawing.Size(192, 20);
+            this.cboEntidad.TabIndex = 1;
+            this.cboEntidad.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboEntidad_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(46, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Entidad:";
+            // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(634, 17);
@@ -304,42 +322,42 @@
             // cboExperiencia
             // 
             this.cboExperiencia.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem13.Tag = "-1";
-            radListDataItem13.Text = "-1";
-            radListDataItem14.Tag = "1";
-            radListDataItem14.Text = "1";
-            radListDataItem15.Tag = "2";
-            radListDataItem15.Text = "2";
-            radListDataItem16.Tag = "3";
-            radListDataItem16.Text = "3";
-            radListDataItem17.Tag = "4";
-            radListDataItem17.Text = "4";
-            radListDataItem18.Tag = "5";
-            radListDataItem18.Text = "5";
-            radListDataItem19.Tag = "6";
-            radListDataItem19.Text = "6";
-            radListDataItem20.Tag = "7";
-            radListDataItem20.Text = "7";
-            radListDataItem21.Tag = "8";
-            radListDataItem21.Text = "8";
-            radListDataItem22.Tag = "9";
-            radListDataItem22.Text = "9";
-            radListDataItem23.Tag = "10";
-            radListDataItem23.Text = "10";
-            radListDataItem24.Tag = "+10";
-            radListDataItem24.Text = "+10";
-            this.cboExperiencia.Items.Add(radListDataItem13);
-            this.cboExperiencia.Items.Add(radListDataItem14);
-            this.cboExperiencia.Items.Add(radListDataItem15);
-            this.cboExperiencia.Items.Add(radListDataItem16);
-            this.cboExperiencia.Items.Add(radListDataItem17);
-            this.cboExperiencia.Items.Add(radListDataItem18);
-            this.cboExperiencia.Items.Add(radListDataItem19);
-            this.cboExperiencia.Items.Add(radListDataItem20);
-            this.cboExperiencia.Items.Add(radListDataItem21);
-            this.cboExperiencia.Items.Add(radListDataItem22);
-            this.cboExperiencia.Items.Add(radListDataItem23);
-            this.cboExperiencia.Items.Add(radListDataItem24);
+            radListDataItem1.Tag = "-1";
+            radListDataItem1.Text = "-1";
+            radListDataItem2.Tag = "1";
+            radListDataItem2.Text = "1";
+            radListDataItem3.Tag = "2";
+            radListDataItem3.Text = "2";
+            radListDataItem4.Tag = "3";
+            radListDataItem4.Text = "3";
+            radListDataItem5.Tag = "4";
+            radListDataItem5.Text = "4";
+            radListDataItem6.Tag = "5";
+            radListDataItem6.Text = "5";
+            radListDataItem7.Tag = "6";
+            radListDataItem7.Text = "6";
+            radListDataItem8.Tag = "7";
+            radListDataItem8.Text = "7";
+            radListDataItem9.Tag = "8";
+            radListDataItem9.Text = "8";
+            radListDataItem10.Tag = "9";
+            radListDataItem10.Text = "9";
+            radListDataItem11.Tag = "10";
+            radListDataItem11.Text = "10";
+            radListDataItem12.Tag = "+10";
+            radListDataItem12.Text = "+10";
+            this.cboExperiencia.Items.Add(radListDataItem1);
+            this.cboExperiencia.Items.Add(radListDataItem2);
+            this.cboExperiencia.Items.Add(radListDataItem3);
+            this.cboExperiencia.Items.Add(radListDataItem4);
+            this.cboExperiencia.Items.Add(radListDataItem5);
+            this.cboExperiencia.Items.Add(radListDataItem6);
+            this.cboExperiencia.Items.Add(radListDataItem7);
+            this.cboExperiencia.Items.Add(radListDataItem8);
+            this.cboExperiencia.Items.Add(radListDataItem9);
+            this.cboExperiencia.Items.Add(radListDataItem10);
+            this.cboExperiencia.Items.Add(radListDataItem11);
+            this.cboExperiencia.Items.Add(radListDataItem12);
             this.cboExperiencia.Location = new System.Drawing.Point(454, 16);
             this.cboExperiencia.Name = "cboExperiencia";
             this.cboExperiencia.Size = new System.Drawing.Size(77, 20);
@@ -423,53 +441,53 @@
             this.grdDatos.MasterTemplate.AllowDeleteRow = false;
             this.grdDatos.MasterTemplate.AllowDragToGroup = false;
             this.grdDatos.MasterTemplate.AutoExpandGroups = true;
-            gridViewTextBoxColumn6.FieldName = "Id";
-            gridViewTextBoxColumn6.HeaderText = "Id";
-            gridViewTextBoxColumn6.IsVisible = false;
-            gridViewTextBoxColumn6.Name = "Id";
-            gridViewCheckBoxColumn2.FieldName = "Sel";
-            gridViewCheckBoxColumn2.HeaderText = "";
-            gridViewCheckBoxColumn2.MaxWidth = 40;
-            gridViewCheckBoxColumn2.MinWidth = 40;
-            gridViewCheckBoxColumn2.Name = "Sel";
-            gridViewCheckBoxColumn2.Width = 40;
-            gridViewTextBoxColumn7.FieldName = "Grupo";
-            gridViewTextBoxColumn7.HeaderText = "Característica";
-            gridViewTextBoxColumn7.IsVisible = false;
-            gridViewTextBoxColumn7.MaxWidth = 100;
-            gridViewTextBoxColumn7.MinWidth = 100;
-            gridViewTextBoxColumn7.Name = "Grupo";
-            gridViewTextBoxColumn7.Width = 100;
-            gridViewTextBoxColumn8.FieldName = "Concepto";
-            gridViewTextBoxColumn8.HeaderText = "Concepto";
-            gridViewTextBoxColumn8.MaxWidth = 250;
-            gridViewTextBoxColumn8.MinWidth = 200;
-            gridViewTextBoxColumn8.Name = "Concepto";
-            gridViewTextBoxColumn8.ReadOnly = true;
-            gridViewTextBoxColumn8.Width = 200;
-            gridViewTextBoxColumn8.WrapText = true;
-            gridViewTextBoxColumn9.FieldName = "Tipo";
-            gridViewTextBoxColumn9.HeaderText = "Tipo";
-            gridViewTextBoxColumn9.MaxWidth = 200;
-            gridViewTextBoxColumn9.MinWidth = 150;
-            gridViewTextBoxColumn9.Name = "Tipo";
-            gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.Width = 150;
-            gridViewTextBoxColumn9.WrapText = true;
-            gridViewTextBoxColumn10.FieldName = "DatosUsuario.Estatus";
-            gridViewTextBoxColumn10.HeaderText = "Estatus";
-            gridViewTextBoxColumn10.IsVisible = false;
-            gridViewTextBoxColumn10.Name = "Estatus";
+            gridViewTextBoxColumn1.FieldName = "Id";
+            gridViewTextBoxColumn1.HeaderText = "Id";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "Id";
+            gridViewCheckBoxColumn1.FieldName = "Sel";
+            gridViewCheckBoxColumn1.HeaderText = "";
+            gridViewCheckBoxColumn1.MaxWidth = 40;
+            gridViewCheckBoxColumn1.MinWidth = 40;
+            gridViewCheckBoxColumn1.Name = "Sel";
+            gridViewCheckBoxColumn1.Width = 40;
+            gridViewTextBoxColumn2.FieldName = "Grupo";
+            gridViewTextBoxColumn2.HeaderText = "Característica";
+            gridViewTextBoxColumn2.IsVisible = false;
+            gridViewTextBoxColumn2.MaxWidth = 100;
+            gridViewTextBoxColumn2.MinWidth = 100;
+            gridViewTextBoxColumn2.Name = "Grupo";
+            gridViewTextBoxColumn2.Width = 100;
+            gridViewTextBoxColumn3.FieldName = "Concepto";
+            gridViewTextBoxColumn3.HeaderText = "Concepto";
+            gridViewTextBoxColumn3.MaxWidth = 250;
+            gridViewTextBoxColumn3.MinWidth = 200;
+            gridViewTextBoxColumn3.Name = "Concepto";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 200;
+            gridViewTextBoxColumn3.WrapText = true;
+            gridViewTextBoxColumn4.FieldName = "Tipo";
+            gridViewTextBoxColumn4.HeaderText = "Tipo";
+            gridViewTextBoxColumn4.MaxWidth = 200;
+            gridViewTextBoxColumn4.MinWidth = 150;
+            gridViewTextBoxColumn4.Name = "Tipo";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 150;
+            gridViewTextBoxColumn4.WrapText = true;
+            gridViewTextBoxColumn5.FieldName = "DatosUsuario.Estatus";
+            gridViewTextBoxColumn5.HeaderText = "Estatus";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "Estatus";
             this.grdDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn6,
-            gridViewCheckBoxColumn2,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10});
+            gridViewTextBoxColumn1,
+            gridViewCheckBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.grdDatos.MasterTemplate.ShowGroupedColumns = true;
             this.grdDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.grdDatos.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.grdDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.grdDatos.Name = "grdDatos";
             this.grdDatos.ShowGroupPanel = false;
             this.grdDatos.ShowNoDataText = false;
@@ -772,24 +790,6 @@
             this.commandBarStripElement10.DisplayName = "commandBarStripElement10";
             this.commandBarStripElement10.Name = "commandBarStripElement10";
             // 
-            // cboEntidad
-            // 
-            this.cboEntidad.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboEntidad.Location = new System.Drawing.Point(102, 16);
-            this.cboEntidad.Name = "cboEntidad";
-            this.cboEntidad.Size = new System.Drawing.Size(192, 20);
-            this.cboEntidad.TabIndex = 1;
-            this.cboEntidad.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboEntidad_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Entidad:";
-            // 
             // frmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -811,6 +811,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboExperiencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuestos)).EndInit();
@@ -845,7 +846,6 @@
             this.documentContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
             this.documentTabStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -48,6 +48,7 @@
     <Compile Include="CapitalHumano\ContratosBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
     <Compile Include="CapitalHumano\PerfilesBE.cs" />
+    <Compile Include="CapitalHumano\SolicitudPersonalBE.cs" />
     <Compile Include="Catalogos\CiudadesBE.cs" />
     <Compile Include="Catalogos\ColoniasBE.cs" />
     <Compile Include="Catalogos\ContactosBE.cs" />
@@ -58,7 +59,7 @@
     <Compile Include="Catalogos\EntidadesBE.cs" />
     <Compile Include="Catalogos\EquipoHerramientasBE.cs" />
     <Compile Include="Catalogos\EstadosBE.cs" />
-    <Compile Include="Catalogos\OrganigramaBE.cs" />
+    <Compile Include="CapitalHumano\OrganigramaBE.cs" />
     <Compile Include="Catalogos\PaisesBE.cs" />
     <Compile Include="CapitalHumano\PuestosBE.cs" />
     <Compile Include="CapitalHumano\TiposContratoBE.cs" />

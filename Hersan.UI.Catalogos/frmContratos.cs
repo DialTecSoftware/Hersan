@@ -187,5 +187,10 @@ namespace Hersan.UI.Catalogos
                 oCatalogo = null;
             }
         }
+
+        private void gvDatos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -47,17 +47,20 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.chkInterno = new System.Windows.Forms.CheckBox();
             this.chkEstatus = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.opInterno = new Telerik.WinControls.UI.RadRadioButton();
+            this.opExterno = new Telerik.WinControls.UI.RadRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opInterno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opExterno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,7 +177,8 @@
             // 
             // radPanel1
             // 
-            this.radPanel1.Controls.Add(this.chkInterno);
+            this.radPanel1.Controls.Add(this.opExterno);
+            this.radPanel1.Controls.Add(this.opInterno);
             this.radPanel1.Controls.Add(this.chkEstatus);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Controls.Add(this.txtId);
@@ -184,16 +188,6 @@
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(497, 73);
             this.radPanel1.TabIndex = 1;
-            // 
-            // chkInterno
-            // 
-            this.chkInterno.AutoSize = true;
-            this.chkInterno.Location = new System.Drawing.Point(12, 46);
-            this.chkInterno.Name = "chkInterno";
-            this.chkInterno.Size = new System.Drawing.Size(64, 17);
-            this.chkInterno.TabIndex = 13;
-            this.chkInterno.Text = "Interno";
-            this.chkInterno.UseVisualStyleBackColor = true;
             // 
             // chkEstatus
             // 
@@ -280,6 +274,22 @@
             this.gvDatos.TabIndex = 5;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
+            // opInterno
+            // 
+            this.opInterno.Location = new System.Drawing.Point(75, 46);
+            this.opInterno.Name = "opInterno";
+            this.opInterno.Size = new System.Drawing.Size(56, 18);
+            this.opInterno.TabIndex = 15;
+            this.opInterno.Text = "Interno";
+            // 
+            // opExterno
+            // 
+            this.opExterno.Location = new System.Drawing.Point(197, 46);
+            this.opExterno.Name = "opExterno";
+            this.opExterno.Size = new System.Drawing.Size(58, 18);
+            this.opExterno.TabIndex = 16;
+            this.opExterno.Text = "Externo";
+            // 
             // frmContactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,6 +313,8 @@
             this.radPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opInterno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opExterno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -325,10 +337,11 @@
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.UI.RadGridView gvDatos;
-        private System.Windows.Forms.CheckBox chkInterno;
         private System.Windows.Forms.CheckBox chkEstatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtNombre;
+        private Telerik.WinControls.UI.RadRadioButton opExterno;
+        private Telerik.WinControls.UI.RadRadioButton opInterno;
     }
 }

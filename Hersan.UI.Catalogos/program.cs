@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hersan.UI.CapitalHumano;
+using System;
 using System.Windows.Forms;
 
 
@@ -11,7 +12,7 @@ namespace Hersan.UI.Catalogos {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmOrganigrama());
+            Application.Run(new frmSolicitudPersonal());
         }
     }
 }

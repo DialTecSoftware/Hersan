@@ -51,6 +51,7 @@
     <Compile Include="CapitalHumano\CompetenciasDA.cs" />
     <Compile Include="CapitalHumano\ContratosDA.cs" />
     <Compile Include="CapitalHumano\PerfilesDA.cs" />
+    <Compile Include="CapitalHumano\SolicitudPersonalDA.cs" />
     <Compile Include="Catalogos\ContactosDA.cs" />
     <Compile Include="Catalogos\DepartamentosDA.cs" />
     <Compile Include="Catalogos\DocumentosDA.cs" />
@@ -61,7 +62,7 @@
     <Compile Include="Catalogos\EntidadesDA.cs" />
     <Compile Include="Catalogos\EquipoHerramientasDA.cs" />
     <Compile Include="Catalogos\FuncionesDA.cs" />
-    <Compile Include="Catalogos\OrganigramaDA.cs" />
+    <Compile Include="CapitalHumano\OrganigramaDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\EncriptadorDA.cs" />
     <Compile Include="Seguridad\MenusDA.cs" />

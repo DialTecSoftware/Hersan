@@ -49,6 +49,7 @@
     <Compile Include="CapitalHumano\EducacionBP.cs" />
     <Compile Include="CapitalHumano\FuncionesBP.cs" />
     <Compile Include="CapitalHumano\PerfilesBP.cs" />
+    <Compile Include="CapitalHumano\SolicitudPersonalBP.cs" />
     <Compile Include="Catalogos\ContactosBP.cs" />
     <Compile Include="Catalogos\DepartamentosBP.cs" />
     <Compile Include="Catalogos\DocumentosBP.cs" />

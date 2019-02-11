@@ -193,4 +193,38 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DocumentosBE" nillable="true" type="tns:DocumentosBE" />
+  <xs:complexType name="ArrayOfOrganigramaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrganigramaBE" nillable="true" type="tns:OrganigramaBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrganigramaBE" nillable="true" type="tns:ArrayOfOrganigramaBE" />
+  <xs:complexType name="OrganigramaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id_padre" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_puesto" type="xs:int" />
+      <xs:element minOccurs="0" name="Nivel" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Padre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrganigramaBE" nillable="true" type="tns:OrganigramaBE" />
+  <xs:complexType name="ArrayOfEstadosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadosBE" nillable="true" type="tns:EstadosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstadosBE" nillable="true" type="tns:ArrayOfEstadosBE" />
+  <xs:complexType name="ArrayOfCiudadesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CiudadesBE" nillable="true" type="tns:CiudadesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCiudadesBE" nillable="true" type="tns:ArrayOfCiudadesBE" />
+  <xs:complexType name="ArrayOfColoniasBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColoniasBE" nillable="true" type="tns:ColoniasBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColoniasBE" nillable="true" type="tns:ArrayOfColoniasBE" />
 </xs:schema>

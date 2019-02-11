@@ -233,6 +233,26 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
+        #region Estados
+        public List<EstadosBE> ABCEstados_Obtener(int IdPais)
+        {
+            return new EstadosBP().ABCEstados_Obtener(IdPais);
+        }
+        #endregion
+
+        #region Ciudades
+        public List<CiudadesBE> ABCCiudades_Obtener(int IdEstado)
+        {
+            return new CiudadesBP().ABCCiudades_Obtener(IdEstado);
+        }
+        #endregion
+
+        #region Colonias
+        public List<ColoniasBE> ABCColonias_Obtener(int IdEstado, int IdCiudad)
+        {
+            return new ColoniasBP().ABCColonias_Obtener(IdEstado, IdCiudad);
+        }
+        #endregion
     }
 }
 

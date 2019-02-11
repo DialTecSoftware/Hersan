@@ -28,7 +28,7 @@
     <SuiteName>Sistema Integral Hersan HyTec</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -72,7 +72,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Hersan_Logo.ico</ApplicationIcon>
+    <ApplicationIcon>Hersan.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -139,6 +139,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Hersan.ico" />
     <Content Include="Hersan_Logo.ico" />
     <Content Include="llave_privada.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -146,6 +147,7 @@
     <Content Include="llave_publica.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">

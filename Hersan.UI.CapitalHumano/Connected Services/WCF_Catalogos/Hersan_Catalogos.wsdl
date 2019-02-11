@@ -274,6 +274,42 @@
   <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABCDocumentos_ActualizarResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEstados_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEstados_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEstados_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEstados_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCiudades_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCiudades_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCiudades_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCiudades_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCColonias_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCColonias_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCColonias_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCColonias_ObtenerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_Catalogos">
     <wsdl:operation name="ABCEmpresas_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage" />
@@ -446,6 +482,30 @@
     <wsdl:operation name="ABCDocumentos_Actualizar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Actualizar" message="tns:IHersan_Catalogos_ABCDocumentos_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_ActualizarResponse" message="tns:IHersan_Catalogos_ABCDocumentos_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Obtener" message="tns:IHersan_Catalogos_CHUOrganigrama_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ObtenerResponse" message="tns:IHersan_Catalogos_CHUOrganigrama_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Guardar" message="tns:IHersan_Catalogos_CHUOrganigrama_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_GuardarResponse" message="tns:IHersan_Catalogos_CHUOrganigrama_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar" message="tns:IHersan_Catalogos_CHUOrganigrama_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ActualizarResponse" message="tns:IHersan_Catalogos_CHUOrganigrama_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEstados_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener" message="tns:IHersan_Catalogos_ABCEstados_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEstados_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCCiudades_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCiudades_Obtener" message="tns:IHersan_Catalogos_ABCCiudades_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCiudades_ObtenerResponse" message="tns:IHersan_Catalogos_ABCCiudades_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCColonias_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCColonias_Obtener" message="tns:IHersan_Catalogos_ABCColonias_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCColonias_ObtenerResponse" message="tns:IHersan_Catalogos_ABCColonias_Obtener_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Catalogos" type="tns:IHersan_Catalogos">
@@ -831,6 +891,60 @@
     </wsdl:operation>
     <wsdl:operation name="ABCDocumentos_Actualizar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEstados_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCCiudades_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCCiudades_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCColonias_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCColonias_Obtener" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

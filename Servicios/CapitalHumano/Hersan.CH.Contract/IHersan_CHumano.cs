@@ -28,5 +28,15 @@ namespace Hersan.CH.Contract
         int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj);
 
         #endregion
+
+        #region DictamenSustitucion
+        [OperationContract]
+        List<DictamenSustitucionBE> CHUDictamenSolicitud_Obtener();
+        [OperationContract]
+        int CHUDictamenSolicitud__Guardar(DictamenSustitucionBE obj);
+        [OperationContract]
+        int CHUDictamenSolicitud_Actualizar(DictamenSustitucionBE obj);
+
+        #endregion
     }
 }

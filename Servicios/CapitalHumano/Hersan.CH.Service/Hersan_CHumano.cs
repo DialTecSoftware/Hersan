@@ -40,7 +40,22 @@ namespace Hersan.CH.Service
             {
                 return new SolicitudPersonalBP().CHU_SolicitudP_Actualizar(obj);
             }
-            #endregion
+        #endregion
+
+        #region DictamenSustitucion
+        public List<DictamenSustitucionBE> CHUDictamenSolicitud_Obtener()
+        {
+            return new DictamenSustitucionBP().CHUDictamenSolicitud_Obtener();
         }
+        public int CHUDictamenSolicitud__Guardar(DictamenSustitucionBE obj)
+        {
+            return new DictamenSustitucionBP().CHUDictamenSolicitud__Guardar(obj);
+        }
+        public int CHUDictamenSolicitud_Actualizar(DictamenSustitucionBE obj)
+        {
+            return new DictamenSustitucionBP().CHUDictamenSolicitud_Actualizar(obj);
+        }
+        #endregion
     }
+}
 

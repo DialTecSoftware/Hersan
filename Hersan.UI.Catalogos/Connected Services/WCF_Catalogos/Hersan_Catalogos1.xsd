@@ -201,12 +201,33 @@
   <xs:element name="ArrayOfOrganigramaBE" nillable="true" type="tns:ArrayOfOrganigramaBE" />
   <xs:complexType name="OrganigramaBE">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Id_padre" type="xs:int" />
-      <xs:element minOccurs="0" name="Id_puesto" type="xs:int" />
+      <xs:element minOccurs="0" name="Departamentos" nillable="true" type="tns:DepartamentosBE" />
+      <xs:element minOccurs="0" name="Entidades" nillable="true" type="tns:EntidadesBE" />
+      <xs:element minOccurs="0" name="Estatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdJefe" type="xs:int" />
       <xs:element minOccurs="0" name="Nivel" type="xs:int" />
-      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Padre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreJefe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Puestos" nillable="true" type="tns:PuestosBE" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OrganigramaBE" nillable="true" type="tns:OrganigramaBE" />
+  <xs:complexType name="ArrayOfEstadosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadosBE" nillable="true" type="tns:EstadosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstadosBE" nillable="true" type="tns:ArrayOfEstadosBE" />
+  <xs:complexType name="ArrayOfCiudadesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CiudadesBE" nillable="true" type="tns:CiudadesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCiudadesBE" nillable="true" type="tns:ArrayOfCiudadesBE" />
+  <xs:complexType name="ArrayOfColoniasBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColoniasBE" nillable="true" type="tns:ColoniasBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColoniasBE" nillable="true" type="tns:ArrayOfColoniasBE" />
 </xs:schema>

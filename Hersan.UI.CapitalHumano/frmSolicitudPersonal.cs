@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -19,6 +20,9 @@ namespace Hersan.UI.CapitalHumano
         CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<SolicitudPersonalBE> oList = new List<SolicitudPersonalBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
+        BaseWinBP lista = new BaseWinBP();
+    
+
         public frmSolicitudPersonal()
         {
             InitializeComponent();
@@ -184,7 +188,7 @@ namespace Hersan.UI.CapitalHumano
                     LimpiarCampos();
                     return;
                 }
-
+                #region Entidades
                 obj.Id = int.Parse(txtId.Text);
                 obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
                 obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
@@ -193,9 +197,26 @@ namespace Hersan.UI.CapitalHumano
                 obj.Sueldo = decimal.Parse(txtSueldo.Text);
                 obj.Justificacion = txtJustif.Text;
                 obj.Indicadores = txtIndicad.Text;
-               
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                #endregion
+
+                #region Correo
+                string pwd = "nomames21";
+                string smtp = "stmp.gmail.com";
+                string emisor = "moisegreg30@gmail.com";
+                string destinatario = "moisegreg30@gmail.com";
+                string asunto = "Asunto: Solicitud de sustitucion personal("+ DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
+                string CuerpoMsg = "Entidad :"+ cboEntidad.SelectedValue.ToString();
                
+                int port = 587;
+        
+                
+              
+                  
+                #endregion
+
+
+
                 //PROCESO DE GUARDADO Y ACTUALIZACION
                 if (txtId.Text == "-1") {
                     int Result = oCHumano.CHU_SolicitudP_Guardar(obj);
@@ -205,6 +226,7 @@ namespace Hersan.UI.CapitalHumano
                         RadMessageBox.Show("Solicitud enviada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         LimpiarCampos();
                         CargarSolicitudes();
+                        BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
                     }
                 } 
                 else {
@@ -264,7 +286,7 @@ namespace Hersan.UI.CapitalHumano
                         obj.Justificacion = txtJustif.Text;
                         obj.Indicadores = txtIndicad.Text;                   
                         obj.DatosUsuario.Estatus = false;
-                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                        obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
 
                         int Result = oCHumano.CHU_SolicitudP_Actualizar(obj);
                         if (Result == 0) {

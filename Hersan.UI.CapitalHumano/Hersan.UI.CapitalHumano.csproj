@@ -79,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmDictamenSustitucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDictamenSustitucion.Designer.cs">
+      <DependentUpon>frmDictamenSustitucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmExpediente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,8 +110,16 @@
       <DependentUpon>frmSolicitudPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDictamenSustitucion.resx">
+      <DependentUpon>frmDictamenSustitucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmExpediente.resx">
       <DependentUpon>frmExpediente.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +133,10 @@
       <DependentUpon>frmSolicitudPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -165,9 +183,12 @@
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenSustitucionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PerfilesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE1.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DocumentosBE.datasource" />
@@ -175,12 +196,17 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EmpresasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EntidadesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EquipoHerramientasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EstadosBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.OrganigramaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE.datasource" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Documents\Diag\EstructuraOrganizacional\DiagramFirstLook.csproj">
+      <Project>{A5016819-7BC7-4159-B86F-EFD8D66CA7CD}</Project>
+      <Name>DiagramFirstLook</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
       <Project>{4e3994ef-5056-4289-9c62-dc1140fd764e}</Project>
       <Name>Hersan.Entidades</Name>

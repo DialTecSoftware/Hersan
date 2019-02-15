@@ -3,10 +3,6 @@ using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using Hersan.Entidades.CapitalHumano;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -18,6 +14,7 @@ namespace Hersan.UI.CapitalHumano
         CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
         List<OrganigramaBE> oList = new List<OrganigramaBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
+
         public frmOrganigrama()
         {
             InitializeComponent();
@@ -111,7 +108,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 btnGuardar.Text = "Actualizar";
 
-                txtId.Text= "0";
+                txtId.Text = "0";
                 cboDepto.SelectedIndex = -1;
                 cboEntidad.SelectedIndex = -1;
                 cboPuesto.SelectedIndex = -1;
@@ -157,7 +154,8 @@ namespace Hersan.UI.CapitalHumano
                     obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
                     obj.IdJefe = int.Parse(cboPadre.SelectedValue.ToString());
                     obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
-                    obj.Estatus = true;
+                    obj.DatosUsuario.Estatus = true;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
@@ -172,7 +170,7 @@ namespace Hersan.UI.CapitalHumano
 
                         }
                     } else {
-                       
+
                         int Result = oCatalogo.CHUOrganigrama_Actualizar(obj);
                         if (Result == 0) {
                             RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -197,7 +195,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 LimpiarCampos();
                 btnGuardar.Text = "Guardar";
-               
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -234,7 +232,8 @@ namespace Hersan.UI.CapitalHumano
                     obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
                     obj.IdJefe = int.Parse(cboPadre.SelectedValue.ToString());
                     obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
-                    obj.Estatus = false;
+                    obj.DatosUsuario.Estatus = false;
+                    obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
 
                     int Result = oCatalogo.CHUOrganigrama_Actualizar(obj);
                     if (Result == 0) {
@@ -258,7 +257,7 @@ namespace Hersan.UI.CapitalHumano
             if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
 
                 txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
-               cboNivel.SelectedIndex = int.Parse((e.CurrentRow.Cells["Nivel"].Value.ToString()));
+                cboNivel.SelectedIndex = int.Parse((e.CurrentRow.Cells["Nivel"].Value.ToString()));
                 cboDepto.SelectedValue = int.Parse(e.CurrentRow.Cells["DEP_Id"].Value.ToString());
                 cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["ENT_Id"].Value.ToString());
                 cboPuesto.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Id"].Value.ToString());
@@ -269,7 +268,14 @@ namespace Hersan.UI.CapitalHumano
 
         private void cboNivel_EnabledChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnVerDiagrama_Click(object sender, EventArgs e)
+        {
+            Form frm = new DiagramFirstLook.OrgChartForm();
+            frm.ShowDialog();
+            frm.WindowState = FormWindowState.Maximized;
         }
     }
 }

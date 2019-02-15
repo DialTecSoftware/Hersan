@@ -63,6 +63,7 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtJustif = new System.Windows.Forms.TextBox();
             this.txtIndicad = new System.Windows.Forms.TextBox();
+            this.chkEstatus = new Telerik.WinControls.UI.RadCheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cboTipoCon = new Telerik.WinControls.UI.RadDropDownList();
@@ -73,17 +74,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
-            this.chkEstatus = new Telerik.WinControls.UI.RadCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoCon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +122,7 @@
             // 
             // 
             this.commandBarStripElement1.OverflowButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            this.commandBarStripElement1.StretchHorizontally = true;
             ((Telerik.WinControls.UI.RadCommandBarOverflowButton)(this.commandBarStripElement1.GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             // 
             // btnNuevo
@@ -268,6 +269,15 @@
             this.txtIndicad.Name = "txtIndicad";
             this.txtIndicad.Size = new System.Drawing.Size(339, 34);
             this.txtIndicad.TabIndex = 12;
+            // 
+            // chkEstatus
+            // 
+            this.chkEstatus.Location = new System.Drawing.Point(543, 97);
+            this.chkEstatus.Name = "chkEstatus";
+            this.chkEstatus.Size = new System.Drawing.Size(51, 18);
+            this.chkEstatus.TabIndex = 11;
+            this.chkEstatus.Text = "Activo";
+            this.chkEstatus.Visible = false;
             // 
             // label6
             // 
@@ -438,15 +448,6 @@
             this.gvDatos.TabIndex = 7;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
-            // chkEstatus
-            // 
-            this.chkEstatus.Location = new System.Drawing.Point(543, 97);
-            this.chkEstatus.Name = "chkEstatus";
-            this.chkEstatus.Size = new System.Drawing.Size(51, 18);
-            this.chkEstatus.TabIndex = 11;
-            this.chkEstatus.Text = "Activo";
-            this.chkEstatus.Visible = false;
-            // 
             // frmSolicitudPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,12 +470,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoCon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

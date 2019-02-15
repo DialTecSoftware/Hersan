@@ -212,4 +212,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OrganigramaBE" nillable="true" type="tns:OrganigramaBE" />
+  <xs:complexType name="ArrayOfEstadosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadosBE" nillable="true" type="tns:EstadosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstadosBE" nillable="true" type="tns:ArrayOfEstadosBE" />
+  <xs:complexType name="ArrayOfCiudadesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CiudadesBE" nillable="true" type="tns:CiudadesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCiudadesBE" nillable="true" type="tns:ArrayOfCiudadesBE" />
+  <xs:complexType name="ArrayOfColoniasBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColoniasBE" nillable="true" type="tns:ColoniasBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColoniasBE" nillable="true" type="tns:ArrayOfColoniasBE" />
 </xs:schema>

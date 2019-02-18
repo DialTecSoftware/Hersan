@@ -109,6 +109,7 @@ throw ex;
 
                                 obj.Id = int.Parse(reader["COM_ID"].ToString());
                                 obj.Nombre = reader["COM_Nombre"].ToString();
+                                obj.Ponderacion = int.Parse(reader["Ponderacion"].ToString());
 
                                 oList.Add(obj);
                             }

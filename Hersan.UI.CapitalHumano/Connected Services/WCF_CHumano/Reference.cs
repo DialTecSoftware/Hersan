@@ -35,6 +35,9 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ActualizarResponse")]
         int CHU_SolicitudP_Actualizar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_GuardarResponse")]
+        int CHU_Expedientes_Guardar(System.Data.DataSet Tablas, int IdUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -90,6 +93,10 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_SolicitudP_Actualizar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj) {
             return base.Channel.CHU_SolicitudP_Actualizar(obj);
+        }
+        
+        public int CHU_Expedientes_Guardar(System.Data.DataSet Tablas, int IdUsuario) {
+            return base.Channel.CHU_Expedientes_Guardar(Tablas, IdUsuario);
         }
     }
 }

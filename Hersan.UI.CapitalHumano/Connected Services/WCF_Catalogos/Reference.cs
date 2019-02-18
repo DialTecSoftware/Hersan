@@ -152,6 +152,15 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ActualizarResponse")]
         int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCiudades_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCiudades_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.CiudadesBE> ABCCiudades_Obtener(int IdEstado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCColonias_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCColonias_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoniasBE> ABCColonias_Obtener(int IdEstado, int IdCiudad);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -363,6 +372,18 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         
         public int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj) {
             return base.Channel.CHUOrganigrama_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais) {
+            return base.Channel.ABCEstados_Obtener(IdPais);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.CiudadesBE> ABCCiudades_Obtener(int IdEstado) {
+            return base.Channel.ABCCiudades_Obtener(IdEstado);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoniasBE> ABCColonias_Obtener(int IdEstado, int IdCiudad) {
+            return base.Channel.ABCColonias_Obtener(IdEstado, IdCiudad);
         }
     }
 }

@@ -28,5 +28,10 @@ namespace Hersan.CH.Contract
         int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj);
 
         #endregion
+
+        #region Expedientes
+        [OperationContract]
+        int CHU_Expedientes_Guardar(DataSet Tablas, int IdUsuario);
+        #endregion
     }
 }

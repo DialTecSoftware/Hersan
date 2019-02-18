@@ -37,6 +37,7 @@ namespace Hersan.Entidades.CapitalHumano
             Grupo = string.Empty;
             Concepto = string.Empty;
             Tipo = string.Empty;
+            Valor = 0;
             Perfil = new PerfilesBE();
             DatosUsuario = new GeneralBE();
         }
@@ -47,6 +48,7 @@ namespace Hersan.Entidades.CapitalHumano
         public string Grupo { get; set; }
         public string Concepto { get; set; }
         public string Tipo { get; set; }
+        public decimal Valor { get; set; }
         public PerfilesBE Perfil { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }

@@ -18,6 +18,7 @@ namespace Hersan.UI.CapitalHumano
         WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<PerfilDescripcionBE> oList = new List<PerfilDescripcionBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
+        List<CompetenciasBE> oCompete = new List<CompetenciasBE>();
         PerfilDescripcionBE obj;
         bool Flag = true;
         #endregion
@@ -33,9 +34,9 @@ namespace Hersan.UI.CapitalHumano
                 descriptor.GroupNames.Add("Grupo",  ListSortDirection.Ascending);
                 grdDatos.GroupDescriptors.Add(descriptor);
 
+                LimpiarCampos();
                 CargarEntidades();
                 CargarEducacion();
-                CargarFunciones();
                 CargarCompetencias();
 
                 CargarGrid();
@@ -60,11 +61,12 @@ namespace Hersan.UI.CapitalHumano
                 oData.Columns.Add("Id");
                 oData.Columns.Add("Concepto");
                 oData.Columns.Add("Tipo");
+                oData.Columns.Add("Valor");
                 oData.Columns.Add("Estatus");
 
                 PerfilesBE obj = new PerfilesBE();
                 oList.ForEach(item => {
-                    obj.Id = int.Parse(txtId.Text);
+                    obj.Id = txtId.Text.Trim().Length > 0 ? int.Parse(txtId.Text) : 0;
                     obj.Puesto.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
                     obj.Puesto.Id = int.Parse(cboPuestos.SelectedValue.ToString());
                     obj.Experiencia = cboExperiencia.Text;
@@ -76,18 +78,14 @@ namespace Hersan.UI.CapitalHumano
                         oRow["Id"] = item.Id;
                         oRow["Concepto"] = "EDUCACIÓN";
                         oRow["Tipo"] = item.Tipo;
-                        oRow["Estatus"] = item.DatosUsuario.Estatus;
-                    }
-                    if (item.Grupo.Contains("FUNCIONES")) {
-                        oRow["Id"] = item.Id;
-                        oRow["Concepto"] = "FUNCIONES";
-                        oRow["Tipo"] = string.Empty;
+                        oRow["Valor"] = item.Valor;
                         oRow["Estatus"] = item.DatosUsuario.Estatus;
                     }
                     if (item.Grupo.Contains("COMPETENCIAS")) {
                         oRow["Id"] = item.Id;
                         oRow["Concepto"] = "COMPETENCIAS";
-                        oRow["Tipo"] = string.Empty;
+                        oRow["Tipo"] = item.Tipo;
+                        oRow["Valor"] = item.Valor;
                         oRow["Estatus"] = item.DatosUsuario.Estatus;
                     }
                     oData.Rows.Add(oRow);
@@ -172,25 +170,7 @@ namespace Hersan.UI.CapitalHumano
                     obj.Concepto = cboEducacion.SelectedItem.Text;
                     obj.Id = int.Parse(cboEducacion.SelectedValue.ToString());
                     obj.Tipo = opNecesaria.Checked ? "NECESARIA" : "PREFERENTE";
-                    oList.Add(obj);
-
-                    ActualizaGrid();
-                } else {
-                    RadMessageBox.Show("No es posible agregar un item que ya existe en el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al agregar la selección\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void btnAdd_For_Click(object sender, EventArgs e)
-        {
-            obj = new PerfilDescripcionBE();
-            try {
-                if (oList.FindAll(item => item.Grupo.Contains("FUNCIONES") && item.Id == int.Parse(cboFormacion.SelectedValue.ToString())).Count == 0) {
-                    obj.Sel = false;
-                    obj.Grupo = "2-FUNCIONES";
-                    obj.Concepto = cboFormacion.SelectedItem.Text;
-                    obj.Id = int.Parse(cboFormacion.SelectedValue.ToString());
+                    obj.Valor = 0;
                     oList.Add(obj);
 
                     ActualizaGrid();
@@ -210,7 +190,8 @@ namespace Hersan.UI.CapitalHumano
                     obj.Grupo = "3-COMPETENCIAS";
                     obj.Concepto = cboCompetencia.SelectedItem.Text;
                     obj.Id = int.Parse(cboCompetencia.SelectedValue.ToString());
-                    obj.Tipo = String.Empty;
+                    obj.Tipo = cboNivel.Text;
+                    obj.Valor = decimal.Parse(cboNivel.Text) * oCompete.Find(item=> item.Id.ToString() == cboCompetencia.SelectedValue.ToString()).Ponderacion;
                     oList.Add(obj);
 
                     ActualizaGrid();
@@ -299,24 +280,12 @@ namespace Hersan.UI.CapitalHumano
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
+                oCompete = oCatalogos.ABCCompetencias_Combo();
                 cboCompetencia.DisplayMember = "Nombre";
                 cboCompetencia.ValueMember = "Id";
-                cboCompetencia.DataSource = oCatalogos.ABCCompetencias_Combo();
+                cboCompetencia.DataSource = oCompete;
             } catch (Exception ex) {
                 throw ex;
-            } finally {
-                oCatalogos = null;
-            }
-        }
-        private void CargarFunciones()
-        {
-            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
-            try {
-                cboFormacion.ValueMember = "Id";
-                cboFormacion.DisplayMember = "Nombre";
-                cboFormacion.DataSource = oCatalogos.ABCFunciones_Combo();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogos = null;
             }
@@ -329,8 +298,8 @@ namespace Hersan.UI.CapitalHumano
                 cboEntidad.SelectedIndex = 0;
                 cboCompetencia.SelectedIndex = -1;
                 cboEducacion.SelectedIndex = -1;
-                cboExperiencia.SelectedIndex = -1;
-                cboFormacion.SelectedIndex = -1;
+                cboExperiencia.SelectedIndex = 0;
+                cboNivel.SelectedIndex = 0;
                 grdDatos.DataSource = null;
             } catch (Exception ex) {
                 throw ex;
@@ -340,9 +309,7 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 grdDatos.DataSource = null;
-                //grdDatos.MasterTemplate.BeginUpdate();
                 grdDatos.DataSource = oList.FindAll(item=> item.DatosUsuario.Estatus == true);
-                //grdDatos.MasterTemplate.EndUpdate();
             } catch (Exception ex) {
                 throw ex;
             }
@@ -374,20 +341,11 @@ namespace Hersan.UI.CapitalHumano
                         if (oAux.Tables[2].Rows.Count > 0) {
                             foreach (DataRow oRow in oAux.Tables[2].Rows) {
                                 oList.Add(new PerfilDescripcionBE() {
-                                    Id = int.Parse(oRow["FUN_Id"].ToString()),
-                                    Grupo = "2-FUNCIONES",
-                                    Concepto = oRow["FUN_Nombre"].ToString()
-                                });
-                            }
-                        }
-
-                        /* FUNCIONES */
-                        if (oAux.Tables[3].Rows.Count > 0) {
-                            foreach (DataRow oRow in oAux.Tables[3].Rows) {
-                                oList.Add(new PerfilDescripcionBE() {
                                     Id = int.Parse(oRow["COM_Id"].ToString()),
-                                    Grupo = "3-COMPETENCIAS",
-                                    Concepto = oRow["COM_Nombre"].ToString()
+                                    Grupo = "2-COMPETENCIAS",
+                                    Concepto = oRow["COM_Nombre"].ToString(),
+                                    Tipo = oRow["PCO_Nivel"].ToString(),
+                                    Valor = decimal.Parse(oRow["PCO_Ponderacion"].ToString())
                                 });
                             }
                         }
@@ -409,6 +367,5 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
-        
     }
 }

@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Seguridad;
+﻿
+using Hersan.Entidades.Seguridad;
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
@@ -145,6 +146,11 @@ namespace Hersan.UI.Principal
             }
 
             return isOpen;
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

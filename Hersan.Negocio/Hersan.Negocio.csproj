@@ -46,6 +46,7 @@
     <Compile Include="BaseWinBP.cs" />
     <Compile Include="CapitalHumano\CompetenciasBP.cs" />
     <Compile Include="CapitalHumano\ContratosBP.cs" />
+    <Compile Include="CapitalHumano\DictamenSustitucionBP.cs" />
     <Compile Include="CapitalHumano\EducacionBP.cs" />
     <Compile Include="CapitalHumano\ExpedientesBP.cs" />
     <Compile Include="CapitalHumano\FuncionesBP.cs" />

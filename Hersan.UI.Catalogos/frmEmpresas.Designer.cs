@@ -61,7 +61,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(638, 30);
+            this.radCommandBar1.Size = new System.Drawing.Size(755, 30);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -149,7 +149,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 30);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(638, 77);
+            this.radPanel1.Size = new System.Drawing.Size(755, 77);
             this.radPanel1.TabIndex = 1;
             // 
             // radPanel2
@@ -158,7 +158,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 107);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(638, 251);
+            this.radPanel2.Size = new System.Drawing.Size(755, 376);
             this.radPanel2.TabIndex = 2;
             // 
             // radGridView1
@@ -170,14 +170,14 @@
             // 
             this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(638, 251);
+            this.radGridView1.Size = new System.Drawing.Size(755, 376);
             this.radGridView1.TabIndex = 0;
             // 
             // frmEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 358);
+            this.ClientSize = new System.Drawing.Size(755, 483);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);

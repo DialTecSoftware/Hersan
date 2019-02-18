@@ -39,7 +39,7 @@ namespace Hersan.Datos.Catalogos
                                 obj.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
                                 obj.Puestos.Id = int.Parse(reader["PUE_Id"].ToString());
                                 obj.Nivel = int.Parse(reader["ORG_Nivel"].ToString());
-                                obj.Estatus = bool.Parse(reader["ORG_Estatus"].ToString());
+                                obj.DatosUsuario.Estatus = bool.Parse(reader["ORG_Estatus"].ToString());
 
                                 oList.Add(obj);
                             }
@@ -63,9 +63,10 @@ namespace Hersan.Datos.Catalogos
                         cmd.Parameters.AddWithValue("@Id_PUE", obj.Puestos.Id);
                         cmd.Parameters.AddWithValue("@Id_Jefe", obj.IdJefe);
                         cmd.Parameters.AddWithValue("@Nivel", obj.Nivel);
-                    
-                      
-                       
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+
+
+
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         Result = Convert.ToInt32(cmd.ExecuteScalar());
@@ -89,7 +90,8 @@ namespace Hersan.Datos.Catalogos
                         cmd.Parameters.AddWithValue("@Id_PUE", obj.Puestos.Id);
                         cmd.Parameters.AddWithValue("@Id_Jefe", obj.IdJefe);
                         cmd.Parameters.AddWithValue("@Nivel", obj.Nivel);
-                        cmd.Parameters.AddWithValue("@Estatus", obj.Estatus);
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+                        cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
 
 
                         cmd.CommandType = CommandType.StoredProcedure;

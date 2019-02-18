@@ -61,6 +61,8 @@
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnVerDiagrama = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
@@ -99,7 +101,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(696, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(700, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -119,6 +121,8 @@
             this.commandBarSeparator2,
             this.btnEliminar,
             this.commandBarSeparator3,
+            this.btnVerDiagrama,
+            this.commandBarSeparator5,
             this.btnSalir,
             this.commandBarSeparator4,
             this.commandBarLabel1});
@@ -179,6 +183,22 @@
             this.commandBarSeparator3.Name = "commandBarSeparator3";
             this.commandBarSeparator3.VisibleInOverflowMenu = false;
             // 
+            // btnVerDiagrama
+            // 
+            this.btnVerDiagrama.DisplayName = "Ver Diagrama";
+            this.btnVerDiagrama.DrawText = true;
+            this.btnVerDiagrama.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDiagrama.Image")));
+            this.btnVerDiagrama.Name = "btnVerDiagrama";
+            this.btnVerDiagrama.Text = "Ver Diagrama";
+            this.btnVerDiagrama.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnVerDiagrama.Click += new System.EventHandler(this.btnVerDiagrama_Click);
+            // 
+            // commandBarSeparator5
+            // 
+            this.commandBarSeparator5.DisplayName = "commandBarSeparator5";
+            this.commandBarSeparator5.Name = "commandBarSeparator5";
+            this.commandBarSeparator5.VisibleInOverflowMenu = false;
+            // 
             // btnSalir
             // 
             this.btnSalir.DisplayName = "commandBarButton4";
@@ -221,7 +241,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(696, 97);
+            this.radPanel1.Size = new System.Drawing.Size(700, 97);
             this.radPanel1.TabIndex = 1;
             // 
             // chkEstatus
@@ -431,7 +451,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(696, 253);
+            this.gvDatos.Size = new System.Drawing.Size(700, 255);
             this.gvDatos.TabIndex = 8;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -439,7 +459,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 406);
+            this.ClientSize = new System.Drawing.Size(700, 408);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -450,6 +470,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "Organigrama";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmOrganigrama_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
@@ -497,5 +518,7 @@
         private System.Windows.Forms.Label label5;
         private Telerik.WinControls.UI.RadCheckBox chkEstatus;
         private Telerik.WinControls.UI.RadGridView gvDatos;
+        private Telerik.WinControls.UI.CommandBarButton btnVerDiagrama;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator5;
     }
 }

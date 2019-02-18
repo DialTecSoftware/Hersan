@@ -110,6 +110,7 @@
             this.Text = "HERSAN HYTEC";
             this.ThemeName = "MaterialTeal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

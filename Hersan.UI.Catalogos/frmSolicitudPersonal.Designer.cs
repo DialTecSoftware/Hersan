@@ -63,6 +63,7 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtJustif = new System.Windows.Forms.TextBox();
             this.txtIndicad = new System.Windows.Forms.TextBox();
+            this.chkEstatus = new Telerik.WinControls.UI.RadCheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cboTipoCon = new Telerik.WinControls.UI.RadDropDownList();
@@ -73,17 +74,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
-            this.chkEstatus = new Telerik.WinControls.UI.RadCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoCon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(866, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(866, 81);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -240,7 +240,7 @@
             this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 56);
+            this.radPanel1.Location = new System.Drawing.Point(0, 81);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(866, 161);
             this.radPanel1.TabIndex = 6;
@@ -268,6 +268,15 @@
             this.txtIndicad.Name = "txtIndicad";
             this.txtIndicad.Size = new System.Drawing.Size(339, 34);
             this.txtIndicad.TabIndex = 12;
+            // 
+            // chkEstatus
+            // 
+            this.chkEstatus.Location = new System.Drawing.Point(543, 97);
+            this.chkEstatus.Name = "chkEstatus";
+            this.chkEstatus.Size = new System.Drawing.Size(51, 18);
+            this.chkEstatus.TabIndex = 11;
+            this.chkEstatus.Text = "Activo";
+            this.chkEstatus.Visible = false;
             // 
             // label6
             // 
@@ -348,7 +357,7 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 217);
+            this.gvDatos.Location = new System.Drawing.Point(0, 242);
             // 
             // 
             // 
@@ -434,18 +443,9 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(866, 179);
+            this.gvDatos.Size = new System.Drawing.Size(866, 154);
             this.gvDatos.TabIndex = 7;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
-            // 
-            // chkEstatus
-            // 
-            this.chkEstatus.Location = new System.Drawing.Point(543, 97);
-            this.chkEstatus.Name = "chkEstatus";
-            this.chkEstatus.Size = new System.Drawing.Size(51, 18);
-            this.chkEstatus.TabIndex = 11;
-            this.chkEstatus.Text = "Activo";
-            this.chkEstatus.Visible = false;
             // 
             // frmSolicitudPersonal
             // 
@@ -469,12 +469,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoCon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -38,5 +38,9 @@ namespace Hersan.CH.Contract
         int CHUDictamenSolicitud_Actualizar(DictamenSustitucionBE obj);
 
         #endregion
+
+        #region Expedientes
+        int CHU_Expedientes_Guardar(DataSet Tablas, int IdUsuario);
+        #endregion
     }
 }

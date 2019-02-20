@@ -15,7 +15,7 @@ namespace Hersan.UI.CapitalHumano
     {
         #region Variables        
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
-        WCF_CHumano.Hersan_CHumanoClient oCHumano;
+        CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         List<ColoniasBE> oColonia = new List<ColoniasBE>();
         List<ExpedienteFamilia> oFamilia = new List<ExpedienteFamilia>();
@@ -189,6 +189,7 @@ namespace Hersan.UI.CapitalHumano
                 /* ALTA DE EXPEDIENTE */
                 if (int.Parse(txtId.Text) == 0) {
                     Result = oCHumano.CHU_Expedientes_Guardar(oData, BaseWinBP.UsuarioLogueado.ID);
+
                     if (Result != 0) {
                         RadMessageBox.Show("Expediente guardado correctamente\nEl folio asignado es: " + Result.ToString(), this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     } else {

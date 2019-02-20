@@ -201,9 +201,9 @@
   <xs:element name="ArrayOfOrganigramaBE" nillable="true" type="tns:ArrayOfOrganigramaBE" />
   <xs:complexType name="OrganigramaBE">
     <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q14:GeneralBE" />
       <xs:element minOccurs="0" name="Departamentos" nillable="true" type="tns:DepartamentosBE" />
       <xs:element minOccurs="0" name="Entidades" nillable="true" type="tns:EntidadesBE" />
-      <xs:element minOccurs="0" name="Estatus" type="xs:boolean" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdJefe" type="xs:int" />
       <xs:element minOccurs="0" name="Nivel" type="xs:int" />

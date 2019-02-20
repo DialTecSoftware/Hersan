@@ -128,7 +128,7 @@ namespace Hersan.UI.CapitalHumano
 
         private void frmSolicitud_Load(object sender, EventArgs e)
         {
-            try {
+             try {
                 GroupDescriptor Entidades = new GroupDescriptor();
                 Entidades.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
                 this.gvDatos.GroupDescriptors.Add(Entidades);

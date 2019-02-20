@@ -56,6 +56,14 @@ namespace Hersan.CH.Service
             return new DictamenSustitucionBP().CHUDictamenSolicitud_Actualizar(obj);
         }
         #endregion
+
+        #region Expedientes
+        public int CHU_Expedientes_Guardar( DataSet Tablas, int IdUsuario)
+        {
+            return new ExpedientesBP().CHU_Expedientes_Guardar( Tablas, IdUsuario);
+        }
+
+        #endregion
     }
 }
 

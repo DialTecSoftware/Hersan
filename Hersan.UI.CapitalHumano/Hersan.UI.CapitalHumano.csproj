@@ -203,10 +203,6 @@
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Documents\Diag\EstructuraOrganizacional\DiagramFirstLook.csproj">
-      <Project>{A5016819-7BC7-4159-B86F-EFD8D66CA7CD}</Project>
-      <Name>DiagramFirstLook</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
       <Project>{4e3994ef-5056-4289-9c62-dc1140fd764e}</Project>
       <Name>Hersan.Entidades</Name>

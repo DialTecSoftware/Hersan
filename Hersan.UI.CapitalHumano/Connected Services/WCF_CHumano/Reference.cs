@@ -36,8 +36,14 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ActualizarResponse")]
         int CHU_SolicitudP_Actualizar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_GuardarResponse")]
-        int CHU_Expedientes_Guardar(System.Data.DataSet Tablas, int IdUsuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.DictamenSustitucionBE> CHUDictamenSolicitud_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud__Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud__GuardarResponse")]
+        int CHUDictamenSolicitud__Guardar(Hersan.Entidades.CapitalHumano.DictamenSustitucionBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_ActualizarResponse")]
+        int CHUDictamenSolicitud_Actualizar(Hersan.Entidades.CapitalHumano.DictamenSustitucionBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -95,8 +101,16 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
             return base.Channel.CHU_SolicitudP_Actualizar(obj);
         }
         
-        public int CHU_Expedientes_Guardar(System.Data.DataSet Tablas, int IdUsuario) {
-            return base.Channel.CHU_Expedientes_Guardar(Tablas, IdUsuario);
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.DictamenSustitucionBE> CHUDictamenSolicitud_Obtener() {
+            return base.Channel.CHUDictamenSolicitud_Obtener();
+        }
+        
+        public int CHUDictamenSolicitud__Guardar(Hersan.Entidades.CapitalHumano.DictamenSustitucionBE obj) {
+            return base.Channel.CHUDictamenSolicitud__Guardar(obj);
+        }
+        
+        public int CHUDictamenSolicitud_Actualizar(Hersan.Entidades.CapitalHumano.DictamenSustitucionBE obj) {
+            return base.Channel.CHUDictamenSolicitud_Actualizar(obj);
         }
     }
 }

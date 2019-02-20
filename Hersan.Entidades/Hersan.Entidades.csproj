@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
     <Compile Include="CapitalHumano\ContratosBE.cs" />
+    <Compile Include="CapitalHumano\DictamenSustitucionBE.cs" />
     <Compile Include="CapitalHumano\ExpedientesBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
     <Compile Include="CapitalHumano\PerfilesBE.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="Comun\ResultadoBE.cs" />
     <Compile Include="Conexion\CadenaConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Seguridad\Menus.cs" />
+    <Compile Include="Seguridad\MenusBE.cs" />
     <Compile Include="Seguridad\RolesBE.cs" />
     <Compile Include="Seguridad\UsuariosBE.cs" />
     <Compile Include="Seguridad\ValidaIngresoBE.cs" />

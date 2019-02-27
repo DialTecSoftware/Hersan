@@ -712,6 +712,58 @@ namespace Hersan.UI.CapitalHumano
 
                 oDataset.Tables.Add(oData);
                 #endregion
+
+                #region TABLA DE DATOS DE SALUD
+                oData = new DataTable("Salud");
+                oData.Columns.Add("EXP_Id");
+                oData.Columns.Add("ESA_EstadoActual");
+                oData.Columns.Add("ESA_Enfermedad");
+                oData.Columns.Add("ESA_Tipo");
+                oData.Columns.Add("ESA_Deporte");
+                oData.Columns.Add("ESA_Club");
+                oData.Columns.Add("ESA_Pasatiempo");
+                oData.Columns.Add("ESA_Meta");
+
+                oDataset.Tables.Add(oData);
+                #endregion
+
+                #region TABLA DE DATOS DE CONOCIMIENTOS
+                oData = new DataTable("Conocimiento" +
+                    "");
+                oData.Columns.Add("EXP_Id");
+                oData.Columns.Add("ECO_Idioma");
+                oData.Columns.Add("ECO_Porcentaje");
+                oData.Columns.Add("ECO_Maquinas");
+                oData.Columns.Add("ECO_Funciones");
+                oData.Columns.Add("ECO_Otros");
+
+                oDataset.Tables.Add(oData);
+                #endregion
+
+                #region TABLA DE DATOS DE REFERENCIAS
+                oData = new DataTable("REFERENCIAS");
+                oData.Columns.Add("EXP_Id");
+                oData.Columns.Add("ERE_Nombre");
+                oData.Columns.Add("ERE_Direccion");
+                oData.Columns.Add("ERE_Telefono");
+                oData.Columns.Add("ERE_Ocupacion");
+                oData.Columns.Add("ERE_Tiempo");
+
+                oDataset.Tables.Add(oData);
+                #endregion
+
+                #region TABLA DE DATOS DE REFERENCIAS
+                oData = new DataTable("REFERENCIAS");
+                oData.Columns.Add("EXP_Id");
+                oData.Columns.Add("ERE_Nombre");
+                oData.Columns.Add("ERE_Direccion");
+                oData.Columns.Add("ERE_Telefono");
+                oData.Columns.Add("ERE_Ocupacion");
+                oData.Columns.Add("ERE_Tiempo");
+
+                oDataset.Tables.Add(oData);
+                #endregion
+
             } catch (Exception ex) {
                 throw ex;
             }

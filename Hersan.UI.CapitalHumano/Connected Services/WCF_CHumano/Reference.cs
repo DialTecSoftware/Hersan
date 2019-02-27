@@ -28,7 +28,7 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         int CHU_Perfiles_Elimina(int IdPerfil, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ObtenerResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SolicitudPersonalBE> CHU_SolicitudP_Obtener();
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_GuardarResponse")]
         int CHU_SolicitudP_Guardar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj);
@@ -44,6 +44,24 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_ActualizarResponse")]
         int CHUDictamenSolicitud_Actualizar(Hersan.Entidades.CapitalHumano.DictamenSustitucionBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_GuardarResponse")]
+        int CHU_NuevoPuesto_Guardar(Hersan.Entidades.CapitalHumano.NuevoPuestoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ActualizarResponse")]
+        int CHU_NuevoPuesto_Actualizar(Hersan.Entidades.CapitalHumano.NuevoPuestoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE> CHU_DictamenNuevoP_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_GuardarResponse")]
+        int CHU_DictamenNuevoP_Guardar(Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_ActualizarResponse")]
+        int CHU_DictamenNuevoP_Actualizar(Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -89,8 +107,8 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
             return base.Channel.CHU_Perfiles_Elimina(IdPerfil, IdUsuario);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SolicitudPersonalBE> CHU_SolicitudP_Obtener() {
-            return base.Channel.CHU_SolicitudP_Obtener();
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser) {
+            return base.Channel.CHU_SolicitudP_Obtener(IdUser);
         }
         
         public int CHU_SolicitudP_Guardar(Hersan.Entidades.CapitalHumano.SolicitudPersonalBE obj) {
@@ -111,6 +129,30 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHUDictamenSolicitud_Actualizar(Hersan.Entidades.CapitalHumano.DictamenSustitucionBE obj) {
             return base.Channel.CHUDictamenSolicitud_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser) {
+            return base.Channel.CHU_NuevoPuesto_Obtener(IdUser);
+        }
+        
+        public int CHU_NuevoPuesto_Guardar(Hersan.Entidades.CapitalHumano.NuevoPuestoBE obj) {
+            return base.Channel.CHU_NuevoPuesto_Guardar(obj);
+        }
+        
+        public int CHU_NuevoPuesto_Actualizar(Hersan.Entidades.CapitalHumano.NuevoPuestoBE obj) {
+            return base.Channel.CHU_NuevoPuesto_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE> CHU_DictamenNuevoP_Obtener() {
+            return base.Channel.CHU_DictamenNuevoP_Obtener();
+        }
+        
+        public int CHU_DictamenNuevoP_Guardar(Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE obj) {
+            return base.Channel.CHU_DictamenNuevoP_Guardar(obj);
+        }
+        
+        public int CHU_DictamenNuevoP_Actualizar(Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE obj) {
+            return base.Channel.CHU_DictamenNuevoP_Actualizar(obj);
         }
     }
 }

@@ -687,7 +687,7 @@
         QmCC
 </value>
   </data>
-  <data name="btnAddEmpleo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddReferencia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAACd1JREFUaEPt
         V2lQVFcadaqmJlWp+T1/Z3QcYxI1izG4Qasoi6AoCBkMYlQUZSnBgAJuiCKLICDNpiyRFrrpvaHpbh6I
@@ -831,7 +831,7 @@
         gMYc5tNqAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnAddReferencia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddEmpleo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAACd1JREFUaEPt
         V2lQVFcadaqmJlWp+T1/Z3QcYxI1izG4Qasoi6AoCBkMYlQUZSnBgAJuiCKLICDNpiyRFrrpvaHpbh6I

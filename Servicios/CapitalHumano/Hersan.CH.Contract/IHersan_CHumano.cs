@@ -21,7 +21,7 @@ namespace Hersan.CH.Contract
 
         #region SolicitudPersonal
         [OperationContract]
-        List<SolicitudPersonalBE> CHU_SolicitudP_Obtener();
+        List<SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser);
         [OperationContract]
         int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj);
         [OperationContract]
@@ -41,6 +41,27 @@ namespace Hersan.CH.Contract
 
         #region Expedientes
         int CHU_Expedientes_Guardar(DataSet Tablas, int IdUsuario);
+        #endregion
+
+        #region NuevoPuesto
+        [OperationContract]
+        List<NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser);
+        [OperationContract]
+        int CHU_NuevoPuesto_Guardar(NuevoPuestoBE obj);
+        [OperationContract]
+        int CHU_NuevoPuesto_Actualizar(NuevoPuestoBE obj);
+
+        #endregion
+
+
+        #region DictamenNuevoPuesto
+        [OperationContract]
+        List<DictamenNuevoPuestoBE> CHU_DictamenNuevoP_Obtener();
+        [OperationContract]
+        int CHU_DictamenNuevoP_Guardar(DictamenNuevoPuestoBE obj);
+        [OperationContract]
+        int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj);
+
         #endregion
     }
 }

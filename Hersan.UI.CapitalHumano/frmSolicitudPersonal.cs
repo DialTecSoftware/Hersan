@@ -118,7 +118,7 @@ namespace Hersan.UI.CapitalHumano
         {
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
             try {
-                oList = oCHumano.CHU_SolicitudP_Obtener();
+                oList = oCHumano.CHU_SolicitudP_Obtener(BaseWinBP.UsuarioLogueado.ID);
                 gvDatos.DataSource = oList;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las solicitudes\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -201,12 +201,12 @@ namespace Hersan.UI.CapitalHumano
                 #endregion
 
                 #region Correo
-                string pwd = "nomames21";
-                string smtp = "stmp.gmail.com";
-                string emisor = "moisegreg30@gmail.com";
-                string destinatario = "moisegreg30@gmail.com";
-                string asunto = "Asunto: Solicitud de sustitucion personal("+ DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
-                string CuerpoMsg = "Entidad :"+ cboEntidad.SelectedValue.ToString();
+                string pwd = "Catcooptest";
+                string smtp = "smtp.GMAIL.com";
+                string emisor = "Key.Solutions.Test@gmail.com";
+                string destinatario = "moisegreg30@gmail.com,gregory.moise@dialtec.com.mx";
+                string asunto = "Nueva Solicitud de Sustitución de Personal("+ DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
+                string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la nueva solicitud y hacer las continuaciones necesarias!!" ;
                
                 int port = 587;
         
@@ -238,6 +238,7 @@ namespace Hersan.UI.CapitalHumano
                         RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         LimpiarCampos();
                         CargarSolicitudes();
+                        BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
                     }
                 }
             } catch (Exception ex) {

@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDictamenSustitucion));
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -37,23 +49,11 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -84,9 +84,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
-            this.DockSolicitud = new Telerik.WinControls.UI.Docking.DocumentWindow();
-            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
-            this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.toolWindow1 = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.txtIdDictam = new System.Windows.Forms.TextBox();
             this.lblfecha = new System.Windows.Forms.Label();
@@ -96,8 +93,11 @@
             this.txtDictamen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.documentContainer2 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
+            this.DockSolicitud = new Telerik.WinControls.UI.Docking.DocumentWindow();
+            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.DockDictamen = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.gvDictamen = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
@@ -105,17 +105,17 @@
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
-            this.DockSolicitud.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
-            this.toolTabStrip1.SuspendLayout();
             this.toolWindow1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboResultado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
+            this.toolTabStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer2)).BeginInit();
             this.documentContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
             this.documentTabStrip1.SuspendLayout();
+            this.DockSolicitud.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
             this.DockDictamen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDictamen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDictamen.MasterTemplate)).BeginInit();
@@ -391,7 +391,7 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.toolWindow1;
+            this.radDock1.ActiveWindow = this.DockDictamen;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.documentContainer2);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -407,99 +407,6 @@
             this.radDock1.TabIndex = 3;
             this.radDock1.TabStop = false;
             this.radDock1.ActiveWindowChanged += new Telerik.WinControls.UI.Docking.DockWindowEventHandler(this.radDock1_ActiveWindowChanged);
-            // 
-            // DockSolicitud
-            // 
-            this.DockSolicitud.Controls.Add(this.gvDatos);
-            this.DockSolicitud.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
-            this.DockSolicitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DockSolicitud.Location = new System.Drawing.Point(6, 29);
-            this.DockSolicitud.Name = "DockSolicitud";
-            this.DockSolicitud.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.DockSolicitud.Size = new System.Drawing.Size(412, 333);
-            this.DockSolicitud.Tag = "1";
-            this.DockSolicitud.Text = "Ver Solicitudes ";
-            // 
-            // gvDatos
-            // 
-            this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 0);
-            // 
-            // 
-            // 
-            this.gvDatos.MasterTemplate.AllowAddNewRow = false;
-            this.gvDatos.MasterTemplate.AllowColumnReorder = false;
-            this.gvDatos.MasterTemplate.AllowDeleteRow = false;
-            this.gvDatos.MasterTemplate.AllowDragToGroup = false;
-            this.gvDatos.MasterTemplate.AllowEditRow = false;
-            this.gvDatos.MasterTemplate.AutoExpandGroups = true;
-            gridViewTextBoxColumn1.FieldName = "Entidades.Nombre";
-            gridViewTextBoxColumn1.HeaderText = "Entidades";
-            gridViewTextBoxColumn1.Name = "ENT_Nombre";
-            gridViewTextBoxColumn1.Width = 100;
-            gridViewTextBoxColumn2.FieldName = "Departamentos.Nombre";
-            gridViewTextBoxColumn2.HeaderText = "Departamentos";
-            gridViewTextBoxColumn2.Name = "DEP_Nombre";
-            gridViewTextBoxColumn2.Width = 100;
-            gridViewTextBoxColumn3.FieldName = "Puestos.Nombre";
-            gridViewTextBoxColumn3.HeaderText = "Puestos";
-            gridViewTextBoxColumn3.Name = "PUE_Nombre";
-            gridViewTextBoxColumn3.Width = 100;
-            gridViewTextBoxColumn4.FieldName = "TiposContrato.Nombre";
-            gridViewTextBoxColumn4.HeaderText = "Tipo Contrato";
-            gridViewTextBoxColumn4.Name = "TCO_Nombre";
-            gridViewTextBoxColumn4.Width = 100;
-            gridViewTextBoxColumn5.FieldName = "Sueldo";
-            gridViewTextBoxColumn5.HeaderText = "Sueldo";
-            gridViewTextBoxColumn5.Name = "Sueldo";
-            gridViewTextBoxColumn5.Width = 70;
-            gridViewTextBoxColumn6.FieldName = "Justificacion";
-            gridViewTextBoxColumn6.HeaderText = "Justificacion";
-            gridViewTextBoxColumn6.Name = "Justificacion";
-            gridViewTextBoxColumn6.Width = 100;
-            gridViewTextBoxColumn7.FieldName = "Indicadores";
-            gridViewTextBoxColumn7.HeaderText = "Indicadores";
-            gridViewTextBoxColumn7.Name = "Indicadores";
-            gridViewTextBoxColumn7.Width = 100;
-            gridViewTextBoxColumn8.FieldName = "Id";
-            gridViewTextBoxColumn8.HeaderText = "ID";
-            gridViewTextBoxColumn8.Name = "Id";
-            this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
-            this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
-            this.gvDatos.Name = "gvDatos";
-            this.gvDatos.ShowGroupPanel = false;
-            this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(412, 333);
-            this.gvDatos.TabIndex = 8;
-            this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
-            // 
-            // toolTabStrip1
-            // 
-            this.toolTabStrip1.CanUpdateChildIndex = true;
-            this.toolTabStrip1.Controls.Add(this.toolWindow1);
-            this.toolTabStrip1.Location = new System.Drawing.Point(5, 5);
-            this.toolTabStrip1.Name = "toolTabStrip1";
-            // 
-            // 
-            // 
-            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.ShowItemToolTips = false;
-            this.toolTabStrip1.Size = new System.Drawing.Size(377, 368);
-            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(377, 200);
-            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(177, 0);
-            this.toolTabStrip1.TabIndex = 1;
-            this.toolTabStrip1.TabStop = false;
             // 
             // toolWindow1
             // 
@@ -563,7 +470,6 @@
             this.cboResultado.Name = "cboResultado";
             this.cboResultado.Size = new System.Drawing.Size(125, 20);
             this.cboResultado.TabIndex = 6;
-            this.cboResultado.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboResultado_SelectedIndexChanged);
             // 
             // txtObser
             // 
@@ -599,6 +505,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Dictamen";
             // 
+            // toolTabStrip1
+            // 
+            this.toolTabStrip1.CanUpdateChildIndex = true;
+            this.toolTabStrip1.Controls.Add(this.toolWindow1);
+            this.toolTabStrip1.Location = new System.Drawing.Point(5, 5);
+            this.toolTabStrip1.Name = "toolTabStrip1";
+            // 
+            // 
+            // 
+            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.toolTabStrip1.SelectedIndex = 0;
+            this.toolTabStrip1.ShowItemToolTips = false;
+            this.toolTabStrip1.Size = new System.Drawing.Size(377, 368);
+            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(377, 200);
+            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(177, 0);
+            this.toolTabStrip1.TabIndex = 1;
+            this.toolTabStrip1.TabStop = false;
+            // 
             // documentContainer2
             // 
             this.documentContainer2.Controls.Add(this.documentTabStrip1);
@@ -623,12 +547,86 @@
             // 
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentTabStrip1.SelectedIndex = 0;
+            this.documentTabStrip1.SelectedIndex = 1;
             this.documentTabStrip1.Size = new System.Drawing.Size(424, 368);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             this.documentTabStrip1.SelectedIndexChanged += new System.EventHandler(this.documentTabStrip1_SelectedIndexChanged);
-            this.documentTabStrip1.TabIndexChanged += new System.EventHandler(this.documentTabStrip1_TabIndexChanged);
+            // 
+            // DockSolicitud
+            // 
+            this.DockSolicitud.Controls.Add(this.gvDatos);
+            this.DockSolicitud.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
+            this.DockSolicitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DockSolicitud.Location = new System.Drawing.Point(6, 29);
+            this.DockSolicitud.Name = "DockSolicitud";
+            this.DockSolicitud.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
+            this.DockSolicitud.Size = new System.Drawing.Size(412, 308);
+            this.DockSolicitud.Tag = "1";
+            this.DockSolicitud.Text = "Ver Solicitudes ";
+            // 
+            // gvDatos
+            // 
+            this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDatos.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.gvDatos.MasterTemplate.AllowAddNewRow = false;
+            this.gvDatos.MasterTemplate.AllowColumnReorder = false;
+            this.gvDatos.MasterTemplate.AllowDeleteRow = false;
+            this.gvDatos.MasterTemplate.AllowDragToGroup = false;
+            this.gvDatos.MasterTemplate.AllowEditRow = false;
+            this.gvDatos.MasterTemplate.AutoExpandGroups = true;
+            gridViewTextBoxColumn12.FieldName = "Entidades.Nombre";
+            gridViewTextBoxColumn12.HeaderText = "Entidades";
+            gridViewTextBoxColumn12.Name = "ENT_Nombre";
+            gridViewTextBoxColumn12.Width = 100;
+            gridViewTextBoxColumn13.FieldName = "Departamentos.Nombre";
+            gridViewTextBoxColumn13.HeaderText = "Departamentos";
+            gridViewTextBoxColumn13.Name = "DEP_Nombre";
+            gridViewTextBoxColumn13.Width = 100;
+            gridViewTextBoxColumn14.FieldName = "Puestos.Nombre";
+            gridViewTextBoxColumn14.HeaderText = "Puestos";
+            gridViewTextBoxColumn14.Name = "PUE_Nombre";
+            gridViewTextBoxColumn14.Width = 100;
+            gridViewTextBoxColumn15.FieldName = "TiposContrato.Nombre";
+            gridViewTextBoxColumn15.HeaderText = "Tipo Contrato";
+            gridViewTextBoxColumn15.Name = "TCO_Nombre";
+            gridViewTextBoxColumn15.Width = 100;
+            gridViewTextBoxColumn16.FieldName = "Sueldo";
+            gridViewTextBoxColumn16.HeaderText = "Sueldo";
+            gridViewTextBoxColumn16.Name = "Sueldo";
+            gridViewTextBoxColumn16.Width = 70;
+            gridViewTextBoxColumn17.FieldName = "Justificacion";
+            gridViewTextBoxColumn17.HeaderText = "Justificacion";
+            gridViewTextBoxColumn17.Name = "Justificacion";
+            gridViewTextBoxColumn17.Width = 100;
+            gridViewTextBoxColumn18.FieldName = "Indicadores";
+            gridViewTextBoxColumn18.HeaderText = "Indicadores";
+            gridViewTextBoxColumn18.Name = "Indicadores";
+            gridViewTextBoxColumn18.Width = 100;
+            gridViewTextBoxColumn19.FieldName = "Id";
+            gridViewTextBoxColumn19.HeaderText = "ID";
+            gridViewTextBoxColumn19.Name = "Id";
+            this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19});
+            this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gvDatos.Name = "gvDatos";
+            this.gvDatos.ShowGroupPanel = false;
+            this.gvDatos.ShowNoDataText = false;
+            this.gvDatos.ShowRowErrors = false;
+            this.gvDatos.Size = new System.Drawing.Size(412, 308);
+            this.gvDatos.TabIndex = 8;
+            this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
             // DockDictamen
             // 
@@ -638,7 +636,7 @@
             this.DockDictamen.Location = new System.Drawing.Point(6, 29);
             this.DockDictamen.Name = "DockDictamen";
             this.DockDictamen.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.DockDictamen.Size = new System.Drawing.Size(408, 331);
+            this.DockDictamen.Size = new System.Drawing.Size(412, 333);
             this.DockDictamen.Tag = "2";
             this.DockDictamen.Text = "Ver Dictamenes";
             // 
@@ -655,72 +653,72 @@
             this.gvDictamen.MasterTemplate.AllowDragToGroup = false;
             this.gvDictamen.MasterTemplate.AllowEditRow = false;
             this.gvDictamen.MasterTemplate.AutoExpandGroups = true;
-            gridViewTextBoxColumn9.FieldName = "Id";
-            gridViewTextBoxColumn9.HeaderText = "ID";
-            gridViewTextBoxColumn9.IsVisible = false;
-            gridViewTextBoxColumn9.Name = "Id";
-            gridViewTextBoxColumn10.FieldName = "Solicitud.Id";
-            gridViewTextBoxColumn10.HeaderText = "IdSolicitud";
-            gridViewTextBoxColumn10.Name = "SPE_Id";
-            gridViewTextBoxColumn11.FieldName = "Entidades.Nombre";
-            gridViewTextBoxColumn11.HeaderText = "Entidad";
-            gridViewTextBoxColumn11.Name = "ENT_Nombre";
-            gridViewTextBoxColumn11.Width = 150;
-            gridViewTextBoxColumn12.FieldName = "Departamentos.Nombre";
-            gridViewTextBoxColumn12.HeaderText = "Departamento";
-            gridViewTextBoxColumn12.Name = "DEP_Nombre";
-            gridViewTextBoxColumn12.Width = 150;
-            gridViewTextBoxColumn13.FieldName = "Puestos.Nombre";
-            gridViewTextBoxColumn13.HeaderText = "Puesto";
-            gridViewTextBoxColumn13.Name = "PUE_Nombre";
-            gridViewTextBoxColumn13.Width = 150;
-            gridViewTextBoxColumn14.FieldName = "TiposContrato.Nombre";
-            gridViewTextBoxColumn14.HeaderText = "Tipos Contrato";
-            gridViewTextBoxColumn14.IsVisible = false;
-            gridViewTextBoxColumn14.Name = "TCO_Nombre";
-            gridViewTextBoxColumn14.Width = 100;
-            gridViewTextBoxColumn15.FieldName = "Dictamen";
-            gridViewTextBoxColumn15.HeaderText = "Dictamen";
-            gridViewTextBoxColumn15.Name = "DSU_Dictamen";
-            gridViewTextBoxColumn15.Width = 100;
-            gridViewTextBoxColumn16.FieldName = "Observaciones";
-            gridViewTextBoxColumn16.HeaderText = "Observaciones";
-            gridViewTextBoxColumn16.Name = "DSU_Observaciones";
+            gridViewTextBoxColumn1.FieldName = "Id";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "Id";
+            gridViewTextBoxColumn2.FieldName = "Solicitud.Id";
+            gridViewTextBoxColumn2.HeaderText = "IdSolicitud";
+            gridViewTextBoxColumn2.Name = "SPE_Id";
+            gridViewTextBoxColumn3.FieldName = "Entidades.Nombre";
+            gridViewTextBoxColumn3.HeaderText = "Entidad";
+            gridViewTextBoxColumn3.Name = "ENT_Nombre";
+            gridViewTextBoxColumn3.Width = 150;
+            gridViewTextBoxColumn4.FieldName = "Departamentos.Nombre";
+            gridViewTextBoxColumn4.HeaderText = "Departamento";
+            gridViewTextBoxColumn4.Name = "DEP_Nombre";
+            gridViewTextBoxColumn4.Width = 150;
+            gridViewTextBoxColumn5.FieldName = "Puestos.Nombre";
+            gridViewTextBoxColumn5.HeaderText = "Puesto";
+            gridViewTextBoxColumn5.Name = "PUE_Nombre";
+            gridViewTextBoxColumn5.Width = 150;
+            gridViewTextBoxColumn6.FieldName = "TiposContrato.Nombre";
+            gridViewTextBoxColumn6.HeaderText = "Tipos Contrato";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "TCO_Nombre";
+            gridViewTextBoxColumn6.Width = 100;
+            gridViewTextBoxColumn7.FieldName = "Dictamen";
+            gridViewTextBoxColumn7.HeaderText = "Dictamen";
+            gridViewTextBoxColumn7.Name = "DSU_Dictamen";
+            gridViewTextBoxColumn7.Width = 100;
+            gridViewTextBoxColumn8.FieldName = "Observaciones";
+            gridViewTextBoxColumn8.HeaderText = "Observaciones";
+            gridViewTextBoxColumn8.Name = "DSU_Observaciones";
             gridViewCheckBoxColumn1.FieldName = "Aceptado";
             gridViewCheckBoxColumn1.HeaderText = "Aceptado";
             gridViewCheckBoxColumn1.Name = "Aceptado";
-            gridViewTextBoxColumn17.FieldName = "Solicitud.Justificacion";
-            gridViewTextBoxColumn17.HeaderText = "Justificacion";
-            gridViewTextBoxColumn17.IsVisible = false;
-            gridViewTextBoxColumn17.Name = "Justificacion";
-            gridViewTextBoxColumn18.FieldName = "Solicitud.Indicadores";
-            gridViewTextBoxColumn18.HeaderText = "Indicadores";
-            gridViewTextBoxColumn18.IsVisible = false;
-            gridViewTextBoxColumn18.Name = "Indicadores";
-            gridViewTextBoxColumn19.FieldName = "Solicitud.Sueldo";
-            gridViewTextBoxColumn19.HeaderText = "Sueldo";
-            gridViewTextBoxColumn19.IsVisible = false;
-            gridViewTextBoxColumn19.Name = "Sueldo";
+            gridViewTextBoxColumn9.FieldName = "Solicitud.Justificacion";
+            gridViewTextBoxColumn9.HeaderText = "Justificacion";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "Justificacion";
+            gridViewTextBoxColumn10.FieldName = "Solicitud.Indicadores";
+            gridViewTextBoxColumn10.HeaderText = "Indicadores";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "Indicadores";
+            gridViewTextBoxColumn11.FieldName = "Solicitud.Sueldo";
+            gridViewTextBoxColumn11.HeaderText = "Sueldo";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "Sueldo";
             this.gvDictamen.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewCheckBoxColumn1,
             gridViewTextBoxColumn9,
             gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16,
-            gridViewCheckBoxColumn1,
-            gridViewTextBoxColumn17,
-            gridViewTextBoxColumn18,
-            gridViewTextBoxColumn19});
+            gridViewTextBoxColumn11});
             this.gvDictamen.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDictamen.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gvDictamen.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDictamen.Name = "gvDictamen";
             this.gvDictamen.ShowGroupPanel = false;
             this.gvDictamen.ShowNoDataText = false;
             this.gvDictamen.ShowRowErrors = false;
-            this.gvDictamen.Size = new System.Drawing.Size(408, 331);
+            this.gvDictamen.Size = new System.Drawing.Size(412, 333);
             this.gvDictamen.TabIndex = 9;
             this.gvDictamen.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDictamen_CurrentRowChanged);
             // 
@@ -747,18 +745,18 @@
             this.radPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).EndInit();
             this.radDock1.ResumeLayout(false);
-            this.DockSolicitud.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
-            this.toolTabStrip1.ResumeLayout(false);
             this.toolWindow1.ResumeLayout(false);
             this.toolWindow1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboResultado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
+            this.toolTabStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer2)).EndInit();
             this.documentContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
             this.documentTabStrip1.ResumeLayout(false);
+            this.DockSolicitud.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
             this.DockDictamen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDictamen.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDictamen)).EndInit();

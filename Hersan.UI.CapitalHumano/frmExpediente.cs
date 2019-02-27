@@ -188,7 +188,7 @@ namespace Hersan.UI.CapitalHumano
 
                 /* ALTA DE EXPEDIENTE */
                 if (int.Parse(txtId.Text) == 0) {
-                    Result = oCHumano.CHU_Expedientes_Guardar(oData, BaseWinBP.UsuarioLogueado.ID);
+                    //Result = oCHumano.CHU_Expedientes_Guardar(oData, BaseWinBP.UsuarioLogueado.ID);
 
                     if (Result != 0) {
                         RadMessageBox.Show("Expediente guardado correctamente\nEl folio asignado es: " + Result.ToString(), this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);

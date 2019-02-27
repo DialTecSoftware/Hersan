@@ -1,5 +1,6 @@
 ﻿using Hersan.CH.Contract;
 using Hersan.Entidades.CapitalHumano;
+using Hersan.Negocio;
 using Hersan.Negocio.CapitalHumano;
 using System.Collections.Generic;
 using System.Data;
@@ -28,9 +29,9 @@ namespace Hersan.CH.Service
             #endregion
 
        #region SolicitudPersonal
-            public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener()
+            public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser)
             {
-                return new SolicitudPersonalBP().CHU_SolicitudP_Obtener();
+                return new SolicitudPersonalBP().CHU_SolicitudP_Obtener(IdUser);
             }
             public int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj)
             {
@@ -61,6 +62,38 @@ namespace Hersan.CH.Service
         public int CHU_Expedientes_Guardar( DataSet Tablas, int IdUsuario)
         {
             return new ExpedientesBP().CHU_Expedientes_Guardar( Tablas, IdUsuario);
+        }
+
+        #endregion
+
+        #region NuevoPuesto
+        public List<NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser)
+        {
+            return new NuevoPuestoBP().CHU_NuevoPuesto_Obtener( IdUser);
+        }
+        public int CHU_NuevoPuesto_Guardar(NuevoPuestoBE obj)
+        {
+            return new NuevoPuestoBP().CHU_NuevoPuesto_Guardar(obj);
+        }
+        public int CHU_NuevoPuesto_Actualizar(NuevoPuestoBE obj)
+        {
+            return new NuevoPuestoBP().CHU_NuevoPuesto_Actualizar(obj);
+        }
+
+        #endregion
+
+        #region DictamenNuevoPuesto
+        public List<DictamenNuevoPuestoBE> CHU_DictamenNuevoP_Obtener()
+        {
+            return new DictamenNuevoPuestoBP().CHU_DictamenNuevoP_Obtener();
+        }
+        public int CHU_DictamenNuevoP_Guardar(DictamenNuevoPuestoBE obj)
+        {
+            return new DictamenNuevoPuestoBP().CHU_DictamenNuevoP_Guardar(obj);
+        }
+        public int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj)
+        {
+            return new DictamenNuevoPuestoBP().CHU_DictamenNuevoP_Actualizar(obj);
         }
 
         #endregion

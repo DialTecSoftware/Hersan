@@ -40,7 +40,36 @@ namespace Hersan.CH.Contract
         #endregion
 
         #region Expedientes
-        int CHU_Expedientes_Guardar(DataSet Tablas, int IdUsuario);
+        [OperationContract]
+        int CHU_Expedientes_Guardar(DataSet Tablas, byte[] Imagen, int IdUsuario);
+        [OperationContract]
+        List<ExpedientesBE> CHU_Expedientes_Consultar(ExpedientesBE Expediente);
+        [OperationContract]
+        int CHU_Expedientes_Actualizar(int Id, DataSet Tablas, byte[] Imagen, int IdUsuario);
+        [OperationContract]
+        int CHU_Expedientes_Eliminar(int Id, int IdUsuario);
+        [OperationContract]
+        List<ExpedientesDatosPersonales> CHU_ExpedientesDatosPersonales_Consultar(ExpedientesDatosPersonales Expediente);
+        [OperationContract]
+        List<ExpedientesBE> CHU_Expedientes_Obtener(int IdExpediente);
+        [OperationContract]
+        List<ExpedienteDocumentos> CHU_ExpedientesDocumentos_Consultar(ExpedienteDocumentos Expediente);
+        [OperationContract]
+        List<ExpedienteFamilia> CHU_Expediente_Familia_Consultar(ExpedienteFamilia Expediente);
+        [OperationContract]
+        List<ExpedienteEstudios> CHU_Expediente_Estudios_Consultar(ExpedienteEstudios Expediente);
+        [OperationContract]
+        List<ExpedienteEmpleos> CHU_Expediente_Empleos_Consultar(ExpedienteEmpleos Expediente);
+        [OperationContract]
+        List<ExpedienteSalud> CHU_Expediente_Salud_Consultar(ExpedienteSalud Expediente);
+        [OperationContract]
+        List<ExpedienteConocimiento> CHU_Expediente_Conocimiento_Consultar(ExpedienteConocimiento Expediente);
+        [OperationContract]
+        List<ExpedienteReferencias> CHU_Expediente_Referencias_Consultar(ExpedienteReferencias Expediente);
+        [OperationContract]
+        List<ExpedienteGenerales> CHU_Expediente_Generales_Consultar(ExpedienteGenerales Expediente);
+        [OperationContract]
+        List<ExpedienteEconomicos> CHU_Expediente_Economicos_Consultar(ExpedienteEconomicos Expediente);
         #endregion
     }
 }

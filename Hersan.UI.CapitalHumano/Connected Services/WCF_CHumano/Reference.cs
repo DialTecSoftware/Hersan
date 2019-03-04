@@ -44,6 +44,52 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_ActualizarResponse")]
         int CHUDictamenSolicitud_Actualizar(Hersan.Entidades.CapitalHumano.DictamenSustitucionBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_GuardarResponse")]
+        int CHU_Expedientes_Guardar(System.Data.DataSet Tablas, byte[] Imagen, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedientesBE> CHU_Expedientes_Consultar(Hersan.Entidades.CapitalHumano.ExpedientesBE Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_ActualizarResponse")]
+        int CHU_Expedientes_Actualizar(int Id, System.Data.DataSet Tablas, byte[] Imagen, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Eliminar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_EliminarResponse")]
+        int CHU_Expedientes_Eliminar(int Id, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDatosPersonales_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDatosPersonales_ConsultarRespon" +
+            "se")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedientesDatosPersonales> CHU_ExpedientesDatosPersonales_Consultar(Hersan.Entidades.CapitalHumano.ExpedientesDatosPersonales Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedientesBE> CHU_Expedientes_Obtener(int IdExpediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDocumentos_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDocumentos_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteDocumentos> CHU_ExpedientesDocumentos_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteDocumentos Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Familia_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Familia_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteFamilia> CHU_Expediente_Familia_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteFamilia Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteEstudios> CHU_Expediente_Estudios_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteEstudios Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Empleos_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Empleos_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteEmpleos> CHU_Expediente_Empleos_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteEmpleos Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Salud_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Salud_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteSalud> CHU_Expediente_Salud_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteSalud Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Conocimiento_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Conocimiento_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteConocimiento> CHU_Expediente_Conocimiento_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteConocimiento Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Referencias_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Referencias_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteReferencias> CHU_Expediente_Referencias_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteReferencias Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Generales_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Generales_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteGenerales> CHU_Expediente_Generales_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteGenerales Expediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteEconomicos> CHU_Expediente_Economicos_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteEconomicos Expediente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +157,66 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHUDictamenSolicitud_Actualizar(Hersan.Entidades.CapitalHumano.DictamenSustitucionBE obj) {
             return base.Channel.CHUDictamenSolicitud_Actualizar(obj);
+        }
+        
+        public int CHU_Expedientes_Guardar(System.Data.DataSet Tablas, byte[] Imagen, int IdUsuario) {
+            return base.Channel.CHU_Expedientes_Guardar(Tablas, Imagen, IdUsuario);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedientesBE> CHU_Expedientes_Consultar(Hersan.Entidades.CapitalHumano.ExpedientesBE Expediente) {
+            return base.Channel.CHU_Expedientes_Consultar(Expediente);
+        }
+        
+        public int CHU_Expedientes_Actualizar(int Id, System.Data.DataSet Tablas, byte[] Imagen, int IdUsuario) {
+            return base.Channel.CHU_Expedientes_Actualizar(Id, Tablas, Imagen, IdUsuario);
+        }
+        
+        public int CHU_Expedientes_Eliminar(int Id, int IdUsuario) {
+            return base.Channel.CHU_Expedientes_Eliminar(Id, IdUsuario);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedientesDatosPersonales> CHU_ExpedientesDatosPersonales_Consultar(Hersan.Entidades.CapitalHumano.ExpedientesDatosPersonales Expediente) {
+            return base.Channel.CHU_ExpedientesDatosPersonales_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedientesBE> CHU_Expedientes_Obtener(int IdExpediente) {
+            return base.Channel.CHU_Expedientes_Obtener(IdExpediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteDocumentos> CHU_ExpedientesDocumentos_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteDocumentos Expediente) {
+            return base.Channel.CHU_ExpedientesDocumentos_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteFamilia> CHU_Expediente_Familia_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteFamilia Expediente) {
+            return base.Channel.CHU_Expediente_Familia_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteEstudios> CHU_Expediente_Estudios_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteEstudios Expediente) {
+            return base.Channel.CHU_Expediente_Estudios_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteEmpleos> CHU_Expediente_Empleos_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteEmpleos Expediente) {
+            return base.Channel.CHU_Expediente_Empleos_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteSalud> CHU_Expediente_Salud_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteSalud Expediente) {
+            return base.Channel.CHU_Expediente_Salud_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteConocimiento> CHU_Expediente_Conocimiento_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteConocimiento Expediente) {
+            return base.Channel.CHU_Expediente_Conocimiento_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteReferencias> CHU_Expediente_Referencias_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteReferencias Expediente) {
+            return base.Channel.CHU_Expediente_Referencias_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteGenerales> CHU_Expediente_Generales_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteGenerales Expediente) {
+            return base.Channel.CHU_Expediente_Generales_Consultar(Expediente);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteEconomicos> CHU_Expediente_Economicos_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteEconomicos Expediente) {
+            return base.Channel.CHU_Expediente_Economicos_Consultar(Expediente);
         }
     }
 }

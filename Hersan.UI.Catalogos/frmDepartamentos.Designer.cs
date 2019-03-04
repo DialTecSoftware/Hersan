@@ -337,10 +337,10 @@
             gridViewTextBoxColumn3.Width = 100;
             gridViewTextBoxColumn4.FieldName = "Nombre";
             gridViewTextBoxColumn4.HeaderText = "Departamento";
-            gridViewTextBoxColumn4.MaxWidth = 200;
-            gridViewTextBoxColumn4.MinWidth = 150;
+            gridViewTextBoxColumn4.MaxWidth = 300;
+            gridViewTextBoxColumn4.MinWidth = 250;
             gridViewTextBoxColumn4.Name = "NombreDepto";
-            gridViewTextBoxColumn4.Width = 150;
+            gridViewTextBoxColumn4.Width = 250;
             gridViewTextBoxColumn4.WrapText = true;
             gridViewTextBoxColumn5.FieldName = "Abrev";
             gridViewTextBoxColumn5.HeaderText = "Abreviatura";

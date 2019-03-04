@@ -207,7 +207,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(263, 15);
+            this.txtId.Location = new System.Drawing.Point(457, 37);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(64, 20);
             this.txtId.TabIndex = 4;
@@ -218,7 +218,7 @@
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(83, 15);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(147, 20);
+            this.txtNombre.Size = new System.Drawing.Size(299, 20);
             this.txtNombre.TabIndex = 3;
             // 
             // label2

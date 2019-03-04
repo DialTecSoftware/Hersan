@@ -10,9 +10,9 @@ namespace Hersan.Negocio.CapitalHumano
 {
    public class SolicitudPersonalBP
     {
-        public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener()
+        public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser)
         {
-            return new SolicitudPersonalDA().CHU_SolicitudP_Obtener();
+            return new SolicitudPersonalDA().CHU_SolicitudP_Obtener( IdUser);
         }
         public int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj)
         {

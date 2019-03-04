@@ -52,6 +52,7 @@
     <Compile Include="CapitalHumano\EducacionBP.cs" />
     <Compile Include="CapitalHumano\ExpedientesBP.cs" />
     <Compile Include="CapitalHumano\FuncionesBP.cs" />
+    <Compile Include="CapitalHumano\NuevoPuestoBP.cs" />
     <Compile Include="CapitalHumano\PerfilesBP.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalBP.cs" />
     <Compile Include="Catalogos\CiudadesBP.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Catalogos\EstadosBP.cs" />
     <Compile Include="Catalogos\OrganigramaBP.cs" />
     <Compile Include="Catalogos\PaisesBP.cs" />
+    <Compile Include="CapitalHumano\DictamenNuevoPuestoBP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\EncriptadorBP.cs" />
     <Compile Include="Seguridad\MenusBP.cs" />

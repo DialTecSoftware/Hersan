@@ -46,9 +46,11 @@
   <ItemGroup>
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
     <Compile Include="CapitalHumano\ContratosBE.cs" />
+    <Compile Include="CapitalHumano\DictamenNuevoPuestoBE.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionBE.cs" />
     <Compile Include="CapitalHumano\ExpedientesBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
+    <Compile Include="CapitalHumano\NuevoPuestoBE.cs" />
     <Compile Include="CapitalHumano\PerfilesBE.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalBE.cs" />
     <Compile Include="Catalogos\CiudadesBE.cs" />

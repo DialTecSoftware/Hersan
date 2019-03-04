@@ -18,15 +18,16 @@ namespace Hersan.Datos.CapitalHumano
         #endregion
 
 
-        public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener()
+        public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser)
         {
             List<SolicitudPersonalBE> oList = new List<SolicitudPersonalBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_CHU_SPE_OBTENER, conn)) {
+                       
+                        cmd.Parameters.AddWithValue("@idUser", IdUser);
                         cmd.CommandType = CommandType.StoredProcedure;
-
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
                                 SolicitudPersonalBE obj = new SolicitudPersonalBE();

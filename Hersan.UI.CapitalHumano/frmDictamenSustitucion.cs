@@ -56,7 +56,7 @@ namespace Hersan.UI.CapitalHumano
 
                 list = oCHumano.CHUDictamenSolicitud_Obtener();
                 gvDictamen.DataSource = list;
-                gvDictamen.ClearSelection();
+                //gvDictamen.ClearSelection();
                 btnNuevo.Enabled = false;
                 btnGuardar.Enabled = true;
                 btnEliminar.Enabled = true;
@@ -74,7 +74,6 @@ namespace Hersan.UI.CapitalHumano
                 GroupDescriptor Entidades = new GroupDescriptor();
                 Entidades.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
                 this.gvDatos.GroupDescriptors.Add(Entidades);
-                //this.gvDictamen.GroupDescriptors.Add(Entidades);
            
 
                 lblfecha.Text=DateTime.Now.ToLongDateString();
@@ -88,7 +87,7 @@ namespace Hersan.UI.CapitalHumano
                 throw;
             }
 
-            //label4.Text =+ DateTime.Today.Day.ToString() + " de " + DateTime.Now.Month.ToString +" de " + DateTime.Today.Year;
+
         }
 
 
@@ -97,9 +96,9 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
             try {
                 DockWindow activeDocumen = this.radDock1.DocumentManager.ActiveDocument;
-                oList = oCHumano.CHU_SolicitudP_Obtener();
+                oList = oCHumano.CHU_SolicitudP_Obtener(BaseWinBP.UsuarioLogueado.ID);
                 gvDatos.DataSource = oList;
-                gvDatos.ClearSelection();
+                //gvDatos.ClearSelection();
                 btnGuardar.Enabled = false;
                 btnEliminar.Enabled = false;
             } catch (Exception ex) {
@@ -224,12 +223,6 @@ namespace Hersan.UI.CapitalHumano
             }
         }
 
-        private void cboResultado_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-          
-
-        }
-
      
 
         private void gvDictamen_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
@@ -266,14 +259,7 @@ namespace Hersan.UI.CapitalHumano
 
      
 
-        private void documentTabStrip1_TabIndexChanged(object sender, EventArgs e)
-        {
-            string select = documentTabStrip1.SelectedTab.Text.ToString();
-            if (documentTabStrip1.SelectedTab== DockDictamen) {
-                RadMessageBox.Show("ok");
-            }
-
-        }
+       
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -290,18 +276,13 @@ namespace Hersan.UI.CapitalHumano
             try {
                 if (documentTabStrip1.SelectedTab == this.DockDictamen) {
                     gvDatos.DataSource = null;
-                    LimpiarCampos();
-                    //gvDatos.ClearSelection();
                     CargarElementos_Dictamen();
                    
-
                 } else if (documentTabStrip1.SelectedTab == this.DockSolicitud) {
                     gvDictamen.DataSource = null;
                     LimpiarCampos();
-                    //gvDictamen.ClearSelection();
                     CargarSolicitudes();
-               
-                   
+                                
                 }
             } catch (Exception) {
 
@@ -314,8 +295,6 @@ namespace Hersan.UI.CapitalHumano
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
-                bool Flag = true;
-                Flag = cboResultado.Text.Trim().Length == 0 ? false : true;
                 btnGuardar.Enabled = true;
                 txtIdDictam.Text = "-1";
             } catch (Exception) {

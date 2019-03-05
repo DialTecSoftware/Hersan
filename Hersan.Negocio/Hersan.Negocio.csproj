@@ -69,6 +69,7 @@
     <Compile Include="Catalogos\OrganigramaBP.cs" />
     <Compile Include="Catalogos\PaisesBP.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoBP.cs" />
+    <Compile Include="Impersonar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\EncriptadorBP.cs" />
     <Compile Include="Seguridad\MenusBP.cs" />

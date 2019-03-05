@@ -19,32 +19,23 @@ namespace Hersan.Negocio.CapitalHumano
         private void GuardarImagen(int Expediente, Byte[] Imagen)
         {            
             BinaryWriter Writer = null;
+            string DominioRed = "";
+            string UsuarioRed = "cuidado"; string PasswordRed = "Cloud.2018";        
             string Name = RutaImagen + Expediente.ToString() + ".jpg";
             try {
-                //string DominioRed = "";
-
-                //string UsuarioRed = "Administrator";
-                //string PasswordRed = "$erV3R43L3m3n70s";
-
-                //string UsuarioRed = "";
-                //string PasswordRed = "";
 
                 //string[] userPass = new FacturacionDA().obtenerUserPassFTP();
-                //array de una dimension solo contiene mensaje de error
+                ////array de una dimension solo contiene mensaje de error
                 //if (userPass.Length == 1) {
                 //    result = userPass[0];
                 //    return result;
                 //}
 
-                ////***Para encriptar****////
-                //string pass = encDec.Encrypt(message);
-                ////***Para encriptar****////
-
-                //Desencriptamos usuario y password
+                ///Desencriptamos usuario y password
                 //UsuarioRed = DataEncryptor.Decrypt(userPass[0]);
                 //PasswordRed = DataEncryptor.Decrypt(userPass[1]);
 
-                //Imper.Impersonate(DominioRed, UsuarioRed, PasswordRed);
+                Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
 
                 // Create a new stream to write to the file
                 Writer = new BinaryWriter(File.OpenWrite(Name));
@@ -65,37 +56,14 @@ namespace Hersan.Negocio.CapitalHumano
             byte[] Foto;
             string Imagen = RutaImagen + Expediente.ToString() + ".jpg"; ;
             try {
-                //string DominioRed = "";
+                string DominioRed = "";
+                string UsuarioRed = "cuidado"; string PasswordRed = "Cloud.2018";
 
-                //string UsuarioRed = "Administrator";
-                //string PasswordRed = "$erV3R43L3m3n70s";
-
-                //string UsuarioRed = "";
-                //string PasswordRed = "";
-
-                //string[] userPass = new FacturacionDA().obtenerUserPassFTP();
-                //array de una dimension solo contiene mensaje de error
-                //if (userPass.Length == 1) {
-                //    result = userPass[0];
-                //    return result;
-                //}
-
-                ////***Para encriptar****////
-                //string pass = encDec.Encrypt(message);
-                ////***Para encriptar****////
-
-                //Desencriptamos usuario y password
-                //UsuarioRed = DataEncryptor.Decrypt(userPass[0]);
-                //PasswordRed = DataEncryptor.Decrypt(userPass[1]);
-
-                //Imper.Impersonate(DominioRed, UsuarioRed, PasswordRed);
-
+                Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
                 Foto =ConvertImage.FileToByteArray(Imagen);
 
             } catch (Exception ex) {
                 throw new Exception("Error al intentar guardar el archivo.", ex);
-            } finally {
-                //Imper.Undo();
             }
             return Foto;
         }

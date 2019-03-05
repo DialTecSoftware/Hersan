@@ -15,17 +15,11 @@ namespace Hersan.UI.CapitalHumano
 {
     public partial class frmDictamenNuevoP : Telerik.WinControls.UI.RadForm
     {
-       
+
         CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<NuevoPuestoBE> oList = new List<NuevoPuestoBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         List<DictamenNuevoPuestoBE> list = new List<DictamenNuevoPuestoBE>();
-
-        public frmDictamenNuevoP()
-        {
-            InitializeComponent();
-        }
-
 
         private void LimpiarCampos()
         {
@@ -36,7 +30,7 @@ namespace Hersan.UI.CapitalHumano
             txtJustif.Text = "";
             lblSueldo.Text = "";
             lblEntidad.Text = "";
-            lblDepto.Text= "";
+            lblDepto.Text = "";
             txtIdNuevoP.Text = "";
             txtIndicad.Text = "";
             txtJustif.Text = "";
@@ -47,9 +41,8 @@ namespace Hersan.UI.CapitalHumano
             txtResultados.Text = "";
             txtOpinionesCH.Text = "";
             txtOpinionesDG.Text = "";
-          
-        }
 
+        }
         private void CargarNuevosPuestos()
         {
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
@@ -59,12 +52,11 @@ namespace Hersan.UI.CapitalHumano
                 //gvDatos.ClearSelection();
                 btnGuardar.Enabled = false;
                 btnEliminar.Enabled = false;
-              
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las propuestas de puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally { oCHumano = null; }
         }
-
         private void CargarElementos_Dictamen()
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
@@ -77,14 +69,30 @@ namespace Hersan.UI.CapitalHumano
                 btnNuevo.Enabled = false;
                 btnGuardar.Enabled = true;
                 btnEliminar.Enabled = true;
-                
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar los elementos del dictamen\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCHumano = null;
             }
         }
+        private bool ValidarCampos()
+        {
+            bool Flag = true;
+            try {
+                Flag = txtOpinionesCH.Text.Trim().Length == 0 ? false : true;
+                Flag = txtOpinionesDG.Text.Trim().Length == 0 ? false : true;
 
+
+                return Flag;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public frmDictamenNuevoP()
+        {
+            InitializeComponent();
+        }
 
         private void frmDictamenNuevoP_Load(object sender, EventArgs e)
         {
@@ -94,14 +102,13 @@ namespace Hersan.UI.CapitalHumano
                 btnNuevo.Enabled = false;
                 rdbAceptado.IsChecked = true;
                 documentTabStrip1.SelectedTab = this.DockNuevoP;
-              
+
             } catch (Exception) {
 
                 throw;
             }
-            
-        }
 
+        }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -113,8 +120,8 @@ namespace Hersan.UI.CapitalHumano
                     lblNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
                     txtIndicad.Text = e.CurrentRow.Cells["Indicadores"].Value.ToString();
                     lblSueldo.Text = (e.CurrentRow.Cells["Sueldo"].Value.ToString());
-                    lblDepto.Text= (e.CurrentRow.Cells["DEP_Nombre"].Value.ToString());
-                   lblEntidad.Text = (e.CurrentRow.Cells["ENT_Nombre"].Value.ToString());
+                    lblDepto.Text = (e.CurrentRow.Cells["DEP_Nombre"].Value.ToString());
+                    lblEntidad.Text = (e.CurrentRow.Cells["ENT_Nombre"].Value.ToString());
                     lblOcupantes.Text = (e.CurrentRow.Cells["Ocupantes"].Value.ToString());
                     txtResultados.Text = (e.CurrentRow.Cells["Resultados"].Value.ToString());
                     txtObjetivos.Text = (e.CurrentRow.Cells["Objetivos"].Value.ToString());
@@ -126,12 +133,10 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void txtPuestosCargo_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void documentTabStrip1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try {
@@ -151,28 +156,11 @@ namespace Hersan.UI.CapitalHumano
                 throw;
             }
         }
-
-
-        private bool ValidarCampos()
-        {
-           
-            bool Flag = true;
-            try {
-                Flag = txtOpinionesCH.Text.Trim().Length == 0 ? false : true;
-                Flag = txtOpinionesDG.Text.Trim().Length == 0 ? false : true;
-
-
-                return Flag;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             DictamenNuevoPuestoBE obj = new DictamenNuevoPuestoBE();
-            
+
             try {
                 if (!ValidarCampos()) {
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
@@ -192,16 +180,16 @@ namespace Hersan.UI.CapitalHumano
 
 
                 if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                  bool  myItem = rdbAceptado.IsChecked;
-                    if (rdbAceptado.IsChecked==true) {
+                    bool myItem = rdbAceptado.IsChecked;
+                    if (rdbAceptado.IsChecked == true) {
                         obj.Autorizado = true;
-                    } else { 
+                    } else {
                         obj.Autorizado = false;
                     }
-                
-                  obj.NuevoPuesto.Id = int.Parse(txtIdNuevoP.Text);
-                  obj.Id = int.Parse(txtId.Text);
-                  obj.OpinionesCH = txtOpinionesCH.Text;
+
+                    obj.NuevoPuesto.Id = int.Parse(txtIdNuevoP.Text);
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.OpinionesCH = txtOpinionesCH.Text;
                     obj.OpinionesDG = txtOpinionesDG.Text;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                     obj.DatosUsuario.Estatus = true;
@@ -242,7 +230,6 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -253,13 +240,12 @@ namespace Hersan.UI.CapitalHumano
                 throw;
             }
         }
-
         private void gvDictamenes_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
                 if (gvDictamenes.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
-                
-                    txtIdNuevoP.Text= e.CurrentRow.Cells["Id_NVP"].Value.ToString();
+
+                    txtIdNuevoP.Text = e.CurrentRow.Cells["Id_NVP"].Value.ToString();
                     txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
                     txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
                     lblNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
@@ -279,8 +265,7 @@ namespace Hersan.UI.CapitalHumano
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
-}
-
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -289,7 +274,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
@@ -327,5 +311,5 @@ namespace Hersan.UI.CapitalHumano
             }
         }
     }
-    }
+}
 

@@ -82,7 +82,6 @@ namespace Hersan.CH.Contract
 
         #endregion
 
-
         #region DictamenNuevoPuesto
         [OperationContract]
         List<DictamenNuevoPuestoBE> CHU_DictamenNuevoP_Obtener();

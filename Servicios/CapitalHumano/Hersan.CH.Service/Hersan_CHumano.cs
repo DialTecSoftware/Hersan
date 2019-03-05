@@ -25,14 +25,14 @@ namespace Hersan.CH.Service
         {
             return new PerfilesBP().CHU_Perfiles_Elimina(IdPerfil, IdUsuario);
         }
-            #endregion
+        #endregion
 
         #region SolicitudPersonal
-            public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener()
-            {
-                return new SolicitudPersonalBP().CHU_SolicitudP_Obtener();
-            }
-            public int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj)
+        public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser)
+        {
+            return new SolicitudPersonalBP().CHU_SolicitudP_Obtener(IdUser);
+        }
+        public int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj)
             {
                 return new SolicitudPersonalBP().CHU_SolicitudP_Guardar(obj);
             }
@@ -118,6 +118,38 @@ namespace Hersan.CH.Service
         {
             return new ExpedientesBP().CHU_Expediente_Economicos_Consultar(Expediente);
         }
+        #endregion
+
+        #region NuevoPuesto
+        public List<NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser)
+        {
+            return new NuevoPuestoBP().CHU_NuevoPuesto_Obtener(IdUser);
+        }
+        public int CHU_NuevoPuesto_Guardar(NuevoPuestoBE obj)
+        {
+            return new NuevoPuestoBP().CHU_NuevoPuesto_Guardar(obj);
+        }
+        public int CHU_NuevoPuesto_Actualizar(NuevoPuestoBE obj)
+        {
+            return new NuevoPuestoBP().CHU_NuevoPuesto_Actualizar(obj);
+        }
+
+        #endregion
+
+        #region DictamenNuevoPuesto
+        public List<DictamenNuevoPuestoBE> CHU_DictamenNuevoP_Obtener()
+        {
+            return new DictamenNuevoPuestoBP().CHU_DictamenNuevoP_Obtener();
+        }
+        public int CHU_DictamenNuevoP_Guardar(DictamenNuevoPuestoBE obj)
+        {
+            return new DictamenNuevoPuestoBP().CHU_DictamenNuevoP_Guardar(obj);
+        }
+        public int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj)
+        {
+            return new DictamenNuevoPuestoBP().CHU_DictamenNuevoP_Actualizar(obj);
+        }
+
         #endregion
     }
 }

@@ -171,12 +171,12 @@ namespace Hersan.UI.CapitalHumano
                     return;
                 }
 
-           
+
                 if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                     string myItem = cboResultado.SelectedItem.ToString();
                     if (myItem == "Aceptado") {
                         obj.Aceptado = true;
-                    } else if (myItem == "Rechazado" ) {
+                    } else if (myItem == "Rechazado") {
                         obj.Aceptado = false;
                     }
                     obj.Solicitud.Id = int.Parse(txtIdSu.Text);
@@ -185,6 +185,17 @@ namespace Hersan.UI.CapitalHumano
                     obj.Dictamen = txtDictamen.Text;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                     obj.DatosUsuario.Estatus = true;
+
+                    #region Correo
+                    string pwd = "Catcooptest";
+                    string smtp = "smtp.GMAIL.com";
+                    string emisor = "Key.Solutions.Test@gmail.com";
+                    string destinatario = "gregory.moise@dialtec.com.mx";                  
+                    string asunto = "Respuesta a su Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
+                    string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la  y hacer las continuaciones si necesarias!!";
+                    int port = 587;
+
+                    #endregion
 
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
@@ -198,6 +209,7 @@ namespace Hersan.UI.CapitalHumano
                             CargarElementos_Dictamen();
                             documentTabStrip1.SelectedTab = this.DockDictamen;
 
+                            BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
 
                         }
                     } else {

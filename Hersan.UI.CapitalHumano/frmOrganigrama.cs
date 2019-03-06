@@ -273,9 +273,9 @@ namespace Hersan.UI.CapitalHumano
 
         private void btnVerDiagrama_Click(object sender, EventArgs e)
         {
-            Form frm = new DiagramFirstLook.OrgChartForm();
-            frm.ShowDialog();
-            frm.WindowState = FormWindowState.Maximized;
+            //Form frm = new DiagramFirstLook.OrgChartForm();
+            //frm.ShowDialog();
+            //frm.WindowState = FormWindowState.Maximized;
         }
     }
 }

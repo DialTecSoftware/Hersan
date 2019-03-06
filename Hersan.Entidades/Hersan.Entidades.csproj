@@ -48,6 +48,7 @@
     <Compile Include="CapitalHumano\ContratosBE.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoBE.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionBE.cs" />
+    <Compile Include="CapitalHumano\EvaluacionInduccionBE.cs" />
     <Compile Include="CapitalHumano\ExpedientesBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
     <Compile Include="CapitalHumano\NuevoPuestoBE.cs" />

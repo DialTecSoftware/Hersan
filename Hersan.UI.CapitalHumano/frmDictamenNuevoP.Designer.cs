@@ -104,7 +104,7 @@
             this.gvDictamenes = new Telerik.WinControls.UI.RadGridView();
             this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.toolWindow1 = new Telerik.WinControls.UI.Docking.ToolWindow();
-            this.radRadioButton2 = new Telerik.WinControls.UI.RadRadioButton();
+            this.rdbRechazado = new Telerik.WinControls.UI.RadRadioButton();
             this.rdbAceptado = new Telerik.WinControls.UI.RadRadioButton();
             this.lblfecha = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -115,11 +115,11 @@
             this.lblEntidad = new System.Windows.Forms.Label();
             this.txtOpinionesDG = new System.Windows.Forms.TextBox();
             this.txtOpinionesCH = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
             this.DockNuevoP = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
-            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -131,7 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
             this.toolTabStrip1.SuspendLayout();
             this.toolWindow1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdbRechazado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdbAceptado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
             this.documentContainer1.SuspendLayout();
@@ -150,7 +150,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1284, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(1288, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -279,7 +279,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1284, 201);
+            this.radPanel1.Size = new System.Drawing.Size(1288, 201);
             this.radPanel1.TabIndex = 1;
             // 
             // txtIdNuevoP
@@ -288,6 +288,7 @@
             this.txtIdNuevoP.Name = "txtIdNuevoP";
             this.txtIdNuevoP.Size = new System.Drawing.Size(62, 20);
             this.txtIdNuevoP.TabIndex = 75;
+            this.txtIdNuevoP.Visible = false;
             // 
             // txtId
             // 
@@ -295,6 +296,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(58, 20);
             this.txtId.TabIndex = 74;
+            this.txtId.Visible = false;
             // 
             // txtObjetivos
             // 
@@ -482,7 +484,7 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.DockDictamen;
+            this.radDock1.ActiveWindow = this.toolWindow1;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -494,7 +496,7 @@
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1284, 501);
+            this.radDock1.Size = new System.Drawing.Size(1288, 494);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -505,7 +507,7 @@
             this.DockDictamen.Location = new System.Drawing.Point(6, 29);
             this.DockDictamen.Name = "DockDictamen";
             this.DockDictamen.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.DockDictamen.Size = new System.Drawing.Size(843, 456);
+            this.DockDictamen.Size = new System.Drawing.Size(847, 449);
             this.DockDictamen.Text = "VER DICTAMENES";
             // 
             // gvDictamenes
@@ -617,7 +619,7 @@
             this.gvDictamenes.ShowGroupPanel = false;
             this.gvDictamenes.ShowNoDataText = false;
             this.gvDictamenes.ShowRowErrors = false;
-            this.gvDictamenes.Size = new System.Drawing.Size(843, 456);
+            this.gvDictamenes.Size = new System.Drawing.Size(847, 449);
             this.gvDictamenes.TabIndex = 10;
             this.gvDictamenes.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDictamenes_CurrentRowChanged);
             // 
@@ -632,7 +634,7 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(415, 491);
+            this.toolTabStrip1.Size = new System.Drawing.Size(415, 484);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(415, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(215, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -641,7 +643,7 @@
             // toolWindow1
             // 
             this.toolWindow1.Caption = null;
-            this.toolWindow1.Controls.Add(this.radRadioButton2);
+            this.toolWindow1.Controls.Add(this.rdbRechazado);
             this.toolWindow1.Controls.Add(this.rdbAceptado);
             this.toolWindow1.Controls.Add(this.lblfecha);
             this.toolWindow1.Controls.Add(this.label15);
@@ -663,16 +665,16 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 24);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(413, 465);
+            this.toolWindow1.Size = new System.Drawing.Size(413, 458);
             this.toolWindow1.Text = "toolWindow1";
             // 
-            // radRadioButton2
+            // rdbRechazado
             // 
-            this.radRadioButton2.Location = new System.Drawing.Point(168, 110);
-            this.radRadioButton2.Name = "radRadioButton2";
-            this.radRadioButton2.Size = new System.Drawing.Size(74, 18);
-            this.radRadioButton2.TabIndex = 71;
-            this.radRadioButton2.Text = "Rechazado";
+            this.rdbRechazado.Location = new System.Drawing.Point(168, 110);
+            this.rdbRechazado.Name = "rdbRechazado";
+            this.rdbRechazado.Size = new System.Drawing.Size(74, 18);
+            this.rdbRechazado.TabIndex = 71;
+            this.rdbRechazado.Text = "Rechazado";
             // 
             // rdbAceptado
             // 
@@ -764,6 +766,15 @@
             this.txtOpinionesCH.Size = new System.Drawing.Size(205, 79);
             this.txtOpinionesCH.TabIndex = 32;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(279, 92);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Sueldo:";
+            // 
             // documentContainer1
             // 
             this.documentContainer1.Controls.Add(this.documentTabStrip1);
@@ -789,7 +800,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(855, 491);
+            this.documentTabStrip1.Size = new System.Drawing.Size(859, 484);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             this.documentTabStrip1.SelectedIndexChanged += new System.EventHandler(this.documentTabStrip1_SelectedIndexChanged);
@@ -903,20 +914,11 @@
             this.gvDatos.TabIndex = 9;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(279, 92);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 13);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Sueldo:";
-            // 
             // frmDictamenNuevoP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 758);
+            this.ClientSize = new System.Drawing.Size(1288, 751);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -926,6 +928,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "frmDictamenNuevoP";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmDictamenNuevoP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
@@ -940,7 +943,7 @@
             this.toolTabStrip1.ResumeLayout(false);
             this.toolWindow1.ResumeLayout(false);
             this.toolWindow1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdbRechazado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdbAceptado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
             this.documentContainer1.ResumeLayout(false);
@@ -1007,7 +1010,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtOpinionesDG;
         private System.Windows.Forms.TextBox txtOpinionesCH;
-        private Telerik.WinControls.UI.RadRadioButton radRadioButton2;
+        private Telerik.WinControls.UI.RadRadioButton rdbRechazado;
         private Telerik.WinControls.UI.RadRadioButton rdbAceptado;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtIdNuevoP;

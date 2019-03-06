@@ -15,7 +15,7 @@ namespace Hersan.UI.CapitalHumano
 {
     public partial class frmDictamenNuevoP : Telerik.WinControls.UI.RadForm
     {
-       
+
         CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<NuevoPuestoBE> oList = new List<NuevoPuestoBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
@@ -36,7 +36,7 @@ namespace Hersan.UI.CapitalHumano
             txtJustif.Text = "";
             lblSueldo.Text = "";
             lblEntidad.Text = "";
-            lblDepto.Text= "";
+            lblDepto.Text = "";
             txtIdNuevoP.Text = "";
             txtIndicad.Text = "";
             txtJustif.Text = "";
@@ -47,7 +47,7 @@ namespace Hersan.UI.CapitalHumano
             txtResultados.Text = "";
             txtOpinionesCH.Text = "";
             txtOpinionesDG.Text = "";
-          
+
         }
 
         private void CargarNuevosPuestos()
@@ -59,7 +59,7 @@ namespace Hersan.UI.CapitalHumano
                 //gvDatos.ClearSelection();
                 btnGuardar.Enabled = false;
                 btnEliminar.Enabled = false;
-              
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las propuestas de puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally { oCHumano = null; }
@@ -77,7 +77,7 @@ namespace Hersan.UI.CapitalHumano
                 btnNuevo.Enabled = false;
                 btnGuardar.Enabled = true;
                 btnEliminar.Enabled = true;
-                
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar los elementos del dictamen\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -94,12 +94,12 @@ namespace Hersan.UI.CapitalHumano
                 btnNuevo.Enabled = false;
                 rdbAceptado.IsChecked = true;
                 documentTabStrip1.SelectedTab = this.DockNuevoP;
-              
+
             } catch (Exception) {
 
                 throw;
             }
-            
+
         }
 
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
@@ -113,8 +113,8 @@ namespace Hersan.UI.CapitalHumano
                     lblNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
                     txtIndicad.Text = e.CurrentRow.Cells["Indicadores"].Value.ToString();
                     lblSueldo.Text = (e.CurrentRow.Cells["Sueldo"].Value.ToString());
-                    lblDepto.Text= (e.CurrentRow.Cells["DEP_Nombre"].Value.ToString());
-                   lblEntidad.Text = (e.CurrentRow.Cells["ENT_Nombre"].Value.ToString());
+                    lblDepto.Text = (e.CurrentRow.Cells["DEP_Nombre"].Value.ToString());
+                    lblEntidad.Text = (e.CurrentRow.Cells["ENT_Nombre"].Value.ToString());
                     lblOcupantes.Text = (e.CurrentRow.Cells["Ocupantes"].Value.ToString());
                     txtResultados.Text = (e.CurrentRow.Cells["Resultados"].Value.ToString());
                     txtObjetivos.Text = (e.CurrentRow.Cells["Objetivos"].Value.ToString());
@@ -155,7 +155,7 @@ namespace Hersan.UI.CapitalHumano
 
         private bool ValidarCampos()
         {
-           
+
             bool Flag = true;
             try {
                 Flag = txtOpinionesCH.Text.Trim().Length == 0 ? false : true;
@@ -172,7 +172,7 @@ namespace Hersan.UI.CapitalHumano
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             DictamenNuevoPuestoBE obj = new DictamenNuevoPuestoBE();
-            
+
             try {
                 if (!ValidarCampos()) {
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
@@ -192,19 +192,33 @@ namespace Hersan.UI.CapitalHumano
 
 
                 if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                  bool  myItem = rdbAceptado.IsChecked;
-                    if (rdbAceptado.IsChecked==true) {
+                    bool myItem = rdbAceptado.IsChecked;
+                    if (rdbAceptado.IsChecked == true) {
                         obj.Autorizado = true;
-                    } else { 
+                    } else {
                         obj.Autorizado = false;
                     }
-                
-                  obj.NuevoPuesto.Id = int.Parse(txtIdNuevoP.Text);
-                  obj.Id = int.Parse(txtId.Text);
-                  obj.OpinionesCH = txtOpinionesCH.Text;
+
+                    obj.NuevoPuesto.Id = int.Parse(txtIdNuevoP.Text);
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.OpinionesCH = txtOpinionesCH.Text;
                     obj.OpinionesDG = txtOpinionesDG.Text;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                     obj.DatosUsuario.Estatus = true;
+
+
+
+                    #region Correo
+                    string pwd = "Catcooptest";
+                    string smtp = "smtp.GMAIL.com";
+                    string emisor = "Key.Solutions.Test@gmail.com";
+                    string destinatario = "gregory.moise@dialtec.com.mx";
+                    string asunto = "Nueva Propuesta de Apertura de Puesto(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
+                    string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la nueva solicitud y hacer las continuaciones necesarias!!";
+
+                    int port = 587;
+                    #endregion
+
 
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
@@ -217,7 +231,7 @@ namespace Hersan.UI.CapitalHumano
                             LimpiarCampos();
                             CargarElementos_Dictamen();
                             documentTabStrip1.SelectedTab = this.DockDictamen;
-
+                            BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
 
                         }
                     } else {
@@ -230,8 +244,7 @@ namespace Hersan.UI.CapitalHumano
                             LimpiarCampos();
                             CargarElementos_Dictamen();
                             documentTabStrip1.SelectedTab = this.DockDictamen;
-
-
+                            BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
                         }
                     }
                 }
@@ -258,8 +271,8 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 if (gvDictamenes.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
-                
-                    txtIdNuevoP.Text= e.CurrentRow.Cells["Id_NVP"].Value.ToString();
+
+                    txtIdNuevoP.Text = e.CurrentRow.Cells["Id_NVP"].Value.ToString();
                     txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
                     txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
                     lblNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
@@ -275,11 +288,16 @@ namespace Hersan.UI.CapitalHumano
                     txtOpinionesCH.Text = (e.CurrentRow.Cells["OpinionesCH"].Value.ToString());
                     txtOpinionesDG.Text = (e.CurrentRow.Cells["OpinionesDG"].Value.ToString());
                     txtPuestosCargo.Text = (e.CurrentRow.Cells["PuestosCargo"].Value.ToString());
-                }
+                    if (bool.Parse(e.CurrentRow.Cells["Autorizado"].Value.ToString()) == true) {
+                        rdbAceptado.IsChecked = true;
+                    } else {
+                        rdbRechazado.IsChecked = true;
+                    }
+                    }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
-}
+        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -327,5 +345,4 @@ namespace Hersan.UI.CapitalHumano
             }
         }
     }
-    }
-
+}

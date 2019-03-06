@@ -120,87 +120,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
-            this.tabEconomia = new Telerik.WinControls.UI.Docking.DocumentWindow();
-            this.radGroupBox11 = new Telerik.WinControls.UI.RadGroupBox();
-            this.label115 = new System.Windows.Forms.Label();
-            this.txtGastosMes = new Telerik.WinControls.UI.RadTextBox();
-            this.label116 = new System.Windows.Forms.Label();
-            this.label114 = new System.Windows.Forms.Label();
-            this.txtAbonoMes = new Telerik.WinControls.UI.RadTextBox();
-            this.label112 = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
-            this.txtDeudaImporte = new Telerik.WinControls.UI.RadTextBox();
-            this.label111 = new System.Windows.Forms.Label();
-            this.label110 = new System.Windows.Forms.Label();
-            this.txtModelo = new Telerik.WinControls.UI.RadTextBox();
-            this.label108 = new System.Windows.Forms.Label();
-            this.label109 = new System.Windows.Forms.Label();
-            this.txtRentaMes = new Telerik.WinControls.UI.RadTextBox();
-            this.label107 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label105 = new System.Windows.Forms.Label();
-            this.txtPercepcionMes = new Telerik.WinControls.UI.RadTextBox();
-            this.label103 = new System.Windows.Forms.Label();
-            this.label102 = new System.Windows.Forms.Label();
-            this.txtIngresoMensual = new Telerik.WinControls.UI.RadTextBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.txtDeudaSi = new Telerik.WinControls.UI.RadTextBox();
-            this.opDeudaNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opDeudaSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label96 = new System.Windows.Forms.Label();
-            this.txtMarca = new Telerik.WinControls.UI.RadTextBox();
-            this.opAutoNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opAutoSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label97 = new System.Windows.Forms.Label();
-            this.opRentaNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opRentaSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label98 = new System.Windows.Forms.Label();
-            this.txtValorAprox = new Telerik.WinControls.UI.RadTextBox();
-            this.opPropiaNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opPropiaSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label99 = new System.Windows.Forms.Label();
-            this.txtIngresoSi = new Telerik.WinControls.UI.RadTextBox();
-            this.txtConyugeSi = new Telerik.WinControls.UI.RadTextBox();
-            this.opConyugeNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opConyugeSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label100 = new System.Windows.Forms.Label();
-            this.opIngresoNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opIngresoSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label101 = new System.Windows.Forms.Label();
-            this.radGroupBox10 = new Telerik.WinControls.UI.RadGroupBox();
-            this.dtFechaTranajar = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.label89 = new System.Windows.Forms.Label();
-            this.txtCambiarNo = new Telerik.WinControls.UI.RadTextBox();
-            this.opCambiarSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.opCambiarNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.label88 = new System.Windows.Forms.Label();
-            this.txtViajarNo = new Telerik.WinControls.UI.RadTextBox();
-            this.opViajarSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.opViajarNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.label85 = new System.Windows.Forms.Label();
-            this.txtSeguroVidaSi = new Telerik.WinControls.UI.RadTextBox();
-            this.opSeguroVidaNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opSeguroVidaSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label84 = new System.Windows.Forms.Label();
-            this.txtSindicatoSi = new Telerik.WinControls.UI.RadTextBox();
-            this.opSindicatoNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opSindicatoSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label83 = new System.Windows.Forms.Label();
-            this.txtAfianzadoSi = new Telerik.WinControls.UI.RadTextBox();
-            this.opAfianzadoNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opAfianzadoSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label82 = new System.Windows.Forms.Label();
-            this.txtOtroMedio = new Telerik.WinControls.UI.RadTextBox();
-            this.txtParientesSi = new Telerik.WinControls.UI.RadTextBox();
-            this.opParientesNo = new Telerik.WinControls.UI.RadRadioButton();
-            this.opParientesSi = new Telerik.WinControls.UI.RadRadioButton();
-            this.label86 = new System.Windows.Forms.Label();
-            this.opAnuncio = new Telerik.WinControls.UI.RadRadioButton();
-            this.opOtroMedio = new Telerik.WinControls.UI.RadRadioButton();
-            this.label87 = new System.Windows.Forms.Label();
-            this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
-            this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
             this.tabDatos = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
@@ -273,6 +192,8 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtCurp = new Telerik.WinControls.UI.RadTextBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
+            this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
             this.tabFamilia = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
@@ -399,6 +320,85 @@
             this.opSaludBueno = new Telerik.WinControls.UI.RadRadioButton();
             this.opSaludRegular = new Telerik.WinControls.UI.RadRadioButton();
             this.label47 = new System.Windows.Forms.Label();
+            this.tabEconomia = new Telerik.WinControls.UI.Docking.DocumentWindow();
+            this.radGroupBox11 = new Telerik.WinControls.UI.RadGroupBox();
+            this.label115 = new System.Windows.Forms.Label();
+            this.txtGastosMes = new Telerik.WinControls.UI.RadTextBox();
+            this.label116 = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.txtAbonoMes = new Telerik.WinControls.UI.RadTextBox();
+            this.label112 = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
+            this.txtDeudaImporte = new Telerik.WinControls.UI.RadTextBox();
+            this.label111 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.txtModelo = new Telerik.WinControls.UI.RadTextBox();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.txtRentaMes = new Telerik.WinControls.UI.RadTextBox();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label105 = new System.Windows.Forms.Label();
+            this.txtPercepcionMes = new Telerik.WinControls.UI.RadTextBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.txtIngresoMensual = new Telerik.WinControls.UI.RadTextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.txtDeudaSi = new Telerik.WinControls.UI.RadTextBox();
+            this.opDeudaNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opDeudaSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label96 = new System.Windows.Forms.Label();
+            this.txtMarca = new Telerik.WinControls.UI.RadTextBox();
+            this.opAutoNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opAutoSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label97 = new System.Windows.Forms.Label();
+            this.opRentaNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opRentaSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label98 = new System.Windows.Forms.Label();
+            this.txtValorAprox = new Telerik.WinControls.UI.RadTextBox();
+            this.opPropiaNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opPropiaSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label99 = new System.Windows.Forms.Label();
+            this.txtIngresoSi = new Telerik.WinControls.UI.RadTextBox();
+            this.txtConyugeSi = new Telerik.WinControls.UI.RadTextBox();
+            this.opConyugeNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opConyugeSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label100 = new System.Windows.Forms.Label();
+            this.opIngresoNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opIngresoSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label101 = new System.Windows.Forms.Label();
+            this.radGroupBox10 = new Telerik.WinControls.UI.RadGroupBox();
+            this.dtFechaTranajar = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.label89 = new System.Windows.Forms.Label();
+            this.txtCambiarNo = new Telerik.WinControls.UI.RadTextBox();
+            this.opCambiarSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.opCambiarNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.label88 = new System.Windows.Forms.Label();
+            this.txtViajarNo = new Telerik.WinControls.UI.RadTextBox();
+            this.opViajarSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.opViajarNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.label85 = new System.Windows.Forms.Label();
+            this.txtSeguroVidaSi = new Telerik.WinControls.UI.RadTextBox();
+            this.opSeguroVidaNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opSeguroVidaSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label84 = new System.Windows.Forms.Label();
+            this.txtSindicatoSi = new Telerik.WinControls.UI.RadTextBox();
+            this.opSindicatoNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opSindicatoSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label83 = new System.Windows.Forms.Label();
+            this.txtAfianzadoSi = new Telerik.WinControls.UI.RadTextBox();
+            this.opAfianzadoNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opAfianzadoSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label82 = new System.Windows.Forms.Label();
+            this.txtOtroMedio = new Telerik.WinControls.UI.RadTextBox();
+            this.txtParientesSi = new Telerik.WinControls.UI.RadTextBox();
+            this.opParientesNo = new Telerik.WinControls.UI.RadRadioButton();
+            this.opParientesSi = new Telerik.WinControls.UI.RadRadioButton();
+            this.label86 = new System.Windows.Forms.Label();
+            this.opAnuncio = new Telerik.WinControls.UI.RadRadioButton();
+            this.opOtroMedio = new Telerik.WinControls.UI.RadRadioButton();
+            this.label87 = new System.Windows.Forms.Label();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -416,61 +416,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
-            this.tabEconomia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox11)).BeginInit();
-            this.radGroupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGastosMes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAbonoMes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeudaImporte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModelo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRentaMes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPercepcionMes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIngresoMensual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeudaSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opDeudaNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opDeudaSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMarca)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAutoNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAutoSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opRentaNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opRentaSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtValorAprox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opPropiaNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opPropiaSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIngresoSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtConyugeSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opConyugeNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opConyugeSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opIngresoNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opIngresoSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox10)).BeginInit();
-            this.radGroupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaTranajar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCambiarNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opCambiarSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opCambiarNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtViajarNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opViajarSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opViajarNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSeguroVidaSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opSeguroVidaNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opSeguroVidaSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSindicatoSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opSindicatoNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opSindicatoSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAfianzadoSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAfianzadoNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAfianzadoSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOtroMedio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtParientesSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opParientesNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opParientesSi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAnuncio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opOtroMedio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
-            this.documentContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
-            this.documentTabStrip1.SuspendLayout();
             this.tabDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
@@ -513,6 +458,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRFC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAfore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
+            this.documentContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
+            this.documentTabStrip1.SuspendLayout();
             this.tabFamilia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
             this.radGroupBox5.SuspendLayout();
@@ -609,6 +558,57 @@
             ((System.ComponentModel.ISupportInitialize)(this.opSaludMalo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opSaludBueno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opSaludRegular)).BeginInit();
+            this.tabEconomia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox11)).BeginInit();
+            this.radGroupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGastosMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAbonoMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeudaImporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRentaMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPercepcionMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIngresoMensual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeudaSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opDeudaNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opDeudaSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAutoNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAutoSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opRentaNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opRentaSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValorAprox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opPropiaNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opPropiaSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIngresoSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConyugeSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opConyugeNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opConyugeSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opIngresoNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opIngresoSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox10)).BeginInit();
+            this.radGroupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaTranajar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCambiarNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opCambiarSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opCambiarNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtViajarNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opViajarSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opViajarNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSeguroVidaSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opSeguroVidaNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opSeguroVidaSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSindicatoSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opSindicatoNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opSindicatoSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAfianzadoSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAfianzadoNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAfianzadoSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtroMedio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtParientesSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opParientesNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opParientesSi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAnuncio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opOtroMedio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -619,7 +619,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1198, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(1198, 78);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -755,7 +755,7 @@
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 53);
+            this.radPanel1.Location = new System.Drawing.Point(0, 78);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(1198, 120);
             this.radPanel1.TabIndex = 1;
@@ -958,813 +958,17 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 173);
+            this.radDock1.Location = new System.Drawing.Point(0, 198);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1198, 555);
+            this.radDock1.Size = new System.Drawing.Size(1198, 530);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             this.radDock1.ActiveWindowChanged += new Telerik.WinControls.UI.Docking.DockWindowEventHandler(this.radDock1_ActiveWindowChanged);
-            // 
-            // tabEconomia
-            // 
-            this.tabEconomia.Controls.Add(this.radGroupBox11);
-            this.tabEconomia.Controls.Add(this.radGroupBox10);
-            this.tabEconomia.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
-            this.tabEconomia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabEconomia.Location = new System.Drawing.Point(6, 29);
-            this.tabEconomia.Name = "tabEconomia";
-            this.tabEconomia.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.tabEconomia.Size = new System.Drawing.Size(1176, 510);
-            this.tabEconomia.Text = "DATOS GENERALES Y ECONÓMICOS";
-            // 
-            // radGroupBox11
-            // 
-            this.radGroupBox11.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox11.Controls.Add(this.label115);
-            this.radGroupBox11.Controls.Add(this.txtGastosMes);
-            this.radGroupBox11.Controls.Add(this.label116);
-            this.radGroupBox11.Controls.Add(this.label114);
-            this.radGroupBox11.Controls.Add(this.txtAbonoMes);
-            this.radGroupBox11.Controls.Add(this.label112);
-            this.radGroupBox11.Controls.Add(this.label113);
-            this.radGroupBox11.Controls.Add(this.txtDeudaImporte);
-            this.radGroupBox11.Controls.Add(this.label111);
-            this.radGroupBox11.Controls.Add(this.label110);
-            this.radGroupBox11.Controls.Add(this.txtModelo);
-            this.radGroupBox11.Controls.Add(this.label108);
-            this.radGroupBox11.Controls.Add(this.label109);
-            this.radGroupBox11.Controls.Add(this.txtRentaMes);
-            this.radGroupBox11.Controls.Add(this.label107);
-            this.radGroupBox11.Controls.Add(this.label106);
-            this.radGroupBox11.Controls.Add(this.label104);
-            this.radGroupBox11.Controls.Add(this.label105);
-            this.radGroupBox11.Controls.Add(this.txtPercepcionMes);
-            this.radGroupBox11.Controls.Add(this.label103);
-            this.radGroupBox11.Controls.Add(this.label102);
-            this.radGroupBox11.Controls.Add(this.txtIngresoMensual);
-            this.radGroupBox11.Controls.Add(this.label95);
-            this.radGroupBox11.Controls.Add(this.txtDeudaSi);
-            this.radGroupBox11.Controls.Add(this.opDeudaNo);
-            this.radGroupBox11.Controls.Add(this.opDeudaSi);
-            this.radGroupBox11.Controls.Add(this.label96);
-            this.radGroupBox11.Controls.Add(this.txtMarca);
-            this.radGroupBox11.Controls.Add(this.opAutoNo);
-            this.radGroupBox11.Controls.Add(this.opAutoSi);
-            this.radGroupBox11.Controls.Add(this.label97);
-            this.radGroupBox11.Controls.Add(this.opRentaNo);
-            this.radGroupBox11.Controls.Add(this.opRentaSi);
-            this.radGroupBox11.Controls.Add(this.label98);
-            this.radGroupBox11.Controls.Add(this.txtValorAprox);
-            this.radGroupBox11.Controls.Add(this.opPropiaNo);
-            this.radGroupBox11.Controls.Add(this.opPropiaSi);
-            this.radGroupBox11.Controls.Add(this.label99);
-            this.radGroupBox11.Controls.Add(this.txtIngresoSi);
-            this.radGroupBox11.Controls.Add(this.txtConyugeSi);
-            this.radGroupBox11.Controls.Add(this.opConyugeNo);
-            this.radGroupBox11.Controls.Add(this.opConyugeSi);
-            this.radGroupBox11.Controls.Add(this.label100);
-            this.radGroupBox11.Controls.Add(this.opIngresoNo);
-            this.radGroupBox11.Controls.Add(this.opIngresoSi);
-            this.radGroupBox11.Controls.Add(this.label101);
-            this.radGroupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGroupBox11.HeaderText = "Datos Económicos";
-            this.radGroupBox11.Location = new System.Drawing.Point(561, 0);
-            this.radGroupBox11.Name = "radGroupBox11";
-            this.radGroupBox11.Size = new System.Drawing.Size(615, 510);
-            this.radGroupBox11.TabIndex = 2;
-            this.radGroupBox11.Text = "Datos Económicos";
-            // 
-            // label115
-            // 
-            this.label115.AutoSize = true;
-            this.label115.Location = new System.Drawing.Point(264, 340);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(13, 13);
-            this.label115.TabIndex = 155;
-            this.label115.Text = "$";
-            // 
-            // txtGastosMes
-            // 
-            this.txtGastosMes.Location = new System.Drawing.Point(279, 336);
-            this.txtGastosMes.Name = "txtGastosMes";
-            this.txtGastosMes.Size = new System.Drawing.Size(174, 20);
-            this.txtGastosMes.TabIndex = 154;
-            this.txtGastosMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // label116
-            // 
-            this.label116.AutoSize = true;
-            this.label116.Location = new System.Drawing.Point(264, 316);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(238, 13);
-            this.label116.TabIndex = 153;
-            this.label116.Text = "¿ A cúanto ascienden sus gastos mensuales ?";
-            // 
-            // label114
-            // 
-            this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(66, 340);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(13, 13);
-            this.label114.TabIndex = 152;
-            this.label114.Text = "$";
-            // 
-            // txtAbonoMes
-            // 
-            this.txtAbonoMes.Location = new System.Drawing.Point(81, 336);
-            this.txtAbonoMes.Name = "txtAbonoMes";
-            this.txtAbonoMes.Size = new System.Drawing.Size(141, 20);
-            this.txtAbonoMes.TabIndex = 150;
-            this.txtAbonoMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(406, 287);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(13, 13);
-            this.label112.TabIndex = 149;
-            this.label112.Text = "$";
-            // 
-            // label113
-            // 
-            this.label113.AutoSize = true;
-            this.label113.Location = new System.Drawing.Point(406, 267);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(47, 13);
-            this.label113.TabIndex = 148;
-            this.label113.Text = "Importe";
-            // 
-            // txtDeudaImporte
-            // 
-            this.txtDeudaImporte.Location = new System.Drawing.Point(421, 283);
-            this.txtDeudaImporte.Name = "txtDeudaImporte";
-            this.txtDeudaImporte.Size = new System.Drawing.Size(109, 20);
-            this.txtDeudaImporte.TabIndex = 147;
-            this.txtDeudaImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // label111
-            // 
-            this.label111.AutoSize = true;
-            this.label111.Location = new System.Drawing.Point(364, 222);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(47, 13);
-            this.label111.TabIndex = 146;
-            this.label111.Text = "Modelo";
-            // 
-            // label110
-            // 
-            this.label110.AutoSize = true;
-            this.label110.Location = new System.Drawing.Point(209, 222);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(38, 13);
-            this.label110.TabIndex = 145;
-            this.label110.Text = "Marca";
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Location = new System.Drawing.Point(359, 238);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(133, 20);
-            this.txtModelo.TabIndex = 144;
-            // 
-            // label108
-            // 
-            this.label108.AutoSize = true;
-            this.label108.Location = new System.Drawing.Point(180, 196);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(13, 13);
-            this.label108.TabIndex = 143;
-            this.label108.Text = "$";
-            // 
-            // label109
-            // 
-            this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(180, 176);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(84, 13);
-            this.label109.TabIndex = 142;
-            this.label109.Text = "Renta Mensual";
-            // 
-            // txtRentaMes
-            // 
-            this.txtRentaMes.Location = new System.Drawing.Point(180, 192);
-            this.txtRentaMes.Name = "txtRentaMes";
-            this.txtRentaMes.Size = new System.Drawing.Size(122, 20);
-            this.txtRentaMes.TabIndex = 141;
-            this.txtRentaMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(180, 147);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(13, 13);
-            this.label107.TabIndex = 140;
-            this.label107.Text = "$";
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Location = new System.Drawing.Point(180, 127);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(97, 13);
-            this.label106.TabIndex = 139;
-            this.label106.Text = "Valor aproximado";
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Location = new System.Drawing.Point(406, 95);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(13, 13);
-            this.label104.TabIndex = 138;
-            this.label104.Text = "$";
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(406, 75);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(110, 13);
-            this.label105.TabIndex = 137;
-            this.label105.Text = "Percepción Mensual";
-            // 
-            // txtPercepcionMes
-            // 
-            this.txtPercepcionMes.Location = new System.Drawing.Point(421, 91);
-            this.txtPercepcionMes.Name = "txtPercepcionMes";
-            this.txtPercepcionMes.Size = new System.Drawing.Size(109, 20);
-            this.txtPercepcionMes.TabIndex = 136;
-            this.txtPercepcionMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(406, 51);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(13, 13);
-            this.label103.TabIndex = 135;
-            this.label103.Text = "$";
-            // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(406, 31);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(94, 13);
-            this.label102.TabIndex = 134;
-            this.label102.Text = "Importe Mensual";
-            // 
-            // txtIngresoMensual
-            // 
-            this.txtIngresoMensual.Location = new System.Drawing.Point(421, 47);
-            this.txtIngresoMensual.Name = "txtIngresoMensual";
-            this.txtIngresoMensual.Size = new System.Drawing.Size(109, 20);
-            this.txtIngresoMensual.TabIndex = 133;
-            this.txtIngresoMensual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(62, 316);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(175, 13);
-            this.label95.TabIndex = 129;
-            this.label95.Text = "¿ Cúanto abona mensualmente ?";
-            // 
-            // txtDeudaSi
-            // 
-            this.txtDeudaSi.Location = new System.Drawing.Point(224, 283);
-            this.txtDeudaSi.Name = "txtDeudaSi";
-            this.txtDeudaSi.Size = new System.Drawing.Size(176, 20);
-            this.txtDeudaSi.TabIndex = 128;
-            // 
-            // opDeudaNo
-            // 
-            this.opDeudaNo.Location = new System.Drawing.Point(68, 283);
-            this.opDeudaNo.Name = "opDeudaNo";
-            this.opDeudaNo.Size = new System.Drawing.Size(35, 18);
-            this.opDeudaNo.TabIndex = 127;
-            this.opDeudaNo.TabStop = false;
-            this.opDeudaNo.Text = "No";
-            // 
-            // opDeudaSi
-            // 
-            this.opDeudaSi.Location = new System.Drawing.Point(114, 283);
-            this.opDeudaSi.Name = "opDeudaSi";
-            this.opDeudaSi.Size = new System.Drawing.Size(108, 18);
-            this.opDeudaSi.TabIndex = 126;
-            this.opDeudaSi.TabStop = false;
-            this.opDeudaSi.Text = "Sí  (¿ con quien ?)";
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(57, 267);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(91, 13);
-            this.label96.TabIndex = 125;
-            this.label96.Text = "¿ Tiene deudas ?";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(212, 238);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(133, 20);
-            this.txtMarca.TabIndex = 124;
-            // 
-            // opAutoNo
-            // 
-            this.opAutoNo.Location = new System.Drawing.Point(68, 238);
-            this.opAutoNo.Name = "opAutoNo";
-            this.opAutoNo.Size = new System.Drawing.Size(35, 18);
-            this.opAutoNo.TabIndex = 123;
-            this.opAutoNo.TabStop = false;
-            this.opAutoNo.Text = "No";
-            // 
-            // opAutoSi
-            // 
-            this.opAutoSi.Location = new System.Drawing.Point(114, 238);
-            this.opAutoSi.Name = "opAutoSi";
-            this.opAutoSi.Size = new System.Drawing.Size(29, 18);
-            this.opAutoSi.TabIndex = 122;
-            this.opAutoSi.TabStop = false;
-            this.opAutoSi.Text = "Sí";
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(57, 222);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(142, 13);
-            this.label97.TabIndex = 121;
-            this.label97.Text = "¿ Tiene automóvil propio ?";
-            // 
-            // opRentaNo
-            // 
-            this.opRentaNo.Location = new System.Drawing.Point(68, 192);
-            this.opRentaNo.Name = "opRentaNo";
-            this.opRentaNo.Size = new System.Drawing.Size(35, 18);
-            this.opRentaNo.TabIndex = 119;
-            this.opRentaNo.TabStop = false;
-            this.opRentaNo.Text = "No";
-            // 
-            // opRentaSi
-            // 
-            this.opRentaSi.Location = new System.Drawing.Point(114, 192);
-            this.opRentaSi.Name = "opRentaSi";
-            this.opRentaSi.Size = new System.Drawing.Size(29, 18);
-            this.opRentaSi.TabIndex = 118;
-            this.opRentaSi.TabStop = false;
-            this.opRentaSi.Text = "Sí";
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(57, 176);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(78, 13);
-            this.label98.TabIndex = 117;
-            this.label98.Text = "¿ Paga renta ?";
-            // 
-            // txtValorAprox
-            // 
-            this.txtValorAprox.Location = new System.Drawing.Point(180, 143);
-            this.txtValorAprox.Name = "txtValorAprox";
-            this.txtValorAprox.Size = new System.Drawing.Size(122, 20);
-            this.txtValorAprox.TabIndex = 116;
-            this.txtValorAprox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // opPropiaNo
-            // 
-            this.opPropiaNo.Location = new System.Drawing.Point(68, 143);
-            this.opPropiaNo.Name = "opPropiaNo";
-            this.opPropiaNo.Size = new System.Drawing.Size(35, 18);
-            this.opPropiaNo.TabIndex = 115;
-            this.opPropiaNo.TabStop = false;
-            this.opPropiaNo.Text = "No";
-            // 
-            // opPropiaSi
-            // 
-            this.opPropiaSi.Location = new System.Drawing.Point(114, 143);
-            this.opPropiaSi.Name = "opPropiaSi";
-            this.opPropiaSi.Size = new System.Drawing.Size(29, 18);
-            this.opPropiaSi.TabIndex = 114;
-            this.opPropiaSi.TabStop = false;
-            this.opPropiaSi.Text = "Sí";
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(57, 127);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(122, 13);
-            this.label99.TabIndex = 113;
-            this.label99.Text = "¿ Vive en casa propia ?";
-            // 
-            // txtIngresoSi
-            // 
-            this.txtIngresoSi.Location = new System.Drawing.Point(212, 47);
-            this.txtIngresoSi.Name = "txtIngresoSi";
-            this.txtIngresoSi.Size = new System.Drawing.Size(188, 20);
-            this.txtIngresoSi.TabIndex = 112;
-            // 
-            // txtConyugeSi
-            // 
-            this.txtConyugeSi.Location = new System.Drawing.Point(205, 91);
-            this.txtConyugeSi.Name = "txtConyugeSi";
-            this.txtConyugeSi.Size = new System.Drawing.Size(195, 20);
-            this.txtConyugeSi.TabIndex = 111;
-            // 
-            // opConyugeNo
-            // 
-            this.opConyugeNo.Location = new System.Drawing.Point(68, 91);
-            this.opConyugeNo.Name = "opConyugeNo";
-            this.opConyugeNo.Size = new System.Drawing.Size(35, 18);
-            this.opConyugeNo.TabIndex = 110;
-            this.opConyugeNo.TabStop = false;
-            this.opConyugeNo.Text = "No";
-            // 
-            // opConyugeSi
-            // 
-            this.opConyugeSi.Location = new System.Drawing.Point(114, 91);
-            this.opConyugeSi.Name = "opConyugeSi";
-            this.opConyugeSi.Size = new System.Drawing.Size(88, 18);
-            this.opConyugeSi.TabIndex = 109;
-            this.opConyugeSi.TabStop = false;
-            this.opConyugeSi.Text = "Sí (¿ dónde ?)";
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(57, 75);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(122, 13);
-            this.label100.TabIndex = 108;
-            this.label100.Text = "¿ Su cónyuge trabaja ?";
-            // 
-            // opIngresoNo
-            // 
-            this.opIngresoNo.Location = new System.Drawing.Point(68, 47);
-            this.opIngresoNo.Name = "opIngresoNo";
-            this.opIngresoNo.Size = new System.Drawing.Size(35, 18);
-            this.opIngresoNo.TabIndex = 107;
-            this.opIngresoNo.TabStop = false;
-            this.opIngresoNo.Text = "No";
-            // 
-            // opIngresoSi
-            // 
-            this.opIngresoSi.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.opIngresoSi.Location = new System.Drawing.Point(108, 47);
-            this.opIngresoSi.Name = "opIngresoSi";
-            this.opIngresoSi.Size = new System.Drawing.Size(98, 18);
-            this.opIngresoSi.TabIndex = 106;
-            this.opIngresoSi.Text = "Sí  (descríbalos)";
-            this.opIngresoSi.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(57, 31);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(159, 13);
-            this.label101.TabIndex = 105;
-            this.label101.Text = "¿ Tiene usted otros ingresos ?";
-            // 
-            // radGroupBox10
-            // 
-            this.radGroupBox10.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox10.Controls.Add(this.dtFechaTranajar);
-            this.radGroupBox10.Controls.Add(this.label89);
-            this.radGroupBox10.Controls.Add(this.txtCambiarNo);
-            this.radGroupBox10.Controls.Add(this.opCambiarSi);
-            this.radGroupBox10.Controls.Add(this.opCambiarNo);
-            this.radGroupBox10.Controls.Add(this.label88);
-            this.radGroupBox10.Controls.Add(this.txtViajarNo);
-            this.radGroupBox10.Controls.Add(this.opViajarSi);
-            this.radGroupBox10.Controls.Add(this.opViajarNo);
-            this.radGroupBox10.Controls.Add(this.label85);
-            this.radGroupBox10.Controls.Add(this.txtSeguroVidaSi);
-            this.radGroupBox10.Controls.Add(this.opSeguroVidaNo);
-            this.radGroupBox10.Controls.Add(this.opSeguroVidaSi);
-            this.radGroupBox10.Controls.Add(this.label84);
-            this.radGroupBox10.Controls.Add(this.txtSindicatoSi);
-            this.radGroupBox10.Controls.Add(this.opSindicatoNo);
-            this.radGroupBox10.Controls.Add(this.opSindicatoSi);
-            this.radGroupBox10.Controls.Add(this.label83);
-            this.radGroupBox10.Controls.Add(this.txtAfianzadoSi);
-            this.radGroupBox10.Controls.Add(this.opAfianzadoNo);
-            this.radGroupBox10.Controls.Add(this.opAfianzadoSi);
-            this.radGroupBox10.Controls.Add(this.label82);
-            this.radGroupBox10.Controls.Add(this.txtOtroMedio);
-            this.radGroupBox10.Controls.Add(this.txtParientesSi);
-            this.radGroupBox10.Controls.Add(this.opParientesNo);
-            this.radGroupBox10.Controls.Add(this.opParientesSi);
-            this.radGroupBox10.Controls.Add(this.label86);
-            this.radGroupBox10.Controls.Add(this.opAnuncio);
-            this.radGroupBox10.Controls.Add(this.opOtroMedio);
-            this.radGroupBox10.Controls.Add(this.label87);
-            this.radGroupBox10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radGroupBox10.HeaderText = "Datos Generales";
-            this.radGroupBox10.Location = new System.Drawing.Point(0, 0);
-            this.radGroupBox10.Name = "radGroupBox10";
-            this.radGroupBox10.Size = new System.Drawing.Size(561, 510);
-            this.radGroupBox10.TabIndex = 1;
-            this.radGroupBox10.Text = "Datos Generales";
-            // 
-            // dtFechaTranajar
-            // 
-            this.dtFechaTranajar.CustomFormat = "dd/MM/yyyy";
-            this.dtFechaTranajar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaTranajar.Location = new System.Drawing.Point(23, 378);
-            this.dtFechaTranajar.Name = "dtFechaTranajar";
-            this.dtFechaTranajar.Size = new System.Drawing.Size(114, 20);
-            this.dtFechaTranajar.TabIndex = 106;
-            this.dtFechaTranajar.TabStop = false;
-            this.dtFechaTranajar.Value = new System.DateTime(((long)(0)));
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(23, 362);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(228, 13);
-            this.label89.TabIndex = 105;
-            this.label89.Text = "Fecha en que podría presentarse a trabajar";
-            // 
-            // txtCambiarNo
-            // 
-            this.txtCambiarNo.Location = new System.Drawing.Point(173, 332);
-            this.txtCambiarNo.Name = "txtCambiarNo";
-            this.txtCambiarNo.Size = new System.Drawing.Size(250, 20);
-            this.txtCambiarNo.TabIndex = 104;
-            // 
-            // opCambiarSi
-            // 
-            this.opCambiarSi.Location = new System.Drawing.Point(34, 332);
-            this.opCambiarSi.Name = "opCambiarSi";
-            this.opCambiarSi.Size = new System.Drawing.Size(29, 18);
-            this.opCambiarSi.TabIndex = 103;
-            this.opCambiarSi.TabStop = false;
-            this.opCambiarSi.Text = "SI";
-            // 
-            // opCambiarNo
-            // 
-            this.opCambiarNo.Location = new System.Drawing.Point(80, 332);
-            this.opCambiarNo.Name = "opCambiarNo";
-            this.opCambiarNo.Size = new System.Drawing.Size(87, 18);
-            this.opCambiarNo.TabIndex = 102;
-            this.opCambiarNo.TabStop = false;
-            this.opCambiarNo.Text = "No  (razones)";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(23, 316);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(261, 13);
-            this.label88.TabIndex = 101;
-            this.label88.Text = "¿ Está dispuesto  cambiar de lugar de residencia ?";
-            // 
-            // txtViajarNo
-            // 
-            this.txtViajarNo.Location = new System.Drawing.Point(168, 283);
-            this.txtViajarNo.Name = "txtViajarNo";
-            this.txtViajarNo.Size = new System.Drawing.Size(250, 20);
-            this.txtViajarNo.TabIndex = 100;
-            // 
-            // opViajarSi
-            // 
-            this.opViajarSi.Location = new System.Drawing.Point(29, 283);
-            this.opViajarSi.Name = "opViajarSi";
-            this.opViajarSi.Size = new System.Drawing.Size(29, 18);
-            this.opViajarSi.TabIndex = 99;
-            this.opViajarSi.TabStop = false;
-            this.opViajarSi.Text = "SI";
-            // 
-            // opViajarNo
-            // 
-            this.opViajarNo.Location = new System.Drawing.Point(75, 283);
-            this.opViajarNo.Name = "opViajarNo";
-            this.opViajarNo.Size = new System.Drawing.Size(87, 18);
-            this.opViajarNo.TabIndex = 98;
-            this.opViajarNo.TabStop = false;
-            this.opViajarNo.Text = "No  (razones)";
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(18, 267);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(85, 13);
-            this.label85.TabIndex = 97;
-            this.label85.Text = "¿ Puede viajar ?";
-            // 
-            // txtSeguroVidaSi
-            // 
-            this.txtSeguroVidaSi.Location = new System.Drawing.Point(206, 238);
-            this.txtSeguroVidaSi.Name = "txtSeguroVidaSi";
-            this.txtSeguroVidaSi.Size = new System.Drawing.Size(212, 20);
-            this.txtSeguroVidaSi.TabIndex = 96;
-            // 
-            // opSeguroVidaNo
-            // 
-            this.opSeguroVidaNo.Location = new System.Drawing.Point(29, 238);
-            this.opSeguroVidaNo.Name = "opSeguroVidaNo";
-            this.opSeguroVidaNo.Size = new System.Drawing.Size(35, 18);
-            this.opSeguroVidaNo.TabIndex = 95;
-            this.opSeguroVidaNo.TabStop = false;
-            this.opSeguroVidaNo.Text = "No";
-            // 
-            // opSeguroVidaSi
-            // 
-            this.opSeguroVidaSi.Location = new System.Drawing.Point(75, 238);
-            this.opSeguroVidaSi.Name = "opSeguroVidaSi";
-            this.opSeguroVidaSi.Size = new System.Drawing.Size(125, 18);
-            this.opSeguroVidaSi.TabIndex = 94;
-            this.opSeguroVidaSi.TabStop = false;
-            this.opSeguroVidaSi.Text = "Sí (nombre del a cía.)";
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(18, 222);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(129, 13);
-            this.label84.TabIndex = 93;
-            this.label84.Text = "¿ Tiene seguro de vida ?";
-            // 
-            // txtSindicatoSi
-            // 
-            this.txtSindicatoSi.Location = new System.Drawing.Point(162, 192);
-            this.txtSindicatoSi.Name = "txtSindicatoSi";
-            this.txtSindicatoSi.Size = new System.Drawing.Size(256, 20);
-            this.txtSindicatoSi.TabIndex = 92;
-            // 
-            // opSindicatoNo
-            // 
-            this.opSindicatoNo.Location = new System.Drawing.Point(29, 192);
-            this.opSindicatoNo.Name = "opSindicatoNo";
-            this.opSindicatoNo.Size = new System.Drawing.Size(35, 18);
-            this.opSindicatoNo.TabIndex = 91;
-            this.opSindicatoNo.TabStop = false;
-            this.opSindicatoNo.Text = "No";
-            // 
-            // opSindicatoSi
-            // 
-            this.opSindicatoSi.Location = new System.Drawing.Point(75, 192);
-            this.opSindicatoSi.Name = "opSindicatoSi";
-            this.opSindicatoSi.Size = new System.Drawing.Size(81, 18);
-            this.opSindicatoSi.TabIndex = 90;
-            this.opSindicatoSi.TabStop = false;
-            this.opSindicatoSi.Text = "Sí (a Cúal ? )";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(18, 176);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(209, 13);
-            this.label83.TabIndex = 89;
-            this.label83.Text = "¿ Ha estado afiliado a algún sindicato ?";
-            // 
-            // txtAfianzadoSi
-            // 
-            this.txtAfianzadoSi.Location = new System.Drawing.Point(206, 143);
-            this.txtAfianzadoSi.Name = "txtAfianzadoSi";
-            this.txtAfianzadoSi.Size = new System.Drawing.Size(212, 20);
-            this.txtAfianzadoSi.TabIndex = 88;
-            // 
-            // opAfianzadoNo
-            // 
-            this.opAfianzadoNo.Location = new System.Drawing.Point(29, 143);
-            this.opAfianzadoNo.Name = "opAfianzadoNo";
-            this.opAfianzadoNo.Size = new System.Drawing.Size(35, 18);
-            this.opAfianzadoNo.TabIndex = 87;
-            this.opAfianzadoNo.TabStop = false;
-            this.opAfianzadoNo.Text = "No";
-            // 
-            // opAfianzadoSi
-            // 
-            this.opAfianzadoSi.Location = new System.Drawing.Point(75, 143);
-            this.opAfianzadoSi.Name = "opAfianzadoSi";
-            this.opAfianzadoSi.Size = new System.Drawing.Size(125, 18);
-            this.opAfianzadoSi.TabIndex = 86;
-            this.opAfianzadoSi.TabStop = false;
-            this.opAfianzadoSi.Text = "Sí (nombre del a cía.)";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(18, 127);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(129, 13);
-            this.label82.TabIndex = 85;
-            this.label82.Text = "¿ Ha estado afianzado ?";
-            // 
-            // txtOtroMedio
-            // 
-            this.txtOtroMedio.Location = new System.Drawing.Point(222, 47);
-            this.txtOtroMedio.Name = "txtOtroMedio";
-            this.txtOtroMedio.Size = new System.Drawing.Size(196, 20);
-            this.txtOtroMedio.TabIndex = 84;
-            // 
-            // txtParientesSi
-            // 
-            this.txtParientesSi.Location = new System.Drawing.Point(173, 91);
-            this.txtParientesSi.Name = "txtParientesSi";
-            this.txtParientesSi.Size = new System.Drawing.Size(245, 20);
-            this.txtParientesSi.TabIndex = 75;
-            // 
-            // opParientesNo
-            // 
-            this.opParientesNo.Location = new System.Drawing.Point(29, 91);
-            this.opParientesNo.Name = "opParientesNo";
-            this.opParientesNo.Size = new System.Drawing.Size(35, 18);
-            this.opParientesNo.TabIndex = 74;
-            this.opParientesNo.TabStop = false;
-            this.opParientesNo.Text = "No";
-            // 
-            // opParientesSi
-            // 
-            this.opParientesSi.Location = new System.Drawing.Point(75, 91);
-            this.opParientesSi.Name = "opParientesSi";
-            this.opParientesSi.Size = new System.Drawing.Size(92, 18);
-            this.opParientesSi.TabIndex = 73;
-            this.opParientesSi.TabStop = false;
-            this.opParientesSi.Text = "Sí (nómbrelos)";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(18, 75);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(235, 13);
-            this.label86.TabIndex = 72;
-            this.label86.Text = "¿ Tiene parientes trabajando en la Empresa ?";
-            // 
-            // opAnuncio
-            // 
-            this.opAnuncio.Location = new System.Drawing.Point(29, 47);
-            this.opAnuncio.Name = "opAnuncio";
-            this.opAnuncio.Size = new System.Drawing.Size(61, 18);
-            this.opAnuncio.TabIndex = 70;
-            this.opAnuncio.TabStop = false;
-            this.opAnuncio.Text = "Anuncio";
-            // 
-            // opOtroMedio
-            // 
-            this.opOtroMedio.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.opOtroMedio.Location = new System.Drawing.Point(87, 47);
-            this.opOtroMedio.Name = "opOtroMedio";
-            this.opOtroMedio.Size = new System.Drawing.Size(129, 18);
-            this.opOtroMedio.TabIndex = 69;
-            this.opOtroMedio.Text = "Otro medio  (Indique)";
-            this.opOtroMedio.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(18, 31);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(163, 13);
-            this.label87.TabIndex = 68;
-            this.label87.Text = "¿ Cómo supo de este empleo ?";
-            // 
-            // documentContainer1
-            // 
-            this.documentContainer1.Controls.Add(this.documentTabStrip1);
-            this.documentContainer1.Name = "documentContainer1";
-            // 
-            // 
-            // 
-            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
-            // 
-            // documentTabStrip1
-            // 
-            this.documentTabStrip1.CanUpdateChildIndex = true;
-            this.documentTabStrip1.Controls.Add(this.tabDatos);
-            this.documentTabStrip1.Controls.Add(this.tabFamilia);
-            this.documentTabStrip1.Controls.Add(this.tabEmpleos);
-            this.documentTabStrip1.Controls.Add(this.tabConoc);
-            this.documentTabStrip1.Controls.Add(this.tabEconomia);
-            this.documentTabStrip1.Location = new System.Drawing.Point(0, 0);
-            this.documentTabStrip1.Name = "documentTabStrip1";
-            // 
-            // 
-            // 
-            this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(1188, 545);
-            this.documentTabStrip1.TabIndex = 0;
-            this.documentTabStrip1.TabStop = false;
             // 
             // tabDatos
             // 
@@ -1774,7 +978,7 @@
             this.tabDatos.Location = new System.Drawing.Point(6, 29);
             this.tabDatos.Name = "tabDatos";
             this.tabDatos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.tabDatos.Size = new System.Drawing.Size(1176, 510);
+            this.tabDatos.Size = new System.Drawing.Size(1176, 485);
             this.tabDatos.Text = "DATOS PERSONALES / DOCUMENTOS";
             this.tabDatos.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -1786,7 +990,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 0);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(1176, 510);
+            this.radPanel2.Size = new System.Drawing.Size(1176, 485);
             this.radPanel2.TabIndex = 0;
             // 
             // radGroupBox3
@@ -1813,7 +1017,7 @@
             this.radGroupBox3.HeaderText = "Otros Datos";
             this.radGroupBox3.Location = new System.Drawing.Point(743, 0);
             this.radGroupBox3.Name = "radGroupBox3";
-            this.radGroupBox3.Size = new System.Drawing.Size(433, 313);
+            this.radGroupBox3.Size = new System.Drawing.Size(433, 288);
             this.radGroupBox3.TabIndex = 3;
             this.radGroupBox3.Text = "Otros Datos";
             // 
@@ -2039,7 +1243,7 @@
             this.radGroupBox2.HeaderText = "Datos Personales";
             this.radGroupBox2.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(743, 313);
+            this.radGroupBox2.Size = new System.Drawing.Size(743, 288);
             this.radGroupBox2.TabIndex = 2;
             this.radGroupBox2.Text = "Datos Personales";
             // 
@@ -2342,7 +1546,7 @@
             this.radGroupBox1.Controls.Add(this.label32);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.radGroupBox1.HeaderText = "Documentos";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 313);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 288);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Size = new System.Drawing.Size(1176, 197);
             this.radGroupBox1.TabIndex = 4;
@@ -2508,6 +1712,35 @@
             this.label32.Size = new System.Drawing.Size(198, 13);
             this.label32.TabIndex = 27;
             this.label32.Text = "Clave Única de Registro de Población";
+            // 
+            // documentContainer1
+            // 
+            this.documentContainer1.Controls.Add(this.documentTabStrip1);
+            this.documentContainer1.Name = "documentContainer1";
+            // 
+            // 
+            // 
+            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
+            // 
+            // documentTabStrip1
+            // 
+            this.documentTabStrip1.CanUpdateChildIndex = true;
+            this.documentTabStrip1.Controls.Add(this.tabDatos);
+            this.documentTabStrip1.Controls.Add(this.tabFamilia);
+            this.documentTabStrip1.Controls.Add(this.tabEmpleos);
+            this.documentTabStrip1.Controls.Add(this.tabConoc);
+            this.documentTabStrip1.Controls.Add(this.tabEconomia);
+            this.documentTabStrip1.Location = new System.Drawing.Point(0, 0);
+            this.documentTabStrip1.Name = "documentTabStrip1";
+            // 
+            // 
+            // 
+            this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.documentTabStrip1.SelectedIndex = 0;
+            this.documentTabStrip1.Size = new System.Drawing.Size(1188, 520);
+            this.documentTabStrip1.TabIndex = 0;
+            this.documentTabStrip1.TabStop = false;
             // 
             // tabFamilia
             // 
@@ -4036,6 +3269,773 @@
             this.label47.TabIndex = 68;
             this.label47.Text = "¿ Cómo considera su estado de salud ?";
             // 
+            // tabEconomia
+            // 
+            this.tabEconomia.Controls.Add(this.radGroupBox11);
+            this.tabEconomia.Controls.Add(this.radGroupBox10);
+            this.tabEconomia.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
+            this.tabEconomia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabEconomia.Location = new System.Drawing.Point(6, 29);
+            this.tabEconomia.Name = "tabEconomia";
+            this.tabEconomia.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
+            this.tabEconomia.Size = new System.Drawing.Size(1176, 510);
+            this.tabEconomia.Text = "DATOS GENERALES Y ECONÓMICOS";
+            // 
+            // radGroupBox11
+            // 
+            this.radGroupBox11.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox11.Controls.Add(this.label115);
+            this.radGroupBox11.Controls.Add(this.txtGastosMes);
+            this.radGroupBox11.Controls.Add(this.label116);
+            this.radGroupBox11.Controls.Add(this.label114);
+            this.radGroupBox11.Controls.Add(this.txtAbonoMes);
+            this.radGroupBox11.Controls.Add(this.label112);
+            this.radGroupBox11.Controls.Add(this.label113);
+            this.radGroupBox11.Controls.Add(this.txtDeudaImporte);
+            this.radGroupBox11.Controls.Add(this.label111);
+            this.radGroupBox11.Controls.Add(this.label110);
+            this.radGroupBox11.Controls.Add(this.txtModelo);
+            this.radGroupBox11.Controls.Add(this.label108);
+            this.radGroupBox11.Controls.Add(this.label109);
+            this.radGroupBox11.Controls.Add(this.txtRentaMes);
+            this.radGroupBox11.Controls.Add(this.label107);
+            this.radGroupBox11.Controls.Add(this.label106);
+            this.radGroupBox11.Controls.Add(this.label104);
+            this.radGroupBox11.Controls.Add(this.label105);
+            this.radGroupBox11.Controls.Add(this.txtPercepcionMes);
+            this.radGroupBox11.Controls.Add(this.label103);
+            this.radGroupBox11.Controls.Add(this.label102);
+            this.radGroupBox11.Controls.Add(this.txtIngresoMensual);
+            this.radGroupBox11.Controls.Add(this.label95);
+            this.radGroupBox11.Controls.Add(this.txtDeudaSi);
+            this.radGroupBox11.Controls.Add(this.opDeudaNo);
+            this.radGroupBox11.Controls.Add(this.opDeudaSi);
+            this.radGroupBox11.Controls.Add(this.label96);
+            this.radGroupBox11.Controls.Add(this.txtMarca);
+            this.radGroupBox11.Controls.Add(this.opAutoNo);
+            this.radGroupBox11.Controls.Add(this.opAutoSi);
+            this.radGroupBox11.Controls.Add(this.label97);
+            this.radGroupBox11.Controls.Add(this.opRentaNo);
+            this.radGroupBox11.Controls.Add(this.opRentaSi);
+            this.radGroupBox11.Controls.Add(this.label98);
+            this.radGroupBox11.Controls.Add(this.txtValorAprox);
+            this.radGroupBox11.Controls.Add(this.opPropiaNo);
+            this.radGroupBox11.Controls.Add(this.opPropiaSi);
+            this.radGroupBox11.Controls.Add(this.label99);
+            this.radGroupBox11.Controls.Add(this.txtIngresoSi);
+            this.radGroupBox11.Controls.Add(this.txtConyugeSi);
+            this.radGroupBox11.Controls.Add(this.opConyugeNo);
+            this.radGroupBox11.Controls.Add(this.opConyugeSi);
+            this.radGroupBox11.Controls.Add(this.label100);
+            this.radGroupBox11.Controls.Add(this.opIngresoNo);
+            this.radGroupBox11.Controls.Add(this.opIngresoSi);
+            this.radGroupBox11.Controls.Add(this.label101);
+            this.radGroupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox11.HeaderText = "Datos Económicos";
+            this.radGroupBox11.Location = new System.Drawing.Point(561, 0);
+            this.radGroupBox11.Name = "radGroupBox11";
+            this.radGroupBox11.Size = new System.Drawing.Size(615, 510);
+            this.radGroupBox11.TabIndex = 2;
+            this.radGroupBox11.Text = "Datos Económicos";
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Location = new System.Drawing.Point(264, 340);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(13, 13);
+            this.label115.TabIndex = 155;
+            this.label115.Text = "$";
+            // 
+            // txtGastosMes
+            // 
+            this.txtGastosMes.Location = new System.Drawing.Point(279, 336);
+            this.txtGastosMes.Name = "txtGastosMes";
+            this.txtGastosMes.Size = new System.Drawing.Size(174, 20);
+            this.txtGastosMes.TabIndex = 154;
+            this.txtGastosMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Location = new System.Drawing.Point(264, 316);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(226, 13);
+            this.label116.TabIndex = 153;
+            this.label116.Text = "¿ A cúanto ascienden sus gastos mensuales ?";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Location = new System.Drawing.Point(66, 340);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(13, 13);
+            this.label114.TabIndex = 152;
+            this.label114.Text = "$";
+            // 
+            // txtAbonoMes
+            // 
+            this.txtAbonoMes.Location = new System.Drawing.Point(81, 336);
+            this.txtAbonoMes.Name = "txtAbonoMes";
+            this.txtAbonoMes.Size = new System.Drawing.Size(141, 20);
+            this.txtAbonoMes.TabIndex = 150;
+            this.txtAbonoMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Location = new System.Drawing.Point(406, 287);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(13, 13);
+            this.label112.TabIndex = 149;
+            this.label112.Text = "$";
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(406, 267);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(42, 13);
+            this.label113.TabIndex = 148;
+            this.label113.Text = "Importe";
+            // 
+            // txtDeudaImporte
+            // 
+            this.txtDeudaImporte.Location = new System.Drawing.Point(421, 283);
+            this.txtDeudaImporte.Name = "txtDeudaImporte";
+            this.txtDeudaImporte.Size = new System.Drawing.Size(109, 20);
+            this.txtDeudaImporte.TabIndex = 147;
+            this.txtDeudaImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(364, 222);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(42, 13);
+            this.label111.TabIndex = 146;
+            this.label111.Text = "Modelo";
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(209, 222);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(37, 13);
+            this.label110.TabIndex = 145;
+            this.label110.Text = "Marca";
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Location = new System.Drawing.Point(359, 238);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(133, 20);
+            this.txtModelo.TabIndex = 144;
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Location = new System.Drawing.Point(180, 196);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(13, 13);
+            this.label108.TabIndex = 143;
+            this.label108.Text = "$";
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(180, 176);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(79, 13);
+            this.label109.TabIndex = 142;
+            this.label109.Text = "Renta Mensual";
+            // 
+            // txtRentaMes
+            // 
+            this.txtRentaMes.Location = new System.Drawing.Point(180, 192);
+            this.txtRentaMes.Name = "txtRentaMes";
+            this.txtRentaMes.Size = new System.Drawing.Size(122, 20);
+            this.txtRentaMes.TabIndex = 141;
+            this.txtRentaMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Location = new System.Drawing.Point(180, 147);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(13, 13);
+            this.label107.TabIndex = 140;
+            this.label107.Text = "$";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Location = new System.Drawing.Point(180, 127);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(88, 13);
+            this.label106.TabIndex = 139;
+            this.label106.Text = "Valor aproximado";
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(406, 95);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(13, 13);
+            this.label104.TabIndex = 138;
+            this.label104.Text = "$";
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(406, 75);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(104, 13);
+            this.label105.TabIndex = 137;
+            this.label105.Text = "Percepción Mensual";
+            // 
+            // txtPercepcionMes
+            // 
+            this.txtPercepcionMes.Location = new System.Drawing.Point(421, 91);
+            this.txtPercepcionMes.Name = "txtPercepcionMes";
+            this.txtPercepcionMes.Size = new System.Drawing.Size(109, 20);
+            this.txtPercepcionMes.TabIndex = 136;
+            this.txtPercepcionMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Location = new System.Drawing.Point(406, 51);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(13, 13);
+            this.label103.TabIndex = 135;
+            this.label103.Text = "$";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(406, 31);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(85, 13);
+            this.label102.TabIndex = 134;
+            this.label102.Text = "Importe Mensual";
+            // 
+            // txtIngresoMensual
+            // 
+            this.txtIngresoMensual.Location = new System.Drawing.Point(421, 47);
+            this.txtIngresoMensual.Name = "txtIngresoMensual";
+            this.txtIngresoMensual.Size = new System.Drawing.Size(109, 20);
+            this.txtIngresoMensual.TabIndex = 133;
+            this.txtIngresoMensual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(62, 316);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(163, 13);
+            this.label95.TabIndex = 129;
+            this.label95.Text = "¿ Cúanto abona mensualmente ?";
+            // 
+            // txtDeudaSi
+            // 
+            this.txtDeudaSi.Location = new System.Drawing.Point(224, 283);
+            this.txtDeudaSi.Name = "txtDeudaSi";
+            this.txtDeudaSi.Size = new System.Drawing.Size(176, 20);
+            this.txtDeudaSi.TabIndex = 128;
+            // 
+            // opDeudaNo
+            // 
+            this.opDeudaNo.Location = new System.Drawing.Point(68, 283);
+            this.opDeudaNo.Name = "opDeudaNo";
+            this.opDeudaNo.Size = new System.Drawing.Size(35, 18);
+            this.opDeudaNo.TabIndex = 127;
+            this.opDeudaNo.TabStop = false;
+            this.opDeudaNo.Text = "No";
+            // 
+            // opDeudaSi
+            // 
+            this.opDeudaSi.Location = new System.Drawing.Point(114, 283);
+            this.opDeudaSi.Name = "opDeudaSi";
+            this.opDeudaSi.Size = new System.Drawing.Size(108, 18);
+            this.opDeudaSi.TabIndex = 126;
+            this.opDeudaSi.TabStop = false;
+            this.opDeudaSi.Text = "Sí  (¿ con quien ?)";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(57, 267);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(90, 13);
+            this.label96.TabIndex = 125;
+            this.label96.Text = "¿ Tiene deudas ?";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(212, 238);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(133, 20);
+            this.txtMarca.TabIndex = 124;
+            // 
+            // opAutoNo
+            // 
+            this.opAutoNo.Location = new System.Drawing.Point(68, 238);
+            this.opAutoNo.Name = "opAutoNo";
+            this.opAutoNo.Size = new System.Drawing.Size(35, 18);
+            this.opAutoNo.TabIndex = 123;
+            this.opAutoNo.TabStop = false;
+            this.opAutoNo.Text = "No";
+            // 
+            // opAutoSi
+            // 
+            this.opAutoSi.Location = new System.Drawing.Point(114, 238);
+            this.opAutoSi.Name = "opAutoSi";
+            this.opAutoSi.Size = new System.Drawing.Size(29, 18);
+            this.opAutoSi.TabIndex = 122;
+            this.opAutoSi.TabStop = false;
+            this.opAutoSi.Text = "Sí";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(57, 222);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(132, 13);
+            this.label97.TabIndex = 121;
+            this.label97.Text = "¿ Tiene automóvil propio ?";
+            // 
+            // opRentaNo
+            // 
+            this.opRentaNo.Location = new System.Drawing.Point(68, 192);
+            this.opRentaNo.Name = "opRentaNo";
+            this.opRentaNo.Size = new System.Drawing.Size(35, 18);
+            this.opRentaNo.TabIndex = 119;
+            this.opRentaNo.TabStop = false;
+            this.opRentaNo.Text = "No";
+            // 
+            // opRentaSi
+            // 
+            this.opRentaSi.Location = new System.Drawing.Point(114, 192);
+            this.opRentaSi.Name = "opRentaSi";
+            this.opRentaSi.Size = new System.Drawing.Size(29, 18);
+            this.opRentaSi.TabIndex = 118;
+            this.opRentaSi.TabStop = false;
+            this.opRentaSi.Text = "Sí";
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(57, 176);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(77, 13);
+            this.label98.TabIndex = 117;
+            this.label98.Text = "¿ Paga renta ?";
+            // 
+            // txtValorAprox
+            // 
+            this.txtValorAprox.Location = new System.Drawing.Point(180, 143);
+            this.txtValorAprox.Name = "txtValorAprox";
+            this.txtValorAprox.Size = new System.Drawing.Size(122, 20);
+            this.txtValorAprox.TabIndex = 116;
+            this.txtValorAprox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            // 
+            // opPropiaNo
+            // 
+            this.opPropiaNo.Location = new System.Drawing.Point(68, 143);
+            this.opPropiaNo.Name = "opPropiaNo";
+            this.opPropiaNo.Size = new System.Drawing.Size(35, 18);
+            this.opPropiaNo.TabIndex = 115;
+            this.opPropiaNo.TabStop = false;
+            this.opPropiaNo.Text = "No";
+            // 
+            // opPropiaSi
+            // 
+            this.opPropiaSi.Location = new System.Drawing.Point(114, 143);
+            this.opPropiaSi.Name = "opPropiaSi";
+            this.opPropiaSi.Size = new System.Drawing.Size(29, 18);
+            this.opPropiaSi.TabIndex = 114;
+            this.opPropiaSi.TabStop = false;
+            this.opPropiaSi.Text = "Sí";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(57, 127);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(119, 13);
+            this.label99.TabIndex = 113;
+            this.label99.Text = "¿ Vive en casa propia ?";
+            // 
+            // txtIngresoSi
+            // 
+            this.txtIngresoSi.Location = new System.Drawing.Point(212, 47);
+            this.txtIngresoSi.Name = "txtIngresoSi";
+            this.txtIngresoSi.Size = new System.Drawing.Size(188, 20);
+            this.txtIngresoSi.TabIndex = 112;
+            // 
+            // txtConyugeSi
+            // 
+            this.txtConyugeSi.Location = new System.Drawing.Point(205, 91);
+            this.txtConyugeSi.Name = "txtConyugeSi";
+            this.txtConyugeSi.Size = new System.Drawing.Size(195, 20);
+            this.txtConyugeSi.TabIndex = 111;
+            // 
+            // opConyugeNo
+            // 
+            this.opConyugeNo.Location = new System.Drawing.Point(68, 91);
+            this.opConyugeNo.Name = "opConyugeNo";
+            this.opConyugeNo.Size = new System.Drawing.Size(35, 18);
+            this.opConyugeNo.TabIndex = 110;
+            this.opConyugeNo.TabStop = false;
+            this.opConyugeNo.Text = "No";
+            // 
+            // opConyugeSi
+            // 
+            this.opConyugeSi.Location = new System.Drawing.Point(114, 91);
+            this.opConyugeSi.Name = "opConyugeSi";
+            this.opConyugeSi.Size = new System.Drawing.Size(88, 18);
+            this.opConyugeSi.TabIndex = 109;
+            this.opConyugeSi.TabStop = false;
+            this.opConyugeSi.Text = "Sí (¿ dónde ?)";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(57, 75);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(117, 13);
+            this.label100.TabIndex = 108;
+            this.label100.Text = "¿ Su cónyuge trabaja ?";
+            // 
+            // opIngresoNo
+            // 
+            this.opIngresoNo.Location = new System.Drawing.Point(68, 47);
+            this.opIngresoNo.Name = "opIngresoNo";
+            this.opIngresoNo.Size = new System.Drawing.Size(35, 18);
+            this.opIngresoNo.TabIndex = 107;
+            this.opIngresoNo.TabStop = false;
+            this.opIngresoNo.Text = "No";
+            // 
+            // opIngresoSi
+            // 
+            this.opIngresoSi.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.opIngresoSi.Location = new System.Drawing.Point(108, 47);
+            this.opIngresoSi.Name = "opIngresoSi";
+            this.opIngresoSi.Size = new System.Drawing.Size(98, 18);
+            this.opIngresoSi.TabIndex = 106;
+            this.opIngresoSi.Text = "Sí  (descríbalos)";
+            this.opIngresoSi.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(57, 31);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(149, 13);
+            this.label101.TabIndex = 105;
+            this.label101.Text = "¿ Tiene usted otros ingresos ?";
+            // 
+            // radGroupBox10
+            // 
+            this.radGroupBox10.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox10.Controls.Add(this.dtFechaTranajar);
+            this.radGroupBox10.Controls.Add(this.label89);
+            this.radGroupBox10.Controls.Add(this.txtCambiarNo);
+            this.radGroupBox10.Controls.Add(this.opCambiarSi);
+            this.radGroupBox10.Controls.Add(this.opCambiarNo);
+            this.radGroupBox10.Controls.Add(this.label88);
+            this.radGroupBox10.Controls.Add(this.txtViajarNo);
+            this.radGroupBox10.Controls.Add(this.opViajarSi);
+            this.radGroupBox10.Controls.Add(this.opViajarNo);
+            this.radGroupBox10.Controls.Add(this.label85);
+            this.radGroupBox10.Controls.Add(this.txtSeguroVidaSi);
+            this.radGroupBox10.Controls.Add(this.opSeguroVidaNo);
+            this.radGroupBox10.Controls.Add(this.opSeguroVidaSi);
+            this.radGroupBox10.Controls.Add(this.label84);
+            this.radGroupBox10.Controls.Add(this.txtSindicatoSi);
+            this.radGroupBox10.Controls.Add(this.opSindicatoNo);
+            this.radGroupBox10.Controls.Add(this.opSindicatoSi);
+            this.radGroupBox10.Controls.Add(this.label83);
+            this.radGroupBox10.Controls.Add(this.txtAfianzadoSi);
+            this.radGroupBox10.Controls.Add(this.opAfianzadoNo);
+            this.radGroupBox10.Controls.Add(this.opAfianzadoSi);
+            this.radGroupBox10.Controls.Add(this.label82);
+            this.radGroupBox10.Controls.Add(this.txtOtroMedio);
+            this.radGroupBox10.Controls.Add(this.txtParientesSi);
+            this.radGroupBox10.Controls.Add(this.opParientesNo);
+            this.radGroupBox10.Controls.Add(this.opParientesSi);
+            this.radGroupBox10.Controls.Add(this.label86);
+            this.radGroupBox10.Controls.Add(this.opAnuncio);
+            this.radGroupBox10.Controls.Add(this.opOtroMedio);
+            this.radGroupBox10.Controls.Add(this.label87);
+            this.radGroupBox10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radGroupBox10.HeaderText = "Datos Generales";
+            this.radGroupBox10.Location = new System.Drawing.Point(0, 0);
+            this.radGroupBox10.Name = "radGroupBox10";
+            this.radGroupBox10.Size = new System.Drawing.Size(561, 510);
+            this.radGroupBox10.TabIndex = 1;
+            this.radGroupBox10.Text = "Datos Generales";
+            // 
+            // dtFechaTranajar
+            // 
+            this.dtFechaTranajar.CustomFormat = "dd/MM/yyyy";
+            this.dtFechaTranajar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaTranajar.Location = new System.Drawing.Point(23, 378);
+            this.dtFechaTranajar.Name = "dtFechaTranajar";
+            this.dtFechaTranajar.Size = new System.Drawing.Size(114, 20);
+            this.dtFechaTranajar.TabIndex = 106;
+            this.dtFechaTranajar.TabStop = false;
+            this.dtFechaTranajar.Value = new System.DateTime(((long)(0)));
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(23, 362);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(212, 13);
+            this.label89.TabIndex = 105;
+            this.label89.Text = "Fecha en que podría presentarse a trabajar";
+            // 
+            // txtCambiarNo
+            // 
+            this.txtCambiarNo.Location = new System.Drawing.Point(173, 332);
+            this.txtCambiarNo.Name = "txtCambiarNo";
+            this.txtCambiarNo.Size = new System.Drawing.Size(250, 20);
+            this.txtCambiarNo.TabIndex = 104;
+            // 
+            // opCambiarSi
+            // 
+            this.opCambiarSi.Location = new System.Drawing.Point(34, 332);
+            this.opCambiarSi.Name = "opCambiarSi";
+            this.opCambiarSi.Size = new System.Drawing.Size(29, 18);
+            this.opCambiarSi.TabIndex = 103;
+            this.opCambiarSi.TabStop = false;
+            this.opCambiarSi.Text = "SI";
+            // 
+            // opCambiarNo
+            // 
+            this.opCambiarNo.Location = new System.Drawing.Point(80, 332);
+            this.opCambiarNo.Name = "opCambiarNo";
+            this.opCambiarNo.Size = new System.Drawing.Size(87, 18);
+            this.opCambiarNo.TabIndex = 102;
+            this.opCambiarNo.TabStop = false;
+            this.opCambiarNo.Text = "No  (razones)";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(23, 316);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(244, 13);
+            this.label88.TabIndex = 101;
+            this.label88.Text = "¿ Está dispuesto  cambiar de lugar de residencia ?";
+            // 
+            // txtViajarNo
+            // 
+            this.txtViajarNo.Location = new System.Drawing.Point(168, 283);
+            this.txtViajarNo.Name = "txtViajarNo";
+            this.txtViajarNo.Size = new System.Drawing.Size(250, 20);
+            this.txtViajarNo.TabIndex = 100;
+            // 
+            // opViajarSi
+            // 
+            this.opViajarSi.Location = new System.Drawing.Point(29, 283);
+            this.opViajarSi.Name = "opViajarSi";
+            this.opViajarSi.Size = new System.Drawing.Size(29, 18);
+            this.opViajarSi.TabIndex = 99;
+            this.opViajarSi.TabStop = false;
+            this.opViajarSi.Text = "SI";
+            // 
+            // opViajarNo
+            // 
+            this.opViajarNo.Location = new System.Drawing.Point(75, 283);
+            this.opViajarNo.Name = "opViajarNo";
+            this.opViajarNo.Size = new System.Drawing.Size(87, 18);
+            this.opViajarNo.TabIndex = 98;
+            this.opViajarNo.TabStop = false;
+            this.opViajarNo.Text = "No  (razones)";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(18, 267);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(84, 13);
+            this.label85.TabIndex = 97;
+            this.label85.Text = "¿ Puede viajar ?";
+            // 
+            // txtSeguroVidaSi
+            // 
+            this.txtSeguroVidaSi.Location = new System.Drawing.Point(206, 238);
+            this.txtSeguroVidaSi.Name = "txtSeguroVidaSi";
+            this.txtSeguroVidaSi.Size = new System.Drawing.Size(212, 20);
+            this.txtSeguroVidaSi.TabIndex = 96;
+            // 
+            // opSeguroVidaNo
+            // 
+            this.opSeguroVidaNo.Location = new System.Drawing.Point(29, 238);
+            this.opSeguroVidaNo.Name = "opSeguroVidaNo";
+            this.opSeguroVidaNo.Size = new System.Drawing.Size(35, 18);
+            this.opSeguroVidaNo.TabIndex = 95;
+            this.opSeguroVidaNo.TabStop = false;
+            this.opSeguroVidaNo.Text = "No";
+            // 
+            // opSeguroVidaSi
+            // 
+            this.opSeguroVidaSi.Location = new System.Drawing.Point(75, 238);
+            this.opSeguroVidaSi.Name = "opSeguroVidaSi";
+            this.opSeguroVidaSi.Size = new System.Drawing.Size(125, 18);
+            this.opSeguroVidaSi.TabIndex = 94;
+            this.opSeguroVidaSi.TabStop = false;
+            this.opSeguroVidaSi.Text = "Sí (nombre del a cía.)";
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(18, 222);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(125, 13);
+            this.label84.TabIndex = 93;
+            this.label84.Text = "¿ Tiene seguro de vida ?";
+            // 
+            // txtSindicatoSi
+            // 
+            this.txtSindicatoSi.Location = new System.Drawing.Point(162, 192);
+            this.txtSindicatoSi.Name = "txtSindicatoSi";
+            this.txtSindicatoSi.Size = new System.Drawing.Size(256, 20);
+            this.txtSindicatoSi.TabIndex = 92;
+            // 
+            // opSindicatoNo
+            // 
+            this.opSindicatoNo.Location = new System.Drawing.Point(29, 192);
+            this.opSindicatoNo.Name = "opSindicatoNo";
+            this.opSindicatoNo.Size = new System.Drawing.Size(35, 18);
+            this.opSindicatoNo.TabIndex = 91;
+            this.opSindicatoNo.TabStop = false;
+            this.opSindicatoNo.Text = "No";
+            // 
+            // opSindicatoSi
+            // 
+            this.opSindicatoSi.Location = new System.Drawing.Point(75, 192);
+            this.opSindicatoSi.Name = "opSindicatoSi";
+            this.opSindicatoSi.Size = new System.Drawing.Size(81, 18);
+            this.opSindicatoSi.TabIndex = 90;
+            this.opSindicatoSi.TabStop = false;
+            this.opSindicatoSi.Text = "Sí (a Cúal ? )";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(18, 176);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(193, 13);
+            this.label83.TabIndex = 89;
+            this.label83.Text = "¿ Ha estado afiliado a algún sindicato ?";
+            // 
+            // txtAfianzadoSi
+            // 
+            this.txtAfianzadoSi.Location = new System.Drawing.Point(206, 143);
+            this.txtAfianzadoSi.Name = "txtAfianzadoSi";
+            this.txtAfianzadoSi.Size = new System.Drawing.Size(212, 20);
+            this.txtAfianzadoSi.TabIndex = 88;
+            // 
+            // opAfianzadoNo
+            // 
+            this.opAfianzadoNo.Location = new System.Drawing.Point(29, 143);
+            this.opAfianzadoNo.Name = "opAfianzadoNo";
+            this.opAfianzadoNo.Size = new System.Drawing.Size(35, 18);
+            this.opAfianzadoNo.TabIndex = 87;
+            this.opAfianzadoNo.TabStop = false;
+            this.opAfianzadoNo.Text = "No";
+            // 
+            // opAfianzadoSi
+            // 
+            this.opAfianzadoSi.Location = new System.Drawing.Point(75, 143);
+            this.opAfianzadoSi.Name = "opAfianzadoSi";
+            this.opAfianzadoSi.Size = new System.Drawing.Size(125, 18);
+            this.opAfianzadoSi.TabIndex = 86;
+            this.opAfianzadoSi.TabStop = false;
+            this.opAfianzadoSi.Text = "Sí (nombre del a cía.)";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(18, 127);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(123, 13);
+            this.label82.TabIndex = 85;
+            this.label82.Text = "¿ Ha estado afianzado ?";
+            // 
+            // txtOtroMedio
+            // 
+            this.txtOtroMedio.Location = new System.Drawing.Point(222, 47);
+            this.txtOtroMedio.Name = "txtOtroMedio";
+            this.txtOtroMedio.Size = new System.Drawing.Size(196, 20);
+            this.txtOtroMedio.TabIndex = 84;
+            // 
+            // txtParientesSi
+            // 
+            this.txtParientesSi.Location = new System.Drawing.Point(173, 91);
+            this.txtParientesSi.Name = "txtParientesSi";
+            this.txtParientesSi.Size = new System.Drawing.Size(245, 20);
+            this.txtParientesSi.TabIndex = 75;
+            // 
+            // opParientesNo
+            // 
+            this.opParientesNo.Location = new System.Drawing.Point(29, 91);
+            this.opParientesNo.Name = "opParientesNo";
+            this.opParientesNo.Size = new System.Drawing.Size(35, 18);
+            this.opParientesNo.TabIndex = 74;
+            this.opParientesNo.TabStop = false;
+            this.opParientesNo.Text = "No";
+            // 
+            // opParientesSi
+            // 
+            this.opParientesSi.Location = new System.Drawing.Point(75, 91);
+            this.opParientesSi.Name = "opParientesSi";
+            this.opParientesSi.Size = new System.Drawing.Size(92, 18);
+            this.opParientesSi.TabIndex = 73;
+            this.opParientesSi.TabStop = false;
+            this.opParientesSi.Text = "Sí (nómbrelos)";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(18, 75);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(221, 13);
+            this.label86.TabIndex = 72;
+            this.label86.Text = "¿ Tiene parientes trabajando en la Empresa ?";
+            // 
+            // opAnuncio
+            // 
+            this.opAnuncio.Location = new System.Drawing.Point(29, 47);
+            this.opAnuncio.Name = "opAnuncio";
+            this.opAnuncio.Size = new System.Drawing.Size(61, 18);
+            this.opAnuncio.TabIndex = 70;
+            this.opAnuncio.TabStop = false;
+            this.opAnuncio.Text = "Anuncio";
+            // 
+            // opOtroMedio
+            // 
+            this.opOtroMedio.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.opOtroMedio.Location = new System.Drawing.Point(87, 47);
+            this.opOtroMedio.Name = "opOtroMedio";
+            this.opOtroMedio.Size = new System.Drawing.Size(129, 18);
+            this.opOtroMedio.TabIndex = 69;
+            this.opOtroMedio.Text = "Otro medio  (Indique)";
+            this.opOtroMedio.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(18, 31);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(153, 13);
+            this.label87.TabIndex = 68;
+            this.label87.Text = "¿ Cómo supo de este empleo ?";
+            // 
             // commandBarStripElement3
             // 
             this.commandBarStripElement3.DisplayName = "commandBarStripElement3";
@@ -4075,63 +4075,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).EndInit();
             this.radDock1.ResumeLayout(false);
-            this.tabEconomia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox11)).EndInit();
-            this.radGroupBox11.ResumeLayout(false);
-            this.radGroupBox11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGastosMes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAbonoMes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeudaImporte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModelo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRentaMes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPercepcionMes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIngresoMensual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeudaSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opDeudaNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opDeudaSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMarca)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAutoNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAutoSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opRentaNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opRentaSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtValorAprox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opPropiaNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opPropiaSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIngresoSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtConyugeSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opConyugeNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opConyugeSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opIngresoNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opIngresoSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox10)).EndInit();
-            this.radGroupBox10.ResumeLayout(false);
-            this.radGroupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaTranajar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCambiarNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opCambiarSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opCambiarNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtViajarNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opViajarSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opViajarNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSeguroVidaSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opSeguroVidaNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opSeguroVidaSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSindicatoSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opSindicatoNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opSindicatoSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAfianzadoSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAfianzadoNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAfianzadoSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOtroMedio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtParientesSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opParientesNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opParientesSi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opAnuncio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opOtroMedio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
-            this.documentContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
-            this.documentTabStrip1.ResumeLayout(false);
             this.tabDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
@@ -4177,6 +4120,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRFC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAfore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
+            this.documentContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
+            this.documentTabStrip1.ResumeLayout(false);
             this.tabFamilia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
             this.radGroupBox5.ResumeLayout(false);
@@ -4279,6 +4226,59 @@
             ((System.ComponentModel.ISupportInitialize)(this.opSaludMalo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opSaludBueno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opSaludRegular)).EndInit();
+            this.tabEconomia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox11)).EndInit();
+            this.radGroupBox11.ResumeLayout(false);
+            this.radGroupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGastosMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAbonoMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeudaImporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRentaMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPercepcionMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIngresoMensual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeudaSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opDeudaNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opDeudaSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAutoNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAutoSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opRentaNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opRentaSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValorAprox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opPropiaNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opPropiaSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIngresoSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConyugeSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opConyugeNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opConyugeSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opIngresoNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opIngresoSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox10)).EndInit();
+            this.radGroupBox10.ResumeLayout(false);
+            this.radGroupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaTranajar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCambiarNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opCambiarSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opCambiarNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtViajarNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opViajarSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opViajarNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSeguroVidaSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opSeguroVidaNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opSeguroVidaSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSindicatoSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opSindicatoNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opSindicatoSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAfianzadoSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAfianzadoNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAfianzadoSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtroMedio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtParientesSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opParientesNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opParientesSi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opAnuncio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opOtroMedio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

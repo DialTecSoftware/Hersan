@@ -204,15 +204,10 @@ namespace Hersan.UI.CapitalHumano
                 string pwd = "Catcooptest";
                 string smtp = "smtp.GMAIL.com";
                 string emisor = "Key.Solutions.Test@gmail.com";
-                string destinatario = "moisegreg30@gmail.com,gregory.moise@dialtec.com.mx";
-                string asunto = "Nueva Solicitud de Sustitución de Personal("+ DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
-                string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la nueva solicitud y hacer las continuaciones necesarias!!" ;
-               
+                string destinatario = "gregory.moise@dialtec.com.mx";                              
+             string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la nueva solicitud y hacer las continuaciones necesarias!!" ;
                 int port = 587;
-        
-                
-              
-                  
+                                   
                 #endregion
 
 
@@ -226,6 +221,7 @@ namespace Hersan.UI.CapitalHumano
                         RadMessageBox.Show("Solicitud enviada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         LimpiarCampos();
                         CargarSolicitudes();
+                        string asunto = "Nueva Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
                         BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
                     }
                 } 
@@ -238,6 +234,7 @@ namespace Hersan.UI.CapitalHumano
                         RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         LimpiarCampos();
                         CargarSolicitudes();
+                        string asunto = "Actualización de Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
                         BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
                     }
                 }

@@ -1,6 +1,5 @@
 ﻿using Hersan.CH.Contract;
 using Hersan.Entidades.CapitalHumano;
-using Hersan.Negocio;
 using Hersan.Negocio.CapitalHumano;
 using System.Collections.Generic;
 using System.Data;
@@ -26,14 +25,14 @@ namespace Hersan.CH.Service
         {
             return new PerfilesBP().CHU_Perfiles_Elimina(IdPerfil, IdUsuario);
         }
-            #endregion
+        #endregion
 
-       #region SolicitudPersonal
-            public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser)
-            {
-                return new SolicitudPersonalBP().CHU_SolicitudP_Obtener(IdUser);
-            }
-            public int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj)
+        #region SolicitudPersonal
+        public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser)
+        {
+            return new SolicitudPersonalBP().CHU_SolicitudP_Obtener(IdUser);
+        }
+        public int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj)
             {
                 return new SolicitudPersonalBP().CHU_SolicitudP_Guardar(obj);
             }
@@ -59,17 +58,72 @@ namespace Hersan.CH.Service
         #endregion
 
         #region Expedientes
-        public int CHU_Expedientes_Guardar( DataSet Tablas, int IdUsuario)
+        public int CHU_Expedientes_Guardar( DataSet Tablas, byte[] Imagen, int IdUsuario)
         {
-            return new ExpedientesBP().CHU_Expedientes_Guardar( Tablas, IdUsuario);
+            return new ExpedientesBP().CHU_Expedientes_Guardar( Tablas, Imagen, IdUsuario);
         }
-
+        public List<ExpedientesBE> CHU_Expedientes_Consultar(ExpedientesBE Expediente)
+        {
+            return new ExpedientesBP().CHU_Expedientes_Consultar(Expediente);
+        }
+        public int CHU_Expedientes_Actualizar(int Id, DataSet Tablas, byte[] Imagen, int IdUsuario)
+        {
+            return new ExpedientesBP().CHU_Expedientes_Actualizar(Id, Tablas, Imagen, IdUsuario);
+        }
+        public int CHU_Expedientes_Eliminar(int Id, int IdUsuario)
+        {
+            return new ExpedientesBP().CHU_Expedientes_Eliminar(Id, IdUsuario);
+        }
+        public List<ExpedientesDatosPersonales> CHU_ExpedientesDatosPersonales_Consultar(ExpedientesDatosPersonales Expediente)
+        {
+            return new ExpedientesBP().CHU_ExpedientesDatosPersonales_Consultar(Expediente);
+        }
+        public List<ExpedientesBE> CHU_Expedientes_Obtener(int IdExpediente)
+        {
+            return new ExpedientesBP().CHU_Expedientes_Obtener(IdExpediente);
+        }
+        public List<ExpedienteDocumentos> CHU_ExpedientesDocumentos_Consultar(ExpedienteDocumentos Expediente)
+        {
+            return new ExpedientesBP().CHU_ExpedientesDocumentos_Consultar(Expediente);
+        }
+        public List<ExpedienteFamilia> CHU_Expediente_Familia_Consultar(ExpedienteFamilia Expediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Familia_Consultar(Expediente);
+        }
+        public List<ExpedienteEstudios> CHU_Expediente_Estudios_Consultar(ExpedienteEstudios Expediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Estudios_Consultar(Expediente);
+        }
+        public List<ExpedienteEmpleos> CHU_Expediente_Empleos_Consultar(ExpedienteEmpleos Expediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Empleos_Consultar(Expediente);
+        }
+        public List<ExpedienteSalud> CHU_Expediente_Salud_Consultar(ExpedienteSalud Expediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Salud_Consultar(Expediente);
+        }
+        public List<ExpedienteConocimiento> CHU_Expediente_Conocimiento_Consultar(ExpedienteConocimiento Expediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Conocimiento_Consultar(Expediente);
+        }
+        public List<ExpedienteReferencias> CHU_Expediente_Referencias_Consultar(ExpedienteReferencias Expediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Referencias_Consultar(Expediente);
+        }
+        public List<ExpedienteGenerales> CHU_Expediente_Generales_Consultar(ExpedienteGenerales Expediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Generales_Consultar(Expediente);
+        }
+        public List<ExpedienteEconomicos> CHU_Expediente_Economicos_Consultar(ExpedienteEconomicos Expediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Economicos_Consultar(Expediente);
+        }
         #endregion
 
         #region NuevoPuesto
         public List<NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser)
         {
-            return new NuevoPuestoBP().CHU_NuevoPuesto_Obtener( IdUser);
+            return new NuevoPuestoBP().CHU_NuevoPuesto_Obtener(IdUser);
         }
         public int CHU_NuevoPuesto_Guardar(NuevoPuestoBE obj)
         {

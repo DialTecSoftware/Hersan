@@ -1,6 +1,7 @@
 ﻿using Hersan.Entidades.Seguridad;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
@@ -50,8 +51,7 @@ namespace Hersan.Negocio
         private static List<MenusBE> _listadoMenu;
         public static List<MenusBE> ListadoMenu {
             get {
-                if (_listadoMenu == null)
-                {
+                if (_listadoMenu == null) {
                     _listadoMenu = new List<MenusBE>();
                 }
                 return _listadoMenu;
@@ -63,8 +63,7 @@ namespace Hersan.Negocio
 
         public static bool EnviarMail(string emisor, string destinatario, string asunto, string CuerpoMsg, string smtp, string pwd, int port)
         {
-            try
-            {
+            try {
 
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient(smtp);
@@ -77,9 +76,7 @@ namespace Hersan.Negocio
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
                 return true;
-            }
-            catch
-            {
+            } catch {
                 return false;
             }
 
@@ -88,8 +85,7 @@ namespace Hersan.Negocio
         public static bool EnviarMail(string emisor, string destinatario, string asunto, string CuerpoMsg, string smtp, string pwd, int port, bool ssl)
         {
             bool Flag = false;
-            try
-            {
+            try {
 
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient(smtp);
@@ -102,9 +98,7 @@ namespace Hersan.Negocio
                 SmtpServer.EnableSsl = ssl;
                 SmtpServer.Send(mail);
                 Flag = true;
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Flag = false;
                 throw ex;
             }
@@ -113,8 +107,7 @@ namespace Hersan.Negocio
 
         public static bool EnviarMail(string emisor, string destinatario, string asunto, string CuerpoMsg, string smtp, string pwd, int port, Stream adjunto, string NombreAdjunto, bool ssl)
         {
-            try
-            {
+            try {
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient(smtp);
                 mail.Attachments.Add(new Attachment(adjunto, NombreAdjunto));
@@ -128,17 +121,14 @@ namespace Hersan.Negocio
                 SmtpServer.Send(mail);
 
                 return true;
-            }
-            catch
-            {
+            } catch {
                 return false;
             }
         }
 
         public static bool EnviarMail(string emisor, string destinatario, string Copia, string asunto, string CuerpoMsg, string smtp, string pwd, int port, Stream adjunto, string NombreAdjunto, bool ssl)
         {
-            try
-            {
+            try {
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient(smtp);
                 mail.Attachments.Add(new Attachment(adjunto, NombreAdjunto));
@@ -154,9 +144,7 @@ namespace Hersan.Negocio
                 SmtpServer.Send(mail);
 
                 return true;
-            }
-            catch
-            {
+            } catch {
                 return false;
             }
         }
@@ -164,15 +152,11 @@ namespace Hersan.Negocio
         public static bool isNumero(Char c)
         {
             bool num = false;
-            try
-            {
-                if ((c >= '0' && c <= '9') || c == 8)
-                {
+            try {
+                if ((c >= '0' && c <= '9') || c == 8) {
                     num = true;
                 }
-            }
-            catch
-            {
+            } catch {
                 num = false;
             }
             return num;
@@ -189,16 +173,13 @@ namespace Hersan.Negocio
         public static bool isDecimal(Char c)
         {
             bool num = false;
-            try
-            {
+            try {
                 System.Globalization.CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
                 if (char.IsNumber(c) || c == 8 || c.ToString() == cc.NumberFormat.NumberDecimalSeparator || c.ToString() == cc.NumberFormat.NegativeSign)
                     num = false;
                 else
                     num = true;
-            }
-            catch
-            {
+            } catch {
                 num = false;
             }
             return num;
@@ -213,7 +194,7 @@ namespace Hersan.Negocio
                 } else
                     flag = false;
 
-            } catch  {
+            } catch {
                 flag = false;
             }
             return flag;
@@ -231,19 +212,14 @@ namespace Hersan.Negocio
             // Declaramos un Leector Binario para accesar a los datos del archivo pasarlos a un arreglo de bytes
             BinaryReader br = new BinaryReader(fs);
             byte[] bytes = new byte[(int)fs.Length];
-            try
-            {
+            try {
                 br.Read(bytes, 0, bytes.Length);
                 // base64 es la cadena en donde se guarda el arreglo de bytes ya convertido
                 sBase64 = Convert.ToBase64String(bytes);
                 return sBase64;
-            }
-            catch
-            {
+            } catch {
                 return null;
-            }
-            finally
-            {
+            } finally {
                 // Se cierran los archivos para liberar memoria.
                 fs.Close();
                 fs = null;
@@ -268,18 +244,13 @@ namespace Hersan.Negocio
             FileStream fs = new FileStream(sImagenTemporal, FileMode.Create);
             BinaryWriter bw = new BinaryWriter(fs);
             byte[] bytes;
-            try
-            {
+            try {
                 bytes = Convert.FromBase64String(Archivo);
                 bw.Write(bytes);
                 return sImagenTemporal;
-            }
-            catch
-            {
+            } catch {
                 return null;
-            }
-            finally
-            {
+            } finally {
                 fs.Close();
                 bytes = null;
                 bw = null;
@@ -300,15 +271,12 @@ namespace Hersan.Negocio
         {
             string EncryptionKey = "DialTec_";
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
-            using (Aes encryptor = Aes.Create())
-            {
+            using (Aes encryptor = Aes.Create()) {
                 Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
                 encryptor.Key = pdb.GetBytes(32);
                 encryptor.IV = pdb.GetBytes(16);
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
-                    {
+                using (MemoryStream ms = new MemoryStream()) {
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write)) {
                         cs.Write(clearBytes, 0, clearBytes.Length);
                         cs.Close();
                     }
@@ -322,15 +290,12 @@ namespace Hersan.Negocio
             string EncryptionKey = "DialTec_";
             cipherText = cipherText.Replace(" ", "+");
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
-            using (Aes encryptor = Aes.Create())
-            {
+            using (Aes encryptor = Aes.Create()) {
                 Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
                 encryptor.Key = pdb.GetBytes(32);
                 encryptor.IV = pdb.GetBytes(16);
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
-                    {
+                using (MemoryStream ms = new MemoryStream()) {
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write)) {
                         cs.Write(cipherBytes, 0, cipherBytes.Length);
                         cs.Close();
                     }
@@ -341,4 +306,76 @@ namespace Hersan.Negocio
         }
     }
 
+    public class ConvertImage
+    {
+
+        public static byte[] FileToByteArray(string _FileName)
+        {
+            byte[] _Buffer = null;
+
+            try {
+                // Open file for reading
+                FileStream _FileStream = new System.IO.FileStream(_FileName, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+
+                //attach filestream to binary reader
+                BinaryReader _BinaryReader = new System.IO.BinaryReader(_FileStream);
+
+                //get total byte length of the file
+                long _TotalBytes = new System.IO.FileInfo(_FileName).Length;
+
+                //read entire file into buffer
+                _Buffer = _BinaryReader.ReadBytes((int)_TotalBytes);
+
+                //close file reader
+                _FileStream.Close();
+                _FileStream.Dispose();
+                _BinaryReader.Close();
+
+            } catch (Exception ex) {
+                throw ex;
+            }
+
+            return _Buffer;
+        }
+
+        public static string ByteArrayToFile(string _FileName, byte[] _ByteArray)
+        {
+            try {
+                string tmpFile = _FileName;
+                //  Open file for reading
+                System.IO.FileStream _FileStream = new System.IO.FileStream(tmpFile, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+                //  Writes a block of bytes to this stream using data from a byte array.
+                _FileStream.Write(_ByteArray, 0, _ByteArray.Length);
+                //  close file stream
+
+                _FileStream.Close();
+                return tmpFile;
+            } catch (Exception _Exception) {
+                //  Error
+                // WriteErrorLogFile("ErrorLogFIleDS", "Error General", "Archivo: " & _FileName & "Error: " & _Exception.Message, "")
+                throw _Exception;
+                // Console.WriteLine("Exception caught in process: {0}", _Exception.ToString())
+            }
+
+        }
+
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
+
+        }
+
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
+        }
+
+    }
 }

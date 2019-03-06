@@ -26,7 +26,6 @@ namespace Hersan.UI.CapitalHumano
         List<DictamenSustitucionBE> list = new List<DictamenSustitucionBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
 
-
         private void LimpiarCampos()
         {
             try {
@@ -47,7 +46,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void CargarElementos_Dictamen()
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
@@ -67,30 +65,6 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
-
-        private void frmDictamenSustitucion_Load(object sender, EventArgs e)
-        {
-            try {
-                GroupDescriptor Entidades = new GroupDescriptor();
-                Entidades.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
-                this.gvDatos.GroupDescriptors.Add(Entidades);
-           
-
-                lblfecha.Text=DateTime.Now.ToLongDateString();
-
-                btnNuevo.Enabled = false;
-                documentTabStrip1.SelectedTab=this.DockSolicitud;
-                CargarSolicitudes();
-                txtObser.Enabled = true;
-            } catch (Exception) {
-
-                throw;
-            }
-
-
-        }
-
-
         private void CargarSolicitudes()
         {
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
@@ -105,8 +79,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al cargar las solicitudes\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally { oCHumano = null; }
         }
-
-
         private bool ValidarCampos()
         {
             string myItem = cboResultado.SelectedItem.ToString();
@@ -122,8 +94,27 @@ namespace Hersan.UI.CapitalHumano
             }
         }
 
+        private void frmDictamenSustitucion_Load(object sender, EventArgs e)
+        {
+            try {
+                GroupDescriptor Entidades = new GroupDescriptor();
+                Entidades.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
+                this.gvDatos.GroupDescriptors.Add(Entidades);
 
 
+                lblfecha.Text = DateTime.Now.ToLongDateString();
+
+                btnNuevo.Enabled = false;
+                documentTabStrip1.SelectedTab = this.DockSolicitud;
+                CargarSolicitudes();
+                txtObser.Enabled = true;
+            } catch (Exception) {
+
+                throw;
+            }
+
+
+        }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -149,7 +140,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
@@ -234,9 +224,6 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
-
-     
-
         private void gvDictamen_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -268,11 +255,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-     
-
-       
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -281,8 +263,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-      
         private void documentTabStrip1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try {
@@ -303,7 +283,6 @@ namespace Hersan.UI.CapitalHumano
            
 
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -314,11 +293,9 @@ namespace Hersan.UI.CapitalHumano
                 throw;
             }
         }
-
         private void radDock1_ActiveWindowChanged(object sender, DockWindowEventArgs e)
         {
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();

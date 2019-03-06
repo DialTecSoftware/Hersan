@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hersan.Negocio
+namespace Hersan.Negocio.CapitalHumano
 {
     public class DictamenNuevoPuestoBP
     {

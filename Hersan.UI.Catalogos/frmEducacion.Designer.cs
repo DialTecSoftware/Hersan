@@ -265,10 +265,10 @@
             gridViewTextBoxColumn1.Name = "Id";
             gridViewTextBoxColumn2.FieldName = "Nombre";
             gridViewTextBoxColumn2.HeaderText = "Nombre";
-            gridViewTextBoxColumn2.MaxWidth = 300;
-            gridViewTextBoxColumn2.MinWidth = 200;
+            gridViewTextBoxColumn2.MaxWidth = 400;
+            gridViewTextBoxColumn2.MinWidth = 350;
             gridViewTextBoxColumn2.Name = "Nombre";
-            gridViewTextBoxColumn2.Width = 200;
+            gridViewTextBoxColumn2.Width = 350;
             gridViewTextBoxColumn2.WrapText = true;
             gridViewTextBoxColumn3.FieldName = "Abrev";
             gridViewTextBoxColumn3.HeaderText = "Abrev";

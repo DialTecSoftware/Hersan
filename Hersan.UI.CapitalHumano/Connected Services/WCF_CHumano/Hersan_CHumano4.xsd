@@ -179,6 +179,246 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CHU_Expedientes_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Tablas" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CHU_Expedientes_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q9:ExpedientesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expedientes_ConsultarResult" nillable="true" type="q10:ArrayOfExpedientesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element minOccurs="0" name="Tablas" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CHU_Expedientes_ActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_Eliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_EliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CHU_Expedientes_EliminarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_ExpedientesDatosPersonales_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q11:ExpedientesDatosPersonales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_ExpedientesDatosPersonales_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_ExpedientesDatosPersonales_ConsultarResult" nillable="true" type="q12:ArrayOfExpedientesDatosPersonales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdExpediente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expedientes_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expedientes_ObtenerResult" nillable="true" type="q13:ArrayOfExpedientesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_ExpedientesDocumentos_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q14:ExpedienteDocumentos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_ExpedientesDocumentos_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_ExpedientesDocumentos_ConsultarResult" nillable="true" type="q15:ArrayOfExpedienteDocumentos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Familia_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q16:ExpedienteFamilia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Familia_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expediente_Familia_ConsultarResult" nillable="true" type="q17:ArrayOfExpedienteFamilia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Estudios_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q18:ExpedienteEstudios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Estudios_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expediente_Estudios_ConsultarResult" nillable="true" type="q19:ArrayOfExpedienteEstudios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Empleos_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q20:ExpedienteEmpleos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Empleos_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expediente_Empleos_ConsultarResult" nillable="true" type="q21:ArrayOfExpedienteEmpleos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Salud_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q22:ExpedienteSalud" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Salud_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expediente_Salud_ConsultarResult" nillable="true" type="q23:ArrayOfExpedienteSalud" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Conocimiento_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q24:ExpedienteConocimiento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Conocimiento_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expediente_Conocimiento_ConsultarResult" nillable="true" type="q25:ArrayOfExpedienteConocimiento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Referencias_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q26:ExpedienteReferencias" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Referencias_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expediente_Referencias_ConsultarResult" nillable="true" type="q27:ArrayOfExpedienteReferencias" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Generales_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q28:ExpedienteGenerales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Generales_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expediente_Generales_ConsultarResult" nillable="true" type="q29:ArrayOfExpedienteGenerales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Economicos_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Expediente" nillable="true" type="q30:ExpedienteEconomicos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Expediente_Economicos_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Expediente_Economicos_ConsultarResult" nillable="true" type="q31:ArrayOfExpedienteEconomicos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CHU_NuevoPuesto_Obtener">
     <xs:complexType>
       <xs:sequence>
@@ -189,14 +429,14 @@
   <xs:element name="CHU_NuevoPuesto_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_NuevoPuesto_ObtenerResult" nillable="true" type="q9:ArrayOfNuevoPuestoBE" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_NuevoPuesto_ObtenerResult" nillable="true" type="q32:ArrayOfNuevoPuestoBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CHU_NuevoPuesto_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q10:NuevoPuestoBE" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q33:NuevoPuestoBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -210,7 +450,7 @@
   <xs:element name="CHU_NuevoPuesto_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q11:NuevoPuestoBE" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q34:NuevoPuestoBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -229,14 +469,14 @@
   <xs:element name="CHU_DictamenNuevoP_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_DictamenNuevoP_ObtenerResult" nillable="true" type="q12:ArrayOfDictamenNuevoPuestoBE" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_DictamenNuevoP_ObtenerResult" nillable="true" type="q35:ArrayOfDictamenNuevoPuestoBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CHU_DictamenNuevoP_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q13:DictamenNuevoPuestoBE" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q36:DictamenNuevoPuestoBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -250,7 +490,7 @@
   <xs:element name="CHU_DictamenNuevoP_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q14:DictamenNuevoPuestoBE" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q37:DictamenNuevoPuestoBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

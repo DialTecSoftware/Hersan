@@ -129,7 +129,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(851, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(1078, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -253,7 +253,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(851, 123);
+            this.radPanel1.Size = new System.Drawing.Size(1078, 123);
             this.radPanel1.TabIndex = 1;
             // 
             // lblContrato
@@ -348,7 +348,7 @@
             // 
             // txtIdSu
             // 
-            this.txtIdSu.Location = new System.Drawing.Point(122, 413);
+            this.txtIdSu.Location = new System.Drawing.Point(28, 331);
             this.txtIdSu.Name = "txtIdSu";
             this.txtIdSu.Size = new System.Drawing.Size(49, 20);
             this.txtIdSu.TabIndex = 28;
@@ -392,7 +392,7 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.toolWindow1;
+            this.radDock1.ActiveWindow = this.DockSolicitud;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.documentContainer2);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -404,7 +404,7 @@
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(851, 543);
+            this.radDock1.Size = new System.Drawing.Size(1078, 464);
             this.radDock1.TabIndex = 3;
             this.radDock1.TabStop = false;
             this.radDock1.ActiveWindowChanged += new Telerik.WinControls.UI.Docking.DockWindowEventHandler(this.radDock1_ActiveWindowChanged);
@@ -417,7 +417,7 @@
             this.DockDictamen.Location = new System.Drawing.Point(6, 29);
             this.DockDictamen.Name = "DockDictamen";
             this.DockDictamen.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.DockDictamen.Size = new System.Drawing.Size(448, 498);
+            this.DockDictamen.Size = new System.Drawing.Size(675, 333);
             this.DockDictamen.Tag = "2";
             this.DockDictamen.Text = "Ver Dictamenes";
             // 
@@ -439,7 +439,8 @@
             gridViewTextBoxColumn9.IsVisible = false;
             gridViewTextBoxColumn9.Name = "Id";
             gridViewTextBoxColumn10.FieldName = "Solicitud.Id";
-            gridViewTextBoxColumn10.HeaderText = "IdSolicitud";
+            gridViewTextBoxColumn10.HeaderText = "Solicitud";
+            gridViewTextBoxColumn10.IsVisible = false;
             gridViewTextBoxColumn10.Name = "SPE_Id";
             gridViewTextBoxColumn11.FieldName = "Entidades.Nombre";
             gridViewTextBoxColumn11.HeaderText = "Entidad";
@@ -499,7 +500,7 @@
             this.gvDictamen.ShowGroupPanel = false;
             this.gvDictamen.ShowNoDataText = false;
             this.gvDictamen.ShowRowErrors = false;
-            this.gvDictamen.Size = new System.Drawing.Size(448, 498);
+            this.gvDictamen.Size = new System.Drawing.Size(675, 333);
             this.gvDictamen.TabIndex = 9;
             this.gvDictamen.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDictamen_CurrentRowChanged);
             // 
@@ -515,7 +516,7 @@
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
             this.toolTabStrip1.ShowItemToolTips = false;
-            this.toolTabStrip1.Size = new System.Drawing.Size(377, 533);
+            this.toolTabStrip1.Size = new System.Drawing.Size(377, 454);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(377, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(177, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -541,13 +542,13 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 22);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(375, 509);
+            this.toolWindow1.Size = new System.Drawing.Size(375, 430);
             this.toolWindow1.Text = "Datos de Dictamen";
             this.toolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
             // txtIdDictam
             // 
-            this.txtIdDictam.Location = new System.Drawing.Point(122, 387);
+            this.txtIdDictam.Location = new System.Drawing.Point(28, 305);
             this.txtIdDictam.Name = "txtIdDictam";
             this.txtIdDictam.Size = new System.Drawing.Size(60, 20);
             this.txtIdDictam.TabIndex = 12;
@@ -566,7 +567,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 165);
+            this.label3.Location = new System.Drawing.Point(48, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 7;
@@ -580,14 +581,14 @@
             this.cboResultado.Items.Add(radListDataItem1);
             this.cboResultado.Items.Add(radListDataItem2);
             this.cboResultado.Items.Add(radListDataItem3);
-            this.cboResultado.Location = new System.Drawing.Point(122, 164);
+            this.cboResultado.Location = new System.Drawing.Point(122, 131);
             this.cboResultado.Name = "cboResultado";
             this.cboResultado.Size = new System.Drawing.Size(125, 20);
             this.cboResultado.TabIndex = 6;
             // 
             // txtObser
             // 
-            this.txtObser.Location = new System.Drawing.Point(122, 299);
+            this.txtObser.Location = new System.Drawing.Point(122, 236);
             this.txtObser.Multiline = true;
             this.txtObser.Name = "txtObser";
             this.txtObser.Size = new System.Drawing.Size(206, 72);
@@ -595,7 +596,7 @@
             // 
             // txtDictamen
             // 
-            this.txtDictamen.Location = new System.Drawing.Point(122, 209);
+            this.txtDictamen.Location = new System.Drawing.Point(122, 157);
             this.txtDictamen.Multiline = true;
             this.txtDictamen.Name = "txtDictamen";
             this.txtDictamen.Size = new System.Drawing.Size(206, 70);
@@ -604,7 +605,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 314);
+            this.label2.Location = new System.Drawing.Point(25, 236);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 1;
@@ -613,7 +614,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 212);
+            this.label1.Location = new System.Drawing.Point(51, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
@@ -643,8 +644,8 @@
             // 
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentTabStrip1.SelectedIndex = 1;
-            this.documentTabStrip1.Size = new System.Drawing.Size(460, 533);
+            this.documentTabStrip1.SelectedIndex = 0;
+            this.documentTabStrip1.Size = new System.Drawing.Size(687, 454);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             this.documentTabStrip1.SelectedIndexChanged += new System.EventHandler(this.documentTabStrip1_SelectedIndexChanged);
@@ -657,7 +658,7 @@
             this.DockSolicitud.Location = new System.Drawing.Point(6, 29);
             this.DockSolicitud.Name = "DockSolicitud";
             this.DockSolicitud.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.DockSolicitud.Size = new System.Drawing.Size(412, 308);
+            this.DockSolicitud.Size = new System.Drawing.Size(675, 419);
             this.DockSolicitud.Tag = "1";
             this.DockSolicitud.Text = "Ver Solicitudes ";
             // 
@@ -720,7 +721,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(412, 308);
+            this.gvDatos.Size = new System.Drawing.Size(675, 419);
             this.gvDatos.TabIndex = 8;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -728,7 +729,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 722);
+            this.ClientSize = new System.Drawing.Size(1078, 643);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);

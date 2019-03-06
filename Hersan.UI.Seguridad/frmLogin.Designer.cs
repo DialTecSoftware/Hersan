@@ -171,7 +171,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ERP Hersan Hitec";
+            this.Text = "ERP Hersan Hytec";
             this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

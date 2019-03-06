@@ -99,6 +99,12 @@
     <Compile Include="frmDictamenSustitucion.Designer.cs">
       <DependentUpon>frmDictamenSustitucion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEvaluacionInduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvaluacionInduccion.Designer.cs">
+      <DependentUpon>frmEvaluacionInduccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmExpediente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDictamenSustitucion.resx">
       <DependentUpon>frmDictamenSustitucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvaluacionInduccion.resx">
+      <DependentUpon>frmEvaluacionInduccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmExpediente.resx">
       <DependentUpon>frmExpediente.cs</DependentUpon>

@@ -98,7 +98,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(778, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(873, 56);
             this.radCommandBar1.TabIndex = 7;
             // 
             // commandBarRowElement1
@@ -183,7 +183,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(778, 136);
+            this.radPanel1.Size = new System.Drawing.Size(873, 136);
             this.radPanel1.TabIndex = 8;
             // 
             // lblCalif
@@ -304,7 +304,7 @@
             this.radGroupBox2.HeaderText = "";
             this.radGroupBox2.Location = new System.Drawing.Point(0, 475);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(778, 123);
+            this.radGroupBox2.Size = new System.Drawing.Size(873, 123);
             this.radGroupBox2.TabIndex = 13;
             // 
             // label21
@@ -487,25 +487,21 @@
             gridViewTextBoxColumn1.Name = "Preguntas";
             gridViewTextBoxColumn1.ReadOnly = true;
             gridViewTextBoxColumn1.Width = 290;
-            gridViewCheckBoxColumn1.Checked = Telerik.WinControls.Enumerations.ToggleState.Indeterminate;
             gridViewCheckBoxColumn1.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
             gridViewCheckBoxColumn1.FieldName = "Valor4";
             gridViewCheckBoxColumn1.HeaderText = "4";
             gridViewCheckBoxColumn1.Name = "Valor4";
             gridViewCheckBoxColumn1.Width = 35;
-            gridViewCheckBoxColumn2.Checked = Telerik.WinControls.Enumerations.ToggleState.Indeterminate;
             gridViewCheckBoxColumn2.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
             gridViewCheckBoxColumn2.FieldName = "Valor3";
             gridViewCheckBoxColumn2.HeaderText = "3";
             gridViewCheckBoxColumn2.Name = "Valor3";
             gridViewCheckBoxColumn2.Width = 35;
-            gridViewCheckBoxColumn3.Checked = Telerik.WinControls.Enumerations.ToggleState.Indeterminate;
             gridViewCheckBoxColumn3.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
             gridViewCheckBoxColumn3.FieldName = "Valor2";
             gridViewCheckBoxColumn3.HeaderText = "2";
             gridViewCheckBoxColumn3.Name = "Valor2";
             gridViewCheckBoxColumn3.Width = 35;
-            gridViewCheckBoxColumn4.Checked = Telerik.WinControls.Enumerations.ToggleState.Indeterminate;
             gridViewCheckBoxColumn4.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
             gridViewCheckBoxColumn4.FieldName = "Valor1";
             gridViewCheckBoxColumn4.HeaderText = "1";
@@ -523,14 +519,15 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(399, 283);
+            this.gvDatos.Size = new System.Drawing.Size(494, 283);
             this.gvDatos.TabIndex = 16;
+            this.gvDatos.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gvDatos_CellValueChanged);
             // 
             // frmEvaluacionInduccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 598);
+            this.ClientSize = new System.Drawing.Size(873, 598);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radGroupBox2);

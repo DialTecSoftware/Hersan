@@ -1,5 +1,4 @@
-﻿using iTextSharp.text;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,47 +13,26 @@ namespace Hersan.UI.CapitalHumano
 {
     public partial class frmEvaluacionInduccion : Telerik.WinControls.UI.RadForm
     {
-      
-       public frmEvaluacionInduccion()
-        {
-            InitializeComponent();
-        }
-
-        private void frmEvaluacionInduccion_Load(object sender, EventArgs e)
-        {
-            try {
-
-                lblfecha.Text = DateTime.Now.ToLongDateString();
-                Cargar_Cuestionario();
-
-            } catch (Exception) {
-
-                throw;
-            }
-        }
 
         private void Imprimir_Archivo()
         {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file|*.pdf", ValidateNames = true }) {
-                if (sfd.ShowDialog() == DialogResult.OK) {
-                    iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
-                    try {
-                        iTextSharp.text.pdf.PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
-                        doc.Open();
-                        doc.Add(new iTextSharp.text.Paragraph(radPanel1.Text));
+            //using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file|*.pdf", ValidateNames = true }) {
+            //    if (sfd.ShowDialog() == DialogResult.OK) {
+            //        iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
+            //        try {
+            //            iTextSharp.text.pdf.PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+            //            doc.Open();
+            //            doc.Add(new iTextSharp.text.Paragraph(radPanel1.Text));
                        
-                    } catch (Exception ex) {
-                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        } catch (Exception ex) {
+            //            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    } finally {
-                        doc.Close();
-                    }
-                }
-            }
-
-
+            //        } finally {
+            //            doc.Close();
+            //        }
+            //    }
+            //}
         }
-        
         private void CalcularResultado()
         {
             try {
@@ -100,8 +78,6 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
-
-
         private void Cargar_Cuestionario()
         {
 
@@ -138,25 +114,50 @@ namespace Hersan.UI.CapitalHumano
 
         }
 
-      
+        public frmEvaluacionInduccion()
+        {
+            InitializeComponent();
+        }
+        private void frmEvaluacionInduccion_Load(object sender, EventArgs e)
+        {
+            try {
 
+                lblfecha.Text = DateTime.Now.ToLongDateString();
+                Cargar_Cuestionario();
+
+            } catch (Exception) {
+
+                throw;
+            }
+        }
         private void gvDatos_ValueChanged(object sender, EventArgs e)
         {
-            GridDataCellElement cell = sender as GridDataCellElement;
-            if (cell != null && ((GridViewDataColumn)cell.ColumnInfo).FieldName == "Bool") {
-                this.gvDatos.BeginUpdate();
-                foreach (GridViewDataRowInfo row in this.gvDatos.Rows) {
-                    if (row != this.gvDatos.CurrentRow) {
-                        row.Cells["Bool"].Value = false;
-                    }
-                }
-                this.gvDatos.EndUpdate();
-            }
+            //GridDataCellElement cell = sender as GridDataCellElement;
+            //if (cell != null && ((GridViewDataColumn)cell.ColumnInfo).FieldName == "Bool") {
+            //    this.gvDatos.BeginUpdate();
+            //    foreach (GridViewDataRowInfo row in this.gvDatos.Rows) {
+            //        if (row != this.gvDatos.CurrentRow) {
+            //            row.Cells["Bool"].Value = false;
+            //        }
+            //    }
+            //    this.gvDatos.EndUpdate();
+            //}
 
+           
 
-
+            //RadCheckBoxEditor editor = sender as RadCheckBoxEditor;
+            //if (editor != null && Convert.ToBoolean(editor.Value) == true) {
+            //    this.gvDatos.BeginUpdate();
+            //    foreach (GridViewDataRowInfo row in this.gvDatos.Rows) {
+            //        if (row == this.gvDatos.CurrentRow) {
+            //            row.Cells["Valor1"].Value = false;
+            //            row.Cells["Valor2"].Value = false;
+            //            row.Cells["Valor3"].Value = false;
+            //        }
+            //    }
+            //    this.gvDatos.EndUpdate();
+            //}
         }
-
         private void commandBarButton1_Click(object sender, EventArgs e)
         {
 
@@ -171,8 +172,20 @@ namespace Hersan.UI.CapitalHumano
                 }
 
         }
-        
-
-       
+        private void gvDatos_CellValueChanged(object sender, GridViewCellEventArgs e)
+        {
+            //e.ColumnIndex >= 1a. Columna con Checkbox)
+            if (e.ColumnIndex >= 1) {
+                //SE OBTIENE EL VALOR DEL CHECK
+                var isChecked = (bool)gvDatos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                if (isChecked) {
+                    foreach (GridViewDataColumn col in gvDatos.Columns) {
+                        if (col.Index >= 1 && col.Index != e.ColumnIndex )
+                            //SE CAMBIA A FALSE LOS CHECKBOX NO MARCADOS
+                            gvDatos.CurrentRow.Cells[col.Index].Value = !isChecked;
+                    }
+                }
+            }
+        }
     }
 }

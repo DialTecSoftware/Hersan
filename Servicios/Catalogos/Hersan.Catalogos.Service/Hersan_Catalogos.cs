@@ -76,9 +76,9 @@ namespace Hersan.Catalogos.Service
         {
             return new PuestosBP().ABCPuestos_Combo(IdDepto);
         }
-        public List<PuestosBE> CHUPuestos_Combo()
+        public List<PuestosBE> CHUPuestos_Puntos(int idPuesto)
         {
-            return new PuestosBP().CHUPuestos_Combo();
+            return new PuestosBP().CHUPuestos_Puntos(idPuesto);
         }
         #endregion
 

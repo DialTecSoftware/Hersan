@@ -8,6 +8,7 @@ using System.Data;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
+using Telerik.WinControls.UI;
 
 namespace Hersan.UI.CapitalHumano
 {
@@ -19,8 +20,11 @@ namespace Hersan.UI.CapitalHumano
         List<PerfilDescripcionBE> oList = new List<PerfilDescripcionBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         List<CompetenciasBE> oCompete = new List<CompetenciasBE>();
+        GridViewSummaryRowItem item1 = new GridViewSummaryRowItem();
         PerfilDescripcionBE obj;
         bool Flag = true;
+        decimal sueldoMax = 0;
+        decimal resultado;
         #endregion
 
         public frmPerfil()
@@ -31,8 +35,20 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 GroupDescriptor descriptor = new GroupDescriptor();
-                descriptor.GroupNames.Add("Grupo",  ListSortDirection.Ascending);
+                descriptor.GroupNames.Add("Grupo", ListSortDirection.Ascending);
                 grdDatos.GroupDescriptors.Add(descriptor);
+
+
+
+                // Summatoria de datos
+                GridViewSummaryRowItem item1 = new GridViewSummaryRowItem();
+                item1.Add(new GridViewSummaryItem("Total", "Total: {0:F2}", GridAggregateFunction.Sum));
+                this.grdDatos.SummaryRowsBottom.Add(item1);
+
+
+             
+               
+
 
                 LimpiarCampos();
                 CargarEntidades();
@@ -42,7 +58,7 @@ namespace Hersan.UI.CapitalHumano
                 CargarGrid();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }   
+            }
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -71,7 +87,7 @@ namespace Hersan.UI.CapitalHumano
                     obj.Puesto.Id = int.Parse(cboPuestos.SelectedValue.ToString());
                     obj.Experiencia = cboExperiencia.Text;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                    
+
                     #region Carga Detalle
                     DataRow oRow = oData.NewRow();
                     if (item.Grupo.Contains("EDUCACIÓN")) {
@@ -93,7 +109,7 @@ namespace Hersan.UI.CapitalHumano
                 });
 
                 /* ALTA DE PERFIL */
-                if (int.Parse(txtId.Text) == 0) {                    
+                if (int.Parse(txtId.Text) == 0) {
                     int Result = oCHumano.CHU_Perfiles_Guardar(obj, oData);
                     if (Result != 0) {
                         RadMessageBox.Show("Perfil guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
@@ -120,7 +136,7 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             try {
                 if (txtId.Text != "0") {
-                    if (RadMessageBox.Show("Desea eliminar el perfil seleccionado...?",this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    if (RadMessageBox.Show("Desea eliminar el perfil seleccionado...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         int Result = oCHumano.CHU_Perfiles_Elimina(int.Parse(txtId.Text), BaseWinBP.UsuarioLogueado.ID);
                         if (Result != 0) {
                             RadMessageBox.Show("Perfil eliminado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
@@ -128,7 +144,7 @@ namespace Hersan.UI.CapitalHumano
                             RadMessageBox.Show("Ocurrió un error al eliminar el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                         }
                     }
-                 }
+                }
                 LimpiarCampos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al eliminar el perfil\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -191,7 +207,7 @@ namespace Hersan.UI.CapitalHumano
                     obj.Concepto = cboCompetencia.SelectedItem.Text;
                     obj.Id = int.Parse(cboCompetencia.SelectedValue.ToString());
                     obj.Tipo = cboNivel.Text;
-                    obj.Valor = decimal.Parse(cboNivel.Text) * oCompete.Find(item=> item.Id.ToString() == cboCompetencia.SelectedValue.ToString()).Ponderacion;
+                    //obj.Valor = decimal.Parse(cboNivel.Text) * oCompete.Find(item=> item.Id.ToString() == cboCompetencia.SelectedValue.ToString()).Ponderacion;
                     oList.Add(obj);
 
                     ActualizaGrid();
@@ -210,6 +226,20 @@ namespace Hersan.UI.CapitalHumano
                 throw ex;
             }
         }
+
+        private void CargarPuntos()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                chkPuntos.ValueMember = "Puntos";
+                chkPuntos.DisplayMember = "Puntos";
+                chkPuntos.DataSource = (oCatalogos.CHUPuestos_Puntos(int.Parse(cboPuestos.SelectedValue.ToString())));
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar los puntos asociados a los p...\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogos = null;
+            }
+        }
         private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -218,7 +248,7 @@ namespace Hersan.UI.CapitalHumano
                 cboPuestos.ValueMember = "Id";
                 cboPuestos.DisplayMember = "Nombre";
                 if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
-                    cboPuestos.DataSource = oCatalogos.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));                    
+                    cboPuestos.DataSource = oCatalogos.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
                 } else
                     cboPuestos.DataSource = null;
             } catch (Exception ex) {
@@ -230,7 +260,16 @@ namespace Hersan.UI.CapitalHumano
         private void cboPuestos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
+                
+                if (cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
+                    CargarPuntos();
+                   
+
+                } else
+                    chkPuntos.DataSource = null;
+
                 if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null)
+
                     CargarGrid();
             } catch (Exception ex) {
                 throw ex;
@@ -300,6 +339,7 @@ namespace Hersan.UI.CapitalHumano
                 cboEducacion.SelectedIndex = -1;
                 cboExperiencia.SelectedIndex = 0;
                 cboNivel.SelectedIndex = 0;
+                txtSueldo.Text = "0";
                 grdDatos.DataSource = null;
             } catch (Exception ex) {
                 throw ex;
@@ -309,7 +349,7 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 grdDatos.DataSource = null;
-                grdDatos.DataSource = oList.FindAll(item=> item.DatosUsuario.Estatus == true);
+                grdDatos.DataSource = oList.FindAll(item => item.DatosUsuario.Estatus == true);
             } catch (Exception ex) {
                 throw ex;
             }
@@ -367,5 +407,66 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
+
+        private void grdDatos_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            try {
+                
+                decimal valor = 0;
+                decimal pond = 0;
+                decimal Suma = 0;
+                decimal total = 0;
+                decimal Total = 0;
+                if (grdDatos.Columns[e.ColumnIndex].Name == "Valor") {
+                  
+
+                        foreach (GridViewRowInfo row in grdDatos.Rows) {
+                        // Producto de las columnas nivel y valor
+                        if (row.Cells["Tipo"].Value.ToString() != "PREFERENTE") {
+                            valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
+                            pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
+                            total = valor *  pond;
+                            row.Cells["Total"].Value = total;
+                            Suma += Convert.ToDecimal(row.Cells["Total"].Value);
+                            }
+                           
+                        }
+                    Total = Suma;
+                    resultado = Total * decimal.Parse(chkPuntos.SelectedValue.ToString());
+                }
+
+
+
+
+                txtSueldo.Text = resultado.ToString();
+
+
+
+
+
+
+            } catch (Exception) {
+
+                throw;
+            }
+        
+
+            }
+
+        private void chkPuntos_SelectedValueChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void chkPuntos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            //if (chkPuntos.SelectedValue.ToString() != "" && grdDatos.RowCount > 0) {
+
+            //    decimal sueldoMax = /*decimal.Parse(item1.ToString())*/   decimal.Parse(chkPuntos.ToString());
+
+            //    txtSueldo.Text = sueldoMax.ToString();
+            //}
+        }
     }
-}
+    }
+

@@ -67,7 +67,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 cboPuesto.ValueMember = "ID";
                 cboPuesto.DisplayMember = "Nombre";
-                cboPuesto.DataSource = oCatalogo.CHUPuestos_Combo();
+                cboPuesto.DataSource = oCatalogo.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString())); ;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -152,7 +152,14 @@ namespace Hersan.UI.CapitalHumano
                 throw ex;
             }
         }
-
+        private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                CargarPuestos();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -313,6 +320,8 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+
+     
     }
     }
 

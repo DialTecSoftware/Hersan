@@ -16,7 +16,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_PUESTO_GUARDA = "ABC_Puesto_Guarda";
         const string CONST_USP_ABC_PUESTO_ACTUALIZA = "ABC_Puesto_Actualiza";
         const string CONST_USP_ABC_PUESTOS_COMBO = "ABC_Puestos_Combo";
-        const string CONST_USP_CHU_PUESTOS_COMBO = "CHU_Puestos_Combo";
+        const string CONST_USP_CHU_PUESTOS_COMBO = "CHU_Puntos_Puestos";
         #endregion
 
         public List<PuestosBE> ABCPuestos_Obtener()
@@ -35,6 +35,7 @@ namespace Hersan.Datos.Catalogos
                                 obj.Id = int.Parse(reader["PUE_Id"].ToString());
                                 obj.Nombre = reader["PUE_Nombre"].ToString();
                                 obj.Abrev = reader["PUE_Abrev"].ToString();
+                                obj.Puntos = decimal.Parse(reader["PUE_Puntos"].ToString());
                                 obj.Departamentos.Entidades.Id = int.Parse(reader["ENT_Id"].ToString());
                                 obj.Departamentos.Entidades.Nombre = reader["ENT_Nombre"].ToString();
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["PUE_Estatus"].ToString());
@@ -61,6 +62,7 @@ namespace Hersan.Datos.Catalogos
                         cmd.Parameters.AddWithValue("@IdDepto", obj.Departamentos.Id);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Abrev", obj.Abrev);
+                        cmd.Parameters.AddWithValue("@Puntos", obj.Puntos);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -83,6 +85,7 @@ namespace Hersan.Datos.Catalogos
                         cmd.Parameters.AddWithValue("@IdDepto", obj.Departamentos.Id);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Abrev", obj.Abrev);
+                        cmd.Parameters.AddWithValue("@Puntos", obj.Puntos);
                         cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
@@ -124,20 +127,22 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-        public List<PuestosBE> CHUPuestos_Combo()
+        public List<PuestosBE> CHUPuestos_Puntos(int idPuesto)
         {
             List<PuestosBE> oList = new List<PuestosBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_PUESTOS_COMBO, conn)) {
+                        cmd.Parameters.AddWithValue("@IdPuesto", idPuesto);
+
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
                                 PuestosBE obj = new PuestosBE();
-                                obj.Id = int.Parse(reader["PUE_Id"].ToString());
-                                obj.Nombre = reader["PUE_Nombre"].ToString();
+                                obj.Puntos = decimal.Parse(reader["PUE_Puntos"].ToString());
+                              
 
                                 oList.Add(obj);
                             }

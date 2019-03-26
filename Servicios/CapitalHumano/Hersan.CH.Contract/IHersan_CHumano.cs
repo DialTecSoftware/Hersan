@@ -91,5 +91,23 @@ namespace Hersan.CH.Contract
         int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj);
 
         #endregion
+
+        #region EvaluacionInduccion
+        [OperationContract]
+        List<EvaluacionInduccionBE> CHU_DatosEMP_Obtener(EvaluacionInduccionBE evaluacion);
+        [OperationContract]
+        List<EvaluacionInduccionBE> CHU_EvaluacionInduccion_Obtener();
+        [OperationContract]
+        List<PreguntasEvaluacionBE> CHU_ObtenerPreguntas();
+        [OperationContract]
+        int CHU_EvaluacionInduccion_Guardar(DataSet Tablas, int IdUsuario);
+        //[OperationContract]
+        //int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj);
+
+        #endregion
+
+
+
+
     }
 }

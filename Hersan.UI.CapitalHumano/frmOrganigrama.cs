@@ -46,7 +46,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 cboPuesto.ValueMember = "ID";
                 cboPuesto.DisplayMember = "Nombre";
-                cboPuesto.DataSource = oCatalogo.CHUPuestos_Combo();
+                cboPuesto.DataSource = oCatalogo.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -60,7 +60,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 cboPadre.ValueMember = "ID";
                 cboPadre.DisplayMember = "Nombre";
-                cboPadre.DataSource = oCatalogo.CHUPuestos_Combo();
+                cboPadre.DataSource = oCatalogo.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {

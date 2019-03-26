@@ -49,9 +49,7 @@
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.txtPonderacion = new System.Windows.Forms.TextBox();
             this.chkEstatus = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -189,9 +187,7 @@
             // radPanel1
             // 
             this.radPanel1.Controls.Add(this.txtId);
-            this.radPanel1.Controls.Add(this.txtPonderacion);
             this.radPanel1.Controls.Add(this.chkEstatus);
-            this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.txtDescripcion);
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Controls.Add(this.txtNombre);
@@ -204,37 +200,20 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(436, 44);
+            this.txtId.Location = new System.Drawing.Point(445, 20);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(71, 20);
             this.txtId.TabIndex = 8;
             this.txtId.Visible = false;
             // 
-            // txtPonderacion
-            // 
-            this.txtPonderacion.Location = new System.Drawing.Point(436, 16);
-            this.txtPonderacion.Name = "txtPonderacion";
-            this.txtPonderacion.Size = new System.Drawing.Size(71, 20);
-            this.txtPonderacion.TabIndex = 3;
-            this.txtPonderacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPonderacion_KeyPress);
-            // 
             // chkEstatus
             // 
-            this.chkEstatus.Location = new System.Drawing.Point(355, 46);
+            this.chkEstatus.Location = new System.Drawing.Point(352, 64);
             this.chkEstatus.Name = "chkEstatus";
             this.chkEstatus.Size = new System.Drawing.Size(57, 17);
             this.chkEstatus.TabIndex = 4;
             this.chkEstatus.Text = "Activo";
             this.chkEstatus.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(355, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ponderacion:";
             // 
             // txtDescripcion
             // 
@@ -413,11 +392,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkEstatus;
         private Telerik.WinControls.UI.RadGridView gvDatos;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement4;
-        private System.Windows.Forms.TextBox txtPonderacion;
         private System.Windows.Forms.TextBox txtId;
     }
 }

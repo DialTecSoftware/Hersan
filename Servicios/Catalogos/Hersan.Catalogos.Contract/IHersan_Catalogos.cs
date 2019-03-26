@@ -52,7 +52,7 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         List<PuestosBE> ABCPuestos_Combo(int IdDepto);
         [OperationContract]
-        List<PuestosBE> CHUPuestos_Combo();
+        List<PuestosBE> CHUPuestos_Puntos(int idPuesto);
         #endregion
 
         #region Competencias

@@ -74,6 +74,7 @@ namespace Hersan.UI.Catalogos
                     obj.Departamentos.Id = int.Parse(cboDeptos.SelectedValue.ToString());
                     obj.Nombre = txtNombre.Text;
                     obj.Abrev = txtAbrev.Text;
+                    obj.Puntos =decimal.Parse( txtPuntos.Text);
                     obj.DatosUsuario.Estatus = chkEstatus.Checked;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
@@ -115,6 +116,7 @@ namespace Hersan.UI.Catalogos
                         obj.Departamentos.Id = int.Parse(txtIdDep.Text);
                         obj.Nombre = txtNombre.Text;
                         obj.Abrev = txtAbrev.Text;
+                        obj.Puntos = decimal.Parse(txtPuntos.Text);
                         obj.DatosUsuario.Estatus = false;
                         obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
@@ -145,6 +147,7 @@ namespace Hersan.UI.Catalogos
                     txtAbrev.Text = e.CurrentRow.Cells["Abrev"].Value.ToString();
                     cboDeptos.SelectedValue = int.Parse(txtIdDep.Text);
                     chkEstatus.Checked = bool.Parse(e.CurrentRow.Cells["Estatus"].Value.ToString());
+                    txtPuntos.Text = (e.CurrentRow.Cells["Puntos"].Value).ToString();
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -204,6 +207,7 @@ namespace Hersan.UI.Catalogos
                 cboDeptos.SelectedIndex = 0;
                 txtIdDep.Text = "0";
                 txtIdPuesto.Text = "0";
+                txtPuntos.Text = "0";
                 txtNombre.Text = string.Empty;
                 txtAbrev.Text = string.Empty;
                 chkEstatus.Checked = false;
@@ -217,7 +221,7 @@ namespace Hersan.UI.Catalogos
             try {
                 Flag = txtNombre.Text.Trim().Length == 0 ? false : true;
                 Flag = txtAbrev.Text.Trim().Length == 0 ? false : true;
-
+                Flag = txtPuntos.Text.Trim().Length == 0 ? false : true;
                 return Flag;
             } catch (Exception ex) {
                 throw ex;

@@ -121,6 +121,7 @@
       <xs:element minOccurs="0" name="Departamentos" nillable="true" type="tns:DepartamentosBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Puntos" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PuestosBE" nillable="true" type="tns:PuestosBE" />

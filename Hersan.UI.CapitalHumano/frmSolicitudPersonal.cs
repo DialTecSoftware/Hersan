@@ -107,10 +107,10 @@ namespace Hersan.UI.CapitalHumano
             txtIndicad.Text = "";
             txtJustif.Text = "";
             txtSueldo.Text = "0";
-            cboEntidad.SelectedIndex = -1;
-            cboDepto.SelectedIndex = -1;
-            cboTipoCon.SelectedIndex = -1;
-            cboPuesto.SelectedIndex = -1;
+            cboEntidad.SelectedIndex = 1;
+            cboDepto.SelectedIndex = 1;
+            cboTipoCon.SelectedIndex = 1;
+            cboPuesto.SelectedIndex = 1;
             
         }
 
@@ -135,7 +135,6 @@ namespace Hersan.UI.CapitalHumano
 
                 LimpiarCampos();
                 CargarEntidades();
-                CargarPuestos();
                 CargarTiposContrato();
                 CargarSolicitudes();
 
@@ -155,7 +154,9 @@ namespace Hersan.UI.CapitalHumano
         private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-                CargarPuestos();
+                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+                    CargarPuestos();
+                }
             } catch (Exception ex) {
                 throw ex;
             }

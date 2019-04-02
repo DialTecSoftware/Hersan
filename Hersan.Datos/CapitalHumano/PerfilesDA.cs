@@ -28,6 +28,7 @@ namespace Hersan.Datos.CapitalHumano
                         cmd.Parameters.AddWithValue("@IdDepto", obj.Puesto.Departamentos.Id);
                         cmd.Parameters.AddWithValue("@IdPuesto", obj.Puesto.Id);
                         cmd.Parameters.AddWithValue("@Experiencia", obj.Experiencia);
+                        cmd.Parameters.AddWithValue("@SueldoMax", obj.SueldoMax);
                         cmd.Parameters.AddWithValue("@Detalle", Detalle);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
@@ -96,6 +97,7 @@ namespace Hersan.Datos.CapitalHumano
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_PERFILES_ACTUALIZA, conn)) {
                         cmd.Parameters.AddWithValue("@IdPerfil", obj.Id);
                         cmd.Parameters.AddWithValue("@Experiencia", obj.Experiencia);
+                        cmd.Parameters.AddWithValue("@SueldoMax", obj.SueldoMax);
                         cmd.Parameters.AddWithValue("@Detalle", Detalle);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 

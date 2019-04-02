@@ -20,6 +20,7 @@ namespace Hersan.Entidades.CapitalHumano
         public bool Sel { get; set; }
         public int Id { get; set; }
         public string Experiencia { get; set; }
+        public decimal SueldoMax { get; set; }
         public PuestosBE Puesto { get; set; }
         public List<EducacionBE> Educacion { get; set; }
         public List<CompetenciasBE> Competencia { get; set; }

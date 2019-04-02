@@ -119,7 +119,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1057, 78);
+            this.radCommandBar1.Size = new System.Drawing.Size(1057, 53);
             this.radCommandBar1.TabIndex = 3;
             // 
             // commandBarRowElement1
@@ -248,7 +248,7 @@
             this.radPanel1.Controls.Add(this.cboDepto);
             this.radPanel1.Controls.Add(this.txtNombre);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 78);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(1057, 153);
             this.radPanel1.TabIndex = 5;
@@ -516,15 +516,15 @@
             this.radGroupBox1.Controls.Add(this.label9);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.radGroupBox1.HeaderText = "";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 231);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 206);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(375, 275);
+            this.radGroupBox1.Size = new System.Drawing.Size(375, 300);
             this.radGroupBox1.TabIndex = 6;
             // 
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(375, 231);
+            this.gvDatos.Location = new System.Drawing.Point(375, 206);
             // 
             // 
             // 
@@ -627,7 +627,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(682, 275);
+            this.gvDatos.Size = new System.Drawing.Size(682, 300);
             this.gvDatos.TabIndex = 8;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 

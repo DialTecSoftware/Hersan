@@ -150,7 +150,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1288, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(1288, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -277,7 +277,7 @@
             this.radPanel1.Controls.Add(this.label7);
             this.radPanel1.Controls.Add(this.label8);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 81);
+            this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(1288, 201);
             this.radPanel1.TabIndex = 1;
@@ -489,14 +489,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 282);
+            this.radDock1.Location = new System.Drawing.Point(0, 257);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1288, 469);
+            this.radDock1.Size = new System.Drawing.Size(1288, 494);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -525,7 +525,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 24);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(413, 433);
+            this.toolWindow1.Size = new System.Drawing.Size(413, 458);
             this.toolWindow1.Text = "toolWindow1";
             // 
             // rdbRechazado
@@ -646,7 +646,7 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(415, 459);
+            this.toolTabStrip1.Size = new System.Drawing.Size(415, 484);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(415, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(215, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -677,7 +677,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(859, 459);
+            this.documentTabStrip1.Size = new System.Drawing.Size(859, 484);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             this.documentTabStrip1.SelectedIndexChanged += new System.EventHandler(this.documentTabStrip1_SelectedIndexChanged);
@@ -689,7 +689,7 @@
             this.DockDictamen.Location = new System.Drawing.Point(6, 29);
             this.DockDictamen.Name = "DockDictamen";
             this.DockDictamen.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.DockDictamen.Size = new System.Drawing.Size(847, 424);
+            this.DockDictamen.Size = new System.Drawing.Size(847, 449);
             this.DockDictamen.Text = "VER DICTAMENES";
             // 
             // gvDictamenes
@@ -802,7 +802,7 @@
             this.gvDictamenes.ShowGroupPanel = false;
             this.gvDictamenes.ShowNoDataText = false;
             this.gvDictamenes.ShowRowErrors = false;
-            this.gvDictamenes.Size = new System.Drawing.Size(847, 424);
+            this.gvDictamenes.Size = new System.Drawing.Size(847, 449);
             this.gvDictamenes.TabIndex = 10;
             this.gvDictamenes.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDictamenes_CurrentRowChanged);
             // 

@@ -71,7 +71,7 @@
             this.radcommonbar.Name = "radcommonbar";
             this.radcommonbar.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radcommonbar.Size = new System.Drawing.Size(600, 78);
+            this.radcommonbar.Size = new System.Drawing.Size(600, 53);
             this.radcommonbar.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -188,7 +188,7 @@
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.txtNombre);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 78);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(600, 82);
             this.radPanel1.TabIndex = 1;
@@ -250,7 +250,7 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 160);
+            this.gvDatos.Location = new System.Drawing.Point(0, 135);
             // 
             // 
             // 
@@ -293,7 +293,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(600, 107);
+            this.gvDatos.Size = new System.Drawing.Size(600, 132);
             this.gvDatos.TabIndex = 3;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 

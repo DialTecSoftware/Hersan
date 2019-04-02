@@ -22,12 +22,12 @@ namespace Hersan.UI.Catalogos
         private void frmPuestos_Load(object sender, EventArgs e)
         {
             try {
-                GroupDescriptor Entidades = new GroupDescriptor();
-                Entidades.GroupNames.Add("Entidad", ListSortDirection.Ascending);
-                GroupDescriptor Depto = new GroupDescriptor();
-                Depto.GroupNames.Add("NombreDepto", ListSortDirection.Ascending);
-                this.gvPuestos.GroupDescriptors.Add(Entidades);
-                this.gvPuestos.GroupDescriptors.Add(Depto);
+                //GroupDescriptor Entidades = new GroupDescriptor();
+                //Entidades.GroupNames.Add("Entidad", ListSortDirection.Ascending);
+                //GroupDescriptor Depto = new GroupDescriptor();
+                //Depto.GroupNames.Add("NombreDepto", ListSortDirection.Ascending);
+                //this.gvPuestos.GroupDescriptors.Add(Entidades);
+                //this.gvPuestos.GroupDescriptors.Add(Depto);
 
                 LimpiarCampos();
                 CargarEntidades();

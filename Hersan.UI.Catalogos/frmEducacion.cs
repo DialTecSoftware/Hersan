@@ -14,6 +14,7 @@ namespace Hersan.UI.Catalogos
     public partial class frmEducacion : Telerik.WinControls.UI.RadForm
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
+      
         List<EducacionBE> oList = new List<EducacionBE>();
 
         public frmEducacion()
@@ -22,6 +23,7 @@ namespace Hersan.UI.Catalogos
         }
         private void frmEducacion_Load(object sender, EventArgs e)
         {
+
             try {
                 LimpiarCampos();
                 Cargar();

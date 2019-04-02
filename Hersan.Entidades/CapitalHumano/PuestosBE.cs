@@ -25,5 +25,6 @@ namespace Hersan.Entidades.Catalogos
         public decimal Puntos { get; set; }
         public GeneralBE DatosUsuario { get; set; }
         public DepartamentosBE Departamentos { get; set; }
+     
     }
 }

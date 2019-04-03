@@ -1,6 +1,8 @@
 ﻿using Hersan.CH.Contract;
 using Hersan.Entidades.CapitalHumano;
+using Hersan.Entidades.Relchec;
 using Hersan.Negocio.CapitalHumano;
+using Hersan.Negocio.Relchec;
 using System.Collections.Generic;
 using System.Data;
 
@@ -151,7 +153,6 @@ namespace Hersan.CH.Service
         }
 
         #endregion
-        
 
         #region EvaluacionInduccion
         public List<EvaluacionInduccionBE> CHU_DatosEMP_Obtener(EvaluacionInduccionBE evaluacion)
@@ -175,6 +176,21 @@ namespace Hersan.CH.Service
         //    return new EvaluacionInduccionBP().CHU_DictamenNuevoP_Actualizar(obj);
         //}
 
+        #endregion
+
+        #region Reloj Checador
+        public List<HorariosBE> ABCHorarios_Obtener()
+        {
+            return new HorariosBP().ABCHorarios_Obtener();
+        }
+        public int ABCHorarios_Guarda(HorariosBE obj)
+        {
+            return new HorariosBP().ABCHorarios_Guarda(obj);
+        }
+        public int ABCHorarios_Actualiza(HorariosBE obj)
+        {
+            return new HorariosBP().ABCHorarios_Actualizar(obj);
+        }
         #endregion
     }
 }

@@ -120,7 +120,6 @@
             this.commandBarStripElement8 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement9 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement10 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             this.grdDatosEdu = new Telerik.WinControls.UI.RadGridView();
             this.grdDatos = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
@@ -1045,7 +1044,6 @@
         private System.Windows.Forms.Label label6;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement10;
         private System.Windows.Forms.TextBox txtId;
-        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
         private Telerik.WinControls.UI.RadDropDownList cboEntidad;
         private System.Windows.Forms.Label label7;
         private Telerik.WinControls.UI.RadDropDownList cboNivel;

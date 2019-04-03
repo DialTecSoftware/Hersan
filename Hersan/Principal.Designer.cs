@@ -107,7 +107,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HERSAN HYTEC";
+            this.Text = "HERSAN HI-TEC";
             this.ThemeName = "MaterialTeal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Principal_Load);

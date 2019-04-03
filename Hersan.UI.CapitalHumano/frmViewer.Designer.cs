@@ -71,6 +71,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer rptViewer;
-        private CrystalDecisions.CrystalReports.Engine.ReportDocument iReport;
+        public CrystalDecisions.CrystalReports.Engine.ReportDocument iReport;
     }
 }

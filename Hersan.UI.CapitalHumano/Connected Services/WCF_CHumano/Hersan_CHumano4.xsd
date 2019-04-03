@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
-  <xs:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Relchec" />
   <xs:element name="CHU_Perfiles_Guardar">
     <xs:complexType>
       <xs:sequence>
@@ -502,43 +501,68 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCHorarios_Obtener">
+  <xs:element name="CHU_DatosEMP_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="evaluacion" nillable="true" type="q38:EvaluacionInduccionBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_DatosEMP_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_DatosEMP_ObtenerResult" nillable="true" type="q39:ArrayOfEvaluacionInduccionBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_EvaluacionInduccion_Obtener">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCHorarios_ObtenerResponse">
+  <xs:element name="CHU_EvaluacionInduccion_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Relchec" minOccurs="0" name="ABCHorarios_ObtenerResult" nillable="true" type="q38:ArrayOfHorariosBE" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_EvaluacionInduccion_ObtenerResult" nillable="true" type="q40:ArrayOfEvaluacionInduccionBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCHorarios_Guarda">
+  <xs:element name="CHU_ObtenerPreguntas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_ObtenerPreguntasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Relchec" minOccurs="0" name="obj" nillable="true" type="q39:HorariosBE" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_ObtenerPreguntasResult" nillable="true" type="q41:ArrayOfPreguntasEvaluacionBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCHorarios_GuardaResponse">
+  <xs:element name="CHU_EvaluacionInduccion_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ABCHorarios_GuardaResult" type="xs:int" />
+        <xs:element minOccurs="0" name="Tablas" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ABCHorarios_Actualizar">
+  <xs:element name="CHU_EvaluacionInduccion_GuardarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Relchec" minOccurs="0" name="obj" nillable="true" type="q40:HorariosBE" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ABCHorarios_ActualizarResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ABCHorarios_ActualizarResult" type="xs:int" />
+        <xs:element minOccurs="0" name="CHU_EvaluacionInduccion_GuardarResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

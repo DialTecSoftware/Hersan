@@ -45,6 +45,18 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDA.cs" />
@@ -52,6 +64,7 @@
     <Compile Include="CapitalHumano\ContratosDA.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoDA.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionDA.cs" />
+    <Compile Include="CapitalHumano\EvaluacionInduccionDA.cs" />
     <Compile Include="CapitalHumano\ExpedientesDA.cs" />
     <Compile Include="CapitalHumano\NuevoPuestoDA.cs" />
     <Compile Include="CapitalHumano\PerfilesDA.cs" />
@@ -78,6 +91,8 @@
     <Compile Include="Seguridad\RolesDA.cs" />
     <Compile Include="Seguridad\RolesUsuarioDA.cs" />
     <Compile Include="Seguridad\UsuariosDA.cs" />
+    <Compile Include="Ventas\ClientesDA.cs" />
+    <Compile Include="Ventas\FacturacionDA.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">

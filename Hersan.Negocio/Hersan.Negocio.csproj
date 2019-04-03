@@ -50,6 +50,7 @@
     <Compile Include="CapitalHumano\ContratosBP.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionBP.cs" />
     <Compile Include="CapitalHumano\EducacionBP.cs" />
+    <Compile Include="CapitalHumano\EvaluacionInduccionBP.cs" />
     <Compile Include="CapitalHumano\ExpedientesBP.cs" />
     <Compile Include="CapitalHumano\FuncionesBP.cs" />
     <Compile Include="CapitalHumano\NuevoPuestoBP.cs" />
@@ -77,6 +78,8 @@
     <Compile Include="Seguridad\RolesBP.cs" />
     <Compile Include="Seguridad\RolesUsuarioBP.cs" />
     <Compile Include="Seguridad\UsuariosBP.cs" />
+    <Compile Include="Ventas\ClientesBP.cs" />
+    <Compile Include="Ventas\FacturacionBE.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Datos\Hersan.Datos.csproj">

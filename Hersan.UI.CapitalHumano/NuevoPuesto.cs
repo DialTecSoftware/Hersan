@@ -30,11 +30,11 @@ namespace Hersan.UI.CapitalHumano
             oList.Clear();
             txtId.Text = "-1";
             txtNombre.Text = "";
-            cboNivel.SelectedIndex = -1;
+            cboNivel.SelectedIndex = 0;
             txtJustif.Text = "";
             txtSueldo.Text = "0";
-            cboEntidad.SelectedIndex = -1;
-            cboDepto.SelectedIndex = -1;
+            cboEntidad.SelectedIndex = 0;
+            cboDepto.SelectedIndex = 0;
             txtIndicadores.Text = "";
             txtJustif.Text = "";
             txtNecesidades.Text = "";
@@ -42,7 +42,7 @@ namespace Hersan.UI.CapitalHumano
             txtPrestaciones.Text = "";
             txtPuestos.Text = "";
             txtResultados.Text = "";
-            txtSueldo.Text = "";
+            txtSueldo.Text = "0";
         }
         private void CargarEntidades()
         {
@@ -167,7 +167,7 @@ namespace Hersan.UI.CapitalHumano
                 obj.PuestosCargo = txtPuestos.Text;
                 obj.Prestaciones = txtPrestaciones.Text;
                 obj.Necesidades = txtNecesidades.Text;
-                obj.Ocupantes = cboNivel.SelectedIndex;
+                obj.Ocupantes = int.Parse(cboNivel.SelectedItem.ToString());
                 obj.Resultados = txtResultados.Text;
                 obj.Sueldo = decimal.Parse(txtSueldo.Text);
                 obj.Justificacion = txtJustif.Text;
@@ -240,7 +240,7 @@ namespace Hersan.UI.CapitalHumano
                     txtSueldo.Text = (e.CurrentRow.Cells["Sueldo"].Value.ToString());
                     cboDepto.SelectedValue = int.Parse(e.CurrentRow.Cells["DEP_Id"].Value.ToString());
                     cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["ENT_Id"].Value.ToString());
-                   cboNivel.SelectedIndex = int.Parse(e.CurrentRow.Cells["Ocupantes"].Value.ToString());
+                    cboNivel.SelectedValue = (e.CurrentRow.Cells["Ocupantes"].Value.ToString());
                    txtResultados.Text= (e.CurrentRow.Cells["Resultados"].Value.ToString());
                     txtObjetivos.Text = (e.CurrentRow.Cells["Objetivos"].Value.ToString());
                     txtPrestaciones.Text = e.CurrentRow.Cells["Prestaciones"].Value.ToString();

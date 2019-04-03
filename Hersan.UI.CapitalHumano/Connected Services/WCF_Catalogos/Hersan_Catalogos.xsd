@@ -188,15 +188,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CHUPuestos_Combo">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CHUPuestos_ComboResponse">
+  <xs:element name="CHUPuestos_Puntos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="CHUPuestos_ComboResult" nillable="true" type="q15:ArrayOfPuestosBE" />
+        <xs:element minOccurs="0" name="idPuesto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHUPuestos_PuntosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="CHUPuestos_PuntosResult" nillable="true" type="q15:ArrayOfPuestosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

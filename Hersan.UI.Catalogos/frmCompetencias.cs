@@ -53,7 +53,6 @@ namespace Hersan.UI.Catalogos
                     obj.Id = int.Parse(txtId.Text);
                     obj.Nombre = txtNombre.Text;
                     obj.Descripcion = txtDescripcion.Text;
-                    obj.Ponderacion = int.Parse(txtPonderacion.Text.Length == 0 ? "0" : txtPonderacion.Text);
                     obj.DatosUsuario.Estatus = chkEstatus.Checked;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
@@ -94,9 +93,8 @@ namespace Hersan.UI.Catalogos
                         obj.Id = int.Parse(txtId.Text);
                         obj.Nombre = txtNombre.Text;
                         obj.Descripcion = txtDescripcion.Text;
-                        obj.Ponderacion = int.Parse(txtPonderacion.Text);
                         obj.DatosUsuario.Estatus = false;
-                        obj.DatosUsuario.IdUsuarioCreo = 2;
+                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                         int Result = oCatalogos.ABCCompetencias_Actualizar(obj);
                         if (Result == 0) {
@@ -129,7 +127,6 @@ namespace Hersan.UI.Catalogos
                     txtId.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Id"].Value.ToString();
                     txtNombre.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Nombre"].Value.ToString();
                     txtDescripcion.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Descripcion"].Value.ToString();
-                    txtPonderacion.Text = gvDatos.Rows[e.CurrentRow.Index].Cells["Ponderacion"].Value.ToString();
                     chkEstatus.Checked = bool.Parse(gvDatos.Rows[e.CurrentRow.Index].Cells["Estatus"].Value.ToString());
                 }
             } catch (Exception ex) {
@@ -164,7 +161,6 @@ namespace Hersan.UI.Catalogos
             try {
                 txtId.Text = "0";
                 txtNombre.Text = string.Empty;
-                txtPonderacion.Text = "0";
                 txtDescripcion.Text = string.Empty;
                 chkEstatus.Checked = false;
             } catch (Exception ex) {
@@ -177,7 +173,7 @@ namespace Hersan.UI.Catalogos
             try {
                 Flag = txtDescripcion.Text.Trim().Length == 0 ? false : true;
                 Flag = txtNombre.Text.Trim().Length == 0 ? false : true;
-                Flag = txtPonderacion.Text.Trim().Length == 0 ? false : true;
+              
 
                 return Flag;
             } catch (Exception ex) {

@@ -1,8 +1,6 @@
 ﻿using Hersan.CH.Contract;
 using Hersan.Entidades.CapitalHumano;
-using Hersan.Entidades.Relchec;
 using Hersan.Negocio.CapitalHumano;
-using Hersan.Negocio.Relchec;
 using System.Collections.Generic;
 using System.Data;
 
@@ -153,20 +151,30 @@ namespace Hersan.CH.Service
         }
 
         #endregion
+        
 
-        #region Horarios
-        public List<HorariosBE> ABCHorarios_Obtener()
+        #region EvaluacionInduccion
+        public List<EvaluacionInduccionBE> CHU_DatosEMP_Obtener(EvaluacionInduccionBE evaluacion)
         {
-            return new HorariosBP().ABCHorarios_Obtener();
+            return new EvaluacionInduccionBP().CHU_DatosEMP_Obtener( evaluacion);
         }
-        public int ABCHorarios_Guarda(HorariosBE obj)
+        public List<EvaluacionInduccionBE> CHU_EvaluacionInduccion_Obtener()
         {
-            return new HorariosBP().ABCHorarios_Guarda(obj);
+            return new EvaluacionInduccionBP().CHU_EvaluacionInduccion_Obtener();
         }
-        public int ABCHorarios_Actualizar(HorariosBE obj)
+        public List<PreguntasEvaluacionBE> CHU_ObtenerPreguntas()
         {
-            return new HorariosBP().ABCHorarios_Actualizar(obj);
+            return new EvaluacionInduccionBP().CHU_ObtenerPreguntas();
         }
+        public int CHU_EvaluacionInduccion_Guardar(DataSet Tablas, int IdUsuario)
+        {
+            return new EvaluacionInduccionBP().CHU_EvaluacionInduccion_Guardar(Tablas,IdUsuario);
+        }
+        //public int CHU_EvaluacionInduccion_Guardar(EvaluacionInduccionBE obj)
+        //{
+        //    return new EvaluacionInduccionBP().CHU_DictamenNuevoP_Actualizar(obj);
+        //}
+
         #endregion
     }
 }

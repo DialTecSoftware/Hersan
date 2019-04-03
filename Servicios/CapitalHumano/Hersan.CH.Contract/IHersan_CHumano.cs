@@ -1,5 +1,4 @@
 ﻿using Hersan.Entidades.CapitalHumano;
-using Hersan.Entidades.Relchec;
 using System.Collections.Generic;
 using System.Data;
 using System.ServiceModel;
@@ -93,14 +92,22 @@ namespace Hersan.CH.Contract
 
         #endregion
 
-        #region Horarios
+        #region EvaluacionInduccion
         [OperationContract]
-        List<HorariosBE> ABCHorarios_Obtener();
+        List<EvaluacionInduccionBE> CHU_DatosEMP_Obtener(EvaluacionInduccionBE evaluacion);
         [OperationContract]
-        int ABCHorarios_Guarda(HorariosBE obj);
+        List<EvaluacionInduccionBE> CHU_EvaluacionInduccion_Obtener();
         [OperationContract]
-        int ABCHorarios_Actualizar(HorariosBE obj);
+        List<PreguntasEvaluacionBE> CHU_ObtenerPreguntas();
+        [OperationContract]
+        int CHU_EvaluacionInduccion_Guardar(DataSet Tablas, int IdUsuario);
+        //[OperationContract]
+        //int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj);
+
         #endregion
+
+
+
 
     }
 }

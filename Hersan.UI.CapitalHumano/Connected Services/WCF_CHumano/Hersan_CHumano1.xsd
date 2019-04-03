@@ -12,6 +12,7 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Puesto" nillable="true" type="q3:PuestosBE" />
       <xs:element minOccurs="0" name="Sel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SueldoMax" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PerfilesBE" nillable="true" type="tns:PerfilesBE" />
@@ -27,7 +28,6 @@
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Ponderacion" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CompetenciasBE" nillable="true" type="tns:CompetenciasBE" />
@@ -417,4 +417,42 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DictamenNuevoPuestoBE" nillable="true" type="tns:DictamenNuevoPuestoBE" />
+  <xs:complexType name="EvaluacionInduccionBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Calificacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="DatosPersonales" nillable="true" type="tns:ExpedientesDatosPersonales" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q39:GeneralBE" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q40:DepartamentosBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdEmpleado" type="xs:int" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Preguntas" nillable="true" type="tns:ArrayOfPreguntasEvaluacionBE" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Puestos" nillable="true" type="q41:PuestosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EvaluacionInduccionBE" nillable="true" type="tns:EvaluacionInduccionBE" />
+  <xs:complexType name="ArrayOfPreguntasEvaluacionBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PreguntasEvaluacionBE" nillable="true" type="tns:PreguntasEvaluacionBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPreguntasEvaluacionBE" nillable="true" type="tns:ArrayOfPreguntasEvaluacionBE" />
+  <xs:complexType name="PreguntasEvaluacionBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Pregunta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Valor2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Valor3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Valor4" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreguntasEvaluacionBE" nillable="true" type="tns:PreguntasEvaluacionBE" />
+  <xs:complexType name="ArrayOfEvaluacionInduccionBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EvaluacionInduccionBE" nillable="true" type="tns:EvaluacionInduccionBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEvaluacionInduccionBE" nillable="true" type="tns:ArrayOfEvaluacionInduccionBE" />
 </xs:schema>

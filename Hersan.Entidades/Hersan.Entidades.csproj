@@ -72,6 +72,8 @@
     <Compile Include="Comun\ResultadoBE.cs" />
     <Compile Include="Conexion\CadenaConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relchec\DiasFest.cs" />
+    <Compile Include="Relchec\HorariosBE.cs" />
     <Compile Include="Seguridad\MenusBE.cs" />
     <Compile Include="Seguridad\RolesBE.cs" />
     <Compile Include="Seguridad\UsuariosBE.cs" />

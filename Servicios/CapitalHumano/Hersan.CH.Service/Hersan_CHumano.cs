@@ -1,6 +1,8 @@
 ﻿using Hersan.CH.Contract;
 using Hersan.Entidades.CapitalHumano;
+using Hersan.Entidades.Relchec;
 using Hersan.Negocio.CapitalHumano;
+using Hersan.Negocio.Relchec;
 using System.Collections.Generic;
 using System.Data;
 
@@ -150,6 +152,21 @@ namespace Hersan.CH.Service
             return new DictamenNuevoPuestoBP().CHU_DictamenNuevoP_Actualizar(obj);
         }
 
+        #endregion
+
+        #region Horarios
+        public List<HorariosBE> ABCHorarios_Obtener()
+        {
+            return new HorariosBP().ABCHorarios_Obtener();
+        }
+        public int ABCHorarios_Guarda(HorariosBE obj)
+        {
+            return new HorariosBP().ABCHorarios_Guarda(obj);
+        }
+        public int ABCHorarios_Actualizar(HorariosBE obj)
+        {
+            return new HorariosBP().ABCHorarios_Actualizar(obj);
+        }
         #endregion
     }
 }

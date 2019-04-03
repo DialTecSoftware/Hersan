@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Hersan_CHumano" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IHersan_CHumano_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd6" />
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Relchec" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Perfiles_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Perfiles_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Perfiles_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Perfiles_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Actualiza_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Perfiles_Actualiza" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Actualiza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Perfiles_ActualizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Elimina_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Perfiles_Elimina" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Elimina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Perfiles_EliminaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_SolicitudP_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_SolicitudP_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_SolicitudP_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_SolicitudP_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_SolicitudP_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_SolicitudP_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHUDictamenSolicitud_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUDictamenSolicitud_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHUDictamenSolicitud_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUDictamenSolicitud_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHUDictamenSolicitud__Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUDictamenSolicitud__Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHUDictamenSolicitud__Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUDictamenSolicitud__GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHUDictamenSolicitud_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUDictamenSolicitud_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHUDictamenSolicitud_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUDictamenSolicitud_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_ExpedientesDatosPersonales_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_ExpedientesDatosPersonales_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_ExpedientesDatosPersonales_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_ExpedientesDatosPersonales_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expedientes_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expedientes_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_ExpedientesDocumentos_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_ExpedientesDocumentos_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_ExpedientesDocumentos_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_ExpedientesDocumentos_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Familia_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Familia_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Familia_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Familia_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Estudios_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Estudios_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Estudios_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Estudios_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Empleos_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Empleos_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Empleos_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Empleos_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Salud_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Salud_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Salud_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Salud_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Conocimiento_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Conocimiento_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Conocimiento_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Conocimiento_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Referencias_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Referencias_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Referencias_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Referencias_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Generales_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Generales_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Generales_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Generales_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Economicos_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Economicos_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Economicos_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Economicos_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DictamenNuevoP_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DictamenNuevoP_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DictamenNuevoP_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DictamenNuevoP_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DictamenNuevoP_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DictamenNuevoP_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DictamenNuevoP_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DictamenNuevoP_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DictamenNuevoP_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DictamenNuevoP_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DictamenNuevoP_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DictamenNuevoP_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Guarda_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_Guarda" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Guarda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_GuardaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHersan_CHumano">
+    <wsdl:operation name="CHU_Perfiles_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Guardar" message="tns:IHersan_CHumano_CHU_Perfiles_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_GuardarResponse" message="tns:IHersan_CHumano_CHU_Perfiles_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Perfiles_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Obtener" message="tns:IHersan_CHumano_CHU_Perfiles_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_ObtenerResponse" message="tns:IHersan_CHumano_CHU_Perfiles_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Perfiles_Actualiza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Actualiza" message="tns:IHersan_CHumano_CHU_Perfiles_Actualiza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_ActualizaResponse" message="tns:IHersan_CHumano_CHU_Perfiles_Actualiza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Perfiles_Elimina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Elimina" message="tns:IHersan_CHumano_CHU_Perfiles_Elimina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_EliminaResponse" message="tns:IHersan_CHumano_CHU_Perfiles_Elimina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_SolicitudP_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Obtener" message="tns:IHersan_CHumano_CHU_SolicitudP_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ObtenerResponse" message="tns:IHersan_CHumano_CHU_SolicitudP_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_SolicitudP_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Guardar" message="tns:IHersan_CHumano_CHU_SolicitudP_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_GuardarResponse" message="tns:IHersan_CHumano_CHU_SolicitudP_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_SolicitudP_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Actualizar" message="tns:IHersan_CHumano_CHU_SolicitudP_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ActualizarResponse" message="tns:IHersan_CHumano_CHU_SolicitudP_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUDictamenSolicitud_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Obtener" message="tns:IHersan_CHumano_CHUDictamenSolicitud_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_ObtenerResponse" message="tns:IHersan_CHumano_CHUDictamenSolicitud_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUDictamenSolicitud__Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud__Guardar" message="tns:IHersan_CHumano_CHUDictamenSolicitud__Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud__GuardarResponse" message="tns:IHersan_CHumano_CHUDictamenSolicitud__Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUDictamenSolicitud_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Actualizar" message="tns:IHersan_CHumano_CHUDictamenSolicitud_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_ActualizarResponse" message="tns:IHersan_CHumano_CHUDictamenSolicitud_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Guardar" message="tns:IHersan_CHumano_CHU_Expedientes_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_GuardarResponse" message="tns:IHersan_CHumano_CHU_Expedientes_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Consultar" message="tns:IHersan_CHumano_CHU_Expedientes_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expedientes_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Actualizar" message="tns:IHersan_CHumano_CHU_Expedientes_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_ActualizarResponse" message="tns:IHersan_CHumano_CHU_Expedientes_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Eliminar" message="tns:IHersan_CHumano_CHU_Expedientes_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_EliminarResponse" message="tns:IHersan_CHumano_CHU_Expedientes_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_ExpedientesDatosPersonales_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDatosPersonales_Consultar" message="tns:IHersan_CHumano_CHU_ExpedientesDatosPersonales_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDatosPersonales_ConsultarResponse" message="tns:IHersan_CHumano_CHU_ExpedientesDatosPersonales_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Obtener" message="tns:IHersan_CHumano_CHU_Expedientes_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_ObtenerResponse" message="tns:IHersan_CHumano_CHU_Expedientes_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_ExpedientesDocumentos_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDocumentos_Consultar" message="tns:IHersan_CHumano_CHU_ExpedientesDocumentos_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDocumentos_ConsultarResponse" message="tns:IHersan_CHumano_CHU_ExpedientesDocumentos_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Familia_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Familia_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Familia_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Familia_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Familia_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Estudios_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Estudios_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Estudios_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Empleos_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Empleos_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Empleos_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Empleos_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Empleos_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Salud_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Salud_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Salud_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Salud_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Salud_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Conocimiento_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Conocimiento_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Conocimiento_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Conocimiento_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Conocimiento_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Referencias_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Referencias_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Referencias_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Referencias_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Referencias_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Generales_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Generales_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Generales_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Generales_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Generales_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Economicos_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Economicos_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Economicos_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_NuevoPuesto_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Obtener" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ObtenerResponse" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_NuevoPuesto_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Guardar" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_GuardarResponse" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_NuevoPuesto_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Actualizar" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ActualizarResponse" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DictamenNuevoP_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Obtener" message="tns:IHersan_CHumano_CHU_DictamenNuevoP_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_ObtenerResponse" message="tns:IHersan_CHumano_CHU_DictamenNuevoP_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DictamenNuevoP_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Guardar" message="tns:IHersan_CHumano_CHU_DictamenNuevoP_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_GuardarResponse" message="tns:IHersan_CHumano_CHU_DictamenNuevoP_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DictamenNuevoP_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Actualizar" message="tns:IHersan_CHumano_CHU_DictamenNuevoP_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_ActualizarResponse" message="tns:IHersan_CHumano_CHU_DictamenNuevoP_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Obtener" message="tns:IHersan_CHumano_ABCHorarios_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_ObtenerResponse" message="tns:IHersan_CHumano_ABCHorarios_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Guarda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Guarda" message="tns:IHersan_CHumano_ABCHorarios_Guarda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_GuardaResponse" message="tns:IHersan_CHumano_ABCHorarios_Guarda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Actualizar" message="tns:IHersan_CHumano_ABCHorarios_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_ActualizarResponse" message="tns:IHersan_CHumano_ABCHorarios_Actualizar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IHersan_CHumano" type="tns:IHersan_CHumano">
+    <wsp:PolicyReference URI="#WSHttpBinding_IHersan_CHumano_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CHU_Perfiles_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Perfiles_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Perfiles_Actualiza">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Actualiza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Perfiles_Elimina">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Elimina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_SolicitudP_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_SolicitudP_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_SolicitudP_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUDictamenSolicitud_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUDictamenSolicitud__Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud__Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUDictamenSolicitud_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Eliminar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Eliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_ExpedientesDatosPersonales_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDatosPersonales_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expedientes_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expedientes_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_ExpedientesDocumentos_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_ExpedientesDocumentos_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Familia_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Familia_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Estudios_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Empleos_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Empleos_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Salud_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Salud_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Conocimiento_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Conocimiento_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Referencias_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Referencias_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Generales_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Generales_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Economicos_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_NuevoPuesto_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_NuevoPuesto_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_NuevoPuesto_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DictamenNuevoP_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DictamenNuevoP_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DictamenNuevoP_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Guarda">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_Guarda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Hersan_CHumano">
+    <wsdl:port name="WSHttpBinding_IHersan_CHumano" binding="tns:WSHttpBinding_IHersan_CHumano">
+      <soap12:address location="http://localhost:60349/Hersan_CHumano.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:60349/Hersan_CHumano.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

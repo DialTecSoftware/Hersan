@@ -71,6 +71,7 @@
     <Compile Include="CapitalHumano\DictamenNuevoPuestoBP.cs" />
     <Compile Include="Impersonar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relchec\HorariosBP.cs" />
     <Compile Include="Seguridad\EncriptadorBP.cs" />
     <Compile Include="Seguridad\MenusBP.cs" />
     <Compile Include="Seguridad\RolesBP.cs" />

@@ -108,6 +108,15 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_ActualizarResponse")]
         int CHU_DictamenNuevoP_Actualizar(Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Relchec.HorariosBE> ABCHorarios_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Guarda", ReplyAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_GuardaResponse")]
+        int ABCHorarios_Guarda(Hersan.Entidades.Relchec.HorariosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_ActualizarResponse")]
+        int ABCHorarios_Actualizar(Hersan.Entidades.Relchec.HorariosBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -259,6 +268,18 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_DictamenNuevoP_Actualizar(Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE obj) {
             return base.Channel.CHU_DictamenNuevoP_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Relchec.HorariosBE> ABCHorarios_Obtener() {
+            return base.Channel.ABCHorarios_Obtener();
+        }
+        
+        public int ABCHorarios_Guarda(Hersan.Entidades.Relchec.HorariosBE obj) {
+            return base.Channel.ABCHorarios_Guarda(obj);
+        }
+        
+        public int ABCHorarios_Actualizar(Hersan.Entidades.Relchec.HorariosBE obj) {
+            return base.Channel.ABCHorarios_Actualizar(obj);
         }
     }
 }

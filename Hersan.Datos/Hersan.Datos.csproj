@@ -77,6 +77,8 @@
     <Compile Include="Seguridad\RolesDA.cs" />
     <Compile Include="Seguridad\RolesUsuarioDA.cs" />
     <Compile Include="Seguridad\UsuariosDA.cs" />
+    <Compile Include="Ventas\ClientesDA.cs" />
+    <Compile Include="Ventas\FacturacionDA.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">

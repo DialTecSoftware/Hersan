@@ -570,5 +570,24 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
+        //public DataTable Test()
+        //{
+        //    DataTable oData = new DataTable("Reporte");
+        //    try {
+        //        using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+        //            conn.Open();
+        //            using (SqlDataAdapter cmd = new SqlDataAdapter(CONS_USP_CHU_EXPEDIENTE_ECONOMICOS_OBTENER, conn)) {
+        //                //cmd.Parameters.AddWithValue("@Id", Expediente.IdExpediente);
+
+        //                cmd.Fill(oData);
+                        
+        //            }
+        //        }
+        //        return oData;
+        //    } catch (Exception ex) {
+        //        throw ex;
+        //    }
+        //}
+
     }
 }

@@ -57,6 +57,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Catalogos.Host", "Servicios\Catalogos\Hersan.Catalogos.Host\Hersan.Catalogos.Host.csproj", "{8C02FB69-6302-48AF-A633-EC38BB23BD5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.UI.Catalogos", "Hersan.UI.Catalogos\Hersan.UI.Catalogos.csproj", "{C7A0E85C-70A0-40CC-A42C-D917C1C99827}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0620A798-E3F8-4A83-9CEA-0C70330F738A} = {0620A798-E3F8-4A83-9CEA-0C70330F738A}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CapitalHumano", "CapitalHumano", "{5E2265E5-6D13-4324-9B04-41A8B6FCE859}"
 EndProject

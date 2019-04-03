@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Hersan.Entidades.CapitalHumano;
+using Hersan.Entidades.Catalogos;
+using Hersan.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,107 +16,167 @@ namespace Hersan.UI.CapitalHumano
 {
     public partial class frmEvaluacionInduccion : Telerik.WinControls.UI.RadForm
     {
+         #region Constantes
 
+        public int IdExpediente { get; set; }
+        CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
+        CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;
+        List<EvaluacionInduccionBE> oList = new List<EvaluacionInduccionBE>();
+        List<PreguntasEvaluacionBE> list = new List<PreguntasEvaluacionBE>();
+        EvaluacionInduccionBE eva = new EvaluacionInduccionBE();
+        List<EntidadesBE> oEntidades = new List<EntidadesBE>();
+
+        #endregion
+
+        private void LimpiarCampos()
+        {
+            lblDepto.Text = "";
+            lblEntidad.Text = "";
+            lblPuesto.Text = "";
+            txtObservaciones.Text = string.Empty;
+            lblEntidad.Text = string.Empty;
+            lblNombreC.Text = string.Empty;
+            lblNum.Text = string.Empty;
+            txtId.Text = string.Empty;
+            LimpiarRespuestas();
+        }
+
+        private bool ValidarCampos()
+        {
+            bool Flag = true;
+            try {
+                Flag = txtObservaciones.Text.Trim().Length == 0 ? false : true;
+
+
+                return Flag;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void Imprimir_Archivo()
         {
-            //using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file|*.pdf", ValidateNames = true }) {
-            //    if (sfd.ShowDialog() == DialogResult.OK) {
-            //        iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
-            //        try {
-            //            iTextSharp.text.pdf.PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
-            //            doc.Open();
-            //            doc.Add(new iTextSharp.text.Paragraph(radPanel1.Text));
-                       
-            //        } catch (Exception ex) {
-            //            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //        } finally {
-            //            doc.Close();
-            //        }
-            //    }
-            //}
+          
         }
+       
+        private void LimpiarRespuestas()
+        {
+            try {
+
+                foreach (GridViewRowInfo row in gvDatos.Rows) {
+                    row.Cells["Valor4"].Value = row.Cells["Valor3"].Value
+                    = row.Cells["Valor2"].Value = row.Cells["Valor1"].Value = false;
+                }
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+
         private void CalcularResultado()
         {
             try {
 
+                int count = 0;
                 decimal res = 0;
-            int result = 0;
-            IList<GridViewRowInfo> gridRows = new List<GridViewRowInfo>();
-            foreach (GridViewRowInfo rowInfo in gvDatos.ChildRows) {
-                bool isChecked4 = Convert.ToBoolean(rowInfo.Cells["Valor4"].Value);
-                bool isChecked3 = Convert.ToBoolean(rowInfo.Cells["Valor3"].Value);
-                bool isChecked2 = Convert.ToBoolean(rowInfo.Cells["Valor2"].Value);
-                bool isChecked1 = Convert.ToBoolean(rowInfo.Cells["Valor1"].Value);
-                if (isChecked4 == true) {
-                    result = result + 4;
-                    gridRows.Add(rowInfo);
+                decimal result = 0;
+                IList<GridViewRowInfo> gridRows = new List<GridViewRowInfo>();
+                foreach (GridViewRowInfo rowInfo in gvDatos.ChildRows) {
+                    bool isChecked4 = Convert.ToBoolean(rowInfo.Cells["Valor4"].Value);
+                    bool isChecked3 = Convert.ToBoolean(rowInfo.Cells["Valor3"].Value);
+                    bool isChecked2 = Convert.ToBoolean(rowInfo.Cells["Valor2"].Value);
+                    bool isChecked1 = Convert.ToBoolean(rowInfo.Cells["Valor1"].Value);
+                    if (isChecked4 == true) {
+                        result = result + 4;
+                        gridRows.Add(rowInfo);
+                        count++;
+                    }
+                    if (isChecked3 == true) {
+                        result = result + 3;
+                        gridRows.Add(rowInfo);
+                        count++;
+                    }
+                    if (isChecked2 == true) {
+                        result = result + 2;
+                        gridRows.Add(rowInfo);
+                        count++;
+                    }
+                    if (isChecked1 == true) {
+                        result = result + 1;
+                        gridRows.Add(rowInfo);
+                        count++;
+                    } else {
+                        result = result + 0;
+                    }
+                    res = result * 10 / 76;
 
+                    eva.Count = count;
+                    if (eva.Count == 19) {
+                        eva.Calificacion = res;
+                        lblEntidad.Text = "" + Math.Round(res, 2);
+                    }
                 }
-                if (isChecked3 == true) {
-                    result = result + 3;
-                    gridRows.Add(rowInfo);
 
-                }
-                if (isChecked2 == true) {
-                    result = result + 2;
-                    gridRows.Add(rowInfo);
 
-                }
-                if (isChecked1 == true) {
-                    result = result + 1;
-                    gridRows.Add(rowInfo);
-
-                } else {
-                    result = result + 0;
-                }
-                     res = result;
-            }
-            RadMessageBox.Show("Hey:" + result);
-                lblCalif.Text = "" + (res * 10) / 76 + "/10";
-                
             } catch (Exception) {
 
                 throw;
             }
 
         }
-        private void Cargar_Cuestionario()
+        private void CargarPreguntasEvaluacion()
         {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            try {
 
-            gvDatos.ColumnCount = 5;
-            gvDatos.Columns[0].Name = "Preguntas";
+
+                list = oCHumano.CHU_ObtenerPreguntas();
+                gvDatos.DataSource = list;
+            
 
 
-            //gvDatos.Rows[2].Cells[3].Value = "true";
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar los elementos del dictamen\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
+            }
+        }
+        private DataSet CrearTablasAuxiliares()
+        {
+            DataSet oDataset = new DataSet();
+            DataTable oData;
 
-            string[] row = new string[] { "1.- Organigrama" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "2.- Visión" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "3.- Misión" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "4.- Objetivos de la empresa" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "5.- Políticas de la empresa" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "6.- Contrato laboral" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "7.- Funciones y responsabilidades de tu cargon" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "8.- Derechos y deberes del trabajador" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "9.- Reglamento interior de la empresaVisión" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "10.- Riesgos a los que están expuestos" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "11.- Trabajos de alto riego" };
-            gvDatos.Rows.Add(row);
-            row = new string[] { "12.- Generalidades sobre Seguridad Social" };
-            gvDatos.Rows.Add(row);
+            try {
+                #region TABLA DE ENCABEZADO
+                oData = new DataTable("Evaluacion");
+                oData.Columns.Add("EVI_Id");
+                oData.Columns.Add("EMP_Numero");
+                oData.Columns.Add("EVI_Observaciones");
+                oData.Columns.Add("EVI_Calificaciones");
+                oData.Columns.Add("EVI_idUsuarioCreo");
+                oDataset.Tables.Add(oData);
+                #endregion
 
+                #region PREGUNTAS
+                oData = new DataTable("Respuestass");
+                oData.Columns.Add("EVI_Id");
+                oData.Columns.Add("REV_Id");
+                oData.Columns.Add("REV_Valor1");
+                oData.Columns.Add("REV_Valor2");
+                oData.Columns.Add("REV_Valor3");
+                oData.Columns.Add("REV_Valor4");
+                oDataset.Tables.Add(oData);
+                 #endregion
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return oDataset;
         }
 
+     
+      
+       
+
+       
         public frmEvaluacionInduccion()
         {
             InitializeComponent();
@@ -121,71 +184,190 @@ namespace Hersan.UI.CapitalHumano
         private void frmEvaluacionInduccion_Load(object sender, EventArgs e)
         {
             try {
-
                 lblfecha.Text = DateTime.Now.ToLongDateString();
-                Cargar_Cuestionario();
+                //Cargar_Cuestionario();
+                CargarPreguntasEvaluacion();
+                gvDatos2.ClearSelection();
+              
 
             } catch (Exception) {
 
                 throw;
             }
         }
-        private void gvDatos_ValueChanged(object sender, EventArgs e)
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //GridDataCellElement cell = sender as GridDataCellElement;
-            //if (cell != null && ((GridViewDataColumn)cell.ColumnInfo).FieldName == "Bool") {
-            //    this.gvDatos.BeginUpdate();
-            //    foreach (GridViewDataRowInfo row in this.gvDatos.Rows) {
-            //        if (row != this.gvDatos.CurrentRow) {
-            //            row.Cells["Bool"].Value = false;
-            //        }
-            //    }
-            //    this.gvDatos.EndUpdate();
-            //}
-
-           
-
-            //RadCheckBoxEditor editor = sender as RadCheckBoxEditor;
-            //if (editor != null && Convert.ToBoolean(editor.Value) == true) {
-            //    this.gvDatos.BeginUpdate();
-            //    foreach (GridViewDataRowInfo row in this.gvDatos.Rows) {
-            //        if (row == this.gvDatos.CurrentRow) {
-            //            row.Cells["Valor1"].Value = false;
-            //            row.Cells["Valor2"].Value = false;
-            //            row.Cells["Valor3"].Value = false;
-            //        }
-            //    }
-            //    this.gvDatos.EndUpdate();
-            //}
+          
         }
-        private void commandBarButton1_Click(object sender, EventArgs e)
-        {
-
-                try {
-                    CalcularResultado();
-                //Imprimir_Archivo();
-
-
-                } catch (Exception) {
-
-                    throw;
-                }
-
-        }
-        private void gvDatos_CellValueChanged(object sender, GridViewCellEventArgs e)
+        private void gvDatos_CellValueChanged_1(object sender, GridViewCellEventArgs e)
         {
             //e.ColumnIndex >= 1a. Columna con Checkbox)
-            if (e.ColumnIndex >= 1) {
+            if (e.ColumnIndex >= 2) {
                 //SE OBTIENE EL VALOR DEL CHECK
                 var isChecked = (bool)gvDatos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+               
                 if (isChecked) {
+
                     foreach (GridViewDataColumn col in gvDatos.Columns) {
-                        if (col.Index >= 1 && col.Index != e.ColumnIndex )
+                        if (col.Index >= 2 && col.Index != e.ColumnIndex)
                             //SE CAMBIA A FALSE LOS CHECKBOX NO MARCADOS
                             gvDatos.CurrentRow.Cells[col.Index].Value = !isChecked;
+
                     }
+
                 }
+
+            }
+
+        }
+
+
+
+        private void gvDatos2_CurrentRowChanged(object sender, CurrentRowChangedEventArgs e)
+        {
+
+            if (gvDatos2.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0 ) {
+                lblNum.Text = e.CurrentRow.Cells["EMP_Num"].Value.ToString();
+                lblNombreC.Text = e.CurrentRow.Cells["EDP_APaterno"].Value.ToString() + " " + e.CurrentRow.Cells["EDP_AMaterno"].Value.ToString() + " "
+                    + e.CurrentRow.Cells["EDP_Nombres"].Value.ToString();
+               
+            } else 
+
+         /*  if (gvDatos2.RowCount == 0)*/ {
+                lblNombreC.Text = "";
+                lblNum.Text = "";
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            try {
+              
+                txtId.Text = "-1";
+
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
+            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
+            EvaluacionInduccionBE obj = new EvaluacionInduccionBE();
+            DataSet oData = CrearTablasAuxiliares();
+            int Result = 0;
+            try {
+                CalcularResultado();
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
+                if (eva.Count != 19) {
+                    RadMessageBox.Show("Debe contestar todas las preguntas para continuar\n" + (19 - eva.Count) + " Pregunta(s) faltante(s)", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+
+                    return;
+                }
+
+                if (oList.FindAll(item => item.IdEmpleado == int.Parse(lblNum.Text) ).Count > 0
+                   && int.Parse(txtId.Text) == -1) {
+                    RadMessageBox.Show("Este empleado ya ha realizado su evaluación, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
+                    return;
+                }
+                #region Entidades
+                obj.Id = int.Parse(txtId.Text);
+                obj.IdEmpleado = int.Parse(lblNum.Text);
+                obj.Observaciones = txtObservaciones.Text;
+                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                #endregion
+
+
+
+                #region Carga Datos Encabezado
+                DataRow oRow = oData.Tables["Evaluacion"].NewRow();
+                oRow["EVI_Id"] = int.Parse(txtId.Text);
+                oRow["EMP_Numero"] = int.Parse(lblNum.Text);
+                oRow["EVI_Observaciones"] = txtObservaciones.Text;
+                oRow["EVI_Calificaciones"] = int.Parse(txtCalif.Text);
+                oRow["EVI_idUsuarioCreo"] = BaseWinBP.UsuarioLogueado.ID;
+
+                oData.Tables["Evaluacion"].Rows.Add(oRow);
+                #endregion
+
+                #region Carga Datos Evaluacion           
+                list.ForEach(item => {
+                     oRow = oData.Tables["Respuestass"].NewRow();
+                    //oRow["EVI_Id"] = int.Parse(txtId.Text);
+                    oRow["REV_Id"] = item.Id;
+                    oRow["REV_Valor1"] = item.Valor1;
+                    oRow["REV_Valor2"] = item.Valor2;
+                    oRow["REV_Valor3"] = item.Valor3;
+                    oRow["REV_Valor4"] = item.Valor4;
+
+                    oData.Tables["Respuestass"].Rows.Add(oRow);
+
+                });
+              
+
+
+
+
+                #endregion
+
+                if (txtId.Text == "-1") {
+                     Result = oCHumano.CHU_EvaluacionInduccion_Guardar(oData,BaseWinBP.UsuarioLogueado.ID);
+                    if (Result == 0) {
+                        RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo",  this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    } else {
+                        RadMessageBox.Show("Evaluacion realizda correctamente\n " + Result.ToString() , this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+
+                        LimpiarCampos();
+
+                    }
+                } else
+                   
+                    if (txtId.Text == "-") {
+                        RadMessageBox.Show("Presiona el buton Nuevo para antes de guradar una nueva evaluación", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                   
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+
+                oCHumano = null;
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            try {
+
+                this.Close();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cerra la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int IdEmpleado = 0;
+            try {
+                frmEmpleadosConsulta ofrm = new frmEmpleadosConsulta();
+                ofrm.WindowState = FormWindowState.Normal;
+                ofrm.StartPosition = FormStartPosition.CenterScreen;
+                ofrm.MaximizeBox = false;
+                ofrm.MinimizeBox = false;
+                ofrm.ShowDialog();
+                IdEmpleado = ofrm.IdEmpleado;
+                lblNum.Text = IdEmpleado.ToString();
+                
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
     }
 }
+

@@ -61,6 +61,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -407,5 +408,6 @@
         private System.Windows.Forms.TextBox txtId;
         private Telerik.WinControls.UI.RadDropDownList cboEmp;
         private System.Windows.Forms.Label label1;
+        private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
     }
 }

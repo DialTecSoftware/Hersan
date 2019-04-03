@@ -8,6 +8,7 @@ using System.Data;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
+using Telerik.WinControls.UI;
 
 namespace Hersan.UI.CapitalHumano
 {
@@ -19,9 +20,13 @@ namespace Hersan.UI.CapitalHumano
         List<PerfilDescripcionBE> oList = new List<PerfilDescripcionBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         List<CompetenciasBE> oCompete = new List<CompetenciasBE>();
+        GridViewSummaryRowItem item1 = new GridViewSummaryRowItem();
         PerfilDescripcionBE obj;
         bool Flag = true;
+
+        decimal resultado;
         #endregion
+
 
         public frmPerfil()
         {
@@ -31,8 +36,17 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 GroupDescriptor descriptor = new GroupDescriptor();
-                descriptor.GroupNames.Add("Grupo",  ListSortDirection.Ascending);
-                grdDatos.GroupDescriptors.Add(descriptor);
+                descriptor.GroupNames.Add("Grupo", ListSortDirection.Ascending);
+                grdDatosEdu.GroupDescriptors.Add(descriptor);
+
+                GroupDescriptor descriptor1 = new GroupDescriptor();
+                descriptor1.GroupNames.Add("Grupo", ListSortDirection.Ascending);
+                grdDatos.GroupDescriptors.Add(descriptor1);
+
+                // Summatoria de datos
+                GridViewSummaryRowItem item1 = new GridViewSummaryRowItem();
+                item1.Add(new GridViewSummaryItem("Total", "Total: {0:F2}", GridAggregateFunction.Sum));
+                this.grdDatos.SummaryRowsBottom.Add(item1);
 
                 LimpiarCampos();
                 CargarEntidades();
@@ -40,9 +54,11 @@ namespace Hersan.UI.CapitalHumano
                 CargarCompetencias();
 
                 CargarGrid();
+                //CargarGridEdu();
+                CalcularPuntos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }   
+            }
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -70,8 +86,9 @@ namespace Hersan.UI.CapitalHumano
                     obj.Puesto.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
                     obj.Puesto.Id = int.Parse(cboPuestos.SelectedValue.ToString());
                     obj.Experiencia = cboExperiencia.Text;
+                    obj.SueldoMax = decimal.Parse(txtSueldo.Text);
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                    
+
                     #region Carga Detalle
                     DataRow oRow = oData.NewRow();
                     if (item.Grupo.Contains("EDUCACIÓN")) {
@@ -93,7 +110,7 @@ namespace Hersan.UI.CapitalHumano
                 });
 
                 /* ALTA DE PERFIL */
-                if (int.Parse(txtId.Text) == 0) {                    
+                if (int.Parse(txtId.Text) == 0) {
                     int Result = oCHumano.CHU_Perfiles_Guardar(obj, oData);
                     if (Result != 0) {
                         RadMessageBox.Show("Perfil guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
@@ -120,7 +137,7 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             try {
                 if (txtId.Text != "0") {
-                    if (RadMessageBox.Show("Desea eliminar el perfil seleccionado...?",this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    if (RadMessageBox.Show("Desea eliminar el perfil seleccionado...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         int Result = oCHumano.CHU_Perfiles_Elimina(int.Parse(txtId.Text), BaseWinBP.UsuarioLogueado.ID);
                         if (Result != 0) {
                             RadMessageBox.Show("Perfil eliminado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
@@ -128,7 +145,7 @@ namespace Hersan.UI.CapitalHumano
                             RadMessageBox.Show("Ocurrió un error al eliminar el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                         }
                     }
-                 }
+                }
                 LimpiarCampos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al eliminar el perfil\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -156,6 +173,7 @@ namespace Hersan.UI.CapitalHumano
                     });
 
                 ActualizaGrid();
+                //ActualizaGridEdu();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -171,9 +189,9 @@ namespace Hersan.UI.CapitalHumano
                     obj.Id = int.Parse(cboEducacion.SelectedValue.ToString());
                     obj.Tipo = opNecesaria.Checked ? "NECESARIA" : "PREFERENTE";
                     obj.Valor = 0;
-                    oList.Add(obj);
+                    oList.Add(obj); 
 
-                    ActualizaGrid();
+                    //ActualizaGridEdu();
                 } else {
                     RadMessageBox.Show("No es posible agregar un item que ya existe en el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
@@ -191,7 +209,7 @@ namespace Hersan.UI.CapitalHumano
                     obj.Concepto = cboCompetencia.SelectedItem.Text;
                     obj.Id = int.Parse(cboCompetencia.SelectedValue.ToString());
                     obj.Tipo = cboNivel.Text;
-                    obj.Valor = decimal.Parse(cboNivel.Text) * oCompete.Find(item=> item.Id.ToString() == cboCompetencia.SelectedValue.ToString()).Ponderacion;
+                    //obj.Valor = decimal.Parse(cboNivel.Text) * oCompete.Find(item=> item.Id.ToString() == cboCompetencia.SelectedValue.ToString()).Ponderacion;
                     oList.Add(obj);
 
                     ActualizaGrid();
@@ -210,6 +228,23 @@ namespace Hersan.UI.CapitalHumano
                 throw ex;
             }
         }
+
+        private void CargarPuntos()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
+                    chkPuntos.ValueMember = "Puntos";
+                    chkPuntos.DisplayMember = "Puntos";
+                    chkPuntos.DataSource = oCatalogos.CHUPuestos_Puntos(int.Parse(cboPuestos.SelectedValue.ToString()));
+                } else
+                    chkPuntos.DataSource = null;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar los puntos asociados a los p...\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogos = null;
+            }
+        }
         private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -218,7 +253,7 @@ namespace Hersan.UI.CapitalHumano
                 cboPuestos.ValueMember = "Id";
                 cboPuestos.DisplayMember = "Nombre";
                 if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
-                    cboPuestos.DataSource = oCatalogos.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));                    
+                    cboPuestos.DataSource = oCatalogos.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
                 } else
                     cboPuestos.DataSource = null;
             } catch (Exception ex) {
@@ -230,8 +265,13 @@ namespace Hersan.UI.CapitalHumano
         private void cboPuestos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-                if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null)
+              
+                if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
+                    CargarPuntos();
+                    //CargarGridEdu();
                     CargarGrid();
+                }
+                   
             } catch (Exception ex) {
                 throw ex;
             }
@@ -276,6 +316,37 @@ namespace Hersan.UI.CapitalHumano
                 oCatalogos = null;
             }
         }
+        private void CalcularPuntos()
+        {
+            try {
+
+                decimal valor = 0;
+                decimal pond = 0;
+                decimal Suma = 0;
+                decimal total = 0;
+                foreach (GridViewRowInfo row in grdDatos.Rows) {
+                    // Producto de las columnas nivel y valor
+
+                    valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
+                    pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
+                    total = valor * pond;
+                    row.Cells["Total"].Value = total;
+                    Suma += Convert.ToDecimal(row.Cells["Total"].Value);
+                }
+                //Total = Suma;
+                resultado = Suma * decimal.Parse(chkPuntos.SelectedValue.ToString());
+
+                txtSueldo.Text = resultado.ToString();
+
+            } catch (Exception) {
+
+                throw;
+            }
+
+        }
+
+
+
         private void CargarCompetencias()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -296,11 +367,13 @@ namespace Hersan.UI.CapitalHumano
                 oList.Clear();
                 txtId.Text = "0";
                 cboEntidad.SelectedIndex = 0;
-                cboCompetencia.SelectedIndex = -1;
-                cboEducacion.SelectedIndex = -1;
+                cboCompetencia.SelectedIndex = 0;
+                cboEducacion.SelectedIndex = 0;
                 cboExperiencia.SelectedIndex = 0;
                 cboNivel.SelectedIndex = 0;
+                txtSueldo.Text = "0";
                 grdDatos.DataSource = null;
+                grdDatosEdu.DataSource = null;
             } catch (Exception ex) {
                 throw ex;
             }
@@ -309,11 +382,57 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 grdDatos.DataSource = null;
-                grdDatos.DataSource = oList.FindAll(item=> item.DatosUsuario.Estatus == true);
+                grdDatos.DataSource = oList.FindAll(item => item.DatosUsuario.Estatus == true && item.Grupo.Contains("COMPETENCIA"));
+
+                grdDatosEdu.DataSource = null;
+                grdDatosEdu.DataSource = oList.FindAll(item => item.DatosUsuario.Estatus == true && item.Grupo.Contains("EDUCACIÓN"));
+
             } catch (Exception ex) {
                 throw ex;
             }
         }
+        //private void ActualizaGridEdu()
+        //{
+        //    try {
+        //        grdDatosEdu.DataSource = null;
+        //        grdDatosEdu.DataSource = oList.FindAll(item => item.DatosUsuario.Estatus == true && item.Grupo.Contains("EDUCACIÓN"));
+        //    } catch (Exception ex) {
+        //        throw ex;
+        //    }
+        //}
+        //private void CargarGridEdu()
+        //{
+        //    oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+        //    oList.Clear();
+        //    Flag = false;
+
+        //    try {
+        //        if (cboDepto.Items.Count > 0) {
+        //            DataSet oAux = oCHumano.CHU_Perfiles_Obtener(int.Parse(cboDepto.SelectedValue.ToString()), int.Parse(cboPuestos.SelectedValue.ToString()));
+        //            if (oAux.Tables.Count > 0) {
+        //                #region Detalle Grid
+        //                /* EDUCACIÓN */
+        //                if (oAux.Tables[1].Rows.Count > 0) {
+        //                    foreach (DataRow oRow in oAux.Tables[1].Rows) {
+        //                        oList.Add(new PerfilDescripcionBE() {
+        //                            Id = int.Parse(oRow["EDU_Id"].ToString()),
+        //                            Grupo = "1-EDUCACIÓN",
+        //                            Concepto = oRow["EDU_Nombre"].ToString(),
+        //                            Tipo = oRow["Tipo"].ToString()
+        //                        });
+        //                    }
+
+        //                }
+        //            }
+
+        //        }
+        //        ActualizaGridEdu();
+        //    } catch (Exception ex) {
+        //        throw ex;
+        //    } finally {
+        //        Flag = true;
+        //    }
+        //}
         private void CargarGrid()
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
@@ -321,7 +440,7 @@ namespace Hersan.UI.CapitalHumano
             Flag = false;
 
             try {
-                if (cboDepto.Items.Count > 0) {
+                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
                     DataSet oAux = oCHumano.CHU_Perfiles_Obtener(int.Parse(cboDepto.SelectedValue.ToString()), int.Parse(cboPuestos.SelectedValue.ToString()));
                     if (oAux.Tables.Count > 0) {
                         #region Detalle Grid
@@ -336,36 +455,109 @@ namespace Hersan.UI.CapitalHumano
                                 });
                             }
                         }
-
-                        /* FUNCIONES */
-                        if (oAux.Tables[2].Rows.Count > 0) {
-                            foreach (DataRow oRow in oAux.Tables[2].Rows) {
-                                oList.Add(new PerfilDescripcionBE() {
-                                    Id = int.Parse(oRow["COM_Id"].ToString()),
-                                    Grupo = "2-COMPETENCIAS",
-                                    Concepto = oRow["COM_Nombre"].ToString(),
-                                    Tipo = oRow["PCO_Nivel"].ToString(),
-                                    Valor = decimal.Parse(oRow["PCO_Ponderacion"].ToString())
-                                });
-                            }
-                        }
-                        #endregion
-
-                        /* DATOS GENERALES DEL PERFIL */
-                        if (oAux.Tables[0].Rows.Count > 0) {
-                            txtId.Text = oAux.Tables[0].Rows[0]["PER_Id"].ToString();
-                            cboDepto.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DEP_Id"].ToString());
-                            cboPuestos.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["PUE_Id"].ToString());
-                            cboExperiencia.Text = oAux.Tables[0].Rows[0]["PER_Experiencia"].ToString();
+                    }
+                    /* FUNCIONES */
+                    if (oAux.Tables[2].Rows.Count > 0) {
+                        foreach (DataRow oRow in oAux.Tables[2].Rows) {
+                            oList.Add(new PerfilDescripcionBE() {
+                                Id = int.Parse(oRow["COM_Id"].ToString()),
+                                Grupo = "2-COMPETENCIAS",
+                                Concepto = oRow["COM_Nombre"].ToString(),
+                                Tipo = oRow["PCO_Nivel"].ToString(),
+                                Valor = decimal.Parse(oRow["PCO_Ponderacion"].ToString())
+                            });
                         }
                     }
-                    ActualizaGrid();
+                    #endregion
+
+                    /* DATOS GENERALES DEL PERFIL */
+                    if (oAux.Tables[0].Rows.Count > 0) {
+                        txtId.Text = oAux.Tables[0].Rows[0]["PER_Id"].ToString();
+                        cboDepto.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DEP_Id"].ToString());
+                        cboPuestos.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["PUE_Id"].ToString());
+                        cboExperiencia.Text = oAux.Tables[0].Rows[0]["PER_Experiencia"].ToString();
+                    }
                 }
+                ActualizaGrid();
             } catch (Exception ex) {
                 throw ex;
             } finally {
                 Flag = true;
             }
         }
+
+        private void grdDatos_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void chkPuntos_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkPuntos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            //if (chkPuntos.SelectedValue.ToString() != "" && grdDatos.RowCount > 0) {
+
+            //    decimal sueldoMax = /*decimal.Parse(item1.ToString())*/   decimal.Parse(chkPuntos.ToString());
+
+            //    txtSueldo.Text = sueldoMax.ToString();
+            //}
+        }
+
+        private void grdDatosEdu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdDatos_CellEndEdit_1(object sender, GridViewCellEventArgs e)
+        {
+            try {
+
+                decimal valor = 0;
+                decimal pond = 0;
+                decimal Suma = 0;
+                decimal total = 0;
+
+                if (grdDatos.Columns[e.ColumnIndex].Name == "Valor") {
+
+
+                    foreach (GridViewRowInfo row in grdDatos.Rows) {
+                        // Producto de las columnas nivel y valor
+
+                        valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
+                        pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
+                        total = valor * pond;
+                        row.Cells["Total"].Value = total;
+                        Suma += Convert.ToDecimal(row.Cells["Total"].Value);
+                    }
+
+
+                    //Total = Suma;
+                    resultado = Suma * decimal.Parse(chkPuntos.SelectedValue.ToString());
+                }
+
+
+
+
+                txtSueldo.Text = resultado.ToString();
+
+
+
+
+
+
+            } catch (Exception) {
+
+                throw;
+            }
+
+        }
     }
+
 }
+    
+
+

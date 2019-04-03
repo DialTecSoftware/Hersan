@@ -41,6 +41,8 @@ namespace Hersan.UI.CapitalHumano
             txtResultados.Text = "";
             txtOpinionesCH.Text = "";
             txtOpinionesDG.Text = "";
+            
+         
 
         }
         private void CargarNuevosPuestos()
@@ -261,6 +263,14 @@ namespace Hersan.UI.CapitalHumano
                     txtOpinionesCH.Text = (e.CurrentRow.Cells["OpinionesCH"].Value.ToString());
                     txtOpinionesDG.Text = (e.CurrentRow.Cells["OpinionesDG"].Value.ToString());
                     txtPuestosCargo.Text = (e.CurrentRow.Cells["PuestosCargo"].Value.ToString());
+                    bool myItem =bool.Parse (e.CurrentRow.Cells["Autorizado"].Value.ToString());
+                  
+                    if (myItem == true) {
+                        rdbAceptado.IsChecked = true;
+                    } else {
+                        rdbRechazado.IsChecked = true;
+                    }
+
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

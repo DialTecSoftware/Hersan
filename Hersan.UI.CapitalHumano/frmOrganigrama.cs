@@ -31,9 +31,6 @@ namespace Hersan.UI.CapitalHumano
 
                 LimpiarCampos();
                 CargarEntidades();
-                CargarDeptos();
-                CargarJefes();
-                CargarPuestos();
                 CargarElementos_Organigrama();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -44,9 +41,9 @@ namespace Hersan.UI.CapitalHumano
         {
             oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                cboPuesto.ValueMember = "ID";
-                cboPuesto.DisplayMember = "Nombre";
-                cboPuesto.DataSource = oCatalogo.CHUPuestos_Combo();
+                cboPuestos.ValueMember = "ID";
+                cboPuestos.DisplayMember = "Nombre";
+                cboPuestos.DataSource = oCatalogo.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -60,7 +57,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 cboPadre.ValueMember = "ID";
                 cboPadre.DisplayMember = "Nombre";
-                cboPadre.DataSource = oCatalogo.CHUPuestos_Combo();
+                cboPadre.DataSource = oCatalogo.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -109,11 +106,11 @@ namespace Hersan.UI.CapitalHumano
                 btnGuardar.Text = "Actualizar";
 
                 txtId.Text = "0";
-                cboDepto.SelectedIndex = -1;
-                cboEntidad.SelectedIndex = -1;
-                cboPuesto.SelectedIndex = -1;
-                cboPadre.SelectedIndex = -1;
-                cboNivel.SelectedIndex = -1;
+                cboDepto.SelectedIndex = 0;
+                cboEntidad.SelectedIndex = 0;
+                cboPuestos.SelectedIndex = 0;
+                cboPadre.SelectedIndex = 0;
+                cboNivel.SelectedIndex = 0;
                 chkEstatus.Checked = false;
 
             } catch (Exception ex) {
@@ -151,7 +148,7 @@ namespace Hersan.UI.CapitalHumano
                     obj.Nivel = cboNivel.SelectedIndex;
                     obj.Id = int.Parse(txtId.Text);
                     obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
-                    obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
+                    obj.Puestos.Id = int.Parse(cboPuestos.SelectedValue.ToString());
                     obj.IdJefe = int.Parse(cboPadre.SelectedValue.ToString());
                     obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
                     obj.DatosUsuario.Estatus = true;
@@ -213,7 +210,9 @@ namespace Hersan.UI.CapitalHumano
         private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-                CargarDeptos();
+                if (cboEntidad.Items.Count > 0 && cboEntidad.SelectedValue != null) {
+                    CargarDeptos();
+                }
             } catch (Exception ex) {
                 throw ex;
             }
@@ -229,7 +228,7 @@ namespace Hersan.UI.CapitalHumano
                     obj.Nivel = cboNivel.SelectedIndex;
                     obj.Id = int.Parse(txtId.Text);
                     obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
-                    obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
+                    obj.Puestos.Id = int.Parse(cboPuestos.SelectedValue.ToString());
                     obj.IdJefe = int.Parse(cboPadre.SelectedValue.ToString());
                     obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
                     obj.DatosUsuario.Estatus = false;
@@ -260,7 +259,7 @@ namespace Hersan.UI.CapitalHumano
                 cboNivel.SelectedIndex = int.Parse((e.CurrentRow.Cells["Nivel"].Value.ToString()));
                 cboDepto.SelectedValue = int.Parse(e.CurrentRow.Cells["DEP_Id"].Value.ToString());
                 cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["ENT_Id"].Value.ToString());
-                cboPuesto.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Id"].Value.ToString());
+                cboPuestos.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Id"].Value.ToString());
                 cboPadre.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Idjefe"].Value.ToString());
                 //chkEstatus.Checked = bool.Parse(e.CurrentRow.Cells["Estatus"].Value.ToString());
             }
@@ -276,6 +275,19 @@ namespace Hersan.UI.CapitalHumano
             //Form frm = new DiagramFirstLook.OrgChartForm();
             //frm.ShowDialog();
             //frm.WindowState = FormWindowState.Maximized;
+        }
+
+        private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+                    CargarJefes();
+                    CargarPuestos();
+                   
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
     }
 }

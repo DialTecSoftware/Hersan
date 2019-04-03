@@ -37,20 +37,17 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DiagramFirstLook, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Tools\DiagramFirstLook.dll</HintPath>
     </Reference>
-    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -103,6 +100,12 @@
     <Compile Include="frmDictamenSustitucion.Designer.cs">
       <DependentUpon>frmDictamenSustitucion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmpleadosConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpleadosConsulta.Designer.cs">
+      <DependentUpon>frmEmpleadosConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEvaluacionInduccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,12 +136,6 @@
     <Compile Include="frmPerfil.Designer.cs">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmViewer.Designer.cs">
-      <DependentUpon>frmViewer.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSolicitudPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,12 +154,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\rtpExpediente.cs">
+    <Compile Include="RadForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadForm1.Designer.cs">
+      <DependentUpon>RadForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EvaluacionInduccion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rtpExpediente.rpt</DependentUpon>
+      <DependentUpon>EvaluacionInduccion.rpt</DependentUpon>
       <SubType>Component</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\Expediente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Expediente.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDictamenSustitucion.resx">
       <DependentUpon>frmDictamenSustitucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpleadosConsulta.resx">
+      <DependentUpon>frmEmpleadosConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvaluacionInduccion.resx">
       <DependentUpon>frmEvaluacionInduccion.cs</DependentUpon>
@@ -187,9 +198,6 @@
     <EmbeddedResource Include="frmPerfil.resx">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmViewer.resx">
-      <DependentUpon>frmViewer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSolicitudPersonal.resx">
       <DependentUpon>frmSolicitudPersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,10 +209,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rtpExpediente.rpt">
+    <EmbeddedResource Include="RadForm1.resx">
+      <DependentUpon>RadForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EvaluacionInduccion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rtpExpediente.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LastGenOutput>EvaluacionInduccion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Expediente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Expediente.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +268,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenSustitucionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteConocimiento.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteDocumentos.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteEconomicos.datasource" />
@@ -268,6 +283,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.NuevoPuestoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PerfilesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE1.datasource" />

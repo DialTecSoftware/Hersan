@@ -67,7 +67,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 cboPuesto.ValueMember = "ID";
                 cboPuesto.DisplayMember = "Nombre";
-                cboPuesto.DataSource = oCatalogo.CHUPuestos_Combo();
+                cboPuesto.DataSource = oCatalogo.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString())); ;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -107,10 +107,10 @@ namespace Hersan.UI.CapitalHumano
             txtIndicad.Text = "";
             txtJustif.Text = "";
             txtSueldo.Text = "0";
-            cboEntidad.SelectedIndex = -1;
-            cboDepto.SelectedIndex = -1;
-            cboTipoCon.SelectedIndex = -1;
-            cboPuesto.SelectedIndex = -1;
+            cboEntidad.SelectedIndex = 1;
+            cboDepto.SelectedIndex = 1;
+            cboTipoCon.SelectedIndex = 1;
+            cboPuesto.SelectedIndex = 1;
             
         }
 
@@ -135,7 +135,6 @@ namespace Hersan.UI.CapitalHumano
 
                 LimpiarCampos();
                 CargarEntidades();
-                CargarPuestos();
                 CargarTiposContrato();
                 CargarSolicitudes();
 
@@ -152,7 +151,16 @@ namespace Hersan.UI.CapitalHumano
                 throw ex;
             }
         }
-
+        private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+                    CargarPuestos();
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -313,6 +321,8 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+
+     
     }
     }
 

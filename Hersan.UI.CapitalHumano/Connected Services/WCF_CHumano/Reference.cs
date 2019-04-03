@@ -108,6 +108,18 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_ActualizarResponse")]
         int CHU_DictamenNuevoP_Actualizar(Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DatosEMP_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DatosEMP_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE> CHU_DatosEMP_Obtener(Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE evaluacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE> CHU_EvaluacionInduccion_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_ObtenerPreguntas", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_ObtenerPreguntasResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE> CHU_ObtenerPreguntas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_GuardarResponse")]
+        int CHU_EvaluacionInduccion_Guardar(System.Data.DataSet Tablas, int IdUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -259,6 +271,22 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_DictamenNuevoP_Actualizar(Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE obj) {
             return base.Channel.CHU_DictamenNuevoP_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE> CHU_DatosEMP_Obtener(Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE evaluacion) {
+            return base.Channel.CHU_DatosEMP_Obtener(evaluacion);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE> CHU_EvaluacionInduccion_Obtener() {
+            return base.Channel.CHU_EvaluacionInduccion_Obtener();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE> CHU_ObtenerPreguntas() {
+            return base.Channel.CHU_ObtenerPreguntas();
+        }
+        
+        public int CHU_EvaluacionInduccion_Guardar(System.Data.DataSet Tablas, int IdUsuario) {
+            return base.Channel.CHU_EvaluacionInduccion_Guardar(Tablas, IdUsuario);
         }
     }
 }

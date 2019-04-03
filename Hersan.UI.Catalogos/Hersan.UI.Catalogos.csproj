@@ -59,6 +59,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\Telerik.WinControls.RadDock.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Material, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\Telerik.WinControls.Themes.MaterialTeal.dll</HintPath>
@@ -157,6 +158,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmContactos.resx">
@@ -200,6 +207,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -224,7 +234,24 @@
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenSustitucionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteConocimiento.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteDocumentos.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteEconomicos.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteEmpleos.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteEstudios.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteFamilia.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteGenerales.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteReferencias.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteSalud.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedientesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedientesDatosPersonales.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.NuevoPuestoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
@@ -238,6 +265,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.OrganigramaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE1.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WCF_Catalogos\" />

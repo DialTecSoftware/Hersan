@@ -76,10 +76,10 @@
             this.cboNivel = new Telerik.WinControls.UI.RadDropDownList();
             this.cboPadre = new Telerik.WinControls.UI.RadDropDownList();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboPuesto = new Telerik.WinControls.UI.RadDropDownList();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.cboPuestos = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -88,9 +88,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboNivel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPadre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboPuestos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +101,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(700, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(700, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -233,13 +233,13 @@
             this.radPanel1.Controls.Add(this.label5);
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.cboNivel);
+            this.radPanel1.Controls.Add(this.cboPuestos);
             this.radPanel1.Controls.Add(this.cboPadre);
             this.radPanel1.Controls.Add(this.label2);
-            this.radPanel1.Controls.Add(this.cboPuesto);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Controls.Add(this.label4);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 81);
+            this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(700, 97);
             this.radPanel1.TabIndex = 1;
@@ -259,6 +259,7 @@
             this.cboDepto.Name = "cboDepto";
             this.cboDepto.Size = new System.Drawing.Size(160, 20);
             this.cboDepto.TabIndex = 37;
+            this.cboDepto.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboDepto_SelectedIndexChanged);
             // 
             // cboEntidad
             // 
@@ -356,14 +357,6 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Jefe Inmed.";
             // 
-            // cboPuesto
-            // 
-            this.cboPuesto.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboPuesto.Location = new System.Drawing.Point(63, 62);
-            this.cboPuesto.Name = "cboPuesto";
-            this.cboPuesto.Size = new System.Drawing.Size(160, 20);
-            this.cboPuesto.TabIndex = 27;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -385,7 +378,7 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 178);
+            this.gvDatos.Location = new System.Drawing.Point(0, 153);
             // 
             // 
             // 
@@ -451,9 +444,17 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(700, 230);
+            this.gvDatos.Size = new System.Drawing.Size(700, 255);
             this.gvDatos.TabIndex = 8;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
+            // 
+            // cboPuestos
+            // 
+            this.cboPuestos.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboPuestos.Location = new System.Drawing.Point(63, 62);
+            this.cboPuestos.Name = "cboPuestos";
+            this.cboPuestos.Size = new System.Drawing.Size(160, 20);
+            this.cboPuestos.TabIndex = 31;
             // 
             // frmOrganigrama
             // 
@@ -481,9 +482,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboNivel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPadre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboPuestos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -507,7 +508,6 @@
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.UI.RadDropDownList cboPadre;
         private System.Windows.Forms.Label label2;
-        private Telerik.WinControls.UI.RadDropDownList cboPuesto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private Telerik.WinControls.UI.RadDropDownList cboNivel;
@@ -520,5 +520,6 @@
         private Telerik.WinControls.UI.RadGridView gvDatos;
         private Telerik.WinControls.UI.CommandBarButton btnVerDiagrama;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator5;
+        private Telerik.WinControls.UI.RadDropDownList cboPuestos;
     }
 }

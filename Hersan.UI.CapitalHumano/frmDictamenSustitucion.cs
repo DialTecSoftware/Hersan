@@ -37,7 +37,7 @@ namespace Hersan.UI.CapitalHumano
                 txtIdSu.Text = string.Empty;
                 lblPuesto.Text = string.Empty;
                 lblSueldo.Text = string.Empty;
-                cboResultado.SelectedValue = null; 
+                cboResultado.SelectedIndex=1; 
                 txtIdDictam.Text = "0";
                 txtDictamen.Text = string.Empty;
                 txtObser.Text = string.Empty;
@@ -54,7 +54,6 @@ namespace Hersan.UI.CapitalHumano
 
                 list = oCHumano.CHUDictamenSolicitud_Obtener();
                 gvDictamen.DataSource = list;
-                //gvDictamen.ClearSelection();
                 btnNuevo.Enabled = false;
                 btnGuardar.Enabled = true;
                 btnEliminar.Enabled = true;
@@ -72,7 +71,6 @@ namespace Hersan.UI.CapitalHumano
                 DockWindow activeDocumen = this.radDock1.DocumentManager.ActiveDocument;
                 oList = oCHumano.CHU_SolicitudP_Obtener(BaseWinBP.UsuarioLogueado.ID);
                 gvDatos.DataSource = oList;
-                //gvDatos.ClearSelection();
                 btnGuardar.Enabled = false;
                 btnEliminar.Enabled = false;
             } catch (Exception ex) {
@@ -149,7 +147,7 @@ namespace Hersan.UI.CapitalHumano
                 if (!ValidarCampos()) {
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     btnGuardar.Enabled = false;
-                    LimpiarCampos();
+                    //LimpiarCampos();
                     return;
                 }
 
@@ -157,7 +155,7 @@ namespace Hersan.UI.CapitalHumano
                     && int.Parse(txtIdDictam.Text) == -1 ){
                     RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     btnGuardar.Enabled = false;
-                    LimpiarCampos();
+                    //LimpiarCampos();
                     return;
                 }
 

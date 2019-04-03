@@ -1775,6 +1775,6 @@
         private Telerik.WinControls.UI.RadListView lstEntidades;
         private Telerik.WinControls.UI.RadTextBox txtIdentidad;
         private System.Windows.Forms.Label label47;
-        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
+        
     }
 }

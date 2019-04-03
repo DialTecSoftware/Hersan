@@ -125,7 +125,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripStatusLabel lblPerfil;
-        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
         private System.Windows.Forms.ToolStripStatusLabel lblEmpresa;
     }
 }

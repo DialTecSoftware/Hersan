@@ -165,7 +165,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
@@ -244,7 +243,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(912, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(906, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -428,9 +427,9 @@
             this.radGroupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "Datos Generales";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 81);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 56);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(912, 208);
+            this.radGroupBox1.Size = new System.Drawing.Size(906, 208);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "Datos Generales";
             // 
@@ -722,14 +721,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 289);
+            this.radDock1.Location = new System.Drawing.Point(0, 264);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(912, 336);
+            this.radDock1.Size = new System.Drawing.Size(906, 357);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -741,7 +740,7 @@
             this.docContactos.Location = new System.Drawing.Point(6, 29);
             this.docContactos.Name = "docContactos";
             this.docContactos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.docContactos.Size = new System.Drawing.Size(890, 291);
+            this.docContactos.Size = new System.Drawing.Size(884, 312);
             this.docContactos.Text = "Datos de Contacto";
             // 
             // radPanel1
@@ -753,7 +752,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(890, 291);
+            this.radPanel1.Size = new System.Drawing.Size(884, 312);
             this.radPanel1.TabIndex = 0;
             // 
             // radGroupBox6
@@ -1252,7 +1251,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(902, 326);
+            this.documentTabStrip1.Size = new System.Drawing.Size(896, 347);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -1556,7 +1555,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 625);
+            this.ClientSize = new System.Drawing.Size(906, 621);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radCommandBar1);
@@ -1567,7 +1566,6 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "ALTA DE CLIENTES";
-            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();

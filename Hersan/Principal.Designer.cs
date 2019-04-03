@@ -35,7 +35,6 @@
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblPerfil = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();

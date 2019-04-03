@@ -107,7 +107,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1072, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(1066, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -216,7 +216,7 @@
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1072, 322);
+            this.radDock1.Size = new System.Drawing.Size(1066, 318);
             this.radDock1.TabIndex = 1;
             this.radDock1.TabStop = false;
             // 
@@ -241,7 +241,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 22);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(338, 288);
+            this.toolWindow1.Size = new System.Drawing.Size(338, 284);
             this.toolWindow1.Text = "Filtro";
             this.toolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide;
             // 
@@ -412,7 +412,7 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(340, 312);
+            this.toolTabStrip1.Size = new System.Drawing.Size(340, 308);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(340, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(140, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -442,7 +442,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(718, 312);
+            this.documentTabStrip1.Size = new System.Drawing.Size(712, 308);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -453,7 +453,7 @@
             this.documentWindow1.Location = new System.Drawing.Point(6, 29);
             this.documentWindow1.Name = "documentWindow1";
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(706, 277);
+            this.documentWindow1.Size = new System.Drawing.Size(700, 273);
             this.documentWindow1.Text = "Resultado Consulta";
             // 
             // radPanel1
@@ -462,7 +462,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(706, 277);
+            this.radPanel1.Size = new System.Drawing.Size(700, 273);
             this.radPanel1.TabIndex = 0;
             // 
             // gvDatos
@@ -537,14 +537,14 @@
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(706, 277);
+            this.gvDatos.Size = new System.Drawing.Size(700, 273);
             this.gvDatos.TabIndex = 0;
             // 
             // frmClientesBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 375);
+            this.ClientSize = new System.Drawing.Size(1066, 371);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radCommandBar1);
             this.Name = "frmClientesBuscar";
@@ -554,7 +554,6 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "BUSCAR CLIENTES";
-            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmClientesBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).EndInit();

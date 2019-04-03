@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using Telerik.WinControls;
 
 namespace Hersan.UI.CapitalHumano
 {
@@ -11,12 +18,13 @@ namespace Hersan.UI.CapitalHumano
         }
         public Modo VerImprimir;
 
+
         public frmViewer()
         {
             InitializeComponent();
         }
 
-        private void frmReporte_Load(object sender, EventArgs e)
+        private void frmViewer_Load(object sender, EventArgs e)
         {
             try {
                 rptViewer.ReportSource = iReport;

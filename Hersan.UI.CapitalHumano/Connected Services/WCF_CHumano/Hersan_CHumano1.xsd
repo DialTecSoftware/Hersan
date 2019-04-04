@@ -455,4 +455,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfEvaluacionInduccionBE" nillable="true" type="tns:ArrayOfEvaluacionInduccionBE" />
+  <xs:complexType name="ArrayOfSeguimientoCandidatosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeguimientoCandidatosBE" nillable="true" type="tns:SeguimientoCandidatosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeguimientoCandidatosBE" nillable="true" type="tns:ArrayOfSeguimientoCandidatosBE" />
+  <xs:complexType name="SeguimientoCandidatosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aceptado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q42:GeneralBE" />
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q43:DepartamentosBE" />
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades" nillable="true" type="q44:EntidadesBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Proceso" type="xs:boolean" />
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Puestos" nillable="true" type="q45:PuestosBE" />
+      <xs:element minOccurs="0" name="Rechazado" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguimientoCandidatosBE" nillable="true" type="tns:SeguimientoCandidatosBE" />
 </xs:schema>

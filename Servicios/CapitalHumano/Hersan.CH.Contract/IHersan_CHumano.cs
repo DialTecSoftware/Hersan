@@ -106,7 +106,15 @@ namespace Hersan.CH.Contract
 
         #endregion
 
+        #region SeguimientoCanidatos
+        [OperationContract]
+        List<SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener();
+        [OperationContract]
+        int CHU_SeguimientoCan_Guardar(SeguimientoCandidatosBE obj);
+        [OperationContract]
+        int CHU_SeguimientoCan_Actualizar(SeguimientoCandidatosBE obj);
 
+        #endregion
 
 
     }

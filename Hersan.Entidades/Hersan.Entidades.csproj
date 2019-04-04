@@ -53,6 +53,7 @@
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
     <Compile Include="CapitalHumano\NuevoPuestoBE.cs" />
     <Compile Include="CapitalHumano\PerfilesBE.cs" />
+    <Compile Include="CapitalHumano\SeguimientoCandidatosBE.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalBE.cs" />
     <Compile Include="Catalogos\CiudadesBE.cs" />
     <Compile Include="Catalogos\ColoniasBE.cs" />

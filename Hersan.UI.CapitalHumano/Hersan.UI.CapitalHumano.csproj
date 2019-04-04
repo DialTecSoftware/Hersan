@@ -136,6 +136,12 @@
     <Compile Include="frmPerfil.Designer.cs">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeguimientoCandidatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeguimientoCandidatos.Designer.cs">
+      <DependentUpon>frmSeguimientoCandidatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSolicitudPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,12 +159,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="RadForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RadForm1.Designer.cs">
-      <DependentUpon>RadForm1.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\EvaluacionInduccion.cs">
       <AutoGen>True</AutoGen>
@@ -198,6 +198,9 @@
     <EmbeddedResource Include="frmPerfil.resx">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSeguimientoCandidatos.resx">
+      <DependentUpon>frmSeguimientoCandidatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSolicitudPersonal.resx">
       <DependentUpon>frmSolicitudPersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,9 +211,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RadForm1.resx">
-      <DependentUpon>RadForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EvaluacionInduccion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -284,6 +284,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.NuevoPuestoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PerfilesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE1.datasource" />
@@ -346,6 +347,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Correo\Correo_Aceptado.html" />
+    <Content Include="Correo\Correo_Rechazado.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

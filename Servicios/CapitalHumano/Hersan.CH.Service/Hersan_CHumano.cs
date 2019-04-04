@@ -176,6 +176,21 @@ namespace Hersan.CH.Service
         //}
 
         #endregion
+
+        #region SeguimientoCandidatos 
+        public List<SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener()
+        {
+            return new SeguimientoCandidatosBP().CHU_SeguimientoCan_Obtener();
+        }
+        public int CHU_SeguimientoCan_Guardar(SeguimientoCandidatosBE obj)
+        {
+            return new SeguimientoCandidatosBP().CHU_SeguimientoCan_Guardar(obj);
+        }
+        public int CHU_SeguimientoCan_Actualizar(SeguimientoCandidatosBE obj)
+        {
+            return new SeguimientoCandidatosBP().CHU_SeguimientoCan_Actualizar(obj);
+        }
+        #endregion
     }
 }
 

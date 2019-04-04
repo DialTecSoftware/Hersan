@@ -40,6 +40,8 @@
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.txtPuntos = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.cboEntidad = new Telerik.WinControls.UI.RadDropDownList();
             this.label5 = new System.Windows.Forms.Label();
             this.chkEstatus = new System.Windows.Forms.CheckBox();
@@ -68,8 +70,6 @@
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPuntos = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
@@ -101,6 +101,25 @@
             this.radPanel1.Size = new System.Drawing.Size(657, 160);
             this.radPanel1.TabIndex = 1;
             // 
+            // txtPuntos
+            // 
+            this.txtPuntos.Location = new System.Drawing.Point(72, 111);
+            this.txtPuntos.Name = "txtPuntos";
+            this.txtPuntos.Size = new System.Drawing.Size(57, 20);
+            this.txtPuntos.TabIndex = 5;
+            this.txtPuntos.Text = "0.00";
+            this.txtPuntos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPuntos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPuntos_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Valor Pto.:";
+            // 
             // cboEntidad
             // 
             this.cboEntidad.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
@@ -113,7 +132,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 17);
+            this.label5.Location = new System.Drawing.Point(21, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 9;
@@ -122,10 +141,10 @@
             // chkEstatus
             // 
             this.chkEstatus.AutoSize = true;
-            this.chkEstatus.Location = new System.Drawing.Point(181, 117);
+            this.chkEstatus.Location = new System.Drawing.Point(181, 115);
             this.chkEstatus.Name = "chkEstatus";
             this.chkEstatus.Size = new System.Drawing.Size(57, 17);
-            this.chkEstatus.TabIndex = 5;
+            this.chkEstatus.TabIndex = 6;
             this.chkEstatus.Text = "Activo";
             this.chkEstatus.UseVisualStyleBackColor = true;
             // 
@@ -140,7 +159,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 44);
+            this.label3.Location = new System.Drawing.Point(26, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 6;
@@ -165,7 +184,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 91);
+            this.label2.Location = new System.Drawing.Point(26, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 3;
@@ -174,7 +193,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 67);
+            this.label1.Location = new System.Drawing.Point(17, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 2;
@@ -370,8 +389,10 @@
             gridViewTextBoxColumn7.Name = "Abrev";
             gridViewTextBoxColumn7.Width = 80;
             gridViewTextBoxColumn8.FieldName = "Puntos";
-            gridViewTextBoxColumn8.HeaderText = "Puntos";
+            gridViewTextBoxColumn8.HeaderText = "Valor Pto.";
             gridViewTextBoxColumn8.Name = "Puntos";
+            gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn8.WrapText = true;
             gridViewCheckBoxColumn1.FieldName = "DatosUsuario.Estatus";
             gridViewCheckBoxColumn1.HeaderText = "Activo";
             gridViewCheckBoxColumn1.MaxWidth = 100;
@@ -417,22 +438,6 @@
             // 
             this.commandBarStripElement5.DisplayName = "commandBarStripElement5";
             this.commandBarStripElement5.Name = "commandBarStripElement5";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Puntos:";
-            // 
-            // txtPuntos
-            // 
-            this.txtPuntos.Location = new System.Drawing.Point(72, 113);
-            this.txtPuntos.Name = "txtPuntos";
-            this.txtPuntos.Size = new System.Drawing.Size(87, 20);
-            this.txtPuntos.TabIndex = 11;
             // 
             // frmPuestos
             // 

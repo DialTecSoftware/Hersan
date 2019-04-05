@@ -1,4 +1,5 @@
 ﻿using Hersan.Entidades.CapitalHumano;
+using Hersan.Entidades.Relchec;
 using System.Collections.Generic;
 using System.Data;
 using System.ServiceModel;
@@ -106,15 +107,16 @@ namespace Hersan.CH.Contract
 
         #endregion
 
-        #region SeguimientoCanidatos
+        #region Reloj Checador
         [OperationContract]
-        List<SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener();
+        List<HorariosBE> ABCHorarios_Obtener();
         [OperationContract]
-        int CHU_SeguimientoCan_Guardar(SeguimientoCandidatosBE obj);
+        int ABCHorarios_Guarda(HorariosBE obj);
         [OperationContract]
-        int CHU_SeguimientoCan_Actualizar(SeguimientoCandidatosBE obj);
+        int ABCHorarios_Actualiza(HorariosBE obj);
 
         #endregion
+
 
 
     }

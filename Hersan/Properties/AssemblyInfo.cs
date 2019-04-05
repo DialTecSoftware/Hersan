@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("DialTec Software")]
-[assembly: AssemblyDescription("ERP Hersan HyTec")]
+[assembly: AssemblyDescription("ERP Hersan HiTec")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ing. Luis Mario Diaz A.")]
-[assembly: AssemblyProduct("ERP Hersan Hytec")]
+[assembly: AssemblyProduct("ERP Hersan Hitec")]
 [assembly: AssemblyCopyright("Copyright © HP 2018")]
 [assembly: AssemblyTrademark("DIALTEC")]
 [assembly: AssemblyCulture("")]

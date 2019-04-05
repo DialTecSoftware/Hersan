@@ -28,6 +28,7 @@
     <MetadataFile FileName="Hersan_CHumano1.xsd" MetadataType="Schema" ID="e7a5458c-9106-48b6-a9e0-d01460a884b2" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd2" />
     <MetadataFile FileName="Hersan_CHumano2.xsd" MetadataType="Schema" ID="096aa2ac-7e92-4d46-a141-b855292d0e07" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd5" />
     <MetadataFile FileName="Hersan_CHumano3.xsd" MetadataType="Schema" ID="e542aaaf-74cd-4919-a0a2-c697f5cc32c3" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd4" />
+    <MetadataFile FileName="Hersan_CHumano7.xsd" MetadataType="Schema" ID="b16223c7-8805-42a3-b8b4-2bd6a110b734" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd7" />
     <MetadataFile FileName="Hersan_CHumano4.xsd" MetadataType="Schema" ID="fe1becb3-34ef-468a-bb0f-0d56f62b6967" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd0" />
     <MetadataFile FileName="Hersan_CHumano.wsdl" MetadataType="Wsdl" ID="d0bfd7bf-cd3a-485b-ae33-d38b5cc0a197" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?wsdl" />
     <MetadataFile FileName="Hersan_CHumano6.xsd" MetadataType="Schema" ID="df42c149-561f-4a46-9316-23773c222acc" SourceId="1" SourceUrl="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd6" />

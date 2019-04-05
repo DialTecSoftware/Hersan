@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Hersan.Ventas.Service.Hersan_Ventas" Factory="System.ServiceModel.Activation.ServiceHostFactory"%>

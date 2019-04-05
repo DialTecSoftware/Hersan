@@ -16,14 +16,14 @@ namespace Hersan.UI.CapitalHumano.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Expediente : ReportClass {
+    public class rtpExpediente : ReportClass {
         
-        public Expediente() {
+        public rtpExpediente() {
         }
         
         public override string ResourceName {
             get {
-                return "Expediente.rpt";
+                return "rtpExpediente.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Hersan.UI.CapitalHumano.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Hersan.UI.CapitalHumano.Reportes.Expediente.rpt";
+                return "Hersan.UI.CapitalHumano.Reportes.rtpExpediente.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Hersan.UI.CapitalHumano.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedExpediente : Component, ICachedReport {
+    public class CachedrtpExpediente : Component, ICachedReport {
         
-        public CachedExpediente() {
+        public CachedrtpExpediente() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Hersan.UI.CapitalHumano.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Expediente rpt = new Expediente();
+            rtpExpediente rpt = new rtpExpediente();
             rpt.Site = this.Site;
             return rpt;
         }

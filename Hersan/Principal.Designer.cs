@@ -35,7 +35,6 @@
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblPerfil = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +106,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HERSAN HYTEC";
+            this.Text = "HERSAN HI-TEC";
             this.ThemeName = "MaterialTeal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -126,7 +125,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripStatusLabel lblPerfil;
-        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
         private System.Windows.Forms.ToolStripStatusLabel lblEmpresa;
     }
 }

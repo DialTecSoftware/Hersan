@@ -23,12 +23,12 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
     <UpdateUrl>http://localhost/Hersan/</UpdateUrl>
-    <ProductName>Sistema Integral Hersan HyTec</ProductName>
-    <PublisherName>Sistema Integral Hersan HyTec</PublisherName>
-    <SuiteName>Sistema Integral Hersan HyTec</SuiteName>
+    <ProductName>Sistema Integral Hersan HiTec</ProductName>
+    <PublisherName>Sistema Integral Hersan HiTec</PublisherName>
+    <SuiteName>Sistema Integral Hersan HiTec</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -89,7 +89,6 @@
       <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
@@ -170,6 +169,10 @@
       <Project>{63cbf2e1-5e97-4f81-bf0c-ddda05b444af}</Project>
       <Name>Hersan.UI.Seguridad</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hersan.UI.Ventas\Hersan.UI.Ventas.csproj">
+      <Project>{1147207d-10a0-49c1-8905-720c93e1d5f0}</Project>
+      <Name>Hersan.UI.Ventas</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -198,6 +201,16 @@
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.Material">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

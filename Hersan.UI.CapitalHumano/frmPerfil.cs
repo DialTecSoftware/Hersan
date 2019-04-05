@@ -37,15 +37,11 @@ namespace Hersan.UI.CapitalHumano
             try {
                 GroupDescriptor descriptor = new GroupDescriptor();
                 descriptor.GroupNames.Add("Grupo", ListSortDirection.Ascending);
-                grdDatosEdu.GroupDescriptors.Add(descriptor);
-
-                GroupDescriptor descriptor1 = new GroupDescriptor();
-                descriptor1.GroupNames.Add("Grupo", ListSortDirection.Ascending);
-                grdDatos.GroupDescriptors.Add(descriptor1);
+                grdDatos.GroupDescriptors.Add(descriptor);
 
                 // Summatoria de datos
                 GridViewSummaryRowItem item1 = new GridViewSummaryRowItem();
-                item1.Add(new GridViewSummaryItem("Total", "Total: {0:F2}", GridAggregateFunction.Sum));
+                item1.Add(new GridViewSummaryItem("Total", "Total:  {0:N2}", GridAggregateFunction.Sum));
                 this.grdDatos.SummaryRowsBottom.Add(item1);
 
                 LimpiarCampos();
@@ -54,7 +50,6 @@ namespace Hersan.UI.CapitalHumano
                 CargarCompetencias();
 
                 CargarGrid();
-                //CargarGridEdu();
                 CalcularPuntos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -234,11 +229,10 @@ namespace Hersan.UI.CapitalHumano
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
                 if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
-                    chkPuntos.ValueMember = "Puntos";
-                    chkPuntos.DisplayMember = "Puntos";
-                    chkPuntos.DataSource = oCatalogos.CHUPuestos_Puntos(int.Parse(cboPuestos.SelectedValue.ToString()));
+                    var Temp = oCatalogos.CHUPuestos_Puntos(int.Parse(cboPuestos.SelectedValue.ToString()));
+                    txtValor.Text = Temp[0].Puntos.ToString(); ;
                 } else
-                    chkPuntos.DataSource = null;
+                    txtValor.Text = "0.00";
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los puntos asociados a los p...\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -274,6 +268,32 @@ namespace Hersan.UI.CapitalHumano
                    
             } catch (Exception ex) {
                 throw ex;
+            }
+        }
+        private void grdDatos_CellEndEdit_1(object sender, GridViewCellEventArgs e)
+        {
+            try {
+                decimal valor = 0;
+                decimal pond = 0;
+                decimal Suma = 0;
+                decimal total = 0;
+
+                if (grdDatos.Columns[e.ColumnIndex].Name == "Valor") {
+                    foreach (GridViewRowInfo row in grdDatos.Rows) {
+                        // Producto de las columnas nivel y valor
+
+                        valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
+                        pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
+                        total = valor * pond;
+                        row.Cells["Total"].Value = total;
+                        Suma += Convert.ToDecimal(row.Cells["Total"].Value);
+                    }
+                    //Total = Suma;
+                    resultado = Suma * decimal.Parse(txtValor.Text);
+                }
+                txtSueldo.Text = resultado.ToString();
+            } catch (Exception) {
+                throw;
             }
         }
 
@@ -334,7 +354,7 @@ namespace Hersan.UI.CapitalHumano
                     Suma += Convert.ToDecimal(row.Cells["Total"].Value);
                 }
                 //Total = Suma;
-                resultado = Suma * decimal.Parse(chkPuntos.SelectedValue.ToString());
+                resultado = Suma * decimal.Parse(txtValor.Text);
 
                 txtSueldo.Text = resultado.ToString();
 
@@ -344,8 +364,6 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
-
-
 
         private void CargarCompetencias()
         {
@@ -391,48 +409,6 @@ namespace Hersan.UI.CapitalHumano
                 throw ex;
             }
         }
-        //private void ActualizaGridEdu()
-        //{
-        //    try {
-        //        grdDatosEdu.DataSource = null;
-        //        grdDatosEdu.DataSource = oList.FindAll(item => item.DatosUsuario.Estatus == true && item.Grupo.Contains("EDUCACIÓN"));
-        //    } catch (Exception ex) {
-        //        throw ex;
-        //    }
-        //}
-        //private void CargarGridEdu()
-        //{
-        //    oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
-        //    oList.Clear();
-        //    Flag = false;
-
-        //    try {
-        //        if (cboDepto.Items.Count > 0) {
-        //            DataSet oAux = oCHumano.CHU_Perfiles_Obtener(int.Parse(cboDepto.SelectedValue.ToString()), int.Parse(cboPuestos.SelectedValue.ToString()));
-        //            if (oAux.Tables.Count > 0) {
-        //                #region Detalle Grid
-        //                /* EDUCACIÓN */
-        //                if (oAux.Tables[1].Rows.Count > 0) {
-        //                    foreach (DataRow oRow in oAux.Tables[1].Rows) {
-        //                        oList.Add(new PerfilDescripcionBE() {
-        //                            Id = int.Parse(oRow["EDU_Id"].ToString()),
-        //                            Grupo = "1-EDUCACIÓN",
-        //                            Concepto = oRow["EDU_Nombre"].ToString(),
-        //                            Tipo = oRow["Tipo"].ToString()
-        //                        });
-        //                    }
-
-        //                }
-        //            }
-
-        //        }
-        //        ActualizaGridEdu();
-        //    } catch (Exception ex) {
-        //        throw ex;
-        //    } finally {
-        //        Flag = true;
-        //    }
-        //}
         private void CargarGrid()
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
@@ -484,76 +460,6 @@ namespace Hersan.UI.CapitalHumano
             } finally {
                 Flag = true;
             }
-        }
-
-        private void grdDatos_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-
-
-        }
-
-        private void chkPuntos_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkPuntos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            //if (chkPuntos.SelectedValue.ToString() != "" && grdDatos.RowCount > 0) {
-
-            //    decimal sueldoMax = /*decimal.Parse(item1.ToString())*/   decimal.Parse(chkPuntos.ToString());
-
-            //    txtSueldo.Text = sueldoMax.ToString();
-            //}
-        }
-
-        private void grdDatosEdu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grdDatos_CellEndEdit_1(object sender, GridViewCellEventArgs e)
-        {
-            try {
-
-                decimal valor = 0;
-                decimal pond = 0;
-                decimal Suma = 0;
-                decimal total = 0;
-
-                if (grdDatos.Columns[e.ColumnIndex].Name == "Valor") {
-
-
-                    foreach (GridViewRowInfo row in grdDatos.Rows) {
-                        // Producto de las columnas nivel y valor
-
-                        valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
-                        pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
-                        total = valor * pond;
-                        row.Cells["Total"].Value = total;
-                        Suma += Convert.ToDecimal(row.Cells["Total"].Value);
-                    }
-
-
-                    //Total = Suma;
-                    resultado = Suma * decimal.Parse(chkPuntos.SelectedValue.ToString());
-                }
-
-
-
-
-                txtSueldo.Text = resultado.ToString();
-
-
-
-
-
-
-            } catch (Exception) {
-
-                throw;
-            }
-
         }
     }
 

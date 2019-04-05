@@ -120,6 +120,15 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_GuardarResponse")]
         int CHU_EvaluacionInduccion_Guardar(System.Data.DataSet Tablas, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_GuardarResponse")]
+        int CHU_SeguimientoCan_Guardar(Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_ActualizarResponse")]
+        int CHU_SeguimientoCan_Actualizar(Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -287,6 +296,18 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_EvaluacionInduccion_Guardar(System.Data.DataSet Tablas, int IdUsuario) {
             return base.Channel.CHU_EvaluacionInduccion_Guardar(Tablas, IdUsuario);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener() {
+            return base.Channel.CHU_SeguimientoCan_Obtener();
+        }
+        
+        public int CHU_SeguimientoCan_Guardar(Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE obj) {
+            return base.Channel.CHU_SeguimientoCan_Guardar(obj);
+        }
+        
+        public int CHU_SeguimientoCan_Actualizar(Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE obj) {
+            return base.Channel.CHU_SeguimientoCan_Actualizar(obj);
         }
     }
 }

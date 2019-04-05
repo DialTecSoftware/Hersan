@@ -68,6 +68,7 @@
     <Compile Include="CapitalHumano\ExpedientesDA.cs" />
     <Compile Include="CapitalHumano\NuevoPuestoDA.cs" />
     <Compile Include="CapitalHumano\PerfilesDA.cs" />
+    <Compile Include="CapitalHumano\SeguimientoCandidatosDA.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalDA.cs" />
     <Compile Include="Catalogos\CiudadesDA.cs" />
     <Compile Include="Catalogos\ColoniasDA.cs" />

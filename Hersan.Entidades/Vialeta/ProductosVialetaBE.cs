@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Hersan.Entidades.Ventas
 {
-    public class ProductosBE
+    public class ProductosVialetaBE
     {
-        public ProductosBE()
+        public ProductosVialetaBE()
         {
             Entidad = new EntidadesBE();
             Producto = string.Empty;

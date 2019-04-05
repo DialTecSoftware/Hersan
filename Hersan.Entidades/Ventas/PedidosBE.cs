@@ -15,18 +15,16 @@ namespace Hersan.Entidades.Ventas
         {
             Id = 0;
             Cliente = new ClientesBE();
-            Agente = string.Empty;
-            Fecha = DateTime.Today;
-            Entrega = DateTime.Today;
+            Agente = 0;
+            Cotizacion = true;
             Detalle = new List<PedidoDetalleBE>();
             DatosUsuario = new GeneralBE();
         }
 
         public int Id { get; set; }
         public ClientesBE Cliente { get; set; }
-        public string Agente { get; set; }
-        public DateTime Fecha { get; set; }
-        public DateTime Entrega { get; set; }
+        public int Agente { get; set; }       
+        public bool Cotizacion { get; set; }
         public List<PedidoDetalleBE> Detalle { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
@@ -38,16 +36,18 @@ namespace Hersan.Entidades.Ventas
             Id = 0;
             Sel = false;
             Entidad = new EntidadesBE();
-            Producto = new ProductosBE();
+            Producto = new ProductosVialetaBE();
             Cantidad = 0;
+            Precio = 0;
             DatosUsuario = new GeneralBE();
         }
 
         public int Id { get; set; }
         public bool Sel { get; set; }
         public EntidadesBE Entidad { get; set; }
-        public ProductosBE Producto { get; set; }
+        public ProductosVialetaBE Producto { get; set; }
         public int Cantidad { get; set; }
+        public decimal Precio { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
 }

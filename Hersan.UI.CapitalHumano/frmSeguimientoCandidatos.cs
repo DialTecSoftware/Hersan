@@ -190,6 +190,10 @@ namespace Hersan.UI.CapitalHumano
                     obj.Aceptado = true;
                     obj.Proceso = false;
                 }
+                if (rdbRechazado.IsChecked) {
+                    obj.Aceptado = false;
+                    obj.Proceso = false;
+                }
 
                 obj.NombreCompleto = txtNombreC.Text;
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;

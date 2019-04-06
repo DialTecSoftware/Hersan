@@ -71,6 +71,7 @@
     <Compile Include="CapitalHumano\SolicitudPersonalBE.cs" />
     <Compile Include="Catalogos\CiudadesBE.cs" />
     <Compile Include="Catalogos\ColoniasBE.cs" />
+    <Compile Include="Catalogos\ColoresBE.cs" />
     <Compile Include="Catalogos\ContactosBE.cs" />
     <Compile Include="Catalogos\DepartamentosBE.cs" />
     <Compile Include="CapitalHumano\EducacionBE.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Catalogos\EquipoHerramientasBE.cs" />
     <Compile Include="Catalogos\EstadosBE.cs" />
     <Compile Include="CapitalHumano\OrganigramaBE.cs" />
+    <Compile Include="Catalogos\FamiliasBE.cs" />
     <Compile Include="Catalogos\FormasPagoBE.cs" />
     <Compile Include="Catalogos\PaisesBE.cs" />
     <Compile Include="CapitalHumano\PuestosBE.cs" />
@@ -96,7 +98,9 @@
     <Compile Include="Seguridad\ValidaIngresoBE.cs" />
     <Compile Include="Ventas\ClientesBE.cs" />
     <Compile Include="Ventas\PedidosBE.cs" />
-    <Compile Include="Ventas\ProductosBE.cs" />
+    <Compile Include="Vialeta\ProductosVialetaBE.cs" />
+    <Compile Include="Vialidad\ProductosVialidadBE.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

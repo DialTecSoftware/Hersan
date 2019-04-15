@@ -16,6 +16,7 @@
       <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
       <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
       <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd6" />
+      <xsd:import schemaLocation="http://localhost:60349/Hersan_CHumano.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Relchec" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Guardar_InputMessage">
@@ -246,6 +247,48 @@
   <wsdl:message name="IHersan_CHumano_CHU_SeguimientoCan_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_SeguimientoCan_ActualizarResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Guarda_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_Guarda" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Guarda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_GuardaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Actualiza_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_Actualiza" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_ABCHorarios_Actualiza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCHorarios_ActualizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Actualiza_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_Actualiza" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Actualiza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_ActualizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Elimina_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_Elimina" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Elimina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_EliminaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_CHumano">
     <wsdl:operation name="CHU_Perfiles_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Guardar" message="tns:IHersan_CHumano_CHU_Perfiles_Guardar_InputMessage" />
@@ -398,6 +441,34 @@
     <wsdl:operation name="CHU_SeguimientoCan_Actualizar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Actualizar" message="tns:IHersan_CHumano_CHU_SeguimientoCan_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_ActualizarResponse" message="tns:IHersan_CHumano_CHU_SeguimientoCan_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Obtener" message="tns:IHersan_CHumano_ABCHorarios_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_ObtenerResponse" message="tns:IHersan_CHumano_ABCHorarios_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Guarda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Guarda" message="tns:IHersan_CHumano_ABCHorarios_Guarda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_GuardaResponse" message="tns:IHersan_CHumano_ABCHorarios_Guarda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Actualiza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Actualiza" message="tns:IHersan_CHumano_ABCHorarios_Actualiza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_ActualizaResponse" message="tns:IHersan_CHumano_ABCHorarios_Actualiza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Digitalizados_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Obtener" message="tns:IHersan_CHumano_CHU_Digitalizados_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_ObtenerResponse" message="tns:IHersan_CHumano_CHU_Digitalizados_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Digitalizados_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Guardar" message="tns:IHersan_CHumano_CHU_Digitalizados_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_GuardarResponse" message="tns:IHersan_CHumano_CHU_Digitalizados_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Digitalizados_Actualiza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Actualiza" message="tns:IHersan_CHumano_CHU_Digitalizados_Actualiza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_ActualizaResponse" message="tns:IHersan_CHumano_CHU_Digitalizados_Actualiza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Digitalizados_Elimina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Elimina" message="tns:IHersan_CHumano_CHU_Digitalizados_Elimina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_EliminaResponse" message="tns:IHersan_CHumano_CHU_Digitalizados_Elimina_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_CHumano" type="tns:IHersan_CHumano">
@@ -738,6 +809,69 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_SeguimientoCan_Actualizar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Guarda">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_Guarda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCHorarios_Actualiza">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_Actualiza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Digitalizados_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Digitalizados_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Digitalizados_Actualiza">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Actualiza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Digitalizados_Elimina">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Elimina" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

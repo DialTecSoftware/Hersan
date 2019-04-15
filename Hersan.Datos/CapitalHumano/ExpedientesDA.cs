@@ -88,6 +88,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.DatosPersonales.APaterno = reader["EDP_APaterno"].ToString();
                                 obj.DatosPersonales.AMaterno= reader["EDP_AMaterno"].ToString();
                                 obj.DatosPersonales.Nombres = reader["EDP_Nombres"].ToString();
+                             
 
                                 oList.Add(obj);
                             }
@@ -177,6 +178,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Comentarios = reader["EXP_Comentarios"].ToString();
                                 obj.RutaImagen = reader["EXP_RutaFoto"].ToString();
 
+
                                 oList.Add(obj);
                             }
                         }
@@ -229,7 +231,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.EdoCivil = reader["EDP_EdoCivil"].ToString();
                                 obj.EdoCivilOtro = reader["EDP_EdoCivilOtros"].ToString();
                                 obj.Correo = reader["EDP_Correo"].ToString();
-
+                                obj.Empleados.Id = int.Parse(reader["EMP_Numero"].ToString());
                                 oList.Add(obj);
                             }
                         }

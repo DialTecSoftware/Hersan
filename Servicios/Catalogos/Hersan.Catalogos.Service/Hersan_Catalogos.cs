@@ -216,6 +216,10 @@ namespace Hersan.Catalogos.Service
         {
             return new DocumentosBP().ABCDocumentos_Actualizar(obj);
         }
+        public List<DocumentosBE> ABCDocumentos_Combo()
+        {
+            return new DocumentosBP().ABCDocumentos_Combo();
+        }
         #endregion
 
         #region Organigrama

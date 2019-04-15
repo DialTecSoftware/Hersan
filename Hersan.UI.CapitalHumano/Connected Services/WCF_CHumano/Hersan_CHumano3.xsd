@@ -117,4 +117,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TiposContratoBE" nillable="true" type="tns:TiposContratoBE" />
+  <xs:complexType name="EmpleadosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmpleadosBE" nillable="true" type="tns:EmpleadosBE" />
 </xs:schema>

@@ -129,6 +129,27 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_ActualizarResponse")]
         int CHU_SeguimientoCan_Actualizar(Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Relchec.HorariosBE> ABCHorarios_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Guarda", ReplyAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_GuardaResponse")]
+        int ABCHorarios_Guarda(Hersan.Entidades.Relchec.HorariosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/ABCHorarios_Actualiza", ReplyAction="http://tempuri.org/IHersan_CHumano/ABCHorarios_ActualizaResponse")]
+        int ABCHorarios_Actualiza(Hersan.Entidades.Relchec.HorariosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_ObtenerResponse")]
+        System.Data.DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_GuardarResponse")]
+        int CHU_Digitalizados_Guardar(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Actualiza", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_ActualizaResponse")]
+        int CHU_Digitalizados_Actualiza(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_EliminaResponse")]
+        int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -308,6 +329,34 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_SeguimientoCan_Actualizar(Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE obj) {
             return base.Channel.CHU_SeguimientoCan_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Relchec.HorariosBE> ABCHorarios_Obtener() {
+            return base.Channel.ABCHorarios_Obtener();
+        }
+        
+        public int ABCHorarios_Guarda(Hersan.Entidades.Relchec.HorariosBE obj) {
+            return base.Channel.ABCHorarios_Guarda(obj);
+        }
+        
+        public int ABCHorarios_Actualiza(Hersan.Entidades.Relchec.HorariosBE obj) {
+            return base.Channel.ABCHorarios_Actualiza(obj);
+        }
+        
+        public System.Data.DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp) {
+            return base.Channel.CHU_Digitalizados_Obtener(IdExp, NoEmp);
+        }
+        
+        public int CHU_Digitalizados_Guardar(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle) {
+            return base.Channel.CHU_Digitalizados_Guardar(obj, Detalle);
+        }
+        
+        public int CHU_Digitalizados_Actualiza(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle) {
+            return base.Channel.CHU_Digitalizados_Actualiza(obj, Detalle);
+        }
+        
+        public int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario) {
+            return base.Channel.CHU_Digitalizados_Elimina(IdDocs, IdUsuario);
         }
     }
 }

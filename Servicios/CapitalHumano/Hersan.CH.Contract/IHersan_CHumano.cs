@@ -107,6 +107,17 @@ namespace Hersan.CH.Contract
 
         #endregion
 
+        #region SeguimientoCandidatos
+        [OperationContract]
+        List<SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener();
+        [OperationContract]
+        int CHU_SeguimientoCan_Guardar(SeguimientoCandidatosBE obj);
+        [OperationContract]
+        int CHU_SeguimientoCan_Actualizar(SeguimientoCandidatosBE obj);
+    
+
+        #endregion
+
         #region Reloj Checador
         [OperationContract]
         List<HorariosBE> ABCHorarios_Obtener();
@@ -117,6 +128,17 @@ namespace Hersan.CH.Contract
 
         #endregion
 
+
+        #region Digitalizados
+        [OperationContract]
+        DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp);
+        [OperationContract]
+        int CHU_Digitalizados_Guardar(DigitalizadosBE obj, DataTable Detalle);
+        [OperationContract]
+        int CHU_Digitalizados_Actualiza(DigitalizadosBE obj, DataTable Detalle);
+        [OperationContract]
+        int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario);
+        #endregion
 
 
     }

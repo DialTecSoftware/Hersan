@@ -91,6 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="DocumentosDigitalizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentosDigitalizados.Designer.cs">
+      <DependentUpon>DocumentosDigitalizados.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDictamenNuevoP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DocumentosDigitalizados.resx">
+      <DependentUpon>DocumentosDigitalizados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDictamenNuevoP.resx">
       <DependentUpon>frmDictamenNuevoP.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +380,7 @@
     <Content Include="Correo\Correo_Rechazado.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Documents-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -117,6 +117,9 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_ActualizarResponse")]
         int ABCContactos_Actualizar(Hersan.Entidades.Catalogos.ContactosBE obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE> ABCContactos_Combo();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EquipoHerramientasBE> ABCEquipoHerramientas_Obtener();
         
@@ -327,6 +330,10 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         
         public int ABCContactos_Actualizar(Hersan.Entidades.Catalogos.ContactosBE obj) {
             return base.Channel.ABCContactos_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE> ABCContactos_Combo() {
+            return base.Channel.ABCContactos_Combo();
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EquipoHerramientasBE> ABCEquipoHerramientas_Obtener() {

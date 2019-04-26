@@ -505,4 +505,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DigitalizadosDetalleBE" nillable="true" type="tns:DigitalizadosDetalleBE" />
+  <xs:complexType name="DescripcionPuestosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Autoridad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colabordores" type="xs:int" />
+      <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q50:GeneralBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Inferior" type="xs:int" />
+      <xs:element minOccurs="0" name="Objetivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Perfiles" nillable="true" type="tns:PerfilesBE" />
+      <xs:element minOccurs="0" name="Superior" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DescripcionPuestosBE" nillable="true" type="tns:DescripcionPuestosBE" />
 </xs:schema>

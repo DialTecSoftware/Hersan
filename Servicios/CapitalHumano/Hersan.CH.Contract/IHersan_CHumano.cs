@@ -140,6 +140,15 @@ namespace Hersan.CH.Contract
         int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario);
         #endregion
 
-
+        #region DescripcionPuestos
+        [OperationContract]
+        DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl);
+        [OperationContract]
+        int CHU_DescPuestos_Guardar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones);
+        [OperationContract]
+        int CHU_DescPuestos_Actualizar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones);
+        [OperationContract]
+        int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario);
+        #endregion
     }
 }

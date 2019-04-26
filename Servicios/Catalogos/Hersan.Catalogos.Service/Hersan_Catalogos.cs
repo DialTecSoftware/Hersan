@@ -171,6 +171,10 @@ namespace Hersan.Catalogos.Service
         {
             return new ContactosBP().ABCContactos_Actualizar(obj);
         }
+        public List<ContactosBE> ABCContactos_Combo()
+        {
+            return new ContactosBP().ABCContactos_Combo();
+        }
         #endregion
 
         #region EquipoHerramientas

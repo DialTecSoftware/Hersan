@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
     <Compile Include="CapitalHumano\ContratosBE.cs" />
+    <Compile Include="CapitalHumano\DescripcionPuestosBE.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoBE.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionBE.cs" />
     <Compile Include="CapitalHumano\DigitalizadosBE.cs" />

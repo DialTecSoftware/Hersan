@@ -72,11 +72,14 @@ namespace Hersan.UI.CapitalHumano
         private void GuardarArchivo()
         {
             try {
-                if (oList.FindAll(item => item.RutaArchivo == txtArchivo.Text).Count == 0) {
-                
-                    System.IO.File.Copy(filePath, path, true);
-                    
-                }
+
+                if (filePath != path)
+                    oList.ForEach(item => {
+                        path = item.RutaArchivo;
+                        filePath = oDialog.FileName;
+                        System.IO.File.Copy(filePath, path, true);
+                    });
+                                 
                 } catch (Exception) {
 
                 throw;
@@ -261,9 +264,9 @@ namespace Hersan.UI.CapitalHumano
 
                     });
                 }
-            } catch (Exception) {
+            } catch (Exception ex) {
 
-                throw;
+                RadMessageBox.Show("Ocurió un error al abrir el archivo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -367,7 +370,7 @@ namespace Hersan.UI.CapitalHumano
                     int Result = oCHumano.CHU_Digitalizados_Actualiza(obj, oData);
                     if (Result != 0) {
                         RadMessageBox.Show("Documneto actualizado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        System.IO.File.Copy(filePath, path, true);
+                        GuardarArchivo();
                     } else {
                         RadMessageBox.Show("Ocurrió un error al actualizar el documento", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     }

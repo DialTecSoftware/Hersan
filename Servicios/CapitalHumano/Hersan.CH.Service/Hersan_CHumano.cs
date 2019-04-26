@@ -228,6 +228,27 @@ namespace Hersan.CH.Service
             return new DigitalizadosBP().CHU_Digitalizados_Elimina(IdDocs, IdUsuario);
         }
         #endregion
+
+        #region DescripcionPuestos
+
+        public DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl)
+        {
+            return new DescripcionPuestosBP().CHU_DescripcionPuestos_Obtener(IdPerfifl);
+        }
+        public int CHU_DescPuestos_Guardar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuestos_Guardar(obj, Contactos, Condiciones);
+        }
+        public int CHU_DescPuestos_Actualizar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuestos_Actualizar(obj, Contactos, Condiciones);
+        }
+
+        public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
+        }
+        #endregion
     }
 }
 

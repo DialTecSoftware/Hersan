@@ -109,6 +109,8 @@ namespace Hersan.Catalogos.Contract
         int ABCContactos_Guardar(ContactosBE obj);
         [OperationContract]
         int ABCContactos_Actualizar(ContactosBE obj);
+        [OperationContract]
+        List<ContactosBE> ABCContactos_Combo();
 
         #endregion
 

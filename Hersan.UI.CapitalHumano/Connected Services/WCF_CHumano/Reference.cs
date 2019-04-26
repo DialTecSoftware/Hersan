@@ -150,6 +150,18 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_EliminaResponse")]
         int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_ObtenerResponse")]
+        System.Data.DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_GuardarResponse")]
+        int CHU_DescPuestos_Guardar(Hersan.Entidades.CapitalHumano.DescripcionPuestosBE obj, System.Data.DataTable Contactos, System.Data.DataTable Condiciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_Actualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_ActualizarResponse")]
+        int CHU_DescPuestos_Actualizar(Hersan.Entidades.CapitalHumano.DescripcionPuestosBE obj, System.Data.DataTable Contactos, System.Data.DataTable Condiciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_EliminaResponse")]
+        int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -357,6 +369,22 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario) {
             return base.Channel.CHU_Digitalizados_Elimina(IdDocs, IdUsuario);
+        }
+        
+        public System.Data.DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl) {
+            return base.Channel.CHU_DescripcionPuestos_Obtener(IdPerfifl);
+        }
+        
+        public int CHU_DescPuestos_Guardar(Hersan.Entidades.CapitalHumano.DescripcionPuestosBE obj, System.Data.DataTable Contactos, System.Data.DataTable Condiciones) {
+            return base.Channel.CHU_DescPuestos_Guardar(obj, Contactos, Condiciones);
+        }
+        
+        public int CHU_DescPuestos_Actualizar(Hersan.Entidades.CapitalHumano.DescripcionPuestosBE obj, System.Data.DataTable Contactos, System.Data.DataTable Condiciones) {
+            return base.Channel.CHU_DescPuestos_Actualizar(obj, Contactos, Condiciones);
+        }
+        
+        public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario) {
+            return base.Channel.CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
         }
     }
 }

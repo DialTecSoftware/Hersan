@@ -64,8 +64,6 @@
             this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnCorreo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
@@ -73,6 +71,8 @@
             this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
+            this.btnCorreo = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
@@ -104,7 +104,7 @@
             this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 53);
+            this.radPanel1.Location = new System.Drawing.Point(0, 78);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(982, 112);
             this.radPanel1.TabIndex = 1;
@@ -234,15 +234,15 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 165);
+            this.gvDatos.Location = new System.Drawing.Point(0, 190);
             // 
             // 
             // 
             this.gvDatos.MasterTemplate.AllowAddNewRow = false;
             this.gvDatos.MasterTemplate.AllowColumnReorder = false;
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
+            this.gvDatos.MasterTemplate.AllowDragToGroup = false;
             this.gvDatos.MasterTemplate.AllowEditRow = false;
-            this.gvDatos.MasterTemplate.AutoExpandGroups = true;
             gridViewTextBoxColumn1.FieldName = "Id";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.IsVisible = false;
@@ -316,14 +316,13 @@
             gridViewCheckBoxColumn2,
             gridViewCheckBoxColumn3,
             gridViewCheckBoxColumn4});
-            this.gvDatos.MasterTemplate.ShowGroupedColumns = true;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(982, 240);
+            this.gvDatos.Size = new System.Drawing.Size(982, 215);
             this.gvDatos.TabIndex = 4;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -400,22 +399,6 @@
             this.btnGuardar.UseCompatibleTextRendering = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // commandBarSeparator1
-            // 
-            this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
-            this.commandBarSeparator1.Name = "commandBarSeparator1";
-            this.commandBarSeparator1.VisibleInOverflowMenu = false;
-            // 
-            // btnCorreo
-            // 
-            this.btnCorreo.DisplayName = "commandBarButton1";
-            this.btnCorreo.DrawText = true;
-            this.btnCorreo.Image = ((System.Drawing.Image)(resources.GetObject("btnCorreo.Image")));
-            this.btnCorreo.Name = "btnCorreo";
-            this.btnCorreo.Text = "Enviar Correo";
-            this.btnCorreo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCorreo.Click += new System.EventHandler(this.btnCorreo_Click);
-            // 
             // commandBarSeparator3
             // 
             this.commandBarSeparator3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -482,9 +465,26 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(982, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(982, 78);
             this.radCommandBar1.TabIndex = 0;
             this.radCommandBar1.ThemeName = "Material";
+            // 
+            // btnCorreo
+            // 
+            this.btnCorreo.DisplayName = "commandBarButton1";
+            this.btnCorreo.DrawText = true;
+            this.btnCorreo.Image = ((System.Drawing.Image)(resources.GetObject("btnCorreo.Image")));
+            this.btnCorreo.Name = "btnCorreo";
+            this.btnCorreo.Text = "Enviar Correo";
+            this.btnCorreo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCorreo.Click += new System.EventHandler(this.btnCorreo_Click);
+            // 
+            // commandBarSeparator1
+            // 
+            this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
+            this.commandBarSeparator1.Name = "commandBarSeparator1";
+            this.commandBarSeparator1.Text = "";
+            this.commandBarSeparator1.VisibleInOverflowMenu = false;
             // 
             // frmSeguimientoCandidatos
             // 

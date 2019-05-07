@@ -57,8 +57,11 @@
     <Compile Include="CapitalHumano\PerfilesBP.cs" />
     <Compile Include="CapitalHumano\SeguimientoCandidatosBP.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalBP.cs" />
+    <Compile Include="Catalogos\AccesoriosBP.cs" />
     <Compile Include="Catalogos\CiudadesBP.cs" />
     <Compile Include="Catalogos\ColoniasBP.cs" />
+    <Compile Include="Catalogos\ColoresBP.cs" />
+    <Compile Include="Catalogos\ReflejantesBP.cs" />
     <Compile Include="Catalogos\ContactosBP.cs" />
     <Compile Include="Catalogos\DepartamentosBP.cs" />
     <Compile Include="Catalogos\DocumentosBP.cs" />
@@ -68,9 +71,16 @@
     <Compile Include="Catalogos\EntidadesBP.cs" />
     <Compile Include="Catalogos\EquipoHerramientasBP.cs" />
     <Compile Include="Catalogos\EstadosBP.cs" />
+    <Compile Include="Catalogos\FamiliasBP.cs" />
     <Compile Include="Catalogos\OrganigramaBP.cs" />
     <Compile Include="Catalogos\PaisesBP.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoBP.cs" />
+    <Compile Include="Catalogos\TipoProductoBP.cs" />
+    <Compile Include="Ensamble\PedidosBP.cs" />
+    <Compile Include="Ensamble\PreciosBP.cs" />
+    <Compile Include="Ensamble\ProductosBP.cs" />
+    <Compile Include="Ensamble\ServiciosBP.cs" />
+    <Compile Include="Catalogos\TiposClienteBP.cs" />
     <Compile Include="Impersonar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relchec\HorariosBP.cs" />
@@ -79,8 +89,8 @@
     <Compile Include="Seguridad\RolesBP.cs" />
     <Compile Include="Seguridad\RolesUsuarioBP.cs" />
     <Compile Include="Seguridad\UsuariosBP.cs" />
-    <Compile Include="Ventas\ClientesBP.cs" />
-    <Compile Include="Ventas\FacturacionBE.cs" />
+    <Compile Include="Ensamble\ClientesBP.cs" />
+    <Compile Include="Ensamble\FacturacionBE.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Datos\Hersan.Datos.csproj">

@@ -9,11 +9,11 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
-namespace Hersan.UI.Ventas
+namespace Hersan.UI.Ensamble
 {
     public partial class frmClientesBuscar : Telerik.WinControls.UI.RadForm
     {
-        WCF_Ventas.Hersan_VentasClient oVentas;
+        WCF_Ensamble.Hersan_EnsambleClient oVentas;
         public int Id { get; set; }
 
         public frmClientesBuscar()
@@ -33,7 +33,7 @@ namespace Hersan.UI.Ventas
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            oVentas = new WCF_Ventas.Hersan_VentasClient();
+            oVentas = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
                 ClientesBE obj = new ClientesBE();
                 obj.Id = int.Parse(txtClave.Text);

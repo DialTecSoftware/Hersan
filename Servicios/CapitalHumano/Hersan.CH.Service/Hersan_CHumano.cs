@@ -178,6 +178,21 @@ namespace Hersan.CH.Service
 
         #endregion
 
+        #region Seguimiento Canddatos
+        public List<SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener()
+        {
+            return new SeguimientoCandidatosBP().CHU_SeguimientoCan_Obtener();
+        }
+        public int CHU_SeguimientoCan_Guardar(SeguimientoCandidatosBE obj)
+        {
+            return new SeguimientoCandidatosBP().CHU_SeguimientoCan_Guardar(obj);
+        }
+        public int CHU_SeguimientoCan_Actualizar(SeguimientoCandidatosBE obj)
+        {
+            return new SeguimientoCandidatosBP().CHU_SeguimientoCan_Actualizar(obj);
+        }
+        #endregion
+
         #region Reloj Checador
         public List<HorariosBE> ABCHorarios_Obtener()
         {
@@ -190,6 +205,48 @@ namespace Hersan.CH.Service
         public int ABCHorarios_Actualiza(HorariosBE obj)
         {
             return new HorariosBP().ABCHorarios_Actualizar(obj);
+        }
+        #endregion
+
+        #region Digitalizados
+     
+        public DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp)
+        {
+            return new DigitalizadosBP().CHU_Digitalizados_Obtener(IdExp, NoEmp);
+        }
+        public int CHU_Digitalizados_Guardar(DigitalizadosBE obj, DataTable Detalle)
+        {
+            return new DigitalizadosBP().CHU_Digitalizados_Guardar(obj, Detalle);
+        }
+        public int CHU_Digitalizados_Actualiza(DigitalizadosBE obj, DataTable Detalle)
+        {
+            return new DigitalizadosBP().CHU_Digitalizados_Actualiza(obj, Detalle);
+        }
+
+        public int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario)
+        {
+            return new DigitalizadosBP().CHU_Digitalizados_Elimina(IdDocs, IdUsuario);
+        }
+        #endregion
+
+        #region DescripcionPuestos
+
+        public DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl)
+        {
+            return new DescripcionPuestosBP().CHU_DescripcionPuestos_Obtener(IdPerfifl);
+        }
+        public int CHU_DescPuestos_Guardar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuestos_Guardar(obj, Contactos, Condiciones);
+        }
+        public int CHU_DescPuestos_Actualizar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuestos_Actualizar(obj, Contactos, Condiciones);
+        }
+
+        public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
         }
         #endregion
     }

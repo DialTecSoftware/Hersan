@@ -171,6 +171,10 @@ namespace Hersan.Catalogos.Service
         {
             return new ContactosBP().ABCContactos_Actualizar(obj);
         }
+        public List<ContactosBE> ABCContactos_Combo()
+        {
+            return new ContactosBP().ABCContactos_Combo();
+        }
         #endregion
 
         #region EquipoHerramientas
@@ -215,6 +219,10 @@ namespace Hersan.Catalogos.Service
         public int ABCDocumentos_Actualizar(DocumentosBE obj)
         {
             return new DocumentosBP().ABCDocumentos_Actualizar(obj);
+        }
+        public List<DocumentosBE> ABCDocumentos_Combo()
+        {
+            return new DocumentosBP().ABCDocumentos_Combo();
         }
         #endregion
 

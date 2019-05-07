@@ -16,6 +16,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_DOC_OBTENER = "ABC_Documentos_Obtener";
         const string CONST_ABC_DOC_GUARDAR = "ABC_Documentos_Guarda";
         const string CONST_ABC_DOC_ACTUALIZAR = "ABC_Documentos_Actualiza";
+        const string CONST_ABC_DOC_COMBO = "ABC_Documentos_Combo";
         #endregion
 
         public List<DocumentosBE> ABCDocumentos_Obtener()
@@ -86,6 +87,33 @@ namespace Hersan.Datos.Catalogos
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public List<DocumentosBE> ABCDocumentos_Combo()
+        {
+            List<DocumentosBE> oList = new List<DocumentosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_DOC_COMBO, conn)) {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                DocumentosBE obj = new DocumentosBE();
+
+                                obj.Id = int.Parse(reader["DOC_ID"].ToString());
+                                obj.Nombre = reader["DOC_Nombre"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
             } catch (Exception ex) {
                 throw ex;
             }

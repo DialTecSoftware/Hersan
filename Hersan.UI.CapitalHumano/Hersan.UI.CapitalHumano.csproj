@@ -91,6 +91,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmDescripcionPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDescripcionPuestos.Designer.cs">
+      <DependentUpon>frmDescripcionPuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocumentosDigitalizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocumentosDigitalizados.Designer.cs">
+      <DependentUpon>frmDocumentosDigitalizados.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDictamenNuevoP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +187,12 @@
       <DependentUpon>EvaluacionInduccion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\rtpDescripcionPuestos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rtpDescripcionPuestos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\rtpExpediente1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,6 +201,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDescripcionPuestos.resx">
+      <DependentUpon>frmDescripcionPuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocumentosDigitalizados.resx">
+      <DependentUpon>frmDocumentosDigitalizados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDictamenNuevoP.resx">
       <DependentUpon>frmDictamenNuevoP.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +251,10 @@
     <EmbeddedResource Include="Reportes\EvaluacionInduccion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EvaluacionInduccion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rtpDescripcionPuestos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rtpDescripcionPuestos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rtpExpediente.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -365,8 +393,13 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Correo\Correo_Aceptado.html" />
-    <Content Include="Correo\Correo_Rechazado.html" />
+    <Content Include="Correo\Correo_Aceptado.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Correo\Correo_Rechazado.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Documents-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

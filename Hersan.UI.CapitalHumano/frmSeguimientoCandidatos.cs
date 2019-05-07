@@ -30,14 +30,15 @@ namespace Hersan.UI.CapitalHumano
         }
         private string CreateBody()
         {
+       
             string body = string.Empty;
             if (rdbAceptado.IsChecked == true) {
-                using (StreamReader reader = new StreamReader("C:/Users/Equipo/source/ERP_HERSAN2019/Hersan.UI.CapitalHumano/Correo/Correo_Aceptado.html")) {
+                using (StreamReader reader = new StreamReader((Directory.GetCurrentDirectory() + "/Correo/Correo_Aceptado.html"))) {
                     body = reader.ReadToEnd();
                 }
             }
             if (rdbRechazado.IsChecked == true) {
-                using (StreamReader reader = new StreamReader("C:/Users/Equipo/source/ERP_HERSAN2019/Hersan.UI.CapitalHumano/Correo/Correo_Rechazado.html")) {
+                using (StreamReader reader = new StreamReader(Directory.GetCurrentDirectory() + "/Correo/Correo_Rechazado.html")) {
                     body = reader.ReadToEnd();
                 }
                 } 

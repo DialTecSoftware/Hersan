@@ -109,6 +109,8 @@ namespace Hersan.Catalogos.Contract
         int ABCContactos_Guardar(ContactosBE obj);
         [OperationContract]
         int ABCContactos_Actualizar(ContactosBE obj);
+        [OperationContract]
+        List<ContactosBE> ABCContactos_Combo();
 
         #endregion
 
@@ -139,6 +141,8 @@ namespace Hersan.Catalogos.Contract
         int ABCDocumentos_Guardar(DocumentosBE obj);
         [OperationContract]
         int ABCDocumentos_Actualizar(DocumentosBE obj);
+        [OperationContract]
+        List<DocumentosBE> ABCDocumentos_Combo();
 
         #endregion
 

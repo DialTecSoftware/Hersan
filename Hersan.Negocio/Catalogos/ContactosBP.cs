@@ -22,6 +22,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new ContactosDA().ABCContactos_Actualizar(obj);
         }
-
+        public List<ContactosBE> ABCContactos_Combo()
+        {
+            return new ContactosDA().ABCContactos_Combo();
+        }
     }
 }

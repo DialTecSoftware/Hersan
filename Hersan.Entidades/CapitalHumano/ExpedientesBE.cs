@@ -23,7 +23,6 @@ namespace Hersan.Entidades.CapitalHumano
             Documentos = new ExpedienteDocumentos();
             Familia = new List<ExpedienteFamilia>();
             Estudios = new List<ExpedienteEstudios>();
-
             DatosUsuario = new GeneralBE();
         }
 
@@ -38,6 +37,7 @@ namespace Hersan.Entidades.CapitalHumano
         public string RutaImagen { get; set; }
         public byte[] Foto { get; set; }
         public GeneralBE DatosUsuario { get; set; }
+      
 
         public ExpedientesDatosPersonales DatosPersonales { get; set; }
         public ExpedienteDocumentos Documentos { get; set; }
@@ -79,6 +79,7 @@ namespace Hersan.Entidades.CapitalHumano
             OtrosDependientes = string.Empty;
             EdoCivil = string.Empty;
             EdoCivilOtro = string.Empty;
+            Empleados = new EmpleadosBE();
             DatosUsuario = new GeneralBE();
         }
 
@@ -106,6 +107,7 @@ namespace Hersan.Entidades.CapitalHumano
         public string EdoCivilOtro { get; set; }
         public string Correo { get; set; }
         public GeneralBE DatosUsuario { get; set; }
+        public EmpleadosBE Empleados { get; set; }
     }
 
     public class ExpedienteDocumentos

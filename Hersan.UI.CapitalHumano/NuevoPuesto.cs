@@ -291,5 +291,16 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
+
+        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (BaseWinBP.isDecimal(e.KeyChar)) {
+                    e.Handled = true;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
     }
 }

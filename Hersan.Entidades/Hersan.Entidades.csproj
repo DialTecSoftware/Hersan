@@ -60,11 +60,8 @@
   <ItemGroup>
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
     <Compile Include="CapitalHumano\ContratosBE.cs" />
-    <Compile Include="CapitalHumano\DescripcionPuestosBE.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoBE.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionBE.cs" />
-    <Compile Include="CapitalHumano\DigitalizadosBE.cs" />
-    <Compile Include="CapitalHumano\EmpleadosBE.cs" />
     <Compile Include="CapitalHumano\EvaluacionInduccionBE.cs" />
     <Compile Include="CapitalHumano\ExpedientesBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
@@ -72,6 +69,7 @@
     <Compile Include="CapitalHumano\PerfilesBE.cs" />
     <Compile Include="CapitalHumano\SeguimientoCandidatosBE.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalBE.cs" />
+    <Compile Include="Catalogos\AccesoriosBE.cs" />
     <Compile Include="Catalogos\CiudadesBE.cs" />
     <Compile Include="Catalogos\ColoniasBE.cs" />
     <Compile Include="Catalogos\ColoresBE.cs" />
@@ -89,9 +87,15 @@
     <Compile Include="Catalogos\PaisesBE.cs" />
     <Compile Include="CapitalHumano\PuestosBE.cs" />
     <Compile Include="CapitalHumano\TiposContratoBE.cs" />
+    <Compile Include="Catalogos\ReflejantesBE.cs" />
+    <Compile Include="Catalogos\TipoProductoBE.cs" />
+    <Compile Include="Catalogos\TiposClienteBE.cs" />
+    <Compile Include="Ensamble\CaracteristicasBE.cs" />
     <Compile Include="Comun\GeneralBE.cs" />
     <Compile Include="Comun\ResultadoBE.cs" />
     <Compile Include="Conexion\CadenaConexion.cs" />
+    <Compile Include="Ensamble\PreciosBE.cs" />
+    <Compile Include="Ensamble\ServiciosBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relchec\DiasFest.cs" />
     <Compile Include="Relchec\HorariosBE.cs" />
@@ -99,10 +103,9 @@
     <Compile Include="Seguridad\RolesBE.cs" />
     <Compile Include="Seguridad\UsuariosBE.cs" />
     <Compile Include="Seguridad\ValidaIngresoBE.cs" />
-    <Compile Include="Ventas\ClientesBE.cs" />
-    <Compile Include="Ventas\PedidosBE.cs" />
-    <Compile Include="Vialeta\ProductosVialetaBE.cs" />
-    <Compile Include="Vialidad\ProductosVialidadBE.cs" />
+    <Compile Include="Ensamble\ClientesBE.cs" />
+    <Compile Include="Ensamble\PedidosBE.cs" />
+    <Compile Include="Ensamble\ProductosEnsambleBE.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

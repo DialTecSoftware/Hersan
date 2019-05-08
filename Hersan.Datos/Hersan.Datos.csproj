@@ -62,7 +62,6 @@
     <Compile Include="BaseDA.cs" />
     <Compile Include="CapitalHumano\CompetenciasDA.cs" />
     <Compile Include="CapitalHumano\ContratosDA.cs" />
-    <Compile Include="CapitalHumano\DescripcionPuestosDA.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoDA.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionDA.cs" />
     <Compile Include="CapitalHumano\EmpleadosDA.cs" />
@@ -72,8 +71,11 @@
     <Compile Include="CapitalHumano\PerfilesDA.cs" />
     <Compile Include="CapitalHumano\SeguimientoCandidatosDA.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalDA.cs" />
+    <Compile Include="Catalogos\AccesoriosDA.cs" />
     <Compile Include="Catalogos\CiudadesDA.cs" />
     <Compile Include="Catalogos\ColoniasDA.cs" />
+    <Compile Include="Catalogos\ColoresDA.cs" />
+    <Compile Include="Catalogos\ReflejantesDA.cs" />
     <Compile Include="Catalogos\ContactosDA.cs" />
     <Compile Include="Catalogos\DepartamentosDA.cs" />
     <Compile Include="Catalogos\DocumentosDA.cs" />
@@ -84,10 +86,16 @@
     <Compile Include="Catalogos\EntidadesDA.cs" />
     <Compile Include="Catalogos\EquipoHerramientasDA.cs" />
     <Compile Include="Catalogos\EstadosDA.cs" />
+    <Compile Include="Catalogos\FamiliasDA.cs" />
     <Compile Include="Catalogos\FuncionesDA.cs" />
     <Compile Include="CapitalHumano\OrganigramaDA.cs" />
     <Compile Include="Catalogos\PaisesDA.cs" />
-    <Compile Include="CapitalHumano\DigitalizadosDA.cs" />
+    <Compile Include="Catalogos\TipoProductoDA.cs" />
+    <Compile Include="Catalogos\TiposClienteDA.cs" />
+    <Compile Include="Ensamble\PedidosDA.cs" />
+    <Compile Include="Ensamble\PreciosDA.cs" />
+    <Compile Include="Ensamble\ProductosDA.cs" />
+    <Compile Include="Ensamble\ServiciosDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relchec\HorariosDA.cs" />
     <Compile Include="Seguridad\EncriptadorDA.cs" />
@@ -95,8 +103,8 @@
     <Compile Include="Seguridad\RolesDA.cs" />
     <Compile Include="Seguridad\RolesUsuarioDA.cs" />
     <Compile Include="Seguridad\UsuariosDA.cs" />
-    <Compile Include="Ventas\ClientesDA.cs" />
-    <Compile Include="Ventas\FacturacionDA.cs" />
+    <Compile Include="Ensamble\ClientesDA.cs" />
+    <Compile Include="Ensamble\FacturacionDA.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">

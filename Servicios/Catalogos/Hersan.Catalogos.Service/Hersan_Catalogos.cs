@@ -261,6 +261,121 @@ namespace Hersan.Catalogos.Service
             return new ColoniasBP().ABCColonias_Obtener(IdEstado, IdCiudad);
         }
         #endregion
+
+        #region Familias
+        public int ENS_Familias_Guardar(FamiliasBE obj)
+        {
+            return new FamiliasBP().ENS_Familias_Guardar(obj);
+        }
+        public int ENS_Familias_Actualizar(FamiliasBE obj)
+        {
+            return new FamiliasBP().ENS_Familias_Actualizar(obj);
+        }
+        public List<FamiliasBE> ENS_Familias_Combo(int IdEntidad)
+        {
+            return new FamiliasBP().ENS_Familias_Combo(IdEntidad);
+        }
+        public List<FamiliasBE> ENS_Familias_Obtener()
+        {
+            return new FamiliasBP().ENS_Familias_Obtener();
+        }
+        #endregion
+
+        #region Colores
+        public int ABC_Colores_Guardar(ColoresBE obj)
+        {
+            return new ColoresBP().ABC_Colores_Guardar(obj);
+        }
+        public int ABC_Colores_Actualizar(ColoresBE obj)
+        {
+            return new ColoresBP().ABC_Colores_Actualizar(obj);
+        }
+        public List<ColoresBE> ABC_Colores_Obtener()
+        {
+            return new ColoresBP().ABC_Colores_Obtener();
+        }
+        public List<ColoresBE> ABC_Colores_Combo()
+        {
+            return new ColoresBP().ABC_Colores_Combo();
+        }
+        #endregion
+
+        #region Reflejantes
+        public int ENS_Reflejantes_Guardar(ReflejantesBE obj)
+        {
+            return new ReflejantesBP().ENS_Reflejantes_Guardar(obj);
+        }
+        public int ENS_Reflejantes_Actualizar(ReflejantesBE obj)
+        {
+            return new ReflejantesBP().ENS_Reflejantes_Actualizar(obj);
+        }
+        public List<ReflejantesBE> ENS_Reflejantes_Obtener()
+        {
+            return new ReflejantesBP().ENS_Reflejantes_Obtener();
+        }
+        public List<ReflejantesBE> ENS_Reflejantes_Combo()
+        {
+            return new ReflejantesBP().ENS_Reflejantes_Combo();
+        }
+        #endregion
+
+        #region TipoProducto
+        public int ENS_TipoProducto_Guardar(TipoProductoBE obj)
+        {
+            return new TipoProductoBP().ENS_TipoProducto_Guardar(obj);
+        }
+        public int ENS_TipoProducto_Actualizar(TipoProductoBE obj)
+        {
+            return new TipoProductoBP().ENS_TipoProducto_Actualizar(obj);
+        }
+        public List<TipoProductoBE> ENS_TipoProducto_Obtener()
+        {
+            return new TipoProductoBP().ENS_TipoProducto_Obtener();
+        }
+        public List<TipoProductoBE> ENS_TipoProducto_Combo(int IdFamilia)
+        {
+            return new TipoProductoBP().ENS_TipoProducto_Combo(IdFamilia);
+        }
+        #endregion
+
+        #region Accesorios
+        public int ENS_Accesorios_Guardar(AccesoriosBE obj)
+        {
+            return new AccesoriosBP().ENS_Accesorios_Guardar(obj);
+        }
+        public int ENS_Accesorios_Actualizar(AccesoriosBE obj)
+        {
+            return new AccesoriosBP().ENS_Accesorios_Actualizar(obj);
+        }
+        public List<AccesoriosBE> ENS_Accesorios_Obtener()
+        {
+            return new AccesoriosBP().ENS_Accesorios_Obtener();
+        }
+        public List<AccesoriosBE> ENS_Accesorios_Combo()
+        {
+            return new AccesoriosBP().ENS_Accesorios_Combo();
+        }
+        #endregion
+
+        #region Tipos de Cliente
+        public int ABC_TipoCliente_Guardar(TiposClienteBE obj)
+        {
+            return new TiposClienteBP().ABC_TipoCliente_Guardar(obj);
+        }
+        public int ABC_TipoCliente_Actualizar(TiposClienteBE obj)
+        {
+            return new TiposClienteBP().ABC_TipoCliente_Actualizar(obj);
+        }
+        public List<TiposClienteBE> ABC_TipoCliente_Obtener()
+        {
+            return new TiposClienteBP().ABC_TipoCliente_Obtener();
+        }
+        public List<TiposClienteBE> ABC_TipoCliente_Combo()
+        {
+            return new TiposClienteBP().ABC_TipoCliente_Combo();
+        }
+        #endregion
+
     }
 }
 

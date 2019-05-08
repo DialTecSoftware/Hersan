@@ -914,6 +914,8 @@ namespace Hersan.UI.CapitalHumano
                 cboEntidad.DataSource = oEntidades;
             } catch (Exception ex) {
                 throw ex;
+            } finally {
+                oCatalogos = null;
             }
         }
         private void CargarDeptos()

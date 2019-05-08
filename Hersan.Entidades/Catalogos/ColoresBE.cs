@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Hersan.Entidades.Comun;
 
 namespace Hersan.Entidades.Catalogos
 {
     public class ColoresBE
     {
+        public ColoresBE()
+        {
+            Id = 0;
+            Clave = string.Empty;
+            Nombre = string.Empty;
+            DatosUsuario = new GeneralBE();
+        }
+
+        public int Id { get; set; }
+        public string Clave { get; set; }
+        public string Nombre { get; set; }
+        public GeneralBE DatosUsuario { get; set; }
     }
 }

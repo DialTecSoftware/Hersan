@@ -14,7 +14,6 @@
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Ponderacion" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CompetenciasBE" nillable="true" type="tns:CompetenciasBE" />

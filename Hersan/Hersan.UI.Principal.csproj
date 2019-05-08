@@ -169,9 +169,9 @@
       <Project>{63cbf2e1-5e97-4f81-bf0c-ddda05b444af}</Project>
       <Name>Hersan.UI.Seguridad</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hersan.UI.Ventas\Hersan.UI.Ventas.csproj">
+    <ProjectReference Include="..\Hersan.UI.Ventas\Hersan.UI.Ensamble.csproj">
       <Project>{1147207d-10a0-49c1-8905-720c93e1d5f0}</Project>
-      <Name>Hersan.UI.Ventas</Name>
+      <Name>Hersan.UI.Ensamble</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

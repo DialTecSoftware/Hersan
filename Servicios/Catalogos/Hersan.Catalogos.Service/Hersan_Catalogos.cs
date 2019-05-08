@@ -4,6 +4,7 @@ using Hersan.Entidades.Catalogos;
 using Hersan.Negocio.CapitalHumano;
 using Hersan.Negocio.Catalogos;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Hersan.Catalogos.Service
 {
@@ -235,6 +236,14 @@ namespace Hersan.Catalogos.Service
         {
             return new OrganigramaBP().CHUOrganigrama_Guardar(obj);
         }
+        public DataTable CHU_OrganigramaXML_Obtener(int parent)
+        {
+            return new OrganigramaBP().CHU_OrganigramaXML_Obtener(parent);
+        }
+        public DataSet CHU_Perfiles_Obtener(int IdDepto, int IdPuesto)
+        {
+            return new PerfilesBP().CHU_Perfiles_Obtener(IdDepto, IdPuesto);
+        }
         public int CHUOrganigrama_Actualizar(OrganigramaBE obj)
         {
             return new OrganigramaBP().CHUOrganigrama_Actualizar(obj);
@@ -259,6 +268,181 @@ namespace Hersan.Catalogos.Service
         public List<ColoniasBE> ABCColonias_Obtener(int IdEstado, int IdCiudad)
         {
             return new ColoniasBP().ABCColonias_Obtener(IdEstado, IdCiudad);
+        }
+        #endregion
+
+        #region Familias
+        public int ENS_Familias_Guardar(FamiliasBE obj)
+        {
+            return new FamiliasBP().ENS_Familias_Guardar(obj);
+        }
+        public int ENS_Familias_Actualizar(FamiliasBE obj)
+        {
+            return new FamiliasBP().ENS_Familias_Actualizar(obj);
+        }
+        public List<FamiliasBE> ENS_Familias_Combo(int IdEntidad)
+        {
+            return new FamiliasBP().ENS_Familias_Combo(IdEntidad);
+        }
+        public List<FamiliasBE> ENS_Familias_Obtener()
+        {
+            return new FamiliasBP().ENS_Familias_Obtener();
+        }
+        #endregion
+
+        #region Colores
+        public int ABC_Colores_Guardar(ColoresBE obj)
+        {
+            return new ColoresBP().ABC_Colores_Guardar(obj);
+        }
+        public int ABC_Colores_Actualizar(ColoresBE obj)
+        {
+            return new ColoresBP().ABC_Colores_Actualizar(obj);
+        }
+        public List<ColoresBE> ABC_Colores_Obtener()
+        {
+            return new ColoresBP().ABC_Colores_Obtener();
+        }
+        public List<ColoresBE> ABC_Colores_Combo()
+        {
+            return new ColoresBP().ABC_Colores_Combo();
+        }
+        #endregion
+
+        #region Reflejantes
+        public int ENS_Reflejantes_Guardar(ReflejantesBE obj)
+        {
+            return new ReflejantesBP().ENS_Reflejantes_Guardar(obj);
+        }
+        public int ENS_Reflejantes_Actualizar(ReflejantesBE obj)
+        {
+            return new ReflejantesBP().ENS_Reflejantes_Actualizar(obj);
+        }
+        public List<ReflejantesBE> ENS_Reflejantes_Obtener()
+        {
+            return new ReflejantesBP().ENS_Reflejantes_Obtener();
+        }
+        public List<ReflejantesBE> ENS_Reflejantes_Combo()
+        {
+            return new ReflejantesBP().ENS_Reflejantes_Combo();
+        }
+        #endregion
+
+        #region TipoProducto
+        public int ENS_TipoProducto_Guardar(TipoProductoBE obj)
+        {
+            return new TipoProductoBP().ENS_TipoProducto_Guardar(obj);
+        }
+        public int ENS_TipoProducto_Actualizar(TipoProductoBE obj)
+        {
+            return new TipoProductoBP().ENS_TipoProducto_Actualizar(obj);
+        }
+        public List<TipoProductoBE> ENS_TipoProducto_Obtener()
+        {
+            return new TipoProductoBP().ENS_TipoProducto_Obtener();
+        }
+        public List<TipoProductoBE> ENS_TipoProducto_Combo(int IdFamilia)
+        {
+            return new TipoProductoBP().ENS_TipoProducto_Combo(IdFamilia);
+        }
+        #endregion
+
+        #region Accesorios
+        public int ENS_Accesorios_Guardar(AccesoriosBE obj)
+        {
+            return new AccesoriosBP().ENS_Accesorios_Guardar(obj);
+        }
+        public int ENS_Accesorios_Actualizar(AccesoriosBE obj)
+        {
+            return new AccesoriosBP().ENS_Accesorios_Actualizar(obj);
+        }
+        public List<AccesoriosBE> ENS_Accesorios_Obtener()
+        {
+            return new AccesoriosBP().ENS_Accesorios_Obtener();
+        }
+        public List<AccesoriosBE> ENS_Accesorios_Combo()
+        {
+            return new AccesoriosBP().ENS_Accesorios_Combo();
+        }
+        public List<AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha)
+        {
+            return new AccesoriosBP().ENS_AccesoriosCotizacion_Combo(IdFicha);
+        }
+        #endregion
+
+        #region Tipos de Cliente
+        public int ABC_TipoCliente_Guardar(TiposClienteBE obj)
+        {
+            return new TiposClienteBP().ABC_TipoCliente_Guardar(obj);
+        }
+        public int ABC_TipoCliente_Actualizar(TiposClienteBE obj)
+        {
+            return new TiposClienteBP().ABC_TipoCliente_Actualizar(obj);
+        }
+        public List<TiposClienteBE> ABC_TipoCliente_Obtener()
+        {
+            return new TiposClienteBP().ABC_TipoCliente_Obtener();
+        }
+        public List<TiposClienteBE> ABC_TipoCliente_Combo()
+        {
+            return new TiposClienteBP().ABC_TipoCliente_Combo();
+        }
+        #endregion
+
+        #region Agentes
+        public List<AgentesBE> ABC_Agentes_Obtener()
+        {
+            return new AgentesBP().ABC_Agentes_Obtener();
+        }
+        public int ABC_Agentes_Guardar(AgentesBE obj)
+        {
+            return new AgentesBP().ABC_Agentes_Guardar(obj);
+        }
+        public int ABC_Agentes_Actualizar(AgentesBE obj)
+        {
+            return new AgentesBP().ABC_Agentes_Actualizar(obj);
+        }
+        public List<AgentesBE> ABC_Agentes_Combo()
+        {
+            return new AgentesBP().ABC_Agentes_Combo();
+        }
+        #endregion
+
+        #region Condiciones Venta
+        public int ABC_CondicionesExportacion_Guardar(CondicionesExpBE obj)
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Guardar(obj);
+        }
+        public int ABC_CondicionesExportacion_Actualizar(CondicionesExpBE obj)
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Actualizar(obj);
+        }
+        public List<CondicionesExpBE> ABC_CondicionesExportacion_Obtener()
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Obtener();
+        }
+        public List<CondicionesExpBE> ABC_CondicionesExportacion_Combo()
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Combo();
+        }
+        #endregion
+
+        #region Monedas
+        public List<MonedasBE> ABC_Monedas_Obtener()
+        {
+            return new MonedasBP().ABC_Monedas_Obtener();
+        }
+        public int ABC_Monedas_Guardar(MonedasBE obj)
+        {
+            return new MonedasBP().ABC_Monedas_Guardar(obj);
+        }
+        public int ABC_Monedas_Actualizar(MonedasBE obj)
+        {
+            return new MonedasBP().ABC_Monedas_Actualizar(obj);
+        }
+        public List<MonedasBE> ABC_Monedas_Combo()
+        {
+            return new MonedasBP().ABC_Monedas_Combo();
         }
         #endregion
     }

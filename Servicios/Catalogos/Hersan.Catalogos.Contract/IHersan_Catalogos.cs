@@ -1,6 +1,7 @@
 ﻿using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
 using System.Collections.Generic;
+using System.Data;
 using System.ServiceModel;
 
 namespace Hersan.Catalogos.Contract
@@ -153,7 +154,8 @@ namespace Hersan.Catalogos.Contract
         int CHUOrganigrama_Guardar(OrganigramaBE obj);
         [OperationContract]
         int CHUOrganigrama_Actualizar(OrganigramaBE obj);
-
+        [OperationContract]
+        DataTable CHU_OrganigramaXML_Obtener(int parent);
         #endregion
 
         #region Estados
@@ -169,6 +171,107 @@ namespace Hersan.Catalogos.Contract
         #region Colonias
         [OperationContract]
         List<ColoniasBE> ABCColonias_Obtener(int IdEstado, int IdCiudad);
+        #endregion
+
+        #region Familias
+        [OperationContract]
+        int ENS_Familias_Guardar(FamiliasBE obj);
+        [OperationContract]
+        int ENS_Familias_Actualizar(FamiliasBE obj);
+        [OperationContract]
+        List<FamiliasBE> ENS_Familias_Obtener();
+        [OperationContract]
+        List<FamiliasBE> ENS_Familias_Combo(int IdEntidad);
+        #endregion
+
+        #region Colores
+        [OperationContract]
+        int ABC_Colores_Guardar(ColoresBE obj);
+        [OperationContract]
+        int ABC_Colores_Actualizar(ColoresBE obj);
+        [OperationContract]
+        List<ColoresBE> ABC_Colores_Obtener();
+        [OperationContract]
+        List<ColoresBE> ABC_Colores_Combo();
+        #endregion
+
+        #region Reflejantes
+        [OperationContract]
+        int ENS_Reflejantes_Guardar(ReflejantesBE obj);
+        [OperationContract]
+        int ENS_Reflejantes_Actualizar(ReflejantesBE obj);
+        [OperationContract]
+        List<ReflejantesBE> ENS_Reflejantes_Obtener();
+        [OperationContract]
+        List<ReflejantesBE> ENS_Reflejantes_Combo();
+        #endregion
+
+        #region TipoProducto
+        [OperationContract]
+        int ENS_TipoProducto_Guardar(TipoProductoBE obj);
+        [OperationContract]
+        int ENS_TipoProducto_Actualizar(TipoProductoBE obj);
+        [OperationContract]
+        List<TipoProductoBE> ENS_TipoProducto_Obtener();
+        [OperationContract]
+        List<TipoProductoBE> ENS_TipoProducto_Combo(int IdFamilia);
+        #endregion
+
+        #region Accesorios
+        [OperationContract]
+        int ENS_Accesorios_Guardar(AccesoriosBE obj);
+        [OperationContract]
+        int ENS_Accesorios_Actualizar(AccesoriosBE obj);
+        [OperationContract]
+        List<AccesoriosBE> ENS_Accesorios_Obtener();
+        [OperationContract]
+        List<AccesoriosBE> ENS_Accesorios_Combo();
+        [OperationContract]
+        List<AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha);
+        #endregion
+
+        #region Tipos de Clientes
+        [OperationContract]
+        int ABC_TipoCliente_Guardar(TiposClienteBE obj);
+        [OperationContract]
+        int ABC_TipoCliente_Actualizar(TiposClienteBE obj);
+        [OperationContract]
+        List<TiposClienteBE> ABC_TipoCliente_Obtener();
+        [OperationContract]
+        List<TiposClienteBE> ABC_TipoCliente_Combo();
+        #endregion
+
+        #region Agentes
+        [OperationContract]
+        List<AgentesBE> ABC_Agentes_Obtener();
+        [OperationContract]
+        int ABC_Agentes_Guardar(AgentesBE obj);
+        [OperationContract]
+        int ABC_Agentes_Actualizar(AgentesBE obj);
+        [OperationContract]
+        List<AgentesBE> ABC_Agentes_Combo();
+        #endregion
+
+        #region Condiciones Venta
+        [OperationContract]
+        int ABC_CondicionesExportacion_Guardar(CondicionesExpBE obj);
+        [OperationContract]
+        int ABC_CondicionesExportacion_Actualizar(CondicionesExpBE obj);
+        [OperationContract]
+        List<CondicionesExpBE> ABC_CondicionesExportacion_Obtener();
+        [OperationContract]
+        List<CondicionesExpBE> ABC_CondicionesExportacion_Combo();
+        #endregion
+
+        #region Monedas
+        [OperationContract]
+        List<MonedasBE> ABC_Monedas_Obtener();
+        [OperationContract]
+        int ABC_Monedas_Guardar(MonedasBE obj);
+        [OperationContract]
+        int ABC_Monedas_Actualizar(MonedasBE obj);
+        [OperationContract]
+        List<MonedasBE> ABC_Monedas_Combo();
         #endregion
     }
 }

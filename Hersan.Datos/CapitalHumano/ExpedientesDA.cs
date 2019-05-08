@@ -231,7 +231,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.EdoCivil = reader["EDP_EdoCivil"].ToString();
                                 obj.EdoCivilOtro = reader["EDP_EdoCivilOtros"].ToString();
                                 obj.Correo = reader["EDP_Correo"].ToString();
-                                obj.Empleados.Id = int.Parse(reader["EMP_Numero"].ToString());
+                                //obj.Empleados.Id = int.Parse(reader["EMP_Numero"].ToString());
                                 oList.Add(obj);
                             }
                         }
@@ -575,24 +575,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-        //public DataTable Test()
-        //{
-        //    DataTable oData = new DataTable("Reporte");
-        //    try {
-        //        using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
-        //            conn.Open();
-        //            using (SqlDataAdapter cmd = new SqlDataAdapter(CONS_USP_CHU_EXPEDIENTE_ECONOMICOS_OBTENER, conn)) {
-        //                //cmd.Parameters.AddWithValue("@Id", Expediente.IdExpediente);
-
-        //                cmd.Fill(oData);
-                        
-        //            }
-        //        }
-        //        return oData;
-        //    } catch (Exception ex) {
-        //        throw ex;
-        //    }
-        //}
 
     }
 }

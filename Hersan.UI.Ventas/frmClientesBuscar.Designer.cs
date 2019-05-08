@@ -1,4 +1,4 @@
-﻿namespace Hersan.UI.Ventas
+﻿namespace Hersan.UI.Ensamble
 {
     partial class frmClientesBuscar
     {
@@ -495,12 +495,13 @@
             gridViewTextBoxColumn3.FieldName = "Nombre";
             gridViewTextBoxColumn3.HeaderText = "Nombre";
             gridViewTextBoxColumn3.MaxWidth = 300;
-            gridViewTextBoxColumn3.MinWidth = 150;
+            gridViewTextBoxColumn3.MinWidth = 300;
             gridViewTextBoxColumn3.Name = "Nombre";
-            gridViewTextBoxColumn3.Width = 150;
+            gridViewTextBoxColumn3.Width = 300;
             gridViewTextBoxColumn3.WrapText = true;
             gridViewTextBoxColumn4.FieldName = "RFC";
             gridViewTextBoxColumn4.HeaderText = "RFC";
+            gridViewTextBoxColumn4.IsVisible = false;
             gridViewTextBoxColumn4.MaxWidth = 100;
             gridViewTextBoxColumn4.MinWidth = 100;
             gridViewTextBoxColumn4.Name = "RFC";
@@ -520,6 +521,7 @@
             gridViewDateTimeColumn1.FieldName = "DatosUsuario.FechaCreacion";
             gridViewDateTimeColumn1.FormatString = "{0:dd/MM/yyyy}";
             gridViewDateTimeColumn1.HeaderText = "Fecha Alta";
+            gridViewDateTimeColumn1.IsVisible = false;
             gridViewDateTimeColumn1.MaxWidth = 100;
             gridViewDateTimeColumn1.MinWidth = 100;
             gridViewDateTimeColumn1.Name = "Fecha";

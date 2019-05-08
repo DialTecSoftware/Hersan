@@ -1,4 +1,4 @@
-﻿namespace Hersan.UI.Ventas
+﻿namespace Hersan.UI.Ensamble
 {
     partial class frmClientes
     {
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -58,6 +58,14 @@
             this.commandBarRowElement3 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtCorreo1 = new Telerik.WinControls.UI.RadMaskedEditBox();
+            this.txtCorreo2 = new Telerik.WinControls.UI.RadMaskedEditBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.cboTipoCliente = new Telerik.WinControls.UI.RadDropDownList();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
+            this.chkVIP = new System.Windows.Forms.CheckBox();
             this.txtIdentidad = new Telerik.WinControls.UI.RadTextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.lstEntidades = new Telerik.WinControls.UI.RadListView();
@@ -165,9 +173,14 @@
             this.label42 = new System.Windows.Forms.Label();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.txtPais = new Telerik.WinControls.UI.RadTextBox();
+            this.label51 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdentidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstEntidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
@@ -232,6 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMonto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -396,6 +410,16 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.txtPais);
+            this.radGroupBox1.Controls.Add(this.label51);
+            this.radGroupBox1.Controls.Add(this.txtCorreo1);
+            this.radGroupBox1.Controls.Add(this.txtCorreo2);
+            this.radGroupBox1.Controls.Add(this.label50);
+            this.radGroupBox1.Controls.Add(this.label49);
+            this.radGroupBox1.Controls.Add(this.label48);
+            this.radGroupBox1.Controls.Add(this.cboTipoCliente);
+            this.radGroupBox1.Controls.Add(this.chkActivo);
+            this.radGroupBox1.Controls.Add(this.chkVIP);
             this.radGroupBox1.Controls.Add(this.txtIdentidad);
             this.radGroupBox1.Controls.Add(this.label47);
             this.radGroupBox1.Controls.Add(this.lstEntidades);
@@ -429,26 +453,105 @@
             this.radGroupBox1.HeaderText = "Datos Generales";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 56);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(906, 208);
+            this.radGroupBox1.Size = new System.Drawing.Size(906, 269);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "Datos Generales";
+            // 
+            // txtCorreo1
+            // 
+            this.txtCorreo1.Location = new System.Drawing.Point(87, 232);
+            this.txtCorreo1.MaskType = Telerik.WinControls.UI.MaskType.EMail;
+            this.txtCorreo1.Name = "txtCorreo1";
+            this.txtCorreo1.Size = new System.Drawing.Size(328, 20);
+            this.txtCorreo1.TabIndex = 16;
+            this.txtCorreo1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            // 
+            // txtCorreo2
+            // 
+            this.txtCorreo2.Location = new System.Drawing.Point(491, 232);
+            this.txtCorreo2.MaskType = Telerik.WinControls.UI.MaskType.EMail;
+            this.txtCorreo2.Name = "txtCorreo2";
+            this.txtCorreo2.Size = new System.Drawing.Size(328, 20);
+            this.txtCorreo2.TabIndex = 17;
+            this.txtCorreo2.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label50.Location = new System.Drawing.Point(431, 236);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(54, 13);
+            this.label50.TabIndex = 28;
+            this.label50.Text = "Correo 2:";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label49.Location = new System.Drawing.Point(27, 236);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(54, 13);
+            this.label49.TabIndex = 26;
+            this.label49.Text = "Correo 1:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label48.Location = new System.Drawing.Point(10, 54);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(71, 13);
+            this.label48.TabIndex = 25;
+            this.label48.Text = "Tipo Cliente:";
+            // 
+            // cboTipoCliente
+            // 
+            this.cboTipoCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboTipoCliente.AutoScroll = true;
+            this.cboTipoCliente.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboTipoCliente.Location = new System.Drawing.Point(85, 51);
+            this.cboTipoCliente.Name = "cboTipoCliente";
+            this.cboTipoCliente.Size = new System.Drawing.Size(228, 20);
+            this.cboTipoCliente.TabIndex = 2;
+            // 
+            // chkActivo
+            // 
+            this.chkActivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkActivo.Location = new System.Drawing.Point(170, 31);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(80, 17);
+            this.chkActivo.TabIndex = 23;
+            this.chkActivo.TabStop = false;
+            this.chkActivo.Text = "Activo:";
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
+            // chkVIP
+            // 
+            this.chkVIP.AutoSize = true;
+            this.chkVIP.Location = new System.Drawing.Point(319, 54);
+            this.chkVIP.Name = "chkVIP";
+            this.chkVIP.Size = new System.Drawing.Size(89, 17);
+            this.chkVIP.TabIndex = 3;
+            this.chkVIP.Text = "Cliente AAA";
+            this.chkVIP.UseVisualStyleBackColor = true;
             // 
             // txtIdentidad
             // 
             this.txtIdentidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIdentidad.Enabled = false;
-            this.txtIdentidad.Location = new System.Drawing.Point(440, 98);
+            this.txtIdentidad.Location = new System.Drawing.Point(453, 117);
             this.txtIdentidad.MaxLength = 10;
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(154, 20);
-            this.txtIdentidad.TabIndex = 5;
+            this.txtIdentidad.TabIndex = 8;
             this.txtIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label47
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label47.Location = new System.Drawing.Point(303, 102);
+            this.label47.Location = new System.Drawing.Point(316, 121);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(135, 13);
             this.label47.TabIndex = 21;
@@ -461,20 +564,20 @@
             this.lstEntidades.AllowRemove = false;
             this.lstEntidades.EnableAnalytics = false;
             this.lstEntidades.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.lstEntidades.FullRowSelect = false;
             this.lstEntidades.HorizontalScrollState = Telerik.WinControls.UI.ScrollState.AlwaysHide;
-            this.lstEntidades.Location = new System.Drawing.Point(690, 76);
+            this.lstEntidades.Location = new System.Drawing.Point(710, 95);
             this.lstEntidades.MultiSelect = true;
             this.lstEntidades.Name = "lstEntidades";
             this.lstEntidades.ShowCheckBoxes = true;
+            this.lstEntidades.ShowGridLines = true;
             this.lstEntidades.Size = new System.Drawing.Size(120, 114);
-            this.lstEntidades.TabIndex = 12;
+            this.lstEntidades.TabIndex = 17;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label46.Location = new System.Drawing.Point(621, 78);
+            this.label46.Location = new System.Drawing.Point(641, 97);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(61, 13);
             this.label46.TabIndex = 19;
@@ -483,7 +586,7 @@
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtId.Location = new System.Drawing.Point(268, 32);
+            this.txtId.Location = new System.Drawing.Point(515, 26);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(79, 20);
@@ -497,10 +600,10 @@
             this.rbExporta.AutoSize = true;
             this.rbExporta.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbExporta.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rbExporta.Location = new System.Drawing.Point(115, 53);
+            this.rbExporta.Location = new System.Drawing.Point(109, 72);
             this.rbExporta.Name = "rbExporta";
             this.rbExporta.Size = new System.Drawing.Size(89, 17);
-            this.rbExporta.TabIndex = 2;
+            this.rbExporta.TabIndex = 5;
             this.rbExporta.Text = "Exportación:";
             this.rbExporta.UseVisualStyleBackColor = true;
             // 
@@ -510,10 +613,10 @@
             this.rbNacional.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbNacional.Checked = true;
             this.rbNacional.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rbNacional.Location = new System.Drawing.Point(12, 54);
+            this.rbNacional.Location = new System.Drawing.Point(24, 73);
             this.rbNacional.Name = "rbNacional";
             this.rbNacional.Size = new System.Drawing.Size(73, 17);
-            this.rbNacional.TabIndex = 2;
+            this.rbNacional.TabIndex = 4;
             this.rbNacional.TabStop = true;
             this.rbNacional.Text = "Nacional:";
             this.rbNacional.UseVisualStyleBackColor = true;
@@ -522,16 +625,16 @@
             // txtEstado
             // 
             this.txtEstado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEstado.Location = new System.Drawing.Point(373, 170);
+            this.txtEstado.Location = new System.Drawing.Point(386, 186);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(221, 20);
-            this.txtEstado.TabIndex = 11;
+            this.txtEstado.TabIndex = 14;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label10.Location = new System.Drawing.Point(322, 174);
+            this.label10.Location = new System.Drawing.Point(335, 190);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 13);
             this.label10.TabIndex = 17;
@@ -540,16 +643,16 @@
             // txtCiudad
             // 
             this.txtCiudad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCiudad.Location = new System.Drawing.Point(74, 170);
+            this.txtCiudad.Location = new System.Drawing.Point(87, 186);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(221, 20);
-            this.txtCiudad.TabIndex = 10;
+            this.txtCiudad.TabIndex = 13;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label9.Location = new System.Drawing.Point(18, 174);
+            this.label9.Location = new System.Drawing.Point(34, 190);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 13);
             this.label9.TabIndex = 15;
@@ -558,11 +661,11 @@
             // txtCP
             // 
             this.txtCP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCP.Location = new System.Drawing.Point(373, 144);
+            this.txtCP.Location = new System.Drawing.Point(386, 163);
             this.txtCP.MaxLength = 6;
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(74, 20);
-            this.txtCP.TabIndex = 9;
+            this.txtCP.TabIndex = 12;
             this.txtCP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
             // 
@@ -570,7 +673,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label8.Location = new System.Drawing.Point(338, 148);
+            this.label8.Location = new System.Drawing.Point(351, 167);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 13);
             this.label8.TabIndex = 12;
@@ -579,16 +682,16 @@
             // txtColonia
             // 
             this.txtColonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtColonia.Location = new System.Drawing.Point(74, 144);
+            this.txtColonia.Location = new System.Drawing.Point(87, 163);
             this.txtColonia.Name = "txtColonia";
             this.txtColonia.Size = new System.Drawing.Size(221, 20);
-            this.txtColonia.TabIndex = 8;
+            this.txtColonia.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label7.Location = new System.Drawing.Point(18, 148);
+            this.label7.Location = new System.Drawing.Point(31, 167);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 11;
@@ -597,16 +700,16 @@
             // txtDireccion
             // 
             this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDireccion.Location = new System.Drawing.Point(74, 121);
+            this.txtDireccion.Location = new System.Drawing.Point(87, 140);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(283, 20);
-            this.txtDireccion.TabIndex = 6;
+            this.txtDireccion.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label6.Location = new System.Drawing.Point(10, 125);
+            this.label6.Location = new System.Drawing.Point(23, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 9;
@@ -615,11 +718,11 @@
             // txtTelefono
             // 
             this.txtTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTelefono.Location = new System.Drawing.Point(440, 121);
+            this.txtTelefono.Location = new System.Drawing.Point(453, 140);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(101, 20);
-            this.txtTelefono.TabIndex = 7;
+            this.txtTelefono.TabIndex = 10;
             this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
             // 
@@ -627,7 +730,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label5.Location = new System.Drawing.Point(384, 125);
+            this.label5.Location = new System.Drawing.Point(397, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 6;
@@ -636,17 +739,17 @@
             // txtRFC
             // 
             this.txtRFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtRFC.Location = new System.Drawing.Point(74, 98);
+            this.txtRFC.Location = new System.Drawing.Point(87, 117);
             this.txtRFC.MaxLength = 13;
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.Size = new System.Drawing.Size(133, 20);
-            this.txtRFC.TabIndex = 4;
+            this.txtRFC.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label4.Location = new System.Drawing.Point(29, 102);
+            this.label4.Location = new System.Drawing.Point(42, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 4;
@@ -655,16 +758,16 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(74, 76);
+            this.txtNombre.Location = new System.Drawing.Point(87, 95);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(432, 20);
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label3.Location = new System.Drawing.Point(17, 80);
+            this.label3.Location = new System.Drawing.Point(30, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 3;
@@ -673,7 +776,7 @@
             // txtFecha
             // 
             this.txtFecha.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtFecha.Location = new System.Drawing.Point(690, 28);
+            this.txtFecha.Location = new System.Drawing.Point(710, 53);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(91, 20);
@@ -684,7 +787,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(621, 32);
+            this.label2.Location = new System.Drawing.Point(641, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 2;
@@ -693,18 +796,18 @@
             // txtClave
             // 
             this.txtClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtClave.Location = new System.Drawing.Point(74, 28);
+            this.txtClave.Location = new System.Drawing.Point(85, 29);
             this.txtClave.Name = "txtClave";
-            this.txtClave.ReadOnly = true;
             this.txtClave.Size = new System.Drawing.Size(79, 20);
             this.txtClave.TabIndex = 1;
             this.txtClave.TabStop = false;
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClave_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(25, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
@@ -721,14 +824,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 264);
+            this.radDock1.Location = new System.Drawing.Point(0, 325);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(906, 357);
+            this.radDock1.Size = new System.Drawing.Size(906, 339);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -740,7 +843,7 @@
             this.docContactos.Location = new System.Drawing.Point(6, 29);
             this.docContactos.Name = "docContactos";
             this.docContactos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.docContactos.Size = new System.Drawing.Size(884, 312);
+            this.docContactos.Size = new System.Drawing.Size(884, 294);
             this.docContactos.Text = "Datos de Contacto";
             // 
             // radPanel1
@@ -752,7 +855,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(884, 312);
+            this.radPanel1.Size = new System.Drawing.Size(884, 294);
             this.radPanel1.TabIndex = 0;
             // 
             // radGroupBox6
@@ -771,7 +874,7 @@
             this.radGroupBox6.HeaderText = "Recepción Mercancía";
             this.radGroupBox6.Location = new System.Drawing.Point(4, 107);
             this.radGroupBox6.Name = "radGroupBox6";
-            this.radGroupBox6.Size = new System.Drawing.Size(379, 200);
+            this.radGroupBox6.Size = new System.Drawing.Size(379, 176);
             this.radGroupBox6.TabIndex = 13;
             this.radGroupBox6.Text = "Recepción Mercancía";
             // 
@@ -875,7 +978,7 @@
             this.gpoFactura.HeaderText = "Facturación CFDI 3.3";
             this.gpoFactura.Location = new System.Drawing.Point(392, 185);
             this.gpoFactura.Name = "gpoFactura";
-            this.gpoFactura.Size = new System.Drawing.Size(429, 122);
+            this.gpoFactura.Size = new System.Drawing.Size(429, 98);
             this.gpoFactura.TabIndex = 15;
             this.gpoFactura.Text = "Facturación CFDI 3.3";
             // 
@@ -1009,16 +1112,16 @@
             this.cboRecibo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboRecibo.AutoScroll = true;
             this.cboRecibo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "LUNES";
-            radListDataItem2.Text = "MARTES";
-            radListDataItem3.Text = "MIÉRCOLES";
-            radListDataItem4.Text = "JUEVES";
-            radListDataItem5.Text = "VIERNES";
-            this.cboRecibo.Items.Add(radListDataItem1);
-            this.cboRecibo.Items.Add(radListDataItem2);
-            this.cboRecibo.Items.Add(radListDataItem3);
-            this.cboRecibo.Items.Add(radListDataItem4);
-            this.cboRecibo.Items.Add(radListDataItem5);
+            radListDataItem6.Text = "LUNES";
+            radListDataItem7.Text = "MARTES";
+            radListDataItem8.Text = "MIÉRCOLES";
+            radListDataItem9.Text = "JUEVES";
+            radListDataItem10.Text = "VIERNES";
+            this.cboRecibo.Items.Add(radListDataItem6);
+            this.cboRecibo.Items.Add(radListDataItem7);
+            this.cboRecibo.Items.Add(radListDataItem8);
+            this.cboRecibo.Items.Add(radListDataItem9);
+            this.cboRecibo.Items.Add(radListDataItem10);
             this.cboRecibo.Location = new System.Drawing.Point(103, 114);
             this.cboRecibo.Name = "cboRecibo";
             this.cboRecibo.Size = new System.Drawing.Size(125, 20);
@@ -1038,16 +1141,16 @@
             this.cboPago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboPago.AutoScroll = true;
             this.cboPago.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem6.Text = "LUNES";
-            radListDataItem7.Text = "MARTES";
-            radListDataItem8.Text = "MIÉRCOLES";
-            radListDataItem9.Text = "JUEVES";
-            radListDataItem10.Text = "VIERNES";
-            this.cboPago.Items.Add(radListDataItem6);
-            this.cboPago.Items.Add(radListDataItem7);
-            this.cboPago.Items.Add(radListDataItem8);
-            this.cboPago.Items.Add(radListDataItem9);
-            this.cboPago.Items.Add(radListDataItem10);
+            radListDataItem11.Text = "LUNES";
+            radListDataItem12.Text = "MARTES";
+            radListDataItem13.Text = "MIÉRCOLES";
+            radListDataItem14.Text = "JUEVES";
+            radListDataItem15.Text = "VIERNES";
+            this.cboPago.Items.Add(radListDataItem11);
+            this.cboPago.Items.Add(radListDataItem12);
+            this.cboPago.Items.Add(radListDataItem13);
+            this.cboPago.Items.Add(radListDataItem14);
+            this.cboPago.Items.Add(radListDataItem15);
             this.cboPago.Location = new System.Drawing.Point(103, 89);
             this.cboPago.Name = "cboPago";
             this.cboPago.Size = new System.Drawing.Size(125, 20);
@@ -1070,6 +1173,7 @@
             this.txtExtPag.Name = "txtExtPag";
             this.txtExtPag.Size = new System.Drawing.Size(62, 20);
             this.txtExtPag.TabIndex = 12;
+            this.txtExtPag.Text = "0";
             this.txtExtPag.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtExtPag.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
             // 
@@ -1162,6 +1266,7 @@
             this.txtExtCom.Name = "txtExtCom";
             this.txtExtCom.Size = new System.Drawing.Size(62, 20);
             this.txtExtCom.TabIndex = 4;
+            this.txtExtCom.Text = "0";
             this.txtExtCom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtExtCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
             // 
@@ -1251,7 +1356,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(896, 347);
+            this.documentTabStrip1.Size = new System.Drawing.Size(896, 329);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -1263,7 +1368,7 @@
             this.docReferencias.Location = new System.Drawing.Point(6, 29);
             this.docReferencias.Name = "docReferencias";
             this.docReferencias.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.docReferencias.Size = new System.Drawing.Size(886, 314);
+            this.docReferencias.Size = new System.Drawing.Size(884, 312);
             this.docReferencias.Text = "Referencias Comerciales";
             // 
             // radPanel2
@@ -1289,7 +1394,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 0);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(886, 314);
+            this.radPanel2.Size = new System.Drawing.Size(884, 312);
             this.radPanel2.TabIndex = 0;
             // 
             // txtContac2
@@ -1475,7 +1580,7 @@
             this.docCondiciones.Location = new System.Drawing.Point(6, 29);
             this.docCondiciones.Name = "docCondiciones";
             this.docCondiciones.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.docCondiciones.Size = new System.Drawing.Size(886, 314);
+            this.docCondiciones.Size = new System.Drawing.Size(884, 312);
             this.docCondiciones.Text = "Condiciones Comerciales";
             // 
             // txtDescto
@@ -1523,7 +1628,7 @@
             // txtMonto
             // 
             this.txtMonto.Location = new System.Drawing.Point(161, 17);
-            this.txtMonto.MaxLength = 7;
+            this.txtMonto.MaxLength = 15;
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(90, 20);
             this.txtMonto.TabIndex = 7;
@@ -1551,11 +1656,29 @@
             this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
             this.commandBarStripElement6.Name = "commandBarStripElement6";
             // 
+            // txtPais
+            // 
+            this.txtPais.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPais.Location = new System.Drawing.Point(87, 209);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(221, 20);
+            this.txtPais.TabIndex = 15;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label51.Location = new System.Drawing.Point(36, 213);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(30, 13);
+            this.label51.TabIndex = 30;
+            this.label51.Text = "Pais:";
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 621);
+            this.ClientSize = new System.Drawing.Size(906, 664);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radCommandBar1);
@@ -1571,6 +1694,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdentidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstEntidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
@@ -1641,6 +1767,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMonto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1775,6 +1902,15 @@
         private Telerik.WinControls.UI.RadListView lstEntidades;
         private Telerik.WinControls.UI.RadTextBox txtIdentidad;
         private System.Windows.Forms.Label label47;
-        
+        private System.Windows.Forms.CheckBox chkVIP;
+        private System.Windows.Forms.CheckBox chkActivo;
+        private System.Windows.Forms.Label label48;
+        private Telerik.WinControls.UI.RadDropDownList cboTipoCliente;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label49;
+        private Telerik.WinControls.UI.RadMaskedEditBox txtCorreo2;
+        private Telerik.WinControls.UI.RadMaskedEditBox txtCorreo1;
+        private Telerik.WinControls.UI.RadTextBox txtPais;
+        private System.Windows.Forms.Label label51;
     }
 }

@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace Hersan.UI.CapitalHumano
 {
@@ -22,6 +24,7 @@ namespace Hersan.UI.CapitalHumano
         List<DescPuestoContratoTrabajo> tList = new List<DescPuestoContratoTrabajo>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         List<ContactosBE> cList = new List<ContactosBE>();
+        List<PuestosBE> puList = new List<PuestosBE>();
         bool Flag;
         DescPuestosContactosBE obj;
         #endregion
@@ -36,7 +39,7 @@ namespace Hersan.UI.CapitalHumano
             Flag = false;
 
             try {
-                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+             if (cboDepto.SelectedValue != null) {
                     DataSet oAux = oCHumano.CHU_Perfiles_Obtener(int.Parse(cboDepto.SelectedValue.ToString()), int.Parse(cboPuestos.SelectedValue.ToString()));
                     if (oAux.Tables.Count > 0) {
                         #region Detalle Grid
@@ -69,8 +72,6 @@ namespace Hersan.UI.CapitalHumano
                     /* DATOS GENERALES DEL PERFIL */
                     if (oAux.Tables[0].Rows.Count > 0) {
                        txtIdPerfil.Text= (oAux.Tables[0].Rows[0]["PER_Id"].ToString());
-                        cboDepto.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DEP_Id"].ToString());
-                        cboPuestos.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["PUE_Id"].ToString());
                         txtExperiencia.Text = oAux.Tables[0].Rows[0]["PER_Experiencia"].ToString();
                     }
                 }
@@ -82,48 +83,51 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
-
-        private void LimpiarCampos()
+        private void LimpiarDatos()
         {
-            txtId.Text = "0";
-            txtIdPerfil.Text = "0";
+            oList.Clear();
+            pList.Clear();
             txtObjetivo.Text = String.Empty;
             txtRiesgo.Text = string.Empty;
             txtAutoridad.Text = string.Empty;
             txtClave.Text = string.Empty;
             txtCondiciones.Text = string.Empty;
             txtObservaciones.Text = string.Empty;
+            txtEsfuerzo.Text = string.Empty;
+            txtActividades.Text = string.Empty;
+            txtEquipo.Text = string.Empty;
+            cboColaboradores.SelectedIndex = 0;
+            gvContactos.DataSource = null;
+        }
+
+        private void LimpiarCampos()
+        {
+            oList.Clear();
+            pList.Clear();
+            txtId.Text = "0";
+            txtIdPerfil.Text = "0";
+            txtObjetivo.Text = String.Empty;
+            txtExperiencia.Text = string.Empty;
+            txtRiesgo.Text = string.Empty;
+            txtAutoridad.Text = string.Empty;
+            txtClave.Text = string.Empty;
+            txtActividades.Text = string.Empty;
+            txtCondiciones.Text = string.Empty;
+            txtObservaciones.Text = string.Empty;
+            txtEsfuerzo.Text = string.Empty;
             txtEquipo.Text=string.Empty;
             cboContactos.SelectedIndex = 0;
             cboColaboradores.SelectedIndex = 0;
-            txtEsfuerzo.Text = string.Empty;
             cboEntidad.SelectedIndex = -1;
             cboDepto.SelectedIndex = -1;
             cboSuperior.SelectedIndex = -1;
             cboPuestos.SelectedIndex = -1;
-            oList.Clear();
-            pList.Clear();
-           
-                                  
+            cboInferior.SelectedIndex = -1;
+            grdDatos.DataSource = null;
+            grdDatosEdu.DataSource = null;
+
         }
-        private void Estatus_RadioButton()
-        {
-
-            try {
-
-                if (cboContactos.Items.Count > 0 && cboContactos.SelectedValue != null) {
-                    var Temp = cList.FindAll(item => item.Id == int.Parse(cboContactos.SelectedValue.ToString()));
-                    if (Temp[0].Interno == true) {
-                        opInterno.IsChecked = true;
-                    } else
-                        opExterno.IsChecked = true;
-                }
-
-            } catch (Exception ex) {
-
-                RadMessageBox.Show("Ocurió un error al cargar los contactos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+    
         private void CargarCContactos()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -144,7 +148,31 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
+        private void CalcularPuntos()
+        {
+            try {
 
+                decimal valor = 0;
+                decimal pond = 0;
+                decimal Suma = 0;
+                decimal total = 0;
+                foreach (GridViewRowInfo row in grdDatos.Rows) {
+                    // Producto de las columnas nivel y valor
+
+                    valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
+                    pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
+                    total = valor * pond;
+                    row.Cells["Total"].Value = total;
+                    Suma += Convert.ToDecimal(row.Cells["Total"].Value);
+                }
+                //Total = Suma;
+             
+            } catch (Exception) {
+
+                throw;
+            }
+
+        }
         private bool ValidarCampos()
         {
             bool Flag = true;
@@ -158,7 +186,7 @@ namespace Hersan.UI.CapitalHumano
                 Flag = txtObjetivo.Text.Trim().Length == 0 ? false : true;
                 Flag = txtObservaciones.Text.Trim().Length == 0 ? false : true;
                 Flag = txtRiesgo.Text.Trim().Length == 0 ? false : true;
-
+                Flag = txtActividades.Text.Trim().Length == 0 ? false : true;
                 return Flag;
             } catch (Exception ex) {
                 throw ex;
@@ -168,10 +196,11 @@ namespace Hersan.UI.CapitalHumano
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             pList.Clear();
+            //LimpiarCampos();
             Flag = false;
 
             try {
-                if (txtIdPerfil.Text!="") {
+                if (txtIdPerfil.Text != "") {
                     DataSet oAux = oCHumano.CHU_DescripcionPuestos_Obtener(int.Parse(txtIdPerfil.Text));
                     if (oAux.Tables.Count > 0) {
                         #region Detalle Grid
@@ -181,39 +210,46 @@ namespace Hersan.UI.CapitalHumano
                                 pList.Add(new DescPuestosContactosBE() {
                                     Id = int.Parse(oRow["CON_Id"].ToString()),
                                     Concepto = oRow["CON_Nombre"].ToString(),
-                                    TipoCon=oRow["TipoCon"].ToString(),
+                                    TipoCon = oRow["TipoCon"].ToString(),
                                     Tipo = bool.Parse(oRow["CON_Interno"].ToString())
 
 
                                 });
                             }
                         }
-                    }
-                    /* FUNCIONES */
-                    if (oAux.Tables[2].Rows.Count > 0) {
-                        foreach (DataRow oRow in oAux.Tables[2].Rows) {
 
-                            txtRiesgo.Text = (oRow["DCT_Riesgos"].ToString());
-                            txtEsfuerzo.Text = (oRow["DCT_EsfuerzoFisico"].ToString());
-                            txtCondiciones.Text = oRow["DCT_CondicionesAmb"].ToString();
-                            txtEquipo.Text = oRow["DCT_EsfuerzoFisico"].ToString();
-                               
-                           
+                        /* FUNCIONES */
+                        if (oAux.Tables[2].Rows.Count > 0) {
+                            foreach (DataRow oRow in oAux.Tables[2].Rows) {
+
+                                txtRiesgo.Text = (oRow["DCT_Riesgos"].ToString());
+                                txtEsfuerzo.Text = (oRow["DCT_EsfuerzoFisico"].ToString());
+                                txtCondiciones.Text = oRow["DCT_CondicionesAmb"].ToString();
+                                txtEquipo.Text = oRow["DCT_EsfuerzoFisico"].ToString();
+                                txtActividades.Text = oRow["DCT_Actividades"].ToString();
+
+
+                            }
+                        
                         }
-                    }
-                    #endregion
+                        #endregion
 
-                    /* DATOS GENERALES DEL PERFIL */
-                    if (oAux.Tables[0].Rows.Count > 0) {
-                        txtId.Text = oAux.Tables[0].Rows[0]["DPU_Id"].ToString();
-                        cboSuperior.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DPU_Superior"].ToString());
-                        cboInferior.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DPU_Inferior"].ToString());
-                        txtObservaciones.Text = oAux.Tables[0].Rows[0]["DPU_Observaciones"].ToString();
-                        txtObjetivo.Text = oAux.Tables[0].Rows[0]["DPU_Objetivo"].ToString();
-                        txtClave.Text = oAux.Tables[0].Rows[0]["DPU_Clave"].ToString();
-                        txtAutoridad.Text = oAux.Tables[0].Rows[0]["DPU_Autoridad"].ToString();
-                       
-                        //cboColaboradores.SelectedItem.Text= oAux.Tables[0].Rows[0]["DPU_Colobaradores"].ToString();
+                        /* DATOS GENERALES DEL PERFIL */
+                        if (oAux.Tables[0].Rows.Count > 0) {
+                            foreach (DataRow oRow in oAux.Tables[0].Rows) {
+
+                                txtId.Text = oAux.Tables[0].Rows[0]["DPU_Id"].ToString();
+                                cboSuperior.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DPU_Superior"].ToString());
+                                cboInferior.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DPU_Inferior"].ToString());
+                                txtObservaciones.Text = oAux.Tables[0].Rows[0]["DPU_Observaciones"].ToString();
+                                txtObjetivo.Text = oAux.Tables[0].Rows[0]["DPU_Objetivo"].ToString();
+                                txtClave.Text = oAux.Tables[0].Rows[0]["DPU_Clave"].ToString();
+                                txtAutoridad.Text = oAux.Tables[0].Rows[0]["DPU_Autoridad"].ToString();
+                                cboColaboradores.SelectedIndex = int.Parse(oAux.Tables[0].Rows[0]["DPU_Colobaradores"].ToString());
+                            }
+                        }
+                    } else {
+                        oAux.Tables.Clear();
                     }
                 }
                 ActualizaGrid();
@@ -224,6 +260,33 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
+        private Stream Reporte(bool Correo)
+        {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            Stream archivo = null;
+            try {
+                frmViewer frm = new frmViewer();
+                frm.iReport = new Reportes.rtpDescPuestos();
+
+                frm.iReport.SetDataSource(oCHumano.CHU_DescPuesto_ReporteDetalle(int.Parse(txtIdPerfil.Text),
+                    int.Parse(cboPuestos.SelectedValue.ToString()), int.Parse(cboDepto.SelectedValue.ToString())));
+                //frm.iReport.SetDataSource(oCHumano.CHU_DescPuesto_ReporteDetalle2(int.Parse(txtIdPerfil.Text)));
+
+                if (Correo) {
+                    archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                } else {
+                    //MOSTRAR EN PANTALLA
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
+            }
+            return archivo;
+        }
+
         private void ActualizaGrid()
         {
             try {
@@ -267,18 +330,61 @@ namespace Hersan.UI.CapitalHumano
                 oCatalogos = null;
             }
         }
+        private void CargarSuperior()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
 
+            try {
+                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+                    cboSuperior.ValueMember = "Id";
+                    cboSuperior.DisplayMember = "Nombre";
+                    cboSuperior.DataSource = oCatalogos.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
+                } 
+
+            } catch (Exception ex) {
+
+                RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+            finally {
+                oCatalogos = null;
+            }
+
+        }
+
+        private void CargarInferior()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+
+            try {
+                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+                    cboInferior.ValueMember = "Id";
+                    cboInferior.DisplayMember = "Nombre";
+                    cboInferior.DataSource = oCatalogos.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
+                }
+              
+
+                } catch (Exception ex) {
+
+                RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+              finally {
+                oCatalogos = null;
+            }
+        }
         private void CargarPuestos()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                cboPuestos.ValueMember = cboInferior.ValueMember = cboSuperior.ValueMember = "Id";
-                cboPuestos.DisplayMember = cboSuperior.DisplayMember = cboInferior.DisplayMember = "Nombre";
+             
                 if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
-                    cboPuestos.DataSource = cboInferior.DataSource = cboSuperior.DataSource = oCatalogos.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
+                    puList = oCatalogos.ABCPuestos_Combo(int.Parse(cboDepto.SelectedValue.ToString()));
+                    cboPuestos.ValueMember = "Id";
+                    cboPuestos.DisplayMember = "Nombre";
+                    cboPuestos.DataSource = puList;
 
                 } else
-                    cboPuestos.DataSource = cboSuperior.DataSource = cboInferior.DataSource = null;
+                 cboPuestos.DataSource = null;
+            
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -288,12 +394,17 @@ namespace Hersan.UI.CapitalHumano
         private void frmDescripcionPuestos_Load(object sender, EventArgs e)
         {
             try {
-               
+
+                // Summatoria de datos
+                GridViewSummaryRowItem item1 = new GridViewSummaryRowItem();
+                item1.Add(new GridViewSummaryItem("Total", "Total:  {0:N2}", GridAggregateFunction.Sum));
+                this.grdDatos.SummaryRowsBottom.Add(item1);
                 CargarEntidades();
-                //CargarGrid();
-                CargarCContactos();
-                CargarGridContactos();
                 LimpiarCampos();
+                LimpiarDatos();
+                
+                CargarCContactos();
+                CalcularPuntos();
 
             } catch (Exception) {
 
@@ -304,9 +415,10 @@ namespace Hersan.UI.CapitalHumano
         private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-                if (cboEntidad.SelectedValue != null) {
+                if (cboEntidad.SelectedValue!=null)
+              
                     CargarDeptos();
-                }
+                
             } catch (Exception) {
 
                 throw;
@@ -316,10 +428,14 @@ namespace Hersan.UI.CapitalHumano
         private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-               
-                    CargarPuestos();
-                
+                if (cboDepto.SelectedValue != null) {
 
+                    CargarSuperior();
+                    CargarInferior();
+                    CargarPuestos();
+                    
+                }
+             
             } catch (Exception) {
 
                 throw;
@@ -329,14 +445,15 @@ namespace Hersan.UI.CapitalHumano
         private void cboPuestos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-
-                if (Flag && cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
-                    //LimmpiarCampos();
+             if ( cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
+                    LimpiarDatos();
                     CargarGrid();
                     CargarGridContactos();
+                    CalcularPuntos();
                 }
 
-            } catch (Exception ex) {
+
+                } catch (Exception ex) {
                 throw ex;
             }
         }
@@ -353,67 +470,40 @@ namespace Hersan.UI.CapitalHumano
         private void cboContactos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-                Estatus_RadioButton();
+              
 
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurrió un error al seleccionar un contacto\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+            
 
-
-        private void cboContactos_SelectedIndexChanging(object sender, Telerik.WinControls.UI.Data.PositionChangingCancelEventArgs e)
+       private void btnQuitarItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnAddPariente_Click(object sender, EventArgs e)
-        {
-            obj = new DescPuestosContactosBE();
             try {
-                if (pList.FindAll(item => item.Id == int.Parse(cboContactos.SelectedValue.ToString())).Count == 0) {
+               
+                    if (pList.FindAll(item => item.Sel == true).Count > 0) {
+                        if (RadMessageBox.Show("Esta acción eliminara los elementos seleccionados\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
+                            return;
+                    } else {
+                        RadMessageBox.Show("No hay contacto seleccionado seleccionados", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                        return;
+                    }
 
-                    obj.Sel = false;
+                    if (txtId.Text == "0")
+                        pList.RemoveAll(item => item.Sel == true);
+                    else {
+                        pList.ForEach(item => {
+                            if (item.Sel == true)
+                                item.DatosUsuario.Estatus = false;
+                        });
+                        pList.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                    }
 
-                    obj.Concepto = cboContactos.SelectedItem.Text;
-                    obj.Id = int.Parse(cboContactos.SelectedValue.ToString());
-                    obj.TipoCon = opInterno.IsChecked ? "INTERNO" : "EXTERNO";
-                    obj.Tipo = true ? opInterno.IsChecked:opExterno.IsChecked;
-
-                    pList.Add(obj);
                     ActualizaGrid();
-                } else {
-                    RadMessageBox.Show("No es posible agregar un item que ya existe en el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al agregar la selección\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void cboFunciones_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            try {
-                Estatus_RadioButton();
-
-            } catch (Exception) {
-
-                throw;
-            }
-        }
-
-        private void btnQuitarItem_Click(object sender, EventArgs e)
-        {
-            try {
-                if (txtId.Text == "0")
-                    pList.RemoveAll(item => item.Sel == true);
-                else
-                    pList.ForEach(item => {
-                        if (item.Sel == true)
-                            item.DatosUsuario.Estatus = false;
-                    });
-
-                ActualizaGrid();
-            } catch (Exception ex) {
+                
+                } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al quitar un item\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
@@ -421,10 +511,21 @@ namespace Hersan.UI.CapitalHumano
         private void btnQuitarTodo_Click(object sender, EventArgs e)
         {
             try {
+                if (pList.Count > 0) {
+                    if (RadMessageBox.Show("Esta acción eliminara todos los elementos\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
+                        return;
+                } else {
+                    RadMessageBox.Show("No se han agregado contacto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
                 if (txtId.Text == "0")
                     pList.Clear();
-                else
+                else {
                     pList.ForEach(item => item.DatosUsuario.Estatus = false);
+                    pList.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                }
+
 
                 ActualizaGrid();
             } catch (Exception ex) {
@@ -439,10 +540,10 @@ namespace Hersan.UI.CapitalHumano
             DataTable oData1 = new DataTable("Donnees");
 
             try {
-                //if (!ValidarCampos()) {
-                //    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                //    return;
-                //}
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
 
                 oData.Columns.Add("Id");
                 oData.Columns.Add("Tipo");
@@ -452,10 +553,11 @@ namespace Hersan.UI.CapitalHumano
                 oData1.Columns.Add("Riesgo");
                 oData1.Columns.Add("Condicion");
                 oData1.Columns.Add("Equipo");
+                oData1.Columns.Add("Actividades");
 
-                    #region Carga Detalle
+                #region Carga Detalle
 
-              
+
 
                 DescripcionPuestosBE obj = new DescripcionPuestosBE();
                 pList.ForEach(item => {
@@ -470,7 +572,7 @@ namespace Hersan.UI.CapitalHumano
 
                 obj.Id = txtId.Text.Trim().Length > 0 ? int.Parse(txtId.Text) : 0;
                     obj.Perfiles.Id = int.Parse(txtIdPerfil.Text);
-                    obj.Colabordores = int.Parse(cboColaboradores.SelectedItem.ToString());
+                    obj.Colabordores = cboColaboradores.SelectedIndex;
                     obj.Autoridad = txtAutoridad.Text;
                     obj.Clave = txtClave.Text;
                     obj.Superior = int.Parse(cboSuperior.SelectedValue.ToString());
@@ -484,8 +586,9 @@ namespace Hersan.UI.CapitalHumano
                     oRow1["Riesgo"] = txtRiesgo.Text;
                     oRow1["Condicion"] = txtCondiciones.Text;
                     oRow1["Equipo"] = txtEquipo.Text;
+                    oRow1["Actividades"] = txtActividades.Text;
 
-                    oData1.Rows.Add(oRow1);
+                oData1.Rows.Add(oRow1);
               
                 
                  
@@ -509,12 +612,12 @@ namespace Hersan.UI.CapitalHumano
                     } else {
                         RadMessageBox.Show("Ocurrió un error al actualizar la descripcion del puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     }
-                    LimpiarCampos();
-                    CargarGrid();
-                    CargarGridContactos();
+                   
 
                 }
-               
+                LimpiarCampos();
+                CargarGrid();
+                CargarGridContactos();
 
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al guardar la descripcion del puesto\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -527,6 +630,9 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 LimpiarCampos();
+                LimpiarDatos();
+               
+
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -545,18 +651,60 @@ namespace Hersan.UI.CapitalHumano
                         } else {
                             RadMessageBox.Show("Ocurrió un error al eliminar la descripción del puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                         }
+                        LimpiarCampos();
+                        CargarGrid();
+                        CargarGridContactos();
                     }
+                    
+                } else {
+                    RadMessageBox.Show("No hay descripción de puesto seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
-                LimpiarCampos();
-                CargarGrid();
-                CargarGridContactos();
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al eliminar la descrpción del puesto\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCHumano = null;
             }
         }
+
+        private void btnAddPariente_Click_1(object sender, EventArgs e)
+        {
+            obj = new DescPuestosContactosBE();
+            try {
+              
+                if (pList.FindAll(item => item.Id == int.Parse(cboContactos.SelectedValue.ToString())).Count == 0) {
+
+                    obj.Sel = false;
+
+                    obj.Concepto = cboContactos.SelectedItem.Text;
+                    obj.Id = int.Parse(cboContactos.SelectedValue.ToString());
+                    //obj.TipoCon = opInterno.IsChecked ? "INTERNO" : "EXTERNO";
+                    obj.Tipo = true;
+
+                    pList.Add(obj);
+                    ActualizaGrid();
+                } else {
+                    RadMessageBox.Show("No es posible agregar un item que ya existe en el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al agregar la selección\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            try {
+                if(int.Parse(txtIdPerfil.Text) >0  && cboPuestos.SelectedIndex!=-1)
+                Reporte(false);
+                else
+                    RadMessageBox.Show("No ha seleccionado una descripción de puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
     }
     }
+    
 
 

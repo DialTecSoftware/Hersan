@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEvaluacionInduccion));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn25 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn26 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn27 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn28 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn4 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -46,12 +46,8 @@
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnImprimir = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnReporte = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator6 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
@@ -78,18 +74,19 @@
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip2 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
-            this.picFoto = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtCalif = new Telerik.WinControls.UI.RadTextBox();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.txtIdd = new System.Windows.Forms.TextBox();
+            this.txtIdExp = new System.Windows.Forms.TextBox();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
-            this.txtNoEmp = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.lblFecha = new System.Windows.Forms.Label();
+            this.picFoto = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
@@ -105,10 +102,10 @@
             this.documentContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip2)).BeginInit();
             this.documentTabStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCalif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -121,7 +118,7 @@
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1,
             this.commandBarRowElement2});
-            this.radCommandBar1.Size = new System.Drawing.Size(1075, 86);
+            this.radCommandBar1.Size = new System.Drawing.Size(1075, 81);
             this.radCommandBar1.TabIndex = 7;
             // 
             // commandBarRowElement1
@@ -141,12 +138,8 @@
             this.commandBarSeparator1,
             this.btnGuardar,
             this.commandBarSeparator2,
-            this.btnImprimir,
-            this.commandBarSeparator3,
             this.btnReporte,
             this.commandBarSeparator4,
-            this.commandBarButton2,
-            this.commandBarSeparator5,
             this.btnSalir,
             this.commandBarSeparator6,
             this.commandBarLabel1});
@@ -207,21 +200,6 @@
             this.commandBarSeparator2.Name = "commandBarSeparator2";
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DisplayName = "commandBarButton3";
-            this.btnImprimir.DrawText = true;
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // commandBarSeparator3
-            // 
-            this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
-            this.commandBarSeparator3.Name = "commandBarSeparator3";
-            this.commandBarSeparator3.VisibleInOverflowMenu = false;
-            // 
             // btnReporte
             // 
             this.btnReporte.DisplayName = "commandBarButton1";
@@ -230,25 +208,13 @@
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Text = "Reporte";
             this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // commandBarSeparator4
             // 
             this.commandBarSeparator4.DisplayName = "commandBarSeparator4";
             this.commandBarSeparator4.Name = "commandBarSeparator4";
             this.commandBarSeparator4.VisibleInOverflowMenu = false;
-            // 
-            // commandBarButton2
-            // 
-            this.commandBarButton2.DisplayName = "commandBarButton2";
-            this.commandBarButton2.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton2.Image")));
-            this.commandBarButton2.Name = "commandBarButton2";
-            this.commandBarButton2.Text = "commandBarButton2";
-            // 
-            // commandBarSeparator5
-            // 
-            this.commandBarSeparator5.DisplayName = "commandBarSeparator5";
-            this.commandBarSeparator5.Name = "commandBarSeparator5";
-            this.commandBarSeparator5.VisibleInOverflowMenu = false;
             // 
             // btnSalir
             // 
@@ -345,9 +311,9 @@
             this.radGroupBox1.Controls.Add(this.label8);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.radGroupBox1.HeaderText = "";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 202);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 199);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(391, 398);
+            this.radGroupBox1.Size = new System.Drawing.Size(391, 401);
             this.radGroupBox1.TabIndex = 15;
             // 
             // label17
@@ -437,10 +403,11 @@
             // 
             // txtObservaciones
             // 
+            this.txtObservaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObservaciones.Location = new System.Drawing.Point(102, 197);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(228, 105);
+            this.txtObservaciones.Size = new System.Drawing.Size(271, 141);
             this.txtObservaciones.TabIndex = 53;
             // 
             // label8
@@ -463,25 +430,27 @@
             this.radDock2.Controls.Add(this.documentContainer1);
             this.radDock2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock2.IsCleanUpTarget = true;
-            this.radDock2.Location = new System.Drawing.Point(391, 202);
+            this.radDock2.Location = new System.Drawing.Point(391, 199);
             this.radDock2.MainDocumentContainer = this.documentContainer1;
             this.radDock2.Name = "radDock2";
             // 
             // 
             // 
             this.radDock2.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock2.Size = new System.Drawing.Size(684, 398);
+            this.radDock2.ShowItemToolTips = false;
+            this.radDock2.Size = new System.Drawing.Size(684, 401);
             this.radDock2.TabIndex = 23;
             this.radDock2.TabStop = false;
             // 
             // documentWindow2
             // 
             this.documentWindow2.Controls.Add(this.gvDatos);
+            this.documentWindow2.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
             this.documentWindow2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentWindow2.Location = new System.Drawing.Point(6, 29);
             this.documentWindow2.Name = "documentWindow2";
             this.documentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow2.Size = new System.Drawing.Size(662, 353);
+            this.documentWindow2.Size = new System.Drawing.Size(662, 356);
             this.documentWindow2.Text = "PREGUNTAS DE INDUCCION";
             // 
             // gvDatos
@@ -496,49 +465,49 @@
             this.gvDatos.MasterTemplate.AllowColumnReorder = false;
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
-            gridViewTextBoxColumn13.FieldName = "Id";
-            gridViewTextBoxColumn13.HeaderText = "Id_Pregunta";
-            gridViewTextBoxColumn13.IsVisible = false;
-            gridViewTextBoxColumn13.Name = "Id";
-            gridViewTextBoxColumn14.FieldName = "Pregunta";
-            gridViewTextBoxColumn14.HeaderText = "Preguntas";
-            gridViewTextBoxColumn14.Name = "Pregunta";
-            gridViewTextBoxColumn14.ReadOnly = true;
-            gridViewTextBoxColumn14.Width = 290;
-            gridViewCheckBoxColumn25.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
-            gridViewCheckBoxColumn25.FieldName = "Valor4";
-            gridViewCheckBoxColumn25.HeaderText = "4";
-            gridViewCheckBoxColumn25.Name = "Valor4";
-            gridViewCheckBoxColumn25.Width = 35;
-            gridViewCheckBoxColumn26.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
-            gridViewCheckBoxColumn26.FieldName = "Valor3";
-            gridViewCheckBoxColumn26.HeaderText = "3";
-            gridViewCheckBoxColumn26.Name = "Valor3";
-            gridViewCheckBoxColumn26.Width = 35;
-            gridViewCheckBoxColumn27.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
-            gridViewCheckBoxColumn27.FieldName = "Valor2";
-            gridViewCheckBoxColumn27.HeaderText = "2";
-            gridViewCheckBoxColumn27.Name = "Valor2";
-            gridViewCheckBoxColumn27.Width = 35;
-            gridViewCheckBoxColumn28.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
-            gridViewCheckBoxColumn28.FieldName = "Valor1";
-            gridViewCheckBoxColumn28.HeaderText = "1";
-            gridViewCheckBoxColumn28.Name = "Valor1";
-            gridViewCheckBoxColumn28.Width = 35;
+            gridViewTextBoxColumn1.FieldName = "Id";
+            gridViewTextBoxColumn1.HeaderText = "Id_Pregunta";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "Id";
+            gridViewTextBoxColumn2.FieldName = "Pregunta";
+            gridViewTextBoxColumn2.HeaderText = "Preguntas";
+            gridViewTextBoxColumn2.Name = "Pregunta";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 290;
+            gridViewCheckBoxColumn1.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn1.FieldName = "Valor4";
+            gridViewCheckBoxColumn1.HeaderText = "4";
+            gridViewCheckBoxColumn1.Name = "Valor4";
+            gridViewCheckBoxColumn1.Width = 35;
+            gridViewCheckBoxColumn2.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn2.FieldName = "Valor3";
+            gridViewCheckBoxColumn2.HeaderText = "3";
+            gridViewCheckBoxColumn2.Name = "Valor3";
+            gridViewCheckBoxColumn2.Width = 35;
+            gridViewCheckBoxColumn3.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn3.FieldName = "Valor2";
+            gridViewCheckBoxColumn3.HeaderText = "2";
+            gridViewCheckBoxColumn3.Name = "Valor2";
+            gridViewCheckBoxColumn3.Width = 35;
+            gridViewCheckBoxColumn4.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn4.FieldName = "Valor1";
+            gridViewCheckBoxColumn4.HeaderText = "1";
+            gridViewCheckBoxColumn4.Name = "Valor1";
+            gridViewCheckBoxColumn4.Width = 35;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewCheckBoxColumn25,
-            gridViewCheckBoxColumn26,
-            gridViewCheckBoxColumn27,
-            gridViewCheckBoxColumn28});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewCheckBoxColumn1,
+            gridViewCheckBoxColumn2,
+            gridViewCheckBoxColumn3,
+            gridViewCheckBoxColumn4});
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition7;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(662, 353);
+            this.gvDatos.Size = new System.Drawing.Size(662, 356);
             this.gvDatos.TabIndex = 22;
             this.gvDatos.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gvDatos_CellValueChanged_1);
             // 
@@ -563,20 +532,9 @@
             // 
             this.documentTabStrip2.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip2.SelectedIndex = 0;
-            this.documentTabStrip2.Size = new System.Drawing.Size(674, 388);
+            this.documentTabStrip2.Size = new System.Drawing.Size(674, 391);
             this.documentTabStrip2.TabIndex = 0;
             this.documentTabStrip2.TabStop = false;
-            // 
-            // picFoto
-            // 
-            this.picFoto.Image = ((System.Drawing.Image)(resources.GetObject("picFoto.Image")));
-            this.picFoto.Location = new System.Drawing.Point(43, 6);
-            this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(105, 100);
-            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFoto.TabIndex = 12;
-            this.picFoto.TabStop = false;
-            this.picFoto.WaitOnLoad = true;
             // 
             // label7
             // 
@@ -590,53 +548,84 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(402, 84);
+            this.txtId.Location = new System.Drawing.Point(413, 86);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(45, 20);
             this.txtId.TabIndex = 56;
+            this.txtId.Visible = false;
             // 
             // txtCalif
             // 
             this.txtCalif.Location = new System.Drawing.Point(242, 84);
             this.txtCalif.MaxLength = 2;
             this.txtCalif.Name = "txtCalif";
-            this.txtCalif.Size = new System.Drawing.Size(118, 20);
+            this.txtCalif.Size = new System.Drawing.Size(60, 20);
             this.txtCalif.TabIndex = 57;
+            this.txtCalif.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCalif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
             this.txtCalif.Validating += new System.ComponentModel.CancelEventHandler(this.txtCalif_Validating);
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.txtIdd);
+            this.radPanel1.Controls.Add(this.txtIdExp);
             this.radPanel1.Controls.Add(this.lblFecha);
             this.radPanel1.Controls.Add(this.label4);
             this.radPanel1.Controls.Add(this.label5);
             this.radPanel1.Controls.Add(this.label6);
             this.radPanel1.Controls.Add(this.txtNombres);
-            this.radPanel1.Controls.Add(this.txtNoEmp);
             this.radPanel1.Controls.Add(this.txtApellidos);
             this.radPanel1.Controls.Add(this.txtCalif);
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.label7);
             this.radPanel1.Controls.Add(this.picFoto);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 86);
+            this.radPanel1.Location = new System.Drawing.Point(0, 81);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1075, 116);
+            this.radPanel1.Size = new System.Drawing.Size(1075, 118);
             this.radPanel1.TabIndex = 8;
+            // 
+            // txtIdd
+            // 
+            this.txtIdd.Location = new System.Drawing.Point(517, 79);
+            this.txtIdd.Name = "txtIdd";
+            this.txtIdd.Size = new System.Drawing.Size(63, 20);
+            this.txtIdd.TabIndex = 66;
+            this.txtIdd.Visible = false;
+            // 
+            // txtIdExp
+            // 
+            this.txtIdExp.Location = new System.Drawing.Point(242, 7);
+            this.txtIdExp.Name = "txtIdExp";
+            this.txtIdExp.ReadOnly = true;
+            this.txtIdExp.Size = new System.Drawing.Size(43, 20);
+            this.txtIdExp.TabIndex = 65;
+            this.txtIdExp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(657, 6);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(19, 13);
+            this.lblFecha.TabIndex = 64;
+            this.lblFecha.Text = "---";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(187, 58);
+            this.label4.Location = new System.Drawing.Point(187, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 61;
-            this.label4.Text = "No. Emp";
+            this.label4.Text = "No. Exp";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(184, 32);
+            this.label5.Location = new System.Drawing.Point(184, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 62;
@@ -645,7 +634,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(179, 6);
+            this.label6.Location = new System.Drawing.Point(179, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 63;
@@ -654,37 +643,30 @@
             // txtNombres
             // 
             this.txtNombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombres.Location = new System.Drawing.Point(242, 32);
+            this.txtNombres.Location = new System.Drawing.Point(242, 59);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.ReadOnly = true;
             this.txtNombres.Size = new System.Drawing.Size(193, 20);
             this.txtNombres.TabIndex = 58;
             // 
-            // txtNoEmp
-            // 
-            this.txtNoEmp.Location = new System.Drawing.Point(242, 58);
-            this.txtNoEmp.Name = "txtNoEmp";
-            this.txtNoEmp.ReadOnly = true;
-            this.txtNoEmp.Size = new System.Drawing.Size(40, 20);
-            this.txtNoEmp.TabIndex = 59;
-            // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(242, 6);
+            this.txtApellidos.Location = new System.Drawing.Point(242, 33);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.ReadOnly = true;
             this.txtApellidos.Size = new System.Drawing.Size(193, 20);
             this.txtApellidos.TabIndex = 60;
             // 
-            // lblFecha
+            // picFoto
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(684, 12);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(19, 13);
-            this.lblFecha.TabIndex = 64;
-            this.lblFecha.Text = "---";
+            this.picFoto.Image = ((System.Drawing.Image)(resources.GetObject("picFoto.Image")));
+            this.picFoto.Location = new System.Drawing.Point(43, 6);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(105, 100);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFoto.TabIndex = 12;
+            this.picFoto.TabStop = false;
+            this.picFoto.WaitOnLoad = true;
             // 
             // errorProvider1
             // 
@@ -705,7 +687,8 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "frmEvaluacionInduccion";
+            this.ShowIcon = false;
+            this.Text = "Evaluación de Inducción";
             this.ThemeName = "Material";
             this.Load += new System.EventHandler(this.frmEvaluacionInduccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
@@ -724,11 +707,11 @@
             this.documentContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip2)).EndInit();
             this.documentTabStrip2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCalif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -745,8 +728,6 @@
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator1;
         private Telerik.WinControls.UI.CommandBarButton btnGuardar;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
-        private Telerik.WinControls.UI.CommandBarButton btnImprimir;
-        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator3;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -771,8 +752,6 @@
         private Telerik.WinControls.UI.RadGridView gvDatos;
         private Telerik.WinControls.UI.CommandBarButton btnReporte;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator4;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton2;
-        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator5;
         private Telerik.WinControls.UI.CommandBarButton btnSalir;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator6;
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
@@ -788,9 +767,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.TextBox txtNoEmp;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtIdExp;
+        private System.Windows.Forms.TextBox txtIdd;
     }
 }

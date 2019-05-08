@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Hersan.Ensamble.Service.Hersan_Ensamble" Factory="System.ServiceModel.Activation.ServiceHostFactory"%>

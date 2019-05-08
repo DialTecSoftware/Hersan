@@ -55,6 +55,7 @@ namespace Hersan.UI.CapitalHumano
             cboDepto.SelectedIndex = 0;
             cboPuesto.SelectedIndex = 0;
             rdbProceso.IsChecked = true;
+         
         }
         private void CargarEntidades()
         {
@@ -109,6 +110,7 @@ namespace Hersan.UI.CapitalHumano
         private void frmSeguimientoCandidatos_Load(object sender, EventArgs e)
         {
             try {
+                rdbProceso.IsChecked = true;
                 CargarEntidades();
                 CargarSeguimientos();
             } catch (Exception) {
@@ -174,12 +176,7 @@ namespace Hersan.UI.CapitalHumano
                     return;
                 }
 
-                if (oList.FindAll(item => item.Departamentos.Entidades.Id == int.Parse(cboEntidad.SelectedValue.ToString()) && item.Departamentos.Id == int.Parse(cboDepto.SelectedValue.ToString())).Count > 0
-                   && int.Parse(txtId.Text) == -1) {
-                    RadMessageBox.Show("El departamento capturado ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    LimpiarCampos();
-                    return;
-                }
+              
                 #region Entidades
                 obj.Id = int.Parse(txtId.Text);
                 obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
@@ -192,7 +189,7 @@ namespace Hersan.UI.CapitalHumano
                     obj.Proceso = false;
                 }
                 if (rdbRechazado.IsChecked) {
-                    obj.Aceptado = false;
+                    obj.Rechazado = true;
                     obj.Proceso = false;
                 }
 
@@ -278,29 +275,35 @@ namespace Hersan.UI.CapitalHumano
         {
 
             try {
-                
-                 
-                    if (!rdbAceptado.IsChecked && !rdbRechazado.IsChecked) {
-                    RadMessageBox.Show("Actualiza el estatus del Candidato(Rechazado o Acpetado)\n antes de enviar correo"
-                                        , this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                if (txtId.Text=="-1") 
+                {
+                    RadMessageBox.Show("No hay ningun candidato seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
+
+                    if (!rdbAceptado.IsChecked && !rdbRechazado.IsChecked) {
+                    RadMessageBox.Show("Actualiza el estatus del Candidato(Rechazado o Acpetado)\n antes de enviar correo"
+                         , this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+                if (RadMessageBox.Show("Desea mandar correo al candidato...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                     #region Correo
                     string pwd = "Catcooptest";
-                string smtp = "smtp.GMAIL.com";
-                string emisor = "Key.Solutions.Test@gmail.com";
-                string destinatario = txtCorreo.Text;
-                string asunto = "Reclutamiento Hersan HiTech sapi de cv ";
-                int port = 587;
-                if (txtId.Text != "-1") { 
-                       string CuerpoMsg = CreateBody();
-                    BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
-                    RadMessageBox.Show("Correo enviado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);                       
-                  } 
-                    else
-                    RadMessageBox.Show("Selecciona un candidato para mandar el correo\n", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    string smtp = "smtp.GMAIL.com";
+                    string emisor = "Key.Solutions.Test@gmail.com";
+                    string destinatario = txtCorreo.Text;
+                    string asunto = "Reclutamiento Hersan HiTech sapi de cv ";
+                    int port = 587;
+                    if (txtId.Text != "-1") {
+                        string CuerpoMsg = CreateBody();
+                        BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
+                        RadMessageBox.Show("Correo enviado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    } else
+                        RadMessageBox.Show("Debe de seleccionar un candidato para mandar el correo\n", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
 
-                #endregion
+                    #endregion
+                }
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurrió un error al mandar el correo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -312,27 +315,32 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
             SeguimientoCandidatosBE obj = new SeguimientoCandidatosBE();
             try {
-                //if (chkEstatus.Checked) {
-                if (RadMessageBox.Show("Esta acción dará de baja la solicitud\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                if (int.Parse(txtId.Text) > 0) {
+                    if (RadMessageBox.Show("Esta acción dará de baja la solicitud\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+
+
+                        obj.Id = int.Parse(txtId.Text);
+                        obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
+                        obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
+                        obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
+                        obj.Correo = (txtCorreo.Text);
+                        obj.Proceso = true;
+                        obj.NombreCompleto = txtNombreC.Text;
+                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                        obj.DatosUsuario.Estatus = false;
+
+                        int Result = oCHumano.CHU_SeguimientoCan_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Candidato dado de baja correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarSeguimientos();
+                        }
+                    }
                 }
-
-                obj.Id = int.Parse(txtId.Text);
-                obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
-                obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
-                obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
-                obj.Correo = (txtCorreo.Text);
-                obj.Proceso = true;
-                obj.NombreCompleto = txtNombreC.Text;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                obj.DatosUsuario.Estatus = false;
-
-                int Result = oCHumano.CHU_SeguimientoCan_Actualizar(obj);
-                if (Result == 0) {
-                    RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                } else {
-                    RadMessageBox.Show("Candidato dado de baja correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    LimpiarCampos();
-                    CargarSeguimientos();
+                else {
+                    RadMessageBox.Show("No hay ningun candidato seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al dar de baja el candidato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

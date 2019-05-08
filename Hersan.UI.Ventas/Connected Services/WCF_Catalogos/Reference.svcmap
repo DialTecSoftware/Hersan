@@ -30,6 +30,7 @@
     <MetadataFile FileName="Hersan_Catalogos2.xsd" MetadataType="Schema" ID="feb7cc7c-2229-49bf-92b2-52922b102726" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd1" />
     <MetadataFile FileName="Hersan_Catalogos3.xsd" MetadataType="Schema" ID="d2e631c6-ccca-4d5e-b7aa-d71d02b478e0" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" />
     <MetadataFile FileName="Hersan_Catalogos4.xsd" MetadataType="Schema" ID="8256606b-a602-4564-b88a-4526a9b28083" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd3" />
+    <MetadataFile FileName="Hersan_Catalogos5.xsd" MetadataType="Schema" ID="5a78f4c3-a328-475e-ba71-0c50d93ec0d2" SourceId="1" SourceUrl="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd5" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

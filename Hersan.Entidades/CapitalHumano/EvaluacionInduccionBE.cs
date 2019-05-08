@@ -16,7 +16,7 @@ namespace Hersan.Entidades.CapitalHumano
             Id = 0;
             Calificacion = 0;
             Observaciones = string.Empty;
-            IdEmpleado = 0;
+            IdExp = 0;
             Count = 0;
             DatosPersonales = new ExpedientesDatosPersonales();
             Puestos = new PuestosBE();
@@ -27,7 +27,7 @@ namespace Hersan.Entidades.CapitalHumano
         public int Count { get; set; }
         public decimal Calificacion { get; set; }
         public string Observaciones { get; set; }
-        public int  IdEmpleado { get; set; }
+        public int  IdExp { get; set; }
         public ExpedientesDatosPersonales DatosPersonales { get; set; }
         public PuestosBE Puestos { get; set; }
         public DepartamentosBE Departamentos { get; set; }

@@ -278,9 +278,9 @@ namespace Hersan.UI.CapitalHumano
 
         private void btnVerDiagrama_Click(object sender, EventArgs e)
         {
-            //Form frm = new DiagramFirstLook.OrgChartForm();
-            //frm.ShowDialog();
-            //frm.WindowState = FormWindowState.Maximized;
+            Form frm = new Organigrama.OrgChartForm();
+            frm.ShowDialog();
+            frm.WindowState = FormWindowState.Maximized;
         }
 
         private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)

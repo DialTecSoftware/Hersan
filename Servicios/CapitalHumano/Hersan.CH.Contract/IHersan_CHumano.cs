@@ -27,6 +27,8 @@ namespace Hersan.CH.Contract
         int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj);
         [OperationContract]
         int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj);
+        [OperationContract]
+        int CHU_SolicitudP_ActualizarDictamen(SolicitudPersonalBE obj);
 
         #endregion
 
@@ -80,6 +82,8 @@ namespace Hersan.CH.Contract
         int CHU_NuevoPuesto_Guardar(NuevoPuestoBE obj);
         [OperationContract]
         int CHU_NuevoPuesto_Actualizar(NuevoPuestoBE obj);
+        [OperationContract]
+        int CHU_NuevoPuesto_ActualizarDictamen(NuevoPuestoBE obj);
 
         #endregion
 
@@ -102,8 +106,8 @@ namespace Hersan.CH.Contract
         List<PreguntasEvaluacionBE> CHU_ObtenerPreguntas();
         [OperationContract]
         int CHU_EvaluacionInduccion_Guardar(DataSet Tablas, int IdUsuario);
-        //[OperationContract]
-        //int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj);
+        [OperationContract]
+        DataTable CHU_Evaluacion_ReporteDetalle(int Id);
 
         #endregion
 
@@ -131,7 +135,7 @@ namespace Hersan.CH.Contract
 
         #region Digitalizados
         [OperationContract]
-        DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp);
+        DataSet CHU_Digitalizados_Obtener(int IdExp);
         [OperationContract]
         int CHU_Digitalizados_Guardar(DigitalizadosBE obj, DataTable Detalle);
         [OperationContract]
@@ -149,6 +153,21 @@ namespace Hersan.CH.Contract
         int CHU_DescPuestos_Actualizar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones);
         [OperationContract]
         int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario);
+        [OperationContract]
+        DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil, int idPuesto, int IdDepto);
+        [OperationContract]
+         DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil);
+        #endregion
+
+        #region Empleados
+        [OperationContract]
+        List<EmpleadosBE> CHU_Empleados_Consultar(int IdExp);
+        [OperationContract]
+        int CHUEmpleados_Guardar(EmpleadosBE obj);
+        [OperationContract]
+        int CHU_EmpleadosActualizar(EmpleadosBE obj);
+        [OperationContract]
+        int CHU_Empleados_Elimina(int IdEmp, int IdUsuario);
         #endregion
     }
 }

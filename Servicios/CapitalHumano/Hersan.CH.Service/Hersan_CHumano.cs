@@ -38,10 +38,14 @@ namespace Hersan.CH.Service
             {
                 return new SolicitudPersonalBP().CHU_SolicitudP_Guardar(obj);
             }
-            public int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj)
-            {
+        public int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj)
+        {
                 return new SolicitudPersonalBP().CHU_SolicitudP_Actualizar(obj);
-            }
+        }
+        public int CHU_SolicitudP_ActualizarDictamen(SolicitudPersonalBE obj)
+        {
+            return new SolicitudPersonalBP().CHU_SolicitudP_ActualizarDictamen(obj);
+        }
         #endregion
 
         #region DictamenSustitucion
@@ -136,6 +140,11 @@ namespace Hersan.CH.Service
             return new NuevoPuestoBP().CHU_NuevoPuesto_Actualizar(obj);
         }
 
+        public int CHU_NuevoPuesto_ActualizarDictamen(NuevoPuestoBE obj)
+        {
+            return new NuevoPuestoBP().CHU_NuevoPuesto_ActualizarDictamen(obj);
+        }
+
         #endregion
 
         #region DictamenNuevoPuesto
@@ -171,10 +180,10 @@ namespace Hersan.CH.Service
         {
             return new EvaluacionInduccionBP().CHU_EvaluacionInduccion_Guardar(Tablas,IdUsuario);
         }
-        //public int CHU_EvaluacionInduccion_Guardar(EvaluacionInduccionBE obj)
-        //{
-        //    return new EvaluacionInduccionBP().CHU_DictamenNuevoP_Actualizar(obj);
-        //}
+        public DataTable CHU_Evaluacion_ReporteDetalle(int Id)
+        {
+            return new EvaluacionInduccionBP().CHU_Evaluacion_ReporteDetalle(Id);
+        }
 
         #endregion
 
@@ -210,9 +219,9 @@ namespace Hersan.CH.Service
 
         #region Digitalizados
      
-        public DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp)
+        public DataSet CHU_Digitalizados_Obtener(int IdExp)
         {
-            return new DigitalizadosBP().CHU_Digitalizados_Obtener(IdExp, NoEmp);
+            return new DigitalizadosBP().CHU_Digitalizados_Obtener(IdExp);
         }
         public int CHU_Digitalizados_Guardar(DigitalizadosBE obj, DataTable Detalle)
         {
@@ -247,6 +256,33 @@ namespace Hersan.CH.Service
         public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario)
         {
             return new DescripcionPuestosBP().CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
+        }
+        public DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil, int idPuesto, int IdDepto)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuesto_ReporteDetalle(IdPerfil, idPuesto, IdDepto);
+        }
+        public DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuesto_ReporteDetalle2(IdPerfil);
+        }
+        #endregion
+
+        #region Empleados
+        public List<EmpleadosBE> CHU_Empleados_Consultar(int IdExp)
+        {
+            return new EmpleadosBP().CHU_Empleados_Consultar(IdExp);
+        }
+        public int CHUEmpleados_Guardar(EmpleadosBE obj)
+        {
+            return new EmpleadosBP().CHUEmpleados_Guardar(obj);
+        }
+        public int CHU_EmpleadosActualizar(EmpleadosBE obj)
+        {
+            return new EmpleadosBP().CHU_EmpleadosActualizar(obj);
+        }
+        public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario)
+        {
+            return new EmpleadosBP().CHU_Empleados_Elimina(IdEmp, IdUsuario);
         }
         #endregion
     }

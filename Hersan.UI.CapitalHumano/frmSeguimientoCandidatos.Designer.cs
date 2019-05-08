@@ -138,6 +138,7 @@
             // 
             // txtCorreo
             // 
+            this.txtCorreo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCorreo.Location = new System.Drawing.Point(401, 8);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(233, 20);
@@ -145,6 +146,7 @@
             // 
             // txtNombreC
             // 
+            this.txtNombreC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombreC.Location = new System.Drawing.Point(91, 82);
             this.txtNombreC.Name = "txtNombreC";
             this.txtNombreC.Size = new System.Drawing.Size(230, 20);
@@ -154,11 +156,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 81);
+            this.label4.Location = new System.Drawing.Point(29, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 23;
-            this.label4.Text = "Nombre Cpto:";
+            this.label4.Text = "Nombre :";
             // 
             // label2
             // 
@@ -176,6 +178,8 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(48, 20);
             this.txtId.TabIndex = 13;
+            this.txtId.Text = "-1";
+            this.txtId.Visible = false;
             // 
             // rdbRechazado
             // 
@@ -499,7 +503,8 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "frmSeguimientoCandidatos";
+            this.ShowIcon = false;
+            this.Text = "Seguimiento A Candidatos";
             this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmSeguimientoCandidatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

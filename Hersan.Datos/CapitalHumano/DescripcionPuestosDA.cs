@@ -16,6 +16,8 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_USP_CHU_DESCPUESTO_OBTENER = "CHU_DescripcionPuestos_Obtener";
         const string CONST_USP_CHU_DESCPUESTO_ACTUALIZA = "CHU_DescripcionPuestos_Actualiza";
         const string CONST_USP_CHU_DESCPUESTO_ELIMINAR = "CHU_DescripcionPuestos_Eliminar";
+        const string CONST_USP_CHU_DESCPUESTO_REPORTE1 = "CHU_RptDescPuestos_Obtener";
+        const string CONST_USP_CHU_DESCPUESTO_REPORTE2 = "CHU_RptDescPuestos2_Obtener";
         #endregion
 
 
@@ -119,6 +121,47 @@ namespace Hersan.Datos.CapitalHumano
                 return Result;
             } catch (Exception ex) {
 
+                throw ex;
+            }
+        }
+
+        public DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil,int idPuesto,int IdDepto)
+        {
+            DataTable oData = new DataTable("Reporte");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_DESCPUESTO_REPORTE1, conn)) {
+                        cmd.Parameters.AddWithValue("@IdPerfil", IdPerfil);
+                        cmd.Parameters.AddWithValue("@IdPuesto", idPuesto);
+                        cmd.Parameters.AddWithValue("@IdDep",IdDepto);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+                 
+                }
+                return oData;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil)
+        {
+            DataTable oData = new DataTable("Reporte2");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_DESCPUESTO_REPORTE1, conn)) {
+                        cmd.Parameters.AddWithValue("@IdPerfil", IdPerfil);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+
+                }
+                return oData;
+            } catch (Exception ex) {
                 throw ex;
             }
         }

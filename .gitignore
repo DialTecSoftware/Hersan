@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Hersan.UI.Ventas/Properties/DataSources
+/Hersan.UI.Ventas/Connected Services/WCF_Catalogos/Hersan_Catalogos5.xsd
+/EstructuraOrganizacional

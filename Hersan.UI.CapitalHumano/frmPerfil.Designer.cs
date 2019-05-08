@@ -103,6 +103,8 @@
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.btnQuitar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnQuitarTodo = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator6 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.toolWindow1 = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
@@ -175,7 +177,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(969, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(969, 78);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -299,7 +301,7 @@
             this.radPanel1.Controls.Add(this.cboPuestos);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 53);
+            this.radPanel1.Location = new System.Drawing.Point(0, 78);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(969, 101);
             this.radPanel1.TabIndex = 1;
@@ -365,6 +367,7 @@
             this.txtId.Size = new System.Drawing.Size(78, 20);
             this.txtId.TabIndex = 4;
             this.txtId.Text = "0";
+            this.txtId.Visible = false;
             // 
             // cboDepto
             // 
@@ -462,14 +465,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 154);
+            this.radDock1.Location = new System.Drawing.Point(0, 179);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(969, 321);
+            this.radDock1.Size = new System.Drawing.Size(969, 296);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -482,7 +485,7 @@
             this.documentWindow1.Location = new System.Drawing.Point(6, 29);
             this.documentWindow1.Name = "documentWindow1";
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(569, 276);
+            this.documentWindow1.Size = new System.Drawing.Size(569, 251);
             this.documentWindow1.Text = "Perfil";
             // 
             // radPanel2
@@ -492,7 +495,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 53);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(569, 223);
+            this.radPanel2.Size = new System.Drawing.Size(569, 198);
             this.radPanel2.TabIndex = 1;
             // 
             // grdDatos
@@ -554,6 +557,7 @@
             gridViewTextBoxColumn6.MaxWidth = 100;
             gridViewTextBoxColumn6.MinWidth = 100;
             gridViewTextBoxColumn6.Name = "Valor";
+            gridViewTextBoxColumn6.ReadOnly = true;
             gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn6.Width = 100;
             gridViewTextBoxColumn7.FieldName = "Total";
@@ -578,7 +582,7 @@
             this.grdDatos.Name = "grdDatos";
             this.grdDatos.ShowGroupPanel = false;
             this.grdDatos.ShowNoDataText = false;
-            this.grdDatos.Size = new System.Drawing.Size(569, 80);
+            this.grdDatos.Size = new System.Drawing.Size(569, 55);
             this.grdDatos.TabIndex = 3;
             this.grdDatos.CellEndEdit += new Telerik.WinControls.UI.GridViewCellEventHandler(this.grdDatos_CellEndEdit_1);
             // 
@@ -675,7 +679,9 @@
             this.commandBarStripElement2.DisplayName = "commandBarStripElement2";
             this.commandBarStripElement2.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.btnQuitar,
-            this.commandBarSeparator1});
+            this.commandBarSeparator1,
+            this.btnQuitarTodo,
+            this.commandBarSeparator6});
             this.commandBarStripElement2.Name = "commandBarStripElement2";
             // 
             // 
@@ -700,6 +706,22 @@
             this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
             // 
+            // btnQuitarTodo
+            // 
+            this.btnQuitarTodo.DisplayName = "commandBarButton1";
+            this.btnQuitarTodo.DrawText = true;
+            this.btnQuitarTodo.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarTodo.Image")));
+            this.btnQuitarTodo.Name = "btnQuitarTodo";
+            this.btnQuitarTodo.Text = "Quitar Todo";
+            this.btnQuitarTodo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnQuitarTodo.Click += new System.EventHandler(this.btnQuitarTodo_Click);
+            // 
+            // commandBarSeparator6
+            // 
+            this.commandBarSeparator6.DisplayName = "commandBarSeparator6";
+            this.commandBarSeparator6.Name = "commandBarSeparator6";
+            this.commandBarSeparator6.VisibleInOverflowMenu = false;
+            // 
             // toolTabStrip1
             // 
             this.toolTabStrip1.CanUpdateChildIndex = true;
@@ -711,7 +733,7 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(374, 311);
+            this.toolTabStrip1.Size = new System.Drawing.Size(374, 286);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(374, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(174, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -726,7 +748,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 22);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(372, 287);
+            this.toolWindow1.Size = new System.Drawing.Size(372, 262);
             this.toolWindow1.Text = "Detalle";
             this.toolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -928,7 +950,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(581, 311);
+            this.documentTabStrip1.Size = new System.Drawing.Size(581, 286);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -1099,5 +1121,7 @@
         private Telerik.WinControls.UI.RadTextBox txtValor;
         private Telerik.WinControls.UI.RadDropDownList cboPeso;
         private System.Windows.Forms.Label label9;
+        private Telerik.WinControls.UI.CommandBarButton btnQuitarTodo;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator6;
     }
 }

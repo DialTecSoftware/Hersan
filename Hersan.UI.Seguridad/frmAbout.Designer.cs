@@ -68,8 +68,8 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(440, 191);
             this.tableLayoutPanel.TabIndex = 0;
             // 
@@ -158,7 +158,7 @@
             // 
             this.radTextBoxDescription.RootElement.StretchVertically = true;
             this.radTextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.radTextBoxDescription.Size = new System.Drawing.Size(286, 89);
+            this.radTextBoxDescription.Size = new System.Drawing.Size(286, 79);
             this.radTextBoxDescription.TabIndex = 23;
             this.radTextBoxDescription.TabStop = false;
             this.radTextBoxDescription.Text = "Description";
@@ -167,9 +167,9 @@
             // 
             this.okRadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okRadButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okRadButton.Location = new System.Drawing.Point(362, 174);
+            this.okRadButton.Location = new System.Drawing.Point(362, 164);
             this.okRadButton.Name = "okRadButton";
-            this.okRadButton.Size = new System.Drawing.Size(75, 14);
+            this.okRadButton.Size = new System.Drawing.Size(75, 24);
             this.okRadButton.TabIndex = 24;
             this.okRadButton.Text = "&OK";
             this.okRadButton.Click += new System.EventHandler(this.okRadButton_Click);

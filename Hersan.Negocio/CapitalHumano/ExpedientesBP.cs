@@ -19,36 +19,15 @@ namespace Hersan.Negocio.CapitalHumano
         private void GuardarImagen(int Expediente, Byte[] Imagen)
         {            
             BinaryWriter Writer = null;
-            string DominioRed = "";
-            string UsuarioRed = "cuidado"; string PasswordRed = "Cloud.2018";        
             string Name = RutaImagen + Expediente.ToString() + ".jpg";
             try {
-
-                //string[] userPass = new FacturacionDA().obtenerUserPassFTP();
-                ////array de una dimension solo contiene mensaje de error
-                //if (userPass.Length == 1) {
-                //    result = userPass[0];
-                //    return result;
-                //}
-
-                ///Desencriptamos usuario y password
-                //UsuarioRed = DataEncryptor.Decrypt(userPass[0]);
-                //PasswordRed = DataEncryptor.Decrypt(userPass[1]);
-
-                Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
-
-                // Create a new stream to write to the file
                 Writer = new BinaryWriter(File.OpenWrite(Name));
-
-                // Writer raw data                
                 Writer.Write(Imagen);
                 Writer.Flush();
                 Writer.Close();
 
             } catch (Exception ex) {
                 throw new Exception("Error al intentar guardar el archivo.", ex);
-            } finally {
-                //Imper.Undo();
             }
         }
         private Byte[] ObtenerImagen(int Expediente)
@@ -56,12 +35,7 @@ namespace Hersan.Negocio.CapitalHumano
             byte[] Foto;
             string Imagen = RutaImagen + Expediente.ToString() + ".jpg"; ;
             try {
-                string DominioRed = "";
-                string UsuarioRed = "cuidado"; string PasswordRed = "Cloud.2018";
-
-                Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
                 Foto =ConvertImage.FileToByteArray(Imagen);
-
             } catch (Exception ex) {
                 throw new Exception("Error al intentar guardar el archivo.", ex);
             }
@@ -111,7 +85,7 @@ namespace Hersan.Negocio.CapitalHumano
             try {
                 List<ExpedientesBE> Obj = new ExpedientesDA().CHU_Expedientes_Obtener(IdExpediente);
                 Obj.ForEach(item => {
-                    if(item.RutaImagen.Trim().Length >0)
+                    if(item.RutaImagen.Trim().Length > 0)
                         item.Foto = ObtenerImagen(item.Id);
                 });
 

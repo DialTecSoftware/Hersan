@@ -79,7 +79,6 @@ namespace Hersan.Entidades.CapitalHumano
             OtrosDependientes = string.Empty;
             EdoCivil = string.Empty;
             EdoCivilOtro = string.Empty;
-            Empleados = new EmpleadosBE();
             DatosUsuario = new GeneralBE();
         }
 
@@ -107,7 +106,7 @@ namespace Hersan.Entidades.CapitalHumano
         public string EdoCivilOtro { get; set; }
         public string Correo { get; set; }
         public GeneralBE DatosUsuario { get; set; }
-        public EmpleadosBE Empleados { get; set; }
+       
     }
 
     public class ExpedienteDocumentos

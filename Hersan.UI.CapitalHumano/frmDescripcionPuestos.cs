@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace Hersan.UI.CapitalHumano
 {
@@ -82,8 +83,7 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
-
-        private void LimpiarCampos()
+        private void LimpiarDatos()
         {
             txtId.Text = "0";
             txtIdPerfil.Text = "0";
@@ -93,37 +93,35 @@ namespace Hersan.UI.CapitalHumano
             txtClave.Text = string.Empty;
             txtCondiciones.Text = string.Empty;
             txtObservaciones.Text = string.Empty;
+            txtEsfuerzo.Text = string.Empty;
+            txtEquipo.Text = string.Empty;
+            cboContactos.SelectedIndex = 0;
+            cboColaboradores.SelectedIndex = 0;
+        }
+
+        private void LimpiarCampos()
+        {
+            oList.Clear();
+            pList.Clear();
+            txtId.Text = "0";
+            txtIdPerfil.Text = "0";
+            txtObjetivo.Text = String.Empty;
+            txtRiesgo.Text = string.Empty;
+            txtAutoridad.Text = string.Empty;
+            txtClave.Text = string.Empty;
+            txtCondiciones.Text = string.Empty;
+            txtObservaciones.Text = string.Empty;
+            txtEsfuerzo.Text = string.Empty;
             txtEquipo.Text=string.Empty;
             cboContactos.SelectedIndex = 0;
             cboColaboradores.SelectedIndex = 0;
-            txtEsfuerzo.Text = string.Empty;
             cboEntidad.SelectedIndex = -1;
             cboDepto.SelectedIndex = -1;
             cboSuperior.SelectedIndex = -1;
             cboPuestos.SelectedIndex = -1;
-            oList.Clear();
-            pList.Clear();
-           
-                                  
+                                                      
         }
-        private void Estatus_RadioButton()
-        {
-
-            try {
-
-                if (cboContactos.Items.Count > 0 && cboContactos.SelectedValue != null) {
-                    var Temp = cList.FindAll(item => item.Id == int.Parse(cboContactos.SelectedValue.ToString()));
-                    if (Temp[0].Interno == true) {
-                        opInterno.IsChecked = true;
-                    } else
-                        opExterno.IsChecked = true;
-                }
-
-            } catch (Exception ex) {
-
-                RadMessageBox.Show("Ocurió un error al cargar los contactos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+    
         private void CargarCContactos()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -144,7 +142,31 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
+        private void CalcularPuntos()
+        {
+            try {
 
+                decimal valor = 0;
+                decimal pond = 0;
+                decimal Suma = 0;
+                decimal total = 0;
+                foreach (GridViewRowInfo row in grdDatos.Rows) {
+                    // Producto de las columnas nivel y valor
+
+                    valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
+                    pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
+                    total = valor * pond;
+                    row.Cells["Total"].Value = total;
+                    Suma += Convert.ToDecimal(row.Cells["Total"].Value);
+                }
+                //Total = Suma;
+             
+            } catch (Exception) {
+
+                throw;
+            }
+
+        }
         private bool ValidarCampos()
         {
             bool Flag = true;
@@ -168,10 +190,11 @@ namespace Hersan.UI.CapitalHumano
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             pList.Clear();
+            //LimpiarCampos();
             Flag = false;
 
             try {
-                if (txtIdPerfil.Text!="") {
+                if (txtIdPerfil.Text != "") {
                     DataSet oAux = oCHumano.CHU_DescripcionPuestos_Obtener(int.Parse(txtIdPerfil.Text));
                     if (oAux.Tables.Count > 0) {
                         #region Detalle Grid
@@ -181,39 +204,42 @@ namespace Hersan.UI.CapitalHumano
                                 pList.Add(new DescPuestosContactosBE() {
                                     Id = int.Parse(oRow["CON_Id"].ToString()),
                                     Concepto = oRow["CON_Nombre"].ToString(),
-                                    TipoCon=oRow["TipoCon"].ToString(),
+                                    TipoCon = oRow["TipoCon"].ToString(),
                                     Tipo = bool.Parse(oRow["CON_Interno"].ToString())
 
 
                                 });
                             }
                         }
-                    }
-                    /* FUNCIONES */
-                    if (oAux.Tables[2].Rows.Count > 0) {
-                        foreach (DataRow oRow in oAux.Tables[2].Rows) {
 
-                            txtRiesgo.Text = (oRow["DCT_Riesgos"].ToString());
-                            txtEsfuerzo.Text = (oRow["DCT_EsfuerzoFisico"].ToString());
-                            txtCondiciones.Text = oRow["DCT_CondicionesAmb"].ToString();
-                            txtEquipo.Text = oRow["DCT_EsfuerzoFisico"].ToString();
-                               
-                           
+                        /* FUNCIONES */
+                        if (oAux.Tables[2].Rows.Count > 0) {
+                            foreach (DataRow oRow in oAux.Tables[2].Rows) {
+
+                                txtRiesgo.Text = (oRow["DCT_Riesgos"].ToString());
+                                txtEsfuerzo.Text = (oRow["DCT_EsfuerzoFisico"].ToString());
+                                txtCondiciones.Text = oRow["DCT_CondicionesAmb"].ToString();
+                                txtEquipo.Text = oRow["DCT_EsfuerzoFisico"].ToString();
+
+
+                            }
+                        
                         }
-                    }
-                    #endregion
+                        #endregion
 
-                    /* DATOS GENERALES DEL PERFIL */
-                    if (oAux.Tables[0].Rows.Count > 0) {
-                        txtId.Text = oAux.Tables[0].Rows[0]["DPU_Id"].ToString();
-                        cboSuperior.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DPU_Superior"].ToString());
-                        cboInferior.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DPU_Inferior"].ToString());
-                        txtObservaciones.Text = oAux.Tables[0].Rows[0]["DPU_Observaciones"].ToString();
-                        txtObjetivo.Text = oAux.Tables[0].Rows[0]["DPU_Objetivo"].ToString();
-                        txtClave.Text = oAux.Tables[0].Rows[0]["DPU_Clave"].ToString();
-                        txtAutoridad.Text = oAux.Tables[0].Rows[0]["DPU_Autoridad"].ToString();
-                       
-                        //cboColaboradores.SelectedItem.Text= oAux.Tables[0].Rows[0]["DPU_Colobaradores"].ToString();
+                        /* DATOS GENERALES DEL PERFIL */
+                        if (oAux.Tables[0].Rows.Count > 0) {
+                            txtId.Text = oAux.Tables[0].Rows[0]["DPU_Id"].ToString();
+                            cboSuperior.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DPU_Superior"].ToString());
+                            cboInferior.SelectedValue = int.Parse(oAux.Tables[0].Rows[0]["DPU_Inferior"].ToString());
+                            txtObservaciones.Text = oAux.Tables[0].Rows[0]["DPU_Observaciones"].ToString();
+                            txtObjetivo.Text = oAux.Tables[0].Rows[0]["DPU_Objetivo"].ToString();
+                            txtClave.Text = oAux.Tables[0].Rows[0]["DPU_Clave"].ToString();
+                            txtAutoridad.Text = oAux.Tables[0].Rows[0]["DPU_Autoridad"].ToString();
+                            cboColaboradores.SelectedIndex = int.Parse(oAux.Tables[0].Rows[0]["DPU_Colobaradores"].ToString());
+                        }
+                    } else {
+                        oAux.Tables.Clear();
                     }
                 }
                 ActualizaGrid();
@@ -288,12 +314,18 @@ namespace Hersan.UI.CapitalHumano
         private void frmDescripcionPuestos_Load(object sender, EventArgs e)
         {
             try {
-               
+
+                // Summatoria de datos
+                GridViewSummaryRowItem item1 = new GridViewSummaryRowItem();
+                item1.Add(new GridViewSummaryItem("Total", "Total:  {0:N2}", GridAggregateFunction.Sum));
+                this.grdDatos.SummaryRowsBottom.Add(item1);
+
                 CargarEntidades();
                 //CargarGrid();
                 CargarCContactos();
                 CargarGridContactos();
                 LimpiarCampos();
+                CalcularPuntos();
 
             } catch (Exception) {
 
@@ -331,9 +363,10 @@ namespace Hersan.UI.CapitalHumano
             try {
 
                 if (Flag && cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
-                    //LimmpiarCampos();
+                    LimpiarDatos();
                     CargarGrid();
                     CargarGridContactos();
+                    CalcularPuntos();
                 }
 
             } catch (Exception ex) {
@@ -353,7 +386,7 @@ namespace Hersan.UI.CapitalHumano
         private void cboContactos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-                Estatus_RadioButton();
+              
 
             } catch (Exception ex) {
 
@@ -377,8 +410,8 @@ namespace Hersan.UI.CapitalHumano
 
                     obj.Concepto = cboContactos.SelectedItem.Text;
                     obj.Id = int.Parse(cboContactos.SelectedValue.ToString());
-                    obj.TipoCon = opInterno.IsChecked ? "INTERNO" : "EXTERNO";
-                    obj.Tipo = true ? opInterno.IsChecked:opExterno.IsChecked;
+                    //obj.TipoCon = opInterno.IsChecked ? "INTERNO" : "EXTERNO";
+                    obj.Tipo = true;
 
                     pList.Add(obj);
                     ActualizaGrid();
@@ -390,16 +423,7 @@ namespace Hersan.UI.CapitalHumano
             }
         }
 
-        private void cboFunciones_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            try {
-                Estatus_RadioButton();
-
-            } catch (Exception) {
-
-                throw;
-            }
-        }
+      
 
         private void btnQuitarItem_Click(object sender, EventArgs e)
         {
@@ -470,7 +494,7 @@ namespace Hersan.UI.CapitalHumano
 
                 obj.Id = txtId.Text.Trim().Length > 0 ? int.Parse(txtId.Text) : 0;
                     obj.Perfiles.Id = int.Parse(txtIdPerfil.Text);
-                    obj.Colabordores = int.Parse(cboColaboradores.SelectedItem.ToString());
+                    obj.Colabordores = cboColaboradores.SelectedIndex;
                     obj.Autoridad = txtAutoridad.Text;
                     obj.Clave = txtClave.Text;
                     obj.Superior = int.Parse(cboSuperior.SelectedValue.ToString());
@@ -509,12 +533,12 @@ namespace Hersan.UI.CapitalHumano
                     } else {
                         RadMessageBox.Show("Ocurrió un error al actualizar la descripcion del puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     }
-                    LimpiarCampos();
-                    CargarGrid();
-                    CargarGridContactos();
+                   
 
                 }
-               
+                LimpiarCampos();
+                CargarGrid();
+                CargarGridContactos();
 
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al guardar la descripcion del puesto\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

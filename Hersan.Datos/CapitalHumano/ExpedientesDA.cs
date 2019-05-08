@@ -231,7 +231,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.EdoCivil = reader["EDP_EdoCivil"].ToString();
                                 obj.EdoCivilOtro = reader["EDP_EdoCivilOtros"].ToString();
                                 obj.Correo = reader["EDP_Correo"].ToString();
-                                obj.Empleados.Id = int.Parse(reader["EMP_Numero"].ToString());
+                                //obj.Empleados.Id = int.Parse(reader["EMP_Numero"].ToString());
                                 oList.Add(obj);
                             }
                         }

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
+            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -1009,16 +1009,16 @@
             this.cboRecibo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboRecibo.AutoScroll = true;
             this.cboRecibo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "LUNES";
-            radListDataItem2.Text = "MARTES";
-            radListDataItem3.Text = "MIÉRCOLES";
-            radListDataItem4.Text = "JUEVES";
-            radListDataItem5.Text = "VIERNES";
-            this.cboRecibo.Items.Add(radListDataItem1);
-            this.cboRecibo.Items.Add(radListDataItem2);
-            this.cboRecibo.Items.Add(radListDataItem3);
-            this.cboRecibo.Items.Add(radListDataItem4);
-            this.cboRecibo.Items.Add(radListDataItem5);
+            radListDataItem11.Text = "LUNES";
+            radListDataItem12.Text = "MARTES";
+            radListDataItem13.Text = "MIÉRCOLES";
+            radListDataItem14.Text = "JUEVES";
+            radListDataItem15.Text = "VIERNES";
+            this.cboRecibo.Items.Add(radListDataItem11);
+            this.cboRecibo.Items.Add(radListDataItem12);
+            this.cboRecibo.Items.Add(radListDataItem13);
+            this.cboRecibo.Items.Add(radListDataItem14);
+            this.cboRecibo.Items.Add(radListDataItem15);
             this.cboRecibo.Location = new System.Drawing.Point(103, 114);
             this.cboRecibo.Name = "cboRecibo";
             this.cboRecibo.Size = new System.Drawing.Size(125, 20);
@@ -1038,16 +1038,16 @@
             this.cboPago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboPago.AutoScroll = true;
             this.cboPago.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem6.Text = "LUNES";
-            radListDataItem7.Text = "MARTES";
-            radListDataItem8.Text = "MIÉRCOLES";
-            radListDataItem9.Text = "JUEVES";
-            radListDataItem10.Text = "VIERNES";
-            this.cboPago.Items.Add(radListDataItem6);
-            this.cboPago.Items.Add(radListDataItem7);
-            this.cboPago.Items.Add(radListDataItem8);
-            this.cboPago.Items.Add(radListDataItem9);
-            this.cboPago.Items.Add(radListDataItem10);
+            radListDataItem1.Text = "LUNES";
+            radListDataItem2.Text = "MARTES";
+            radListDataItem3.Text = "MIÉRCOLES";
+            radListDataItem4.Text = "JUEVES";
+            radListDataItem5.Text = "VIERNES";
+            this.cboPago.Items.Add(radListDataItem1);
+            this.cboPago.Items.Add(radListDataItem2);
+            this.cboPago.Items.Add(radListDataItem3);
+            this.cboPago.Items.Add(radListDataItem4);
+            this.cboPago.Items.Add(radListDataItem5);
             this.cboPago.Location = new System.Drawing.Point(103, 89);
             this.cboPago.Name = "cboPago";
             this.cboPago.Size = new System.Drawing.Size(125, 20);
@@ -1263,7 +1263,7 @@
             this.docReferencias.Location = new System.Drawing.Point(6, 29);
             this.docReferencias.Name = "docReferencias";
             this.docReferencias.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.docReferencias.Size = new System.Drawing.Size(886, 314);
+            this.docReferencias.Size = new System.Drawing.Size(884, 312);
             this.docReferencias.Text = "Referencias Comerciales";
             // 
             // radPanel2
@@ -1289,7 +1289,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 0);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(886, 314);
+            this.radPanel2.Size = new System.Drawing.Size(884, 312);
             this.radPanel2.TabIndex = 0;
             // 
             // txtContac2
@@ -1475,7 +1475,7 @@
             this.docCondiciones.Location = new System.Drawing.Point(6, 29);
             this.docCondiciones.Name = "docCondiciones";
             this.docCondiciones.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.docCondiciones.Size = new System.Drawing.Size(886, 314);
+            this.docCondiciones.Size = new System.Drawing.Size(884, 312);
             this.docCondiciones.Text = "Condiciones Comerciales";
             // 
             // txtDescto

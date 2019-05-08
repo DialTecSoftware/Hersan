@@ -278,29 +278,31 @@ namespace Hersan.UI.CapitalHumano
         {
 
             try {
-                
-                 
-                    if (!rdbAceptado.IsChecked && !rdbRechazado.IsChecked) {
+
+
+
+                if (!rdbAceptado.IsChecked && !rdbRechazado.IsChecked) {
                     RadMessageBox.Show("Actualiza el estatus del Candidato(Rechazado o Acpetado)\n antes de enviar correo"
-                                        , this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                         , this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     return;
                 }
+                if (RadMessageBox.Show("Desea mandar correo al candidato...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                     #region Correo
                     string pwd = "Catcooptest";
-                string smtp = "smtp.GMAIL.com";
-                string emisor = "Key.Solutions.Test@gmail.com";
-                string destinatario = txtCorreo.Text;
-                string asunto = "Reclutamiento Hersan HiTech sapi de cv ";
-                int port = 587;
-                if (txtId.Text != "-1") { 
-                       string CuerpoMsg = CreateBody();
-                    BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
-                    RadMessageBox.Show("Correo enviado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);                       
-                  } 
-                    else
-                    RadMessageBox.Show("Selecciona un candidato para mandar el correo\n", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    string smtp = "smtp.GMAIL.com";
+                    string emisor = "Key.Solutions.Test@gmail.com";
+                    string destinatario = txtCorreo.Text;
+                    string asunto = "Reclutamiento Hersan HiTech sapi de cv ";
+                    int port = 587;
+                    if (txtId.Text != "-1") {
+                        string CuerpoMsg = CreateBody();
+                        BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
+                        RadMessageBox.Show("Correo enviado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    } else
+                        RadMessageBox.Show("Selecciona un candidato para mandar el correo\n", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
 
-                #endregion
+                    #endregion
+                }
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurrió un error al mandar el correo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

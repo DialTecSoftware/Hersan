@@ -52,6 +52,7 @@
     <Compile Include="CapitalHumano\DictamenSustitucionBP.cs" />
     <Compile Include="CapitalHumano\DigitalizadosBP.cs" />
     <Compile Include="CapitalHumano\EducacionBP.cs" />
+    <Compile Include="CapitalHumano\EmpleadosBP.cs" />
     <Compile Include="CapitalHumano\EvaluacionInduccionBP.cs" />
     <Compile Include="CapitalHumano\ExpedientesBP.cs" />
     <Compile Include="CapitalHumano\FuncionesBP.cs" />

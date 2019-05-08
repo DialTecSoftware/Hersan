@@ -65,6 +65,7 @@
     <Compile Include="CapitalHumano\DescripcionPuestosDA.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoDA.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionDA.cs" />
+    <Compile Include="CapitalHumano\EmpleadosDA.cs" />
     <Compile Include="CapitalHumano\EvaluacionInduccionDA.cs" />
     <Compile Include="CapitalHumano\ExpedientesDA.cs" />
     <Compile Include="CapitalHumano\NuevoPuestoDA.cs" />

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDescripcionPuestos));
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
@@ -40,6 +39,7 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -56,19 +56,15 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDescripcionPuestos));
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
@@ -98,15 +94,7 @@
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
             this.documentWindow3 = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.radTimePicker3 = new Telerik.WinControls.UI.RadTimePicker();
-            this.radTimePicker4 = new Telerik.WinControls.UI.RadTimePicker();
-            this.radTimePicker2 = new Telerik.WinControls.UI.RadTimePicker();
-            this.radTimePicker1 = new Telerik.WinControls.UI.RadTimePicker();
             this.txtEquipo = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -126,18 +114,21 @@
             this.radCommandBar2 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement2 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnQuitarItem = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnQuitarTodo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator6 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.opExterno = new Telerik.WinControls.UI.RadRadioButton();
-            this.opInterno = new Telerik.WinControls.UI.RadRadioButton();
-            this.btnAddPariente = new Telerik.WinControls.UI.RadButton();
             this.label8 = new System.Windows.Forms.Label();
             this.cboContactos = new Telerik.WinControls.UI.RadDropDownList();
             this.txtIdPerfil = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnQuitarItem = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnQuitarTodo = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnAddPariente = new Telerik.WinControls.UI.RadButton();
+            this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -152,10 +143,6 @@
             this.documentWindow3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
             this.radPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
             this.toolTabStrip1.SuspendLayout();
             this.toolWindow1.SuspendLayout();
@@ -177,10 +164,8 @@
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.opExterno)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opInterno)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPariente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboContactos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddPariente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,7 +176,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(951, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(921, 77);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -217,31 +202,11 @@
             this.commandBarStripElement1.Name = "commandBarStripElement1";
             this.commandBarStripElement1.StretchHorizontally = true;
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.DisplayName = "commandBarButton1";
-            this.btnNuevo.DrawText = true;
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
             // commandBarSeparator1
             // 
             this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
             this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.DisplayName = "commandBarButton2";
-            this.btnGuardar.DrawText = true;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // commandBarSeparator2
             // 
@@ -249,31 +214,11 @@
             this.commandBarSeparator2.Name = "commandBarSeparator2";
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayName = "commandBarButton3";
-            this.btnEliminar.DrawText = true;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // commandBarSeparator3
             // 
             this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
             this.commandBarSeparator3.Name = "commandBarSeparator3";
             this.commandBarSeparator3.VisibleInOverflowMenu = false;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.DisplayName = "commandBarButton4";
-            this.btnSalir.DrawText = true;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Text = "Salir ";
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // commandBarSeparator4
             // 
@@ -292,6 +237,7 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.label15);
             this.radPanel1.Controls.Add(this.txtIdPerfil);
             this.radPanel1.Controls.Add(this.cboColaboradores);
             this.radPanel1.Controls.Add(this.txtId);
@@ -317,9 +263,9 @@
             this.radPanel1.Controls.Add(this.cboPuestos);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 81);
+            this.radPanel1.Location = new System.Drawing.Point(0, 77);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(951, 144);
+            this.radPanel1.Size = new System.Drawing.Size(921, 144);
             this.radPanel1.TabIndex = 1;
             // 
             // cboColaboradores
@@ -368,7 +314,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(379, 85);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(52, 20);
+            this.txtId.Size = new System.Drawing.Size(52, 22);
             this.txtId.TabIndex = 34;
             // 
             // txtObservaciones
@@ -417,7 +363,7 @@
             // 
             this.txtClave.Location = new System.Drawing.Point(379, 62);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(192, 20);
+            this.txtClave.Size = new System.Drawing.Size(192, 22);
             this.txtClave.TabIndex = 23;
             // 
             // label9
@@ -434,7 +380,7 @@
             this.txtExperiencia.Location = new System.Drawing.Point(95, 87);
             this.txtExperiencia.Name = "txtExperiencia";
             this.txtExperiencia.ReadOnly = true;
-            this.txtExperiencia.Size = new System.Drawing.Size(42, 20);
+            this.txtExperiencia.Size = new System.Drawing.Size(42, 22);
             this.txtExperiencia.TabIndex = 21;
             // 
             // label13
@@ -559,14 +505,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 225);
+            this.radDock1.Location = new System.Drawing.Point(0, 221);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(951, 234);
+            this.radDock1.Size = new System.Drawing.Size(921, 241);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -577,20 +523,12 @@
             this.documentWindow3.Location = new System.Drawing.Point(6, 29);
             this.documentWindow3.Name = "documentWindow3";
             this.documentWindow3.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow3.Size = new System.Drawing.Size(584, 214);
+            this.documentWindow3.Size = new System.Drawing.Size(465, 192);
             this.documentWindow3.Text = "CONDOCIONES DE AMBIENTE DE TRABAJO";
             // 
             // radPanel4
             // 
-            this.radPanel4.Controls.Add(this.label18);
-            this.radPanel4.Controls.Add(this.radTimePicker3);
-            this.radPanel4.Controls.Add(this.radTimePicker4);
-            this.radPanel4.Controls.Add(this.radTimePicker2);
-            this.radPanel4.Controls.Add(this.radTimePicker1);
             this.radPanel4.Controls.Add(this.txtEquipo);
-            this.radPanel4.Controls.Add(this.label17);
-            this.radPanel4.Controls.Add(this.label16);
-            this.radPanel4.Controls.Add(this.label15);
             this.radPanel4.Controls.Add(this.label14);
             this.radPanel4.Controls.Add(this.label12);
             this.radPanel4.Controls.Add(this.label11);
@@ -601,101 +539,21 @@
             this.radPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel4.Location = new System.Drawing.Point(0, 0);
             this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(584, 128);
+            this.radPanel4.Size = new System.Drawing.Size(465, 199);
             this.radPanel4.TabIndex = 1;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(473, 76);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(108, 13);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "Hora Salida Comida";
-            // 
-            // radTimePicker3
-            // 
-            this.radTimePicker3.Location = new System.Drawing.Point(592, 50);
-            this.radTimePicker3.MaxValue = new System.DateTime(9999, 12, 31, 23, 59, 59, 0);
-            this.radTimePicker3.MinValue = new System.DateTime(((long)(0)));
-            this.radTimePicker3.Name = "radTimePicker3";
-            this.radTimePicker3.Size = new System.Drawing.Size(100, 20);
-            this.radTimePicker3.TabIndex = 11;
-            this.radTimePicker3.TabStop = false;
-            this.radTimePicker3.Value = new System.DateTime(2019, 4, 23, 11, 6, 19, 409);
-            // 
-            // radTimePicker4
-            // 
-            this.radTimePicker4.Location = new System.Drawing.Point(592, 100);
-            this.radTimePicker4.MaxValue = new System.DateTime(9999, 12, 31, 23, 59, 59, 0);
-            this.radTimePicker4.MinValue = new System.DateTime(((long)(0)));
-            this.radTimePicker4.Name = "radTimePicker4";
-            this.radTimePicker4.Size = new System.Drawing.Size(100, 20);
-            this.radTimePicker4.TabIndex = 11;
-            this.radTimePicker4.TabStop = false;
-            this.radTimePicker4.Value = new System.DateTime(2019, 4, 23, 18, 0, 0, 0);
-            // 
-            // radTimePicker2
-            // 
-            this.radTimePicker2.Location = new System.Drawing.Point(592, 74);
-            this.radTimePicker2.MaxValue = new System.DateTime(9999, 12, 31, 23, 59, 59, 0);
-            this.radTimePicker2.MinValue = new System.DateTime(((long)(0)));
-            this.radTimePicker2.Name = "radTimePicker2";
-            this.radTimePicker2.Size = new System.Drawing.Size(100, 20);
-            this.radTimePicker2.TabIndex = 11;
-            this.radTimePicker2.TabStop = false;
-            this.radTimePicker2.Value = new System.DateTime(2019, 4, 23, 11, 6, 19, 409);
-            // 
-            // radTimePicker1
-            // 
-            this.radTimePicker1.Location = new System.Drawing.Point(592, 24);
-            this.radTimePicker1.MaxValue = new System.DateTime(9999, 12, 31, 23, 59, 59, 0);
-            this.radTimePicker1.MinValue = new System.DateTime(((long)(0)));
-            this.radTimePicker1.Name = "radTimePicker1";
-            this.radTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.radTimePicker1.TabIndex = 11;
-            this.radTimePicker1.TabStop = false;
-            this.radTimePicker1.Value = new System.DateTime(2019, 4, 23, 9, 0, 0, 0);
-            ((Telerik.WinControls.UI.RadTimePickerElement)(this.radTimePicker1.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             // 
             // txtEquipo
             // 
-            this.txtEquipo.Location = new System.Drawing.Point(107, 85);
+            this.txtEquipo.Location = new System.Drawing.Point(488, 107);
+            this.txtEquipo.Multiline = true;
             this.txtEquipo.Name = "txtEquipo";
-            this.txtEquipo.Size = new System.Drawing.Size(264, 20);
+            this.txtEquipo.Size = new System.Drawing.Size(238, 65);
             this.txtEquipo.TabIndex = 10;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(512, 102);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(69, 13);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Hora Salida:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(503, 24);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(78, 13);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "Hora Entrada:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(483, 53);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(98, 13);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "Hora Entr Comida";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(0, 88);
+            this.label14.Location = new System.Drawing.Point(378, 110);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(101, 13);
             this.label14.TabIndex = 6;
@@ -704,7 +562,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(2, 62);
+            this.label12.Location = new System.Drawing.Point(380, 14);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(99, 13);
             this.label12.TabIndex = 5;
@@ -713,7 +571,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(54, 33);
+            this.label11.Location = new System.Drawing.Point(37, 110);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 4;
@@ -721,29 +579,32 @@
             // 
             // txtCondiciones
             // 
-            this.txtCondiciones.Location = new System.Drawing.Point(107, 59);
+            this.txtCondiciones.Location = new System.Drawing.Point(485, 14);
+            this.txtCondiciones.Multiline = true;
             this.txtCondiciones.Name = "txtCondiciones";
-            this.txtCondiciones.Size = new System.Drawing.Size(264, 20);
+            this.txtCondiciones.Size = new System.Drawing.Size(241, 64);
             this.txtCondiciones.TabIndex = 3;
             // 
             // txtRiesgo
             // 
-            this.txtRiesgo.Location = new System.Drawing.Point(107, 33);
+            this.txtRiesgo.Location = new System.Drawing.Point(90, 107);
+            this.txtRiesgo.Multiline = true;
             this.txtRiesgo.Name = "txtRiesgo";
-            this.txtRiesgo.Size = new System.Drawing.Size(264, 20);
+            this.txtRiesgo.Size = new System.Drawing.Size(264, 65);
             this.txtRiesgo.TabIndex = 2;
             // 
             // txtEsfuerzo
             // 
-            this.txtEsfuerzo.Location = new System.Drawing.Point(107, 7);
+            this.txtEsfuerzo.Location = new System.Drawing.Point(90, 14);
+            this.txtEsfuerzo.Multiline = true;
             this.txtEsfuerzo.Name = "txtEsfuerzo";
-            this.txtEsfuerzo.Size = new System.Drawing.Size(264, 20);
+            this.txtEsfuerzo.Size = new System.Drawing.Size(264, 64);
             this.txtEsfuerzo.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 10);
+            this.label10.Location = new System.Drawing.Point(3, 14);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(81, 13);
             this.label10.TabIndex = 0;
@@ -760,9 +621,9 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(341, 224);
-            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(341, 200);
-            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(141, 0);
+            this.toolTabStrip1.Size = new System.Drawing.Size(430, 231);
+            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(430, 200);
+            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(230, 0);
             this.toolTabStrip1.TabIndex = 1;
             this.toolTabStrip1.TabStop = false;
             // 
@@ -775,7 +636,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 22);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(339, 200);
+            this.toolWindow1.Size = new System.Drawing.Size(428, 207);
             this.toolWindow1.Text = "PERFIL DE PUESTO";
             this.toolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -793,49 +654,55 @@
             this.grdDatos.MasterTemplate.AutoExpandGroups = true;
             this.grdDatos.MasterTemplate.AutoGenerateColumns = false;
             this.grdDatos.MasterTemplate.BottomPinnedRowsMode = Telerik.WinControls.UI.GridViewBottomPinnedRowsMode.Fixed;
-            gridViewTextBoxColumn4.FieldName = "Id";
-            gridViewTextBoxColumn4.HeaderText = "Id";
+            gridViewTextBoxColumn3.FieldName = "Id";
+            gridViewTextBoxColumn3.HeaderText = "Id";
+            gridViewTextBoxColumn3.IsVisible = false;
+            gridViewTextBoxColumn3.Name = "IdComp";
+            gridViewTextBoxColumn4.FieldName = "DatosUsuario.Estatus";
+            gridViewTextBoxColumn4.HeaderText = "Estatus";
             gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "IdComp";
-            gridViewTextBoxColumn5.FieldName = "DatosUsuario.Estatus";
-            gridViewTextBoxColumn5.HeaderText = "Estatus";
+            gridViewTextBoxColumn4.Name = "Estatus";
+            gridViewTextBoxColumn5.FieldName = "Grupo";
+            gridViewTextBoxColumn5.HeaderText = "Característica";
             gridViewTextBoxColumn5.IsVisible = false;
-            gridViewTextBoxColumn5.Name = "Estatus";
-            gridViewTextBoxColumn6.FieldName = "Grupo";
-            gridViewTextBoxColumn6.HeaderText = "Característica";
-            gridViewTextBoxColumn6.IsVisible = false;
-            gridViewTextBoxColumn6.MaxWidth = 100;
-            gridViewTextBoxColumn6.MinWidth = 100;
-            gridViewTextBoxColumn6.Name = "Grupo";
-            gridViewTextBoxColumn6.Width = 100;
-            gridViewTextBoxColumn7.FieldName = "Concepto";
-            gridViewTextBoxColumn7.HeaderText = "Concepto";
-            gridViewTextBoxColumn7.MaxWidth = 250;
-            gridViewTextBoxColumn7.MinWidth = 200;
-            gridViewTextBoxColumn7.Name = "Concepto";
+            gridViewTextBoxColumn5.MaxWidth = 100;
+            gridViewTextBoxColumn5.MinWidth = 100;
+            gridViewTextBoxColumn5.Name = "Grupo";
+            gridViewTextBoxColumn5.Width = 100;
+            gridViewTextBoxColumn6.FieldName = "Concepto";
+            gridViewTextBoxColumn6.HeaderText = "Concepto";
+            gridViewTextBoxColumn6.MaxWidth = 250;
+            gridViewTextBoxColumn6.MinWidth = 200;
+            gridViewTextBoxColumn6.Name = "Concepto";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 200;
+            gridViewTextBoxColumn6.WrapText = true;
+            gridViewTextBoxColumn7.FieldName = "Tipo";
+            gridViewTextBoxColumn7.FormatString = "{0:N2}";
+            gridViewTextBoxColumn7.HeaderText = "Nivel";
+            gridViewTextBoxColumn7.MaxWidth = 70;
+            gridViewTextBoxColumn7.MinWidth = 70;
+            gridViewTextBoxColumn7.Name = "Tipo";
             gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 200;
+            gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn7.Width = 70;
             gridViewTextBoxColumn7.WrapText = true;
-            gridViewTextBoxColumn8.FieldName = "Tipo";
+            gridViewTextBoxColumn8.FieldName = "Valor";
             gridViewTextBoxColumn8.FormatString = "{0:N2}";
-            gridViewTextBoxColumn8.HeaderText = "Nivel";
+            gridViewTextBoxColumn8.HeaderText = "Peso";
             gridViewTextBoxColumn8.MaxWidth = 70;
             gridViewTextBoxColumn8.MinWidth = 70;
-            gridViewTextBoxColumn8.Name = "Tipo";
+            gridViewTextBoxColumn8.Name = "Valor";
             gridViewTextBoxColumn8.ReadOnly = true;
             gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn8.Width = 70;
-            gridViewTextBoxColumn8.WrapText = true;
-            gridViewTextBoxColumn9.FieldName = "Valor";
-            gridViewTextBoxColumn9.FormatString = "{0:N2}";
-            gridViewTextBoxColumn9.HeaderText = "Peso";
-            gridViewTextBoxColumn9.MaxWidth = 70;
-            gridViewTextBoxColumn9.MinWidth = 70;
-            gridViewTextBoxColumn9.Name = "Valor";
+            gridViewTextBoxColumn9.FieldName = "Total";
+            gridViewTextBoxColumn9.HeaderText = "Total";
+            gridViewTextBoxColumn9.Name = "Total";
             gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn9.Width = 70;
+            gridViewTextBoxColumn9.Width = 80;
             this.grdDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
@@ -848,7 +715,7 @@
             this.grdDatos.Name = "grdDatos";
             this.grdDatos.ShowGroupPanel = false;
             this.grdDatos.ShowNoDataText = false;
-            this.grdDatos.Size = new System.Drawing.Size(339, 86);
+            this.grdDatos.Size = new System.Drawing.Size(428, 93);
             this.grdDatos.TabIndex = 5;
             // 
             // grdDatosEdu
@@ -908,7 +775,7 @@
             this.grdDatosEdu.Name = "grdDatosEdu";
             this.grdDatosEdu.ShowGroupPanel = false;
             this.grdDatosEdu.ShowNoDataText = false;
-            this.grdDatosEdu.Size = new System.Drawing.Size(339, 114);
+            this.grdDatosEdu.Size = new System.Drawing.Size(428, 114);
             this.grdDatosEdu.TabIndex = 4;
             // 
             // documentContainer1
@@ -919,9 +786,9 @@
             // 
             // 
             this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentContainer1.SizeInfo.AbsoluteSize = new System.Drawing.Size(596, 200);
+            this.documentContainer1.SizeInfo.AbsoluteSize = new System.Drawing.Size(477, 200);
             this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
-            this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-141, 0);
+            this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-230, 0);
             this.documentContainer1.TabIndex = 2;
             // 
             // documentTabStrip1
@@ -936,7 +803,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(596, 224);
+            this.documentTabStrip1.Size = new System.Drawing.Size(477, 231);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -945,10 +812,10 @@
             this.documentWindow2.Controls.Add(this.radPanel3);
             this.documentWindow2.Controls.Add(this.radPanel2);
             this.documentWindow2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.documentWindow2.Location = new System.Drawing.Point(6, 29);
+            this.documentWindow2.Location = new System.Drawing.Point(6, 31);
             this.documentWindow2.Name = "documentWindow2";
             this.documentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow2.Size = new System.Drawing.Size(584, 189);
+            this.documentWindow2.Size = new System.Drawing.Size(465, 194);
             this.documentWindow2.Text = "FUNCIONES Y CONTACTOS";
             // 
             // radPanel3
@@ -958,14 +825,14 @@
             this.radPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel3.Location = new System.Drawing.Point(296, 0);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(288, 189);
+            this.radPanel3.Size = new System.Drawing.Size(169, 194);
             this.radPanel3.TabIndex = 1;
             // 
             // gvContactos
             // 
             this.gvContactos.AutoScroll = true;
             this.gvContactos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gvContactos.Location = new System.Drawing.Point(0, 56);
+            this.gvContactos.Location = new System.Drawing.Point(0, 52);
             // 
             // 
             // 
@@ -986,11 +853,8 @@
             gridViewTextBoxColumn2.FieldName = "Concepto";
             gridViewTextBoxColumn2.HeaderText = "Contacto";
             gridViewTextBoxColumn2.Name = "Concepto";
-            gridViewTextBoxColumn2.Width = 120;
-            gridViewTextBoxColumn3.FieldName = "TipoCon";
-            gridViewTextBoxColumn3.HeaderText = "Interno\\Externo";
-            gridViewTextBoxColumn3.Name = "TipoCon";
-            gridViewTextBoxColumn3.Width = 100;
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 220;
             gridViewCheckBoxColumn2.FieldName = "DatosUsuario.Estatus";
             gridViewCheckBoxColumn2.HeaderText = "Estatus";
             gridViewCheckBoxColumn2.IsVisible = false;
@@ -999,7 +863,6 @@
             gridViewTextBoxColumn1,
             gridViewCheckBoxColumn1,
             gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
             gridViewCheckBoxColumn2});
             this.gvContactos.MasterTemplate.ShowGroupedColumns = true;
             this.gvContactos.MasterTemplate.ShowRowHeaderColumn = false;
@@ -1007,7 +870,7 @@
             this.gvContactos.Name = "gvContactos";
             this.gvContactos.ShowGroupPanel = false;
             this.gvContactos.ShowNoDataText = false;
-            this.gvContactos.Size = new System.Drawing.Size(288, 179);
+            this.gvContactos.Size = new System.Drawing.Size(169, 179);
             this.gvContactos.TabIndex = 4;
             // 
             // radCommandBar2
@@ -1017,7 +880,7 @@
             this.radCommandBar2.Name = "radCommandBar2";
             this.radCommandBar2.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement2});
-            this.radCommandBar2.Size = new System.Drawing.Size(288, 56);
+            this.radCommandBar2.Size = new System.Drawing.Size(169, 52);
             this.radCommandBar2.TabIndex = 0;
             // 
             // commandBarRowElement2
@@ -1043,31 +906,11 @@
             this.commandBarStripElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             ((Telerik.WinControls.UI.RadCommandBarOverflowButton)(this.commandBarStripElement2.GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             // 
-            // btnQuitarItem
-            // 
-            this.btnQuitarItem.DisplayName = "commandBarButton1";
-            this.btnQuitarItem.DrawText = true;
-            this.btnQuitarItem.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarItem.Image")));
-            this.btnQuitarItem.Name = "btnQuitarItem";
-            this.btnQuitarItem.Text = "Quitar Item";
-            this.btnQuitarItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnQuitarItem.Click += new System.EventHandler(this.btnQuitarItem_Click);
-            // 
             // commandBarSeparator5
             // 
             this.commandBarSeparator5.DisplayName = "commandBarSeparator5";
             this.commandBarSeparator5.Name = "commandBarSeparator5";
             this.commandBarSeparator5.VisibleInOverflowMenu = false;
-            // 
-            // btnQuitarTodo
-            // 
-            this.btnQuitarTodo.DisplayName = "commandBarButton2";
-            this.btnQuitarTodo.DrawText = true;
-            this.btnQuitarTodo.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarTodo.Image")));
-            this.btnQuitarTodo.Name = "btnQuitarTodo";
-            this.btnQuitarTodo.Text = "Quitar todo";
-            this.btnQuitarTodo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnQuitarTodo.Click += new System.EventHandler(this.btnQuitarTodo_Click);
             // 
             // commandBarSeparator6
             // 
@@ -1081,14 +924,12 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.radPanel2.Location = new System.Drawing.Point(0, 0);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(296, 189);
+            this.radPanel2.Size = new System.Drawing.Size(296, 194);
             this.radPanel2.TabIndex = 0;
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.opExterno);
-            this.radGroupBox1.Controls.Add(this.opInterno);
             this.radGroupBox1.Controls.Add(this.btnAddPariente);
             this.radGroupBox1.Controls.Add(this.label8);
             this.radGroupBox1.Controls.Add(this.cboContactos);
@@ -1099,44 +940,6 @@
             this.radGroupBox1.Size = new System.Drawing.Size(296, 113);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "Contactos";
-            // 
-            // opExterno
-            // 
-            this.opExterno.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
-            this.opExterno.Location = new System.Drawing.Point(98, 62);
-            this.opExterno.Name = "opExterno";
-            this.opExterno.RadioCheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.opExterno.Size = new System.Drawing.Size(58, 18);
-            this.opExterno.TabIndex = 54;
-            this.opExterno.TabStop = false;
-            this.opExterno.Text = "Externo";
-            // 
-            // opInterno
-            // 
-            this.opInterno.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.opInterno.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
-            this.opInterno.Location = new System.Drawing.Point(25, 62);
-            this.opInterno.Name = "opInterno";
-            this.opInterno.RadioCheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.opInterno.Size = new System.Drawing.Size(56, 18);
-            this.opInterno.TabIndex = 53;
-            this.opInterno.Text = "Interno";
-            this.opInterno.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            // 
-            // btnAddPariente
-            // 
-            this.btnAddPariente.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.btnAddPariente.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPariente.Image")));
-            this.btnAddPariente.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddPariente.Location = new System.Drawing.Point(219, 62);
-            this.btnAddPariente.Name = "btnAddPariente";
-            this.btnAddPariente.Size = new System.Drawing.Size(55, 43);
-            this.btnAddPariente.TabIndex = 52;
-            this.btnAddPariente.Tag = "Foto";
-            this.btnAddPariente.Text = "Agregar Foto";
-            this.btnAddPariente.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAddPariente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAddPariente.Click += new System.EventHandler(this.btnAddPariente_Click);
             // 
             // label8
             // 
@@ -1161,14 +964,98 @@
             // 
             this.txtIdPerfil.Location = new System.Drawing.Point(379, 113);
             this.txtIdPerfil.Name = "txtIdPerfil";
-            this.txtIdPerfil.Size = new System.Drawing.Size(52, 20);
+            this.txtIdPerfil.Size = new System.Drawing.Size(52, 22);
             this.txtIdPerfil.TabIndex = 52;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(143, 88);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 13);
+            this.label15.TabIndex = 53;
+            this.label15.Text = "años";
+            // 
+            // btnQuitarItem
+            // 
+            this.btnQuitarItem.DisplayName = "commandBarButton1";
+            this.btnQuitarItem.DrawText = true;
+            this.btnQuitarItem.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarItem.Image")));
+            this.btnQuitarItem.Name = "btnQuitarItem";
+            this.btnQuitarItem.Text = "Quitar Item";
+            this.btnQuitarItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnQuitarItem.Click += new System.EventHandler(this.btnQuitarItem_Click);
+            // 
+            // btnQuitarTodo
+            // 
+            this.btnQuitarTodo.DisplayName = "commandBarButton2";
+            this.btnQuitarTodo.DrawText = true;
+            this.btnQuitarTodo.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarTodo.Image")));
+            this.btnQuitarTodo.Name = "btnQuitarTodo";
+            this.btnQuitarTodo.Text = "Quitar todo";
+            this.btnQuitarTodo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnQuitarTodo.Click += new System.EventHandler(this.btnQuitarTodo_Click);
+            // 
+            // btnAddPariente
+            // 
+            this.btnAddPariente.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.btnAddPariente.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPariente.Image")));
+            this.btnAddPariente.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddPariente.Location = new System.Drawing.Point(221, 62);
+            this.btnAddPariente.Name = "btnAddPariente";
+            this.btnAddPariente.Size = new System.Drawing.Size(55, 43);
+            this.btnAddPariente.TabIndex = 52;
+            this.btnAddPariente.Tag = "Foto";
+            this.btnAddPariente.Text = "Agregar Foto";
+            this.btnAddPariente.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAddPariente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddPariente.Click += new System.EventHandler(this.btnAddPariente_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.DisplayName = "commandBarButton1";
+            this.btnNuevo.DrawText = true;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DisplayName = "commandBarButton2";
+            this.btnGuardar.DrawText = true;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.DisplayName = "commandBarButton3";
+            this.btnEliminar.DrawText = true;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.DisplayName = "commandBarButton4";
+            this.btnSalir.DrawText = true;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Text = "Salir ";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmDescripcionPuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 459);
+            this.ClientSize = new System.Drawing.Size(921, 462);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -1196,10 +1083,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
             this.radPanel4.ResumeLayout(false);
             this.radPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
             this.toolTabStrip1.ResumeLayout(false);
             this.toolWindow1.ResumeLayout(false);
@@ -1223,10 +1106,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.opExterno)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opInterno)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPariente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboContactos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddPariente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1288,18 +1169,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtExperiencia;
         private System.Windows.Forms.Label label13;
-        private Telerik.WinControls.UI.RadTimePicker radTimePicker3;
-        private Telerik.WinControls.UI.RadTimePicker radTimePicker4;
-        private Telerik.WinControls.UI.RadTimePicker radTimePicker2;
-        private Telerik.WinControls.UI.RadTimePicker radTimePicker1;
         private System.Windows.Forms.TextBox txtEquipo;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label18;
-        private Telerik.WinControls.UI.RadRadioButton opExterno;
-        private Telerik.WinControls.UI.RadRadioButton opInterno;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtObjetivo;
@@ -1314,5 +1185,6 @@
         private Telerik.WinControls.UI.RadGridView grdDatosEdu;
         private Telerik.WinControls.UI.RadDropDownList cboColaboradores;
         private System.Windows.Forms.TextBox txtIdPerfil;
+        private System.Windows.Forms.Label label15;
     }
 }

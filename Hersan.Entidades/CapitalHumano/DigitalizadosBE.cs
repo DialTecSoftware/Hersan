@@ -33,12 +33,16 @@ namespace Hersan.Entidades.CapitalHumano
             Id = 0;
             Tipo = string.Empty;
             Sel = false;
+            NombreArchivo = string.Empty;
+            RutaArchivo = string.Empty;
             RutaArchivo = string.Empty;
             IdTipo = 0;
             Digitalizados = new DigitalizadosBE();
             DatosUsuario = new GeneralBE();
         }
         public int Id { get; set; }
+        public string NombreArchivo { get; set; }
+        public string RutaOriginal;
         public string Tipo { get; set; }
         public string RutaArchivo { get; set; }
         public bool Sel { get; set; }

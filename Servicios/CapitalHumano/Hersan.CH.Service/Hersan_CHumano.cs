@@ -210,9 +210,9 @@ namespace Hersan.CH.Service
 
         #region Digitalizados
      
-        public DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp)
+        public DataSet CHU_Digitalizados_Obtener(int IdExp)
         {
-            return new DigitalizadosBP().CHU_Digitalizados_Obtener(IdExp, NoEmp);
+            return new DigitalizadosBP().CHU_Digitalizados_Obtener(IdExp);
         }
         public int CHU_Digitalizados_Guardar(DigitalizadosBE obj, DataTable Detalle)
         {
@@ -247,6 +247,17 @@ namespace Hersan.CH.Service
         public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario)
         {
             return new DescripcionPuestosBP().CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
+        }
+        #endregion
+
+        #region Empleados
+        public int CHUEmpleados_Guardar(EmpleadosBE obj)
+        {
+            return new EmpleadosBP().CHUEmpleados_Guardar(obj);
+        }
+        public int CHU_EmpleadosActualizar(EmpleadosBE obj)
+        {
+            return new EmpleadosBP().CHU_EmpleadosActualizar(obj);
         }
         #endregion
     }

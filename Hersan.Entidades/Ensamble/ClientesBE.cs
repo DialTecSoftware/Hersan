@@ -2,7 +2,7 @@
 using Hersan.Entidades.Comun;
 using System.Collections.Generic;
 
-namespace Hersan.Entidades.Ventas
+namespace Hersan.Entidades.Ensamble
 {
     public class ClientesBE
     {

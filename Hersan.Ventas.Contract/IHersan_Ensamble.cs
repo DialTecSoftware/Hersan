@@ -1,6 +1,5 @@
 ﻿using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Ensamble;
-using Hersan.Entidades.Ventas;
 using System.Collections.Generic;
 using System.ServiceModel;
 
@@ -67,6 +66,12 @@ namespace Hersan.Ensamble.Contract
         #region Cotizaciones y Pedidos
         [OperationContract]
         int ENS_Cotizacion_Guardar(int IdCliente, System.Data.DataTable oDetalle, int IdUsuario);
+        [OperationContract]
+        List<PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final);
+        [OperationContract]
+        List<PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion);
+        [OperationContract]
+        int ENS_Cotizacion_Actualizar(PedidosBE obj, System.Data.DataTable oDetalle);
         #endregion
     }
 }

@@ -224,6 +224,8 @@ namespace Hersan.Catalogos.Contract
         List<AccesoriosBE> ENS_Accesorios_Obtener();
         [OperationContract]
         List<AccesoriosBE> ENS_Accesorios_Combo();
+        [OperationContract]
+        List<AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha);
         #endregion
 
         #region Tipos de Clientes

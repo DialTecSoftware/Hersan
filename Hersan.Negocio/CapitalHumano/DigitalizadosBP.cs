@@ -12,9 +12,9 @@ namespace Hersan.Negocio.CapitalHumano
   public  class DigitalizadosBP
     {
       
-        public DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp)
+        public DataSet CHU_Digitalizados_Obtener(int IdExp)
         {
-            return new DigitalizadosDA().CHU_Digitalizados_Obtener(IdExp, NoEmp);
+            return new DigitalizadosDA().CHU_Digitalizados_Obtener(IdExp);
         }
         public int CHU_Digitalizados_Guardar(DigitalizadosBE obj, DataTable Detalle)
         {

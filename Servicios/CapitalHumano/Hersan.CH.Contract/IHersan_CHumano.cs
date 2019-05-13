@@ -131,7 +131,7 @@ namespace Hersan.CH.Contract
 
         #region Digitalizados
         [OperationContract]
-        DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp);
+        DataSet CHU_Digitalizados_Obtener(int IdExp);
         [OperationContract]
         int CHU_Digitalizados_Guardar(DigitalizadosBE obj, DataTable Detalle);
         [OperationContract]
@@ -149,6 +149,13 @@ namespace Hersan.CH.Contract
         int CHU_DescPuestos_Actualizar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones);
         [OperationContract]
         int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario);
+        #endregion
+
+        #region Empleados
+        [OperationContract]
+        int CHUEmpleados_Guardar(EmpleadosBE obj);
+        [OperationContract]
+        int CHU_EmpleadosActualizar(EmpleadosBE obj);
         #endregion
     }
 }

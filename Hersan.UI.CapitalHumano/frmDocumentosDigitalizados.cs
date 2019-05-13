@@ -23,6 +23,7 @@ namespace Hersan.UI.CapitalHumano
         private DigitalizadosDetalleBE oDetalle;
         ExpedientesDatosPersonales oDatosPersonales;
         string path = string.Empty;
+        string directory = string.Empty;
         bool Flag;
        
         string filePath = string.Empty;
@@ -43,7 +44,6 @@ namespace Hersan.UI.CapitalHumano
             try {
                 Flag = txtApellidos.Text.Trim().Length == 0 ? false : true;
                 Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
-                Flag = txtNoEmp.Text.Trim().Length == 0 ? false : true;
                 return Flag;
             } catch (Exception ex) {
                 throw ex;
@@ -54,7 +54,6 @@ namespace Hersan.UI.CapitalHumano
         {
             txtApellidos.Text = string.Empty;
             txtId.Text = "0";
-            txtNoEmp.Text = string.Empty;
             txtIdExp.Text = string.Empty;
             txtNombres.Text = string.Empty;
             gvDatos.DataSource=null;
@@ -73,11 +72,18 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
 
-                if (filePath != path)
-                    oList.ForEach(item => {
-                        path = item.RutaArchivo;
-                        filePath = oDialog.FileName;
-                        System.IO.File.Copy(filePath, path, true);
+                if (directory != "")
+                    {
+
+                    DirectoryInfo di = Directory.CreateDirectory(directory);
+
+                }
+
+
+                oList.ForEach(item => {
+                    if (item.RutaOriginal != item.RutaArchivo) {
+                        System.IO.File.Copy(item.RutaOriginal, item.RutaArchivo, true);
+                    }
                     });
                                  
                 } catch (Exception) {
@@ -116,7 +122,7 @@ namespace Hersan.UI.CapitalHumano
                     if (Item.Count > 0) {
                         txtApellidos.Text = Item[0].APaterno + " " + Item[0].AMaterno;
                         txtNombres.Text = Item[0].Nombres;
-                        txtNoEmp.Text = Item[0].Empleados.Id.ToString();
+                   
                     }
                 }
             } catch (Exception) {
@@ -132,8 +138,8 @@ namespace Hersan.UI.CapitalHumano
             Flag = false;
 
             try {
-                if (txtIdExp.Text != null && txtNoEmp.Text != null) {
-                    DataSet oAux = oCHumano.CHU_Digitalizados_Obtener(int.Parse(txtIdExp.Text), int.Parse(txtNoEmp.Text));
+                if (txtIdExp.Text != null ) {
+                    DataSet oAux = oCHumano.CHU_Digitalizados_Obtener(int.Parse(txtIdExp.Text));
                     if (oAux.Tables.Count > 0) {
 
                         /* EDUCACIÓN */
@@ -147,6 +153,8 @@ namespace Hersan.UI.CapitalHumano
                                 IdTipo = int.Parse(oRow["DOC_Id"].ToString()),
                                 Tipo = oRow["DOC_Nombre"].ToString(),
                                 RutaArchivo = oRow["DDT_RutaArchivo"].ToString(),
+                                NombreArchivo= System.IO.Path.GetFileName(oRow["DDT_RutaArchivo"].ToString()),
+                                RutaOriginal = oRow["DDT_RutaArchivo"].ToString(),
 
                             });
                         }
@@ -219,7 +227,7 @@ namespace Hersan.UI.CapitalHumano
 
 
             try {
-                if (txtNoEmp.Text == string.Empty && txtIdExp.Text == string.Empty ) {
+                if (txtIdExp.Text == string.Empty ) {
                     RadMessageBox.Show("Debe de seleccionar un expediente antes de seleciona...\n", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
@@ -230,18 +238,15 @@ namespace Hersan.UI.CapitalHumano
                 oDialog.RestoreDirectory = true;
 
                 if (oDialog.ShowDialog() == DialogResult.OK) {
-
-                    //Get the path of specified file
-                  
+   
+                    //Get the path of specified file                 
+                    string archivo=  System.IO.Path.GetFileName(oDialog.FileName);               
+                   path = directory+ @"\" + archivo;
                     filePath = oDialog.FileName;
-                    string archivo=  System.IO.Path.GetFileName(filePath);
-                    //= filePath.Substring(filePath.LastIndexOf(@"/"));
-                    path = @"C:\Temp\Greg\" + txtIdExp.Text + "_" +archivo; 
-                    txtArchivo.Text = path;
-
-
-                  
+                    directory = @"C:\Temp\Greg\" + txtIdExp.Text;
+                    txtArchivo.Text = archivo;            
                 }
+              
 
             } catch (Exception) {
 
@@ -278,7 +283,9 @@ namespace Hersan.UI.CapitalHumano
                     oDetalle.Sel = false;
                     oDetalle.IdTipo = int.Parse(cboDocs.SelectedValue.ToString());
                     oDetalle.Tipo = cboDocs.SelectedItem.Text;
-                    oDetalle.RutaArchivo = txtArchivo.Text;
+                    oDetalle.RutaArchivo = path;
+                    oDetalle.NombreArchivo= System.IO.Path.GetFileName(oDialog.FileName);
+                    oDetalle.RutaOriginal = oDialog.FileName;
 
                     oList.Add(oDetalle);
                     ActualizaGrid();
@@ -343,7 +350,6 @@ namespace Hersan.UI.CapitalHumano
                 oList.ForEach(item => {
                     obj.Id = txtId.Text.Trim().Length > 0 ? int.Parse(txtId.Text) : 0;
                     obj.Expedientes.Id = int.Parse(txtIdExp.Text);
-                    obj.Empleados.Id = int.Parse(txtNoEmp.Text);
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                     #region Carga Detalle
@@ -405,6 +411,11 @@ namespace Hersan.UI.CapitalHumano
             } finally {
                 oCHumano = null;
             }
+        }
+
+        private void gvDatos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

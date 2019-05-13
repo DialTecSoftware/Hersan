@@ -19,7 +19,7 @@ namespace Hersan.Datos
         #endregion
 
 
-        public DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp)
+        public DataSet CHU_Digitalizados_Obtener(int IdExp)
         {
             SqlDataAdapter da = new SqlDataAdapter();
             DataSet oData = new DataSet();
@@ -29,7 +29,6 @@ namespace Hersan.Datos
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_DIGITALIZADOS_OBTENER, conn)) {
                         cmd.Parameters.AddWithValue("@EXP_Id", IdExp);
-                        cmd.Parameters.AddWithValue("@EMP_Numero", NoEmp);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         da = new SqlDataAdapter(cmd);
@@ -53,7 +52,6 @@ namespace Hersan.Datos
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_DIGITALIZADOS_GUARDA, conn)) {
                         cmd.Parameters.AddWithValue("@EXP_Id", obj.Expedientes.Id);
-                        cmd.Parameters.AddWithValue("@EMP_Numero", obj.Empleados.Id);
                         cmd.Parameters.AddWithValue("@Digitalizados", Detalle);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
@@ -79,7 +77,6 @@ namespace Hersan.Datos
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_DIGITALIZADOS_ACTUALIZA, conn)) {
                         cmd.Parameters.AddWithValue("@IdDoc", obj.Id);
                         cmd.Parameters.AddWithValue("@EXP_Id", obj.Expedientes.Id);
-                        cmd.Parameters.AddWithValue("@EMP_Numero", obj.Empleados.Id);
                         cmd.Parameters.AddWithValue("@Digitalizados", Detalle);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 

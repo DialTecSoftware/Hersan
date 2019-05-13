@@ -140,7 +140,7 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         int ABCHorarios_Actualiza(Hersan.Entidades.Relchec.HorariosBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_ObtenerResponse")]
-        System.Data.DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp);
+        System.Data.DataSet CHU_Digitalizados_Obtener(int IdExp);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_GuardarResponse")]
         int CHU_Digitalizados_Guardar(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle);
@@ -162,6 +162,12 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_EliminaResponse")]
         int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHUEmpleados_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHUEmpleados_GuardarResponse")]
+        int CHUEmpleados_Guardar(Hersan.Entidades.CapitalHumano.EmpleadosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_EmpleadosActualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_EmpleadosActualizarResponse")]
+        int CHU_EmpleadosActualizar(Hersan.Entidades.CapitalHumano.EmpleadosBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -355,8 +361,8 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
             return base.Channel.ABCHorarios_Actualiza(obj);
         }
         
-        public System.Data.DataSet CHU_Digitalizados_Obtener(int IdExp, int NoEmp) {
-            return base.Channel.CHU_Digitalizados_Obtener(IdExp, NoEmp);
+        public System.Data.DataSet CHU_Digitalizados_Obtener(int IdExp) {
+            return base.Channel.CHU_Digitalizados_Obtener(IdExp);
         }
         
         public int CHU_Digitalizados_Guardar(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle) {
@@ -385,6 +391,14 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario) {
             return base.Channel.CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
+        }
+        
+        public int CHUEmpleados_Guardar(Hersan.Entidades.CapitalHumano.EmpleadosBE obj) {
+            return base.Channel.CHUEmpleados_Guardar(obj);
+        }
+        
+        public int CHU_EmpleadosActualizar(Hersan.Entidades.CapitalHumano.EmpleadosBE obj) {
+            return base.Channel.CHU_EmpleadosActualizar(obj);
         }
     }
 }

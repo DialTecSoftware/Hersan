@@ -3,7 +3,8 @@
 namespace Hersan.Entidades.Catalogos {
     public class EstadosBE 
     {
-        public EstadosBE() {
+        public EstadosBE()
+        {
             Pais = new PaisesBE();
             Id = 0;
             Nombre = string.Empty;

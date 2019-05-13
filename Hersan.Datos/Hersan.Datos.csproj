@@ -62,10 +62,9 @@
     <Compile Include="BaseDA.cs" />
     <Compile Include="CapitalHumano\CompetenciasDA.cs" />
     <Compile Include="CapitalHumano\ContratosDA.cs" />
-    <Compile Include="CapitalHumano\DescripcionPuestosDA.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoDA.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionDA.cs" />
-    <Compile Include="CapitalHumano\DigitalizadosDA.cs" />
+    <Compile Include="CapitalHumano\EmpleadosDA.cs" />
     <Compile Include="CapitalHumano\EvaluacionInduccionDA.cs" />
     <Compile Include="CapitalHumano\ExpedientesDA.cs" />
     <Compile Include="CapitalHumano\NuevoPuestoDA.cs" />

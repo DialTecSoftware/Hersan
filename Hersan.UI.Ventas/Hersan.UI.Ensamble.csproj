@@ -98,6 +98,12 @@
     <Compile Include="frmClientesBuscar.Designer.cs">
       <DependentUpon>frmClientesBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCotizacionesBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCotizacionesBuscar.Designer.cs">
+      <DependentUpon>frmCotizacionesBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrecios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientesBuscar.resx">
       <DependentUpon>frmClientesBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCotizacionesBuscar.resx">
+      <DependentUpon>frmCotizacionesBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrecios.resx">
       <DependentUpon>frmPrecios.cs</DependentUpon>
@@ -197,9 +206,6 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble4.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble5.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -235,6 +241,8 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.UsoCFDIBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Comun.ResultadoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ClientesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.PedidosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.PreciosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ProductoEnsambleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ServiciosBE.datasource" />

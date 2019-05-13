@@ -50,7 +50,7 @@
       <Name>Hersan.Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
-      <Project>{4E3994EF-5056-4289-9C62-DC1140FD764E}</Project>
+      <Project>{4e3994ef-5056-4289-9c62-dc1140fd764e}</Project>
       <Name>Hersan.Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hersan.Negocio\Hersan.Negocio.csproj">

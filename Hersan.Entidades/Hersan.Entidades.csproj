@@ -60,8 +60,10 @@
   <ItemGroup>
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
     <Compile Include="CapitalHumano\ContratosBE.cs" />
+    <Compile Include="CapitalHumano\DescripcionPuestosBE.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoBE.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionBE.cs" />
+    <Compile Include="CapitalHumano\DigitalizadosBE.cs" />
     <Compile Include="CapitalHumano\EvaluacionInduccionBE.cs" />
     <Compile Include="CapitalHumano\ExpedientesBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="Catalogos\DepartamentosBE.cs" />
     <Compile Include="CapitalHumano\EducacionBE.cs" />
     <Compile Include="Catalogos\DocumentosBE.cs" />
+    <Compile Include="Catalogos\EmpleadosBE.cs" />
     <Compile Include="Catalogos\EmpresasBE.cs" />
     <Compile Include="Catalogos\EntidadesBE.cs" />
     <Compile Include="Catalogos\EquipoHerramientasBE.cs" />

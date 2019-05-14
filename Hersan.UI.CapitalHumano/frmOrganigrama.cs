@@ -253,16 +253,22 @@ namespace Hersan.UI.CapitalHumano
 
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
-            if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
+            try {
+                if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
 
-                txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
-                cboNivel.SelectedIndex = int.Parse((e.CurrentRow.Cells["Nivel"].Value.ToString()));
-                cboDepto.SelectedValue = int.Parse(e.CurrentRow.Cells["DEP_Id"].Value.ToString());
-                cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["ENT_Id"].Value.ToString());
-                cboPuestos.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Id"].Value.ToString());
-                cboPadre.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Idjefe"].Value.ToString());
-                //chkEstatus.Checked = bool.Parse(e.CurrentRow.Cells["Estatus"].Value.ToString());
+                    txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
+                    cboNivel.SelectedIndex = int.Parse((e.CurrentRow.Cells["Nivel"].Value.ToString()));
+                    cboDepto.SelectedValue = int.Parse(e.CurrentRow.Cells["DEP_Id"].Value.ToString());
+                    cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["ENT_Id"].Value.ToString());
+                    cboPuestos.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Id"].Value.ToString());
+                    cboPadre.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Idjefe"].Value.ToString());
+                    //chkEstatus.Checked = bool.Parse(e.CurrentRow.Cells["Estatus"].Value.ToString());
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al seleccionar el registro" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                throw;
             }
+          
         }
 
         private void cboNivel_EnabledChanged(object sender, EventArgs e)

@@ -25,18 +25,16 @@ namespace Hersan.UI.CapitalHumano
         List<PreguntasEvaluacionBE> list = new List<PreguntasEvaluacionBE>();
         EvaluacionInduccionBE eva = new EvaluacionInduccionBE();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
+        List<ExpedientesBE> oExpediente = new List<ExpedientesBE>();
 
         #endregion
 
         private void LimpiarCampos()
         {
-            lblDepto.Text = "";
-            lblEntidad.Text = "";
-            lblPuesto.Text = "";
+         
             txtObservaciones.Text = string.Empty;
-            lblEntidad.Text = string.Empty;
-            lblNombreC.Text = string.Empty;
-            lblNum.Text = string.Empty;
+            txtNombres.Text = string.Empty;
+            txtNoEmp.Text = string.Empty;
             txtId.Text = string.Empty;
             LimpiarRespuestas();
         }
@@ -112,7 +110,7 @@ namespace Hersan.UI.CapitalHumano
                     eva.Count = count;
                     if (eva.Count == 19) {
                         eva.Calificacion = res;
-                        lblEntidad.Text = "" + Math.Round(res, 2);
+                        
                     }
                 }
 
@@ -172,11 +170,37 @@ namespace Hersan.UI.CapitalHumano
             return oDataset;
         }
 
-     
-      
-       
 
-       
+        private void CargaExpediente(int IdExpediente)
+        {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+
+            try {
+                oExpediente = oCHumano.CHU_Expedientes_Obtener(IdExpediente);
+                if (oExpediente.Count > 0) {
+
+                    //  SE CARGA EL EXPEDIENTE
+                    txtId.Text = IdExpediente.ToString();
+
+                    ExpedientesDatosPersonales oAux = new ExpedientesDatosPersonales();
+                    oAux.IdExpediente = int.Parse(txtId.Text);
+                    var Item = oCHumano.CHU_ExpedientesDatosPersonales_Consultar(oAux);
+
+                    if (Item.Count > 0) {
+                        txtApellidos.Text = Item[0].APaterno + " " + Item[0].AMaterno;
+                        txtNombres.Text = Item[0].Nombres;
+                        txtNoEmp.Text = Item[0].Empleados.Numero.ToString();
+                    }
+                }
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+
+
+
+
         public frmEvaluacionInduccion()
         {
             InitializeComponent();
@@ -184,10 +208,10 @@ namespace Hersan.UI.CapitalHumano
         private void frmEvaluacionInduccion_Load(object sender, EventArgs e)
         {
             try {
-                lblfecha.Text = DateTime.Now.ToLongDateString();
+                lblFecha.Text = DateTime.Now.ToLongDateString();
                 //Cargar_Cuestionario();
                 CargarPreguntasEvaluacion();
-                gvDatos2.ClearSelection();
+            
               
 
             } catch (Exception) {
@@ -195,6 +219,16 @@ namespace Hersan.UI.CapitalHumano
                 throw;
             }
         }
+        private void Entero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (!BaseWinBP.isNumero(e.KeyChar))
+                    e.Handled = true;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
 
         private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -227,17 +261,17 @@ namespace Hersan.UI.CapitalHumano
         private void gvDatos2_CurrentRowChanged(object sender, CurrentRowChangedEventArgs e)
         {
 
-            if (gvDatos2.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0 ) {
-                lblNum.Text = e.CurrentRow.Cells["EMP_Num"].Value.ToString();
-                lblNombreC.Text = e.CurrentRow.Cells["EDP_APaterno"].Value.ToString() + " " + e.CurrentRow.Cells["EDP_AMaterno"].Value.ToString() + " "
-                    + e.CurrentRow.Cells["EDP_Nombres"].Value.ToString();
+         //   if (gvDatos2.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0 ) {
+         //       txtNoEmp.Text = e.CurrentRow.Cells["EMP_Num"].Value.ToString();
+         //       txtNombres.Text = e.CurrentRow.Cells["EDP_APaterno"].Value.ToString() + " " + e.CurrentRow.Cells["EDP_AMaterno"].Value.ToString() + " "
+         //           + e.CurrentRow.Cells["EDP_Nombres"].Value.ToString();
                
-            } else 
+         //   } else 
 
-         /*  if (gvDatos2.RowCount == 0)*/ {
-                lblNombreC.Text = "";
-                lblNum.Text = "";
-            }
+         ///*  if (gvDatos2.RowCount == 0)*/ {
+         //       txtNombres.Text = "";
+         //       txtNoEmp.Text = "";
+         //   }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -271,7 +305,7 @@ namespace Hersan.UI.CapitalHumano
                     return;
                 }
 
-                if (oList.FindAll(item => item.IdEmpleado == int.Parse(lblNum.Text) ).Count > 0
+                if (oList.FindAll(item => item.IdEmpleado == int.Parse(txtNoEmp.Text) ).Count > 0
                    && int.Parse(txtId.Text) == -1) {
                     RadMessageBox.Show("Este empleado ya ha realizado su evaluación, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     LimpiarCampos();
@@ -279,7 +313,7 @@ namespace Hersan.UI.CapitalHumano
                 }
                 #region Entidades
                 obj.Id = int.Parse(txtId.Text);
-                obj.IdEmpleado = int.Parse(lblNum.Text);
+                obj.IdEmpleado = int.Parse(txtNoEmp.Text);
                 obj.Observaciones = txtObservaciones.Text;
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                 #endregion
@@ -289,7 +323,7 @@ namespace Hersan.UI.CapitalHumano
                 #region Carga Datos Encabezado
                 DataRow oRow = oData.Tables["Evaluacion"].NewRow();
                 oRow["EVI_Id"] = int.Parse(txtId.Text);
-                oRow["EMP_Numero"] = int.Parse(lblNum.Text);
+                oRow["EMP_Numero"] = int.Parse(txtNoEmp.Text);
                 oRow["EVI_Observaciones"] = txtObservaciones.Text;
                 oRow["EVI_Calificaciones"] = int.Parse(txtCalif.Text);
                 oRow["EVI_idUsuarioCreo"] = BaseWinBP.UsuarioLogueado.ID;
@@ -353,20 +387,42 @@ namespace Hersan.UI.CapitalHumano
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            int IdEmpleado = 0;
+            int IdExpediente = 0;
             try {
-                frmEmpleadosConsulta ofrm = new frmEmpleadosConsulta();
+                frmExpedienteConsulta ofrm = new frmExpedienteConsulta();
                 ofrm.WindowState = FormWindowState.Normal;
                 ofrm.StartPosition = FormStartPosition.CenterScreen;
                 ofrm.MaximizeBox = false;
                 ofrm.MinimizeBox = false;
                 ofrm.ShowDialog();
-                IdEmpleado = ofrm.IdEmpleado;
-                lblNum.Text = IdEmpleado.ToString();
-                
+                IdExpediente = ofrm.IdExpediente;
+
+
+                if (IdExpediente > 0) {
+                    LimpiarCampos();
+                    CargaExpediente(IdExpediente);
+                   
+                }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
+        }
+
+        private void lblNum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCalif_Validating(object sender, CancelEventArgs e)
+        {
+            int val = 0;
+     if (txtCalif.Text!="")
+             val = int.Parse(txtCalif.Text);
+            if (val > 10) {
+                errorProvider1.SetError(txtCalif, "Debe de ser un valor inferior o igual a 10");
+                e.Cancel = true;
+            } else
+                errorProvider1.Clear();
         }
     }
 }

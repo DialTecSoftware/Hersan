@@ -73,22 +73,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DiagramFirstLook", "Diagram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagramFirstLook", "..\..\Documents\Diag\EstructuraOrganizacional\DiagramFirstLook.csproj", "{A5016819-7BC7-4159-B86F-EFD8D66CA7CD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ventas", "Ventas", "{3536EB1D-AABA-44C9-BFDF-BBE1B45031FB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ensamble", "Ensamble", "{3536EB1D-AABA-44C9-BFDF-BBE1B45031FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.UI.Ventas", "Hersan.UI.Ventas\Hersan.UI.Ventas.csproj", "{1147207D-10A0-49C1-8905-720C93E1D5F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.UI.Ensamble", "Hersan.UI.Ventas\Hersan.UI.Ensamble.csproj", "{1147207D-10A0-49C1-8905-720C93E1D5F0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EB0A5546-6267-4112-B724-EF390827E802} = {EB0A5546-6267-4112-B724-EF390827E802}
 		{8C02FB69-6302-48AF-A633-EC38BB23BD5F} = {8C02FB69-6302-48AF-A633-EC38BB23BD5F}
 		{829882EC-9A83-4096-9896-3865EE16E85A} = {829882EC-9A83-4096-9896-3865EE16E85A}
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ventas", "Ventas", "{3E9D4D0C-7C07-431D-B1A3-1AF347604DA4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ensamble", "Ensamble", "{3E9D4D0C-7C07-431D-B1A3-1AF347604DA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Ventas.Contract", "Hersan.Ventas.Contract\Hersan.Ventas.Contract.csproj", "{1E4B6F73-72D2-49E6-A18C-0C8D41029DB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Ensamble.Contract", "Hersan.Ventas.Contract\Hersan.Ensamble.Contract.csproj", "{1E4B6F73-72D2-49E6-A18C-0C8D41029DB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Ventas.Service", "Hersan.Ventas.Service\Hersan.Ventas.Service.csproj", "{05492E9E-C54B-4C59-A593-C3FE0FD65896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Ensamble.Service", "Hersan.Ventas.Service\Hersan.Ensamble.Service.csproj", "{05492E9E-C54B-4C59-A593-C3FE0FD65896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Ventas.Host", "Hersan.Ventas.Host\Hersan.Ventas.Host.csproj", "{829882EC-9A83-4096-9896-3865EE16E85A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hersan.Ensamble.Host", "Hersan.Ventas.Host\Hersan.Ensamble.Host.csproj", "{829882EC-9A83-4096-9896-3865EE16E85A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RelChec", "RelChec", "{4761C096-1313-478C-BC7E-023CF4B71F93}"
 EndProject

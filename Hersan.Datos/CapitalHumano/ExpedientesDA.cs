@@ -88,6 +88,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.DatosPersonales.APaterno = reader["EDP_APaterno"].ToString();
                                 obj.DatosPersonales.AMaterno= reader["EDP_AMaterno"].ToString();
                                 obj.DatosPersonales.Nombres = reader["EDP_Nombres"].ToString();
+                             
 
                                 oList.Add(obj);
                             }
@@ -165,14 +166,18 @@ namespace Hersan.Datos.CapitalHumano
 
                                 obj.Id = int.Parse(reader["EXP_Id"].ToString());
                                 obj.Puesto.Departamentos.Entidades.Id = int.Parse(reader["ENT_Id"].ToString());
+                                obj.Puesto.Departamentos.Entidades.Nombre = reader["ENT_Nombre"].ToString();
                                 obj.Puesto.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
+                                obj.Puesto.Departamentos.Nombre = reader["DEP_Nombre"].ToString();
                                 obj.Puesto.Id = int.Parse(reader["PUE_Id"].ToString());
+                                obj.Puesto.Nombre = reader["PUE_Nombre"].ToString();
                                 obj.Tipo = reader["EXP_TipoExpediente"].ToString();
                                 obj.FechaContratado = reader["EXP_Contratado"].ToString();
                                 obj.SueldoDeseado = decimal.Parse(reader["EXP_Deseado"].ToString());
                                 obj.SueldoAprobado= decimal.Parse(reader["EXP_Aprobado"].ToString());
                                 obj.Comentarios = reader["EXP_Comentarios"].ToString();
                                 obj.RutaImagen = reader["EXP_RutaFoto"].ToString();
+
 
                                 oList.Add(obj);
                             }
@@ -226,7 +231,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.EdoCivil = reader["EDP_EdoCivil"].ToString();
                                 obj.EdoCivilOtro = reader["EDP_EdoCivilOtros"].ToString();
                                 obj.Correo = reader["EDP_Correo"].ToString();
-
+                                //obj.Empleados.Id = int.Parse(reader["EMP_Numero"].ToString());
                                 oList.Add(obj);
                             }
                         }
@@ -570,24 +575,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-        //public DataTable Test()
-        //{
-        //    DataTable oData = new DataTable("Reporte");
-        //    try {
-        //        using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
-        //            conn.Open();
-        //            using (SqlDataAdapter cmd = new SqlDataAdapter(CONS_USP_CHU_EXPEDIENTE_ECONOMICOS_OBTENER, conn)) {
-        //                //cmd.Parameters.AddWithValue("@Id", Expediente.IdExpediente);
-
-        //                cmd.Fill(oData);
-                        
-        //            }
-        //        }
-        //        return oData;
-        //    } catch (Exception ex) {
-        //        throw ex;
-        //    }
-        //}
 
     }
 }

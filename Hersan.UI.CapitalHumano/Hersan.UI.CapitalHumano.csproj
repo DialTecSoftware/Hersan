@@ -91,6 +91,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmDescripcionPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDescripcionPuestos.Designer.cs">
+      <DependentUpon>frmDescripcionPuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocumentosDigitalizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocumentosDigitalizados.Designer.cs">
+      <DependentUpon>frmDocumentosDigitalizados.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDictamenNuevoP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +114,12 @@
     </Compile>
     <Compile Include="frmDictamenSustitucion.Designer.cs">
       <DependentUpon>frmDictamenSustitucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmpleadosConsulta.cs">
       <SubType>Form</SubType>
@@ -139,6 +157,12 @@
     <Compile Include="frmPerfil.Designer.cs">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeguimientoCandidatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeguimientoCandidatos.Designer.cs">
+      <DependentUpon>frmSeguimientoCandidatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSolicitudPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +181,7 @@
     <Compile Include="NuevoPuesto.Designer.cs">
       <DependentUpon>NuevoPuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -169,6 +194,12 @@
       <DependentUpon>EvaluacionInduccion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\rtpDescripcionPuestos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rtpDescripcionPuestos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\rtpExpediente1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,11 +208,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDescripcionPuestos.resx">
+      <DependentUpon>frmDescripcionPuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocumentosDigitalizados.resx">
+      <DependentUpon>frmDocumentosDigitalizados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDictamenNuevoP.resx">
       <DependentUpon>frmDictamenNuevoP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDictamenSustitucion.resx">
       <DependentUpon>frmDictamenSustitucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleadosConsulta.resx">
       <DependentUpon>frmEmpleadosConsulta.cs</DependentUpon>
@@ -201,6 +241,9 @@
     <EmbeddedResource Include="frmPerfil.resx">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSeguimientoCandidatos.resx">
+      <DependentUpon>frmSeguimientoCandidatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSolicitudPersonal.resx">
       <DependentUpon>frmSolicitudPersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +261,10 @@
     <EmbeddedResource Include="Reportes\EvaluacionInduccion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EvaluacionInduccion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rtpDescripcionPuestos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rtpDescripcionPuestos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rtpExpediente.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -290,6 +337,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.NuevoPuestoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PerfilesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE1.datasource" />
@@ -353,6 +401,15 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Correo\Correo_Aceptado.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Correo\Correo_Rechazado.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Documents-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

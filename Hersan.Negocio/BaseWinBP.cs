@@ -71,6 +71,7 @@ namespace Hersan.Negocio
                 mail.To.Add(destinatario);
                 mail.Subject = asunto;
                 mail.Body = CuerpoMsg;
+                mail.IsBodyHtml = true;
                 SmtpServer.Port = port;
                 SmtpServer.Credentials = new System.Net.NetworkCredential(emisor, pwd);
                 SmtpServer.EnableSsl = true;
@@ -93,6 +94,7 @@ namespace Hersan.Negocio
                 mail.To.Add(destinatario);
                 mail.Subject = asunto;
                 mail.Body = CuerpoMsg;
+                mail.IsBodyHtml = true;
                 SmtpServer.Port = port;
                 SmtpServer.Credentials = new System.Net.NetworkCredential(emisor, pwd);
                 SmtpServer.EnableSsl = ssl;

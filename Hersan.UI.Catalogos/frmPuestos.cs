@@ -161,6 +161,17 @@ namespace Hersan.UI.Catalogos
                 throw ex;
             }
         }
+        private void txtPuntos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (BaseWinBP.isDecimal(e.KeyChar)) {
+                    e.Handled = true;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
 
         private void CargarEntidades()
         {
@@ -227,6 +238,7 @@ namespace Hersan.UI.Catalogos
                 throw ex;
             }
         }
-       
+
+        
     }
 }

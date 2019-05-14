@@ -16,6 +16,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_CONCTACTOS_OBTENER = "ABC_Contactos_Obtener";
         const string CONST_ABC_CONTACTOS_GUARDAR = "ABC_Contactos_Guarda";
         const string CONST_ABC_CONTACTOS_ACTUALIZAR = "ABC_Contactos_Actualiza";
+        const string CONST_ABC_CONTACTOS_COMBO = "ABC_Contactos_Combo";
         #endregion
 
         public List<ContactosBE> ABCContactos_Obtener()
@@ -85,6 +86,36 @@ namespace Hersan.Datos.Catalogos
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public List<ContactosBE> ABCContactos_Combo()
+        {
+            List<ContactosBE> oList = new List<ContactosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_CONTACTOS_COMBO, conn)) {
+                     
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                ContactosBE obj = new ContactosBE();
+
+                                obj.Id = int.Parse(reader["CON_Id"].ToString());
+                                obj.Nombre = reader["CON_Nombre"].ToString();
+                                obj.Interno = bool.Parse(reader["CON_Interno"].ToString());
+                                obj.Externo = !obj.Interno;
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
             } catch (Exception ex) {
                 throw ex;
             }

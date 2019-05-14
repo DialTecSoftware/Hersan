@@ -109,6 +109,8 @@ namespace Hersan.Catalogos.Contract
         int ABCContactos_Guardar(ContactosBE obj);
         [OperationContract]
         int ABCContactos_Actualizar(ContactosBE obj);
+        [OperationContract]
+        List<ContactosBE> ABCContactos_Combo();
 
         #endregion
 
@@ -139,6 +141,8 @@ namespace Hersan.Catalogos.Contract
         int ABCDocumentos_Guardar(DocumentosBE obj);
         [OperationContract]
         int ABCDocumentos_Actualizar(DocumentosBE obj);
+        [OperationContract]
+        List<DocumentosBE> ABCDocumentos_Combo();
 
         #endregion
 
@@ -165,6 +169,74 @@ namespace Hersan.Catalogos.Contract
         #region Colonias
         [OperationContract]
         List<ColoniasBE> ABCColonias_Obtener(int IdEstado, int IdCiudad);
+        #endregion
+
+        #region Familias
+        [OperationContract]
+        int ENS_Familias_Guardar(FamiliasBE obj);
+        [OperationContract]
+        int ENS_Familias_Actualizar(FamiliasBE obj);
+        [OperationContract]
+        List<FamiliasBE> ENS_Familias_Obtener();
+        [OperationContract]
+        List<FamiliasBE> ENS_Familias_Combo(int IdEntidad);
+        #endregion
+
+        #region Colores
+        [OperationContract]
+        int ABC_Colores_Guardar(ColoresBE obj);
+        [OperationContract]
+        int ABC_Colores_Actualizar(ColoresBE obj);
+        [OperationContract]
+        List<ColoresBE> ABC_Colores_Obtener();
+        [OperationContract]
+        List<ColoresBE> ABC_Colores_Combo();
+        #endregion
+
+        #region Reflejantes
+        [OperationContract]
+        int ENS_Reflejantes_Guardar(ReflejantesBE obj);
+        [OperationContract]
+        int ENS_Reflejantes_Actualizar(ReflejantesBE obj);
+        [OperationContract]
+        List<ReflejantesBE> ENS_Reflejantes_Obtener();
+        [OperationContract]
+        List<ReflejantesBE> ENS_Reflejantes_Combo();
+        #endregion
+
+        #region TipoProducto
+        [OperationContract]
+        int ENS_TipoProducto_Guardar(TipoProductoBE obj);
+        [OperationContract]
+        int ENS_TipoProducto_Actualizar(TipoProductoBE obj);
+        [OperationContract]
+        List<TipoProductoBE> ENS_TipoProducto_Obtener();
+        [OperationContract]
+        List<TipoProductoBE> ENS_TipoProducto_Combo(int IdFamilia);
+        #endregion
+
+        #region Accesorios
+        [OperationContract]
+        int ENS_Accesorios_Guardar(AccesoriosBE obj);
+        [OperationContract]
+        int ENS_Accesorios_Actualizar(AccesoriosBE obj);
+        [OperationContract]
+        List<AccesoriosBE> ENS_Accesorios_Obtener();
+        [OperationContract]
+        List<AccesoriosBE> ENS_Accesorios_Combo();
+        [OperationContract]
+        List<AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha);
+        #endregion
+
+        #region Tipos de Clientes
+        [OperationContract]
+        int ABC_TipoCliente_Guardar(TiposClienteBE obj);
+        [OperationContract]
+        int ABC_TipoCliente_Actualizar(TiposClienteBE obj);
+        [OperationContract]
+        List<TiposClienteBE> ABC_TipoCliente_Obtener();
+        [OperationContract]
+        List<TiposClienteBE> ABC_TipoCliente_Combo();
         #endregion
     }
 }

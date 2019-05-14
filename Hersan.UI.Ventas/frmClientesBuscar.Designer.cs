@@ -1,4 +1,4 @@
-﻿namespace Hersan.UI.Ventas
+﻿namespace Hersan.UI.Ensamble
 {
     partial class frmClientesBuscar
     {

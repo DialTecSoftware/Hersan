@@ -157,7 +157,7 @@ namespace Hersan.UI.Catalogos
         private void LimpiarCampos()
         {
             try {
-                txtId.Text = "0";
+                txtId.Text = "0";  
                 txtNombre.Text = string.Empty;
                 txtAbrev.Text = string.Empty;
                 chkEstatus.Checked = false;

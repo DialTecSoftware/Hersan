@@ -1,11 +1,8 @@
-﻿using Hersan.Entidades.Ventas;
+﻿using Hersan.Entidades.Ensamble;
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -59,15 +56,15 @@ namespace Hersan.UI.Ensamble
 
                 /* VALIDAR SI ES NUEVO O ACTUALIZACIÓN */
                 if (int.Parse(txtId.Text) == 0) {
-                    ClientesBE obj = new ClientesBE();
-                    obj.Nombre = txtNombre.Text;
-                    obj.RFC = txtRFC.Text;
-                    var oItem = oEnsamble.ABC_Clientes_Buscar(obj, "");
-                    if (oItem.Count > 0) {
-                        RadMessageBox.Show("EL cliente capturado ya existe: " + oItem[0].Nombre, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        obj = null;
-                        return;
-                    }
+                    //ClientesBE obj = new ClientesBE();
+                    //obj.Nombre = txtNombre.Text;
+                    //obj.RFC = txtRFC.Text;
+                    //var oItem = oEnsamble.ABC_Clientes_Buscar(obj, "");
+                    //if (oItem.Count > 0) {
+                    //    RadMessageBox.Show("EL cliente capturado ya existe: " + oItem[0].Nombre, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    //    obj = null;
+                    //    return;
+                    //}
                 }
 
                 #region Entidades Seleccionadas

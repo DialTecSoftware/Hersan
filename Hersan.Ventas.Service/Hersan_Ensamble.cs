@@ -1,6 +1,5 @@
 ﻿using Hersan.Datos.Ventas;
 using Hersan.Entidades.Catalogos;
-using Hersan.Entidades.Ventas;
 using Hersan.Negocio.Ventas;
 using Hersan.Ensamble.Contract;
 using System.Collections.Generic;
@@ -112,7 +111,18 @@ namespace Hersan.Ensamble.Service
         {
             return new PedidosBP().ENS_Cotizacion_Guardar(IdCliente, oDetalle, IdUsuario);
         }
-
+        public List<PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final)
+        {
+            return new PedidosBP().ENS_Cotizacion_Buscar(IdCliente, Nombre, Inicial, Final);
+        }
+        public List<PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion)
+        {
+            return new PedidosBP().ENS_Cotizacion_Obtener(IdCotizacion);
+        }
+        public int ENS_Cotizacion_Actualizar(PedidosBE obj, System.Data.DataTable oDetalle)
+        {
+            return new PedidosBP().ENS_Cotizacion_Actualizar(obj, oDetalle);
+        }
         #endregion
     }
 }

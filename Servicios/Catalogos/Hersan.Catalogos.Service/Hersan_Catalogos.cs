@@ -355,6 +355,10 @@ namespace Hersan.Catalogos.Service
         {
             return new AccesoriosBP().ENS_Accesorios_Combo();
         }
+        public List<AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha)
+        {
+            return new AccesoriosBP().ENS_AccesoriosCotizacion_Combo(IdFicha);
+        }
         #endregion
 
         #region Tipos de Cliente

@@ -24,5 +24,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new AccesoriosDA().ENS_Accesorios_Combo();
         }
+        public List<AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha)
+        {
+            return new AccesoriosDA().ENS_AccesoriosCotizacion_Combo(IdFicha);
+        }
     }
 }

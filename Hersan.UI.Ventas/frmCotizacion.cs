@@ -1,6 +1,5 @@
 ﻿using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Ensamble;
-using Hersan.Entidades.Ventas;
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
@@ -17,13 +16,17 @@ namespace Hersan.UI.Ensamble
     {
         #region Variables
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
+        WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
+
         private List<ClientesBE> oClientes;
         private List<ProductoEnsambleBE> oProductos = new List<ProductoEnsambleBE>();
         private List<ServiciosBE> oServicios = new List<ServiciosBE>();
         private List<ReflejantesBE> oReflejantes = new List<ReflejantesBE>();
 
         private List<PedidoDetalleBE> oList = new List<PedidoDetalleBE>();
+        private List<PedidosBE> oCotiza;
         private int IdCliente = 0;
+        private int IdCotiza = 0;
 
         RadMultiColumnComboBoxSelectionExtender extender = new RadMultiColumnComboBoxSelectionExtender();
         #endregion
@@ -60,18 +63,21 @@ namespace Hersan.UI.Ensamble
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            try {
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             int Result = 0;
             try {
-
-                //if (!ValidarCampos()) {
-                //    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                //    return;
-                //}
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Los datos de la cotización están incompletos\nNo es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
 
                 if (RadMessageBox.Show("Desea guardar la información capturada...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
                     return;
@@ -85,16 +91,23 @@ namespace Hersan.UI.Ensamble
                         RadMessageBox.Show("Ocurrió un error al guardar la cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     }
                 } else {
-                    //Result = oEnsamble.ENS_ProductosFicha_Actualizar(CrearTablasAuxiliares(), Colores, Reflejantes, Accesorios, BaseWinBP.UsuarioLogueado.ID, true);
-                    //if (Result != 0) {
-                    //    RadMessageBox.Show("Ficha técnica actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    //} else {
-                    //    RadMessageBox.Show("Ocurrió un error al actualizar la ficha", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    //}
+                    PedidosBE obj = new PedidosBE();
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Cliente.Id = int.Parse(txtClave.Text);
+                    obj.Pedido = false;
+                    obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
+                    obj.DatosUsuario.Estatus = true;
+
+                    Result = oEnsamble.ENS_Cotizacion_Actualizar(obj, CrearTablasAuxiliares());
+                    if (Result != 0) {
+                        RadMessageBox.Show("Cotización actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    } else {
+                        RadMessageBox.Show("Ocurrió un error al actualizar la cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    }
                 }
-                //if (Result != 0) {
-                //    LimpiarCampos();
-                //}
+                if (Result != 0)
+                    LimpiarCampos();
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al guardar la cotización\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -103,11 +116,69 @@ namespace Hersan.UI.Ensamble
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            frmCotizacionesBuscar ofrm = new frmCotizacionesBuscar();
+            try {
+                ofrm.WindowState = FormWindowState.Normal;
+                ofrm.StartPosition = FormStartPosition.CenterScreen;
+                ofrm.MaximizeBox = false;
+                ofrm.MinimizeBox = false;
+                ofrm.ShowDialog();
+                IdCotiza = ofrm.Id;
+
+                if (IdCotiza > 0) {
+                    LimpiarCampos();
+                    CargarCotizacion(IdCotiza);
+                }
+
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                ofrm.Dispose();
+                ofrm = null;
+            }
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            try {
+                if (RadMessageBox.Show("Esta acción cancelará la cotización\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    PedidosBE obj = new PedidosBE();
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Cliente.Id = int.Parse(txtClave.Text);
+                    obj.Pedido = false;
+                    obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
+                    obj.DatosUsuario.Estatus = false;
+
+                    int Result = oEnsamble.ENS_Cotizacion_Actualizar(obj, CrearTablasAuxiliares());
+                    if (Result != 0) {
+                        RadMessageBox.Show("Cotización cancelada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        LimpiarCampos();
+                    } else {
+                        RadMessageBox.Show("Ocurrió un error al cancelar la cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    }
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cancelar la cotización\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oEnsamble = null;
+            }
+        }
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
             try {
 
             } catch (Exception ex) {
                 throw ex;
             }
+        }
+        private void btnMail_Click(object sender, EventArgs e)
+        {
+            try {
+
+            } catch (Exception ex) {
+                throw ex;
+            }
+
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -124,17 +195,19 @@ namespace Hersan.UI.Ensamble
                     if (RadMessageBox.Show("Esta acción eliminara los elementos seleccionados\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
                         return;
                 } else {
-                    RadMessageBox.Show("No se han agregado productos y/o servicios", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    RadMessageBox.Show("No hay productos y/o servicios seleccionados", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
 
                 if (txtId.Text == "0")
                     oList.RemoveAll(item => item.Sel == true);
-                else
+                else {
                     oList.ForEach(item => {
                         if (item.Sel == true)
                             item.DatosUsuario.Estatus = false;
                     });
+                    oList.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                }
 
                 ActualizaGrid();
             } catch (Exception ex) {
@@ -154,17 +227,24 @@ namespace Hersan.UI.Ensamble
 
                 if (txtId.Text == "0")
                     oList.Clear();
-                else
+                else {
                     oList.ForEach(item => item.DatosUsuario.Estatus = false);
+                    oList.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                }
 
                 ActualizaGrid();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
         {
-
+            try {
+                if (e.KeyData == Keys.Enter)
+                    RadMessageBox.Show("");
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void txtClave_KeyDown(object sender, KeyEventArgs e)
         {
@@ -209,6 +289,7 @@ namespace Hersan.UI.Ensamble
         private void cboProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
                 if (cboProductos.SelectedValue != null) {                    
                     var Ficha = oProductos.Find(item => item.Producto.Id == int.Parse(cboProductos.SelectedValue.ToString()));
@@ -221,7 +302,13 @@ namespace Hersan.UI.Ensamble
                     cboReflejantes.DisplayMember = "Nombre";
                     cboReflejantes.ValueMember = "Id";
                     cboReflejantes.DataSource = oEnsamble.ENS_ReflejanteCotizacion_Combo(Ficha.Id);
-                    
+
+                    /* ACCESORIOS */
+                    cboAccesorios.DisplayMember = "Nombre";
+                    cboAccesorios.ValueMember = "Id";
+                    cboAccesorios.DataSource = oCatalogos.ENS_AccesoriosCotizacion_Combo(Ficha.Id);
+
+
                     extender.AssociatedRadMultiColumnComboBox = cboReflejantes;
                     extender.AutoCompleteBoxElement.Items.CollectionChanged += Items_CollectionChanged;
 
@@ -233,6 +320,7 @@ namespace Hersan.UI.Ensamble
                 throw ex;
             } finally {
                 oEnsamble = null;
+                oCatalogos = null;
             }
         }
         private void cboServicios_SelectedIndexChanged(object sender, EventArgs e)
@@ -256,14 +344,17 @@ namespace Hersan.UI.Ensamble
                         if (Aux == null) {
                             var prod = oProductos.Find(item => item.Id == int.Parse(cboProductos.SelectedValue.ToString()));
                             oDetalle.Sel = false;
+                            oDetalle.Id = 0;
                             oDetalle.Tipo = "PRODUCTO";
                             oDetalle.Entidad.Nombre = prod.Entidad.Nombre;
                             oDetalle.Producto.Id = prod.Producto.Id;
-                            oDetalle.Producto.Nombre = prod.Producto.Nombre;                            
+                            oDetalle.Producto.Nombre = prod.Producto.Nombre;
+                            oDetalle.Accesorios.Id = int.Parse(cboAccesorios.SelectedValue.ToString());
+                            oDetalle.Accesorios.Nombre = cboAccesorios.Text;
                             oDetalle.Precio = decimal.Parse(txtPrecio.Text);
                             oDetalle.Cantidad = int.Parse(txtCantidadP.Text);
-                            oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;                            
-
+                            oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;   
+                            
                             string Reflejantes = string.Empty;
                             oReflejantes.ForEach(item => {                                
                                 Reflejantes += item.Nombre + " / ";
@@ -299,6 +390,7 @@ namespace Hersan.UI.Ensamble
                         if (Aux == null) {
                             var prod = oServicios.Find(item => item.Id == int.Parse(cboServicios.SelectedValue.ToString()));
                             oDetalle.Sel = false;
+                            oDetalle.Id = 0;
                             oDetalle.Tipo = "SERVICIO";
                             oDetalle.Entidad.Nombre = prod.Entidad.Nombre;
                             oDetalle.Producto.Id = prod.Id;
@@ -434,6 +526,40 @@ namespace Hersan.UI.Ensamble
                 throw ex;
             }
         }
+        private void LimpiarCampos()
+        {
+            try {
+                oList.Clear();
+                txtId.Text = "0";
+                txtClave.Clear();
+                txtNombre.Clear();
+                gvDatos.DataSource = null;
+
+                LimpiarProductos();
+                LimpiarServicios();
+
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private bool ValidarCampos()
+        {
+            bool bFlag = true;
+            try {
+                if (gvDatos.RowCount == 0) {
+                    bFlag = false;
+                    return bFlag;
+                }
+
+                if (txtClave.Text.Trim().Length == 0) {
+                    bFlag = false;
+                    return bFlag;
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return bFlag;
+        }
         private void ActualizaGrid()
         {
             try {
@@ -453,6 +579,7 @@ namespace Hersan.UI.Ensamble
                 oData.Columns.Add("COT_Id");
                 oData.Columns.Add("COD_Tipo");
                 oData.Columns.Add("COD_Id_ProdServ");
+                oData.Columns.Add("ACC_Id");
                 oData.Columns.Add("COD_Reflejantes");
                 oData.Columns.Add("COD_Cantidad");
                 oData.Columns.Add("COD_Precio");
@@ -471,16 +598,17 @@ namespace Hersan.UI.Ensamble
 
                 foreach (var item in oList) { 
                     DataRow oRow = oData.NewRow();
-                    oRow["COD_Id"] = 0;
-                    oRow["COT_Id"] = 0;
+                    oRow["COD_Id"] = item.Id;
+                    oRow["COT_Id"] = int.Parse(txtId.Text);
                     oRow["COD_Tipo"] = item.Tipo;
-                    oRow["COD_Id_ProdServ"] = item.Producto.Id;
+                    oRow["COD_Id_ProdServ"] = item.Producto.Id;                    
                     if (item.Tipo == "PRODUCTO") {
                         aux = string.Empty;
                         item.Reflejantes.ForEach(x => {
                             aux += x.Id.ToString() + ",";
                         });
                         oRow["COD_Reflejantes"] = aux;
+                        oRow["ACC_Id"] = item.Accesorios.Id;
                     } else {
                         oRow["COD_Reflejantes"] = string.Empty;
                     }
@@ -492,6 +620,27 @@ namespace Hersan.UI.Ensamble
 
             } catch (Exception ex) {
                 throw ex;
+            }
+        }
+        private void CargarCotizacion(int IdCotiza)
+        {
+            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            try {
+                oCotiza = oEnsamble.ENS_Cotizacion_Obtener(IdCotiza);
+                if (oCotiza.Count > 0) {
+                    txtId.Text = oCotiza[0].Id.ToString();
+                    txtClave.Text = oCotiza[0].Cliente.Id.ToString();
+                    txtNombre.Text = oCotiza[0].Cliente.Nombre.ToString();
+                    txtFecha.Text = oCotiza[0].DatosUsuario.FechaCreacion.ToShortDateString();
+                    oList = oCotiza[0].Detalle;
+
+                    gvDatos.DataSource = oList;
+                }
+
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oEnsamble = null;
             }
         }
 

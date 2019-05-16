@@ -1,13 +1,12 @@
 ﻿using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Comun;
-using Hersan.Entidades.Ensamble;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hersan.Entidades.Ventas
+namespace Hersan.Entidades.Ensamble
 {
     public class PedidosBE
     {
@@ -17,7 +16,7 @@ namespace Hersan.Entidades.Ventas
             Id = 0;
             Cliente = new ClientesBE();
             Agente = 0;
-            Cotizacion = true;
+            Pedido = false;
             Detalle = new List<PedidoDetalleBE>();
             DatosUsuario = new GeneralBE();
         }
@@ -25,7 +24,7 @@ namespace Hersan.Entidades.Ventas
         public int Id { get; set; }
         public ClientesBE Cliente { get; set; }
         public int Agente { get; set; }       
-        public bool Cotizacion { get; set; }
+        public bool Pedido { get; set; }
         public List<PedidoDetalleBE> Detalle { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
@@ -40,6 +39,7 @@ namespace Hersan.Entidades.Ventas
             Entidad = new EntidadesBE();
             Producto = new TipoProductoBE();
             Reflejantes = new List<ReflejantesBE>();
+            Accesorios = new AccesoriosBE();
             Servicio = new ServiciosBE();
             Reflec = string.Empty;
             Cantidad = 0;
@@ -54,6 +54,7 @@ namespace Hersan.Entidades.Ventas
         public EntidadesBE Entidad { get; set; }
         public TipoProductoBE Producto { get; set; }
         public List<ReflejantesBE> Reflejantes { get; set; }
+        public AccesoriosBE Accesorios { get; set; }
         public ServiciosBE Servicio { get; set; }
         public string Reflec { get; set; }
         public int Cantidad { get; set; }

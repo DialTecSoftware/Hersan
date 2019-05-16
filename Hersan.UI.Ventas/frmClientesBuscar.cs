@@ -1,11 +1,6 @@
-﻿using Hersan.Entidades.Ventas;
+﻿using Hersan.Entidades.Ensamble;
 using Hersan.Negocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -64,7 +59,7 @@ namespace Hersan.UI.Ensamble
         {
             try {
                 if (gvDatos.RowCount > 0)
-                    /* SE ABRE DESDE LA PANTALLA DE ALTA DE CLIENTESS */
+                    /* SE ABRE DESDE LA PANTALLA DE ALTA DE CLIENTES */
                     Id = int.Parse(gvDatos.CurrentRow.Cells["Id"].Value.ToString());
                 else
                     Id = 0;

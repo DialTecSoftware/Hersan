@@ -1,6 +1,5 @@
 ﻿using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Ensamble;
-using Hersan.Entidades.Ventas;
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;

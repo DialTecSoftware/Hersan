@@ -14,6 +14,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ENS_ACCESORIOS_ACTUALIZAR = "ENS_Accesorios_Actualizar";
         const string CONST_USP_ENS_ACCESORIOS_OBTENER = "ENS_Accesorios_Obtener";
         const string CONST_USP_ENS_ACCESORIOS_COMBO = "ENS_Accesorios_Combo";
+        const string CONST_USP_ENS_ACCESORIOSCOTIZACION_COMBO = "ENS_AccesoriosCotizacion_Combo";
         #endregion
 
         public int ENS_Accesorios_Guardar(AccesoriosBE obj)
@@ -104,6 +105,35 @@ namespace Hersan.Datos.Catalogos
                                 AccesoriosBE obj = new AccesoriosBE();
 
                                 obj.Id = int.Parse(reader["ACC_Id"].ToString());
+                                obj.Nombre = reader["ACC_Nombre"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha)
+        {
+            List<AccesoriosBE> oList = new List<AccesoriosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_ENS_ACCESORIOSCOTIZACION_COMBO, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", IdFicha);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                AccesoriosBE obj = new AccesoriosBE();
+
+                                obj.Id = int.Parse(reader["ACC_Id"].ToString());
+                                obj.Clave = reader["ACC_Clave"].ToString();
                                 obj.Nombre = reader["ACC_Nombre"].ToString();
 
                                 oList.Add(obj);

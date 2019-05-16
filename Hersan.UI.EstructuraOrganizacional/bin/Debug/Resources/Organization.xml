@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<!--<Node Name="ADMINISTRACION" Area="DIRECCION">
+    <Child Name="Andrew Fuller" Puesto="JEFE 1" />
+    <Child Name="Moise Gregoryy" Puesto="BOSS" />
+    <Node Name="Direccion Hersan" Area="Hersan">
+      <Child Name="Martin Sommer" Puesto="Architect" />
+      <Child Name="Jeremy Boather" Puesto="Senior Team Lead" />
+      <Child Name="John Steel" Puesto="Development Manager" />
+      <Child Name="Karin Josephs" Puesto="QA Architect" />
+      <Node Name="Hersan Hormas" Area="Hersan">
+        <Child Name="Karl Jablonski" Puesto="Team Lead" />
+        <Child Name="Margaret Peacock" Puesto="QA Engineer" />
+        <Child Name="Marie Bertrand" Puesto="Software Developer"/>
+        <Child Name="Mary Saveley" Puesto="Senior Software Developer"/>
+      </Node>
+      <Node Name="Hersan Viales" Area="Hersan">
+        <Child Name="Nancy Davolio" Puesto="Team Lead"/>
+        <Child Name="Paula Wilson" Puesto="Senior QA Engineer"/>
+        <Child Name="Pedro Alfonso" Puesto="Software Developer"/>
+        <Child Name="Moise Gregoryy" Puesto="Programador" />
+        <Child Name="Steven Buchanan" Puesto="Senior Software Developer"/>
+      </Node>
+    </Node>
+    <Node Name="Proyecto" Area="Proyecto">
+      <Child Name="Ana Trujilo" Puesto="Marketing Manager USA"/>
+      <Child Name="Brenda Smith" Puesto="Marketing Manager EU"/>
+      <Child Name="Elizabeth Lincoln" Puesto="Marketing Director"/>
+      <Node Name="Proyecto 1" Area="Proyecto">
+        <Child Name="Georg Pipps" Puesto="Team Lead"/>
+        <Child Name="Hanna Moos" Puesto="Junior Brand Manager"/>
+        <Child Name="Janet Levering" Puesto="SEO Specialist"/>
+        <Child Name="Janine Labrune" Puesto="Graphic Designer"/>
+        <Child Name="Viktoria Ashworth" Puesto="Brand Manager"/>
+        <Child Name="Laura Callahan" Puesto="Senior Brand Manager"/>
+      </Node>
+    
+    </Node>
+	</Node>-->
+  <Element Name="Direccion" Area="Direccion">
+  <Child Name="Moise Gregoryy" Puesto="JEFE 1"/>
+    <Element Name="Capital Humano" Area="Capital Humano" >
+    <Child Name="Laura Callahan" Puesto="JEFE 1"/>
+      <Element Name="Nomina" Area="Capital Humano" >
+      <Child Name="Andrew Fuller" Puesto="JEFE 1"/>
+  </Element>
+  </Element>
+    <Element Name="Contabilidad"  Area="Contabilidad">
+    <Child Name="Hanna Moos" Puesto="Junior Brand Manager"/>
+      <Element Name="Ventas"  Area="Contabilidad">
+        <Child Name="Elizabeth Lincoln" Puesto="Junior Brand Manager"/>
+        <Child Name="Ana Trujilo" Puesto="Junior Brand Manager"/>
+      </Element>
+    </Element>
+    <Element Name="Proyecto1" Area="Proyecto">
+      <Child Name="Andrew Fuller" Puesto="JEFE 1"/>
+      <Element Name="Proyecto 2"  Area="DIRECCION"> 
+      <Child Name="Janine Labrune" Puesto="Graphic Designer"/>
+  </Element>
+  <Element Name="Proyecto3" Area="Proyecto">
+      <Child Name="Hanna Moos" Puesto="Junior Brand Manager"/>
+  </Element>
+  </Element>
+  </Element>
+</Root>

@@ -1,0 +1,33 @@
+﻿<elements>
+  <element Id="7" Name="DIRECCION " Parent="DIRECCION">
+    <Child Id="6" Name="Andrew Fuller" Puesto="DIRECCION 1" />
+    <Child Id="5" Name="Jason Roland" Parent="DIRECCION 2" />
+    <Child Id="4" Name="Martin Sommer" Parent="DIRECCION 3">
+    </Child>
+       </element>
+  <element Id="7" Name="VENTA " Parent="VENTA">
+    <Child Id="3" Name="Jeremy Boather" Puesto="VENTA 1"> </Child>
+      <Child Id="2" Name="John Steel " Puesto="VENTA 2">
+      </Child>
+         </element>
+  <element Id="7" Name="VENTA 1" Parent="VENTA">
+      <Child Id="3" Name="Jeremy Boather" Puesto="VENTA 1">
+        <Child Id="2" Name="John Steel " Puesto="VENTA 2">
+          <Child Id="8" Name="Karin Josephs" Puesto="VENTA 3" />
+        </Child>
+        <Child Id="1" Name="Karl Jablonski" Puesto="3" />
+        <Child Id="8" Name="Margaret Peacock" Puesto="3" />
+        <Child Id="8" Name="Marie Bertrand" Puesto="3" />
+      </Child>
+  </element>
+    <element Id="7" Name="CAPITAL HUMANO" Parent="CAPITAL HUMANO">
+    <Child Id="2" Name="Mary Saveley" Puesto="CH 2">
+      <Child Id="8" Name="Steven Buchanan" Puesto="CH 3" />
+    </Child>
+    </element>
+      <element Id="7" Name="CAPITAL HUMANO 1" Parent="CAPITAL HUMANO">
+        <Child Id="2" Name="Mary Saveley" Puesto="CH 2">
+          <Child Id="8" Name="Steven Buchanan" Puesto="CH 3" />
+        </Child>
+  </element>
+</elements>

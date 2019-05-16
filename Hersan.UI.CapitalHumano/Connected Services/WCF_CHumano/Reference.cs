@@ -163,11 +163,17 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_EliminaResponse")]
         int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_ConsultarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EmpleadosBE> CHU_Empleados_Consultar(int IdExp);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHUEmpleados_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHUEmpleados_GuardarResponse")]
         int CHUEmpleados_Guardar(Hersan.Entidades.CapitalHumano.EmpleadosBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_EmpleadosActualizar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_EmpleadosActualizarResponse")]
         int CHU_EmpleadosActualizar(Hersan.Entidades.CapitalHumano.EmpleadosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_EliminaResponse")]
+        int CHU_Empleados_Elimina(int IdEmp, int IdUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -393,12 +399,20 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
             return base.Channel.CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
         }
         
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EmpleadosBE> CHU_Empleados_Consultar(int IdExp) {
+            return base.Channel.CHU_Empleados_Consultar(IdExp);
+        }
+        
         public int CHUEmpleados_Guardar(Hersan.Entidades.CapitalHumano.EmpleadosBE obj) {
             return base.Channel.CHUEmpleados_Guardar(obj);
         }
         
         public int CHU_EmpleadosActualizar(Hersan.Entidades.CapitalHumano.EmpleadosBE obj) {
             return base.Channel.CHU_EmpleadosActualizar(obj);
+        }
+        
+        public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario) {
+            return base.Channel.CHU_Empleados_Elimina(IdEmp, IdUsuario);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Hersan.Entidades.CapitalHumano
 
         public EmpleadosBE()
         {
+            Id = 0;
             Numero = 0;
             Expedientes = new ExpedientesBE();
             Infonavit = string.Empty;
@@ -21,10 +22,10 @@ namespace Hersan.Entidades.CapitalHumano
             NumeroCuenta = string.Empty;
             SueldoAprobado = 0;
             EstatusEmpleado = string.Empty;
-            FechaIngreso = DateTime.Today;
+            FechaIngreso = string.Empty;
             DatosUsuarios = new GeneralBE();
         }
-
+        public int Id { get; set; }
         public int Numero { get; set; }
         public ExpedientesBE Expedientes { get; set; }
         public string Infonavit { get; set; }
@@ -34,7 +35,7 @@ namespace Hersan.Entidades.CapitalHumano
         public string NumeroCuenta { get; set; }
         public decimal SueldoAprobado { get; set; }
         public string EstatusEmpleado { get; set; }
-        public DateTime FechaIngreso { get; set; }
+        public string FechaIngreso { get; set; }
         public GeneralBE DatosUsuarios { get; set; }
     }
 }

@@ -153,9 +153,13 @@ namespace Hersan.CH.Contract
 
         #region Empleados
         [OperationContract]
+        List<EmpleadosBE> CHU_Empleados_Consultar(int IdExp);
+        [OperationContract]
         int CHUEmpleados_Guardar(EmpleadosBE obj);
         [OperationContract]
         int CHU_EmpleadosActualizar(EmpleadosBE obj);
+        [OperationContract]
+        int CHU_Empleados_Elimina(int IdEmp, int IdUsuario);
         #endregion
     }
 }

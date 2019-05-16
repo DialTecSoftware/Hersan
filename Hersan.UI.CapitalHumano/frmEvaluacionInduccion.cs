@@ -189,7 +189,7 @@ namespace Hersan.UI.CapitalHumano
                     if (Item.Count > 0) {
                         txtApellidos.Text = Item[0].APaterno + " " + Item[0].AMaterno;
                         txtNombres.Text = Item[0].Nombres;
-                        txtNoEmp.Text = Item[0].Empleados.Numero.ToString();
+                        //txtNoEmp.Text = Item[0].Empleados.Numero.ToString();
                     }
                 }
             } catch (Exception) {

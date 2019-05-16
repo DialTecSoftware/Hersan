@@ -17,6 +17,7 @@ namespace Hersan.UI.CapitalHumano
         CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<EmpleadosBE> oList = new List<EmpleadosBE>();
         List<ExpedientesBE> oExpediente = new List<ExpedientesBE>();
+        List<EmpleadosBE> eList = new List<EmpleadosBE>();
         public frmEmpleados()
         {
             InitializeComponent();
@@ -26,13 +27,29 @@ namespace Hersan.UI.CapitalHumano
             txtApellidos.Text = string.Empty;
             txtFonacot.Text = string.Empty;
             txtId.Text = "0";
+            txtCuenta.Text = string.Empty;
             txtIdExp.Text ="0";
             txtInfonavit.Text = string.Empty;
             txtNombres.Text = string.Empty;
             txtNumEmp.Text = "0";
             txtRegistro.Text = string.Empty;
             txtSueldo.Text = string.Empty;
+            cboEstatus.SelectedIndex = 0;
             txtSeguro.Text = string.Empty;
+            dtFecha.Value = DateTime.Today;
+
+        }
+        private void Entero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (!BaseWinBP.isNumero(e.KeyChar))
+                    e.Handled = true;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void Decimal_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
         }
         private bool ValidarCampos()
@@ -42,9 +59,10 @@ namespace Hersan.UI.CapitalHumano
                 Flag = txtSeguro.Text.Trim().Length == 0 ? false : true;
                 Flag = txtSueldo.Text.Trim().Length == 0 ? false : true;
                 Flag = txtFonacot.Text.Trim().Length == 0 ? false : true;
-                Flag = txtInfonavit.Text.Trim().Length == 0 ? false : true;
+                Flag = txtRegistro.Text.Trim().Length == 0 ? false : true;
                 Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
                 Flag = txtNumEmp.Text.Trim().Length == 0 ? false : true;
+                Flag = txtCuenta.Text.Trim().Length == 0 ? false : true;
 
 
                 return Flag;
@@ -78,9 +96,47 @@ namespace Hersan.UI.CapitalHumano
                 throw;
             }
         }
-        private void frmEmpleados_Load(object sender, EventArgs e)
+
+        private void CargarEmpleados()
         {
 
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+           
+            try {
+                if (txtIdExp.Text != null) {
+                    var item = oCHumano.CHU_Empleados_Consultar(int.Parse(txtIdExp.Text));
+                    if (item.Count > 0) {
+                        txtId.Text = item[0].Id.ToString();
+                        txtNumEmp.Text = item[0].Numero.ToString();
+                        txtRegistro.Text = item[0].RegistroFederal;
+                        txtCuenta.Text = item[0].NumeroCuenta;
+                        txtFonacot.Text = item[0].Fonacot;
+                        txtInfonavit.Text = item[0].Infonavit;
+                        txtSeguro.Text = item[0].SeguroSocial;
+                        txtSueldo.Text = item[0].SueldoAprobado.ToString();
+                        cboEstatus.Text = Convert.ToString(item[0].EstatusEmpleado);
+                        dtFecha.Value = DateTime.Parse( item[0].FechaIngreso.ToString());
+
+                        if (item[0].Fonacot != "")
+                            rdbSi.IsChecked=true;
+                                             
+                    }
+                }
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+        private void frmEmpleados_Load(object sender, EventArgs e)
+        {
+            try {
+                LimpiarCampos();
+              
+              
+            } catch (Exception) {
+
+                throw;
+            }
         }
 
         private void radPanel2_Paint(object sender, PaintEventArgs e)
@@ -99,12 +155,7 @@ namespace Hersan.UI.CapitalHumano
                     return;
                 }
 
-                if (oList.FindAll(item => item.Expedientes.Id == int.Parse(txtIdExp.Text)).Count > 0
-                   && int.Parse(txtId.Text) == -1) {
-                    RadMessageBox.Show("El departamento capturado ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    LimpiarCampos();
-                    return;
-                }
+                
                 #region Entidades
                 obj.Numero = int.Parse(txtNumEmp.Text);
                 obj.Expedientes.Id = int.Parse(txtIdExp.Text);
@@ -114,6 +165,7 @@ namespace Hersan.UI.CapitalHumano
                 obj.NumeroCuenta = txtCuenta.Text;
                 obj.RegistroFederal = txtRegistro.Text;
                 obj.SeguroSocial = txtSeguro.Text;
+                obj.FechaIngreso =  dtFecha.Value.Year.ToString() +"-"+ dtFecha.Value.Month.ToString().PadLeft(2, '0') +"-"+ dtFecha.Value.Day.ToString().PadLeft(2, '0');
                 obj.SueldoAprobado = decimal.Parse(txtSueldo.Text);
                 obj.DatosUsuarios.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                 #endregion
@@ -123,7 +175,7 @@ namespace Hersan.UI.CapitalHumano
 
 
                 //PROCESO DE GUARDADO Y ACTUALIZACION
-                if (txtId.Text == "-1") {
+                if (txtId.Text == "0") {
                     int Result = oCHumano.CHUEmpleados_Guardar(obj);
                     if (Result == 0) {
                         RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -155,10 +207,11 @@ namespace Hersan.UI.CapitalHumano
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
+                LimpiarCampos();
 
-            } catch (Exception) {
+            } catch (Exception ex) {
 
-                throw;
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
 
         }
@@ -179,10 +232,77 @@ namespace Hersan.UI.CapitalHumano
                 if (IdExpediente > 0) {
                     LimpiarCampos();
                     CargaExpediente(IdExpediente);
-                    //CargarGrid();
+                    CargarEmpleados();
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
+        private void btnBuscarEMp_Click(object sender, EventArgs e)
+        {
+        
+
+                int IdEmpleado = 0;
+                try {
+                    frmEmpleadosConsulta ofrm = new frmEmpleadosConsulta();
+                    ofrm.WindowState = FormWindowState.Normal;
+                    ofrm.StartPosition = FormStartPosition.CenterScreen;
+                    ofrm.MaximizeBox = false;
+                    ofrm.MinimizeBox = false;
+                    ofrm.ShowDialog();
+                IdEmpleado = ofrm.IdEmpleado;
+
+                } catch (Exception ex) {
+                    RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    throw;
+            }
+        }
+
+        private void radGroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbSi_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+
+            if (rdbSi.IsChecked == true) {
+                txtFonacot.Visible = true;
+            } else
+                txtFonacot.Visible = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            try {
+                if (txtId.Text != "0") {
+                    if (RadMessageBox.Show("Desea dar de baja el empleado seleccionado...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                        int Result = oCHumano.CHU_Empleados_Elimina(int.Parse(txtId.Text), BaseWinBP.UsuarioLogueado.ID);
+                        if (Result != 0) {
+                            RadMessageBox.Show("Empleado dado de baja  correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        } else {
+                            RadMessageBox.Show("Ocurrió un error al dar de baja el empleado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
+                    }
+                }
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al dar de baja el empleado\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            try {
+                this.Close();
+
+            } catch (Exception ex) {
+
+                RadMessageBox.Show("Ocurió un errror al salir de la pantalla" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
     }

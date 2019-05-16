@@ -150,7 +150,6 @@
       <xs:element minOccurs="0" name="Edad" type="xs:int" />
       <xs:element minOccurs="0" name="EdoCivil" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EdoCivilOtro" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Empleados" nillable="true" type="tns:EmpleadosBE" />
       <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Estado" nillable="true" type="q23:EstadosBE" />
       <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="EstadoNac" nillable="true" type="q24:EstadosBE" />
       <xs:element minOccurs="0" name="Estatura" type="xs:decimal" />
@@ -166,27 +165,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ExpedientesDatosPersonales" nillable="true" type="tns:ExpedientesDatosPersonales" />
-  <xs:complexType name="EmpleadosBE">
-    <xs:sequence>
-      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q25:GeneralBE" />
-      <xs:element minOccurs="0" name="EstatusEmpleado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Expedientes" nillable="true" type="tns:ExpedientesBE" />
-      <xs:element minOccurs="0" name="FechaIngreso" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Fonacot" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Infonavit" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Numero" type="xs:int" />
-      <xs:element minOccurs="0" name="NumeroCuenta" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RegistroFederal" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SeguroSocial" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SueldoAprobado" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="EmpleadosBE" nillable="true" type="tns:EmpleadosBE" />
   <xs:complexType name="ExpedienteDocumentos">
     <xs:sequence>
       <xs:element minOccurs="0" name="Afore" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CURP" nillable="true" type="xs:string" />
-      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUuario" nillable="true" type="q26:GeneralBE" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUuario" nillable="true" type="q25:GeneralBE" />
       <xs:element minOccurs="0" name="DoctoExtranjero" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IMSS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdExpediente" type="xs:int" />
@@ -210,7 +193,7 @@
       <xs:element minOccurs="0" name="Auto" type="xs:boolean" />
       <xs:element minOccurs="0" name="Casa" type="xs:boolean" />
       <xs:element minOccurs="0" name="Conyuge" type="xs:boolean" />
-      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q27:GeneralBE" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q26:GeneralBE" />
       <xs:element minOccurs="0" name="Deudas" type="xs:boolean" />
       <xs:element minOccurs="0" name="Donde" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Gastos" type="xs:decimal" />
@@ -238,7 +221,7 @@
   <xs:complexType name="ExpedienteEmpleos">
     <xs:sequence>
       <xs:element minOccurs="0" name="Comentarios" nillable="true" type="xs:string" />
-      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q28:GeneralBE" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q27:GeneralBE" />
       <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdExpediente" type="xs:int" />
@@ -267,7 +250,7 @@
       <xs:element minOccurs="0" name="Actual" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Anios" type="xs:int" />
       <xs:element minOccurs="0" name="Curso" nillable="true" type="xs:string" />
-      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q29:GeneralBE" />
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q28:GeneralBE" />
       <xs:element minOccurs="0" name="Desde" type="xs:int" />
       <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Escuela" nillable="true" type="xs:string" />
@@ -290,7 +273,7 @@
   <xs:element name="ArrayOfExpedienteFamilia" nillable="true" type="tns:ArrayOfExpedienteFamilia" />
   <xs:complexType name="ExpedienteFamilia">
     <xs:sequence>
-      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q30:GeneralBE" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q29:GeneralBE" />
       <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Edad" type="xs:int" />
       <xs:element minOccurs="0" name="IdExpediente" type="xs:int" />
@@ -313,7 +296,7 @@
       <xs:element minOccurs="0" name="Afinazadora" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Anuncio" type="xs:boolean" />
       <xs:element minOccurs="0" name="Aseguradora" nillable="true" type="xs:string" />
-      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q31:GeneralBE" />
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q30:GeneralBE" />
       <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fianza" type="xs:boolean" />
       <xs:element minOccurs="0" name="IdExpediente" type="xs:int" />
@@ -338,7 +321,7 @@
   <xs:element name="ArrayOfExpedienteReferencias" nillable="true" type="tns:ArrayOfExpedienteReferencias" />
   <xs:complexType name="ExpedienteReferencias">
     <xs:sequence>
-      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q32:GeneralBE" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q31:GeneralBE" />
       <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdExpediente" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
@@ -358,7 +341,7 @@
   <xs:complexType name="ExpedienteSalud">
     <xs:sequence>
       <xs:element minOccurs="0" name="Club" nillable="true" type="xs:string" />
-      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q33:GeneralBE" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q32:GeneralBE" />
       <xs:element minOccurs="0" name="Deporte" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Enfermedad" type="xs:boolean" />
       <xs:element minOccurs="0" name="EstadoActual" nillable="true" type="xs:string" />
@@ -396,9 +379,9 @@
   <xs:complexType name="NuevoPuestoBE">
     <xs:sequence>
       <xs:element minOccurs="0" name="Autorizado" type="xs:boolean" />
-      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q34:GeneralBE" />
-      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q35:DepartamentosBE" />
-      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades" nillable="true" type="q36:EntidadesBE" />
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q33:GeneralBE" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q34:DepartamentosBE" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades" nillable="true" type="q35:EntidadesBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Indicadores" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Justificacion" nillable="true" type="xs:string" />
@@ -423,9 +406,9 @@
   <xs:complexType name="DictamenNuevoPuestoBE">
     <xs:sequence>
       <xs:element minOccurs="0" name="Autorizado" type="xs:boolean" />
-      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q37:GeneralBE" />
-      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q38:DepartamentosBE" />
-      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades" nillable="true" type="q39:EntidadesBE" />
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q36:GeneralBE" />
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q37:DepartamentosBE" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades" nillable="true" type="q38:EntidadesBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="NoAutorizado" type="xs:boolean" />
       <xs:element minOccurs="0" name="NuevoPuesto" nillable="true" type="tns:NuevoPuestoBE" />
@@ -439,13 +422,13 @@
       <xs:element minOccurs="0" name="Calificacion" type="xs:decimal" />
       <xs:element minOccurs="0" name="Count" type="xs:int" />
       <xs:element minOccurs="0" name="DatosPersonales" nillable="true" type="tns:ExpedientesDatosPersonales" />
-      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q40:GeneralBE" />
-      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q41:DepartamentosBE" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q39:GeneralBE" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q40:DepartamentosBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdEmpleado" type="xs:int" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Preguntas" nillable="true" type="tns:ArrayOfPreguntasEvaluacionBE" />
-      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Puestos" nillable="true" type="q42:PuestosBE" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Puestos" nillable="true" type="q41:PuestosBE" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EvaluacionInduccionBE" nillable="true" type="tns:EvaluacionInduccionBE" />
@@ -482,20 +465,20 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Aceptado" type="xs:boolean" />
       <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
-      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q43:GeneralBE" />
-      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q44:DepartamentosBE" />
-      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades" nillable="true" type="q45:EntidadesBE" />
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q42:GeneralBE" />
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Departamentos" nillable="true" type="q43:DepartamentosBE" />
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidades" nillable="true" type="q44:EntidadesBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Proceso" type="xs:boolean" />
-      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Puestos" nillable="true" type="q46:PuestosBE" />
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Puestos" nillable="true" type="q45:PuestosBE" />
       <xs:element minOccurs="0" name="Rechazado" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SeguimientoCandidatosBE" nillable="true" type="tns:SeguimientoCandidatosBE" />
   <xs:complexType name="DigitalizadosBE">
     <xs:sequence>
-      <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q47:GeneralBE" />
+      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q46:GeneralBE" />
       <xs:element minOccurs="0" name="Digitalizados" nillable="true" type="tns:ArrayOfDigitalizadosDetalleBE" />
       <xs:element minOccurs="0" name="Empleados" nillable="true" type="tns:EmpleadosBE" />
       <xs:element minOccurs="0" name="Expedientes" nillable="true" type="tns:ExpedientesBE" />
@@ -511,7 +494,7 @@
   <xs:element name="ArrayOfDigitalizadosDetalleBE" nillable="true" type="tns:ArrayOfDigitalizadosDetalleBE" />
   <xs:complexType name="DigitalizadosDetalleBE">
     <xs:sequence>
-      <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q48:GeneralBE" />
+      <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q47:GeneralBE" />
       <xs:element minOccurs="0" name="Digitalizados" nillable="true" type="tns:DigitalizadosBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdTipo" type="xs:int" />
@@ -523,6 +506,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DigitalizadosDetalleBE" nillable="true" type="tns:DigitalizadosDetalleBE" />
+  <xs:complexType name="EmpleadosBE">
+    <xs:sequence>
+      <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuarios" nillable="true" type="q48:GeneralBE" />
+      <xs:element minOccurs="0" name="EstatusEmpleado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expedientes" nillable="true" type="tns:ExpedientesBE" />
+      <xs:element minOccurs="0" name="FechaIngreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fonacot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Infonavit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistroFederal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeguroSocial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SueldoAprobado" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmpleadosBE" nillable="true" type="tns:EmpleadosBE" />
   <xs:complexType name="DescripcionPuestosBE">
     <xs:sequence>
       <xs:element minOccurs="0" name="Autoridad" nillable="true" type="xs:string" />
@@ -538,4 +538,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DescripcionPuestosBE" nillable="true" type="tns:DescripcionPuestosBE" />
+  <xs:complexType name="ArrayOfEmpleadosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmpleadosBE" nillable="true" type="tns:EmpleadosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmpleadosBE" nillable="true" type="tns:ArrayOfEmpleadosBE" />
 </xs:schema>

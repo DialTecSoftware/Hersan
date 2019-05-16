@@ -113,7 +113,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(934, 78);
+            this.radCommandBar1.Size = new System.Drawing.Size(934, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -248,7 +248,7 @@
             this.radPanel1.Controls.Add(this.txtNombres);
             this.radPanel1.Controls.Add(this.txtApellidos);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 78);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(934, 87);
             this.radPanel1.TabIndex = 1;
@@ -317,14 +317,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 165);
+            this.radDock1.Location = new System.Drawing.Point(0, 140);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(934, 331);
+            this.radDock1.Size = new System.Drawing.Size(934, 356);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -336,7 +336,7 @@
             this.documentWindow1.Location = new System.Drawing.Point(6, 29);
             this.documentWindow1.Name = "documentWindow1";
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(600, 286);
+            this.documentWindow1.Size = new System.Drawing.Size(600, 311);
             this.documentWindow1.Text = "Documentos";
             // 
             // gvDatos
@@ -389,6 +389,7 @@
             gridViewTextBoxColumn5.Name = "Estatus";
             gridViewTextBoxColumn6.FieldName = "RutaArchivo";
             gridViewTextBoxColumn6.HeaderText = "column1";
+            gridViewTextBoxColumn6.IsVisible = false;
             gridViewTextBoxColumn6.Name = "RutaArchivo";
             gridViewTextBoxColumn6.Width = 300;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
@@ -405,7 +406,7 @@
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(600, 230);
+            this.gvDatos.Size = new System.Drawing.Size(600, 255);
             this.gvDatos.TabIndex = 5;
             this.gvDatos.Click += new System.EventHandler(this.gvDatos_Click);
             // 
@@ -503,7 +504,7 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(308, 321);
+            this.toolTabStrip1.Size = new System.Drawing.Size(308, 346);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(308, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(108, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -517,7 +518,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 24);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(306, 295);
+            this.toolWindow1.Size = new System.Drawing.Size(306, 320);
             this.toolWindow1.Text = "toolWindow1";
             // 
             // radPanel2
@@ -619,7 +620,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(612, 321);
+            this.documentTabStrip1.Size = new System.Drawing.Size(612, 346);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 

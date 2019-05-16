@@ -863,10 +863,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CHU_Empleados_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdExp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Empleados_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="CHU_Empleados_ConsultarResult" nillable="true" type="q52:ArrayOfEmpleadosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CHUEmpleados_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q52:EmpleadosBE" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q53:EmpleadosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -880,7 +894,7 @@
   <xs:element name="CHU_EmpleadosActualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q53:EmpleadosBE" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="obj" nillable="true" type="q54:EmpleadosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -888,6 +902,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="CHU_EmpleadosActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Empleados_Elimina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdEmp" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_Empleados_EliminaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CHU_Empleados_EliminaResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

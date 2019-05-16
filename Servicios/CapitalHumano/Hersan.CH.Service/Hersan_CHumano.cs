@@ -251,6 +251,10 @@ namespace Hersan.CH.Service
         #endregion
 
         #region Empleados
+        public List<EmpleadosBE> CHU_Empleados_Consultar(int IdExp)
+        {
+            return new EmpleadosBP().CHU_Empleados_Consultar(IdExp);
+        }
         public int CHUEmpleados_Guardar(EmpleadosBE obj)
         {
             return new EmpleadosBP().CHUEmpleados_Guardar(obj);
@@ -258,6 +262,10 @@ namespace Hersan.CH.Service
         public int CHU_EmpleadosActualizar(EmpleadosBE obj)
         {
             return new EmpleadosBP().CHU_EmpleadosActualizar(obj);
+        }
+        public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario)
+        {
+            return new EmpleadosBP().CHU_Empleados_Elimina(IdEmp, IdUsuario);
         }
         #endregion
     }

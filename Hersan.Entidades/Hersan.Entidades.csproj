@@ -60,8 +60,11 @@
   <ItemGroup>
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
     <Compile Include="CapitalHumano\ContratosBE.cs" />
+    <Compile Include="CapitalHumano\DescripcionPuestosBE.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoBE.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionBE.cs" />
+    <Compile Include="CapitalHumano\DigitalizadosBE.cs" />
+    <Compile Include="CapitalHumano\EmpleadosBE.cs" />
     <Compile Include="CapitalHumano\EvaluacionInduccionBE.cs" />
     <Compile Include="CapitalHumano\ExpedientesBE.cs" />
     <Compile Include="CapitalHumano\FuncionesBE.cs" />
@@ -106,6 +109,8 @@
     <Compile Include="Ensamble\ClientesBE.cs" />
     <Compile Include="Ensamble\PedidosBE.cs" />
     <Compile Include="Ensamble\ProductosEnsambleBE.cs" />
+    <Compile Include="Vialeta\ProductosVialetaBE.cs" />
+    <Compile Include="Vialidad\ProductosVialidadBE.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

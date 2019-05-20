@@ -215,9 +215,8 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 this.Close();
-            } catch (Exception) {
-
-                throw;
+            } catch (Exception ) {
+                RadMessageBox.Show("Ocurrió un error al cerrar la pantalla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
             }
         }
 

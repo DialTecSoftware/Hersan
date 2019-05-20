@@ -109,6 +109,8 @@
     <Compile Include="Ensamble\ClientesBE.cs" />
     <Compile Include="Ensamble\PedidosBE.cs" />
     <Compile Include="Ensamble\ProductosEnsambleBE.cs" />
+    <Compile Include="Vialeta\ProductosVialetaBE.cs" />
+    <Compile Include="Vialidad\ProductosVialidadBE.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

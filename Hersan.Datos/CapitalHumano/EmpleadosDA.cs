@@ -12,13 +12,14 @@ namespace Hersan.Datos.CapitalHumano
 {
   public  class EmpleadosDA: BaseDA
     {
-        #region Constantes
-        const string CONST_CHU_EMP_OBTENER = "ABC_EquipoHerramientas_Obtener";
+        #region Constantes 
+        const string CONST_CHU_EMP_OBTENER = "CHU_Empleados_Consultar";
         const string CONST_CHU_EMP_GUARDAR = "CHU_Empleados_Guarda";
         const string CONST_CHU_EMP_ACTUALIZAR = "CHU_Empleados_Actualiza";
+        const string CONST_CHU_EMP_ELIMINAR = "CHU_Empleados_Eliminar";
         #endregion
 
-        
+
         public int CHUEmpleados_Guardar(EmpleadosBE obj)
         {
             int Result = 0;
@@ -26,6 +27,7 @@ namespace Hersan.Datos.CapitalHumano
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMP_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@IdExp", obj.Expedientes.Id);
                         cmd.Parameters.AddWithValue("@Numero", obj.Numero);
                         cmd.Parameters.AddWithValue("@Seguro", obj.SeguroSocial);
                         cmd.Parameters.AddWithValue("@registro", obj.RegistroFederal);
@@ -34,7 +36,7 @@ namespace Hersan.Datos.CapitalHumano
                         cmd.Parameters.AddWithValue("@Sueldo", obj.SueldoAprobado);
                         cmd.Parameters.AddWithValue("@Cuenta", obj.NumeroCuenta);
                         cmd.Parameters.AddWithValue("@EstatusEmp", obj.EstatusEmpleado);
-                        //cmd.Parameters.AddWithValue("@Fecha", obj.FechaIngreso);
+                        cmd.Parameters.AddWithValue("@Fecha", obj.FechaIngreso);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuarios.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -62,7 +64,7 @@ namespace Hersan.Datos.CapitalHumano
                         cmd.Parameters.AddWithValue("@Sueldo", obj.SueldoAprobado);
                         cmd.Parameters.AddWithValue("@Cuenta", obj.NumeroCuenta);
                         cmd.Parameters.AddWithValue("@EstatusEmp", obj.EstatusEmpleado);
-                        //cmd.Parameters.AddWithValue("@Fecha", obj.FechaIngreso);
+                        cmd.Parameters.AddWithValue("@Fecha", obj.FechaIngreso);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuarios.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -71,6 +73,61 @@ namespace Hersan.Datos.CapitalHumano
                 }
                 return Result;
             } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<EmpleadosBE> CHU_Empleados_Consultar(int IdExp)
+        {
+            List<EmpleadosBE> oList = new List<EmpleadosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMP_OBTENER, conn)) {
+                        cmd.Parameters.AddWithValue("@IdExp", IdExp);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                EmpleadosBE obj = new EmpleadosBE();
+                                obj.Id = int.Parse(reader["EMP_Id"].ToString());
+                                obj.Numero = int.Parse(reader["EMP_Numero"].ToString());
+                                obj.NumeroCuenta = reader["EMP_NumeroCuenta"].ToString();
+                                obj.Infonavit = reader["EMP_Infonavit"].ToString();
+                                obj.Fonacot = reader["EMP_Fonacot"].ToString();
+                                obj.SeguroSocial = reader["EMP_SeguroSocial"].ToString();
+                                obj.RegistroFederal = reader["EMP_RegistroFederal"].ToString();
+                                obj.EstatusEmpleado = reader["EMP_EstatusEmpleado"].ToString();
+                                obj.FechaIngreso = reader["EMP_FechaIngreso"].ToString();
+                                obj.SueldoAprobado = decimal.Parse(reader["EMP_SueldoAprobado"].ToString());
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMP_ELIMINAR, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", IdEmp);
+                        cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+
                 throw ex;
             }
         }

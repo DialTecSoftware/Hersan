@@ -97,7 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Datos\Hersan.Datos.csproj">
-      <Project>{220A1C2F-41CE-44CC-A90B-32EC8DBC535A}</Project>
+      <Project>{220a1c2f-41ce-44cc-a90b-32ec8dbc535a}</Project>
       <Name>Hersan.Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">

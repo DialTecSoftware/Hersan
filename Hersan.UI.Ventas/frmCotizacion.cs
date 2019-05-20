@@ -427,7 +427,7 @@ namespace Hersan.UI.Ensamble
             try {
                 foreach (GridViewRowInfo item in this.extender.AssociatedRadMultiColumnComboBox.EditorControl.Rows) {
                     if (item.Tag != null && item.Tag.ToString() == Boolean.TrueString) {
-                        if (Count <= txtCantidadP.Value) {
+                        if (Count <= int.Parse(txtCavidades.Text)) {
                             ReflejantesBE obj = new ReflejantesBE();
                             obj.Id = int.Parse(item.Cells["Id"].Value.ToString());
                             obj.Nombre = item.Cells["Nombre"].Value.ToString();
@@ -586,6 +586,7 @@ namespace Hersan.UI.Ensamble
 
                 CargarTablas(ref oData);
 
+                var x = 0;
             } catch (Exception ex) {
                 throw ex;
             }

@@ -17,8 +17,8 @@ namespace Hersan.Entidades.CapitalHumano
             Expedientes = new ExpedientesBE();
             Infonavit = string.Empty;
             Fonacot = string.Empty;
-            SeguroSocial = string.Empty;
-            RegistroFederal = string.Empty;
+            TipoInfonavit = string.Empty;
+            FechaAltaIMSS = string.Empty;
             NumeroCuenta = string.Empty;
             SueldoAprobado = 0;
             EstatusEmpleado = string.Empty;
@@ -30,8 +30,8 @@ namespace Hersan.Entidades.CapitalHumano
         public ExpedientesBE Expedientes { get; set; }
         public string Infonavit { get; set; }
         public string Fonacot { get; set; }
-        public string SeguroSocial { get; set; }
-        public string RegistroFederal { get; set; }
+        public string TipoInfonavit { get; set; }
+        public string FechaAltaIMSS { get; set; }
         public string NumeroCuenta { get; set; }
         public decimal SueldoAprobado { get; set; }
         public string EstatusEmpleado { get; set; }

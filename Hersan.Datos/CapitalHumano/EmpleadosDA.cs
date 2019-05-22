@@ -29,8 +29,8 @@ namespace Hersan.Datos.CapitalHumano
                     using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMP_GUARDAR, conn)) {
                         cmd.Parameters.AddWithValue("@IdExp", obj.Expedientes.Id);
                         cmd.Parameters.AddWithValue("@Numero", obj.Numero);
-                        cmd.Parameters.AddWithValue("@Seguro", obj.SeguroSocial);
-                        cmd.Parameters.AddWithValue("@registro", obj.RegistroFederal);
+                        cmd.Parameters.AddWithValue("@TipoF", obj.TipoInfonavit);
+                        cmd.Parameters.AddWithValue("@IMSS", obj.FechaAltaIMSS);
                         cmd.Parameters.AddWithValue("@Infonavit", obj.Infonavit);
                         cmd.Parameters.AddWithValue("@Fonacot", obj.Fonacot);
                         cmd.Parameters.AddWithValue("@Sueldo", obj.SueldoAprobado);
@@ -57,8 +57,8 @@ namespace Hersan.Datos.CapitalHumano
                     using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMP_ACTUALIZAR, conn)) {
                         cmd.Parameters.AddWithValue("@Numero", obj.Numero);
                         cmd.Parameters.AddWithValue("@IdExp", obj.Expedientes.Id);
-                        cmd.Parameters.AddWithValue("@Seguro", obj.SeguroSocial);
-                        cmd.Parameters.AddWithValue("@Registro", obj.RegistroFederal);
+                        cmd.Parameters.AddWithValue("@TipoF", obj.TipoInfonavit);
+                        cmd.Parameters.AddWithValue("@IMSS", obj.FechaAltaIMSS);
                         cmd.Parameters.AddWithValue("@Infonavit", obj.Infonavit);
                         cmd.Parameters.AddWithValue("@Fonacot", obj.Fonacot);
                         cmd.Parameters.AddWithValue("@Sueldo", obj.SueldoAprobado);
@@ -93,11 +93,11 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Id = int.Parse(reader["EMP_Id"].ToString());
                                 obj.Numero = int.Parse(reader["EMP_Numero"].ToString());
                                 obj.NumeroCuenta = reader["EMP_NumeroCuenta"].ToString();
+                                obj.FechaAltaIMSS = reader["EMP_FechaAltaIMSS"].ToString();
+                                obj.TipoInfonavit = reader["EMP_TipoInfonavit"].ToString();
+                                obj.EstatusEmpleado = reader["EMP_EstatusEmpleado"].ToString();
                                 obj.Infonavit = reader["EMP_Infonavit"].ToString();
                                 obj.Fonacot = reader["EMP_Fonacot"].ToString();
-                                obj.SeguroSocial = reader["EMP_SeguroSocial"].ToString();
-                                obj.RegistroFederal = reader["EMP_RegistroFederal"].ToString();
-                                obj.EstatusEmpleado = reader["EMP_EstatusEmpleado"].ToString();
                                 obj.FechaIngreso = reader["EMP_FechaIngreso"].ToString();
                                 obj.SueldoAprobado = decimal.Parse(reader["EMP_SueldoAprobado"].ToString());
                                 oList.Add(obj);

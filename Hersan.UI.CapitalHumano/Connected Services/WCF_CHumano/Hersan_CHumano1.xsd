@@ -511,15 +511,15 @@
       <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuarios" nillable="true" type="q48:GeneralBE" />
       <xs:element minOccurs="0" name="EstatusEmpleado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Expedientes" nillable="true" type="tns:ExpedientesBE" />
+      <xs:element minOccurs="0" name="FechaAltaIMSS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaIngreso" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fonacot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Infonavit" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Numero" type="xs:int" />
       <xs:element minOccurs="0" name="NumeroCuenta" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RegistroFederal" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SeguroSocial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SueldoAprobado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoInfonavit" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EmpleadosBE" nillable="true" type="tns:EmpleadosBE" />

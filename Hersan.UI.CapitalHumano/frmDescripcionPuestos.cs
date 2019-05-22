@@ -84,7 +84,8 @@ namespace Hersan.UI.CapitalHumano
         }
         private void LimpiarDatos()
         {
-         
+            oList.Clear();
+            pList.Clear();
             txtObjetivo.Text = String.Empty;
             txtRiesgo.Text = string.Empty;
             txtAutoridad.Text = string.Empty;
@@ -94,6 +95,7 @@ namespace Hersan.UI.CapitalHumano
             txtEsfuerzo.Text = string.Empty;
             txtEquipo.Text = string.Empty;
             cboColaboradores.SelectedIndex = 0;
+            gvContactos.DataSource = null;
         }
 
         private void LimpiarCampos()
@@ -103,6 +105,7 @@ namespace Hersan.UI.CapitalHumano
             txtId.Text = "0";
             txtIdPerfil.Text = "0";
             txtObjetivo.Text = String.Empty;
+            txtExperiencia.Text = string.Empty;
             txtRiesgo.Text = string.Empty;
             txtAutoridad.Text = string.Empty;
             txtClave.Text = string.Empty;
@@ -117,6 +120,8 @@ namespace Hersan.UI.CapitalHumano
             cboSuperior.SelectedIndex = -1;
             cboPuestos.SelectedIndex = -1;
             cboInferior.SelectedIndex = -1;
+            grdDatos.DataSource = null;
+            grdDatosEdu.DataSource = null;
 
         }
     
@@ -363,8 +368,10 @@ namespace Hersan.UI.CapitalHumano
                 GridViewSummaryRowItem item1 = new GridViewSummaryRowItem();
                 item1.Add(new GridViewSummaryItem("Total", "Total:  {0:N2}", GridAggregateFunction.Sum));
                 this.grdDatos.SummaryRowsBottom.Add(item1);
-                LimpiarCampos();
                 CargarEntidades();
+                LimpiarCampos();
+                LimpiarDatos();
+                
                 CargarCContactos();
                 CalcularPuntos();
 
@@ -590,6 +597,9 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 LimpiarCampos();
+                LimpiarDatos();
+               
+
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

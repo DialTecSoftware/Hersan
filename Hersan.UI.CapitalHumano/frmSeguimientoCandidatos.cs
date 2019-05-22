@@ -312,25 +312,26 @@ namespace Hersan.UI.CapitalHumano
             try {
                 //if (chkEstatus.Checked) {
                 if (RadMessageBox.Show("Esta acción dará de baja la solicitud\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                }
 
-                obj.Id = int.Parse(txtId.Text);
-                obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
-                obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
-                obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
-                obj.Correo = (txtCorreo.Text);
-                obj.Proceso = true;
-                obj.NombreCompleto = txtNombreC.Text;
-                obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                obj.DatosUsuario.Estatus = false;
 
-                int Result = oCHumano.CHU_SeguimientoCan_Actualizar(obj);
-                if (Result == 0) {
-                    RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                } else {
-                    RadMessageBox.Show("Candidato dado de baja correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    LimpiarCampos();
-                    CargarSeguimientos();
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
+                    obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
+                    obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
+                    obj.Correo = (txtCorreo.Text);
+                    obj.Proceso = true;
+                    obj.NombreCompleto = txtNombreC.Text;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                    obj.DatosUsuario.Estatus = false;
+
+                    int Result = oCHumano.CHU_SeguimientoCan_Actualizar(obj);
+                    if (Result == 0) {
+                        RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    } else {
+                        RadMessageBox.Show("Candidato dado de baja correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        LimpiarCampos();
+                        CargarSeguimientos();
+                    }
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al dar de baja el candidato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

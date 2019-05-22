@@ -32,10 +32,10 @@ namespace Hersan.UI.CapitalHumano
             txtInfonavit.Text = string.Empty;
             txtNombres.Text = string.Empty;
             txtNumEmp.Text = "0";
-            txtRegistro.Text = string.Empty;
+         
             txtSueldo.Text = string.Empty;
             cboEstatus.SelectedIndex = 0;
-            txtSeguro.Text = string.Empty;
+            cboTipoF.SelectedIndex = 0;
             dtFecha.Value = DateTime.Today;
 
         }
@@ -56,10 +56,10 @@ namespace Hersan.UI.CapitalHumano
         {
             bool Flag = true;
             try {
-                Flag = txtSeguro.Text.Trim().Length == 0 ? false : true;
+               
                 Flag = txtSueldo.Text.Trim().Length == 0 ? false : true;
                 Flag = txtFonacot.Text.Trim().Length == 0 ? false : true;
-                Flag = txtRegistro.Text.Trim().Length == 0 ? false : true;
+               
                 Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
                 Flag = txtNumEmp.Text.Trim().Length == 0 ? false : true;
                 Flag = txtCuenta.Text.Trim().Length == 0 ? false : true;
@@ -103,19 +103,21 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
            
             try {
-                if (txtIdExp.Text != null) {
+                if (int.Parse(txtIdExp.Text) >0) {
                     var item = oCHumano.CHU_Empleados_Consultar(int.Parse(txtIdExp.Text));
                     if (item.Count > 0) {
                         txtId.Text = item[0].Id.ToString();
                         txtNumEmp.Text = item[0].Numero.ToString();
-                        txtRegistro.Text = item[0].RegistroFederal;
+                   
                         txtCuenta.Text = item[0].NumeroCuenta;
                         txtFonacot.Text = item[0].Fonacot;
                         txtInfonavit.Text = item[0].Infonavit;
-                        txtSeguro.Text = item[0].SeguroSocial;
+                
                         txtSueldo.Text = item[0].SueldoAprobado.ToString();
                         cboEstatus.Text = Convert.ToString(item[0].EstatusEmpleado);
+                        cboTipoF.Text = Convert.ToString(item[0].TipoInfonavit);
                         dtFecha.Value = DateTime.Parse( item[0].FechaIngreso.ToString());
+                        dtIMSS.Value = DateTime.Parse(item[0].FechaAltaIMSS.ToString());
 
                         if (item[0].Fonacot != "")
                             rdbSi.IsChecked=true;
@@ -131,8 +133,10 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 LimpiarCampos();
-              
-              
+                txtInfonavit.Visible = true; ;
+                cboTipoF.Visible = true;
+                lblFona.Visible = true;
+
             } catch (Exception) {
 
                 throw;
@@ -160,12 +164,12 @@ namespace Hersan.UI.CapitalHumano
                 obj.Numero = int.Parse(txtNumEmp.Text);
                 obj.Expedientes.Id = int.Parse(txtIdExp.Text);
                 obj.EstatusEmpleado = (cboEstatus.SelectedItem.Text);
+                obj.TipoInfonavit = (cboTipoF.SelectedItem.Text);
                 obj.Fonacot = txtFonacot.Text;
                 obj.Infonavit= txtInfonavit.Text;
                 obj.NumeroCuenta = txtCuenta.Text;
-                obj.RegistroFederal = txtRegistro.Text;
-                obj.SeguroSocial = txtSeguro.Text;
                 obj.FechaIngreso =  dtFecha.Value.Year.ToString() +"-"+ dtFecha.Value.Month.ToString().PadLeft(2, '0') +"-"+ dtFecha.Value.Day.ToString().PadLeft(2, '0');
+                obj.FechaAltaIMSS = dtIMSS.Value.Year.ToString() + "-" + dtIMSS.Value.Month.ToString().PadLeft(2, '0') + "-" + dtIMSS.Value.Day.ToString().PadLeft(2, '0');
                 obj.SueldoAprobado = decimal.Parse(txtSueldo.Text);
                 obj.DatosUsuarios.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                 #endregion
@@ -304,6 +308,30 @@ namespace Hersan.UI.CapitalHumano
 
                 RadMessageBox.Show("Ocurió un errror al salir de la pantalla" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
+        }
+
+        private void documentWindow1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbNo_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+
+        }
+
+        private void rdbUi_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+
+            if (rdbUi.IsChecked == true) {
+                txtInfonavit.Visible = true; ;
+                cboTipoF.Show();
+                lblFona.Show();
+
+            } else
+                txtInfonavit.Visible = false; ;
+                cboTipoF.Hide();
+                lblFona.Hide();
         }
     }
 }

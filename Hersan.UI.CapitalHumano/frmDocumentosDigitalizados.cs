@@ -203,6 +203,7 @@ namespace Hersan.UI.CapitalHumano
         private void frmDocumentosDigitalizados_Load(object sender, EventArgs e)
         {
             try {
+                LimpiarCampos();
                 CargaDocumentos();
 
             } catch (Exception) {
@@ -267,11 +268,15 @@ namespace Hersan.UI.CapitalHumano
                         if (item.Sel == true)
                             BaseWinBP.AbrirArchivo(item.RutaArchivo);
                         else
-                            RadMessageBox.Show("No hay ningun archivo seleccionado\n", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
 
+                        RadMessageBox.Show("Selecciona un archivo antes de continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     });
+                   
+
                 }
-               
+                else
+                    RadMessageBox.Show("No hay ningun archivo en la lista", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurió un error al abrir el archivo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -427,7 +432,7 @@ namespace Hersan.UI.CapitalHumano
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             try {
-                if (txtId.Text != "0") {
+               if (int.Parse(txtId.Text) > 0) {
                     if (RadMessageBox.Show("Desea eliminar los documentos para el empleado seleccionado...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         int Result = oCHumano.CHU_Digitalizados_Elimina(int.Parse(txtId.Text), BaseWinBP.UsuarioLogueado.ID);
                         if (Result != 0) {
@@ -436,6 +441,9 @@ namespace Hersan.UI.CapitalHumano
                             RadMessageBox.Show("Ocurrió un error al eliminar los documentos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                         }
                     }
+                }
+               else {
+                    RadMessageBox.Show("No hay ningun documento seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
                 LimpiarCampos();
             } catch (Exception ex) {

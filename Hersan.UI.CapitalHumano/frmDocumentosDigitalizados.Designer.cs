@@ -266,6 +266,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(49, 20);
             this.txtId.TabIndex = 2;
+            this.txtId.Visible = false;
             // 
             // label3
             // 

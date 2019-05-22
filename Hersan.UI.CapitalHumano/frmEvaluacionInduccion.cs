@@ -31,6 +31,7 @@ namespace Hersan.UI.CapitalHumano
 
         private void LimpiarCampos()
         {
+            txtIdd.Text = "-1";
             txtApellidos.Text = string.Empty;
             txtCalif.Text = string.Empty;
             txtEmp.Text = string.Empty;
@@ -210,6 +211,7 @@ namespace Hersan.UI.CapitalHumano
         private void frmEvaluacionInduccion_Load(object sender, EventArgs e)
         {
             try {
+                LimpiarCampos();
                 lblFecha.Text = DateTime.Now.ToLongDateString();
                 //Cargar_Cuestionario();
                 CargarPreguntasEvaluacion();
@@ -289,7 +291,7 @@ namespace Hersan.UI.CapitalHumano
                     return;
                 }
 
-                if (oList.FindAll(item => item.IdEmpleado == int.Parse(txtId.Text) ).Count > 0
+                if (oList.FindAll(item => item.IdEmpleado == int.Parse(txtEmp.Text) ).Count > 0
                    && int.Parse(txtId.Text) == -1) {
                     RadMessageBox.Show("Este empleado ya ha realizado su evaluación, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     LimpiarCampos();
@@ -335,7 +337,7 @@ namespace Hersan.UI.CapitalHumano
 
                 #endregion
 
-                if (txtId.Text == "-1") {
+                if (txtIdd.Text == "-1") {
                      Result = oCHumano.CHU_EvaluacionInduccion_Guardar(oData,BaseWinBP.UsuarioLogueado.ID);
                     if (Result == 0) {
                         RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo",  this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

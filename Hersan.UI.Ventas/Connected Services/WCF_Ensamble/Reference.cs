@@ -22,10 +22,10 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         int ABC_Clientes_Actualizar(System.Data.DataSet Tablas, string Entidades, int IdUsuario, bool Estatus);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Buscar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_BuscarResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Ventas.ClientesBE> ABC_Clientes_Buscar(Hersan.Entidades.Ventas.ClientesBE Lista, string Entidades);
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Buscar(Hersan.Entidades.Ensamble.ClientesBE Lista, string Entidades);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_ObtenerResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Ventas.ClientesBE> ABC_Clientes_Obtener(int IdCliente);
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Obtener(int IdCliente);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.FormasPagoBE> ABC_FormaPago_Combo();
@@ -77,6 +77,15 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_GuardarResponse")]
         int ENS_Cotizacion_Guardar(int IdCliente, System.Data.DataTable oDetalle, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Buscar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_BuscarResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ActualizarResponse")]
+        int ENS_Cotizacion_Actualizar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -114,11 +123,11 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
             return base.Channel.ABC_Clientes_Actualizar(Tablas, Entidades, IdUsuario, Estatus);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Ventas.ClientesBE> ABC_Clientes_Buscar(Hersan.Entidades.Ventas.ClientesBE Lista, string Entidades) {
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Buscar(Hersan.Entidades.Ensamble.ClientesBE Lista, string Entidades) {
             return base.Channel.ABC_Clientes_Buscar(Lista, Entidades);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Ventas.ClientesBE> ABC_Clientes_Obtener(int IdCliente) {
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Obtener(int IdCliente) {
             return base.Channel.ABC_Clientes_Obtener(IdCliente);
         }
         
@@ -188,6 +197,18 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         public int ENS_Cotizacion_Guardar(int IdCliente, System.Data.DataTable oDetalle, int IdUsuario) {
             return base.Channel.ENS_Cotizacion_Guardar(IdCliente, oDetalle, IdUsuario);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final) {
+            return base.Channel.ENS_Cotizacion_Buscar(IdCliente, Nombre, Inicial, Final);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion) {
+            return base.Channel.ENS_Cotizacion_Obtener(IdCotizacion);
+        }
+        
+        public int ENS_Cotizacion_Actualizar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle) {
+            return base.Channel.ENS_Cotizacion_Actualizar(obj, oDetalle);
         }
     }
 }

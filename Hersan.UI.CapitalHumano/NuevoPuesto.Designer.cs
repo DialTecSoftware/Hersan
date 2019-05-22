@@ -647,7 +647,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
-            this.Text = "frmNuevoPuesto";
+            this.Text = "Nuevo Puesto";
             this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmNuevoPuesto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();

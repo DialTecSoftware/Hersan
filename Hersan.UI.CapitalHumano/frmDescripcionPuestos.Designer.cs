@@ -779,6 +779,7 @@
             // documentWindow2
             // 
             this.documentWindow2.Controls.Add(this.radPanel3);
+            this.documentWindow2.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
             this.documentWindow2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentWindow2.Location = new System.Drawing.Point(6, 29);
             this.documentWindow2.Name = "documentWindow2";

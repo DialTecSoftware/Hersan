@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEvaluacionInduccion));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn5 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn6 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn7 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn8 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn9 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn10 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn11 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn12 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -480,44 +480,44 @@
             this.gvDatos.MasterTemplate.AllowColumnReorder = false;
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
-            gridViewTextBoxColumn3.FieldName = "Id";
-            gridViewTextBoxColumn3.HeaderText = "Id_Pregunta";
-            gridViewTextBoxColumn3.IsVisible = false;
-            gridViewTextBoxColumn3.Name = "Id";
-            gridViewTextBoxColumn4.FieldName = "Pregunta";
-            gridViewTextBoxColumn4.HeaderText = "Preguntas";
-            gridViewTextBoxColumn4.Name = "Pregunta";
-            gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.Width = 290;
-            gridViewCheckBoxColumn5.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
-            gridViewCheckBoxColumn5.FieldName = "Valor4";
-            gridViewCheckBoxColumn5.HeaderText = "4";
-            gridViewCheckBoxColumn5.Name = "Valor4";
-            gridViewCheckBoxColumn5.Width = 35;
-            gridViewCheckBoxColumn6.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
-            gridViewCheckBoxColumn6.FieldName = "Valor3";
-            gridViewCheckBoxColumn6.HeaderText = "3";
-            gridViewCheckBoxColumn6.Name = "Valor3";
-            gridViewCheckBoxColumn6.Width = 35;
-            gridViewCheckBoxColumn7.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
-            gridViewCheckBoxColumn7.FieldName = "Valor2";
-            gridViewCheckBoxColumn7.HeaderText = "2";
-            gridViewCheckBoxColumn7.Name = "Valor2";
-            gridViewCheckBoxColumn7.Width = 35;
-            gridViewCheckBoxColumn8.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
-            gridViewCheckBoxColumn8.FieldName = "Valor1";
-            gridViewCheckBoxColumn8.HeaderText = "1";
-            gridViewCheckBoxColumn8.Name = "Valor1";
-            gridViewCheckBoxColumn8.Width = 35;
+            gridViewTextBoxColumn5.FieldName = "Id";
+            gridViewTextBoxColumn5.HeaderText = "Id_Pregunta";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "Id";
+            gridViewTextBoxColumn6.FieldName = "Pregunta";
+            gridViewTextBoxColumn6.HeaderText = "Preguntas";
+            gridViewTextBoxColumn6.Name = "Pregunta";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 290;
+            gridViewCheckBoxColumn9.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn9.FieldName = "Valor4";
+            gridViewCheckBoxColumn9.HeaderText = "4";
+            gridViewCheckBoxColumn9.Name = "Valor4";
+            gridViewCheckBoxColumn9.Width = 35;
+            gridViewCheckBoxColumn10.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn10.FieldName = "Valor3";
+            gridViewCheckBoxColumn10.HeaderText = "3";
+            gridViewCheckBoxColumn10.Name = "Valor3";
+            gridViewCheckBoxColumn10.Width = 35;
+            gridViewCheckBoxColumn11.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn11.FieldName = "Valor2";
+            gridViewCheckBoxColumn11.HeaderText = "2";
+            gridViewCheckBoxColumn11.Name = "Valor2";
+            gridViewCheckBoxColumn11.Width = 35;
+            gridViewCheckBoxColumn12.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn12.FieldName = "Valor1";
+            gridViewCheckBoxColumn12.HeaderText = "1";
+            gridViewCheckBoxColumn12.Name = "Valor1";
+            gridViewCheckBoxColumn12.Width = 35;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewCheckBoxColumn5,
-            gridViewCheckBoxColumn6,
-            gridViewCheckBoxColumn7,
-            gridViewCheckBoxColumn8});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewCheckBoxColumn9,
+            gridViewCheckBoxColumn10,
+            gridViewCheckBoxColumn11,
+            gridViewCheckBoxColumn12});
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
@@ -700,7 +700,8 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "frmEvaluacionInduccion";
+            this.ShowIcon = false;
+            this.Text = "Evaluación de Inducción";
             this.ThemeName = "Material";
             this.Load += new System.EventHandler(this.frmEvaluacionInduccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();

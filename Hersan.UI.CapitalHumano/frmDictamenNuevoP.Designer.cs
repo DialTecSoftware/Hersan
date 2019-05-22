@@ -929,7 +929,8 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "frmDictamenNuevoP";
+            this.ShowIcon = false;
+            this.Text = "Dictamen Nuevo Puesto";
             this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmDictamenNuevoP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();

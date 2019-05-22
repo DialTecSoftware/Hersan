@@ -464,7 +464,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
-            this.Text = "SolicitudPersonal";
+            this.Text = "Solicitud de Personal";
             this.Load += new System.EventHandler(this.frmSolicitud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).EndInit();

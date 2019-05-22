@@ -74,13 +74,9 @@ namespace Hersan.UI.CapitalHumano
 
                 if (directory != "")
                     {
-
                     DirectoryInfo di = Directory.CreateDirectory(directory);
-
-                }
-
-
-                oList.ForEach(item => {
+               }
+               oList.ForEach(item => {
                     if (item.RutaOriginal != item.RutaArchivo) {
                         System.IO.File.Copy(item.RutaOriginal, item.RutaArchivo, true);
                     }
@@ -140,6 +136,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 if (txtIdExp.Text != null ) {
                     DataSet oAux = oCHumano.CHU_Digitalizados_Obtener(int.Parse(txtIdExp.Text));
+                   
                     if (oAux.Tables.Count > 0) {
 
                         /* EDUCACIÓN */
@@ -173,7 +170,11 @@ namespace Hersan.UI.CapitalHumano
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            try {
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -240,9 +241,9 @@ namespace Hersan.UI.CapitalHumano
    
                     //Get the path of specified file                 
                     string archivo=  System.IO.Path.GetFileName(oDialog.FileName);               
-                   path = directory+ @"\" + archivo;
                     filePath = oDialog.FileName;
-                    directory = @"C:\Temp\Greg\" + txtIdExp.Text;
+                    directory = @"C:\Temp\" + txtIdExp.Text;
+                    path = directory + @"\" + archivo;
                     txtArchivo.Text = archivo;            
                 }
               
@@ -265,9 +266,12 @@ namespace Hersan.UI.CapitalHumano
                     oList.ForEach(item => {
                         if (item.Sel == true)
                             BaseWinBP.AbrirArchivo(item.RutaArchivo);
+                        else
+                            RadMessageBox.Show("No hay ningun archivo seleccionado\n", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
 
                     });
                 }
+               
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurió un error al abrir el archivo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -276,9 +280,14 @@ namespace Hersan.UI.CapitalHumano
 
         private void btnAddPariente_Click(object sender, EventArgs e)
         {
+            if (txtArchivo.Text == "") 
+                {
+                RadMessageBox.Show("Selecciona un archivo antes de continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                return;
+                }
             oDetalle = new DigitalizadosDetalleBE();
             try {
-                if (oList.FindAll(item => item.RutaArchivo == txtArchivo.Text).Count == 0) {
+                if (oList.FindAll(item => item.NombreArchivo == txtArchivo.Text || item.IdTipo==int.Parse(cboDocs.SelectedValue.ToString())).Count == 0) {
                     oDetalle.Sel = false;
                     oDetalle.IdTipo = int.Parse(cboDocs.SelectedValue.ToString());
                     oDetalle.Tipo = cboDocs.SelectedItem.Text;
@@ -291,7 +300,7 @@ namespace Hersan.UI.CapitalHumano
                     txtArchivo.Text=string.Empty;
 
                 } else {
-                    RadMessageBox.Show("No es posible agregar un documeto que ya existe en la lista", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    RadMessageBox.Show("No es posible agregar un tipo de documento o un archivo  que ya existe en la lista", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al agregar la selección\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -301,13 +310,23 @@ namespace Hersan.UI.CapitalHumano
         private void btnQuitarItem_Click(object sender, EventArgs e)
         {
             try {
+                if (oList.FindAll(item => item.Sel == true).Count > 0) {
+                    if (RadMessageBox.Show("Esta acción eliminara los elementos seleccionados\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
+                        return;
+                } else {
+                    RadMessageBox.Show("No hay documentos seleccionados", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
                 if (txtId.Text == "0")
                     oList.RemoveAll(item => item.Sel == true);
-                else
+                else {
                     oList.ForEach(item => {
                         if (item.Sel == true)
                             item.DatosUsuario.Estatus = false;
                     });
+                    oList.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                }
 
                 ActualizaGrid();
             } catch (Exception ex) {
@@ -318,10 +337,20 @@ namespace Hersan.UI.CapitalHumano
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
             try {
+                if (oList.Count > 0) {
+                    if (RadMessageBox.Show("Esta acción eliminara todos los elementos\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
+                        return;
+                } else {
+                    RadMessageBox.Show("No se han agregado productos y/o servicios", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
                 if (txtId.Text == "0")
                     oList.Clear();
-                else
+                else {
                     oList.ForEach(item => item.DatosUsuario.Estatus = false);
+                    oList.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                }
 
                 ActualizaGrid();
             } catch (Exception ex) {
@@ -337,6 +366,10 @@ namespace Hersan.UI.CapitalHumano
             try {
                 if (!ValidarCampos()) {
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+                if (oList.Count==0) {
+                    RadMessageBox.Show("Debe agregar al menos un documento para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
 

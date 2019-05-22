@@ -206,13 +206,13 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble5.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble7.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />

@@ -285,7 +285,9 @@
       <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
       <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q18:GeneralBE" />
       <xs:element minOccurs="0" name="Familia" nillable="true" type="tns:FamiliasBE" />
+      <xs:element minOccurs="0" name="Fraccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

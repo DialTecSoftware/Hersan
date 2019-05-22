@@ -536,7 +536,7 @@
             // 
             this.gvDatos.AutoScroll = true;
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 53);
+            this.gvDatos.Location = new System.Drawing.Point(0, 78);
             // 
             // 
             // 
@@ -646,7 +646,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(802, 297);
+            this.gvDatos.Size = new System.Drawing.Size(802, 272);
             this.gvDatos.TabIndex = 2;
             // 
             // radCommandBar2
@@ -656,7 +656,7 @@
             this.radCommandBar2.Name = "radCommandBar2";
             this.radCommandBar2.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement2});
-            this.radCommandBar2.Size = new System.Drawing.Size(802, 53);
+            this.radCommandBar2.Size = new System.Drawing.Size(802, 78);
             this.radCommandBar2.TabIndex = 1;
             // 
             // commandBarRowElement2

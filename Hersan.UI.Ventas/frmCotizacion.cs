@@ -165,26 +165,26 @@ namespace Hersan.UI.Ensamble
         }
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            //Datos obj = new Datos();
-            try {
-                frmViewer frm = new frmViewer();
-                frm.rptCotizacion1 = new Reportes.rptCotizacion();
-                //frm.iReport.SetDataSource(SP Origen de Datos);
-                //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, System.IO.Directory.GetCurrentDirectory() + @"\Ganadores_Sorteo.pdf");
-                //frm.VerImprimir = frmViewer.Modo.Ver;
-                //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"c:\Temp\Test.pdf");
+            ////Datos obj = new Datos();
+            //try {
+            //    frmViewer frm = new frmViewer();
+            //    frm.rptCotizacion1 = new Reportes.rptCotizacion();
+            //    //frm.iReport.SetDataSource(SP Origen de Datos);
+            //    //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, System.IO.Directory.GetCurrentDirectory() + @"\Ganadores_Sorteo.pdf");
+            //    //frm.VerImprimir = frmViewer.Modo.Ver;
+            //    //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"c:\Temp\Test.pdf");
 
-                //MOSTRAR EN PANTALLA
-                frm.WindowState = FormWindowState.Maximized;
-                frm.ShowDialog();
+            //    //MOSTRAR EN PANTALLA
+            //    frm.WindowState = FormWindowState.Maximized;
+            //    frm.ShowDialog();
 
-                MessageBox.Show("Reporte generado correctamente", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    MessageBox.Show("Reporte generado correctamente", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ////ABRIR ARCHIVO PDF
-                //Process.Start(System.IO.Directory.GetCurrentDirectory() + @"\Ganadores_Sorteo.pdf");
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
+            //    ////ABRIR ARCHIVO PDF
+            //    //Process.Start(System.IO.Directory.GetCurrentDirectory() + @"\Ganadores_Sorteo.pdf");
+            //} catch (Exception ex) {
+            //    RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            //}
         }
         private void btnMail_Click(object sender, EventArgs e)
         {
@@ -506,6 +506,7 @@ namespace Hersan.UI.Ensamble
                     if (item.DatosUsuario.Estatus == true) {
                         txtClave.Text = item.Id.ToString();
                         txtNombre.Text = item.Nombre;
+                        txtAgente.Text = item.Agente.Nombre;
                     } else {
                         RadMessageBox.Show("El cliente seleccionado no existe o se ha dado de baja", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                         txtClave.Clear();

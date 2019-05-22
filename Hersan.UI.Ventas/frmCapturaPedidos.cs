@@ -16,6 +16,7 @@ namespace Hersan.UI.Ensamble
         #region Variables
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
         private List<PedidosBE> oCotiza = new List<PedidosBE>();
+        private int IdCotiza = 0;
         #endregion
 
         public frmCapturaPedidos()
@@ -46,7 +47,7 @@ namespace Hersan.UI.Ensamble
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
-                if(gvDatos.RowCount == 0) {
+                if (gvDatos.RowCount == 0) {
                     RadMessageBox.Show("Es necesario seleccionar una cotizacio.", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     return;
                 }
@@ -95,6 +96,47 @@ namespace Hersan.UI.Ensamble
             } finally {
                 ofrm.Dispose();
                 ofrm = null;
+            }
+        }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.F3) {
+                    frmClientesBuscar ofrm = new frmClientesBuscar();
+                    try {
+                        ofrm.WindowState = FormWindowState.Normal;
+                        ofrm.StartPosition = FormStartPosition.CenterScreen;
+                        ofrm.MaximizeBox = false;
+                        ofrm.MinimizeBox = false;
+                        ofrm.ShowDialog();
+                        IdCotiza = ofrm.Id;
+
+                        if (IdCotiza > 0) {
+                            LimpiarCampos();
+                            CargarCotizacion(IdCotiza);
+                        }
+
+                    } catch (Exception ex) {
+                        throw ex;
+                    } finally {
+                        ofrm.Dispose();
+                        ofrm = null;
+                    }
+                } else {
+                    if (e.KeyData == Keys.Enter)
+                        CargarCotizacion(int.Parse(txtId.Text));
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar la cotización\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (!BaseWinBP.isNumero(e.KeyChar))
+                    e.Handled = true;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al capturar la cotización\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)
@@ -168,9 +210,13 @@ namespace Hersan.UI.Ensamble
                     txtId.Text = oCotiza[0].Id.ToString();
                     txtClave.Text = oCotiza[0].Cliente.Id.ToString();
                     txtNombre.Text = oCotiza[0].Cliente.Nombre.ToString();
+                    txtAgente.Text = oCotiza[0].Agente.Nombre.ToString();
                     txtFecha.Text = oCotiza[0].DatosUsuario.FechaCreacion.ToShortDateString();
 
-                    gvDatos.DataSource = oCotiza[0].Detalle; 
+                    gvDatos.DataSource = oCotiza[0].Detalle;
+                } else {
+                    LimpiarCampos();
+                    RadMessageBox.Show("No existe la cotización capturada", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
 
             } catch (Exception ex) {
@@ -194,5 +240,7 @@ namespace Hersan.UI.Ensamble
                 throw ex;
             }
         }
-    }
+
+        
+    }       
 }

@@ -73,6 +73,7 @@
     <Compile Include="CapitalHumano\SeguimientoCandidatosBE.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalBE.cs" />
     <Compile Include="Catalogos\AccesoriosBE.cs" />
+    <Compile Include="Catalogos\AgentesBE.cs" />
     <Compile Include="Catalogos\CiudadesBE.cs" />
     <Compile Include="Catalogos\ColoniasBE.cs" />
     <Compile Include="Catalogos\ColoresBE.cs" />

@@ -110,6 +110,8 @@ namespace Hersan.Datos.Ensamble
                                 obj.Id = int.Parse(reader["COT_Id"].ToString());
                                 obj.Cliente.Id = int.Parse(reader["CLI_Id"].ToString());
                                 obj.Cliente.Nombre = reader["CLI_Nombre"].ToString();
+                                obj.Agente.Id = int.Parse(reader["AGE_Id"].ToString());
+                                obj.Agente.Nombre = reader["AGE_Nombre"].ToString();
                                 obj.DatosUsuario.FechaCreacion = DateTime.Parse(reader["Fecha"].ToString());
 
                                 oList.Add(obj);

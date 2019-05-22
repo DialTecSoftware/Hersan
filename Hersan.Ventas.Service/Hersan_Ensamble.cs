@@ -28,6 +28,14 @@ namespace Hersan.Ensamble.Service
         {
             return new ClientesBP().ABC_Clientes_Obtener(IdCliente);
         }
+        public List<ClientesBE> ABC_ClientesAgente_Combo(int IdAgente)
+        {
+            return new ClientesBP().ABC_ClientesAgente_Combo(IdAgente);
+        }
+        public int ABC_ClientesAgente_Guardar(ClientesBE obj)
+        {
+            return new ClientesBP().ABC_ClientesAgente_Guardar(obj);
+        }
         #endregion
 
         #region Facturación

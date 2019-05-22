@@ -74,6 +74,7 @@
     <Compile Include="CapitalHumano\SeguimientoCandidatosDA.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalDA.cs" />
     <Compile Include="Catalogos\AccesoriosDA.cs" />
+    <Compile Include="Catalogos\AgentesDA.cs" />
     <Compile Include="Catalogos\CiudadesDA.cs" />
     <Compile Include="Catalogos\ColoniasDA.cs" />
     <Compile Include="Catalogos\ColoresDA.cs" />

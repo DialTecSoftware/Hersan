@@ -380,6 +380,25 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
+        #region Agentes
+        public List<AgentesBE> ABC_Agentes_Obtener()
+        {
+            return new AgentesBP().ABC_Agentes_Obtener();
+        }
+        public int ABC_Agentes_Guardar(AgentesBE obj)
+        {
+            return new AgentesBP().ABC_Agentes_Guardar(obj);
+        }
+        public int ABC_Agentes_Actualizar(AgentesBE obj)
+        {
+            return new AgentesBP().ABC_Agentes_Actualizar(obj);
+        }
+        public List<AgentesBE> ABC_Agentes_Combo()
+        {
+            return new AgentesBP().ABC_Agentes_Combo();
+        }
+        #endregion
+
     }
 }
 

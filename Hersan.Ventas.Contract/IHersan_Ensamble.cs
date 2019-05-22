@@ -17,6 +17,10 @@ namespace Hersan.Ensamble.Contract
         List<ClientesBE> ABC_Clientes_Buscar(ClientesBE Lista, string Entidades);
         [OperationContract]
         List<ClientesBE> ABC_Clientes_Obtener(int IdCliente);
+        [OperationContract]
+        List<ClientesBE> ABC_ClientesAgente_Combo(int IdAgente);
+        [OperationContract]
+        int ABC_ClientesAgente_Guardar(ClientesBE obj);
         #endregion
 
         #region Facturación

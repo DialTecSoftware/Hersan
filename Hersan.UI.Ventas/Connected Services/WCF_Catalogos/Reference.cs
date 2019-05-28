@@ -242,6 +242,18 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposClienteBE> ABC_TipoCliente_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.AgentesBE> ABC_Agentes_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_GuardarResponse")]
+        int ABC_Agentes_Guardar(Hersan.Entidades.Catalogos.AgentesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_ActualizarResponse")]
+        int ABC_Agentes_Actualizar(Hersan.Entidades.Catalogos.AgentesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.AgentesBE> ABC_Agentes_Combo();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -573,6 +585,22 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposClienteBE> ABC_TipoCliente_Combo() {
             return base.Channel.ABC_TipoCliente_Combo();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.AgentesBE> ABC_Agentes_Obtener() {
+            return base.Channel.ABC_Agentes_Obtener();
+        }
+        
+        public int ABC_Agentes_Guardar(Hersan.Entidades.Catalogos.AgentesBE obj) {
+            return base.Channel.ABC_Agentes_Guardar(obj);
+        }
+        
+        public int ABC_Agentes_Actualizar(Hersan.Entidades.Catalogos.AgentesBE obj) {
+            return base.Channel.ABC_Agentes_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.AgentesBE> ABC_Agentes_Combo() {
+            return base.Channel.ABC_Agentes_Combo();
         }
     }
 }

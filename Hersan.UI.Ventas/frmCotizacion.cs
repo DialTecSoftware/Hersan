@@ -186,8 +186,7 @@ namespace Hersan.UI.Ensamble
             try {
                 if (int.Parse(txtId.Text) > 0) {
                     frmCotizacionCorreo frm = new frmCotizacionCorreo();
-                    //frm.Correo = oClientes[0].Correo1 + "," + oClientes[0].Correo2;
-                    frm.Correo = "luism_diaz@hotmail.com";
+                    frm.Correo = oClientes[0].Correo1 + "," + oClientes[0].Correo2;
                     frm.Archivo = Reporte(true);
                     frm.Id = txtId.Text;
 

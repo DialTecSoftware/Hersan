@@ -13,8 +13,8 @@
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd2" />
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" />
-      <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
-      <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+      <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+      <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
@@ -41,18 +41,6 @@
   </wsdl:message>
   <wsdl:message name="IHersan_Ensamble_ABC_Clientes_Obtener_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABC_Clientes_ObtenerResponse" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Ensamble_ABC_ClientesAgente_Combo_InputMessage">
-    <wsdl:part name="parameters" element="tns:ABC_ClientesAgente_Combo" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Ensamble_ABC_ClientesAgente_Combo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ABC_ClientesAgente_ComboResponse" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Ensamble_ABC_ClientesAgente_Guardar_InputMessage">
-    <wsdl:part name="parameters" element="tns:ABC_ClientesAgente_Guardar" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Ensamble_ABC_ClientesAgente_Guardar_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ABC_ClientesAgente_GuardarResponse" />
   </wsdl:message>
   <wsdl:message name="IHersan_Ensamble_ABC_FormaPago_Combo_InputMessage">
     <wsdl:part name="parameters" element="tns:ABC_FormaPago_Combo" />
@@ -174,18 +162,6 @@
   <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ENS_Cotizacion_ActualizarResponse" />
   </wsdl:message>
-  <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_Reporte_InputMessage">
-    <wsdl:part name="parameters" element="tns:ENS_Cotizacion_Reporte" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_Reporte_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ENS_Cotizacion_ReporteResponse" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_ReporteDetalle_InputMessage">
-    <wsdl:part name="parameters" element="tns:ENS_Cotizacion_ReporteDetalle" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_ReporteDetalle_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ENS_Cotizacion_ReporteDetalleResponse" />
-  </wsdl:message>
   <wsdl:portType name="IHersan_Ensamble">
     <wsdl:operation name="ABC_Clientes_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Guardar" message="tns:IHersan_Ensamble_ABC_Clientes_Guardar_InputMessage" />
@@ -202,14 +178,6 @@
     <wsdl:operation name="ABC_Clientes_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Obtener" message="tns:IHersan_Ensamble_ABC_Clientes_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_ObtenerResponse" message="tns:IHersan_Ensamble_ABC_Clientes_Obtener_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ABC_ClientesAgente_Combo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Combo" message="tns:IHersan_Ensamble_ABC_ClientesAgente_Combo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_ComboResponse" message="tns:IHersan_Ensamble_ABC_ClientesAgente_Combo_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ABC_ClientesAgente_Guardar">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Guardar" message="tns:IHersan_Ensamble_ABC_ClientesAgente_Guardar_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_GuardarResponse" message="tns:IHersan_Ensamble_ABC_ClientesAgente_Guardar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ABC_FormaPago_Combo">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_Combo" message="tns:IHersan_Ensamble_ABC_FormaPago_Combo_InputMessage" />
@@ -291,14 +259,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Actualizar" message="tns:IHersan_Ensamble_ENS_Cotizacion_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ActualizarResponse" message="tns:IHersan_Ensamble_ENS_Cotizacion_Actualizar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ENS_Cotizacion_Reporte">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Reporte" message="tns:IHersan_Ensamble_ENS_Cotizacion_Reporte_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteResponse" message="tns:IHersan_Ensamble_ENS_Cotizacion_Reporte_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ENS_Cotizacion_ReporteDetalle">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalle" message="tns:IHersan_Ensamble_ENS_Cotizacion_ReporteDetalle_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalleResponse" message="tns:IHersan_Ensamble_ENS_Cotizacion_ReporteDetalle_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Ensamble" type="tns:IHersan_Ensamble">
     <wsp:PolicyReference URI="#WSHttpBinding_IHersan_Ensamble_policy" />
@@ -332,24 +292,6 @@
     </wsdl:operation>
     <wsdl:operation name="ABC_Clientes_Obtener">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Obtener" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ABC_ClientesAgente_Combo">
-      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Combo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ABC_ClientesAgente_Guardar">
-      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Guardar" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -530,24 +472,6 @@
     </wsdl:operation>
     <wsdl:operation name="ENS_Cotizacion_Actualizar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Actualizar" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ENS_Cotizacion_Reporte">
-      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Reporte" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ENS_Cotizacion_ReporteDetalle">
-      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalle" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

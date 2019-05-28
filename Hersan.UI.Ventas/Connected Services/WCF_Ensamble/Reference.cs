@@ -27,12 +27,6 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Obtener(int IdCliente);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_ComboResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_ClientesAgente_Combo(int IdAgente);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_GuardarResponse")]
-        int ABC_ClientesAgente_Guardar(Hersan.Entidades.Ensamble.ClientesBE obj);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.FormasPagoBE> ABC_FormaPago_Combo();
         
@@ -82,7 +76,7 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE> ENS_ReflejanteCotizacion_Combo(int IdFicha);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_GuardarResponse")]
-        int ENS_Cotizacion_Guardar(int IdCliente, string Proyecto, System.Data.DataTable oDetalle, int IdUsuario);
+        int ENS_Cotizacion_Guardar(int IdCliente, System.Data.DataTable oDetalle, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Buscar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_BuscarResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final);
@@ -92,12 +86,6 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ActualizarResponse")]
         int ENS_Cotizacion_Actualizar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Reporte", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteResponse")]
-        System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalleResponse")]
-        System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -141,14 +129,6 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Obtener(int IdCliente) {
             return base.Channel.ABC_Clientes_Obtener(IdCliente);
-        }
-        
-        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_ClientesAgente_Combo(int IdAgente) {
-            return base.Channel.ABC_ClientesAgente_Combo(IdAgente);
-        }
-        
-        public int ABC_ClientesAgente_Guardar(Hersan.Entidades.Ensamble.ClientesBE obj) {
-            return base.Channel.ABC_ClientesAgente_Guardar(obj);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.FormasPagoBE> ABC_FormaPago_Combo() {
@@ -215,8 +195,8 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
             return base.Channel.ENS_ReflejanteCotizacion_Combo(IdFicha);
         }
         
-        public int ENS_Cotizacion_Guardar(int IdCliente, string Proyecto, System.Data.DataTable oDetalle, int IdUsuario) {
-            return base.Channel.ENS_Cotizacion_Guardar(IdCliente, Proyecto, oDetalle, IdUsuario);
+        public int ENS_Cotizacion_Guardar(int IdCliente, System.Data.DataTable oDetalle, int IdUsuario) {
+            return base.Channel.ENS_Cotizacion_Guardar(IdCliente, oDetalle, IdUsuario);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final) {
@@ -229,14 +209,6 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         public int ENS_Cotizacion_Actualizar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle) {
             return base.Channel.ENS_Cotizacion_Actualizar(obj, oDetalle);
-        }
-        
-        public System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza) {
-            return base.Channel.ENS_Cotizacion_Reporte(IdCotiza);
-        }
-        
-        public System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza) {
-            return base.Channel.ENS_Cotizacion_ReporteDetalle(IdCotiza);
         }
     }
 }

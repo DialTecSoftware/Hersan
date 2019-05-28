@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
+using System.IO;
 
 namespace Hersan.UI.Ensamble
 {
@@ -37,7 +38,7 @@ namespace Hersan.UI.Ensamble
         }
         private void frmCotizacion_Load(object sender, EventArgs e)
         {
-            try {                               
+            try {
                 /* GRUPO POR TIPO Y ENTIDAD */
                 GroupDescriptor tipo = new GroupDescriptor();
                 tipo.GroupNames.Add("Tipo", ListSortDirection.Ascending);
@@ -45,13 +46,12 @@ namespace Hersan.UI.Ensamble
                 this.gvDatos.GroupDescriptors.Add(tipo);
 
                 /* SUMA DE TOTALES */
-                GridViewSummaryItem summaryItem = new GridViewSummaryItem("Total","{0:C2}",GridAggregateFunction.Sum);
+                GridViewSummaryItem summaryItem = new GridViewSummaryItem("Total", "{0:C2}", GridAggregateFunction.Sum);
                 GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem();
                 summaryRowItem.Add(summaryItem);
                 this.gvDatos.SummaryRowsBottom.Add(summaryRowItem);
 
                 this.gvDatos.MasterTemplate.ShowTotals = true;
-
 
                 txtFecha.Text = DateTime.Today.ToShortDateString();
 
@@ -84,7 +84,7 @@ namespace Hersan.UI.Ensamble
 
                 /* ALTA DE COTIZACION */
                 if (int.Parse(txtId.Text) == 0) {
-                    Result = oEnsamble.ENS_Cotizacion_Guardar(int.Parse(txtClave.Text), CrearTablasAuxiliares(), BaseWinBP.UsuarioLogueado.ID);
+                    Result = oEnsamble.ENS_Cotizacion_Guardar(int.Parse(txtClave.Text), txtProyecto.Text, CrearTablasAuxiliares(), BaseWinBP.UsuarioLogueado.ID);
                     if (Result != 0) {
                         RadMessageBox.Show("Cotización guardada correctamente, con folio: " + Result.ToString(), this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     } else {
@@ -95,6 +95,7 @@ namespace Hersan.UI.Ensamble
                     obj.Id = int.Parse(txtId.Text);
                     obj.Cliente.Id = int.Parse(txtClave.Text);
                     obj.Pedido = false;
+                    obj.Proyecto = txtProyecto.Text;
                     obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
                     obj.DatosUsuario.Estatus = true;
 
@@ -141,11 +142,17 @@ namespace Hersan.UI.Ensamble
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Los datos de la cotización están incompletos\nNo es posible continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
                 if (RadMessageBox.Show("Esta acción cancelará la cotización\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                     PedidosBE obj = new PedidosBE();
                     obj.Id = int.Parse(txtId.Text);
                     obj.Cliente.Id = int.Parse(txtClave.Text);
                     obj.Pedido = false;
+                    obj.Proyecto = txtProyecto.Text;
                     obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
                     obj.DatosUsuario.Estatus = false;
 
@@ -165,33 +172,31 @@ namespace Hersan.UI.Ensamble
         }
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            ////Datos obj = new Datos();
-            //try {
-            //    frmViewer frm = new frmViewer();
-            //    frm.rptCotizacion1 = new Reportes.rptCotizacion();
-            //    //frm.iReport.SetDataSource(SP Origen de Datos);
-            //    //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, System.IO.Directory.GetCurrentDirectory() + @"\Ganadores_Sorteo.pdf");
-            //    //frm.VerImprimir = frmViewer.Modo.Ver;
-            //    //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"c:\Temp\Test.pdf");
-
-            //    //MOSTRAR EN PANTALLA
-            //    frm.WindowState = FormWindowState.Maximized;
-            //    frm.ShowDialog();
-
-            //    MessageBox.Show("Reporte generado correctamente", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //    ////ABRIR ARCHIVO PDF
-            //    //Process.Start(System.IO.Directory.GetCurrentDirectory() + @"\Ganadores_Sorteo.pdf");
-            //} catch (Exception ex) {
-            //    RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            //}
+            try {
+                if(int.Parse(txtId.Text) > 0)
+                    Reporte(false);
+                else
+                    RadMessageBox.Show("No ha seleccionado una cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
         private void btnMail_Click(object sender, EventArgs e)
         {
             try {
+                if (int.Parse(txtId.Text) > 0) {
+                    frmCotizacionCorreo frm = new frmCotizacionCorreo();
+                    //frm.Correo = oClientes[0].Correo1 + "," + oClientes[0].Correo2;
+                    frm.Correo = "luism_diaz@hotmail.com";
+                    frm.Archivo = Reporte(true);
+                    frm.Id = txtId.Text;
 
+                    frm.StartPosition = FormStartPosition.CenterParent;
+                    frm.ShowDialog();
+                } else
+                    RadMessageBox.Show("No ha seleccionado una cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al enviar el correo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
 
         }
@@ -255,8 +260,8 @@ namespace Hersan.UI.Ensamble
         private void txtId_KeyDown(object sender, KeyEventArgs e)
         {
             try {
-                if (e.KeyData == Keys.Enter)
-                    RadMessageBox.Show("");
+                if (e.KeyData == Keys.Enter && txtId.Text.Trim().Length > 0)
+                    CargarCotizacion(int.Parse(txtId.Text));
             } catch (Exception ex) {
                 throw ex;
             }
@@ -306,7 +311,7 @@ namespace Hersan.UI.Ensamble
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                if (cboProductos.SelectedValue != null) {                    
+                if (cboProductos.SelectedValue != null) {
                     var Ficha = oProductos.Find(item => item.Producto.Id == int.Parse(cboProductos.SelectedValue.ToString()));
                     /* COLORES DE CARCASA */
                     cboColores.DisplayMember = "Nombre";
@@ -341,7 +346,7 @@ namespace Hersan.UI.Ensamble
         private void cboServicios_SelectedIndexChanged(object sender, EventArgs e)
         {
             try {
-                if(cboServicios.SelectedValue != null) {
+                if (cboServicios.SelectedValue != null) {
                     txtServicio.Text = oServicios.Find(item => item.Id == int.Parse(cboServicios.SelectedValue.ToString())).Precio.ToString();
                     txtServicio.ReadOnly = decimal.Parse(txtServicio.Text) != 0 ? true : false;
                 }
@@ -368,10 +373,10 @@ namespace Hersan.UI.Ensamble
                             oDetalle.Accesorios.Nombre = cboAccesorios.Text;
                             oDetalle.Precio = decimal.Parse(txtPrecio.Text);
                             oDetalle.Cantidad = int.Parse(txtCantidadP.Text);
-                            oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;   
-                            
+                            oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;
+
                             string Reflejantes = string.Empty;
-                            oReflejantes.ForEach(item => {                                
+                            oReflejantes.ForEach(item => {
                                 Reflejantes += item.Nombre + " / ";
                                 oDetalle.Reflejantes.Add(item);
                             });
@@ -450,7 +455,7 @@ namespace Hersan.UI.Ensamble
                             oReflejantes.Add(obj);
                             Count += 1;
                         } else {
-                            RadMessageBox.Show("Solo es posible seleccionar máximo: "+ txtCavidades.Text +" Reflejantes del producto seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            RadMessageBox.Show("Solo es posible seleccionar máximo: " + txtCavidades.Text + " Reflejantes del producto seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                             oReflejantes.Clear();
                         }
                     }
@@ -460,7 +465,6 @@ namespace Hersan.UI.Ensamble
                 oReflejantes.Clear();
             }
         }
-      
 
         private void CargaProductos()
         {
@@ -471,7 +475,7 @@ namespace Hersan.UI.Ensamble
                 cboProductos.ValueMember = "Producto.Id";
                 cboProductos.DataSource = oProductos;
 
-                if (cboProductos != null)
+                if (oProductos.Count > 0)
                     cboProductos.SelectedIndex = 0;
             } catch (Exception ex) {
                 throw ex;
@@ -488,7 +492,7 @@ namespace Hersan.UI.Ensamble
                 cboServicios.ValueMember = "Id";
                 cboServicios.DataSource = oServicios;
 
-                if (cboServicios != null)
+                if (oServicios.Count > 0 )
                     cboServicios.SelectedIndex = 0;
             } catch (Exception ex) {
                 throw ex;
@@ -549,6 +553,7 @@ namespace Hersan.UI.Ensamble
                 txtId.Text = "0";
                 txtClave.Clear();
                 txtNombre.Clear();
+                txtProyecto.Clear();
                 gvDatos.DataSource = null;
 
                 LimpiarProductos();
@@ -613,12 +618,12 @@ namespace Hersan.UI.Ensamble
             try {
                 string aux;
 
-                foreach (var item in oList) { 
+                foreach (var item in oList) {
                     DataRow oRow = oData.NewRow();
                     oRow["COD_Id"] = item.Id;
                     oRow["COT_Id"] = int.Parse(txtId.Text);
                     oRow["COD_Tipo"] = item.Tipo;
-                    oRow["COD_Id_ProdServ"] = item.Producto.Id;                    
+                    oRow["COD_Id_ProdServ"] = item.Producto.Id;
                     if (item.Tipo == "PRODUCTO") {
                         aux = string.Empty;
                         item.Reflejantes.ForEach(x => {
@@ -649,16 +654,50 @@ namespace Hersan.UI.Ensamble
                     txtClave.Text = oCotiza[0].Cliente.Id.ToString();
                     txtNombre.Text = oCotiza[0].Cliente.Nombre.ToString();
                     txtFecha.Text = oCotiza[0].DatosUsuario.FechaCreacion.ToShortDateString();
+                    txtProyecto.Text = oCotiza[0].Proyecto;
                     oList = oCotiza[0].Detalle;
 
                     gvDatos.DataSource = oList;
+                } else {
+                    RadMessageBox.Show("No existe la cotización capturada.", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    txtId.Text = "0";
                 }
-
             } catch (Exception ex) {
                 throw ex;
             } finally {
                 oEnsamble = null;
             }
+        } 
+        private Stream Reporte(bool Correo)
+        {
+            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            Stream archivo = null;
+            try {
+                frmViewer frm = new frmViewer();
+                frm.iReport = new Reportes.rptCotizacion();
+
+                frm.iReport.SetDataSource(oEnsamble.ENS_Cotizacion_Reporte(int.Parse(txtId.Text)));
+                frm.iReport.Subreports["Detalle"].SetDataSource(oEnsamble.ENS_Cotizacion_ReporteDetalle(int.Parse(txtId.Text)));
+
+                if (Correo) {
+                    archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                    //System.IO.DirectoryInfo dir = new DirectoryInfo(System.IO.Directory.GetCurrentDirectory());
+                    //foreach (FileInfo file in dir.GetFiles()) {
+                    //    if(file.Extension.Equals(".pdf"))
+                    //        file.Delete();
+                    //}
+                    //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"c:\Temp\Test.pdf");
+                } else {
+                    //MOSTRAR EN PANTALLA
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }                
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oEnsamble = null;
+            }
+            return archivo;
         }
 
     }

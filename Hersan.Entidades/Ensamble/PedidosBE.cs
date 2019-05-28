@@ -17,6 +17,7 @@ namespace Hersan.Entidades.Ensamble
             Cliente = new ClientesBE();
             Agente = new AgentesBE();
             Pedido = false;
+            Proyecto = string.Empty;
             Detalle = new List<PedidoDetalleBE>();
             DatosUsuario = new GeneralBE();
         }
@@ -25,6 +26,7 @@ namespace Hersan.Entidades.Ensamble
         public ClientesBE Cliente { get; set; }
         public AgentesBE Agente { get; set; }       
         public bool Pedido { get; set; }
+        public string Proyecto { get; set; }
         public List<PedidoDetalleBE> Detalle { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }

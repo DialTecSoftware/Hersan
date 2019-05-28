@@ -358,6 +358,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ProductoEnsambleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ServiciosBE.datasource" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WCF_Catalogos\" />

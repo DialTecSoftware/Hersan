@@ -89,6 +89,9 @@
             this.commandBarSeparator6 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.txtProyecto = new Telerik.WinControls.UI.RadTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtAgente = new Telerik.WinControls.UI.RadTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
             this.txtNombre = new Telerik.WinControls.UI.RadTextBox();
@@ -150,10 +153,11 @@
             this.commandBarStripElement13 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement14 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement15 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.txtAgente = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProyecto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAgente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFecha)).BeginInit();
@@ -197,7 +201,6 @@
             this.documentContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
             this.documentTabStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAgente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -375,6 +378,8 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.txtProyecto);
+            this.radPanel1.Controls.Add(this.label17);
             this.radPanel1.Controls.Add(this.txtAgente);
             this.radPanel1.Controls.Add(this.label14);
             this.radPanel1.Controls.Add(this.txtId);
@@ -392,6 +397,34 @@
             this.radPanel1.Size = new System.Drawing.Size(1196, 122);
             this.radPanel1.TabIndex = 1;
             // 
+            // txtProyecto
+            // 
+            this.txtProyecto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtProyecto.Location = new System.Drawing.Point(700, 40);
+            this.txtProyecto.Name = "txtProyecto";
+            this.txtProyecto.Size = new System.Drawing.Size(252, 20);
+            this.txtProyecto.TabIndex = 6;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(605, 44);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 13);
+            this.label17.TabIndex = 26;
+            this.label17.Text = "Proyecto (Obra):";
+            // 
+            // txtAgente
+            // 
+            this.txtAgente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAgente.Location = new System.Drawing.Point(85, 89);
+            this.txtAgente.Name = "txtAgente";
+            this.txtAgente.ReadOnly = true;
+            this.txtAgente.Size = new System.Drawing.Size(252, 20);
+            this.txtAgente.TabIndex = 4;
+            this.txtAgente.TabStop = false;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -408,7 +441,7 @@
             this.txtId.Location = new System.Drawing.Point(85, 13);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(79, 20);
-            this.txtId.TabIndex = 22;
+            this.txtId.TabIndex = 1;
             this.txtId.Text = "0";
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtId_KeyDown);
@@ -420,7 +453,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(252, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 3;
             this.txtNombre.TabStop = false;
             // 
             // label9
@@ -450,7 +483,7 @@
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(100, 20);
-            this.txtFecha.TabIndex = 4;
+            this.txtFecha.TabIndex = 5;
             this.txtFecha.TabStop = false;
             this.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -480,7 +513,7 @@
             this.txtClave.Location = new System.Drawing.Point(85, 38);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(79, 20);
-            this.txtClave.TabIndex = 1;
+            this.txtClave.TabIndex = 2;
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClave_KeyDown);
             this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numeros_KeyPress);
@@ -1454,16 +1487,6 @@
             this.commandBarStripElement15.DisplayName = "commandBarStripElement15";
             this.commandBarStripElement15.Name = "commandBarStripElement15";
             // 
-            // txtAgente
-            // 
-            this.txtAgente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAgente.Location = new System.Drawing.Point(85, 89);
-            this.txtAgente.Name = "txtAgente";
-            this.txtAgente.ReadOnly = true;
-            this.txtAgente.Size = new System.Drawing.Size(252, 20);
-            this.txtAgente.TabIndex = 24;
-            this.txtAgente.TabStop = false;
-            // 
             // frmCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1484,6 +1507,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProyecto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAgente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFecha)).EndInit();
@@ -1530,7 +1555,6 @@
             this.documentContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
             this.documentTabStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtAgente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1620,5 +1644,7 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement14;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement15;
         private Telerik.WinControls.UI.RadTextBox txtAgente;
+        private Telerik.WinControls.UI.RadTextBox txtProyecto;
+        private System.Windows.Forms.Label label17;        
     }
 }

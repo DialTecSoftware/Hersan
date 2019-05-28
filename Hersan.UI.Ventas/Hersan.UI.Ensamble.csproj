@@ -105,6 +105,12 @@
     <Compile Include="frmClientesBuscar.Designer.cs">
       <DependentUpon>frmClientesBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCotizacionCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCotizacionCorreo.Designer.cs">
+      <DependentUpon>frmCotizacionCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCotizacionesBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientesBuscar.resx">
       <DependentUpon>frmClientesBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCotizacionCorreo.resx">
+      <DependentUpon>frmCotizacionCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCotizacionesBuscar.resx">
       <DependentUpon>frmCotizacionesBuscar.cs</DependentUpon>
@@ -279,6 +288,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.ValidaIngresoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Ventas.ClientesBE.datasource" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WCF_Catalogos\" />

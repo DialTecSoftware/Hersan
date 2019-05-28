@@ -69,13 +69,17 @@ namespace Hersan.Ensamble.Contract
 
         #region Cotizaciones y Pedidos
         [OperationContract]
-        int ENS_Cotizacion_Guardar(int IdCliente, System.Data.DataTable oDetalle, int IdUsuario);
+        int ENS_Cotizacion_Guardar(int IdCliente, string Proyecto, System.Data.DataTable oDetalle, int IdUsuario);
         [OperationContract]
         List<PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final);
         [OperationContract]
         List<PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion);
         [OperationContract]
         int ENS_Cotizacion_Actualizar(PedidosBE obj, System.Data.DataTable oDetalle);
+        [OperationContract]
+        System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza);
+        [OperationContract]
+        System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza);
         #endregion
     }
 }

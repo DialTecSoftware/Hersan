@@ -338,29 +338,27 @@ namespace Hersan.UI.CapitalHumano
         }
         private void CalcularPuntos()
         {
+            decimal valor = 0;
+            decimal pond = 0;
+            decimal Suma = 0;
+            decimal total = 0;
+
             try {
-
-                decimal valor = 0;
-                decimal pond = 0;
-                decimal Suma = 0;
-                decimal total = 0;
-                foreach (GridViewRowInfo row in grdDatos.Rows) {
-                    // Producto de las columnas nivel y valor
-
-                    valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
-                    pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
-                    total = valor * pond;
-                    row.Cells["Total"].Value = total;
-                    Suma += Convert.ToDecimal(row.Cells["Total"].Value);
+                if (grdDatos.RowCount > 0) {
+                    foreach (GridViewRowInfo row in grdDatos.Rows) {
+                        // Producto de las columnas nivel y valor
+                        valor = decimal.Parse(row.Cells["Tipo"].Value.ToString());
+                        pond = decimal.Parse(row.Cells["Valor"].Value.ToString());
+                        total = valor * pond;
+                        row.Cells["Total"].Value = total;
+                        Suma += Convert.ToDecimal(row.Cells["Total"].Value);
+                    }
+                    //Total = Suma;
+                    resultado = Suma * decimal.Parse(txtValor.Text);
+                    txtSueldo.Text = resultado.ToString();
                 }
-                //Total = Suma;
-                resultado = Suma * decimal.Parse(txtValor.Text);
-
-                txtSueldo.Text = resultado.ToString();
-
-            } catch (Exception) {
-
-                throw;
+            } catch (Exception ex) {
+                throw ex;
             }
 
         }
@@ -416,7 +414,7 @@ namespace Hersan.UI.CapitalHumano
             Flag = false;
 
             try {
-                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null && cboPuestos.SelectedValue != null) {
                     DataSet oAux = oCHumano.CHU_Perfiles_Obtener(int.Parse(cboDepto.SelectedValue.ToString()), int.Parse(cboPuestos.SelectedValue.ToString()));
                     if (oAux.Tables.Count > 0) {
                         #region Detalle Grid

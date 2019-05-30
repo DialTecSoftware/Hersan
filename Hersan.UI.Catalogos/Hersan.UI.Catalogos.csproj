@@ -109,6 +109,12 @@
     <Compile Include="frmComplementos.Designer.cs">
       <DependentUpon>frmComplementos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCondicionesVta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCondicionesVta.Designer.cs">
+      <DependentUpon>frmCondicionesVta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmContactos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmComplementos.resx">
       <DependentUpon>frmComplementos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCondicionesVta.resx">
+      <DependentUpon>frmCondicionesVta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmContactos.resx">
       <DependentUpon>frmContactos.cs</DependentUpon>
@@ -334,6 +343,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoresBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ComplementosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CondicionesExpBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DocumentosBE.datasource" />

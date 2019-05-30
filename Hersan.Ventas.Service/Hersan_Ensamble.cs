@@ -115,9 +115,9 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Cotizaciones y Pedidos
-        public int ENS_Cotizacion_Guardar(int IdCliente, string Proyecto, System.Data.DataTable oDetalle, int IdUsuario)
+        public int ENS_Cotizacion_Guardar(PedidosBE obj, System.Data.DataTable oDetalle)
         {
-            return new PedidosBP().ENS_Cotizacion_Guardar(IdCliente, Proyecto, oDetalle, IdUsuario);
+            return new PedidosBP().ENS_Cotizacion_Guardar(obj, oDetalle);
         }
         public List<PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final)
         {
@@ -138,6 +138,10 @@ namespace Hersan.Ensamble.Service
         public System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza)
         {
             return new PedidosBP().ENS_Cotizacion_ReporteDetalle(IdCotiza);
+        }
+        public List<PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final)
+        {
+            return new PedidosBP().ENS_Cotizacion_Consulta(IdAgente, IdCotiza, Inicial, Final);
         }
         #endregion
     }

@@ -438,10 +438,12 @@ namespace Hersan.UI.Ensamble
                     txtEstado.Text = item.Estado;
                     txtFecha.Text = item.DatosUsuario.FechaCreacion.ToShortDateString();
                     rbNacional.Checked = item.Nacional ? true : false;
+                    rbExporta.Checked = !rbNacional.Checked;
                     chkVIP.Checked = item.VIP ? true : false;
                     txtCorreo1.Text = item.Correo1;
                     txtCorreo2.Text = item.Correo2;
                     chkActivo.Checked = item.DatosUsuario.Estatus;
+
 
                     /*COMPRAS*/
                     txtCompras.Text = item.Compras.Nombre;

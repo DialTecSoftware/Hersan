@@ -399,6 +399,25 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
+        #region Condiciones Venta
+        public int ABC_CondicionesExportacion_Guardar(CondicionesExpBE obj)
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Guardar(obj);
+        }
+        public int ABC_CondicionesExportacion_Actualizar(CondicionesExpBE obj)
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Actualizar(obj);
+        }
+        public List<CondicionesExpBE> ABC_CondicionesExportacion_Obtener()
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Obtener();
+        }
+        public List<CondicionesExpBE> ABC_CondicionesExportacion_Combo()
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Combo();
+        }
+        #endregion
+
     }
 }
 

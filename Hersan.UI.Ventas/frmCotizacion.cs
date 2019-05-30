@@ -28,6 +28,7 @@ namespace Hersan.UI.Ensamble
         private List<PedidosBE> oCotiza;
         private int IdCliente = 0;
         private int IdCotiza = 0;
+        private bool Nacional = true;
 
         RadMultiColumnComboBoxSelectionExtender extender = new RadMultiColumnComboBoxSelectionExtender();
         #endregion
@@ -57,6 +58,7 @@ namespace Hersan.UI.Ensamble
 
                 CargaProductos();
                 CargaServicios();
+                CargaCondiciones();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -82,23 +84,26 @@ namespace Hersan.UI.Ensamble
                 if (RadMessageBox.Show("Desea guardar la información capturada...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
                     return;
 
+                PedidosBE obj = new PedidosBE();
+                obj.Id = int.Parse(txtId.Text);
+                obj.Cliente.Id = int.Parse(txtClave.Text);
+                obj.Pedido = false;
+                obj.Proyecto = txtProyecto.Text;
+                obj.Semaforo = rbVerde.IsChecked ? 1 : rbAmarillo.IsChecked ? 2 : 3;
+                obj.Condiciones.Id = Nacional ? 0 : int.Parse(cboCondiciones.SelectedValue.ToString());
+                obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
+                obj.DatosUsuario.Estatus = true;
+
+
                 /* ALTA DE COTIZACION */
                 if (int.Parse(txtId.Text) == 0) {
-                    Result = oEnsamble.ENS_Cotizacion_Guardar(int.Parse(txtClave.Text), txtProyecto.Text, CrearTablasAuxiliares(), BaseWinBP.UsuarioLogueado.ID);
+                    Result = oEnsamble.ENS_Cotizacion_Guardar(obj, CrearTablasAuxiliares());
                     if (Result != 0) {
                         RadMessageBox.Show("Cotización guardada correctamente, con folio: " + Result.ToString(), this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     } else {
                         RadMessageBox.Show("Ocurrió un error al guardar la cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     }
                 } else {
-                    PedidosBE obj = new PedidosBE();
-                    obj.Id = int.Parse(txtId.Text);
-                    obj.Cliente.Id = int.Parse(txtClave.Text);
-                    obj.Pedido = false;
-                    obj.Proyecto = txtProyecto.Text;
-                    obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
-                    obj.DatosUsuario.Estatus = true;
-
                     Result = oEnsamble.ENS_Cotizacion_Actualizar(obj, CrearTablasAuxiliares());
                     if (Result != 0) {
                         RadMessageBox.Show("Cotización actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
@@ -153,6 +158,8 @@ namespace Hersan.UI.Ensamble
                     obj.Cliente.Id = int.Parse(txtClave.Text);
                     obj.Pedido = false;
                     obj.Proyecto = txtProyecto.Text;
+                    obj.Semaforo = rbVerde.IsChecked ? 1 : rbAmarillo.IsChecked ? 2 : 3;
+                    obj.Condiciones.Id = oClientes[0].Nacional ? 0 : int.Parse(cboCondiciones.SelectedValue.ToString());
                     obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
                     obj.DatosUsuario.Estatus = false;
 
@@ -262,7 +269,7 @@ namespace Hersan.UI.Ensamble
                 if (e.KeyData == Keys.Enter && txtId.Text.Trim().Length > 0)
                     CargarCotizacion(int.Parse(txtId.Text));
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al cargar la cotización\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void txtClave_KeyDown(object sender, KeyEventArgs e)
@@ -499,6 +506,19 @@ namespace Hersan.UI.Ensamble
                 oEnsamble = null;
             }
         }
+        private void CargaCondiciones()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboCondiciones.DisplayMember = "Nombre";
+                cboCondiciones.ValueMember = "Id";
+                cboCondiciones.DataSource = oCatalogos.ABC_CondicionesExportacion_Combo();
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oCatalogos = null;
+            }
+        }
         private void CargaCliente(int IdCliente)
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
@@ -510,6 +530,10 @@ namespace Hersan.UI.Ensamble
                         txtClave.Text = item.Id.ToString();
                         txtNombre.Text = item.Nombre;
                         txtAgente.Text = item.Agente.Nombre;
+                        Nacional = item.Nacional;
+                        lblCondicion.Visible = !Nacional;
+                        cboCondiciones.Visible = !Nacional;
+
                     } else {
                         RadMessageBox.Show("El cliente seleccionado no existe o se ha dado de baja", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                         txtClave.Clear();
@@ -553,6 +577,10 @@ namespace Hersan.UI.Ensamble
                 txtClave.Clear();
                 txtNombre.Clear();
                 txtProyecto.Clear();
+                txtAgente.Clear();
+                rbVerde.IsChecked = true;
+                lblCondicion.Visible = false;
+                cboCondiciones.Visible = false;
                 gvDatos.DataSource = null;
 
                 LimpiarProductos();
@@ -654,7 +682,21 @@ namespace Hersan.UI.Ensamble
                     txtNombre.Text = oCotiza[0].Cliente.Nombre.ToString();
                     txtFecha.Text = oCotiza[0].DatosUsuario.FechaCreacion.ToShortDateString();
                     txtProyecto.Text = oCotiza[0].Proyecto;
-                    oList = oCotiza[0].Detalle;
+                    if (oCotiza[0].Condiciones.Id > 0){
+                        Nacional = false;
+                        lblCondicion.Visible = !Nacional;
+                        cboCondiciones.Visible = !Nacional;
+                    }
+
+                    if (oCotiza[0].Semaforo == 1)
+                        rbVerde.IsChecked = true;
+                    else {
+                        if (oCotiza[0].Semaforo == 2)
+                            rbAmarillo.IsChecked = true;
+                        else
+                            rbRojo.IsChecked = true;
+                    }
+                     oList = oCotiza[0].Detalle;
 
                     gvDatos.DataSource = oList;
                 } else {
@@ -698,6 +740,6 @@ namespace Hersan.UI.Ensamble
             }
             return archivo;
         }
-
+        
     }
 }

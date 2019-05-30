@@ -45,6 +45,8 @@
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
@@ -61,8 +63,6 @@
             this.documentWindow1 = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -141,6 +141,22 @@
             this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
             this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.DisplayName = "commandBarButton1";
+            this.btnEliminar.DrawText = true;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // commandBarSeparator3
+            // 
+            this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
+            this.commandBarSeparator3.Name = "commandBarSeparator3";
+            this.commandBarSeparator3.VisibleInOverflowMenu = false;
             // 
             // btnSalir
             // 
@@ -265,7 +281,6 @@
             this.cboAgentes.Name = "cboAgentes";
             this.cboAgentes.Size = new System.Drawing.Size(221, 20);
             this.cboAgentes.TabIndex = 18;
-            this.cboAgentes.TabStop = false;
             this.cboAgentes.SelectedIndexChanged += new System.EventHandler(this.cboAgentes_SelectedIndexChanged);
             // 
             // label1
@@ -446,23 +461,6 @@
             // 
             this.commandBarStripElement2.DisplayName = "commandBarStripElement2";
             this.commandBarStripElement2.Name = "commandBarStripElement2";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayName = "commandBarButton1";
-            this.btnEliminar.DrawText = true;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // commandBarSeparator3
-            // 
-            this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
-            this.commandBarSeparator3.Name = "commandBarSeparator3";
-            this.commandBarSeparator3.Text = "";
-            this.commandBarSeparator3.VisibleInOverflowMenu = false;
             // 
             // commandBarStripElement3
             // 

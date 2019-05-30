@@ -81,6 +81,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmCotizacionConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCotizacionConsulta.Designer.cs">
+      <DependentUpon>frmCotizacionConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="frmCotizacionesBuscar.Designer.cs">
       <DependentUpon>frmCotizacionesBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPedidosConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPedidosConsulta.Designer.cs">
+      <DependentUpon>frmPedidosConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrecios.cs">
       <SubType>Form</SubType>
@@ -164,6 +176,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCotizacionConsulta.resx">
+      <DependentUpon>frmCotizacionConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCotizacion.resx">
       <DependentUpon>frmCotizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCotizacionesBuscar.resx">
       <DependentUpon>frmCotizacionesBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPedidosConsulta.resx">
+      <DependentUpon>frmPedidosConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrecios.resx">
       <DependentUpon>frmPrecios.cs</DependentUpon>
@@ -258,6 +276,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoresBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CondicionesExpBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DocumentosBE.datasource" />

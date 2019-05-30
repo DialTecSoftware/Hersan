@@ -82,7 +82,7 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE> ENS_ReflejanteCotizacion_Combo(int IdFicha);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_GuardarResponse")]
-        int ENS_Cotizacion_Guardar(int IdCliente, string Proyecto, System.Data.DataTable oDetalle, int IdUsuario);
+        int ENS_Cotizacion_Guardar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Buscar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_BuscarResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final);
@@ -98,6 +98,9 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalleResponse")]
         System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ConsultaResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -215,8 +218,8 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
             return base.Channel.ENS_ReflejanteCotizacion_Combo(IdFicha);
         }
         
-        public int ENS_Cotizacion_Guardar(int IdCliente, string Proyecto, System.Data.DataTable oDetalle, int IdUsuario) {
-            return base.Channel.ENS_Cotizacion_Guardar(IdCliente, Proyecto, oDetalle, IdUsuario);
+        public int ENS_Cotizacion_Guardar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle) {
+            return base.Channel.ENS_Cotizacion_Guardar(obj, oDetalle);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final) {
@@ -237,6 +240,10 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         public System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza) {
             return base.Channel.ENS_Cotizacion_ReporteDetalle(IdCotiza);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final) {
+            return base.Channel.ENS_Cotizacion_Consulta(IdAgente, IdCotiza, Inicial, Final);
         }
     }
 }

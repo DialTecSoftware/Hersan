@@ -186,6 +186,12 @@
   <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_ReporteDetalle_OutputMessage">
     <wsdl:part name="parameters" element="tns:ENS_Cotizacion_ReporteDetalleResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_Consulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Cotizacion_Consulta" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_Consulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Cotizacion_ConsultaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_Ensamble">
     <wsdl:operation name="ABC_Clientes_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Guardar" message="tns:IHersan_Ensamble_ABC_Clientes_Guardar_InputMessage" />
@@ -298,6 +304,10 @@
     <wsdl:operation name="ENS_Cotizacion_ReporteDetalle">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalle" message="tns:IHersan_Ensamble_ENS_Cotizacion_ReporteDetalle_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalleResponse" message="tns:IHersan_Ensamble_ENS_Cotizacion_ReporteDetalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Cotizacion_Consulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Consulta" message="tns:IHersan_Ensamble_ENS_Cotizacion_Consulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ConsultaResponse" message="tns:IHersan_Ensamble_ENS_Cotizacion_Consulta_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Ensamble" type="tns:IHersan_Ensamble">
@@ -548,6 +558,15 @@
     </wsdl:operation>
     <wsdl:operation name="ENS_Cotizacion_ReporteDetalle">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Cotizacion_Consulta">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Consulta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

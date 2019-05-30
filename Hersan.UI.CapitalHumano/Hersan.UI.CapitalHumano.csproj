@@ -336,9 +336,11 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.AccesoriosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.AgentesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoresBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CondicionesExpBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DocumentosBE.datasource" />

@@ -123,7 +123,7 @@ namespace Hersan.Datos.Catalogos
                         oData.Columns.Add("Element", typeof(string));
                         oData.Columns.Add("Child", typeof(string));
                         da.Fill(oData);
-                       
+                        
                         oData.WriteXml(@"C:\Temp\Organizacion.xml");
                         //oData.WriteXmlSchema(@"C:\Temp\Organizacion.xml", false);
 

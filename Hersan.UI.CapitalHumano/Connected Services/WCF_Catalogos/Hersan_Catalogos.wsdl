@@ -14,6 +14,7 @@
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage">
@@ -304,6 +305,12 @@
   <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHUOrganigrama_ActualizarResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHU_OrganigramaXML_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_OrganigramaXML_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHU_OrganigramaXML_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_OrganigramaXML_ObtenerResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCEstados_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABCEstados_Obtener" />
   </wsdl:message>
@@ -441,6 +448,12 @@
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Combo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ENS_Accesorios_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_AccesoriosCotizacion_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_AccesoriosCotizacion_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_AccesoriosCotizacion_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_AccesoriosCotizacion_ComboResponse" />
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Guardar_InputMessage">
     <wsdl:part name="parameters" element="tns:ABC_TipoCliente_Guardar" />
@@ -659,6 +672,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar" message="tns:IHersan_Catalogos_CHUOrganigrama_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ActualizarResponse" message="tns:IHersan_Catalogos_CHUOrganigrama_Actualizar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CHU_OrganigramaXML_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener" message="tns:IHersan_Catalogos_CHU_OrganigramaXML_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_ObtenerResponse" message="tns:IHersan_Catalogos_CHU_OrganigramaXML_Obtener_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ABCEstados_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener" message="tns:IHersan_Catalogos_ABCEstados_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEstados_Obtener_OutputMessage" />
@@ -750,6 +767,10 @@
     <wsdl:operation name="ENS_Accesorios_Combo">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Combo" message="tns:IHersan_Catalogos_ENS_Accesorios_Combo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_ComboResponse" message="tns:IHersan_Catalogos_ENS_Accesorios_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_AccesoriosCotizacion_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_AccesoriosCotizacion_Combo" message="tns:IHersan_Catalogos_ENS_AccesoriosCotizacion_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_AccesoriosCotizacion_ComboResponse" message="tns:IHersan_Catalogos_ENS_AccesoriosCotizacion_Combo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ABC_TipoCliente_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Guardar" message="tns:IHersan_Catalogos_ABC_TipoCliente_Guardar_InputMessage" />
@@ -1203,6 +1224,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CHU_OrganigramaXML_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ABCEstados_Obtener">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener" style="document" />
       <wsdl:input>
@@ -1403,6 +1433,15 @@
     </wsdl:operation>
     <wsdl:operation name="ENS_Accesorios_Combo">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_AccesoriosCotizacion_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_AccesoriosCotizacion_Combo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

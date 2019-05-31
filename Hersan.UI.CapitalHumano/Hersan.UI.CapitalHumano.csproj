@@ -63,6 +63,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.RadDock, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\Telerik.WinControls.RadDock.dll</HintPath>
@@ -177,6 +178,15 @@
     <Compile Include="NuevoPuesto.Designer.cs">
       <DependentUpon>NuevoPuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Organigrama\OrgChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organigrama\OrgChartForm.Designer.cs">
+      <DependentUpon>OrgChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Organigrama\OrgContainerShape.cs" />
+    <Compile Include="Organigrama\OrgHeaderPresenterElement.cs" />
+    <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -189,10 +199,10 @@
       <DependentUpon>EvaluacionInduccion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\rtpDescripcionPuestos.cs">
+    <Compile Include="Reportes\rtpDescPuestos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rtpDescripcionPuestos.rpt</DependentUpon>
+      <DependentUpon>rtpDescPuestos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rtpExpediente1.cs">
@@ -254,6 +264,9 @@
     <EmbeddedResource Include="NuevoPuesto.resx">
       <DependentUpon>NuevoPuesto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Organigrama\OrgChartForm.resx">
+      <DependentUpon>OrgChartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -263,9 +276,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EvaluacionInduccion.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rtpDescripcionPuestos.rpt">
+    <EmbeddedResource Include="Reportes\rtpDescPuestos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rtpDescripcionPuestos.cs</LastGenOutput>
+      <LastGenOutput>rtpDescPuestos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rtpExpediente.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -280,6 +293,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="bin\Debug\EstructuraOrganizacional.exe.config" />
+    <None Include="bin\Debug\Hersan.UI.CapitalHumano.dll.config" />
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos.wsdl" />
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos.xsd">
       <SubType>Designer</SubType>
@@ -294,6 +309,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos5.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.wsdl" />
@@ -367,10 +385,6 @@
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EstructuraOrganizacional\EstructuraOrganizacional.csproj">
-      <Project>{53833478-bca4-40b4-9f60-6848355db152}</Project>
-      <Name>EstructuraOrganizacional</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
       <Project>{4e3994ef-5056-4289-9c62-dc1140fd764e}</Project>
       <Name>Hersan.Entidades</Name>
@@ -418,13 +432,59 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Correo\Correo_Aceptado.html" />
+    <Content Include="bin\Debug\Correo\Correo_Rechazado.html" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportSource.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Shared.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Windows.Forms.dll" />
+    <Content Include="bin\Debug\EstructuraOrganizacional.exe" />
+    <Content Include="bin\Debug\EstructuraOrganizacional.pdb" />
+    <Content Include="bin\Debug\FlashControlV71.dll" />
+    <Content Include="bin\Debug\Hersan.Datos.dll" />
+    <Content Include="bin\Debug\Hersan.Datos.pdb" />
+    <Content Include="bin\Debug\Hersan.Entidades.dll" />
+    <Content Include="bin\Debug\Hersan.Entidades.pdb" />
+    <Content Include="bin\Debug\Hersan.Negocio.dll" />
+    <Content Include="bin\Debug\Hersan.Negocio.pdb" />
+    <Content Include="bin\Debug\Hersan.UI.CapitalHumano.dll" />
+    <Content Include="bin\Debug\Hersan.UI.CapitalHumano.pdb" />
+    <Content Include="bin\Debug\Resources\Organization.xml" />
+    <Content Include="bin\Debug\ShockwaveFlashObjects.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.GridView.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.GridView.xml" />
+    <Content Include="bin\Debug\Telerik.WinControls.RadDiagram.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.RadDock.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.RadDock.xml" />
+    <Content Include="bin\Debug\Telerik.WinControls.UI.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.UI.xml" />
+    <Content Include="bin\Debug\Telerik.WinControls.xml" />
+    <Content Include="bin\Debug\TelerikCommon.dll" />
     <Content Include="Correo\Correo_Aceptado.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Correo\Correo_Rechazado.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Resources\Documents-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

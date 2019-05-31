@@ -1,6 +1,7 @@
 ﻿using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
 using System.Collections.Generic;
+using System.Data;
 using System.ServiceModel;
 
 namespace Hersan.Catalogos.Contract
@@ -153,7 +154,8 @@ namespace Hersan.Catalogos.Contract
         int CHUOrganigrama_Guardar(OrganigramaBE obj);
         [OperationContract]
         int CHUOrganigrama_Actualizar(OrganigramaBE obj);
-
+        [OperationContract]
+        DataTable CHU_OrganigramaXML_Obtener();
         #endregion
 
         #region Estados

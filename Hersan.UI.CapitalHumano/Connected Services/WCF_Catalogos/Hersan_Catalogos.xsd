@@ -636,6 +636,30 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CHU_OrganigramaXML_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CHU_OrganigramaXML_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CHU_OrganigramaXML_ObtenerResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ABCEstados_Obtener">
     <xs:complexType>
       <xs:sequence>
@@ -943,10 +967,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ENS_AccesoriosCotizacion_Combo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdFicha" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_AccesoriosCotizacion_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ENS_AccesoriosCotizacion_ComboResult" nillable="true" type="q72:ArrayOfAccesoriosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ABC_TipoCliente_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q72:TiposClienteBE" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q73:TiposClienteBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -960,7 +998,7 @@
   <xs:element name="ABC_TipoCliente_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q73:TiposClienteBE" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q74:TiposClienteBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -979,7 +1017,7 @@
   <xs:element name="ABC_TipoCliente_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_TipoCliente_ObtenerResult" nillable="true" type="q74:ArrayOfTiposClienteBE" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_TipoCliente_ObtenerResult" nillable="true" type="q75:ArrayOfTiposClienteBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -991,7 +1029,7 @@
   <xs:element name="ABC_TipoCliente_ComboResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_TipoCliente_ComboResult" nillable="true" type="q75:ArrayOfTiposClienteBE" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_TipoCliente_ComboResult" nillable="true" type="q76:ArrayOfTiposClienteBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

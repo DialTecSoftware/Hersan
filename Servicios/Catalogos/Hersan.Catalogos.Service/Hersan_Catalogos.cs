@@ -4,6 +4,7 @@ using Hersan.Entidades.Catalogos;
 using Hersan.Negocio.CapitalHumano;
 using Hersan.Negocio.Catalogos;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Hersan.Catalogos.Service
 {
@@ -234,6 +235,14 @@ namespace Hersan.Catalogos.Service
         public int CHUOrganigrama_Guardar(OrganigramaBE obj)
         {
             return new OrganigramaBP().CHUOrganigrama_Guardar(obj);
+        }
+        public DataTable CHU_OrganigramaXML_Obtener()
+        {
+            return new OrganigramaBP().CHU_OrganigramaXML_Obtener();
+        }
+        public DataSet CHU_Perfiles_Obtener(int IdDepto, int IdPuesto)
+        {
+            return new PerfilesBP().CHU_Perfiles_Obtener(IdDepto, IdPuesto);
         }
         public int CHUOrganigrama_Actualizar(OrganigramaBE obj)
         {

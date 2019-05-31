@@ -159,6 +159,9 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ActualizarResponse")]
         int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_ObtenerResponse")]
+        System.Data.DataTable CHU_OrganigramaXML_Obtener();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais);
         
@@ -227,6 +230,9 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.AccesoriosBE> ENS_Accesorios_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ENS_AccesoriosCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ENS_AccesoriosCotizacion_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_GuardarResponse")]
         int ABC_TipoCliente_Guardar(Hersan.Entidades.Catalogos.TiposClienteBE obj);
@@ -460,6 +466,10 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
             return base.Channel.CHUOrganigrama_Actualizar(obj);
         }
         
+        public System.Data.DataTable CHU_OrganigramaXML_Obtener() {
+            return base.Channel.CHU_OrganigramaXML_Obtener();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais) {
             return base.Channel.ABCEstados_Obtener(IdPais);
         }
@@ -550,6 +560,10 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.AccesoriosBE> ENS_Accesorios_Combo() {
             return base.Channel.ENS_Accesorios_Combo();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.AccesoriosBE> ENS_AccesoriosCotizacion_Combo(int IdFicha) {
+            return base.Channel.ENS_AccesoriosCotizacion_Combo(IdFicha);
         }
         
         public int ABC_TipoCliente_Guardar(Hersan.Entidades.Catalogos.TiposClienteBE obj) {

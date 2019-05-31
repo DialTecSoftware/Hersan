@@ -58,8 +58,24 @@
       <Child Name="Janine Labrune" Puesto="Graphic Designer"/>
   </Element>
   <Element Name="Proyecto3" Area="Proyecto">
-      <Child Name="Hanna Moos" Puesto="Junior Brand Manager"/>
+    <Child>
+      <Name> Hanna Moos </Name>
+      <Puesto> Junior Brand Manager </Puesto>
+    </Child> 
   </Element>
   </Element>
   </Element>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </Root>

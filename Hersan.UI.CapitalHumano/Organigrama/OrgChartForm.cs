@@ -8,15 +8,17 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml;
 using System.Xml.Linq;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using Hersan.Entidades.CapitalHumano;
 
-namespace EstructuraOrganizacional
+namespace Hersan.UI.CapitalHumano.Organigrama
 {
     public partial class OrgChartForm : Telerik.WinControls.UI.RadForm
     {
+        CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
+
         private Telerik.Windows.Diagrams.Core.Point topPoint = new Telerik.Windows.Diagrams.Core.Point(200, 200);
         internal static Telerik.Windows.Diagrams.Core.TreeLayoutSettings currentLayoutSettings;
         private Color[] groupColor = new Color[] { Color.FromArgb(49, 49, 49), Color.FromArgb(47, 153, 69), Color.FromArgb(36, 159, 217), Color.FromArgb(49, 189, 117) };
@@ -27,12 +29,20 @@ namespace EstructuraOrganizacional
 
 
         }
+        private void CargaDocumento()
+        {
+            oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                oCatalogo.CHU_OrganigramaXML_Obtener();
+            } catch (Exception ex) {
 
-
-
-
+                RadMessageBox.Show("Ocurrió un error al cargar los datos del organigrama" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+          
+        }
         private void InitializeDiagram()
         {
+            CargaDocumento();
             OrgContainerShape org = new OrgContainerShape();
             this.WindowState = FormWindowState.Maximized;
             //if (Program.themeName != "") //set the example theme to the same theme QSF uses
@@ -63,20 +73,18 @@ namespace EstructuraOrganizacional
                 UnderneathVerticalSeparation = 40d,
                 VerticalDistance = 10d,
             };
-            if (cbofilter.SelectedIndex == -1) {
+            
                 this.PopulateWithData();
-            } else {
-                this.Filtrar();
-            }
+
             this.radDiagram1.Zoom = 0.8;
             this.radDiagram1.DiagramElement.HorizontalScrollbar.Value = 250;
             this.radDiagram1.DiagramElement.VerticalScrollbar.Value = 100;
             this.radDiagram1.SetLayout(Telerik.Windows.Diagrams.Core.LayoutType.Tree, currentLayoutSettings);
-         
+
 
 
         }
-
+       
         void ApplyThemeRecursively(Control.ControlCollection controls)
         {
             foreach (Control control in controls) {
@@ -101,51 +109,26 @@ namespace EstructuraOrganizacional
         //public Image GetImageFromResource(string fileName)
         //{
         //    using (Stream stream = this.GetType().Assembly.GetManifestResourceStream(string.Format("EstructuraOrganizacional.Resources.{0}.png", fileName))) {
-               
-        //            return new Bitmap(Image.FromStream(stream), 40, 40);
-                
+
+        //        return new Bitmap(Image.FromStream(stream), 40, 40);
+
         //    }
         //}
 
         #region OrgExample
-        private void Filtrar()
-        {
-           
-                XElement dataXml = XElement.Load(Directory.GetCurrentDirectory() + "/Resources/Organization.xml");
-
-            IEnumerable<XElement> employees = dataXml.Elements();
-
-            foreach (XElement element in employees.Elements("Element").Where((x => (string)x.Attribute("Name") == cbofilter.SelectedItem.Text))) {
-
-            ////          IEnumerable<XElement> items =
-            ////from el in dataXml.Descendants("Area")
-            ////select el;
-            ////          foreach (XElement prdName in items) {
-            //var rslt = dataXml.Descendants("result").Where(x => x.Attribute("Area").Value == "45");
-            //string rsltstr = string.Empty;
-            //foreach (XElement el in rslt) {
-                OrgContainerShape node = this.CreateNode(element, null);
-                    node.BaseColor = Color.IndianRed;
-                    this.radDiagram1.AddShape(node);
-                    currentLayoutSettings.Roots.Add(node);
-                    this.GetSubNodes(element, node, 2);
-                    node.IsCollapsed = true;
-                }
-                
-                
-              
-
-        }
+       
         private void PopulateWithData()
         {
+
+            //XElement dataXml = XElement.Load(@"C:\Temp\Organizacion.xml");
             XElement dataXml = XElement.Load(Directory.GetCurrentDirectory() + "/Resources/Organization.xml");
+
             IEnumerable<XElement> employees = dataXml.Elements();
 
-           
-                foreach (XElement element in dataXml.Elements("Element")) {
+
+            foreach (XElement element in dataXml.Elements("Element")) {
                 OrgContainerShape node = this.CreateNode(element, null);
-                if (element.ToString() =="HERSAN")
-                    {
+                if (element.ToString() == "HERSAN") {
                     node.ToggleCollapseButton.ImagePrimitive.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
                     node.BaseColor = Color.IndianRed;
                     this.radDiagram1.AddShape(node);
@@ -153,13 +136,13 @@ namespace EstructuraOrganizacional
                     this.GetSubNodes(element, node, 2);
                     node.IsCollapsed = true;
                 }
-                   
-                    node.BaseColor = Color.IndianRed;
-                    this.radDiagram1.AddShape(node);
-                    currentLayoutSettings.Roots.Add(node);
-                    this.GetSubNodes(element, node, 2);
-                    node.IsCollapsed = true;
-                
+
+                node.BaseColor = Color.IndianRed;
+                this.radDiagram1.AddShape(node);
+                currentLayoutSettings.Roots.Add(node);
+                this.GetSubNodes(element, node, 2);
+                node.IsCollapsed = true;
+
             }
         }
 
@@ -167,7 +150,7 @@ namespace EstructuraOrganizacional
         {
             OrgContainerShape orgTeam = new OrgContainerShape() {
                 Name = element.Attribute("Name").Value,
-                
+
             };
 
             orgTeam.ToggleCollapseButton.ImagePrimitive.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
@@ -183,7 +166,7 @@ namespace EstructuraOrganizacional
                 connection.Target = orgTeam;
 
                 this.radDiagram1.AddConnection(connection);
-               
+
             }
 
             var teamMembers = this.GetTeamMembers(element, orgTeam);
@@ -199,7 +182,7 @@ namespace EstructuraOrganizacional
                     position = new Telerik.Windows.Diagrams.Core.Point(10, position.Y + member.Height + 10);
                 }
             }
-            
+
             orgTeam.IsCollapsedChanged += this.orgTeam_IsCollapsedChanged;
             return orgTeam;
         }
@@ -261,7 +244,7 @@ namespace EstructuraOrganizacional
                 if (node.Path.Contains("Proyecto")) {
                     node.BaseColor = Color.Tomato;
                 }
-              
+
                 if (node.Path.Contains("Capital Humano")) {
                     node.BaseColor = Color.Tomato;
                 }
@@ -309,7 +292,7 @@ namespace EstructuraOrganizacional
 
                 throw;
             }
-           
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -319,7 +302,7 @@ namespace EstructuraOrganizacional
 
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurió un error al cerrar la pantalla" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-              
+
             }
         }
 
@@ -328,7 +311,7 @@ namespace EstructuraOrganizacional
             try {
                 base.OnLoad(e);
 
-                this.InitializeDiagram();  
+                this.InitializeDiagram();
             } catch (Exception) {
 
                 throw;

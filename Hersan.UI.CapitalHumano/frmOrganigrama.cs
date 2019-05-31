@@ -278,7 +278,7 @@ namespace Hersan.UI.CapitalHumano
 
         private void btnVerDiagrama_Click(object sender, EventArgs e)
         {
-            Form frm = new EstructuraOrganizacional.OrgChartForm();
+            Form frm = new Organigrama.OrgChartForm();
             frm.ShowDialog();
             frm.WindowState = FormWindowState.Maximized;
         }

@@ -56,15 +56,15 @@ namespace Hersan.UI.Ensamble
 
                 /* VALIDAR SI ES NUEVO O ACTUALIZACIÓN */
                 if (int.Parse(txtId.Text) == 0) {
-                    //ClientesBE obj = new ClientesBE();
-                    //obj.Nombre = txtNombre.Text;
-                    //obj.RFC = txtRFC.Text;
-                    //var oItem = oEnsamble.ABC_Clientes_Buscar(obj, "");
-                    //if (oItem.Count > 0) {
-                    //    RadMessageBox.Show("EL cliente capturado ya existe: " + oItem[0].Nombre, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    //    obj = null;
-                    //    return;
-                    //}
+                    ClientesBE obj = new ClientesBE();
+                    obj.Nombre = txtNombre.Text;
+                    obj.RFC = txtRFC.Text;
+                    var oItem = oEnsamble.ABC_Clientes_Buscar(obj, "");
+                    if (oItem.Count > 0) {
+                        RadMessageBox.Show("EL cliente capturado ya existe: " + oItem[0].Nombre, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        obj = null;
+                        return;
+                    }
                 }
 
                 #region Entidades Seleccionadas
@@ -438,10 +438,12 @@ namespace Hersan.UI.Ensamble
                     txtEstado.Text = item.Estado;
                     txtFecha.Text = item.DatosUsuario.FechaCreacion.ToShortDateString();
                     rbNacional.Checked = item.Nacional ? true : false;
+                    rbExporta.Checked = !rbNacional.Checked;
                     chkVIP.Checked = item.VIP ? true : false;
                     txtCorreo1.Text = item.Correo1;
                     txtCorreo2.Text = item.Correo2;
                     chkActivo.Checked = item.DatosUsuario.Estatus;
+
 
                     /*COMPRAS*/
                     txtCompras.Text = item.Compras.Nombre;

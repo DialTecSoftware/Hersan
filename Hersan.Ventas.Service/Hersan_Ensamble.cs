@@ -28,6 +28,14 @@ namespace Hersan.Ensamble.Service
         {
             return new ClientesBP().ABC_Clientes_Obtener(IdCliente);
         }
+        public List<ClientesBE> ABC_ClientesAgente_Combo(int IdAgente)
+        {
+            return new ClientesBP().ABC_ClientesAgente_Combo(IdAgente);
+        }
+        public int ABC_ClientesAgente_Guardar(ClientesBE obj)
+        {
+            return new ClientesBP().ABC_ClientesAgente_Guardar(obj);
+        }
         #endregion
 
         #region Facturación
@@ -107,9 +115,9 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Cotizaciones y Pedidos
-        public int ENS_Cotizacion_Guardar(int IdCliente, System.Data.DataTable oDetalle, int IdUsuario)
+        public int ENS_Cotizacion_Guardar(PedidosBE obj, System.Data.DataTable oDetalle)
         {
-            return new PedidosBP().ENS_Cotizacion_Guardar(IdCliente, oDetalle, IdUsuario);
+            return new PedidosBP().ENS_Cotizacion_Guardar(obj, oDetalle);
         }
         public List<PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final)
         {
@@ -122,6 +130,18 @@ namespace Hersan.Ensamble.Service
         public int ENS_Cotizacion_Actualizar(PedidosBE obj, System.Data.DataTable oDetalle)
         {
             return new PedidosBP().ENS_Cotizacion_Actualizar(obj, oDetalle);
+        }
+        public System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza)
+        {
+            return new PedidosBP().ENS_Cotizacion_Reporte(IdCotiza);
+        }
+        public System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza)
+        {
+            return new PedidosBP().ENS_Cotizacion_ReporteDetalle(IdCotiza);
+        }
+        public List<PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final)
+        {
+            return new PedidosBP().ENS_Cotizacion_Consulta(IdAgente, IdCotiza, Inicial, Final);
         }
         #endregion
     }

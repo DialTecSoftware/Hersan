@@ -636,30 +636,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CHU_OrganigramaXML_Obtener">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CHU_OrganigramaXML_ObtenerResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="CHU_OrganigramaXML_ObtenerResult" nillable="true">
-          <xs:complexType>
-            <xs:annotation>
-              <xs:appinfo>
-                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-              </xs:appinfo>
-            </xs:annotation>
-            <xs:sequence>
-              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="ABCEstados_Obtener">
     <xs:complexType>
       <xs:sequence>
@@ -1030,6 +1006,110 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_TipoCliente_ComboResult" nillable="true" type="q76:ArrayOfTiposClienteBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Agentes_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Agentes_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_Agentes_ObtenerResult" nillable="true" type="q77:ArrayOfAgentesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Agentes_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q78:AgentesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Agentes_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABC_Agentes_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Agentes_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q79:AgentesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Agentes_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABC_Agentes_ActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Agentes_Combo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Agentes_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_Agentes_ComboResult" nillable="true" type="q80:ArrayOfAgentesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_CondicionesExportacion_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q81:CondicionesExpBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_CondicionesExportacion_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABC_CondicionesExportacion_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_CondicionesExportacion_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="obj" nillable="true" type="q82:CondicionesExpBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_CondicionesExportacion_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABC_CondicionesExportacion_ActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_CondicionesExportacion_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_CondicionesExportacion_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_CondicionesExportacion_ObtenerResult" nillable="true" type="q83:ArrayOfCondicionesExpBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_CondicionesExportacion_Combo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_CondicionesExportacion_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_CondicionesExportacion_ComboResult" nillable="true" type="q84:ArrayOfCondicionesExpBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

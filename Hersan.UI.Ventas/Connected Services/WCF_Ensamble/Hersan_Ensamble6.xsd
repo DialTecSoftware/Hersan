@@ -1,15 +1,528 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="DataSet" nillable="true">
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:element name="ABC_Clientes_Guardar">
     <xs:complexType>
-      <xs:annotation>
-        <xs:appinfo>
-          <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-        </xs:appinfo>
-      </xs:annotation>
       <xs:sequence>
-        <xs:element ref="xs:schema" />
-        <xs:any />
+        <xs:element minOccurs="0" name="Tablas" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Entidades" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Clientes_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABC_Clientes_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Clientes_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Tablas" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Entidades" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="Estatus" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Clientes_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABC_Clientes_ActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Clientes_Buscar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="Lista" nillable="true" type="q1:ClientesBE" />
+        <xs:element minOccurs="0" name="Entidades" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Clientes_BuscarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ABC_Clientes_BuscarResult" nillable="true" type="q2:ArrayOfClientesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Clientes_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_Clientes_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ABC_Clientes_ObtenerResult" nillable="true" type="q3:ArrayOfClientesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_ClientesAgente_Combo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdAgente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_ClientesAgente_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ABC_ClientesAgente_ComboResult" nillable="true" type="q4:ArrayOfClientesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_ClientesAgente_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q5:ClientesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_ClientesAgente_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABC_ClientesAgente_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_FormaPago_Combo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_FormaPago_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_FormaPago_ComboResult" nillable="true" type="q6:ArrayOfFormasPagoBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_MetodoPago_Combo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_MetodoPago_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_MetodoPago_ComboResult" nillable="true" type="q7:ArrayOfMetodosPagoBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_UsoCFDI_Combo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ABC_UsoCFDI_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ABC_UsoCFDI_ComboResult" nillable="true" type="q8:ArrayOfUsoCFDIBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Servicios_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q9:ServiciosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Servicios_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_Servicios_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Servicios_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q10:ServiciosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Servicios_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_Servicios_ActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Servicios_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Servicios_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Servicios_ObtenerResult" nillable="true" type="q11:ArrayOfServiciosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Servicios_Combo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdEntidad" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Servicios_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Servicios_ComboResult" nillable="true" type="q12:ArrayOfServiciosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ServiciosCotizacion_Combo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ServiciosCotizacion_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_ServiciosCotizacion_ComboResult" nillable="true" type="q13:ArrayOfServiciosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Precios_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oData" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Precios_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_Precios_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Precios_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Precios_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Precios_ObtenerResult" nillable="true" type="q14:ArrayOfPreciosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ProductosFicha_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Tablas" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Colores" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Reflejantes" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Accesorios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ProductosFicha_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_ProductosFicha_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ProductosFicha_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Tablas" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Colores" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Reflejantes" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Accesorios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="Estatus" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ProductosFicha_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_ProductosFicha_ActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ProductosFicha_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q15:ProductoEnsambleBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ProductosFicha_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_ProductosFicha_ObtenerResult" nillable="true" type="q16:ArrayOfProductoEnsambleBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ProductosCotizacion_Combo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ProductosCotizacion_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_ProductosCotizacion_ComboResult" nillable="true" type="q17:ArrayOfProductoEnsambleBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_CarcasasCotizacion_Combo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdFicha" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_CarcasasCotizacion_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ENS_CarcasasCotizacion_ComboResult" nillable="true" type="q18:ArrayOfColoresBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ReflejanteCotizacion_Combo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdFicha" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_ReflejanteCotizacion_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ENS_ReflejanteCotizacion_ComboResult" nillable="true" type="q19:ArrayOfReflejantesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q20:PedidosBE" />
+        <xs:element minOccurs="0" name="oDetalle" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_Cotizacion_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_Buscar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+        <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_BuscarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_BuscarResult" nillable="true" type="q21:ArrayOfPedidosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCotizacion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_ObtenerResult" nillable="true" type="q22:ArrayOfPedidosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q23:PedidosBE" />
+        <xs:element minOccurs="0" name="oDetalle" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_Cotizacion_ActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_Reporte">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCotiza" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_ReporteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_Cotizacion_ReporteResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_ReporteDetalle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCotiza" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_ReporteDetalleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_Cotizacion_ReporteDetalleResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_Consulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdAgente" type="xs:int" />
+        <xs:element minOccurs="0" name="IdCotiza" type="xs:int" />
+        <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Cotizacion_ConsultaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_ConsultaResult" nillable="true" type="q24:ArrayOfPedidosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

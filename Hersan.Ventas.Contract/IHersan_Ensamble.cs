@@ -17,6 +17,10 @@ namespace Hersan.Ensamble.Contract
         List<ClientesBE> ABC_Clientes_Buscar(ClientesBE Lista, string Entidades);
         [OperationContract]
         List<ClientesBE> ABC_Clientes_Obtener(int IdCliente);
+        [OperationContract]
+        List<ClientesBE> ABC_ClientesAgente_Combo(int IdAgente);
+        [OperationContract]
+        int ABC_ClientesAgente_Guardar(ClientesBE obj);
         #endregion
 
         #region Facturación
@@ -65,13 +69,19 @@ namespace Hersan.Ensamble.Contract
 
         #region Cotizaciones y Pedidos
         [OperationContract]
-        int ENS_Cotizacion_Guardar(int IdCliente, System.Data.DataTable oDetalle, int IdUsuario);
+        int ENS_Cotizacion_Guardar(PedidosBE obj, System.Data.DataTable oDetalle);
         [OperationContract]
         List<PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final);
         [OperationContract]
         List<PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion);
         [OperationContract]
         int ENS_Cotizacion_Actualizar(PedidosBE obj, System.Data.DataTable oDetalle);
+        [OperationContract]
+        System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza);
+        [OperationContract]
+        System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza);
+        [OperationContract]
+        List<PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final);
         #endregion
     }
 }

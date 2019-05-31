@@ -240,5 +240,27 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         List<TiposClienteBE> ABC_TipoCliente_Combo();
         #endregion
+
+        #region Agentes
+        [OperationContract]
+        List<AgentesBE> ABC_Agentes_Obtener();
+        [OperationContract]
+        int ABC_Agentes_Guardar(AgentesBE obj);
+        [OperationContract]
+        int ABC_Agentes_Actualizar(AgentesBE obj);
+        [OperationContract]
+        List<AgentesBE> ABC_Agentes_Combo();
+        #endregion
+
+        #region Condiciones Venta
+        [OperationContract]
+        int ABC_CondicionesExportacion_Guardar(CondicionesExpBE obj);
+        [OperationContract]
+        int ABC_CondicionesExportacion_Actualizar(CondicionesExpBE obj);
+        [OperationContract]
+        List<CondicionesExpBE> ABC_CondicionesExportacion_Obtener();
+        [OperationContract]
+        List<CondicionesExpBE> ABC_CondicionesExportacion_Combo();
+        #endregion
     }
 }

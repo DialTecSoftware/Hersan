@@ -1,10 +1,6 @@
 ﻿using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Comun;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hersan.Entidades.Ensamble
 {
@@ -15,16 +11,26 @@ namespace Hersan.Entidades.Ensamble
         {
             Id = 0;
             Cliente = new ClientesBE();
-            Agente = 0;
+            Agente = new AgentesBE();
+            Semaforo = 0;
+            Condiciones = new CondicionesExpBE();
             Pedido = false;
+            NoPedido = 0;
+            Proyecto = string.Empty;
+            Monto = 0;
             Detalle = new List<PedidoDetalleBE>();
             DatosUsuario = new GeneralBE();
         }
 
         public int Id { get; set; }
         public ClientesBE Cliente { get; set; }
-        public int Agente { get; set; }       
+        public AgentesBE Agente { get; set; }
+        public int Semaforo { get; set; }
+        public CondicionesExpBE Condiciones { get; set; }
         public bool Pedido { get; set; }
+        public int NoPedido { get; set; }
+        public string Proyecto { get; set; }
+        public decimal Monto { get; set; }
         public List<PedidoDetalleBE> Detalle { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }

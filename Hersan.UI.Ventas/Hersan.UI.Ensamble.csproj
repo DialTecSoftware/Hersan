@@ -31,6 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -38,6 +43,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,6 +81,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmCotizacionConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCotizacionConsulta.Designer.cs">
+      <DependentUpon>frmCotizacionConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +111,23 @@
     <Compile Include="frmClientesBuscar.Designer.cs">
       <DependentUpon>frmClientesBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCotizacionCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCotizacionCorreo.Designer.cs">
+      <DependentUpon>frmCotizacionCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCotizacionesBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCotizacionesBuscar.Designer.cs">
       <DependentUpon>frmCotizacionesBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPedidosConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPedidosConsulta.Designer.cs">
+      <DependentUpon>frmPedidosConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrecios.cs">
       <SubType>Form</SubType>
@@ -122,6 +147,12 @@
     <Compile Include="frmServicios.Designer.cs">
       <DependentUpon>frmServicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewer.Designer.cs">
+      <DependentUpon>frmViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,8 +168,17 @@
     <Compile Include="RadMultiComboSelect.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\rptCotizacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCotizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCotizacionConsulta.resx">
+      <DependentUpon>frmCotizacionConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCotizacion.resx">
       <DependentUpon>frmCotizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,8 +191,14 @@
     <EmbeddedResource Include="frmClientesBuscar.resx">
       <DependentUpon>frmClientesBuscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCotizacionCorreo.resx">
+      <DependentUpon>frmCotizacionCorreo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCotizacionesBuscar.resx">
       <DependentUpon>frmCotizacionesBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPedidosConsulta.resx">
+      <DependentUpon>frmPedidosConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrecios.resx">
       <DependentUpon>frmPrecios.cs</DependentUpon>
@@ -163,6 +209,9 @@
     <EmbeddedResource Include="frmServicios.resx">
       <DependentUpon>frmServicios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmViewer.resx">
+      <DependentUpon>frmViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -170,6 +219,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaProducto.resx">
       <DependentUpon>frmAltaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptCotizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCotizacion.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -219,9 +272,11 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.AccesoriosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.AgentesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoresBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CondicionesExpBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DocumentosBE.datasource" />
@@ -252,6 +307,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.ValidaIngresoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Ventas.ClientesBE.datasource" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WCF_Catalogos\" />
@@ -296,6 +352,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

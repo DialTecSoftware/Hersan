@@ -61,9 +61,11 @@
     <Compile Include="CapitalHumano\SeguimientoCandidatosBP.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalBP.cs" />
     <Compile Include="Catalogos\AccesoriosBP.cs" />
+    <Compile Include="Catalogos\AgentesBP.cs" />
     <Compile Include="Catalogos\CiudadesBP.cs" />
     <Compile Include="Catalogos\ColoniasBP.cs" />
     <Compile Include="Catalogos\ColoresBP.cs" />
+    <Compile Include="Catalogos\CondicionesExpBP.cs" />
     <Compile Include="Catalogos\ReflejantesBP.cs" />
     <Compile Include="Catalogos\ContactosBP.cs" />
     <Compile Include="Catalogos\DepartamentosBP.cs" />

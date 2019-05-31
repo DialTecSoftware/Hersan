@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="79835f19-c9ae-4ee9-ae92-a0ef17200944" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7f94056e-d116-4c38-8583-a0162da16a48" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,15 +23,15 @@
     <MetadataSource Address="http://localhost:62534/Hersan_Ensamble.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Hersan_Ensamble.xsd" MetadataType="Schema" ID="0e698b5f-4363-44e7-8df1-01171162ded9" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd3" />
-    <MetadataFile FileName="Hersan_Ensamble1.xsd" MetadataType="Schema" ID="1566d02e-1158-40c0-869a-8bb42e2a664f" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" />
-    <MetadataFile FileName="Hersan_Ensamble2.xsd" MetadataType="Schema" ID="d6dca379-2426-44bb-a564-a896ee94cd0f" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" />
-    <MetadataFile FileName="Hersan_Ensamble3.xsd" MetadataType="Schema" ID="bc4285c2-c338-4c77-bff5-0a53850f6a98" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd6" />
-    <MetadataFile FileName="Hersan_Ensamble4.xsd" MetadataType="Schema" ID="f8ec7d49-f2f6-4772-b449-0dd018cf5742" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd1" />
-    <MetadataFile FileName="Hersan_Ensamble.wsdl" MetadataType="Wsdl" ID="45b71c28-9c3d-4445-818b-786f18c07f6d" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?wsdl" />
-    <MetadataFile FileName="Hersan_Ensamble.disco" MetadataType="Disco" ID="ed7bd2f6-7ca6-4b39-9a96-e77b3cff2a77" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?disco" />
-    <MetadataFile FileName="Hersan_Ensamble5.xsd" MetadataType="Schema" ID="7f0cf8a3-ae62-42b2-8946-9b3842f3d1f0" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd0" />
-    <MetadataFile FileName="Hersan_Ensamble6.xsd" MetadataType="Schema" ID="e9f7e7da-98d8-4895-a221-ae4a5fc33a96" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd2" />
+    <MetadataFile FileName="Hersan_Ensamble.xsd" MetadataType="Schema" ID="2fe95186-ff18-447a-9d46-d8935d7ea9e2" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd3" />
+    <MetadataFile FileName="Hersan_Ensamble1.xsd" MetadataType="Schema" ID="11410bf2-57c7-4946-a694-c93050bac5f1" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" />
+    <MetadataFile FileName="Hersan_Ensamble2.xsd" MetadataType="Schema" ID="ffb6421e-df3b-4097-a0a1-9c0713b78790" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" />
+    <MetadataFile FileName="Hersan_Ensamble7.xsd" MetadataType="Schema" ID="73034f00-05ab-48d1-8ad5-1feb2acfc9f9" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd6" />
+    <MetadataFile FileName="Hersan_Ensamble5.xsd" MetadataType="Schema" ID="75fc4afb-20ba-424d-9cb1-fc79a582e141" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd1" />
+    <MetadataFile FileName="Hersan_Ensamble.wsdl" MetadataType="Wsdl" ID="204956ab-ec9e-4f98-8cec-01a0204d4ed6" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?wsdl" />
+    <MetadataFile FileName="Hersan_Ensamble.disco" MetadataType="Disco" ID="5419aa3b-08ae-415f-b86a-b2d1392c68cf" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?disco" />
+    <MetadataFile FileName="Hersan_Ensamble6.xsd" MetadataType="Schema" ID="040053b8-554f-4bb7-8fed-a43e46c4b7b6" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd0" />
+    <MetadataFile FileName="Hersan_Ensamble3.xsd" MetadataType="Schema" ID="e8429aaa-9084-4018-a697-eda94f40f710" SourceId="1" SourceUrl="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -634,7 +634,6 @@ namespace Hersan.UI.Ensamble
 
                 CargarTablas(ref oData);
 
-                var x = 0;
             } catch (Exception ex) {
                 throw ex;
             }

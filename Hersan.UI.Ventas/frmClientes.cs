@@ -50,6 +50,10 @@ namespace Hersan.UI.Ensamble
             
             int Result = 0;
             try {
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe asignar un Tipo de Cliente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    return;
+                }
 
                 if (RadMessageBox.Show("Desea guardar la información capturada...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
                         return;
@@ -626,6 +630,20 @@ namespace Hersan.UI.Ensamble
             } catch (Exception ex) {
                 throw ex;
             }
+        }
+        private bool ValidarCampos()
+        {
+            bool bFlag = true;
+            try {
+                if (cboTipoCliente.SelectedValue == null) {
+                    bFlag = false;
+                    return bFlag;
+                }
+
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return bFlag;
         }
     }
 }

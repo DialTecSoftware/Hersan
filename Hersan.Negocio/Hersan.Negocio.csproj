@@ -66,6 +66,7 @@
     <Compile Include="Catalogos\ColoniasBP.cs" />
     <Compile Include="Catalogos\ColoresBP.cs" />
     <Compile Include="Catalogos\CondicionesExpBP.cs" />
+    <Compile Include="Catalogos\MonedasBP.cs" />
     <Compile Include="Catalogos\ReflejantesBP.cs" />
     <Compile Include="Catalogos\ContactosBP.cs" />
     <Compile Include="Catalogos\DepartamentosBP.cs" />

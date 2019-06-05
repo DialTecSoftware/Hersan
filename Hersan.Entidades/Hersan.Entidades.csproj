@@ -89,6 +89,7 @@
     <Compile Include="CapitalHumano\OrganigramaBE.cs" />
     <Compile Include="Catalogos\FamiliasBE.cs" />
     <Compile Include="Catalogos\FormasPagoBE.cs" />
+    <Compile Include="Catalogos\MonedasBE.cs" />
     <Compile Include="Catalogos\PaisesBE.cs" />
     <Compile Include="CapitalHumano\PuestosBE.cs" />
     <Compile Include="CapitalHumano\TiposContratoBE.cs" />

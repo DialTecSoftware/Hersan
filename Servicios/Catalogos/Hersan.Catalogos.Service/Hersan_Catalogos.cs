@@ -418,6 +418,24 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
+        #region Monedas
+        public List<MonedasBE> ABC_Monedas_Obtener()
+        {
+            return new MonedasBP().ABC_Monedas_Obtener();
+        }
+        public int ABC_Monedas_Guardar(MonedasBE obj)
+        {
+            return new MonedasBP().ABC_Monedas_Guardar(obj);
+        }
+        public int ABC_Monedas_Actualizar(MonedasBE obj)
+        {
+            return new MonedasBP().ABC_Monedas_Actualizar(obj);
+        }
+        public List<MonedasBE> ABC_Monedas_Combo()
+        {
+            return new MonedasBP().ABC_Monedas_Combo();
+        }
+        #endregion
     }
 }
 

@@ -16,6 +16,24 @@
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_ComboResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABCEmpresas_Obtener" />
   </wsdl:message>
@@ -520,7 +538,25 @@
   <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Combo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ComboResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_ObtenerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_Catalogos">
+    <wsdl:operation name="ABC_Monedas_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Guardar" message="tns:IHersan_Catalogos_ABC_Monedas_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_GuardarResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Actualizar" message="tns:IHersan_Catalogos_ABC_Monedas_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ActualizarResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo" message="tns:IHersan_Catalogos_ABC_Monedas_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ComboResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Combo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ABCEmpresas_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_OutputMessage" />
@@ -857,10 +893,41 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Combo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ComboResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Combo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener" message="tns:IHersan_Catalogos_ABC_Monedas_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Obtener_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Catalogos" type="tns:IHersan_Catalogos">
     <wsp:PolicyReference URI="#WSHttpBinding_IHersan_Catalogos_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ABC_Monedas_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ABCEmpresas_Obtener">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" style="document" />
       <wsdl:input>
@@ -1610,6 +1677,15 @@
     </wsdl:operation>
     <wsdl:operation name="ABC_CondicionesExportacion_Combo">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -146,6 +146,7 @@
             // 
             // txtNombreC
             // 
+            this.txtNombreC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombreC.Location = new System.Drawing.Point(91, 82);
             this.txtNombreC.Name = "txtNombreC";
             this.txtNombreC.Size = new System.Drawing.Size(230, 20);
@@ -177,6 +178,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(48, 20);
             this.txtId.TabIndex = 13;
+            this.txtId.Text = "-1";
             this.txtId.Visible = false;
             // 
             // rdbRechazado

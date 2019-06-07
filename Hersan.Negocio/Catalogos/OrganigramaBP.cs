@@ -24,9 +24,9 @@ namespace Hersan.Negocio.Catalogos
             return new OrganigramaDA().CHUOrganigrama_Actualizar(obj);
         }
 
-        public DataTable CHU_OrganigramaXML_Obtener()
+        public DataTable CHU_OrganigramaXML_Obtener(int parent)
         {
-            return new OrganigramaDA().CHU_OrganigramaXML_Obtener();
+            return new OrganigramaDA().CHU_OrganigramaXML_Obtener(parent);
         }
     }
 }

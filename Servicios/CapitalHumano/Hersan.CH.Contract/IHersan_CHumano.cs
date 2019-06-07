@@ -102,8 +102,8 @@ namespace Hersan.CH.Contract
         List<PreguntasEvaluacionBE> CHU_ObtenerPreguntas();
         [OperationContract]
         int CHU_EvaluacionInduccion_Guardar(DataSet Tablas, int IdUsuario);
-        //[OperationContract]
-        //int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj);
+        [OperationContract]
+        DataTable CHU_Evaluacion_ReporteDetalle();
 
         #endregion
 
@@ -149,6 +149,10 @@ namespace Hersan.CH.Contract
         int CHU_DescPuestos_Actualizar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones);
         [OperationContract]
         int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario);
+        [OperationContract]
+        DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil, int idPuesto, int IdDepto);
+        [OperationContract]
+         DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil);
         #endregion
 
         #region Empleados

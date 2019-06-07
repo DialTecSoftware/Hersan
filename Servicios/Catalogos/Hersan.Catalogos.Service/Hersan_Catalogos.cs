@@ -236,9 +236,9 @@ namespace Hersan.Catalogos.Service
         {
             return new OrganigramaBP().CHUOrganigrama_Guardar(obj);
         }
-        public DataTable CHU_OrganigramaXML_Obtener()
+        public DataTable CHU_OrganigramaXML_Obtener(int parent)
         {
-            return new OrganigramaBP().CHU_OrganigramaXML_Obtener();
+            return new OrganigramaBP().CHU_OrganigramaXML_Obtener(parent);
         }
         public DataSet CHU_Perfiles_Obtener(int IdDepto, int IdPuesto)
         {

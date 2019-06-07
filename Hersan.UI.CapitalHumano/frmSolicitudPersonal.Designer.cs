@@ -43,6 +43,8 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -74,6 +76,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.txtDictamen = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -94,7 +98,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(866, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(1070, 81);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -227,7 +231,9 @@
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.txtSueldo);
             this.radPanel1.Controls.Add(this.label8);
+            this.radPanel1.Controls.Add(this.txtDictamen);
             this.radPanel1.Controls.Add(this.txtJustif);
+            this.radPanel1.Controls.Add(this.txtObservaciones);
             this.radPanel1.Controls.Add(this.txtIndicad);
             this.radPanel1.Controls.Add(this.chkEstatus);
             this.radPanel1.Controls.Add(this.label6);
@@ -241,9 +247,9 @@
             this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 56);
+            this.radPanel1.Location = new System.Drawing.Point(0, 81);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(866, 161);
+            this.radPanel1.Size = new System.Drawing.Size(1070, 161);
             this.radPanel1.TabIndex = 6;
             // 
             // txtId
@@ -256,6 +262,7 @@
             // 
             // txtJustif
             // 
+            this.txtJustif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtJustif.Location = new System.Drawing.Point(355, 51);
             this.txtJustif.Multiline = true;
             this.txtJustif.Name = "txtJustif";
@@ -264,6 +271,7 @@
             // 
             // txtIndicad
             // 
+            this.txtIndicad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIndicad.Location = new System.Drawing.Point(354, 11);
             this.txtIndicad.Multiline = true;
             this.txtIndicad.Name = "txtIndicad";
@@ -359,14 +367,13 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 217);
+            this.gvDatos.Location = new System.Drawing.Point(0, 242);
             // 
             // 
             // 
             this.gvDatos.MasterTemplate.AllowAddNewRow = false;
             this.gvDatos.MasterTemplate.AllowColumnReorder = false;
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
-            this.gvDatos.MasterTemplate.AllowDragToGroup = false;
             this.gvDatos.MasterTemplate.AllowEditRow = false;
             this.gvDatos.MasterTemplate.AutoExpandGroups = true;
             gridViewTextBoxColumn1.FieldName = "Id";
@@ -425,6 +432,14 @@
             gridViewTextBoxColumn12.HeaderText = "idTpoContrato";
             gridViewTextBoxColumn12.IsVisible = false;
             gridViewTextBoxColumn12.Name = "TCO_Id";
+            gridViewTextBoxColumn13.FieldName = "Observaciones";
+            gridViewTextBoxColumn13.HeaderText = "Observaciones";
+            gridViewTextBoxColumn13.IsVisible = false;
+            gridViewTextBoxColumn13.Name = "Observaciones";
+            gridViewTextBoxColumn14.FieldName = "Dictamen";
+            gridViewTextBoxColumn14.HeaderText = "Dictamen";
+            gridViewTextBoxColumn14.IsVisible = false;
+            gridViewTextBoxColumn14.Name = "Dictamen";
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -439,22 +454,45 @@
             gridViewTextBoxColumn9,
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12});
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14});
+            this.gvDatos.MasterTemplate.ShowGroupedColumns = true;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(866, 179);
+            this.gvDatos.Size = new System.Drawing.Size(1070, 154);
             this.gvDatos.TabIndex = 7;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtObservaciones.Location = new System.Drawing.Point(728, 11);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.ReadOnly = true;
+            this.txtObservaciones.Size = new System.Drawing.Size(339, 34);
+            this.txtObservaciones.TabIndex = 12;
+            // 
+            // txtDictamen
+            // 
+            this.txtDictamen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDictamen.Location = new System.Drawing.Point(729, 51);
+            this.txtDictamen.Multiline = true;
+            this.txtDictamen.Name = "txtDictamen";
+            this.txtDictamen.ReadOnly = true;
+            this.txtDictamen.Size = new System.Drawing.Size(338, 35);
+            this.txtDictamen.TabIndex = 13;
             // 
             // frmSolicitudPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 396);
+            this.ClientSize = new System.Drawing.Size(1070, 396);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -515,5 +553,7 @@
         private System.Windows.Forms.TextBox txtIndicad;
         private System.Windows.Forms.TextBox txtId;
         private Telerik.WinControls.UI.RadCheckBox chkEstatus;
+        private System.Windows.Forms.TextBox txtDictamen;
+        private System.Windows.Forms.TextBox txtObservaciones;
     }
 }

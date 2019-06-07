@@ -41,6 +41,8 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
                                 obj.Puestos.Id = int.Parse(reader["PUE_Id"].ToString());
                                 obj.TiposContrato.Id = int.Parse(reader["TCO_Id"].ToString());
+                                obj.Dictamen = (reader["SPE_Dictamen"].ToString());
+                                obj.Observaciones =(reader["SPE_Observaciones"].ToString());
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["SPE_Estatus"].ToString());
                                 obj.Autorizado = bool.Parse(reader["SPE_Autorizado"].ToString());
                                 obj.NoAutorizado = !obj.Autorizado;

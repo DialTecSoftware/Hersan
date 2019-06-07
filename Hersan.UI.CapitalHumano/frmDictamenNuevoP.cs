@@ -32,6 +32,7 @@ namespace Hersan.UI.CapitalHumano
             lblEntidad.Text = "";
             lblDepto.Text = "";
             txtIdNuevoP.Text = "";
+            
             txtIndicad.Text = "";
             txtJustif.Text = "";
             txtNecesidades.Text = "";
@@ -50,9 +51,10 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
             try {
                 oList = oCHumano.CHU_NuevoPuesto_Obtener(BaseWinBP.UsuarioLogueado.ID);
-                gvDatos.DataSource = oList;
+                var lista = oList.FindAll(item => item.OpinionesCH == "" && item.OpinionesDG == "");
+                gvDatos.DataSource = lista;
                 //gvDatos.ClearSelection();
-                btnGuardar.Enabled = false;
+              
                 btnEliminar.Enabled = false;
 
             } catch (Exception ex) {
@@ -68,8 +70,7 @@ namespace Hersan.UI.CapitalHumano
                 list = oCHumano.CHU_DictamenNuevoP_Obtener();
                 gvDictamenes.DataSource = list;
                 //gvDictamenes.ClearSelection();
-                btnNuevo.Enabled = false;
-                btnGuardar.Enabled = true;
+               
                 btnEliminar.Enabled = true;
 
             } catch (Exception ex) {
@@ -101,7 +102,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 CargarNuevosPuestos();
                 lblfecha.Text = DateTime.Now.ToLongDateString();
-                btnNuevo.Enabled = false;
+ 
                 rdbAceptado.IsChecked = true;
                 documentTabStrip1.SelectedTab = this.DockNuevoP;
 
@@ -116,7 +117,7 @@ namespace Hersan.UI.CapitalHumano
             try {
 
                 if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
-                    btnNuevo.Enabled = true;
+
                     txtIdNuevoP.Text = e.CurrentRow.Cells["Id"].Value.ToString();
                     txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
                     lblNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
@@ -166,15 +167,12 @@ namespace Hersan.UI.CapitalHumano
             try {
                 if (!ValidarCampos()) {
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    btnGuardar.Enabled = false;
-                    LimpiarCampos();
                     return;
                 }
                 list = oCHumano.CHU_DictamenNuevoP_Obtener();
                 if (list.FindAll(item => item.NuevoPuesto.Id.ToString() == txtIdNuevoP.Text.Trim()).Count > 0
-                   && int.Parse(txtId.Text) == -1) {
+                   && int.Parse(txtId.Text) == 0) {
                     RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    btnGuardar.Enabled = false;
                     LimpiarCampos();
                     return;
                 }
@@ -198,7 +196,7 @@ namespace Hersan.UI.CapitalHumano
 
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
-                    if (txtId.Text == "-1") {
+                    if (txtId.Text == "0") {
                         int Result = oCHumano.CHU_DictamenNuevoP_Guardar(obj);
                         if (Result == 0) {
                             RadMessageBox.Show("Ocurrió un error al guardar el nuevo dictamen", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -235,8 +233,7 @@ namespace Hersan.UI.CapitalHumano
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
-                btnGuardar.Enabled = true;
-                txtId.Text = "-1";
+               
             } catch (Exception) {
 
                 throw;

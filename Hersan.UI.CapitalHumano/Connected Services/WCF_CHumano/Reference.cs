@@ -121,6 +121,9 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_GuardarResponse")]
         int CHU_EvaluacionInduccion_Guardar(System.Data.DataSet Tablas, int IdUsuario);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Evaluacion_ReporteDetalle", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Evaluacion_ReporteDetalleResponse")]
+        System.Data.DataTable CHU_Evaluacion_ReporteDetalle();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener();
         
@@ -162,6 +165,12 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_EliminaResponse")]
         int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalleResponse")]
+        System.Data.DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil, int idPuesto, int IdDepto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2Response")]
+        System.Data.DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_ConsultarResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EmpleadosBE> CHU_Empleados_Consultar(int IdExp);
@@ -343,6 +352,10 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
             return base.Channel.CHU_EvaluacionInduccion_Guardar(Tablas, IdUsuario);
         }
         
+        public System.Data.DataTable CHU_Evaluacion_ReporteDetalle() {
+            return base.Channel.CHU_Evaluacion_ReporteDetalle();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener() {
             return base.Channel.CHU_SeguimientoCan_Obtener();
         }
@@ -397,6 +410,14 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario) {
             return base.Channel.CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
+        }
+        
+        public System.Data.DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil, int idPuesto, int IdDepto) {
+            return base.Channel.CHU_DescPuesto_ReporteDetalle(IdPerfil, idPuesto, IdDepto);
+        }
+        
+        public System.Data.DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil) {
+            return base.Channel.CHU_DescPuesto_ReporteDetalle2(IdPerfil);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EmpleadosBE> CHU_Empleados_Consultar(int IdExp) {

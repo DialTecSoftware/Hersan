@@ -16,14 +16,14 @@ namespace Hersan.UI.CapitalHumano.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class EvaluacionInduccion : ReportClass {
+    public class rtpEvaluacionInduccion : ReportClass {
         
-        public EvaluacionInduccion() {
+        public rtpEvaluacionInduccion() {
         }
         
         public override string ResourceName {
             get {
-                return "EvaluacionInduccion.rpt";
+                return "rtpEvaluacionInduccion.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Hersan.UI.CapitalHumano.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Hersan.UI.CapitalHumano.Reportes.EvaluacionInduccion.rpt";
+                return "Hersan.UI.CapitalHumano.Reportes.rtpEvaluacionInduccion.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Hersan.UI.CapitalHumano.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedEvaluacionInduccion : Component, ICachedReport {
+    public class CachedrtpEvaluacionInduccion : Component, ICachedReport {
         
-        public CachedEvaluacionInduccion() {
+        public CachedrtpEvaluacionInduccion() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Hersan.UI.CapitalHumano.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            EvaluacionInduccion rpt = new EvaluacionInduccion();
+            rtpEvaluacionInduccion rpt = new rtpEvaluacionInduccion();
             rpt.Site = this.Site;
             return rpt;
         }

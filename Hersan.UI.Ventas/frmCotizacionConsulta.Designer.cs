@@ -120,7 +120,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1034, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(1034, 78);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -235,7 +235,7 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 53);
+            this.radDock1.Location = new System.Drawing.Point(0, 78);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             this.radDock1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -243,7 +243,7 @@
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1034, 434);
+            this.radDock1.Size = new System.Drawing.Size(1034, 409);
             this.radDock1.TabIndex = 1;
             this.radDock1.TabStop = false;
             // 
@@ -461,7 +461,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(1024, 308);
+            this.documentTabStrip1.Size = new System.Drawing.Size(1024, 283);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -474,7 +474,7 @@
             this.documentWindow1.Location = new System.Drawing.Point(6, 29);
             this.documentWindow1.Name = "documentWindow1";
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(1012, 273);
+            this.documentWindow1.Size = new System.Drawing.Size(1012, 248);
             this.documentWindow1.Text = "Resultados";
             // 
             // radGroupBox1
@@ -488,7 +488,7 @@
             this.radGroupBox1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radGroupBox1.Location = new System.Drawing.Point(0, 225);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1012, 48);
+            this.radGroupBox1.Size = new System.Drawing.Size(1012, 23);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.TabStop = false;
             this.radGroupBox1.Text = "DETALLE";
@@ -577,7 +577,7 @@
             this.gvDetalle.Name = "gvDetalle";
             this.gvDetalle.ShowGroupPanel = false;
             this.gvDetalle.ShowNoDataText = false;
-            this.gvDetalle.Size = new System.Drawing.Size(1008, 28);
+            this.gvDetalle.Size = new System.Drawing.Size(1008, 3);
             this.gvDetalle.TabIndex = 1;
             // 
             // radPanel1

@@ -171,10 +171,10 @@ namespace Hersan.CH.Service
         {
             return new EvaluacionInduccionBP().CHU_EvaluacionInduccion_Guardar(Tablas,IdUsuario);
         }
-        //public int CHU_EvaluacionInduccion_Guardar(EvaluacionInduccionBE obj)
-        //{
-        //    return new EvaluacionInduccionBP().CHU_DictamenNuevoP_Actualizar(obj);
-        //}
+        public DataTable CHU_Evaluacion_ReporteDetalle()
+        {
+            return new EvaluacionInduccionBP().CHU_Evaluacion_ReporteDetalle();
+        }
 
         #endregion
 
@@ -247,6 +247,14 @@ namespace Hersan.CH.Service
         public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario)
         {
             return new DescripcionPuestosBP().CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
+        }
+        public DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil, int idPuesto, int IdDepto)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuesto_ReporteDetalle(IdPerfil, idPuesto, IdDepto);
+        }
+        public DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil)
+        {
+            return new DescripcionPuestosBP().CHU_DescPuesto_ReporteDetalle2(IdPerfil);
         }
         #endregion
 

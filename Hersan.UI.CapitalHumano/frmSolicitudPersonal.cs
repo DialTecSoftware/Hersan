@@ -107,6 +107,8 @@ namespace Hersan.UI.CapitalHumano
             txtIndicad.Text = "";
             txtJustif.Text = "";
             txtSueldo.Text = "0";
+            txtDictamen.Text = string.Empty;
+            txtObservaciones.Text = string.Empty;
             cboEntidad.SelectedIndex = 1;
             cboDepto.SelectedIndex = 1;
             cboTipoCon.SelectedIndex = 1;
@@ -261,14 +263,15 @@ namespace Hersan.UI.CapitalHumano
                 if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
                     txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
                     txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
+                    txtDictamen.Text = e.CurrentRow.Cells["Dictamen"].Value.ToString();
+                    txtObservaciones.Text = e.CurrentRow.Cells["Observaciones"].Value.ToString();
                     txtIndicad.Text = e.CurrentRow.Cells["Indicadores"].Value.ToString();
                     txtSueldo.Text = (e.CurrentRow.Cells["Sueldo"].Value.ToString());
                     cboDepto.SelectedValue =int.Parse (e.CurrentRow.Cells["DEP_Id"].Value.ToString());
                     cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["ENT_Id"].Value.ToString());
                     cboTipoCon.SelectedValue = int.Parse(e.CurrentRow.Cells["TCO_Id"].Value.ToString());
                     cboPuesto.SelectedValue =int.Parse (e.CurrentRow.Cells["PUE_Id"].Value.ToString());
-                   
-
+                  
                    
                 }
             } catch (Exception ex) {

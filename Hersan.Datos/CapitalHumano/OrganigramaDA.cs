@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml;
 
 namespace Hersan.Datos.Catalogos
@@ -16,7 +17,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_CHU_ORGANIG_OBTENER = "CHU_Organigrama_GET";
         const string CONST_USP_CHU_ORGANIG_GUARDA = "CHU_Organigrama_Guarda";
         const string CONST_USP_CHU_ORGANIG_ACTUALIZA = "CHU_Organigrama_Actualiza";
-        const string CONST_USP_CHU_ORGANIG_xmlOBTENER = "CHU_Organigrama_XMLObtener";
+        const string CONST_USP_CHU_ORGANIG_xmlOBTENER = "CHU_Organigrama_Obtener";
 
 
         public List<OrganigramaBE> CHUOrganigrama_Obtener()
@@ -106,7 +107,7 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-        public DataTable CHU_OrganigramaXML_Obtener()
+        public DataTable CHU_OrganigramaXML_Obtener(int parent)
         {
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable oData = new DataTable("Element");
@@ -116,45 +117,52 @@ namespace Hersan.Datos.Catalogos
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_ORGANIG_xmlOBTENER, conn)) {
-                        XmlReader xr = cmd.ExecuteXmlReader();
-
+                      
+                        cmd.Parameters.AddWithValue("@PARENT", parent);
                         cmd.CommandType = CommandType.StoredProcedure;
                         da = new SqlDataAdapter(cmd);
-                        oData.Columns.Add("Element", typeof(string));
-                        oData.Columns.Add("Child", typeof(string));
+                       
                         da.Fill(oData);
-                        
-                        oData.WriteXml(@"C:\Temp\Organizacion.xml");
+                      
+                        oData.WriteXml(@"C:\Temp\Organizacion.xml",true);
                         //oData.WriteXmlSchema(@"C:\Temp\Organizacion.xml", false);
 
-                        var settings = new XmlWriterSettings {
-                            Encoding = Encoding.UTF8,
-                            Indent = true,
-                            OmitXmlDeclaration = true,
-                            NewLineOnAttributes = true,
-                        };
                         XmlDocument doc = new XmlDocument();
+                        string filename = @"C:\Temp\Organizaciones.xml";
+                        doc.Load(@"C:\Temp\Organizacion.xml");
+                        XmlWriterSettings settings = new XmlWriterSettings {
+                            Indent = true,
+                            IndentChars = @"    ",
+                            NewLineChars = Environment.NewLine,
+                            NewLineHandling = NewLineHandling.Replace,
+                            OmitXmlDeclaration = true,
+                            //HttpUtility.
+
+                        }; ;
                       
-                        //doc.Load(@"C:\Temp\Organizacion.xml");
+                        using (var writers = XmlWriter.Create(filename, settings)) {
+                           
 
-                        //string filename = @"C:\Temp\Hersan_Organizacion.xml";
+                            doc.Save(writers);
+                        }
 
-                        //XmlWriterSettings setings = new XmlWriterSettings();
-                        //setings.Indent = true;
-                        //setings.NewLineOnAttributes = true;
-                        //setings.OmitXmlDeclaration = true;
-                        //// Save the document to a file and auto-indent the output.
 
-                        //XmlNode newBook = doc.ImportNode(doc.DocumentElement.LastChild, true);
-                        //XmlWriter writer = XmlWriter.Create(filename, setings);
-                        //doc.DocumentElement.AppendChild(newBook);
-                       
-                        //doc.Save(dts);
-                        //writer.Close();
+
+                        ////// Save the document to a file and auto-indent the output.
+
+                        //XmlDocument doc2 = new XmlDocument();
+                        //StringBuilder output = new StringBuilder();
+                        //XmlNode newBook = doc2.ImportNode(doc.DocumentElement.LastChild, true);
+                        //XmlWriter writer = XmlWriter.Create(filename, settings);
+                        //doc2.DocumentElement.AppendChild(newBook);
+
+                        //doc.Save(writer);
+                        ////writer.Close();
 
 
 
                     }
+                   
                 }
                 return oData;
             } catch (Exception) {

@@ -18,6 +18,7 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_CHU_EVI_OBTENER = "CHU_EvaluacionInduccion_Obtener";
         const string CONST_CHU_EVI_GUARDAR = "CHU_EvaluacionInduccion_Guardar";
         const string CONST_CHU_EVI_ACTUALIZAR = "CHU_EvaluacionInduccion_Actualiza";
+        const string CONST_CHU_EVI_REPORTE = "CHU_EvaluacionInduccion_Obtener";
         #endregion
 
 
@@ -145,6 +146,25 @@ namespace Hersan.Datos.CapitalHumano
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public DataTable CHU_Evaluacion_ReporteDetalle()
+        {
+            DataTable oData = new DataTable("Reporte");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_EVI_REPORTE, conn)) {
+                      
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+                }
+                return oData;
             } catch (Exception ex) {
                 throw ex;
             }

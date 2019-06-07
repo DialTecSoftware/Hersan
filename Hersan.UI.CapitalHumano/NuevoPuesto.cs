@@ -43,6 +43,8 @@ namespace Hersan.UI.CapitalHumano
             txtPuestos.Text = "";
             txtResultados.Text = "";
             txtSueldo.Text = "0";
+            txtOpinionesCH.Text = "";
+            txtOpinionesDG.Text = "";
         }
         private void CargarEntidades()
         {
@@ -92,6 +94,7 @@ namespace Hersan.UI.CapitalHumano
         private void frmNuevoPuesto_Load(object sender, EventArgs e)
         {
             try {
+                LimpiarCampos();
                 CargarDeptos();
                 CargarEntidades();
                 CargarNuevosPuestos();
@@ -114,6 +117,7 @@ namespace Hersan.UI.CapitalHumano
                 Flag = txtPrestaciones.Text.Trim().Length == 0 ? false : true;
                 Flag = txtPuestos.Text.Trim().Length == 0 ? false : true;
                 Flag = txtResultados.Text.Trim().Length == 0 ? false : true;
+                Flag = txtNombre.Text.Trim().Length == 0 ? false : true;
 
 
                 return Flag;
@@ -246,6 +250,8 @@ namespace Hersan.UI.CapitalHumano
                     txtPrestaciones.Text = e.CurrentRow.Cells["Prestaciones"].Value.ToString();
                     txtNecesidades.Text = (e.CurrentRow.Cells["Necesidades"].Value.ToString());
                     txtPuestos.Text = (e.CurrentRow.Cells["PuestosCargo"].Value.ToString());
+                    txtOpinionesDG.Text = (e.CurrentRow.Cells["OpinionesDG"].Value.ToString());
+                    txtOpinionesCH.Text = (e.CurrentRow.Cells["OpinionesCH"].Value.ToString());
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

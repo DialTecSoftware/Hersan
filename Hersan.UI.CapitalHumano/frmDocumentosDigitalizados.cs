@@ -263,19 +263,22 @@ namespace Hersan.UI.CapitalHumano
         private void btnVerArchivo_Click(object sender, EventArgs e)
         {
             try {
-                if (gvDatos.RowCount > 0) {
-                    oList.ForEach(item => {
-                        if (item.Sel == true)
-                            BaseWinBP.AbrirArchivo(item.RutaArchivo);
-                        else
+                if (oList.FindAll(item=>item.Sel==true).Count>0) {
 
-                        RadMessageBox.Show("Selecciona un archivo antes de continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    oList.ForEach(item => {
+                        if (item.Sel == true) {
+                            if (File.Exists(item.RutaArchivo))
+                                BaseWinBP.AbrirArchivo(item.RutaArchivo);
+                            else
+                                BaseWinBP.AbrirArchivo(item.RutaOriginal);
+                        }
+                       
                     });
                    
 
                 }
                 else
-                    RadMessageBox.Show("No hay ningun archivo en la lista", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    RadMessageBox.Show("No hay ningun archivo seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
 
             } catch (Exception ex) {
 

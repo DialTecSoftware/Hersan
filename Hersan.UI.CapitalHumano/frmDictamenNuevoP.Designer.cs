@@ -296,10 +296,12 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(58, 20);
             this.txtId.TabIndex = 74;
+            this.txtId.Text = "0";
             this.txtId.Visible = false;
             // 
             // txtObjetivos
             // 
+            this.txtObjetivos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObjetivos.Location = new System.Drawing.Point(917, 15);
             this.txtObjetivos.Multiline = true;
             this.txtObjetivos.Name = "txtObjetivos";
@@ -354,6 +356,7 @@
             // 
             // txtResultados
             // 
+            this.txtResultados.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtResultados.Location = new System.Drawing.Point(552, 129);
             this.txtResultados.Multiline = true;
             this.txtResultados.Name = "txtResultados";
@@ -363,6 +366,7 @@
             // 
             // txtPuestosCargo
             // 
+            this.txtPuestosCargo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPuestosCargo.Location = new System.Drawing.Point(123, 131);
             this.txtPuestosCargo.Multiline = true;
             this.txtPuestosCargo.Name = "txtPuestosCargo";
@@ -373,6 +377,7 @@
             // 
             // txtPrestaciones
             // 
+            this.txtPrestaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPrestaciones.Location = new System.Drawing.Point(552, 73);
             this.txtPrestaciones.Multiline = true;
             this.txtPrestaciones.Name = "txtPrestaciones";
@@ -382,6 +387,7 @@
             // 
             // txtJustif
             // 
+            this.txtJustif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtJustif.Location = new System.Drawing.Point(123, 73);
             this.txtJustif.Multiline = true;
             this.txtJustif.Name = "txtJustif";
@@ -391,6 +397,7 @@
             // 
             // txtNecesidades
             // 
+            this.txtNecesidades.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNecesidades.Location = new System.Drawing.Point(551, 16);
             this.txtNecesidades.Multiline = true;
             this.txtNecesidades.Name = "txtNecesidades";
@@ -400,6 +407,7 @@
             // 
             // txtIndicad
             // 
+            this.txtIndicad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIndicad.Location = new System.Drawing.Point(122, 16);
             this.txtIndicad.Multiline = true;
             this.txtIndicad.Name = "txtIndicad";
@@ -521,12 +529,14 @@
             this.toolWindow1.Controls.Add(this.lblSueldo);
             this.toolWindow1.Controls.Add(this.label13);
             this.toolWindow1.Controls.Add(this.label6);
+            this.toolWindow1.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
             this.toolWindow1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolWindow1.Location = new System.Drawing.Point(1, 24);
+            this.toolWindow1.Location = new System.Drawing.Point(1, 22);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(413, 458);
-            this.toolWindow1.Text = "toolWindow1";
+            this.toolWindow1.Size = new System.Drawing.Size(413, 460);
+            this.toolWindow1.Text = "DATOS DE DICTAMEN ";
+            this.toolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
             // rdbRechazado
             // 
@@ -612,6 +622,7 @@
             // 
             // txtOpinionesDG
             // 
+            this.txtOpinionesDG.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOpinionesDG.Location = new System.Drawing.Point(117, 234);
             this.txtOpinionesDG.Multiline = true;
             this.txtOpinionesDG.Name = "txtOpinionesDG";
@@ -620,6 +631,7 @@
             // 
             // txtOpinionesCH
             // 
+            this.txtOpinionesCH.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOpinionesCH.Location = new System.Drawing.Point(117, 149);
             this.txtOpinionesCH.Multiline = true;
             this.txtOpinionesCH.Name = "txtOpinionesCH";
@@ -685,6 +697,7 @@
             // DockDictamen
             // 
             this.DockDictamen.Controls.Add(this.gvDictamenes);
+            this.DockDictamen.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
             this.DockDictamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DockDictamen.Location = new System.Drawing.Point(6, 29);
             this.DockDictamen.Name = "DockDictamen";
@@ -809,6 +822,7 @@
             // DockNuevoP
             // 
             this.DockNuevoP.Controls.Add(this.gvDatos);
+            this.DockNuevoP.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
             this.DockNuevoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DockNuevoP.Location = new System.Drawing.Point(6, 29);
             this.DockNuevoP.Name = "DockNuevoP";

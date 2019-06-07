@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -256,6 +257,33 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
+        private Stream Reporte(bool Correo)
+        {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            Stream archivo = null;
+            try {
+                frmViewer frm = new frmViewer();
+                frm.iReport = new Reportes.rtpDescPuestos();
+
+                frm.iReport.SetDataSource(oCHumano.CHU_DescPuesto_ReporteDetalle(int.Parse(txtIdPerfil.Text),
+                    int.Parse(cboPuestos.SelectedValue.ToString()), int.Parse(cboDepto.SelectedValue.ToString())));
+                //frm.iReport.SetDataSource(oCHumano.CHU_DescPuesto_ReporteDetalle2(int.Parse(txtIdPerfil.Text)));
+
+                if (Correo) {
+                    archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                } else {
+                    //MOSTRAR EN PANTALLA
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
+            }
+            return archivo;
+        }
+
         private void ActualizaGrid()
         {
             try {
@@ -658,7 +686,20 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            try {
+                if(int.Parse(txtIdPerfil.Text) >0  && cboPuestos.SelectedIndex!=-1)
+                Reporte(false);
+                else
+                    RadMessageBox.Show("No ha seleccionado una descripción de puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
     }
     }
+    
 
 

@@ -13,11 +13,11 @@ namespace Hersan.Negocio.CapitalHumano
     {
         public DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl)
         {
-            return new DescripcionPuestosDA().CHU_DescripcionPuestos_Obtener( IdPerfifl);
+            return new DescripcionPuestosDA().CHU_DescripcionPuestos_Obtener(IdPerfifl);
         }
         public int CHU_DescPuestos_Guardar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones)
         {
-            return new DescripcionPuestosDA().CHU_DescPuestos_Guardar( obj,  Contactos,  Condiciones);
+            return new DescripcionPuestosDA().CHU_DescPuestos_Guardar(obj, Contactos, Condiciones);
         }
         public int CHU_DescPuestos_Actualizar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones)
         {
@@ -25,7 +25,16 @@ namespace Hersan.Negocio.CapitalHumano
         }
         public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario)
         {
-            return new DescripcionPuestosDA().CHU_DescPuestos_Elimina( IdDesc,  IdUsuario);
+            return new DescripcionPuestosDA().CHU_DescPuestos_Elimina(IdDesc, IdUsuario);
+        }
+
+        public DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil, int idPuesto, int IdDepto)
+        {
+            return new DescripcionPuestosDA().CHU_DescPuesto_ReporteDetalle(IdPerfil, idPuesto, IdDepto);
+        }
+        public DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil)
+        {
+            return new DescripcionPuestosDA().CHU_DescPuesto_ReporteDetalle2(IdPerfil);
         }
     }
 }

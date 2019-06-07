@@ -54,8 +54,7 @@ namespace Hersan.UI.CapitalHumano
 
                 list = oCHumano.CHUDictamenSolicitud_Obtener();
                 gvDictamen.DataSource = list;
-                btnNuevo.Enabled = false;
-                btnGuardar.Enabled = true;
+                
                 btnEliminar.Enabled = true;
 
             } catch (Exception ex) {
@@ -70,8 +69,9 @@ namespace Hersan.UI.CapitalHumano
             try {
                 DockWindow activeDocumen = this.radDock1.DocumentManager.ActiveDocument;
                 oList = oCHumano.CHU_SolicitudP_Obtener(BaseWinBP.UsuarioLogueado.ID);
-                gvDatos.DataSource = oList;
-                btnGuardar.Enabled = false;
+                var lista = oList.FindAll(item => item.Dictamen == "" && item.Observaciones == "");
+                gvDatos.DataSource = lista;
+              
                 btnEliminar.Enabled = false;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las solicitudes\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -99,10 +99,10 @@ namespace Hersan.UI.CapitalHumano
                 Entidades.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
                 this.gvDatos.GroupDescriptors.Add(Entidades);
 
-
+                LimpiarCampos();
                 lblfecha.Text = DateTime.Now.ToLongDateString();
 
-                btnNuevo.Enabled = false;
+             
                 documentTabStrip1.SelectedTab = this.DockSolicitud;
                 CargarSolicitudes();
                 txtObser.Enabled = true;
@@ -119,7 +119,7 @@ namespace Hersan.UI.CapitalHumano
                 LimpiarCampos();
 
                 if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0 ) {
-                    btnNuevo.Enabled = true;
+                    
                   
                     txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
                     txtIndicad.Text = e.CurrentRow.Cells["Indicadores"].Value.ToString();
@@ -152,7 +152,7 @@ namespace Hersan.UI.CapitalHumano
                 }
 
                 if (list.FindAll(item => item.Solicitud.Id.ToString() == txtIdSu.Text.Trim()).Count > 0
-                    && int.Parse(txtIdDictam.Text) == -1 ){
+                    && int.Parse(txtIdDictam.Text) == 0 ){
                     RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     btnGuardar.Enabled = false;
                     //LimpiarCampos();
@@ -187,14 +187,16 @@ namespace Hersan.UI.CapitalHumano
 
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
-                    if (txtIdDictam.Text == "-1") {
+                    if (txtIdDictam.Text == "0") {
                         int Result = oCHumano.CHUDictamenSolicitud__Guardar(obj);
                         if (Result == 0) {
                             RadMessageBox.Show("Ocurrió un error al guardar un elemento en el organigrama", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                         } else {
                             RadMessageBox.Show("Elemento guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                             LimpiarCampos();
+                            CargarSolicitudes();
                             CargarElementos_Dictamen();
+                            
                             documentTabStrip1.SelectedTab = this.DockDictamen;
 
                             BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
@@ -208,6 +210,7 @@ namespace Hersan.UI.CapitalHumano
                         } else {
                             RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                             LimpiarCampos();
+                            CargarSolicitudes();
                             CargarElementos_Dictamen();
                             documentTabStrip1.SelectedTab = this.DockDictamen;
 
@@ -284,8 +287,7 @@ namespace Hersan.UI.CapitalHumano
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
-                btnGuardar.Enabled = true;
-                txtIdDictam.Text = "-1";
+               
             } catch (Exception) {
 
                 throw;

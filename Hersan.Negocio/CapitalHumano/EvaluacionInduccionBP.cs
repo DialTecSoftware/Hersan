@@ -31,5 +31,9 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new EvaluacionInduccionDA().CHU_EvaluacionInduccion_Guardar(Tablas,IdUsuario);
         }
+        public DataTable CHU_Evaluacion_ReporteDetalle()
+        {
+            return new EvaluacionInduccionDA().CHU_Evaluacion_ReporteDetalle();
+        }
     }
 }

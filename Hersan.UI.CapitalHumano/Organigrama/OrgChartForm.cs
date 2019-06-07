@@ -33,7 +33,7 @@ namespace Hersan.UI.CapitalHumano.Organigrama
         {
             oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                oCatalogo.CHU_OrganigramaXML_Obtener();
+                oCatalogo.CHU_OrganigramaXML_Obtener(0);
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurrió un error al cargar los datos del organigrama" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

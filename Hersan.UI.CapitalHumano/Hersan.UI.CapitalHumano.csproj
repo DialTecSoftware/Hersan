@@ -193,10 +193,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\EvaluacionInduccion.cs">
+    <Compile Include="Reportes\rtpEvaluacionInduccion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EvaluacionInduccion.rpt</DependentUpon>
+      <DependentUpon>rtpEvaluacionInduccion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rtpDescPuestos.cs">
@@ -210,12 +210,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rtpExpediente.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TEST.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TEST.Designer.cs">
-      <DependentUpon>TEST.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -272,9 +266,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\EvaluacionInduccion.rpt">
+    <EmbeddedResource Include="Reportes\rtpEvaluacionInduccion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>EvaluacionInduccion.cs</LastGenOutput>
+      <LastGenOutput>rtpEvaluacionInduccion.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rtpDescPuestos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -283,9 +277,6 @@
     <EmbeddedResource Include="Reportes\rtpExpediente.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rtpExpediente1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TEST.resx">
-      <DependentUpon>TEST.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

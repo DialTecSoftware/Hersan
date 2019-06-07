@@ -160,7 +160,7 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_ObtenerResponse")]
-        System.Data.DataTable CHU_OrganigramaXML_Obtener();
+        System.Data.DataTable CHU_OrganigramaXML_Obtener(int parent);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais);
@@ -491,8 +491,8 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
             return base.Channel.CHUOrganigrama_Actualizar(obj);
         }
         
-        public System.Data.DataTable CHU_OrganigramaXML_Obtener() {
-            return base.Channel.CHU_OrganigramaXML_Obtener();
+        public System.Data.DataTable CHU_OrganigramaXML_Obtener(int parent) {
+            return base.Channel.CHU_OrganigramaXML_Obtener(parent);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais) {

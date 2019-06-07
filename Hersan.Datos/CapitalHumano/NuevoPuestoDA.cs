@@ -51,6 +51,8 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Sueldo = decimal.Parse(reader["NVP_Sueldo"].ToString());
                                 obj.Justificacion = (reader["NVP_Justificacion"].ToString());
                                 obj.Indicadores = (reader["NVP_Indicadores"].ToString());
+                                obj.OpinionesDG = (reader["NVP_OpinionesDG"].ToString());
+                                obj.OpinionesCH = (reader["NVP_OpinionesCH"].ToString());
                                 oList.Add(obj);
                             }
                         }

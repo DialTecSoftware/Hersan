@@ -392,7 +392,7 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.toolWindow1;
+            this.radDock1.ActiveWindow = this.DockSolicitud;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.documentContainer2);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -475,6 +475,7 @@
             // 
             // txtObser
             // 
+            this.txtObser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObser.Location = new System.Drawing.Point(122, 236);
             this.txtObser.Multiline = true;
             this.txtObser.Name = "txtObser";
@@ -483,6 +484,7 @@
             // 
             // txtDictamen
             // 
+            this.txtDictamen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDictamen.Location = new System.Drawing.Point(122, 157);
             this.txtDictamen.Multiline = true;
             this.txtDictamen.Name = "txtDictamen";
@@ -610,6 +612,7 @@
             gridViewTextBoxColumn7.Width = 100;
             gridViewTextBoxColumn8.FieldName = "Id";
             gridViewTextBoxColumn8.HeaderText = "ID";
+            gridViewTextBoxColumn8.IsVisible = false;
             gridViewTextBoxColumn8.Name = "Id";
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
@@ -638,7 +641,7 @@
             this.DockDictamen.Location = new System.Drawing.Point(6, 29);
             this.DockDictamen.Name = "DockDictamen";
             this.DockDictamen.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.DockDictamen.Size = new System.Drawing.Size(675, 333);
+            this.DockDictamen.Size = new System.Drawing.Size(675, 419);
             this.DockDictamen.Tag = "2";
             this.DockDictamen.Text = "Ver Dictamenes";
             // 
@@ -721,7 +724,7 @@
             this.gvDictamen.ShowGroupPanel = false;
             this.gvDictamen.ShowNoDataText = false;
             this.gvDictamen.ShowRowErrors = false;
-            this.gvDictamen.Size = new System.Drawing.Size(675, 333);
+            this.gvDictamen.Size = new System.Drawing.Size(675, 419);
             this.gvDictamen.TabIndex = 9;
             this.gvDictamen.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDictamen_CurrentRowChanged);
             // 

@@ -18,7 +18,7 @@ namespace Hersan.Entidades.CapitalHumano
             Objetivos = string.Empty;
             Indicadores = string.Empty;
             PuestosCargo = string.Empty;
-            //Sueldo = 0;
+            Sueldo = 0;
             Prestaciones = string.Empty;
             Necesidades = string.Empty;
             Ocupantes = 0;
@@ -43,6 +43,8 @@ namespace Hersan.Entidades.CapitalHumano
         public int  Ocupantes { get; set; }
         public string  Resultados { get; set; }
         public string Justificacion { get; set; }
+        public string OpinionesCH { get; set; }
+        public string OpinionesDG { get; set; }
         public bool Autorizado { get; set; }
         public bool  NoAutorizado { get; set; }
         public EntidadesBE Entidades { get; set; }

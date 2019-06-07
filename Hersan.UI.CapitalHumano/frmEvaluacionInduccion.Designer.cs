@@ -227,6 +227,7 @@
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Text = "Reporte";
             this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // commandBarSeparator4
             // 
@@ -329,9 +330,9 @@
             this.radGroupBox1.Controls.Add(this.label8);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.radGroupBox1.HeaderText = "";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 197);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 199);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(391, 403);
+            this.radGroupBox1.Size = new System.Drawing.Size(391, 401);
             this.radGroupBox1.TabIndex = 15;
             // 
             // label17
@@ -447,25 +448,27 @@
             this.radDock2.Controls.Add(this.documentContainer1);
             this.radDock2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock2.IsCleanUpTarget = true;
-            this.radDock2.Location = new System.Drawing.Point(391, 197);
+            this.radDock2.Location = new System.Drawing.Point(391, 199);
             this.radDock2.MainDocumentContainer = this.documentContainer1;
             this.radDock2.Name = "radDock2";
             // 
             // 
             // 
             this.radDock2.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock2.Size = new System.Drawing.Size(684, 403);
+            this.radDock2.ShowItemToolTips = false;
+            this.radDock2.Size = new System.Drawing.Size(684, 401);
             this.radDock2.TabIndex = 23;
             this.radDock2.TabStop = false;
             // 
             // documentWindow2
             // 
             this.documentWindow2.Controls.Add(this.gvDatos);
+            this.documentWindow2.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
             this.documentWindow2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentWindow2.Location = new System.Drawing.Point(6, 29);
             this.documentWindow2.Name = "documentWindow2";
             this.documentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow2.Size = new System.Drawing.Size(662, 358);
+            this.documentWindow2.Size = new System.Drawing.Size(662, 356);
             this.documentWindow2.Text = "PREGUNTAS DE INDUCCION";
             // 
             // gvDatos
@@ -522,7 +525,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(662, 358);
+            this.gvDatos.Size = new System.Drawing.Size(662, 356);
             this.gvDatos.TabIndex = 22;
             this.gvDatos.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gvDatos_CellValueChanged_1);
             // 
@@ -547,7 +550,7 @@
             // 
             this.documentTabStrip2.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip2.SelectedIndex = 0;
-            this.documentTabStrip2.Size = new System.Drawing.Size(674, 393);
+            this.documentTabStrip2.Size = new System.Drawing.Size(674, 391);
             this.documentTabStrip2.TabIndex = 0;
             this.documentTabStrip2.TabStop = false;
             // 
@@ -608,7 +611,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 81);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1075, 116);
+            this.radPanel1.Size = new System.Drawing.Size(1075, 118);
             this.radPanel1.TabIndex = 8;
             // 
             // txtIdd

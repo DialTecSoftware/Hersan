@@ -47,6 +47,7 @@ namespace Hersan.UI.CapitalHumano
             try {
                 Flag = txtObservaciones.Text.Trim().Length == 0 ? false : true;
                 Flag = txtEmp.Text.Trim().Length == 0 ? false : true;
+                Flag = txtCalif.Text.Trim().Length == 0 ? false : true;
 
                 return Flag;
             } catch (Exception ex) {
@@ -342,17 +343,12 @@ namespace Hersan.UI.CapitalHumano
                     if (Result == 0) {
                         RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo",  this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     } else {
-                        RadMessageBox.Show("Evaluacion realizda correctamente\n " + Result.ToString() , this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        RadMessageBox.Show("Evaluacion número " + Result.ToString()+"realizda correctamente\n "  , this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
 
                         LimpiarCampos();
 
                     }
-                } else
-                   
-                    if (txtId.Text == "-") {
-                        RadMessageBox.Show("Presiona el buton Nuevo para antes de guradar una nueva evaluación", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                   
-                }
+                } 
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -398,6 +394,32 @@ namespace Hersan.UI.CapitalHumano
         {
 
         }
+        private Stream Reporte(bool Correo)
+        {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            Stream archivo = null;
+            try {
+                frmViewer frm = new frmViewer();
+                frm.iReport = new Reportes.rtpEvaluacionInduccion();
+
+                frm.iReport.SetDataSource(oCHumano.CHU_Evaluacion_ReporteDetalle());
+
+                //frm.iReport.Subreports["Detalle"].SetDataSource(oEnsamble.ENS_Cotizacion_ReporteDetalle(int.Parse(gvDatos.CurrentRow.Cells["Id"].Value.ToString())));
+
+                if (Correo) {
+                    archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                } else {
+                    //MOSTRAR EN PANTALLA
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
+            }
+            return archivo;
+        }
 
         private void txtCalif_Validating(object sender, CancelEventArgs e)
         {
@@ -409,6 +431,18 @@ namespace Hersan.UI.CapitalHumano
                 e.Cancel = true;
             } else
                 errorProvider1.Clear();
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            try {
+              
+               Reporte(false);
+                //else
+                //    RadMessageBox.Show("No ha seleccionado una cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
     }
 }

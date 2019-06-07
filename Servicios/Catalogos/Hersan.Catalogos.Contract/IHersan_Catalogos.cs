@@ -155,7 +155,7 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         int CHUOrganigrama_Actualizar(OrganigramaBE obj);
         [OperationContract]
-        DataTable CHU_OrganigramaXML_Obtener();
+        DataTable CHU_OrganigramaXML_Obtener(int parent);
         #endregion
 
         #region Estados

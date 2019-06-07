@@ -16,6 +16,7 @@ namespace Hersan.Entidades.Ensamble
             CantidadMay = 0;
             Mayoreo = 0;
             AAA = 0;
+            ExWorks = 0;
             DatosUsuario = new GeneralBE();
         }
 
@@ -28,6 +29,7 @@ namespace Hersan.Entidades.Ensamble
         public int CantidadMay { get; set; }
         public decimal Mayoreo{ get; set; }
         public decimal AAA { get; set; }
+        public decimal ExWorks { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
 }

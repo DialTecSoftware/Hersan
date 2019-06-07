@@ -175,6 +175,12 @@
     <Compile Include="frmFunciones.Designer.cs">
       <DependentUpon>frmFunciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMonedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonedas.Designer.cs">
+      <DependentUpon>frmMonedas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFunciones.resx">
       <DependentUpon>frmFunciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonedas.resx">
+      <DependentUpon>frmMonedas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPuestos.resx">
       <DependentUpon>frmPuestos.cs</DependentUpon>
@@ -355,6 +364,8 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.FamiliasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.FormasPagoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.MetodosPagoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ModendasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.MonedasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.OrganigramaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ReflejantesBE.datasource" />

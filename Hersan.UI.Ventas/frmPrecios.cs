@@ -58,6 +58,7 @@ namespace Hersan.UI.Ensamble
                     oData.Columns.Add("PRE_CantMayoreo");
                     oData.Columns.Add("PRE_Mayoreo");
                     oData.Columns.Add("PRE_AAA");
+                    oData.Columns.Add("PRE_ExWorks");
 
                     oList.ForEach(item => {
                         if (item.Precio > 0) {
@@ -70,6 +71,7 @@ namespace Hersan.UI.Ensamble
                             oRow["PRE_CantMayoreo"] = int.Parse(item.CantidadMay.ToString());
                             oRow["PRE_Mayoreo"] = decimal.Parse(item.Mayoreo.ToString());
                             oRow["PRE_AAA"] = decimal.Parse(item.AAA.ToString());
+                            oRow["PRE_ExWorks"] = decimal.Parse(item.ExWorks.ToString());
 
                             oData.Rows.Add(oRow);
                         }
@@ -82,8 +84,8 @@ namespace Hersan.UI.Ensamble
                         RadMessageBox.Show("Ocurrió un error al guardar los precios", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     } else {
                         RadMessageBox.Show("Precios guardados correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        //LimpiarCampos();
-                        //CargarDatos();
+                        LimpiarCampos();
+                        CargarDatos();
                     }
                 }
             } catch (Exception ex) {
@@ -123,6 +125,7 @@ namespace Hersan.UI.Ensamble
                     txtPzasMayoreo.Text = e.CurrentRow.Cells["PzasMay"].Value.ToString();
                     txtMayoreo.Text = e.CurrentRow.Cells["Mayoreo"].Value.ToString();
                     txt3A.Text = e.CurrentRow.Cells["AAA"].Value.ToString();
+                    txtExWorks.Text = e.CurrentRow.Cells["ExWorks"].Value.ToString();
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

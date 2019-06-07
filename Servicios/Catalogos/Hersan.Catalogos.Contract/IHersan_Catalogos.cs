@@ -262,5 +262,16 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         List<CondicionesExpBE> ABC_CondicionesExportacion_Combo();
         #endregion
+
+        #region Monedas
+        [OperationContract]
+        List<MonedasBE> ABC_Monedas_Obtener();
+        [OperationContract]
+        int ABC_Monedas_Guardar(MonedasBE obj);
+        [OperationContract]
+        int ABC_Monedas_Actualizar(MonedasBE obj);
+        [OperationContract]
+        List<MonedasBE> ABC_Monedas_Combo();
+        #endregion
     }
 }

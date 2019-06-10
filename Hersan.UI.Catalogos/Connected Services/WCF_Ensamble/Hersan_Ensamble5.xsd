@@ -375,7 +375,8 @@
   <xs:element name="ENS_Cotizacion_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q20:PedidosBE" />
+        <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+        <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="oDetalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -389,6 +390,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -412,7 +414,7 @@
   <xs:element name="ENS_Cotizacion_BuscarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_BuscarResult" nillable="true" type="q21:ArrayOfPedidosBE" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_BuscarResult" nillable="true" type="q20:ArrayOfPedidosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -426,14 +428,14 @@
   <xs:element name="ENS_Cotizacion_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_ObtenerResult" nillable="true" type="q22:ArrayOfPedidosBE" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_ObtenerResult" nillable="true" type="q21:ArrayOfPedidosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ENS_Cotizacion_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q23:PedidosBE" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="obj" nillable="true" type="q22:PedidosBE" />
         <xs:element minOccurs="0" name="oDetalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -506,23 +508,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ENS_Cotizacion_Consulta">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="IdAgente" type="xs:int" />
-        <xs:element minOccurs="0" name="IdCotiza" type="xs:int" />
-        <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ENS_Cotizacion_ConsultaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_ConsultaResult" nillable="true" type="q24:ArrayOfPedidosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

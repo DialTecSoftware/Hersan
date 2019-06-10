@@ -15,15 +15,6 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCF_Catalogos.IHersan_Catalogos")]
     public interface IHersan_Catalogos {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_GuardarResponse")]
-        int ABC_Monedas_Guardar(Hersan.Entidades.Catalogos.MonedasBE obj);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ActualizarResponse")]
-        int ABC_Monedas_Actualizar(Hersan.Entidades.Catalogos.MonedasBE obj);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ComboResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Combo();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE> ABCEmpresas_Obtener(int IdEmpresa);
         
@@ -276,9 +267,6 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Combo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ObtenerResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Obtener();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -306,18 +294,6 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
         
         public Hersan_CatalogosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public int ABC_Monedas_Guardar(Hersan.Entidades.Catalogos.MonedasBE obj) {
-            return base.Channel.ABC_Monedas_Guardar(obj);
-        }
-        
-        public int ABC_Monedas_Actualizar(Hersan.Entidades.Catalogos.MonedasBE obj) {
-            return base.Channel.ABC_Monedas_Actualizar(obj);
-        }
-        
-        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Combo() {
-            return base.Channel.ABC_Monedas_Combo();
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE> ABCEmpresas_Obtener(int IdEmpresa) {
@@ -654,10 +630,6 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Combo() {
             return base.Channel.ABC_CondicionesExportacion_Combo();
-        }
-        
-        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Obtener() {
-            return base.Channel.ABC_Monedas_Obtener();
         }
     }
 }

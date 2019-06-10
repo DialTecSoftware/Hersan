@@ -203,13 +203,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ReflejantesBE" nillable="true" type="tns:ReflejantesBE" />
-  <xs:complexType name="CondicionesExpBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Abrev" nillable="true" type="xs:string" />
-      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q17:GeneralBE" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CondicionesExpBE" nillable="true" type="tns:CondicionesExpBE" />
 </xs:schema>

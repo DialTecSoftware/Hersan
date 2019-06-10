@@ -152,6 +152,7 @@
       <xs:element minOccurs="0" name="CantidadVol" type="xs:int" />
       <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
       <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q13:GeneralBE" />
+      <xs:element minOccurs="0" name="ExWorks" type="xs:decimal" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Mayoreo" type="xs:decimal" />
       <xs:element minOccurs="0" name="Precio" type="xs:decimal" />
@@ -211,21 +212,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfProductoEnsambleBE" nillable="true" type="tns:ArrayOfProductoEnsambleBE" />
-  <xs:complexType name="ArrayOfPedidosBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PedidosBE" nillable="true" type="tns:PedidosBE" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPedidosBE" nillable="true" type="tns:ArrayOfPedidosBE" />
   <xs:complexType name="PedidosBE">
     <xs:sequence>
       <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Agente" nillable="true" type="q20:AgentesBE" />
       <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:ClientesBE" />
-      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q21:GeneralBE" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Condiciones" nillable="true" type="q21:CondicionesExpBE" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q22:GeneralBE" />
       <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:ArrayOfPedidoDetalleBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NoPedido" type="xs:int" />
       <xs:element minOccurs="0" name="Pedido" type="xs:boolean" />
       <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Semaforo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PedidosBE" nillable="true" type="tns:PedidosBE" />
@@ -237,15 +236,15 @@
   <xs:element name="ArrayOfPedidoDetalleBE" nillable="true" type="tns:ArrayOfPedidoDetalleBE" />
   <xs:complexType name="PedidoDetalleBE">
     <xs:sequence>
-      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Accesorios" nillable="true" type="q22:AccesoriosBE" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Accesorios" nillable="true" type="q23:AccesoriosBE" />
       <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
-      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q23:GeneralBE" />
-      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidad" nillable="true" type="q24:EntidadesBE" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q24:GeneralBE" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidad" nillable="true" type="q25:EntidadesBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Precio" type="xs:decimal" />
-      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Producto" nillable="true" type="q25:TipoProductoBE" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Producto" nillable="true" type="q26:TipoProductoBE" />
       <xs:element minOccurs="0" name="Reflec" nillable="true" type="xs:string" />
-      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflejantes" nillable="true" type="q26:ArrayOfReflejantesBE" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflejantes" nillable="true" type="q27:ArrayOfReflejantesBE" />
       <xs:element minOccurs="0" name="Sel" type="xs:boolean" />
       <xs:element minOccurs="0" name="Servicio" nillable="true" type="tns:ServiciosBE" />
       <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
@@ -253,4 +252,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PedidoDetalleBE" nillable="true" type="tns:PedidoDetalleBE" />
+  <xs:complexType name="ArrayOfPedidosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PedidosBE" nillable="true" type="tns:PedidosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPedidosBE" nillable="true" type="tns:ArrayOfPedidosBE" />
 </xs:schema>

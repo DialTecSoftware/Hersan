@@ -32,6 +32,7 @@ namespace Hersan.Datos.Catalogos
                                 obj.Moneda = reader["MON_Moneda"].ToString();
                                 obj.Abrev = reader["MON_Abrev"].ToString();
                                 obj.TipoCambio = decimal.Parse(reader["MON_TipoCambio"].ToString());
+                                obj.DatosUsuario.FechaCreacion = DateTime.Parse(reader["MON_FechaCreacion"].ToString());
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["MON_Estatus"].ToString());
 
                                 oList.Add(obj);

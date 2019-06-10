@@ -219,7 +219,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(342, 21);
+            this.txtId.Location = new System.Drawing.Point(144, 46);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(45, 20);
             this.txtId.TabIndex = 17;
@@ -243,9 +243,9 @@
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(70, 19);
-            this.txtNombre.MaxLength = 20;
+            this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(256, 20);
+            this.txtNombre.Size = new System.Drawing.Size(362, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // label1
@@ -293,10 +293,10 @@
             gridViewTextBoxColumn2.Width = 90;
             gridViewTextBoxColumn3.FieldName = "Nombre";
             gridViewTextBoxColumn3.HeaderText = "Nombre";
-            gridViewTextBoxColumn3.MaxWidth = 300;
-            gridViewTextBoxColumn3.MinWidth = 200;
+            gridViewTextBoxColumn3.MaxWidth = 500;
+            gridViewTextBoxColumn3.MinWidth = 350;
             gridViewTextBoxColumn3.Name = "Nombre";
-            gridViewTextBoxColumn3.Width = 200;
+            gridViewTextBoxColumn3.Width = 350;
             gridViewCheckBoxColumn1.FieldName = "DatosUsuario.Estatus";
             gridViewCheckBoxColumn1.HeaderText = "Activo";
             gridViewCheckBoxColumn1.MaxWidth = 80;

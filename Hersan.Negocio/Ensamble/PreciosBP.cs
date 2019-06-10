@@ -7,13 +7,13 @@ namespace Hersan.Negocio.Ensamble
 {
     public class PreciosBP
     {
-        public int ENS_Precios_Guardar(DataTable oData, int IdUsuario)
+        public int ENS_Precios_Guardar(DataTable oData, string Moneda, int IdUsuario)
         {
-            return new PreciosDA().ENS_Precios_Guardar(oData, IdUsuario);
+            return new PreciosDA().ENS_Precios_Guardar(oData, Moneda, IdUsuario);
         }
-        public List<PreciosBE> ENS_Precios_Obtener()
+        public List<PreciosBE> ENS_Precios_Obtener(string Moneda)
         {
-            return new PreciosDA().ENS_Precios_Obtener();
+            return new PreciosDA().ENS_Precios_Obtener(Moneda);
         }
     }
 }

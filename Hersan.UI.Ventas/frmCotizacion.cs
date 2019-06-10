@@ -367,31 +367,36 @@ namespace Hersan.UI.Ensamble
                 if (txtCantidadP.Value > 0 && decimal.Parse(txtPrecio.Text) > 0) {
                     if (oReflejantes.Count > 0) {
                         var Aux = oList.Find(item => item.Producto.Id == int.Parse(cboProductos.SelectedValue.ToString()) && item.Tipo == "PRODUCTO");
-                        if (Aux == null) {
-                            var prod = oProductos.Find(item => item.Id == int.Parse(cboProductos.SelectedValue.ToString()));
-                            oDetalle.Sel = false;
-                            oDetalle.Id = 0;
-                            oDetalle.Tipo = "PRODUCTO";
-                            oDetalle.Entidad.Nombre = prod.Entidad.Nombre;
-                            oDetalle.Producto.Id = prod.Producto.Id;
-                            oDetalle.Producto.Nombre = prod.Producto.Nombre;
-                            oDetalle.Accesorios.Id = int.Parse(cboAccesorios.SelectedValue.ToString());
-                            oDetalle.Accesorios.Nombre = cboAccesorios.Text;
-                            oDetalle.Precio = decimal.Parse(txtPrecio.Text);
-                            oDetalle.Cantidad = int.Parse(txtCantidadP.Text);
-                            oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;
+                        if (Aux == null) {                            
+                            var prod = oProductos.Find(item => item.Producto.Id == int.Parse(cboProductos.SelectedValue.ToString()));
+                            /* SE VALIDA QUE EL PRODUCTO SEA DE LA MISMA ENTIDAD */
+                            if (oList.FindAll(x => x.Entidad.Nombre != prod.Entidad.Nombre).Count == 0) {
+                                oDetalle.Sel = false;
+                                oDetalle.Id = 0;
+                                oDetalle.Tipo = "PRODUCTO";
+                                oDetalle.Entidad.Nombre = prod.Entidad.Nombre;
+                                oDetalle.Producto.Id = prod.Producto.Id;
+                                oDetalle.Producto.Nombre = prod.Producto.Nombre;
+                                oDetalle.Accesorios.Id = int.Parse(cboAccesorios.SelectedValue.ToString());
+                                oDetalle.Accesorios.Nombre = cboAccesorios.Text;
+                                oDetalle.Precio = decimal.Parse(txtPrecio.Text);
+                                oDetalle.Cantidad = int.Parse(txtCantidadP.Text);
+                                oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;
 
-                            string Reflejantes = string.Empty;
-                            oReflejantes.ForEach(item => {
-                                Reflejantes += item.Nombre + " / ";
-                                oDetalle.Reflejantes.Add(item);
-                            });
-                            oDetalle.Reflec = Reflejantes.Substring(0, Reflejantes.Length - 2);
+                                string Reflejantes = string.Empty;
+                                oReflejantes.ForEach(item => {
+                                    Reflejantes += item.Nombre + " / ";
+                                    oDetalle.Reflejantes.Add(item);
+                                });
+                                oDetalle.Reflec = Reflejantes.Substring(0, Reflejantes.Length - 2);
 
-                            oList.Add(oDetalle);
+                                oList.Add(oDetalle);
 
-                            ActualizaGrid();
-                            LimpiarProductos();
+                                ActualizaGrid();
+                                LimpiarProductos();
+                            } else {
+                                RadMessageBox.Show("No es posible agregar un productos de entidades diferentes", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            }
                         } else {
                             RadMessageBox.Show("No es posible agregar un producto que ya existe en el pedido", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         }
@@ -415,21 +420,25 @@ namespace Hersan.UI.Ensamble
                         var Aux = oList.Find(item => item.Producto.Id == int.Parse(cboServicios.SelectedValue.ToString()) && item.Tipo == "SERVICIO");
                         if (Aux == null) {
                             var prod = oServicios.Find(item => item.Id == int.Parse(cboServicios.SelectedValue.ToString()));
-                            oDetalle.Sel = false;
-                            oDetalle.Id = 0;
-                            oDetalle.Tipo = "SERVICIO";
-                            oDetalle.Entidad.Nombre = prod.Entidad.Nombre;
-                            oDetalle.Producto.Id = prod.Id;
-                            oDetalle.Producto.Nombre = prod.Nombre;
-                            oDetalle.Precio = decimal.Parse(txtServicio.Text);
-                            oDetalle.Cantidad = int.Parse(txtCantidadS.Text);
-                            oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;
-                            oDetalle.Reflec = string.Empty;
+                            if (oList.FindAll(x => x.Entidad.Nombre != prod.Entidad.Nombre).Count == 0) {
+                                oDetalle.Sel = false;
+                                oDetalle.Id = 0;
+                                oDetalle.Tipo = "SERVICIO";
+                                oDetalle.Entidad.Nombre = prod.Entidad.Nombre;
+                                oDetalle.Producto.Id = prod.Id;
+                                oDetalle.Producto.Nombre = prod.Nombre;
+                                oDetalle.Precio = decimal.Parse(txtServicio.Text);
+                                oDetalle.Cantidad = int.Parse(txtCantidadS.Text);
+                                oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;
+                                oDetalle.Reflec = string.Empty;
 
-                            oList.Add(oDetalle);
+                                oList.Add(oDetalle);
 
-                            ActualizaGrid();
-                            LimpiarServicios();
+                                ActualizaGrid();
+                                LimpiarServicios();
+                            } else {
+                                RadMessageBox.Show("No es posible agregar un servicios de entidades diferentes", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            }
                         } else {
                             RadMessageBox.Show("No es posible agregar un servicio que ya existe en el pedido", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                         }

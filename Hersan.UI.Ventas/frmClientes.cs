@@ -51,7 +51,7 @@ namespace Hersan.UI.Ensamble
             int Result = 0;
             try {
                 if (!ValidarCampos()) {
-                    RadMessageBox.Show("Debe asignar un Tipo de Cliente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    RadMessageBox.Show("Debe asignar un Tipo de Cliente y Seleccionar al menos una Entidad", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     return;
                 }
 
@@ -535,7 +535,7 @@ namespace Hersan.UI.Ensamble
                 oRow["Nombre"] = txtNombre.Text;
                 oRow["RFC"] = txtRFC.Text;
                 oRow["Direccion"] = txtDireccion.Text;
-                oRow["Colonia"] = txtDireccion.Text;
+                oRow["Colonia"] = txtColonia.Text;
                 oRow["CP"] = txtCP.Text;
                 oRow["Ciudad"] = txtCiudad.Text;
                 oRow["Estado"] = txtEstado.Text;
@@ -636,6 +636,18 @@ namespace Hersan.UI.Ensamble
             bool bFlag = true;
             try {
                 if (cboTipoCliente.SelectedValue == null) {
+                    bFlag = false;
+                    return bFlag;
+                }
+
+                string Entidades = string.Empty;
+                foreach (var item in lstEntidades.Items) {
+                    if (item.CheckState == Telerik.WinControls.Enumerations.ToggleState.On) {
+                        Entidades += item.Value.ToString() + ",";
+                    }
+                }
+
+                if (Entidades.Length == 0) {
                     bFlag = false;
                     return bFlag;
                 }

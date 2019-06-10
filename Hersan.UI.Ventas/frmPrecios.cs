@@ -15,6 +15,7 @@ namespace Hersan.UI.Ensamble
     public partial class frmPrecios : Telerik.WinControls.UI.RadForm
     {
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
+        WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
         List<PreciosBE> oList = new List<PreciosBE>();
 
         public frmPrecios()
@@ -35,6 +36,7 @@ namespace Hersan.UI.Ensamble
                 #endregion
 
                 LimpiarCampos();
+                CargaMonedas();
                 CargarDatos();
             } catch (Exception ex) {
                 throw ex;
@@ -79,7 +81,7 @@ namespace Hersan.UI.Ensamble
                     #endregion
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
-                    int Result = oEnsamble.ENS_Precios_Guardar(oData, BaseWinBP.UsuarioLogueado.ID);
+                    int Result = oEnsamble.ENS_Precios_Guardar(oData, cboMonedas.SelectedValue.ToString(), BaseWinBP.UsuarioLogueado.ID);
                     if (Result == 0) {
                         RadMessageBox.Show("Ocurrió un error al guardar los precios", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     } else {
@@ -110,6 +112,16 @@ namespace Hersan.UI.Ensamble
                 this.Close();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void cboMonedas_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                if (cboMonedas.SelectedValue != null) {
+                    CargarDatos();
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al seleccionar la moneda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
@@ -151,6 +163,8 @@ namespace Hersan.UI.Ensamble
                 txtVolumen.Text = "0.00";
                 txtMayoreo.Text = "0.00";
                 txt3A.Text = "0.00";
+                if(cboMonedas.Items.Count >0)
+                    cboMonedas.SelectedIndex = 0;
             } catch (Exception ex) {
                 throw ex;
             }
@@ -161,7 +175,7 @@ namespace Hersan.UI.Ensamble
             try {
                 gvDatos.DataSource = null;
 
-                oList = oEnsamble.ENS_Precios_Obtener();
+                oList = oEnsamble.ENS_Precios_Obtener(cboMonedas.SelectedValue.ToString());
                 gvDatos.DataSource = oList;
             } catch (Exception ex) {
                 throw ex;
@@ -169,6 +183,20 @@ namespace Hersan.UI.Ensamble
                 oEnsamble = null;
             }
         }
-        
+        private void CargaMonedas()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboMonedas.ValueMember = "Moneda";
+                cboMonedas.DisplayMember = "Moneda";
+                cboMonedas.DataSource = oCatalogos.ABC_Monedas_Combo();
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oCatalogos = null;
+            }
+        }
+
+       
     }
 }

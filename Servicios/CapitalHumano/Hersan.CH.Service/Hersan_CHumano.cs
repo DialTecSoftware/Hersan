@@ -171,9 +171,9 @@ namespace Hersan.CH.Service
         {
             return new EvaluacionInduccionBP().CHU_EvaluacionInduccion_Guardar(Tablas,IdUsuario);
         }
-        public DataTable CHU_Evaluacion_ReporteDetalle()
+        public DataTable CHU_Evaluacion_ReporteDetalle(int Id)
         {
-            return new EvaluacionInduccionBP().CHU_Evaluacion_ReporteDetalle();
+            return new EvaluacionInduccionBP().CHU_Evaluacion_ReporteDetalle(Id);
         }
 
         #endregion

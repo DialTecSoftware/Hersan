@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn5 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn6 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn7 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn8 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn4 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeguimientoCandidatos));
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.cboEntidad = new Telerik.WinControls.UI.RadDropDownList();
@@ -156,11 +156,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 81);
+            this.label4.Location = new System.Drawing.Point(29, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 23;
-            this.label4.Text = "Nombre Cpto:";
+            this.label4.Text = "Nombre :";
             // 
             // label2
             // 
@@ -247,82 +247,82 @@
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
             this.gvDatos.MasterTemplate.AllowEditRow = false;
             this.gvDatos.MasterTemplate.AutoExpandGroups = true;
-            gridViewTextBoxColumn10.FieldName = "Id";
-            gridViewTextBoxColumn10.HeaderText = "ID";
-            gridViewTextBoxColumn10.IsVisible = false;
-            gridViewTextBoxColumn10.Name = "Id";
-            gridViewTextBoxColumn11.FieldName = "Entidades.Id";
-            gridViewTextBoxColumn11.HeaderText = "ENT_Id";
-            gridViewTextBoxColumn11.IsVisible = false;
-            gridViewTextBoxColumn11.Name = "ENT_Id";
-            gridViewTextBoxColumn12.FieldName = "Departamentos.Id";
-            gridViewTextBoxColumn12.HeaderText = "DEP_Id";
-            gridViewTextBoxColumn12.IsVisible = false;
-            gridViewTextBoxColumn12.Name = "DEP_Id";
-            gridViewTextBoxColumn13.FieldName = "Puestos.Id";
-            gridViewTextBoxColumn13.HeaderText = "PUE_Id";
-            gridViewTextBoxColumn13.IsVisible = false;
-            gridViewTextBoxColumn13.Name = "PUE_Id";
-            gridViewTextBoxColumn14.FieldName = "Departamentos.Nombre";
-            gridViewTextBoxColumn14.HeaderText = "Departamentos";
-            gridViewTextBoxColumn14.MinWidth = 100;
-            gridViewTextBoxColumn14.Name = "DEP_Nombre";
-            gridViewTextBoxColumn14.Width = 100;
-            gridViewTextBoxColumn15.FieldName = "Entidades.Nombre";
-            gridViewTextBoxColumn15.HeaderText = "Entidades";
-            gridViewTextBoxColumn15.Name = "ENT_Nombre";
-            gridViewTextBoxColumn15.Width = 80;
-            gridViewTextBoxColumn16.FieldName = "Puestos.Nombre";
-            gridViewTextBoxColumn16.HeaderText = "Puestos";
-            gridViewTextBoxColumn16.Name = "PUE_Nombre";
-            gridViewTextBoxColumn16.Width = 90;
-            gridViewTextBoxColumn17.FieldName = "NombreCompleto";
-            gridViewTextBoxColumn17.HeaderText = "Nombre";
-            gridViewTextBoxColumn17.MaxWidth = 200;
-            gridViewTextBoxColumn17.MinWidth = 200;
-            gridViewTextBoxColumn17.Name = "NombreCompleto";
-            gridViewTextBoxColumn17.Width = 200;
-            gridViewTextBoxColumn17.WrapText = true;
-            gridViewTextBoxColumn18.FieldName = "Correo";
-            gridViewTextBoxColumn18.HeaderText = "Correo";
-            gridViewTextBoxColumn18.Name = "Correo";
-            gridViewTextBoxColumn18.Width = 150;
-            gridViewCheckBoxColumn5.FieldName = "Proceso";
-            gridViewCheckBoxColumn5.HeaderText = "En Proceso";
-            gridViewCheckBoxColumn5.Name = "Proceso";
-            gridViewCheckBoxColumn5.Width = 80;
-            gridViewCheckBoxColumn6.FieldName = "Aceptado";
-            gridViewCheckBoxColumn6.HeaderText = "Aceptado";
-            gridViewCheckBoxColumn6.Name = "Aceptado";
-            gridViewCheckBoxColumn6.Width = 80;
-            gridViewCheckBoxColumn7.FieldName = "Rechazado";
-            gridViewCheckBoxColumn7.HeaderText = "Rechazado";
-            gridViewCheckBoxColumn7.Name = "Rechazado";
-            gridViewCheckBoxColumn7.Width = 80;
-            gridViewCheckBoxColumn8.FieldName = "DatosUsuario.Estatus";
-            gridViewCheckBoxColumn8.HeaderText = "Estatus";
-            gridViewCheckBoxColumn8.MaxWidth = 100;
-            gridViewCheckBoxColumn8.MinWidth = 100;
-            gridViewCheckBoxColumn8.Name = "Estatus";
-            gridViewCheckBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewCheckBoxColumn8.Width = 100;
+            gridViewTextBoxColumn1.FieldName = "Id";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "Id";
+            gridViewTextBoxColumn2.FieldName = "Entidades.Id";
+            gridViewTextBoxColumn2.HeaderText = "ENT_Id";
+            gridViewTextBoxColumn2.IsVisible = false;
+            gridViewTextBoxColumn2.Name = "ENT_Id";
+            gridViewTextBoxColumn3.FieldName = "Departamentos.Id";
+            gridViewTextBoxColumn3.HeaderText = "DEP_Id";
+            gridViewTextBoxColumn3.IsVisible = false;
+            gridViewTextBoxColumn3.Name = "DEP_Id";
+            gridViewTextBoxColumn4.FieldName = "Puestos.Id";
+            gridViewTextBoxColumn4.HeaderText = "PUE_Id";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "PUE_Id";
+            gridViewTextBoxColumn5.FieldName = "Departamentos.Nombre";
+            gridViewTextBoxColumn5.HeaderText = "Departamentos";
+            gridViewTextBoxColumn5.MinWidth = 100;
+            gridViewTextBoxColumn5.Name = "DEP_Nombre";
+            gridViewTextBoxColumn5.Width = 100;
+            gridViewTextBoxColumn6.FieldName = "Entidades.Nombre";
+            gridViewTextBoxColumn6.HeaderText = "Entidades";
+            gridViewTextBoxColumn6.Name = "ENT_Nombre";
+            gridViewTextBoxColumn6.Width = 80;
+            gridViewTextBoxColumn7.FieldName = "Puestos.Nombre";
+            gridViewTextBoxColumn7.HeaderText = "Puestos";
+            gridViewTextBoxColumn7.Name = "PUE_Nombre";
+            gridViewTextBoxColumn7.Width = 90;
+            gridViewTextBoxColumn8.FieldName = "NombreCompleto";
+            gridViewTextBoxColumn8.HeaderText = "Nombre";
+            gridViewTextBoxColumn8.MaxWidth = 200;
+            gridViewTextBoxColumn8.MinWidth = 200;
+            gridViewTextBoxColumn8.Name = "NombreCompleto";
+            gridViewTextBoxColumn8.Width = 200;
+            gridViewTextBoxColumn8.WrapText = true;
+            gridViewTextBoxColumn9.FieldName = "Correo";
+            gridViewTextBoxColumn9.HeaderText = "Correo";
+            gridViewTextBoxColumn9.Name = "Correo";
+            gridViewTextBoxColumn9.Width = 150;
+            gridViewCheckBoxColumn1.FieldName = "Proceso";
+            gridViewCheckBoxColumn1.HeaderText = "En Proceso";
+            gridViewCheckBoxColumn1.Name = "Proceso";
+            gridViewCheckBoxColumn1.Width = 80;
+            gridViewCheckBoxColumn2.FieldName = "Aceptado";
+            gridViewCheckBoxColumn2.HeaderText = "Aceptado";
+            gridViewCheckBoxColumn2.Name = "Aceptado";
+            gridViewCheckBoxColumn2.Width = 80;
+            gridViewCheckBoxColumn3.FieldName = "Rechazado";
+            gridViewCheckBoxColumn3.HeaderText = "Rechazado";
+            gridViewCheckBoxColumn3.Name = "Rechazado";
+            gridViewCheckBoxColumn3.Width = 80;
+            gridViewCheckBoxColumn4.FieldName = "DatosUsuario.Estatus";
+            gridViewCheckBoxColumn4.HeaderText = "Estatus";
+            gridViewCheckBoxColumn4.MaxWidth = 100;
+            gridViewCheckBoxColumn4.MinWidth = 100;
+            gridViewCheckBoxColumn4.Name = "Estatus";
+            gridViewCheckBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCheckBoxColumn4.Width = 100;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16,
-            gridViewTextBoxColumn17,
-            gridViewTextBoxColumn18,
-            gridViewCheckBoxColumn5,
-            gridViewCheckBoxColumn6,
-            gridViewCheckBoxColumn7,
-            gridViewCheckBoxColumn8});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewCheckBoxColumn1,
+            gridViewCheckBoxColumn2,
+            gridViewCheckBoxColumn3,
+            gridViewCheckBoxColumn4});
             this.gvDatos.MasterTemplate.ShowGroupedColumns = true;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;

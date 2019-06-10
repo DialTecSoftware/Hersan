@@ -103,7 +103,7 @@ namespace Hersan.CH.Contract
         [OperationContract]
         int CHU_EvaluacionInduccion_Guardar(DataSet Tablas, int IdUsuario);
         [OperationContract]
-        DataTable CHU_Evaluacion_ReporteDetalle();
+        DataTable CHU_Evaluacion_ReporteDetalle(int Id);
 
         #endregion
 

@@ -122,7 +122,7 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         int CHU_EvaluacionInduccion_Guardar(System.Data.DataSet Tablas, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Evaluacion_ReporteDetalle", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Evaluacion_ReporteDetalleResponse")]
-        System.Data.DataTable CHU_Evaluacion_ReporteDetalle();
+        System.Data.DataTable CHU_Evaluacion_ReporteDetalle(int Id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener();
@@ -352,8 +352,8 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
             return base.Channel.CHU_EvaluacionInduccion_Guardar(Tablas, IdUsuario);
         }
         
-        public System.Data.DataTable CHU_Evaluacion_ReporteDetalle() {
-            return base.Channel.CHU_Evaluacion_ReporteDetalle();
+        public System.Data.DataTable CHU_Evaluacion_ReporteDetalle(int Id) {
+            return base.Channel.CHU_Evaluacion_ReporteDetalle(Id);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE> CHU_SeguimientoCan_Obtener() {

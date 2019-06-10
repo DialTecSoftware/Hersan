@@ -84,7 +84,7 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             try {
                 EvaluacionInduccionBE obj = new EvaluacionInduccionBE();
-                obj.IdEmpleado = txtIdEMP.Text.Trim().Length == 0 ? 0 : int.Parse(txtIdEMP.Text);
+                obj.IdExp = txtIdEMP.Text.Trim().Length == 0 ? 0 : int.Parse(txtIdEMP.Text);
                 obj.Puestos.Departamentos.Entidades.Id = cboEntidad.Enabled ? int.Parse(cboEntidad.SelectedValue.ToString()) : 0;
                 obj.Puestos.Departamentos.Id = cboDepto.Enabled ? int.Parse(cboDepto.SelectedValue.ToString()) : 0;
                 obj.Puestos.Id = cboPuesto.Enabled ? int.Parse(cboPuesto.SelectedValue.ToString()) : 0;

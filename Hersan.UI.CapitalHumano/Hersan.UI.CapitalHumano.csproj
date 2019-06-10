@@ -368,6 +368,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EquipoHerramientasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EstadosBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.FamiliasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.MonedasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.OrganigramaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ReflejantesBE.datasource" />

@@ -46,8 +46,6 @@
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnImprimir = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnReporte = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
@@ -82,7 +80,7 @@
             this.txtCalif = new Telerik.WinControls.UI.RadTextBox();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.txtIdd = new System.Windows.Forms.TextBox();
-            this.txtEmp = new System.Windows.Forms.TextBox();
+            this.txtIdExp = new System.Windows.Forms.TextBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -140,8 +138,6 @@
             this.commandBarSeparator1,
             this.btnGuardar,
             this.commandBarSeparator2,
-            this.btnImprimir,
-            this.commandBarSeparator3,
             this.btnReporte,
             this.commandBarSeparator4,
             this.btnSalir,
@@ -203,21 +199,6 @@
             this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
             this.commandBarSeparator2.Name = "commandBarSeparator2";
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DisplayName = "commandBarButton3";
-            this.btnImprimir.DrawText = true;
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // commandBarSeparator3
-            // 
-            this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
-            this.commandBarSeparator3.Name = "commandBarSeparator3";
-            this.commandBarSeparator3.VisibleInOverflowMenu = false;
             // 
             // btnReporte
             // 
@@ -597,7 +578,7 @@
             // radPanel1
             // 
             this.radPanel1.Controls.Add(this.txtIdd);
-            this.radPanel1.Controls.Add(this.txtEmp);
+            this.radPanel1.Controls.Add(this.txtIdExp);
             this.radPanel1.Controls.Add(this.lblFecha);
             this.radPanel1.Controls.Add(this.label4);
             this.radPanel1.Controls.Add(this.label5);
@@ -622,13 +603,13 @@
             this.txtIdd.TabIndex = 66;
             this.txtIdd.Visible = false;
             // 
-            // txtEmp
+            // txtIdExp
             // 
-            this.txtEmp.Location = new System.Drawing.Point(242, 58);
-            this.txtEmp.Name = "txtEmp";
-            this.txtEmp.ReadOnly = true;
-            this.txtEmp.Size = new System.Drawing.Size(60, 20);
-            this.txtEmp.TabIndex = 65;
+            this.txtIdExp.Location = new System.Drawing.Point(242, 58);
+            this.txtIdExp.Name = "txtIdExp";
+            this.txtIdExp.ReadOnly = true;
+            this.txtIdExp.Size = new System.Drawing.Size(60, 20);
+            this.txtIdExp.TabIndex = 65;
             // 
             // lblFecha
             // 
@@ -645,9 +626,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(187, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 61;
-            this.label4.Text = "No. Emp";
+            this.label4.Text = "No. Exp";
             // 
             // label5
             // 
@@ -744,8 +725,6 @@
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator1;
         private Telerik.WinControls.UI.CommandBarButton btnGuardar;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
-        private Telerik.WinControls.UI.CommandBarButton btnImprimir;
-        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator3;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -788,7 +767,7 @@
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox txtEmp;
+        private System.Windows.Forms.TextBox txtIdExp;
         private System.Windows.Forms.TextBox txtIdd;
     }
 }

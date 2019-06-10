@@ -94,6 +94,7 @@ namespace Hersan.UI.CapitalHumano
             txtCondiciones.Text = string.Empty;
             txtObservaciones.Text = string.Empty;
             txtEsfuerzo.Text = string.Empty;
+            txtActividades.Text = string.Empty;
             txtEquipo.Text = string.Empty;
             cboColaboradores.SelectedIndex = 0;
             gvContactos.DataSource = null;
@@ -110,6 +111,7 @@ namespace Hersan.UI.CapitalHumano
             txtRiesgo.Text = string.Empty;
             txtAutoridad.Text = string.Empty;
             txtClave.Text = string.Empty;
+            txtActividades.Text = string.Empty;
             txtCondiciones.Text = string.Empty;
             txtObservaciones.Text = string.Empty;
             txtEsfuerzo.Text = string.Empty;
@@ -184,7 +186,7 @@ namespace Hersan.UI.CapitalHumano
                 Flag = txtObjetivo.Text.Trim().Length == 0 ? false : true;
                 Flag = txtObservaciones.Text.Trim().Length == 0 ? false : true;
                 Flag = txtRiesgo.Text.Trim().Length == 0 ? false : true;
-
+                Flag = txtActividades.Text.Trim().Length == 0 ? false : true;
                 return Flag;
             } catch (Exception ex) {
                 throw ex;
@@ -224,6 +226,7 @@ namespace Hersan.UI.CapitalHumano
                                 txtEsfuerzo.Text = (oRow["DCT_EsfuerzoFisico"].ToString());
                                 txtCondiciones.Text = oRow["DCT_CondicionesAmb"].ToString();
                                 txtEquipo.Text = oRow["DCT_EsfuerzoFisico"].ToString();
+                                txtActividades.Text = oRow["DCT_Actividades"].ToString();
 
 
                             }
@@ -550,10 +553,11 @@ namespace Hersan.UI.CapitalHumano
                 oData1.Columns.Add("Riesgo");
                 oData1.Columns.Add("Condicion");
                 oData1.Columns.Add("Equipo");
+                oData1.Columns.Add("Actividades");
 
-                    #region Carga Detalle
+                #region Carga Detalle
 
-              
+
 
                 DescripcionPuestosBE obj = new DescripcionPuestosBE();
                 pList.ForEach(item => {
@@ -582,8 +586,9 @@ namespace Hersan.UI.CapitalHumano
                     oRow1["Riesgo"] = txtRiesgo.Text;
                     oRow1["Condicion"] = txtCondiciones.Text;
                     oRow1["Equipo"] = txtEquipo.Text;
+                    oRow1["Actividades"] = txtActividades.Text;
 
-                    oData1.Rows.Add(oRow1);
+                oData1.Rows.Add(oRow1);
               
                 
                  

@@ -34,7 +34,7 @@ namespace Hersan.UI.CapitalHumano
             txtIdd.Text = "-1";
             txtApellidos.Text = string.Empty;
             txtCalif.Text = string.Empty;
-            txtEmp.Text = string.Empty;
+            txtIdExp.Text = "0";
             txtObservaciones.Text = string.Empty;
             txtNombres.Text = string.Empty;
             txtId.Text = string.Empty;
@@ -45,10 +45,12 @@ namespace Hersan.UI.CapitalHumano
         {
             bool Flag = true;
             try {
-                Flag = txtObservaciones.Text.Trim().Length == 0 ? false : true;
-                Flag = txtEmp.Text.Trim().Length == 0 ? false : true;
+              
+                Flag = txtIdExp.Text.Trim().Length == 0 ? false : true;
                 Flag = txtCalif.Text.Trim().Length == 0 ? false : true;
-
+                Flag = txtObservaciones.Text.Trim().Length == 0 ? false : true;
+                Flag = txtApellidos.Text.Trim().Length == 0 ? false : true;
+                Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
                 return Flag;
             } catch (Exception ex) {
                 throw ex;
@@ -192,7 +194,7 @@ namespace Hersan.UI.CapitalHumano
                     if (Item.Count > 0) {
                         txtApellidos.Text = Item[0].APaterno + " " + Item[0].AMaterno;
                         txtNombres.Text = Item[0].Nombres;
-                        txtEmp.Text = txtId.Text;
+                        txtIdExp.Text = txtId.Text;
 
                     }
                 }
@@ -278,11 +280,18 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
             EvaluacionInduccionBE obj = new EvaluacionInduccionBE();
             DataSet oData = CrearTablasAuxiliares();
+            oList = oCHumano.CHU_EvaluacionInduccion_Obtener();
             int Result = 0;
             try {
                 CalcularResultado();
                 if (!ValidarCampos()) {
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+                if (oList.FindAll(item => item.IdExp == int.Parse(txtIdExp.Text)).Count > 0)
+                 {
+                    RadMessageBox.Show("Este empleado ya ha realizado su evaluación, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
                     return;
                 }
 
@@ -292,15 +301,10 @@ namespace Hersan.UI.CapitalHumano
                     return;
                 }
 
-                if (oList.FindAll(item => item.IdEmpleado == int.Parse(txtEmp.Text) ).Count > 0
-                   && int.Parse(txtId.Text) == -1) {
-                    RadMessageBox.Show("Este empleado ya ha realizado su evaluación, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    LimpiarCampos();
-                    return;
-                }
+               
                 #region Entidades
                 obj.Id = int.Parse(txtId.Text);
-                obj.IdEmpleado = int.Parse(txtEmp.Text);
+                obj.IdExp = int.Parse(txtIdExp.Text);
                 obj.Observaciones = txtObservaciones.Text;
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                 #endregion
@@ -310,7 +314,7 @@ namespace Hersan.UI.CapitalHumano
                 #region Carga Datos Encabezado
                 DataRow oRow = oData.Tables["Evaluacion"].NewRow();
                 oRow["EVI_Id"] = int.Parse(txtId.Text);
-                oRow["EMP_Numero"] = int.Parse(txtEmp.Text);
+                oRow["EMP_Numero"] = int.Parse(txtIdExp.Text);
                 oRow["EVI_Observaciones"] = txtObservaciones.Text;
                 oRow["EVI_Calificaciones"] = int.Parse(txtCalif.Text);
                 oRow["EVI_idUsuarioCreo"] = BaseWinBP.UsuarioLogueado.ID;
@@ -399,19 +403,26 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             Stream archivo = null;
             try {
-                frmViewer frm = new frmViewer();
-                frm.iReport = new Reportes.rtpEvaluacionInduccion();
+                DataTable Aux = oCHumano.CHU_Evaluacion_ReporteDetalle(int.Parse(txtIdExp.Text));
+               if (Aux.Rows.Count > 0) {
+                    frmViewer frm = new frmViewer();
+                    frm.iReport = new Reportes.rtpEvaluacionInduccion();
 
-                frm.iReport.SetDataSource(oCHumano.CHU_Evaluacion_ReporteDetalle());
+                    frm.iReport.SetDataSource(Aux);
 
-                //frm.iReport.Subreports["Detalle"].SetDataSource(oEnsamble.ENS_Cotizacion_ReporteDetalle(int.Parse(gvDatos.CurrentRow.Cells["Id"].Value.ToString())));
 
-                if (Correo) {
-                    archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-                } else {
-                    //MOSTRAR EN PANTALLA
-                    frm.WindowState = FormWindowState.Maximized;
-                    frm.ShowDialog();
+
+                    if (Correo) {
+                        archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                    } else {
+                        //MOSTRAR EN PANTALLA
+                        frm.WindowState = FormWindowState.Maximized;
+                        frm.ShowDialog();
+                    }
+                }
+              else
+              {
+                    RadMessageBox.Show("Aun no hay evaluacción realizada para el numero de expediente seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -436,10 +447,10 @@ namespace Hersan.UI.CapitalHumano
         private void btnReporte_Click(object sender, EventArgs e)
         {
             try {
-              
+              if (int.Parse(txtIdExp.Text)>0)
                Reporte(false);
-                //else
-                //    RadMessageBox.Show("No ha seleccionado una cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+              else
+                    RadMessageBox.Show("No ha seleccionado ningún expediente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }

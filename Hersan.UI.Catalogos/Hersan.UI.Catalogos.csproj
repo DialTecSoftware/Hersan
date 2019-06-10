@@ -304,6 +304,9 @@
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.wsdl" />
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.xsd">
       <SubType>Designer</SubType>

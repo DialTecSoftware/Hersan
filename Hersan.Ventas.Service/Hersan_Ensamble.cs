@@ -77,13 +77,13 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Precios
-        public int ENS_Precios_Guardar(System.Data.DataTable oData, int IdUsuario)
+        public int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario)
         {
-            return new PreciosBP().ENS_Precios_Guardar(oData, IdUsuario);
+            return new PreciosBP().ENS_Precios_Guardar(oData, Moneda, IdUsuario);
         }
-        public List<PreciosBE> ENS_Precios_Obtener()
+        public List<PreciosBE> ENS_Precios_Obtener(string Moneda)
         {
-            return new PreciosBP().ENS_Precios_Obtener();
+            return new PreciosBP().ENS_Precios_Obtener(Moneda);
         }
         #endregion
 

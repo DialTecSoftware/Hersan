@@ -55,7 +55,7 @@ namespace Hersan.Datos.Catalogos
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_AGENTES_GUARDAR, conn)) {
-                        cmd.Parameters.AddWithValue("@Clave", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Correo", obj.Correo);
                         cmd.Parameters.AddWithValue("@Comision", obj.Comision);
@@ -78,7 +78,7 @@ namespace Hersan.Datos.Catalogos
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_AGENTES_ACTUALIZAR, conn)) {
                         cmd.Parameters.AddWithValue("@Id", obj.Id);
-                        cmd.Parameters.AddWithValue("@Clave", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                         cmd.Parameters.AddWithValue("@Correo", obj.Correo);
                         cmd.Parameters.AddWithValue("@Comision", obj.Comision);

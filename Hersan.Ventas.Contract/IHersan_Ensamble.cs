@@ -47,9 +47,9 @@ namespace Hersan.Ensamble.Contract
 
         #region Precios
         [OperationContract]
-        int ENS_Precios_Guardar(System.Data.DataTable oData, int IdUsuario);
+        int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario);
         [OperationContract]
-        List<PreciosBE> ENS_Precios_Obtener();
+        List<PreciosBE> ENS_Precios_Obtener(string Moneda);
         #endregion
 
         #region Productos

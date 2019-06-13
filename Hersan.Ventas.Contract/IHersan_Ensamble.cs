@@ -40,9 +40,9 @@ namespace Hersan.Ensamble.Contract
         [OperationContract]
         List<ServiciosBE> ENS_Servicios_Obtener();
         [OperationContract]
-        List<ServiciosBE> ENS_Servicios_Combo(int IdEntidad);
+        List<ServiciosBE> ENS_Servicios_Combo(int IdEntidad, string Moneda);
         [OperationContract]
-        List<ServiciosBE> ENS_ServiciosCotizacion_Combo();
+        List<ServiciosBE> ENS_ServiciosCotizacion_Combo(string Moneda);
         #endregion
 
         #region Precios
@@ -60,7 +60,7 @@ namespace Hersan.Ensamble.Contract
         [OperationContract]
         List<ProductoEnsambleBE> ENS_ProductosFicha_Obtener(ProductoEnsambleBE obj);
         [OperationContract]
-        List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo();
+        List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda);
         [OperationContract]
         List<ColoresBE> ENS_CarcasasCotizacion_Combo(int IdFicha);
         [OperationContract]
@@ -82,6 +82,8 @@ namespace Hersan.Ensamble.Contract
         System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza);
         [OperationContract]
         List<PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final);
+        [OperationContract]
+        List<PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final);
         #endregion
     }
 }

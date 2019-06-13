@@ -20,13 +20,13 @@ namespace Hersan.Negocio.Ensamble
         {
             return new ServiciosDA().ENS_Servicios_Obtener();
         }
-        public List<ServiciosBE> ENS_Servicios_Combo(int IdEntidad)
+        public List<ServiciosBE> ENS_Servicios_Combo(int IdEntidad, string Moneda)
         {
-            return new ServiciosDA().ENS_Servicios_Combo(IdEntidad);
+            return new ServiciosDA().ENS_Servicios_Combo(IdEntidad, Moneda);
         }
-        public List<ServiciosBE> ENS_ServiciosCotizacion_Combo()
+        public List<ServiciosBE> ENS_ServiciosCotizacion_Combo(string Moneda)
         {
-            return new ServiciosDA().ENS_ServiciosCotizacion_Combo();
+            return new ServiciosDA().ENS_ServiciosCotizacion_Combo(Moneda);
         }
     }
 }

@@ -129,12 +129,6 @@
     <Compile Include="frmPedidosConsulta.Designer.cs">
       <DependentUpon>frmPedidosConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPedidosConsulta1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPedidosConsulta1.Designer.cs">
-      <DependentUpon>frmPedidosConsulta1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPrecios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +200,6 @@
     <EmbeddedResource Include="frmPedidosConsulta.resx">
       <DependentUpon>frmPedidosConsulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPedidosConsulta1.resx">
-      <DependentUpon>frmPedidosConsulta1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPrecios.resx">
       <DependentUpon>frmPrecios.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +246,9 @@
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.wsdl" />
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.xsd">
       <SubType>Designer</SubType>
@@ -275,6 +269,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble7.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />

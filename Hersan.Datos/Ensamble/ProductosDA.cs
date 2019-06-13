@@ -123,13 +123,16 @@ namespace Hersan.Datos.Ensamble
                 throw ex;
             }
         }
-        public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo()
+        public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda)
         {
             List<ProductoEnsambleBE> oList = new List<ProductoEnsambleBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_ENS_PRODUCTOSCOTIZACION_COMBO, conn)) {
+                        cmd.Parameters.AddWithValue("@Nacional", Nacional);
+                        cmd.Parameters.AddWithValue("@Moneda", Moneda);
+
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {

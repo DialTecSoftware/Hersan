@@ -20,9 +20,9 @@ namespace Hersan.Negocio.Ensamble
         {
             return new ProductosDA().ENS_ProductosFicha_Obtener(obj);
         }
-        public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo()
+        public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda)
         {
-            return new ProductosDA().ENS_ProductosCotizacion_Combo();
+            return new ProductosDA().ENS_ProductosCotizacion_Combo(Nacional, Moneda);
         }
         public List<ColoresBE> ENS_CarcasasCotizacion_Combo(int IdFicha)
         {

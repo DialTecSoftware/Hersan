@@ -170,6 +170,15 @@ namespace Hersan.UI.Ensamble
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void txtClave_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.Enter && txtId.Text.Trim().Length > 0)
+                    CargaCliente(int.Parse(txtClave.Text));
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar el cliente\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void rbNacional_CheckedChanged(object sender, EventArgs e)
         {
             try {
@@ -517,6 +526,8 @@ namespace Hersan.UI.Ensamble
                     txtMonto.Text = item.Condiciones.MontoCredito.ToString();
                     txtDescto.Text = item.Condiciones.Descuento.ToString();
                     #endregion
+                } else {
+                    RadMessageBox.Show("Cliente no existe o está inactivo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
             } catch (Exception ex) {
                 throw ex;
@@ -657,5 +668,7 @@ namespace Hersan.UI.Ensamble
             }
             return bFlag;
         }
+
+        
     }
 }

@@ -216,7 +216,7 @@ namespace Hersan.UI.Ensamble
                     gvDatos.DataSource = oCotiza[0].Detalle;
                 } else {
                     LimpiarCampos();
-                    RadMessageBox.Show("No existe la cotización capturada", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    RadMessageBox.Show("No existe la cotización capturada o ya es un pedido.", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
 
             } catch (Exception ex) {

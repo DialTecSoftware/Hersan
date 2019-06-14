@@ -34,5 +34,9 @@ namespace Hersan.Negocio.Ensamble
         {
             return new PedidosDA().ENS_Cotizacion_Consulta(IdAgente, IdCotiza, Inicial, Final);
         }
+        public List<PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final)
+        {
+            return new PedidosDA().ENS_Pedido_Consulta(IdAgente, Pedido, Inicial, Final);
+        }
     }
 }

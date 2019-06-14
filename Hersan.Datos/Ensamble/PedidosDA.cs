@@ -16,9 +16,8 @@ namespace Hersan.Datos.Ensamble
         const string CONS_USP_ENS_COTIZACION_REPORTE = "ENS_Cotizacion_Reporte";
         const string CONS_USP_ENS_COTIZACION_REPORTEDETALLE = "ENS_Cotizacion_ReporteDetalle";
         const string CONS_USP_ENS_COTIZACION_CONSULTA = "ENS_Cotizacion_Consulta";
-        //const string CONS_USP_ENS_COTIZACION_REPORTEDETALLE = "ENS_Cotizacion_ReporteDetalle";
+        const string CONS_USP_ENS_PEDIDO_CONSULTA = "ENS_Pedido_Consulta";
         #endregion
-
 
         public int ENS_Cotizacion_Guardar(PedidosBE obj, DataTable oDetalle)
         {
@@ -28,9 +27,11 @@ namespace Hersan.Datos.Ensamble
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_COTIZACION_GUARDAR, conn)) {
                         cmd.Parameters.AddWithValue("@IdCliente", obj.Cliente.Id);
+                        cmd.Parameters.AddWithValue("@Moneda", obj.Moneda.Moneda);
                         cmd.Parameters.AddWithValue("@Proyecto", obj.Proyecto);
                         cmd.Parameters.AddWithValue("@Semaforo", obj.Semaforo);
                         cmd.Parameters.AddWithValue("@Condicion", obj.Condiciones.Id);
+                        cmd.Parameters.AddWithValue("@Gastos", obj.Gastos);
                         cmd.Parameters.AddWithValue("@Detalle", oDetalle);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioModif);
 
@@ -51,11 +52,13 @@ namespace Hersan.Datos.Ensamble
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_COTIZACION_ACTUALIZAR, conn)) {
                         cmd.Parameters.AddWithValue("@IdCotiza", obj.Id);
+                        cmd.Parameters.AddWithValue("@Moneda", obj.Moneda.Moneda);
                         cmd.Parameters.AddWithValue("@IdCliente", obj.Cliente.Id);
                         cmd.Parameters.AddWithValue("@EsPedido", obj.Pedido);
                         cmd.Parameters.AddWithValue("@Proyecto", obj.Proyecto);
                         cmd.Parameters.AddWithValue("@Semaforo", obj.Semaforo);
                         cmd.Parameters.AddWithValue("@Condicion", obj.Condiciones.Id);
+                        cmd.Parameters.AddWithValue("@Gastos", obj.Gastos);
                         cmd.Parameters.AddWithValue("@Detalle", oDetalle);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioModif);
                         cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
@@ -229,10 +232,54 @@ namespace Hersan.Datos.Ensamble
                                 PedidosBE obj = new PedidosBE();
 
                                 obj.Id = int.Parse(reader["COT_Id"].ToString());
+                                obj.Moneda.Moneda = reader["MON_Moneda"].ToString();
                                 obj.Proyecto = reader["COT_Proyecto"].ToString();
                                 obj.Semaforo = int.Parse(reader["Semaforo"].ToString());
                                 obj.NoPedido = int.Parse(reader["COT_Pedido"].ToString());
                                 obj.DatosUsuario.FechaCreacion = DateTime.Parse(reader["COT_FechaCreacion"].ToString());
+                                obj.Agente.Clave = reader["AGE_Clave"].ToString();
+                                obj.Cliente.Id = int.Parse(reader["CLI_Id"].ToString());
+                                obj.Cliente.Nombre = reader["CLI_Nombre"].ToString();
+                                obj.Cliente.Correo1 = reader["CLI_Correo1"].ToString();
+                                obj.Cliente.Correo2 = reader["CLI_Correo2"].ToString();
+                                obj.Monto = decimal.Parse(reader["Monto"].ToString());
+                                obj.NoPedido = int.Parse(reader["COT_Pedido"].ToString());
+                                obj.Semaforo = int.Parse(reader["COT_Semaforo"].ToString());
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final)
+        {
+            List<PedidosBE> oList = new List<PedidosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_PEDIDO_CONSULTA, conn)) {
+                        cmd.Parameters.AddWithValue("@Agente", IdAgente);
+                        cmd.Parameters.AddWithValue("@Pedido", Pedido);
+                        cmd.Parameters.AddWithValue("@FechaIni", Inicial);
+                        cmd.Parameters.AddWithValue("@Fechafin", Final);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (IDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                PedidosBE obj = new PedidosBE();
+
+                                obj.Id = int.Parse(reader["COT_Id"].ToString());
+                                obj.Moneda.Moneda = reader["MON_Moneda"].ToString();
+                                obj.Proyecto = reader["COT_Proyecto"].ToString();
+                                obj.Semaforo = int.Parse(reader["Semaforo"].ToString());
+                                obj.NoPedido = int.Parse(reader["COT_Pedido"].ToString());
+                                obj.DatosUsuario.FechaModif = DateTime.Parse(reader["COT_FechaModif"].ToString());
                                 obj.Agente.Clave = reader["AGE_Clave"].ToString();
                                 obj.Cliente.Id = int.Parse(reader["CLI_Id"].ToString());
                                 obj.Cliente.Nombre = reader["CLI_Nombre"].ToString();

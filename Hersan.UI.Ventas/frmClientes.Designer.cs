@@ -795,11 +795,11 @@
             this.txtClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtClave.Location = new System.Drawing.Point(85, 29);
             this.txtClave.Name = "txtClave";
-            this.txtClave.ReadOnly = true;
             this.txtClave.Size = new System.Drawing.Size(79, 20);
             this.txtClave.TabIndex = 1;
             this.txtClave.TabStop = false;
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClave_KeyDown);
             // 
             // label1
             // 

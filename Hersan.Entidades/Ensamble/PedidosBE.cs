@@ -10,10 +10,12 @@ namespace Hersan.Entidades.Ensamble
         public PedidosBE()
         {
             Id = 0;
+            Moneda = new MonedasBE();
             Cliente = new ClientesBE();
             Agente = new AgentesBE();
             Semaforo = 0;
             Condiciones = new CondicionesExpBE();
+            Gastos = 0;
             Pedido = false;
             NoPedido = 0;
             Proyecto = string.Empty;
@@ -23,10 +25,12 @@ namespace Hersan.Entidades.Ensamble
         }
 
         public int Id { get; set; }
+        public MonedasBE Moneda { get; set; }
         public ClientesBE Cliente { get; set; }
         public AgentesBE Agente { get; set; }
         public int Semaforo { get; set; }
         public CondicionesExpBE Condiciones { get; set; }
+        public decimal Gastos { get; set; }
         public bool Pedido { get; set; }
         public int NoPedido { get; set; }
         public string Proyecto { get; set; }

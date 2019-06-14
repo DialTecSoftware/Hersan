@@ -22,11 +22,18 @@ namespace Hersan.UI.Ensamble
         private void frmServicios_Load(object sender, EventArgs e)
         {
             try {
+                #region Grupos   
                 GroupDescriptor Entidades = new GroupDescriptor();
                 Entidades.GroupNames.Add("Entidad", ListSortDirection.Ascending);
                 this.gvDatos.GroupDescriptors.Add(Entidades);
 
+                GroupDescriptor Monedas = new GroupDescriptor();
+                Monedas.GroupNames.Add("Moneda", ListSortDirection.Ascending);
+                this.gvDatos.GroupDescriptors.Add(Monedas);
+                #endregion
+
                 LimpiarCampos();
+                CargaMonedas();
                 CargarEntidades();
                 CargarDatos();
             } catch (Exception ex) {
@@ -64,6 +71,7 @@ namespace Hersan.UI.Ensamble
                 obj.Entidad.Id = int.Parse(cboEntidad.SelectedValue.ToString());
                 obj.Clave = txtClave.Text;
                 obj.Nombre = txtNombre.Text;
+                obj.Moneda.Moneda = cboMonedas.SelectedValue.ToString();
                 obj.Precio = decimal.Parse(txtPrecio.Text);
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
@@ -105,6 +113,7 @@ namespace Hersan.UI.Ensamble
                         obj.Entidad.Id = int.Parse(cboEntidad.SelectedValue.ToString());
                         obj.Clave = txtClave.Text;
                         obj.Nombre = txtNombre.Text;
+                        obj.Moneda.Moneda = cboMonedas.SelectedValue.ToString();
                         obj.Precio = decimal.Parse(txtPrecio.Text);
                         obj.DatosUsuario.Estatus = false;
                         obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
@@ -139,6 +148,7 @@ namespace Hersan.UI.Ensamble
                 if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
                     txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
                     cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["IdEntidad"].Value.ToString());
+                    cboMonedas.SelectedValue = e.CurrentRow.Cells["Moneda"].Value.ToString();
                     txtClave.Text = e.CurrentRow.Cells["Clave"].Value.ToString();
                     txtNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
                     txtPrecio.Text = e.CurrentRow.Cells["Precio"].Value.ToString();
@@ -157,7 +167,6 @@ namespace Hersan.UI.Ensamble
                 RadMessageBox.Show("Ocurrió un error al capturar el precio\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
 
         private void CargarEntidades()
         {
@@ -190,6 +199,19 @@ namespace Hersan.UI.Ensamble
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
                 gvDatos.DataSource = oEnsamble.ENS_Servicios_Obtener();
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oCatalogos = null;
+            }
+        }
+        private void CargaMonedas()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboMonedas.ValueMember = "Moneda";
+                cboMonedas.DisplayMember = "Moneda";
+                cboMonedas.DataSource = oCatalogos.ABC_Monedas_Combo();
             } catch (Exception ex) {
                 throw ex;
             } finally {

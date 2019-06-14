@@ -66,13 +66,13 @@ namespace Hersan.Ensamble.Service
         {
             return new ServiciosBP().ENS_Servicios_Obtener();
         }
-        public List<ServiciosBE> ENS_Servicios_Combo(int IdEntidad)
+        public List<ServiciosBE> ENS_Servicios_Combo(int IdEntidad, string Moneda)
         {
-            return new ServiciosBP().ENS_Servicios_Combo(IdEntidad);
+            return new ServiciosBP().ENS_Servicios_Combo(IdEntidad, Moneda);
         }
-        public List<ServiciosBE> ENS_ServiciosCotizacion_Combo()
+        public List<ServiciosBE> ENS_ServiciosCotizacion_Combo(string Moneda)
         {
-            return new ServiciosBP().ENS_ServiciosCotizacion_Combo();
+            return new ServiciosBP().ENS_ServiciosCotizacion_Combo(Moneda);
         }
         #endregion
 
@@ -100,9 +100,9 @@ namespace Hersan.Ensamble.Service
         {
             return new ProductosBP().ENS_ProductosFicha_Obtener(obj);
         }
-        public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo()
+        public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda)
         {
-            return new ProductosBP().ENS_ProductosCotizacion_Combo();
+            return new ProductosBP().ENS_ProductosCotizacion_Combo(Nacional, Moneda);
         }
         public List<ColoresBE> ENS_CarcasasCotizacion_Combo(int IdFicha)
         {
@@ -142,6 +142,10 @@ namespace Hersan.Ensamble.Service
         public List<PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final)
         {
             return new PedidosBP().ENS_Cotizacion_Consulta(IdAgente, IdCotiza, Inicial, Final);
+        }
+        public List<PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final)
+        {
+            return new PedidosBP().ENS_Pedido_Consulta(IdAgente, Pedido, Inicial, Final);
         }
         #endregion
     }

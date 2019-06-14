@@ -43,9 +43,10 @@ namespace Hersan.UI.Ensamble
 
                 gvDatos.DataSource = oEnsamble.ENS_Cotizacion_Consulta(int.Parse(cboAgentes.SelectedValue.ToString()),int.Parse(txtId.Text), Inicial, Final);
 
-                if (gvDatos.RowCount == 0)
+                if (gvDatos.RowCount == 0) {
+                    gvDetalle.DataSource = null;
                     RadMessageBox.Show("No se encontraron cotizaciones con los criterios seleccionados.", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-
+                }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar las cotizaciones\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -69,6 +70,7 @@ namespace Hersan.UI.Ensamble
                     frm.Correo = gvDatos.CurrentRow.Cells["Correo1"].Value.ToString() + "," + gvDatos.CurrentRow.Cells["Correo2"].Value.ToString();
                     frm.Archivo = Reporte(true);
                     frm.Id = gvDatos.CurrentRow.Cells["Id"].Value.ToString();
+                    frm.Tipo = "Cotización";
 
                     frm.StartPosition = FormStartPosition.CenterParent;
                     frm.ShowDialog();
@@ -99,7 +101,8 @@ namespace Hersan.UI.Ensamble
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
-                if (gvDatos.RowCount > 0) 
+                if (gvDatos.RowCount > 0)
+                    //gvDetalle.DataSource = oEnsamble.ENS_Cotizacion_Obtener(int.Parse(gvDatos.CurrentRow.Cells["Id"].Value.ToString()));
                     gvDetalle.DataSource = oEnsamble.ENS_Cotizacion_ReporteDetalle(int.Parse(gvDatos.CurrentRow.Cells["Id"].Value.ToString()));
 
             } catch (Exception ex) {

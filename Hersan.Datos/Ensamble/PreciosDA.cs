@@ -64,6 +64,7 @@ namespace Hersan.Datos.Ensamble
                                 obj.CantidadMay = int.Parse(reader["PRE_CantMayoreo"].ToString());
                                 obj.Mayoreo = decimal.Parse(reader["PRE_Mayoreo"].ToString());
                                 obj.AAA = decimal.Parse(reader["PRE_AAA"].ToString());
+                                obj.ExWorks = decimal.Parse(reader["PRE_ExWorks"].ToString());
 
                                 oList.Add(obj);
                             }

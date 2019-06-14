@@ -26,6 +26,7 @@ namespace Hersan.Datos.Ensamble
                         cmd.Parameters.AddWithValue("@IdEntidad", obj.Entidad.Id);                        
                         cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Moneda", obj.Moneda.Moneda);
                         cmd.Parameters.AddWithValue("@Precio", obj.Precio);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
@@ -50,6 +51,7 @@ namespace Hersan.Datos.Ensamble
                         cmd.Parameters.AddWithValue("@IdEntidad", obj.Entidad.Id);
                         cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Moneda", obj.Moneda.Moneda);
                         cmd.Parameters.AddWithValue("@Precio", obj.Precio);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
                         cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
@@ -71,7 +73,6 @@ namespace Hersan.Datos.Ensamble
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_SERVICIOS_OBTENER, conn)) {
-
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         /*SE OBTIENEN LOS REFLEJANTES */
@@ -84,6 +85,7 @@ namespace Hersan.Datos.Ensamble
                                 obj.Entidad.Nombre = reader["ENT_Nombre"].ToString();
                                 obj.Clave = reader["SER_Clave"].ToString();
                                 obj.Nombre = reader["SER_Nombre"].ToString();
+                                obj.Moneda.Moneda = reader["MON_Moneda"].ToString();
                                 obj.Precio = decimal.Parse(reader["SER_Precio"].ToString());
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["SER_Estatus"].ToString());
 
@@ -97,7 +99,7 @@ namespace Hersan.Datos.Ensamble
                 throw ex;
             }
         }
-        public List<ServiciosBE> ENS_Servicios_Combo(int IdEntidad)
+        public List<ServiciosBE> ENS_Servicios_Combo(int IdEntidad, string Moneda)
         {
             List<ServiciosBE> oList = new List<ServiciosBE>();
             try {
@@ -105,6 +107,7 @@ namespace Hersan.Datos.Ensamble
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_SERVICIOS_COMBO, conn)) {
                         cmd.Parameters.AddWithValue("@IdEntidad", IdEntidad);
+                        cmd.Parameters.AddWithValue("@Moneda", Moneda);
 
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -128,13 +131,14 @@ namespace Hersan.Datos.Ensamble
                 throw ex;
             }
         }
-        public List<ServiciosBE> ENS_ServiciosCotizacion_Combo()
+        public List<ServiciosBE> ENS_ServiciosCotizacion_Combo(string Moneda)
         {
             List<ServiciosBE> oList = new List<ServiciosBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_SERVICIOSCOTIZACION_COMBO, conn)) {
+                        cmd.Parameters.AddWithValue("@Moneda", Moneda);
 
                         cmd.CommandType = CommandType.StoredProcedure;
 

@@ -48,47 +48,51 @@ namespace Hersan.UI.Ensamble
             DataTable oData;
             DataRow oRow;
             try {
-                if (RadMessageBox.Show("Desea guardar los cambios...?",this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                if (cboMonedas.SelectedValue != null) {
+                    if (RadMessageBox.Show("Desea guardar los cambios...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
 
-                    #region Carga de Datos            
-                    oData = new DataTable("Precios");
-                    oData.Columns.Add("PRE_Id");
-                    oData.Columns.Add("TPR_Id");
-                    oData.Columns.Add("PRE_Precio");
-                    oData.Columns.Add("PRE_CantVolumen");
-                    oData.Columns.Add("PRE_Volumen");
-                    oData.Columns.Add("PRE_CantMayoreo");
-                    oData.Columns.Add("PRE_Mayoreo");
-                    oData.Columns.Add("PRE_AAA");
-                    oData.Columns.Add("PRE_ExWorks");
+                        #region Carga de Datos            
+                        oData = new DataTable("Precios");
+                        oData.Columns.Add("PRE_Id");
+                        oData.Columns.Add("TPR_Id");
+                        oData.Columns.Add("PRE_Precio");
+                        oData.Columns.Add("PRE_CantVolumen");
+                        oData.Columns.Add("PRE_Volumen");
+                        oData.Columns.Add("PRE_CantMayoreo");
+                        oData.Columns.Add("PRE_Mayoreo");
+                        oData.Columns.Add("PRE_AAA");
+                        oData.Columns.Add("PRE_ExWorks");
 
-                    oList.ForEach(item => {
-                        if (item.Precio > 0) {
-                            oRow = oData.NewRow();
-                            oRow["PRE_Id"] = item.Id;
-                            oRow["TPR_Id"] = item.Producto.Id;
-                            oRow["PRE_Precio"] = decimal.Parse(item.Precio.ToString());
-                            oRow["PRE_CantVolumen"] = int.Parse(item.CantidadVol.ToString());
-                            oRow["PRE_Volumen"] = decimal.Parse(item.Volumen.ToString());
-                            oRow["PRE_CantMayoreo"] = int.Parse(item.CantidadMay.ToString());
-                            oRow["PRE_Mayoreo"] = decimal.Parse(item.Mayoreo.ToString());
-                            oRow["PRE_AAA"] = decimal.Parse(item.AAA.ToString());
-                            oRow["PRE_ExWorks"] = decimal.Parse(item.ExWorks.ToString());
+                        oList.ForEach(item => {
+                            if (item.Precio > 0) {
+                                oRow = oData.NewRow();
+                                oRow["PRE_Id"] = item.Id;
+                                oRow["TPR_Id"] = item.Producto.Id;
+                                oRow["PRE_Precio"] = decimal.Parse(item.Precio.ToString());
+                                oRow["PRE_CantVolumen"] = int.Parse(item.CantidadVol.ToString());
+                                oRow["PRE_Volumen"] = decimal.Parse(item.Volumen.ToString());
+                                oRow["PRE_CantMayoreo"] = int.Parse(item.CantidadMay.ToString());
+                                oRow["PRE_Mayoreo"] = decimal.Parse(item.Mayoreo.ToString());
+                                oRow["PRE_AAA"] = decimal.Parse(item.AAA.ToString());
+                                oRow["PRE_ExWorks"] = decimal.Parse(item.ExWorks.ToString());
 
-                            oData.Rows.Add(oRow);
+                                oData.Rows.Add(oRow);
+                            }
+                        });
+                        #endregion
+
+                        //PROCESO DE GUARDADO Y ACTUALIZACION
+                        int Result = oEnsamble.ENS_Precios_Guardar(oData, cboMonedas.SelectedValue.ToString(), BaseWinBP.UsuarioLogueado.ID);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al guardar los precios", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Precios guardados correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarDatos();
                         }
-                    });
-                    #endregion
-
-                    //PROCESO DE GUARDADO Y ACTUALIZACION
-                    int Result = oEnsamble.ENS_Precios_Guardar(oData, cboMonedas.SelectedValue.ToString(), BaseWinBP.UsuarioLogueado.ID);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar los precios", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Precios guardados correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                        CargarDatos();
                     }
+                } else {
+                    RadMessageBox.Show("Debe seleccionar una moneda", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al guardar los datos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

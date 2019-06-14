@@ -26,10 +26,6 @@ namespace Hersan.UI.Ensamble
                 Entidades.GroupNames.Add("Familia", ListSortDirection.Ascending);
                 this.gvDatos.GroupDescriptors.Add(Entidades);
 
-                //GroupDescriptor Familias = new GroupDescriptor();
-                //Familias.GroupNames.Add("Familia", ListSortDirection.Ascending);
-                //this.gvDatos.GroupDescriptors.Add(Entidades);
-
                 LimpiarCampos();
                 CargarEntidades();
                 CargarDatos();

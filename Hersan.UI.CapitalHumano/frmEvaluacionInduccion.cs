@@ -26,14 +26,14 @@ namespace Hersan.UI.CapitalHumano
         EvaluacionInduccionBE eva = new EvaluacionInduccionBE();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         List<ExpedientesBE> oExpediente = new List<ExpedientesBE>();
-
+        bool Flag;
         #endregion
 
         private void LimpiarCampos()
         {
             txtIdd.Text = "-1";
             txtApellidos.Text = string.Empty;
-            txtCalif.Text = string.Empty;
+            txtCalif.Text = "0";
             txtIdExp.Text = "0";
             txtObservaciones.Text = string.Empty;
             txtNombres.Text = string.Empty;
@@ -45,10 +45,9 @@ namespace Hersan.UI.CapitalHumano
         {
             bool Flag = true;
             try {
-              
-                Flag = txtIdExp.Text.Trim().Length == 0 ? false : true;
                 Flag = txtCalif.Text.Trim().Length == 0 ? false : true;
                 Flag = txtObservaciones.Text.Trim().Length == 0 ? false : true;
+                Flag = txtIdExp.Text.Trim().Length == 0 ? false : true;                          
                 Flag = txtApellidos.Text.Trim().Length == 0 ? false : true;
                 Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
                 return Flag;
@@ -163,10 +162,13 @@ namespace Hersan.UI.CapitalHumano
                 oData = new DataTable("Respuestass");
                 oData.Columns.Add("EVI_Id");
                 oData.Columns.Add("REV_Id");
-                oData.Columns.Add("REV_Valor1");
-                oData.Columns.Add("REV_Valor2");
-                oData.Columns.Add("REV_Valor3");
                 oData.Columns.Add("REV_Valor4");
+                oData.Columns.Add("REV_Valor3");
+                oData.Columns.Add("REV_Valor2");
+                oData.Columns.Add("REV_Valor1");
+               
+                
+               
                 oDataset.Tables.Add(oData);
                  #endregion
             } catch (Exception ex) {
@@ -198,12 +200,62 @@ namespace Hersan.UI.CapitalHumano
 
                     }
                 }
+                CargarGrid();
             } catch (Exception) {
 
                 throw;
             }
         }
+        private void CargarGrid()
+        {
+           
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            oList.Clear();
+           
+            Flag = false;
 
+            try {
+                if (int.Parse(txtIdExp.Text) > 0) {
+                   
+                    DataTable Aux = oCHumano.CHU_Evaluacion_ReporteDetalle(int.Parse(txtIdExp.Text));
+                    if (Aux.Rows.Count > 0) {
+                        list.Clear();
+                        gvDatos.DataSource = null;
+
+                        #region Detalle Grid
+                        /* EDUCACIÓN */
+                        IList<GridViewRowInfo> gridRows = new List<GridViewRowInfo>();
+                        foreach (DataRow oRow in Aux.Rows) {
+                            list.Add(new PreguntasEvaluacionBE() {
+                               
+                                Id = int.Parse(oRow["REV_Id"].ToString()),
+                                Pregunta = (oRow["PEV_Preguntas"].ToString()),
+                                Valor1 =bool.Parse (oRow["REV_Valor1"].ToString()),
+                                Valor2 = bool.Parse(oRow["REV_Valor2"].ToString()),
+                                Valor3 = bool.Parse(oRow["REV_Valor3"].ToString()),
+                                Valor4 = bool.Parse(oRow["REV_Valor4"].ToString()),
+
+                            });
+                    
+                    }
+
+                        gvDatos.DataSource = list;
+                        #endregion
+
+                        /* DATOS GENERALES DEL PERFIL */
+                        if (Aux.Rows.Count > 0) {
+                            txtCalif.Text = (Aux.Rows[0]["EVI_Calificaciones"].ToString());
+                            txtObservaciones.Text = (Aux.Rows[0]["EVI_Observaciones"].ToString());
+
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                Flag = true;
+            }
+        }
 
 
 
@@ -266,8 +318,8 @@ namespace Hersan.UI.CapitalHumano
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
-              
-                txtId.Text = "-1";
+
+                LimpiarCampos();
 
             } catch (Exception) {
 
@@ -325,12 +377,15 @@ namespace Hersan.UI.CapitalHumano
                 #region Carga Datos Evaluacion           
                 list.ForEach(item => {
                      oRow = oData.Tables["Respuestass"].NewRow();
-                    //oRow["EVI_Id"] = int.Parse(txtId.Text);
+                    oRow["EVI_Id"] = 0;
                     oRow["REV_Id"] = item.Id;
-                    oRow["REV_Valor1"] = item.Valor1;
-                    oRow["REV_Valor2"] = item.Valor2;
-                    oRow["REV_Valor3"] = item.Valor3;
                     oRow["REV_Valor4"] = item.Valor4;
+                    oRow["REV_Valor3"] = item.Valor3;
+                    oRow["REV_Valor2"] = item.Valor2;
+                    oRow["REV_Valor1"] = item.Valor1;
+                   
+                  
+                   
 
                     oData.Tables["Respuestass"].Rows.Add(oRow);
 
@@ -347,7 +402,7 @@ namespace Hersan.UI.CapitalHumano
                     if (Result == 0) {
                         RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo",  this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     } else {
-                        RadMessageBox.Show("Evaluacion número " + Result.ToString()+"realizda correctamente\n "  , this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        RadMessageBox.Show("Evaluacion número " +""+ Result.ToString()+" "+"realizda correctamente\n "  , this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
 
                         LimpiarCampos();
 
@@ -437,8 +492,9 @@ namespace Hersan.UI.CapitalHumano
             int val = 0;
      if (txtCalif.Text!="")
              val = int.Parse(txtCalif.Text);
-            if (val > 10) {
-                errorProvider1.SetError(txtCalif, "Debe de ser un valor inferior o igual a 10");
+           
+            if (val <=0 || val>=11) {
+                errorProvider1.SetError(txtCalif, "la calificacion tiene que ser un valor entre 0 y 11");
                 e.Cancel = true;
             } else
                 errorProvider1.Clear();

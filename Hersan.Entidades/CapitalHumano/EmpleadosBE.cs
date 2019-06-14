@@ -20,7 +20,8 @@ namespace Hersan.Entidades.CapitalHumano
             TipoInfonavit = string.Empty;
             FechaAltaIMSS = string.Empty;
             NumeroCuenta = string.Empty;
-            SueldoAprobado = 0;
+            Pension = 0;
+            Ahorro = 0;
             EstatusEmpleado = string.Empty;
             FechaIngreso = string.Empty;
             DatosUsuarios = new GeneralBE();
@@ -33,7 +34,8 @@ namespace Hersan.Entidades.CapitalHumano
         public string TipoInfonavit { get; set; }
         public string FechaAltaIMSS { get; set; }
         public string NumeroCuenta { get; set; }
-        public decimal SueldoAprobado { get; set; }
+        public decimal Pension { get; set; }
+        public decimal Ahorro { get; set; }
         public string EstatusEmpleado { get; set; }
         public string FechaIngreso { get; set; }
         public GeneralBE DatosUsuarios { get; set; }

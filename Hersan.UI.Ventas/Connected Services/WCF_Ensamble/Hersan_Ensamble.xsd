@@ -152,6 +152,7 @@
       <xs:element minOccurs="0" name="CantidadVol" type="xs:int" />
       <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
       <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q13:GeneralBE" />
+      <xs:element minOccurs="0" name="ExWorks" type="xs:decimal" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Mayoreo" type="xs:decimal" />
       <xs:element minOccurs="0" name="Precio" type="xs:decimal" />
@@ -219,6 +220,7 @@
       <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q22:GeneralBE" />
       <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:ArrayOfPedidoDetalleBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
       <xs:element minOccurs="0" name="NoPedido" type="xs:int" />
       <xs:element minOccurs="0" name="Pedido" type="xs:boolean" />
       <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />

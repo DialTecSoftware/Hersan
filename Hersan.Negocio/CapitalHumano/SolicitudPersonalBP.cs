@@ -22,5 +22,9 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new SolicitudPersonalDA().CHU_SolicitudP_Actualizar(obj);
         }
+        public int CHU_SolicitudP_ActualizarDictamen(SolicitudPersonalBE obj)
+        {
+            return new SolicitudPersonalDA().CHU_SolicitudP_ActualizarDictamen(obj);
+        }
     }
 }

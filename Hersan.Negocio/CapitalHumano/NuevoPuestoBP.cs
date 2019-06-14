@@ -22,5 +22,9 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new NuevoPuestoDA().CHU_NuevoPuesto_Actualizar(obj);
         }
+        public int CHU_NuevoPuesto_ActualizarDictamen(NuevoPuestoBE obj)
+        {
+            return new NuevoPuestoDA().CHU_NuevoPuesto_ActualizarDictamen(obj);
+        }
     }
 }

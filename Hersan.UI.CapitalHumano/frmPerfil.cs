@@ -32,6 +32,10 @@ namespace Hersan.UI.CapitalHumano
         {
             InitializeComponent();
         }
+
+        
+
+
         private void frmPerfil_Load(object sender, EventArgs e)
         {
             try {
@@ -58,7 +62,7 @@ namespace Hersan.UI.CapitalHumano
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
-              
+                LimpiarCampos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -108,25 +112,27 @@ namespace Hersan.UI.CapitalHumano
                     oData.Rows.Add(oRow);
                     #endregion
                 });
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
 
-                /* ALTA DE PERFIL */
-                if (int.Parse(txtId.Text) == 0) {
-                    int Result = oCHumano.CHU_Perfiles_Guardar(obj, oData);
-                    if (Result != 0) {
-                        RadMessageBox.Show("Perfil guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    /* ALTA DE PERFIL */
+                    if (int.Parse(txtId.Text) == 0) {
+                        int Result = oCHumano.CHU_Perfiles_Guardar(obj, oData);
+                        if (Result != 0) {
+                            RadMessageBox.Show("Perfil guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        } else {
+                            RadMessageBox.Show("Ocurrió un error al guardar el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
                     } else {
-                        RadMessageBox.Show("Ocurrió un error al guardar el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        int Result = oCHumano.CHU_Perfiles_Actualiza(obj, oData);
+                        if (Result != 0) {
+                            RadMessageBox.Show("Perfil actualizado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        } else {
+                            RadMessageBox.Show("Ocurrió un error al actualizar el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
                     }
-                } else {
-                    int Result = oCHumano.CHU_Perfiles_Actualiza(obj, oData);
-                    if (Result != 0) {
-                        RadMessageBox.Show("Perfil actualizado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    } else {
-                        RadMessageBox.Show("Ocurrió un error al actualizar el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    }
-                }
-                LimpiarCampos();
-               
+       
+                    LimpiarCampos();
+                } 
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al guardar el perfil\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
@@ -287,6 +293,7 @@ namespace Hersan.UI.CapitalHumano
             try {
               
                 if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
+                    LimpiarCampos();
                     CargarPuntos();
                     //CargarGridEdu();
                     CargarGrid();
@@ -409,7 +416,6 @@ namespace Hersan.UI.CapitalHumano
             try {
                 oList.Clear();
                 txtId.Text = "0";
-                cboEntidad.SelectedIndex = 0;
                 cboCompetencia.SelectedIndex = 1;
                 cboEducacion.SelectedIndex = 0;
                 cboExperiencia.SelectedIndex = 0;

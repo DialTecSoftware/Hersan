@@ -157,7 +157,7 @@
             this.btnGuardar.DrawText = true;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Text = "";
+            this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 

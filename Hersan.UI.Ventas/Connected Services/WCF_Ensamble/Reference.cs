@@ -58,10 +58,10 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_ServiciosCotizacion_Combo();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_GuardarResponse")]
-        int ENS_Precios_Guardar(System.Data.DataTable oData, int IdUsuario);
+        int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_ObtenerResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener();
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener(string Moneda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_GuardarResponse")]
         int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
@@ -186,12 +186,12 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
             return base.Channel.ENS_ServiciosCotizacion_Combo();
         }
         
-        public int ENS_Precios_Guardar(System.Data.DataTable oData, int IdUsuario) {
-            return base.Channel.ENS_Precios_Guardar(oData, IdUsuario);
+        public int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario) {
+            return base.Channel.ENS_Precios_Guardar(oData, Moneda, IdUsuario);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener() {
-            return base.Channel.ENS_Precios_Obtener();
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener(string Moneda) {
+            return base.Channel.ENS_Precios_Obtener(Moneda);
         }
         
         public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario) {

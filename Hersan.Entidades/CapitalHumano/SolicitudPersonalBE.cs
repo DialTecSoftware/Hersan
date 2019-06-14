@@ -17,8 +17,7 @@ namespace Hersan.Entidades.CapitalHumano
             Sueldo = 0;
             Indicadores = string.Empty;
             Dictamen = string.Empty;
-            Observaciones = string.Empty;
-            Autorizado = false;
+            Estado = string.Empty;
             Justificacion = string.Empty;
             Entidades = new EntidadesBE();
             Departamentos = new DepartamentosBE();
@@ -33,9 +32,7 @@ namespace Hersan.Entidades.CapitalHumano
         public string Indicadores { get; set; }
         public string  Justificacion { get; set; }
         public string Dictamen { get; set; }
-        public string Observaciones { get; set; }
-        public bool Autorizado { get; set; }
-        public bool NoAutorizado { get; set; }
+        public string Estado { get; set; }
         public EntidadesBE Entidades { get; set; }
         public PuestosBE Puestos { get; set; }
         public DepartamentosBE Departamentos { get; set; }

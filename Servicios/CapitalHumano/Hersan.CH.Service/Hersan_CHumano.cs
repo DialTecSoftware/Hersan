@@ -38,10 +38,14 @@ namespace Hersan.CH.Service
             {
                 return new SolicitudPersonalBP().CHU_SolicitudP_Guardar(obj);
             }
-            public int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj)
-            {
+        public int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj)
+        {
                 return new SolicitudPersonalBP().CHU_SolicitudP_Actualizar(obj);
-            }
+        }
+        public int CHU_SolicitudP_ActualizarDictamen(SolicitudPersonalBE obj)
+        {
+            return new SolicitudPersonalBP().CHU_SolicitudP_ActualizarDictamen(obj);
+        }
         #endregion
 
         #region DictamenSustitucion
@@ -134,6 +138,11 @@ namespace Hersan.CH.Service
         public int CHU_NuevoPuesto_Actualizar(NuevoPuestoBE obj)
         {
             return new NuevoPuestoBP().CHU_NuevoPuesto_Actualizar(obj);
+        }
+
+        public int CHU_NuevoPuesto_ActualizarDictamen(NuevoPuestoBE obj)
+        {
+            return new NuevoPuestoBP().CHU_NuevoPuesto_ActualizarDictamen(obj);
         }
 
         #endregion

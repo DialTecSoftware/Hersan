@@ -25,15 +25,15 @@ namespace Hersan.UI.CapitalHumano
         private void LimpiarCampos()
         {
             txtApellidos.Text = string.Empty;
-            txtFonacot.Text = string.Empty;
+            txtFonacot.Text = "0";
             txtId.Text = "0";
-            txtCuenta.Text = string.Empty;
+            txtCuenta.Text ="0000-0000-0000-0000";
             txtIdExp.Text ="0";
-            txtInfonavit.Text = string.Empty;
+            txtInfonavit.Text = "0";
             txtNombres.Text = string.Empty;
             txtNumEmp.Text = "0";
-         
-            txtSueldo.Text = string.Empty;
+            txtcantidad.Text = "0";
+            txtPension.Text = "0";
             cboEstatus.SelectedIndex = 0;
             cboTipoF.SelectedIndex = 0;
             dtFecha.Value = DateTime.Today;
@@ -57,9 +57,16 @@ namespace Hersan.UI.CapitalHumano
             bool Flag = true;
             try {
                
-                Flag = txtSueldo.Text.Trim().Length == 0 ? false : true;
-                Flag = txtFonacot.Text.Trim().Length == 0 ? false : true;
-               
+                if (SiVoluntario.IsChecked == true) {
+                    Flag = txtcantidad.Text.Trim().Length == 0 ? false : true;
+                }
+               else if (rdbUi.IsChecked == true) {
+                    Flag = txtInfonavit.Text.Trim().Length == 0 ? false : true;
+                }
+             else   if (rdbUi.IsChecked == true) {
+                    Flag = txtFonacot.Text.Trim().Length == 0 ? false : true;
+                }
+                Flag = txtPension.Text.Trim().Length == 0 ? false : true;                      
                 Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
                 Flag = txtNumEmp.Text.Trim().Length == 0 ? false : true;
                 Flag = txtCuenta.Text.Trim().Length == 0 ? false : true;
@@ -108,12 +115,16 @@ namespace Hersan.UI.CapitalHumano
                     if (item.Count > 0) {
                         txtId.Text = item[0].Id.ToString();
                         txtNumEmp.Text = item[0].Numero.ToString();
-                   
+                        txtcantidad.Text = item[0].Ahorro.ToString();
                         txtCuenta.Text = item[0].NumeroCuenta;
+                        if (item[0].Ahorro > 0) 
+                        {
+                            SiVoluntario.IsChecked = true;
+                        }
                         txtFonacot.Text = item[0].Fonacot;
                         txtInfonavit.Text = item[0].Infonavit;
                 
-                        txtSueldo.Text = item[0].SueldoAprobado.ToString();
+                        txtPension.Text = item[0].Pension.ToString();
                         cboEstatus.Text = Convert.ToString(item[0].EstatusEmpleado);
                         cboTipoF.Text = Convert.ToString(item[0].TipoInfonavit);
                         dtFecha.Value = DateTime.Parse( item[0].FechaIngreso.ToString());
@@ -133,10 +144,13 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 LimpiarCampos();
-                txtInfonavit.Visible = true; ;
-                cboTipoF.Visible = true;
-                lblFona.Visible = true;
+                //txtInfonavit.Visible = true; ;
+                //cboTipoF.Visible = true;
+                //lblFona.Visible = true;
 
+                NoVoluntario.IsChecked = false;
+                rdbNo.IsChecked = false;
+                rdbNon.IsChecked = false;
             } catch (Exception) {
 
                 throw;
@@ -158,6 +172,10 @@ namespace Hersan.UI.CapitalHumano
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
+                if (oList.FindAll(item=> item.Numero== int.Parse(txtNumEmp.Text)).Count >0 ) 
+                {
+                    RadMessageBox.Show(" Ya existe un empleado con este numero\n Ingresa un ...", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
 
                 
                 #region Entidades
@@ -170,34 +188,36 @@ namespace Hersan.UI.CapitalHumano
                 obj.NumeroCuenta = txtCuenta.Text;
                 obj.FechaIngreso =  dtFecha.Value.Year.ToString() +"-"+ dtFecha.Value.Month.ToString().PadLeft(2, '0') +"-"+ dtFecha.Value.Day.ToString().PadLeft(2, '0');
                 obj.FechaAltaIMSS = dtIMSS.Value.Year.ToString() + "-" + dtIMSS.Value.Month.ToString().PadLeft(2, '0') + "-" + dtIMSS.Value.Day.ToString().PadLeft(2, '0');
-                obj.SueldoAprobado = decimal.Parse(txtSueldo.Text);
+                obj.Pension = decimal.Parse(txtPension.Text)/100;
+                obj.Ahorro = decimal.Parse(txtcantidad.Text);
                 obj.DatosUsuarios.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                 #endregion
 
 
 
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
 
+                    //PROCESO DE GUARDADO Y ACTUALIZACION
+                    if (txtId.Text == "0") {
+                        int Result = oCHumano.CHUEmpleados_Guardar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Solicitud enviada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
 
-                //PROCESO DE GUARDADO Y ACTUALIZACION
-                if (txtId.Text == "0") {
-                    int Result = oCHumano.CHUEmpleados_Guardar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
                     } else {
-                        RadMessageBox.Show("Solicitud enviada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
-                                           
-                    }
-                } else {
-                    oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
-                    int Result = oCHumano.CHU_EmpleadosActualizar(obj);
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        LimpiarCampos();
+                        oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
+                        int Result = oCHumano.CHU_EmpleadosActualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
 
 
+                        }
                     }
                 }
             } catch (Exception ex) {
@@ -273,8 +293,12 @@ namespace Hersan.UI.CapitalHumano
 
             if (rdbSi.IsChecked == true) {
                 txtFonacot.Visible = true;
+                lblNumfona.Visible = true;
             } else
+            if (rdbSi.IsChecked == false) {
                 txtFonacot.Visible = false;
+                lblNumfona.Visible = false;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -327,11 +351,53 @@ namespace Hersan.UI.CapitalHumano
                 txtInfonavit.Visible = true; ;
                 cboTipoF.Show();
                 lblFona.Show();
+                lblinfonavit.Visible = true;
 
             } else
+              if (rdbUi.IsChecked == false)
+            {
                 txtInfonavit.Visible = false; ;
                 cboTipoF.Hide();
                 lblFona.Hide();
+                lblinfonavit.Visible = false;
+            }
+           
+
+           
+        }
+
+        private void cboTipoF_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            if (cboTipoF.SelectedIndex == 0)
+            {
+                lblinfonavit.Text = "Cuota:";
+            }
+            else
+            if (cboTipoF.SelectedIndex == 1)
+            {
+                lblinfonavit.Text = "Porc :";
+
+            }
+            else
+            if (cboTipoF.SelectedIndex == 2) 
+            {
+                lblinfonavit.Text = "VSM :";
+            }
+
+        }
+
+        private void SiVoluntario_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            if (SiVoluntario.IsChecked==true) 
+            {
+                lblcantidad.Visible = true;
+                txtcantidad.Visible = true;
+            }
+            else
+                if (SiVoluntario.IsChecked==false) {
+                lblcantidad.Visible = false;
+                txtcantidad.Visible = false;
+            }
         }
     }
 }

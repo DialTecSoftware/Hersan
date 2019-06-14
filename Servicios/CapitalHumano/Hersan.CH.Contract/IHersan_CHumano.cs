@@ -27,6 +27,8 @@ namespace Hersan.CH.Contract
         int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj);
         [OperationContract]
         int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj);
+        [OperationContract]
+        int CHU_SolicitudP_ActualizarDictamen(SolicitudPersonalBE obj);
 
         #endregion
 
@@ -80,6 +82,8 @@ namespace Hersan.CH.Contract
         int CHU_NuevoPuesto_Guardar(NuevoPuestoBE obj);
         [OperationContract]
         int CHU_NuevoPuesto_Actualizar(NuevoPuestoBE obj);
+        [OperationContract]
+        int CHU_NuevoPuesto_ActualizarDictamen(NuevoPuestoBE obj);
 
         #endregion
 

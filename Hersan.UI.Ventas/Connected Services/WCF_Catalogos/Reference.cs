@@ -15,6 +15,18 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCF_Catalogos.IHersan_Catalogos")]
     public interface IHersan_Catalogos {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_GuardarResponse")]
+        int ABC_Monedas_Guardar(Hersan.Entidades.Catalogos.MonedasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ActualizarResponse")]
+        int ABC_Monedas_Actualizar(Hersan.Entidades.Catalogos.MonedasBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Combo();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE> ABCEmpresas_Obtener(int IdEmpresa);
         
@@ -159,6 +171,9 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ActualizarResponse")]
         int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_ObtenerResponse")]
+        System.Data.DataTable CHU_OrganigramaXML_Obtener(int parent);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais);
         
@@ -294,6 +309,22 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
         
         public Hersan_CatalogosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Obtener() {
+            return base.Channel.ABC_Monedas_Obtener();
+        }
+        
+        public int ABC_Monedas_Guardar(Hersan.Entidades.Catalogos.MonedasBE obj) {
+            return base.Channel.ABC_Monedas_Guardar(obj);
+        }
+        
+        public int ABC_Monedas_Actualizar(Hersan.Entidades.Catalogos.MonedasBE obj) {
+            return base.Channel.ABC_Monedas_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Combo() {
+            return base.Channel.ABC_Monedas_Combo();
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE> ABCEmpresas_Obtener(int IdEmpresa) {
@@ -486,6 +517,10 @@ namespace Hersan.UI.Ensamble.WCF_Catalogos {
         
         public int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj) {
             return base.Channel.CHUOrganigrama_Actualizar(obj);
+        }
+        
+        public System.Data.DataTable CHU_OrganigramaXML_Obtener(int parent) {
+            return base.Channel.CHU_OrganigramaXML_Obtener(parent);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais) {

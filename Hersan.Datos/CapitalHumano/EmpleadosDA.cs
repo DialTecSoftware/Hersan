@@ -33,7 +33,8 @@ namespace Hersan.Datos.CapitalHumano
                         cmd.Parameters.AddWithValue("@IMSS", obj.FechaAltaIMSS);
                         cmd.Parameters.AddWithValue("@Infonavit", obj.Infonavit);
                         cmd.Parameters.AddWithValue("@Fonacot", obj.Fonacot);
-                        cmd.Parameters.AddWithValue("@Sueldo", obj.SueldoAprobado);
+                        cmd.Parameters.AddWithValue("@Pension", obj.Pension);
+                        cmd.Parameters.AddWithValue("@Ahorro", obj.Ahorro);
                         cmd.Parameters.AddWithValue("@Cuenta", obj.NumeroCuenta);
                         cmd.Parameters.AddWithValue("@EstatusEmp", obj.EstatusEmpleado);
                         cmd.Parameters.AddWithValue("@Fecha", obj.FechaIngreso);
@@ -61,7 +62,8 @@ namespace Hersan.Datos.CapitalHumano
                         cmd.Parameters.AddWithValue("@IMSS", obj.FechaAltaIMSS);
                         cmd.Parameters.AddWithValue("@Infonavit", obj.Infonavit);
                         cmd.Parameters.AddWithValue("@Fonacot", obj.Fonacot);
-                        cmd.Parameters.AddWithValue("@Sueldo", obj.SueldoAprobado);
+                        cmd.Parameters.AddWithValue("@Pension", obj.Pension);
+                        cmd.Parameters.AddWithValue("@Ahorro", obj.Ahorro);
                         cmd.Parameters.AddWithValue("@Cuenta", obj.NumeroCuenta);
                         cmd.Parameters.AddWithValue("@EstatusEmp", obj.EstatusEmpleado);
                         cmd.Parameters.AddWithValue("@Fecha", obj.FechaIngreso);
@@ -99,7 +101,8 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Infonavit = reader["EMP_Infonavit"].ToString();
                                 obj.Fonacot = reader["EMP_Fonacot"].ToString();
                                 obj.FechaIngreso = reader["EMP_FechaIngreso"].ToString();
-                                obj.SueldoAprobado = decimal.Parse(reader["EMP_SueldoAprobado"].ToString());
+                                obj.Pension = decimal.Parse(reader["EMP_Pension"].ToString());
+                                obj.Ahorro = decimal.Parse(reader["EMP_Ahorro"].ToString());
                                 oList.Add(obj);
                             }
                         }

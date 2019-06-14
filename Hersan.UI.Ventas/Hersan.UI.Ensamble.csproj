@@ -255,6 +255,9 @@
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.wsdl" />
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.xsd">
       <SubType>Designer</SubType>
@@ -275,6 +278,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble7.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />

@@ -58,8 +58,6 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
@@ -81,8 +79,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
-            this.documentWindow1 = new Telerik.WinControls.UI.Docking.DocumentWindow();
-            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.documentWindow2 = new Telerik.WinControls.UI.Docking.DocumentWindow();
+            this.gvDictamen = new Telerik.WinControls.UI.RadGridView();
             this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.toolWindow1 = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -95,16 +93,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.documentContainer2 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
-            this.documentWindow2 = new Telerik.WinControls.UI.Docking.DocumentWindow();
-            this.gvDictamen = new Telerik.WinControls.UI.RadGridView();
+            this.documentWindow1 = new Telerik.WinControls.UI.Docking.DocumentWindow();
+            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
-            this.documentWindow1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
+            this.documentWindow2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDictamen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDictamen.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
             this.toolTabStrip1.SuspendLayout();
             this.toolWindow1.SuspendLayout();
@@ -117,9 +115,9 @@
             this.documentContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
             this.documentTabStrip1.SuspendLayout();
-            this.documentWindow2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDictamen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDictamen.MasterTemplate)).BeginInit();
+            this.documentWindow1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,8 +146,6 @@
             this.commandBarSeparator4,
             this.btnGuardar,
             this.commandBarSeparator1,
-            this.btnEliminar,
-            this.commandBarSeparator2,
             this.btnSalir,
             this.commandBarSeparator3,
             this.commandBarLabel1});
@@ -192,22 +188,6 @@
             this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
             this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayName = "commandBarButton2";
-            this.btnEliminar.DrawText = true;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // commandBarSeparator2
-            // 
-            this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
-            this.commandBarSeparator2.Name = "commandBarSeparator2";
-            this.commandBarSeparator2.VisibleInOverflowMenu = false;
             // 
             // btnSalir
             // 
@@ -393,7 +373,7 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.documentWindow2;
+            this.radDock1.ActiveWindow = this.toolWindow1;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.documentContainer2);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -409,31 +389,29 @@
             this.radDock1.TabIndex = 3;
             this.radDock1.TabStop = false;
             // 
-            // documentWindow1
+            // documentWindow2
             // 
-            this.documentWindow1.Controls.Add(this.gvDatos);
-            this.documentWindow1.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
-            this.documentWindow1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.documentWindow1.Location = new System.Drawing.Point(6, 29);
-            this.documentWindow1.Name = "documentWindow1";
-            this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(732, 419);
-            this.documentWindow1.Text = "SUSTITUCION DE PERSONAL";
-            this.documentWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
+            this.documentWindow2.Controls.Add(this.gvDictamen);
+            this.documentWindow2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.documentWindow2.Location = new System.Drawing.Point(6, 29);
+            this.documentWindow2.Name = "documentWindow2";
+            this.documentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
+            this.documentWindow2.Size = new System.Drawing.Size(732, 394);
+            this.documentWindow2.Text = "DICTAMEN DE SUSTITUCION";
             // 
-            // gvDatos
+            // gvDictamen
             // 
-            this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 0);
+            this.gvDictamen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDictamen.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
-            this.gvDatos.MasterTemplate.AllowAddNewRow = false;
-            this.gvDatos.MasterTemplate.AllowColumnReorder = false;
-            this.gvDatos.MasterTemplate.AllowDeleteRow = false;
-            this.gvDatos.MasterTemplate.AllowDragToGroup = false;
-            this.gvDatos.MasterTemplate.AllowEditRow = false;
-            this.gvDatos.MasterTemplate.AutoExpandGroups = true;
+            this.gvDictamen.MasterTemplate.AllowAddNewRow = false;
+            this.gvDictamen.MasterTemplate.AllowColumnReorder = false;
+            this.gvDictamen.MasterTemplate.AllowDeleteRow = false;
+            this.gvDictamen.MasterTemplate.AllowDragToGroup = false;
+            this.gvDictamen.MasterTemplate.AllowEditRow = false;
+            this.gvDictamen.MasterTemplate.AutoExpandGroups = true;
             gridViewTextBoxColumn11.FieldName = "Entidades.Nombre";
             gridViewTextBoxColumn11.HeaderText = "Entidades";
             gridViewTextBoxColumn11.Name = "ENT_Nombre";
@@ -474,7 +452,7 @@
             gridViewTextBoxColumn20.HeaderText = "Dictamen";
             gridViewTextBoxColumn20.IsVisible = false;
             gridViewTextBoxColumn20.Name = "Dictamen";
-            this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.gvDictamen.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn11,
             gridViewTextBoxColumn12,
             gridViewTextBoxColumn13,
@@ -485,15 +463,15 @@
             gridViewTextBoxColumn18,
             gridViewTextBoxColumn19,
             gridViewTextBoxColumn20});
-            this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition2;
-            this.gvDatos.Name = "gvDatos";
-            this.gvDatos.ShowGroupPanel = false;
-            this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(732, 419);
-            this.gvDatos.TabIndex = 10;
-            this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged_1);
+            this.gvDictamen.MasterTemplate.ShowRowHeaderColumn = false;
+            this.gvDictamen.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gvDictamen.Name = "gvDictamen";
+            this.gvDictamen.ShowGroupPanel = false;
+            this.gvDictamen.ShowNoDataText = false;
+            this.gvDictamen.ShowRowErrors = false;
+            this.gvDictamen.Size = new System.Drawing.Size(732, 394);
+            this.gvDictamen.TabIndex = 11;
+            this.gvDictamen.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDictamen_CurrentRowChanged);
             // 
             // toolTabStrip1
             // 
@@ -636,29 +614,31 @@
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
-            // documentWindow2
+            // documentWindow1
             // 
-            this.documentWindow2.Controls.Add(this.gvDictamen);
-            this.documentWindow2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.documentWindow2.Location = new System.Drawing.Point(6, 29);
-            this.documentWindow2.Name = "documentWindow2";
-            this.documentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow2.Size = new System.Drawing.Size(732, 394);
-            this.documentWindow2.Text = "DICTAMEN DE SUSTITUCION";
+            this.documentWindow1.Controls.Add(this.gvDatos);
+            this.documentWindow1.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
+            this.documentWindow1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.documentWindow1.Location = new System.Drawing.Point(6, 29);
+            this.documentWindow1.Name = "documentWindow1";
+            this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
+            this.documentWindow1.Size = new System.Drawing.Size(732, 419);
+            this.documentWindow1.Text = "SUSTITUCION DE PERSONAL";
+            this.documentWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
-            // gvDictamen
+            // gvDatos
             // 
-            this.gvDictamen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDictamen.Location = new System.Drawing.Point(0, 0);
+            this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDatos.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
-            this.gvDictamen.MasterTemplate.AllowAddNewRow = false;
-            this.gvDictamen.MasterTemplate.AllowColumnReorder = false;
-            this.gvDictamen.MasterTemplate.AllowDeleteRow = false;
-            this.gvDictamen.MasterTemplate.AllowDragToGroup = false;
-            this.gvDictamen.MasterTemplate.AllowEditRow = false;
-            this.gvDictamen.MasterTemplate.AutoExpandGroups = true;
+            this.gvDatos.MasterTemplate.AllowAddNewRow = false;
+            this.gvDatos.MasterTemplate.AllowColumnReorder = false;
+            this.gvDatos.MasterTemplate.AllowDeleteRow = false;
+            this.gvDatos.MasterTemplate.AllowDragToGroup = false;
+            this.gvDatos.MasterTemplate.AllowEditRow = false;
+            this.gvDatos.MasterTemplate.AutoExpandGroups = true;
             gridViewTextBoxColumn1.FieldName = "Entidades.Nombre";
             gridViewTextBoxColumn1.HeaderText = "Entidades";
             gridViewTextBoxColumn1.Name = "ENT_Nombre";
@@ -699,7 +679,7 @@
             gridViewTextBoxColumn10.HeaderText = "Dictamen";
             gridViewTextBoxColumn10.IsVisible = false;
             gridViewTextBoxColumn10.Name = "Dictamen";
-            this.gvDictamen.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
@@ -710,15 +690,15 @@
             gridViewTextBoxColumn8,
             gridViewTextBoxColumn9,
             gridViewTextBoxColumn10});
-            this.gvDictamen.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDictamen.MasterTemplate.ViewDefinition = tableViewDefinition1;
-            this.gvDictamen.Name = "gvDictamen";
-            this.gvDictamen.ShowGroupPanel = false;
-            this.gvDictamen.ShowNoDataText = false;
-            this.gvDictamen.ShowRowErrors = false;
-            this.gvDictamen.Size = new System.Drawing.Size(732, 394);
-            this.gvDictamen.TabIndex = 11;
-            this.gvDictamen.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDictamen_CurrentRowChanged);
+            this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.gvDatos.Name = "gvDatos";
+            this.gvDatos.ShowGroupPanel = false;
+            this.gvDatos.ShowNoDataText = false;
+            this.gvDatos.ShowRowErrors = false;
+            this.gvDatos.Size = new System.Drawing.Size(732, 419);
+            this.gvDatos.TabIndex = 10;
+            this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged_1);
             // 
             // frmDictamenSustitucion
             // 
@@ -743,9 +723,9 @@
             this.radPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).EndInit();
             this.radDock1.ResumeLayout(false);
-            this.documentWindow1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
+            this.documentWindow2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDictamen.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDictamen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
             this.toolTabStrip1.ResumeLayout(false);
             this.toolWindow1.ResumeLayout(false);
@@ -760,9 +740,9 @@
             this.documentContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
             this.documentTabStrip1.ResumeLayout(false);
-            this.documentWindow2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDictamen.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDictamen)).EndInit();
+            this.documentWindow1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -776,8 +756,6 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement1;
         private Telerik.WinControls.UI.CommandBarButton btnGuardar;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator1;
-        private Telerik.WinControls.UI.CommandBarButton btnEliminar;
-        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
         private Telerik.WinControls.UI.CommandBarRowElement commandBarRowElement2;
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.UI.Docking.RadDock radDock1;

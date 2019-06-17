@@ -196,6 +196,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="IdEntidad" type="xs:int" />
+        <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -208,7 +209,9 @@
   </xs:element>
   <xs:element name="ENS_ServiciosCotizacion_Combo">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ENS_ServiciosCotizacion_ComboResponse">
@@ -276,6 +279,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
         <xs:element minOccurs="0" name="Colores" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Reflejantes" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Accesorios" nillable="true" type="xs:string" />
@@ -306,6 +310,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
         <xs:element minOccurs="0" name="Colores" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Reflejantes" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Accesorios" nillable="true" type="xs:string" />
@@ -337,7 +342,10 @@
   </xs:element>
   <xs:element name="ENS_ProductosCotizacion_Combo">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Nacional" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ENS_ProductosCotizacion_ComboResponse">
@@ -526,6 +534,23 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Cotizacion_ConsultaResult" nillable="true" type="q24:ArrayOfPedidosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Pedido_Consulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdAgente" type="xs:int" />
+        <xs:element minOccurs="0" name="Pedido" type="xs:int" />
+        <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_Pedido_ConsultaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="ENS_Pedido_ConsultaResult" nillable="true" type="q25:ArrayOfPedidosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

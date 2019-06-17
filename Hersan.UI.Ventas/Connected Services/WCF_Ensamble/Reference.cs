@@ -52,10 +52,10 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Obtener();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_ComboResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Combo(int IdEntidad);
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Combo(int IdEntidad, string Moneda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ServiciosCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ServiciosCotizacion_ComboResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_ServiciosCotizacion_Combo();
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_ServiciosCotizacion_Combo(string Moneda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_GuardarResponse")]
         int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario);
@@ -64,16 +64,16 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener(string Moneda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_GuardarResponse")]
-        int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
+        int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_ActualizarResponse")]
-        int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus);
+        int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosFicha_Obtener(Hersan.Entidades.Ensamble.ProductoEnsambleBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosCotizacion_ComboResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosCotizacion_Combo();
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_CarcasasCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_CarcasasCotizacion_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoresBE> ENS_CarcasasCotizacion_Combo(int IdFicha);
@@ -101,6 +101,9 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ConsultaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_ConsultaResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -178,12 +181,12 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
             return base.Channel.ENS_Servicios_Obtener();
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Combo(int IdEntidad) {
-            return base.Channel.ENS_Servicios_Combo(IdEntidad);
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Combo(int IdEntidad, string Moneda) {
+            return base.Channel.ENS_Servicios_Combo(IdEntidad, Moneda);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_ServiciosCotizacion_Combo() {
-            return base.Channel.ENS_ServiciosCotizacion_Combo();
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_ServiciosCotizacion_Combo(string Moneda) {
+            return base.Channel.ENS_ServiciosCotizacion_Combo(Moneda);
         }
         
         public int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario) {
@@ -194,20 +197,20 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
             return base.Channel.ENS_Precios_Obtener(Moneda);
         }
         
-        public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario) {
-            return base.Channel.ENS_ProductosFicha_Guardar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario);
+        public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario) {
+            return base.Channel.ENS_ProductosFicha_Guardar(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario);
         }
         
-        public int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus) {
-            return base.Channel.ENS_ProductosFicha_Actualizar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
+        public int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus) {
+            return base.Channel.ENS_ProductosFicha_Actualizar(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosFicha_Obtener(Hersan.Entidades.Ensamble.ProductoEnsambleBE obj) {
             return base.Channel.ENS_ProductosFicha_Obtener(obj);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosCotizacion_Combo() {
-            return base.Channel.ENS_ProductosCotizacion_Combo();
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda) {
+            return base.Channel.ENS_ProductosCotizacion_Combo(Nacional, Moneda);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoresBE> ENS_CarcasasCotizacion_Combo(int IdFicha) {
@@ -244,6 +247,10 @@ namespace Hersan.UI.Ensamble.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final) {
             return base.Channel.ENS_Cotizacion_Consulta(IdAgente, IdCotiza, Inicial, Final);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final) {
+            return base.Channel.ENS_Pedido_Consulta(IdAgente, Pedido, Inicial, Final);
         }
     }
 }

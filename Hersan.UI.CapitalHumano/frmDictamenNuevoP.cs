@@ -55,7 +55,7 @@ namespace Hersan.UI.CapitalHumano
                 var dList = oList.FindAll(item => item.Estado == "ACEPTADO" || item.Estado == "RECHAZADO");
                 gvDatos.DataSource = lista;
                 gvDictamen.DataSource = dList;
-                btnEliminar.Enabled = false;
+               
 
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las propuestas de puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

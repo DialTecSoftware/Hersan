@@ -123,12 +123,14 @@ namespace Hersan.Datos.Ensamble
                                 obj.Id = int.Parse(reader["COT_Id"].ToString());
                                 obj.Cliente.Id = int.Parse(reader["CLI_Id"].ToString());
                                 obj.Cliente.Nombre = reader["CLI_Nombre"].ToString();
+                                obj.Cliente.VIP = bool.Parse(reader["CLI_VIP"].ToString());
                                 obj.Proyecto = reader["COT_Proyecto"].ToString();
                                 obj.Semaforo = int.Parse(reader["COT_Semaforo"].ToString());
                                 obj.Condiciones.Id = int.Parse(reader["CEX_Id"].ToString());
                                 obj.Agente.Id = int.Parse(reader["AGE_Id"].ToString());
                                 obj.Agente.Nombre = reader["AGE_Nombre"].ToString();
                                 obj.DatosUsuario.FechaCreacion = DateTime.Parse(reader["Fecha"].ToString());
+                                obj.Moneda.Moneda = reader["MON_Moneda"].ToString();
 
                                 oList.Add(obj);
                             }
@@ -146,8 +148,10 @@ namespace Hersan.Datos.Ensamble
                                         oDetalle.Accesorios.Id = int.Parse(reader["ACC_Id"].ToString());
                                         oDetalle.Accesorios.Nombre = reader["ACC_Nombre"].ToString();
                                         oDetalle.Precio = decimal.Parse(reader["COD_Precio"].ToString());
+                                        oDetalle.Descto = decimal.Parse(reader["COD_Descto"].ToString());
                                         oDetalle.Cantidad = int.Parse(reader["COD_Cantidad"].ToString());
-                                        oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;
+                                        oDetalle.Total = (oDetalle.Cantidad * oDetalle.Precio) - oDetalle.Descto;
+
 
                                         oList[0].Detalle.Add(oDetalle);
                                     }
@@ -244,7 +248,7 @@ namespace Hersan.Datos.Ensamble
                                 obj.Cliente.Correo2 = reader["CLI_Correo2"].ToString();
                                 obj.Monto = decimal.Parse(reader["Monto"].ToString());
                                 obj.NoPedido = int.Parse(reader["COT_Pedido"].ToString());
-                                obj.Semaforo = int.Parse(reader["COT_Semaforo"].ToString());
+                                obj.Semaforo = int.Parse(reader["COT_Semaforo"].ToString());                                
 
                                 oList.Add(obj);
                             }

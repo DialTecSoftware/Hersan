@@ -177,10 +177,11 @@ namespace Hersan.UI.Ensamble
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
-                gvDatos.DataSource = null;
-
-                oList = oEnsamble.ENS_Precios_Obtener(cboMonedas.SelectedValue.ToString());
-                gvDatos.DataSource = oList;
+                if (cboMonedas.Items.Count > 0) {
+                    gvDatos.DataSource = null;
+                    oList = oEnsamble.ENS_Precios_Obtener(cboMonedas.SelectedValue.ToString());
+                    gvDatos.DataSource = oList;
+                }
             } catch (Exception ex) {
                 throw ex;
             } finally {

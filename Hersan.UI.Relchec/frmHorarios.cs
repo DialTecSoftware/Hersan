@@ -29,14 +29,10 @@ namespace Hersan.UI.Relchec
             try
             {
                txtNombre.Text = string.Empty;
-                txtMinEnt.Text = "0";
-                txtHorEnt.Text = "0";
-                txtMinSal.Text = "0";
-                txtHorSal.Text = "0";
-                txtHorSalCom.Text = "0";
-                txtMinSalCom.Text = "0";
-                txtHorEntcom.Text = "0";
-                txtMinEntCom.Text = "0";
+                radHoraEnt.Value = DateTime.Now;
+                radHoraSal.Value = DateTime.Now;
+                radHorEntComida.Value = DateTime.Now;
+                radHorSalComida.Value = DateTime.Now;
                 txttolerancia.Text = "0";
                 chkstatus.Checked = false;
                 txtId.Text = "-1";
@@ -72,14 +68,10 @@ namespace Hersan.UI.Relchec
             {
                 Flag = txtNombre.Text.Trim().Length == 0 ? false : true;
                 Flag = txtId.Text.Trim().Length == 0 ? false : true;
-                Flag = txtHorEnt.Text.Trim().Length == 0 ? false : true;
-                Flag = txtMinEnt.Text.Trim().Length == 0 ? false : true;
-                Flag = txtHorSal.Text.Trim().Length == 0 ? false : true;
-                Flag = txtMinEnt.Text.Trim().Length == 0 ? false : true;
-                Flag = txtHorSalCom.Text.Trim().Length == 0 ? false : true;
-                Flag = txtMinSalCom.Text.Trim().Length == 0 ? false : true;
-                Flag = txtHorEntcom.Text.Trim().Length == 0 ? false : true;
-                Flag = txtMinEntCom.Text.Trim().Length == 0 ? false : true;
+                Flag = radHoraEnt.Text.Trim().Length == 0 ? false : true;
+                Flag = radHoraSal.Text.Trim().Length == 0 ? false : true;
+                Flag = radHorEntComida.Text.Trim().Length == 0 ? false : true;
+                Flag = radHorSalComida.Text.Trim().Length == 0 ? false : true;
                 Flag = txttolerancia.Text.Trim().Length == 0 ? false : true;
 
                 return Flag;
@@ -102,14 +94,10 @@ namespace Hersan.UI.Relchec
                     {
                         obj.Id = int.Parse(txtId.Text);
                         obj.Nombre = txtNombre.Text;
-                        obj.HoraEnt = int.Parse(txtHorEnt.Text);
-                        obj.MinutoEnt = int.Parse(txtMinEnt.Text);
-                        obj.HoraSalida = int.Parse(txtHorSal.Text);
-                        obj.MinutoSalida = int.Parse(txtMinSal.Text);
-                        obj.HorSalComida = int.Parse(txtHorSalCom.Text);
-                        obj.MinSalComida = int.Parse(txtMinSalCom.Text);
-                        obj.HorEntComida = int.Parse(txtHorEntcom.Text);
-                        obj.MinEntComida = int.Parse(txtMinEntCom.Text);
+                        obj.HoraEnt = radHoraEnt.Value.Value.TimeOfDay.ToString();
+                        obj.HoraSalida = radHoraSal.Value.Value.TimeOfDay.ToString();
+                        obj.HorSalComida = radHorSalComida.Value.Value.TimeOfDay.ToString();
+                        obj.HorEntComida = radHorEntComida.Value.Value.TimeOfDay.ToString();
                         obj.Tolerancia = int.Parse(txttolerancia.Text);
                         obj.DatosUsuario.Estatus = false;
                         //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
@@ -149,14 +137,10 @@ namespace Hersan.UI.Relchec
                    
                     txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
                     txtNombre.Text = e.CurrentRow.Cells["Nombre"].Value.ToString();
-                    txtHorEnt.Text = e.CurrentRow.Cells["HoraEnt"].Value.ToString();
-                    txtMinEnt.Text = e.CurrentRow.Cells["MinutoEnt"].Value.ToString();
-                    txtHorSal.Text = e.CurrentRow.Cells["HoraSalida"].Value.ToString();
-                    txtMinSal.Text = e.CurrentRow.Cells["MinutoSalida"].Value.ToString();
-                    txtHorSalCom.Text = e.CurrentRow.Cells["HorSalComida"].Value.ToString();
-                    txtMinSalCom.Text = e.CurrentRow.Cells["MinSalComida"].Value.ToString();
-                    txtHorEntcom.Text = e.CurrentRow.Cells["HorEntComida"].Value.ToString();
-                    txtMinEntCom.Text = e.CurrentRow.Cells["MinEntComida"].Value.ToString();
+                    radHoraEnt.Value = Convert.ToDateTime(e.CurrentRow.Cells["HoraEnt"].Value.ToString());
+                    radHoraSal.Value = Convert.ToDateTime(e.CurrentRow.Cells["HoraSalida"].Value.ToString());
+                    radHorEntComida.Value = Convert.ToDateTime(e.CurrentRow.Cells["HorSalComida"].Value.ToString());
+                    radHorSalComida.Value = Convert.ToDateTime(e.CurrentRow.Cells["HorEntComida"].Value.ToString());
                     txttolerancia.Text = e.CurrentRow.Cells["Tolerancia"].Value.ToString();
                     chkstatus.Checked = bool.Parse(e.CurrentRow.Cells["Estatus"].Value.ToString());
                 }
@@ -202,14 +186,10 @@ namespace Hersan.UI.Relchec
                 {
                     obj.Id = int.Parse(txtId.Text);
                     obj.Nombre = txtNombre.Text;
-                    obj.HoraEnt = int.Parse(txtHorEnt.Text);
-                    obj.MinutoEnt = int.Parse(txtMinEnt.Text);
-                    obj.HoraSalida = int.Parse(txtHorSal.Text);
-                    obj.MinutoSalida = int.Parse(txtMinSal.Text);
-                    obj.HorSalComida = int.Parse(txtHorSalCom.Text);
-                    obj.MinSalComida = int.Parse(txtMinSalCom.Text);
-                    obj.HorEntComida = int.Parse(txtHorEntcom.Text);
-                    obj.MinEntComida = int.Parse(txtMinEntCom.Text);
+                    obj.HoraEnt = radHoraEnt.Value.Value.TimeOfDay.ToString();
+                    obj.HoraSalida = radHoraSal.Value.Value.TimeOfDay.ToString();
+                    obj.HorSalComida = radHorSalComida.Value.Value.TimeOfDay.ToString();
+                    obj.HorEntComida = radHorEntComida.Value.Value.TimeOfDay.ToString();
                     obj.Tolerancia = int.Parse(txttolerancia.Text);
                     obj.DatosUsuario.Estatus = chkstatus.Checked;
                     //obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
@@ -274,6 +254,10 @@ namespace Hersan.UI.Relchec
             try
             {
                 CargarDatos();
+                radHoraEnt.Value = DateTime.Now;
+                radHoraSal.Value = DateTime.Now;
+                radHorEntComida.Value = DateTime.Now;
+                radHorSalComida.Value = DateTime.Now;
             }
             catch (Exception)
             {

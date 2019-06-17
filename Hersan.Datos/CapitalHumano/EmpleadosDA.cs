@@ -16,9 +16,10 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_CHU_EMP_OBTENER = "ABC_EquipoHerramientas_Obtener";
         const string CONST_CHU_EMP_GUARDAR = "CHU_Empleados_Guarda";
         const string CONST_CHU_EMP_ACTUALIZAR = "CHU_Empleados_Actualiza";
+        const string CONST_CHU_EMPLEADOS_COMBO = "CHU_Empleados_Combo";
         #endregion
 
-        
+
         public int CHUEmpleados_Guardar(EmpleadosBE obj)
         {
             int Result = 0;
@@ -74,5 +75,43 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
+        public List<EmpleadosBE> CHU_EMPLEADOS_COMBO()
+        {
+            List<EmpleadosBE> oList = new List<EmpleadosBE>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL")))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMPLEADOS_COMBO, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                EmpleadosBE obj = new EmpleadosBE();
+
+                                obj.Numero = int.Parse(reader["EMP_Numero"].ToString());
+                                obj.Expedientes.Id = int.Parse(reader["EXP_Id"].ToString());
+                                obj.Expedientes.DatosPersonales.Nombres = reader["EDP_Nombres"].ToString();
+                                obj.Expedientes.DatosPersonales.APaterno = reader["EDP_APaterno"].ToString();
+                                obj.Expedientes.DatosPersonales.AMaterno = reader["EDP_AMaterno"].ToString();
+
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

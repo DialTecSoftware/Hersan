@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D1734DCC-8B05-4712-B039-594C376166F9}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hersan.UI.Relchec</RootNamespace>
     <AssemblyName>Hersan.UI.Relchec</AssemblyName>
@@ -34,7 +34,27 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>Hersan.UI.Relchec.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -65,6 +85,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\TelerikCommon.dll</HintPath>
     </Reference>
+    <Reference Include="ZKSoftwareAPI">
+      <HintPath>..\..\..\..\Documents\ZKSoftwareAPI v1.0\ZKSoftwareAPI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\WCF_CHumano\Reference.cs">
@@ -72,12 +95,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="DiasFest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiasFest.Designer.cs">
+      <DependentUpon>DiasFest.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHorarios.Designer.cs">
       <DependentUpon>frmHorarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTrabajadorHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrabajadorHorario.Designer.cs">
+      <DependentUpon>FrmTrabajadorHorario.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DiasFest.resx">
+      <DependentUpon>DiasFest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHorarios.resx">
       <DependentUpon>frmHorarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +131,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmTrabajadorHorario.resx">
+      <DependentUpon>FrmTrabajadorHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.wsdl" />
     <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.xsd">
@@ -121,6 +162,8 @@
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenSustitucionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.EmpleadosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteConocimiento.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteDocumentos.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteEconomicos.datasource" />
@@ -133,8 +176,12 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedientesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedientesDatosPersonales.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.NuevoPuestoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Relchec.DiasFestBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Relchec.HorariosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Relchec.TrabajadorHorarioBE.datasource" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,6 +226,10 @@
     <ProjectReference Include="..\Hersan.Negocio\Hersan.Negocio.csproj">
       <Project>{9dc9d350-b0e3-4481-ac7a-dbe3729c8955}</Project>
       <Name>Hersan.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.UI.CapitalHumano\Hersan.UI.CapitalHumano.csproj">
+      <Project>{ee64995c-6bcc-43d1-8e12-43125e2db6c2}</Project>
+      <Name>Hersan.UI.CapitalHumano</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

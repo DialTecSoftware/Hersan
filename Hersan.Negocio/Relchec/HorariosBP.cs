@@ -20,7 +20,11 @@ namespace Hersan.Negocio.Relchec
         }
         public int ABCHorarios_Actualizar(HorariosBE obj)
         {
-            return new HorariosDa().ABCHorarios_Actualiza(obj);
+            return new HorariosDa().ABCHorarios_Actualizar(obj);
+        }
+        public List<HorariosBE> ABC_HORARIOS_COMBO()
+        {
+            return new HorariosDa().ABC_HORARIOS_COMBO();
         }
     }
 }

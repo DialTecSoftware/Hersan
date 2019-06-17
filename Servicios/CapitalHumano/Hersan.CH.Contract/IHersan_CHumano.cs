@@ -124,10 +124,31 @@ namespace Hersan.CH.Contract
         [OperationContract]
         int ABCHorarios_Guarda(HorariosBE obj);
         [OperationContract]
-        int ABCHorarios_Actualiza(HorariosBE obj);
+        int ABCHorarios_Actualizar(HorariosBE obj);
+        [OperationContract]
+        List<HorariosBE> ABC_HORARIOS_COMBO();
 
         #endregion
 
+        #region Dias Festivos
+        [OperationContract]
+        List<DiasFestBE> ABCDiasFest_Obtener();
+        [OperationContract]
+        int ABCDiasFest_Guarda(DiasFestBE obj);
+        [OperationContract]
+        int ABCDiasFest_Actualizar(DiasFestBE obj);
+
+        #endregion
+
+        #region Trabajdor Horario
+        [OperationContract]
+        List<TrabajadorHorarioBE> ABCTrabajadorHorarios_Obtener();
+        [OperationContract]
+        int ABCTrabajadorHorario_Guarda(TrabajadorHorarioBE obj);
+        [OperationContract]
+        int ABCTrabajadorHorario_Actualizar(TrabajadorHorarioBE obj);
+
+        #endregion
 
         #region Digitalizados
         [OperationContract]
@@ -156,6 +177,8 @@ namespace Hersan.CH.Contract
         int CHUEmpleados_Guardar(EmpleadosBE obj);
         [OperationContract]
         int CHU_EmpleadosActualizar(EmpleadosBE obj);
+        [OperationContract]
+        List<EmpleadosBE> CHU_EMPLEADOS_COMBO();
         #endregion
     }
 }

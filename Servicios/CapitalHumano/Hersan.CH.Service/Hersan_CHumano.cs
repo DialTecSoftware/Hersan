@@ -202,14 +202,49 @@ namespace Hersan.CH.Service
         {
             return new HorariosBP().ABCHorarios_Guarda(obj);
         }
-        public int ABCHorarios_Actualiza(HorariosBE obj)
+        public int ABCHorarios_Actualizar(HorariosBE obj)
         {
             return new HorariosBP().ABCHorarios_Actualizar(obj);
         }
+        public List<HorariosBE> ABC_HORARIOS_COMBO()
+        {
+            return new HorariosBP().ABC_HORARIOS_COMBO();
+        }
+        #endregion
+
+        #region Dias Festivos
+        public List<DiasFestBE> ABCDiasFest_Obtener()
+        {
+            return new DiasFestBP().ABCDiasFest_Obtener();
+        }
+        public int ABCDiasFest_Guarda(DiasFestBE obj)
+        {
+            return new DiasFestBP().ABCDiasFest_Guarda(obj);
+        }
+        public int ABCDiasFest_Actualizar(DiasFestBE obj)
+        {
+            return new DiasFestBP().ABCDiasFest_Actualizar(obj);
+        }
+        #endregion
+
+        #region Trabajador Horario
+        public List<TrabajadorHorarioBE> ABCTrabajadorHorarios_Obtener()
+        {
+            return new TrabajadorHorarioBP().ABCTrabajadorHorarios_Obtener();
+        }
+        public int ABCTrabajadorHorario_Guarda(TrabajadorHorarioBE obj)
+        {
+            return new TrabajadorHorarioBP().ABCTrabajadorHorario_Guarda(obj);
+        }
+        public int ABCTrabajadorHorario_Actualizar(TrabajadorHorarioBE obj)
+        {
+            return new TrabajadorHorarioBP().ABCTrabajadorHorario_Actualizar(obj);
+        }
+       
         #endregion
 
         #region Digitalizados
-     
+
         public DataSet CHU_Digitalizados_Obtener(int IdExp)
         {
             return new DigitalizadosBP().CHU_Digitalizados_Obtener(IdExp);
@@ -258,6 +293,10 @@ namespace Hersan.CH.Service
         public int CHU_EmpleadosActualizar(EmpleadosBE obj)
         {
             return new EmpleadosBP().CHU_EmpleadosActualizar(obj);
+        }
+        public List<EmpleadosBE> CHU_EMPLEADOS_COMBO()
+        {
+            return new EmpleadosBP().CHU_EMPLEADOS_COMBO();
         }
         #endregion
     }

@@ -315,7 +315,8 @@ namespace Hersan.UI.Ensamble
                 txtTelefono.Clear();
                 txtTelPag.Clear();
                 txtCorreo1.Clear();
-                txtCorreo2.Clear();                
+                txtCorreo2.Clear();
+                txtPais.Clear();
                 #endregion
 
                 foreach(var items in lstEntidades.Items) {
@@ -351,6 +352,7 @@ namespace Hersan.UI.Ensamble
                 oData.Columns.Add("CP");
                 oData.Columns.Add("Ciudad");
                 oData.Columns.Add("Estado");
+                oData.Columns.Add("Pais");
                 oData.Columns.Add("Telefono");
                 oData.Columns.Add("Nacional");
                 oData.Columns.Add("VIP");
@@ -448,6 +450,7 @@ namespace Hersan.UI.Ensamble
                     txtColonia.Text = item.Colonia;
                     txtCP.Text = item.CP.ToString();
                     txtCiudad.Text = item.Ciudad;
+                    txtPais.Text = item.Pais;
                     txtEstado.Text = item.Estado;
                     txtFecha.Text = item.DatosUsuario.FechaCreacion.ToShortDateString();
                     rbNacional.Checked = item.Nacional ? true : false;
@@ -550,6 +553,7 @@ namespace Hersan.UI.Ensamble
                 oRow["CP"] = txtCP.Text;
                 oRow["Ciudad"] = txtCiudad.Text;
                 oRow["Estado"] = txtEstado.Text;
+                oRow["Pais"] = txtPais.Text;
                 oRow["Telefono"] = txtTelefono.Text;
                 oRow["Nacional"] = rbNacional.Checked;
                 oRow["VIP"] = chkVIP.Checked;
@@ -636,8 +640,6 @@ namespace Hersan.UI.Ensamble
                 oData.Tables["Referencias"].Rows.Add(oRow);
                 #endregion
 
-                
-
             } catch (Exception ex) {
                 throw ex;
             }
@@ -668,7 +670,6 @@ namespace Hersan.UI.Ensamble
             }
             return bFlag;
         }
-
         
     }
 }

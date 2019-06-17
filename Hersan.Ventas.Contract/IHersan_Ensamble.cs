@@ -54,9 +54,9 @@ namespace Hersan.Ensamble.Contract
 
         #region Productos
         [OperationContract]
-        int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
+        int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
         [OperationContract]
-        int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus);
+        int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus);
         [OperationContract]
         List<ProductoEnsambleBE> ENS_ProductosFicha_Obtener(ProductoEnsambleBE obj);
         [OperationContract]

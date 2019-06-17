@@ -143,6 +143,7 @@ namespace Hersan.Datos.Ventas
                                 obj.CP = int.Parse(reader["CLI_CP"].ToString());
                                 obj.Ciudad = reader["CLI_Ciudad"].ToString();
                                 obj.Estado = reader["CLI_Estado"].ToString();
+                                obj.Pais = reader["CLI_Pais"].ToString();
                                 obj.VIP = bool.Parse(reader["CLI_VIP"].ToString());
                                 obj.Correo1 = reader["CLI_Correo1"].ToString();
                                 obj.Correo2 = reader["CLI_Correo2"].ToString();

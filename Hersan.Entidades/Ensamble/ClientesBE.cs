@@ -19,6 +19,7 @@ namespace Hersan.Entidades.Ensamble
             CP = 0;
             Ciudad = string.Empty;
             Estado = string.Empty;
+            Pais = string.Empty;
             Nacional = true;
             VIP = false;
             Correo1 = string.Empty;
@@ -45,6 +46,7 @@ namespace Hersan.Entidades.Ensamble
         public int CP { get; set; }
         public string Ciudad { get; set; }
         public string Estado { get; set; }
+        public string Pais { get; set; }
         public bool Nacional { get; set; }
         public bool VIP { get; set; }
         public string Correo1 { get; set; }

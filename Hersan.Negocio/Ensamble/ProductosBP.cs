@@ -32,7 +32,7 @@ namespace Hersan.Negocio.Ensamble
                 //UsuarioRed = DataEncryptor.Decrypt(userPass[0]);
                 //PasswordRed = DataEncryptor.Decrypt(userPass[1]);
 
-                Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
+                //Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
 
                 // Create a new stream to write to the file
                 Writer = new BinaryWriter(File.OpenWrite(Name));
@@ -53,29 +53,61 @@ namespace Hersan.Negocio.Ensamble
             byte[] Foto;
             string Imagen = RutaImagen + IdProducto.ToString() + ".jpg"; ;
             try {
-                string DominioRed = "";
-                string UsuarioRed = "cuidado"; string PasswordRed = "Cloud.2018";
+                //string DominioRed = "";
+                //string UsuarioRed = "cuidado"; string PasswordRed = "Cloud.2018";
 
-                Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
-                Foto = ConvertImage.FileToByteArray(Imagen);
+                //Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
 
+                if (File.Exists(Imagen)) {
+                    Foto = ConvertImage.FileToByteArray(Imagen);
+                } else {
+                    Foto = null;
+                }
             } catch (Exception ex) {
-                throw new Exception("Error al intentar guardar el archivo.", ex);
+                throw new Exception("Error al intentar obtener el archivo.", ex);
             }
             return Foto;
         }
 
-        public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario)
+        public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario)
         {
-            return new ProductosDA().ENS_ProductosFicha_Guardar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario);
+            try {
+                Tablas.Tables["Dimensiones"].Rows[0]["PFD_RutaImagen"] = RutaImagen;
+                int IdProducto = new ProductosDA().ENS_ProductosFicha_Guardar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario);
+                
+                if (IdProducto > 0 && Imagen != null) {
+                    GuardarImagen(IdProducto, Imagen);
+                }
+                return IdProducto;
+            } catch (Exception ex) {
+                throw ex;
+            }            
         }
-        public int ENS_ProductosFicha_Actualizar(DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus)
+        public int ENS_ProductosFicha_Actualizar(DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus)
         {
-            return new ProductosDA().ENS_ProductosFicha_Actualizar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
+            Tablas.Tables["Dimensiones"].Rows[0]["PFD_RutaImagen"] = RutaImagen;
+
+            int IdProducto = new ProductosDA().ENS_ProductosFicha_Actualizar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
+
+            if (IdProducto > 0 && Imagen != null) {
+                GuardarImagen(IdProducto, Imagen);
+            }
+
+            return IdProducto;
         }
         public List<ProductoEnsambleBE> ENS_ProductosFicha_Obtener(ProductoEnsambleBE obj)
         {
-            return new ProductosDA().ENS_ProductosFicha_Obtener(obj);
+            try {
+                List<ProductoEnsambleBE> oList = new ProductosDA().ENS_ProductosFicha_Obtener(obj);
+                oList.ForEach(item => {
+                    if (item.Dimensiones.RutaImagen.Trim().Length > 0)
+                        item.Foto = ObtenerImagen(item.Id);
+                });
+
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda)
         {

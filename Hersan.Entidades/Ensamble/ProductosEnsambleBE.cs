@@ -15,6 +15,7 @@ namespace Hersan.Entidades.Ensamble
             Producto = new TipoProductoBE();
             Reflejantes = 0;
             CantAccesorios = 0;
+            RutaImagen = string.Empty;            
             Detalle = new List<ProductosCombinacion>();
             Dimensiones = new DimensionesBE();
             Accesorios = new List<AccesoriosBE>();
@@ -28,6 +29,8 @@ namespace Hersan.Entidades.Ensamble
         public TipoProductoBE Producto { get; set; }
         public int Reflejantes { get; set; }
         public int CantAccesorios { get; set; }
+        public string RutaImagen { get; set; }
+        public byte[] Foto { get; set; }
         public List<ProductosCombinacion> Detalle { get; set; }
         public DimensionesBE Dimensiones { get; set; }
         public List<AccesoriosBE> Accesorios { get; set; }

@@ -62,8 +62,10 @@
     <Compile Include="BaseDA.cs" />
     <Compile Include="CapitalHumano\CompetenciasDA.cs" />
     <Compile Include="CapitalHumano\ContratosDA.cs" />
+    <Compile Include="CapitalHumano\DescripcionPuestosDA.cs" />
     <Compile Include="CapitalHumano\DictamenNuevoPuestoDA.cs" />
     <Compile Include="CapitalHumano\DictamenSustitucionDA.cs" />
+    <Compile Include="CapitalHumano\DigitalizadosDA.cs" />
     <Compile Include="CapitalHumano\EmpleadosDA.cs" />
     <Compile Include="CapitalHumano\EvaluacionInduccionDA.cs" />
     <Compile Include="CapitalHumano\ExpedientesDA.cs" />
@@ -97,7 +99,9 @@
     <Compile Include="Ensamble\ProductosDA.cs" />
     <Compile Include="Ensamble\ServiciosDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relchec\DiasFestDA.cs" />
     <Compile Include="Relchec\HorariosDA.cs" />
+    <Compile Include="Relchec\TrabajadorHorarioDA.cs" />
     <Compile Include="Seguridad\EncriptadorDA.cs" />
     <Compile Include="Seguridad\MenusDA.cs" />
     <Compile Include="Seguridad\RolesDA.cs" />

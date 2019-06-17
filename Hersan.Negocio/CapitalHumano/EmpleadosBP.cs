@@ -11,6 +11,10 @@ namespace Hersan.Negocio.CapitalHumano
    public class EmpleadosBP
         
     {
+        public List<EmpleadosBE> CHU_Empleados_Consultar(int IdExp)
+        {
+            return new EmpleadosDA().CHU_Empleados_Consultar(IdExp);
+        }
         public int CHUEmpleados_Guardar(EmpleadosBE obj)
         {
             return new EmpleadosDA().CHUEmpleados_Guardar( obj);
@@ -19,10 +23,9 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new EmpleadosDA().CHU_EmpleadosActualizar(obj);
         }
-        public List<EmpleadosBE> CHU_EMPLEADOS_COMBO()
+        public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario)
         {
-            return new EmpleadosDA().CHU_EMPLEADOS_COMBO();
+            return new EmpleadosDA().CHU_Empleados_Elimina(IdEmp, IdUsuario);
         }
     }
 }
-

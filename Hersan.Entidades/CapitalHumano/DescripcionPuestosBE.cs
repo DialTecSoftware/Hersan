@@ -67,11 +67,15 @@ namespace Hersan.Entidades.CapitalHumano
             Riesgos = string.Empty;
             CondicionesAmb = string.Empty;
             EquipoRequerido = string.Empty;
+            Actividades = string.Empty;
         }
         public  string EsfuerzoFisico { get; set; }
         public string Riesgos { get; set; }
         public string CondicionesAmb { get; set; }
         public string EquipoRequerido { get; set; }
+        public string Actividades { get; set; }
+
     }
+   
      
 }

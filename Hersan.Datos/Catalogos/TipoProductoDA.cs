@@ -29,6 +29,8 @@ namespace Hersan.Datos.Catalogos
                         cmd.Parameters.AddWithValue("@IdFamilia", obj.Familia.Id);
                         cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Name", obj.Name);
+                        cmd.Parameters.AddWithValue("@Fraccion", obj.Fraccion);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -52,6 +54,8 @@ namespace Hersan.Datos.Catalogos
                         cmd.Parameters.AddWithValue("@IdFamilia", obj.Familia.Id);
                         cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                         cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@Name", obj.Name);
+                        cmd.Parameters.AddWithValue("@Fraccion", obj.Fraccion);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
                         cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
 
@@ -88,6 +92,8 @@ namespace Hersan.Datos.Catalogos
                                 obj.Familia.Entidad.Nombre = reader["ENT_Nombre"].ToString();
                                 obj.Clave = reader["TPR_Clave"].ToString();
                                 obj.Nombre = reader["TPR_Nombre"].ToString();
+                                obj.Name = reader["TPR_Name"].ToString();
+                                obj.Fraccion = reader["TPR_Fraccion"].ToString();
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["TPR_Estatus"].ToString());
 
                                 oList.Add(obj);

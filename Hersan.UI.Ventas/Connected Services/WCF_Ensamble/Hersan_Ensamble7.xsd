@@ -1,94 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
-  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
-  <xs:complexType name="ServiciosBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q1:GeneralBE" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidad" nillable="true" type="q2:EntidadesBE" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Precio" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ServiciosBE" nillable="true" type="tns:ServiciosBE" />
-  <xs:complexType name="ArrayOfServiciosBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiciosBE" nillable="true" type="tns:ServiciosBE" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfServiciosBE" nillable="true" type="tns:ArrayOfServiciosBE" />
-  <xs:complexType name="ArrayOfPreciosBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PreciosBE" nillable="true" type="tns:PreciosBE" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPreciosBE" nillable="true" type="tns:ArrayOfPreciosBE" />
-  <xs:complexType name="PreciosBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AAA" type="xs:decimal" />
-      <xs:element minOccurs="0" name="CantidadMay" type="xs:int" />
-      <xs:element minOccurs="0" name="CantidadVol" type="xs:int" />
-      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q3:GeneralBE" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Mayoreo" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Precio" type="xs:decimal" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Producto" nillable="true" type="q4:TipoProductoBE" />
-      <xs:element minOccurs="0" name="Volumen" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PreciosBE" nillable="true" type="tns:PreciosBE" />
-  <xs:complexType name="ProductoEnsambleBE">
-    <xs:sequence>
-      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Accesorios" nillable="true" type="q5:ArrayOfAccesoriosBE" />
-      <xs:element minOccurs="0" name="CantAccesorios" type="xs:int" />
-      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q6:GeneralBE" />
-      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:ArrayOfProductosCombinacion" />
-      <xs:element minOccurs="0" name="Dimensiones" nillable="true" type="tns:DimensionesBE" />
-      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Entidad" nillable="true" type="q7:EntidadesBE" />
-      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Familia" nillable="true" type="q8:FamiliasBE" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Precio" nillable="true" type="tns:PreciosBE" />
-      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Producto" nillable="true" type="q9:TipoProductoBE" />
-      <xs:element minOccurs="0" name="Reflejantes" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ProductoEnsambleBE" nillable="true" type="tns:ProductoEnsambleBE" />
-  <xs:complexType name="ArrayOfProductosCombinacion">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductosCombinacion" nillable="true" type="tns:ProductosCombinacion" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfProductosCombinacion" nillable="true" type="tns:ArrayOfProductosCombinacion" />
-  <xs:complexType name="ProductosCombinacion">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Concepto" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Sel" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ProductosCombinacion" nillable="true" type="tns:ProductosCombinacion" />
-  <xs:complexType name="DimensionesBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Alto" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Ancho" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Cirunferencia" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Diametro" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Empaque" type="xs:int" />
-      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
-      <xs:element minOccurs="0" name="Largo" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Peso" type="xs:decimal" />
-      <xs:element minOccurs="0" name="RutaImagen" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="DimensionesBE" nillable="true" type="tns:DimensionesBE" />
-  <xs:complexType name="ArrayOfProductoEnsambleBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoEnsambleBE" nillable="true" type="tns:ProductoEnsambleBE" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfProductoEnsambleBE" nillable="true" type="tns:ArrayOfProductoEnsambleBE" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

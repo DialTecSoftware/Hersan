@@ -151,6 +151,29 @@ namespace Hersan.Negocio
             }
         }
 
+        public static bool EnviarMail(string emisor, string destinatario, string Copia, string Bcc, string asunto, string CuerpoMsg, string smtp, string pwd, int port, Stream adjunto, string NombreAdjunto, bool ssl)
+        {
+            try {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient(smtp);
+                mail.Attachments.Add(new Attachment(adjunto, NombreAdjunto));
+                mail.From = new MailAddress(emisor);
+                mail.To.Add(destinatario);
+                if (Copia != "") mail.CC.Add(Copia);
+                if (Bcc != "")  mail.Bcc.Add(Bcc);
+                mail.Subject = asunto;
+                mail.Body = CuerpoMsg;
+                SmtpServer.Port = port;
+                SmtpServer.Credentials = new System.Net.NetworkCredential(emisor, pwd);
+                SmtpServer.EnableSsl = ssl;
+                SmtpServer.Send(mail);
+
+                return true;
+            } catch {
+                return false;
+            }
+        }
+
         public static bool isNumero(Char c)
         {
             bool num = false;

@@ -4,6 +4,7 @@ using Hersan.Entidades.Catalogos;
 using Hersan.Negocio.CapitalHumano;
 using Hersan.Negocio.Catalogos;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Hersan.Catalogos.Service
 {
@@ -235,6 +236,14 @@ namespace Hersan.Catalogos.Service
         {
             return new OrganigramaBP().CHUOrganigrama_Guardar(obj);
         }
+        public DataTable CHU_OrganigramaXML_Obtener(int parent)
+        {
+            return new OrganigramaBP().CHU_OrganigramaXML_Obtener(parent);
+        }
+        public DataSet CHU_Perfiles_Obtener(int IdDepto, int IdPuesto)
+        {
+            return new PerfilesBP().CHU_Perfiles_Obtener(IdDepto, IdPuesto);
+        }
         public int CHUOrganigrama_Actualizar(OrganigramaBE obj)
         {
             return new OrganigramaBP().CHUOrganigrama_Actualizar(obj);
@@ -380,6 +389,62 @@ namespace Hersan.Catalogos.Service
         }
         #endregion
 
+        #region Agentes
+        public List<AgentesBE> ABC_Agentes_Obtener()
+        {
+            return new AgentesBP().ABC_Agentes_Obtener();
+        }
+        public int ABC_Agentes_Guardar(AgentesBE obj)
+        {
+            return new AgentesBP().ABC_Agentes_Guardar(obj);
+        }
+        public int ABC_Agentes_Actualizar(AgentesBE obj)
+        {
+            return new AgentesBP().ABC_Agentes_Actualizar(obj);
+        }
+        public List<AgentesBE> ABC_Agentes_Combo()
+        {
+            return new AgentesBP().ABC_Agentes_Combo();
+        }
+        #endregion
+
+        #region Condiciones Venta
+        public int ABC_CondicionesExportacion_Guardar(CondicionesExpBE obj)
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Guardar(obj);
+        }
+        public int ABC_CondicionesExportacion_Actualizar(CondicionesExpBE obj)
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Actualizar(obj);
+        }
+        public List<CondicionesExpBE> ABC_CondicionesExportacion_Obtener()
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Obtener();
+        }
+        public List<CondicionesExpBE> ABC_CondicionesExportacion_Combo()
+        {
+            return new CondicionesExpBP().ABC_CondicionesExportacion_Combo();
+        }
+        #endregion
+
+        #region Monedas
+        public List<MonedasBE> ABC_Monedas_Obtener()
+        {
+            return new MonedasBP().ABC_Monedas_Obtener();
+        }
+        public int ABC_Monedas_Guardar(MonedasBE obj)
+        {
+            return new MonedasBP().ABC_Monedas_Guardar(obj);
+        }
+        public int ABC_Monedas_Actualizar(MonedasBE obj)
+        {
+            return new MonedasBP().ABC_Monedas_Actualizar(obj);
+        }
+        public List<MonedasBE> ABC_Monedas_Combo()
+        {
+            return new MonedasBP().ABC_Monedas_Combo();
+        }
+        #endregion
     }
 }
 

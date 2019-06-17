@@ -75,14 +75,14 @@ namespace Hersan.UI.Ensamble
 
                 /* ALTA DE FICHA TÉCNICA */
                 if (int.Parse(txtId.Text) == 0) {
-                    Result = oEnsamble.ENS_ProductosFicha_Guardar(CrearTablasAuxiliares(), Colores, Reflejantes, Accesorios, BaseWinBP.UsuarioLogueado.ID);
+                    Result = oEnsamble.ENS_ProductosFicha_Guardar(CrearTablasAuxiliares(), Imagen, Colores, Reflejantes, Accesorios, BaseWinBP.UsuarioLogueado.ID);
                     if (Result != 0) {
                         RadMessageBox.Show("Ficha técnica guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     } else {
                         RadMessageBox.Show("Ocurrió un error al guardar la ficha", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                     }
                 } else {
-                    Result = oEnsamble.ENS_ProductosFicha_Actualizar(CrearTablasAuxiliares(), Colores, Reflejantes, Accesorios, BaseWinBP.UsuarioLogueado.ID,true);
+                    Result = oEnsamble.ENS_ProductosFicha_Actualizar(CrearTablasAuxiliares(), Imagen, Colores, Reflejantes, Accesorios, BaseWinBP.UsuarioLogueado.ID,true);
                     if (Result != 0) {
                         RadMessageBox.Show("Ficha técnica actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     } else {
@@ -104,7 +104,7 @@ namespace Hersan.UI.Ensamble
             try {
                 if (int.Parse(txtId.Text) > 0) {
                     if (RadMessageBox.Show("Desea eliminar la ficha actual...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                        if (oEnsamble.ENS_ProductosFicha_Actualizar(CrearTablasAuxiliares(), Colores, Reflejantes, Accesorios, BaseWinBP.UsuarioLogueado.ID, false) > 0) {
+                        if (oEnsamble.ENS_ProductosFicha_Actualizar(CrearTablasAuxiliares(), Imagen, Colores, Reflejantes, Accesorios, BaseWinBP.UsuarioLogueado.ID, false) > 0) {
                             RadMessageBox.Show("Ficha técnica eliminada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                             LimpiarCampos();
                         } else
@@ -450,7 +450,6 @@ namespace Hersan.UI.Ensamble
                     lstAccesorios.CheckedItems.Clear();
                     lstReflejantes.CheckedItems.Clear();
 
-
                     txtId.Text = oProducto[0].Id.ToString();
                     txtCantidad.Value = oProducto[0].Reflejantes;
                     txtCantAcce.Value = oProducto[0].CantAccesorios;
@@ -483,9 +482,12 @@ namespace Hersan.UI.Ensamble
                                 }
                             }
                         }
-
-                        
                     });
+
+                    if (oProducto[0].Foto != null) {
+                        Imagen = oProducto[0].Foto;
+                        picFoto.Image = ConvertImage.ByteToImage(Imagen);
+                    }
                 } else {
                     oList.Clear();
                     txtId.Text = "0";
@@ -577,7 +579,7 @@ namespace Hersan.UI.Ensamble
                 oRow["PFD_Diametro"] = txtDiam.Text;
                 oRow["PFD_Empaque"] = txtPiezas.Text;
                 oRow["PFD_Peso"] = txtPeso.Text;
-                oRow["PFD_RutaImagen"] = txtRuta.Text;
+                //oRow["PFD_RutaImagen"] = txtRuta.Text;
 
                 oData.Tables["Dimensiones"].Rows.Add(oRow);
 

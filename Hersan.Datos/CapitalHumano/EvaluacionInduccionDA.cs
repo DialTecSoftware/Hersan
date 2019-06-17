@@ -15,9 +15,10 @@ namespace Hersan.Datos.CapitalHumano
       
         const string CONST_PreguntasEV_OBTENER = "CHU_PreguntasEvaluacion_Obtener";
         const string CONST_DatosEMP_OBTENER = "CHU_DatosEMP_Obtener";
-        const string CONST_CHU_EVI_OBTENER = "CHU_EvaluacionInduccion_Obtener";
+        const string CONST_CHU_EVI_OBTENER = "CHU_EvaluacionInduccion_Get";
         const string CONST_CHU_EVI_GUARDAR = "CHU_EvaluacionInduccion_Guardar";
         const string CONST_CHU_EVI_ACTUALIZAR = "CHU_EvaluacionInduccion_Actualiza";
+        const string CONST_CHU_EVI_REPORTE = "CHU_EvaluacionInduccion_Obtener";
         #endregion
 
 
@@ -62,7 +63,7 @@ namespace Hersan.Datos.CapitalHumano
                     using (SqlCommand cmd = new SqlCommand(CONST_DatosEMP_OBTENER, conn)) {
 
                      
-                        cmd.Parameters.AddWithValue("@EMP_Num", evaluacion.IdEmpleado);
+                        cmd.Parameters.AddWithValue("@EMP_Num", evaluacion.IdExp);
                         cmd.Parameters.AddWithValue("@ENT_Id", evaluacion.Puestos.Departamentos.Entidades.Id);
                         cmd.Parameters.AddWithValue("@DEP_Id", evaluacion.Puestos.Departamentos.Id);
                         cmd.Parameters.AddWithValue("@PUE_Id", evaluacion.Puestos.Id);
@@ -75,7 +76,7 @@ namespace Hersan.Datos.CapitalHumano
                                 EvaluacionInduccionBE obj = new EvaluacionInduccionBE();
 
                                 obj.DatosPersonales.IdExpediente = int.Parse(reader["EXP_Id"].ToString());
-                                obj.IdEmpleado = int.Parse(reader["EMP_Numero"].ToString());
+                                obj.IdExp = int.Parse(reader["EMP_Numero"].ToString());
                                 obj.Puestos.Departamentos.Entidades.Nombre = reader["ENT_Nombre"].ToString();
                                 //obj.Puestos.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
                                 obj.Puestos.Departamentos.Nombre = reader["DEP_Nombre"].ToString();
@@ -103,21 +104,15 @@ namespace Hersan.Datos.CapitalHumano
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_CHU_EVI_OBTENER, conn)) {
+                      
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
                                 EvaluacionInduccionBE obj = new EvaluacionInduccionBE();
-                                obj.Id = int.Parse(reader["EVI_Id"].ToString());
-                                obj.Departamentos.Nombre = reader["DEP_Nombre"].ToString();
-                                obj.Puestos.Nombre = reader["PUE_Nombre"].ToString();
-                                obj.DatosPersonales.AMaterno = (reader["EDP_AMaterno"].ToString());
-                                obj.DatosPersonales.APaterno = (reader["EDP_APaterno"].ToString());
-                                obj.DatosPersonales.Nombres = (reader["EDP_Nombres"].ToString());
-                                obj.DatosPersonales.IdExpediente = int.Parse(reader["EXP_Id"].ToString());
-                                obj.IdEmpleado = int.Parse(reader["EMP_Numero"].ToString());
-                                obj.Observaciones= (reader["EVI_Observaciones"].ToString());
-                                obj.Calificacion = decimal.Parse(reader["EVI_Observaciones"].ToString());
+                             
+                                obj.IdExp = int.Parse(reader["EXP_Id"].ToString());
+                              
 
                                 oList.Add(obj);
                             }
@@ -145,6 +140,25 @@ namespace Hersan.Datos.CapitalHumano
                     }
                 }
                 return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public DataTable CHU_Evaluacion_ReporteDetalle(int Id)
+        {
+            DataTable oData = new DataTable("Reporte");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_EVI_REPORTE, conn)) {
+
+                        cmd.Parameters.AddWithValue("@Id", Id);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+                }
+                return oData;
             } catch (Exception ex) {
                 throw ex;
             }

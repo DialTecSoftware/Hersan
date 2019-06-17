@@ -24,5 +24,13 @@ namespace Hersan.Negocio.Ventas
         {
             return new ClientesDA().ABC_Clientes_Obtener(IdCliente);
         }
+        public List<ClientesBE> ABC_ClientesAgente_Combo(int IdAgente)
+        {
+            return new ClientesDA().ABC_ClientesAgente_Combo(IdAgente);
+        }
+        public int ABC_ClientesAgente_Guardar(ClientesBE obj)
+        {
+            return new ClientesDA().ABC_ClientesAgente_Guardar(obj);
+        }
     }
 }

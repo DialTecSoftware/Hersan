@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -173,6 +173,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.txtPais = new Telerik.WinControls.UI.RadTextBox();
+            this.label51 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
@@ -243,6 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMonto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -407,6 +410,8 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.txtPais);
+            this.radGroupBox1.Controls.Add(this.label51);
             this.radGroupBox1.Controls.Add(this.txtCorreo1);
             this.radGroupBox1.Controls.Add(this.txtCorreo2);
             this.radGroupBox1.Controls.Add(this.label50);
@@ -454,29 +459,27 @@
             // 
             // txtCorreo1
             // 
-            this.txtCorreo1.Location = new System.Drawing.Point(87, 209);
+            this.txtCorreo1.Location = new System.Drawing.Point(87, 232);
             this.txtCorreo1.MaskType = Telerik.WinControls.UI.MaskType.EMail;
             this.txtCorreo1.Name = "txtCorreo1";
             this.txtCorreo1.Size = new System.Drawing.Size(328, 20);
-            this.txtCorreo1.TabIndex = 15;
-            this.txtCorreo1.TabStop = false;
+            this.txtCorreo1.TabIndex = 16;
             this.txtCorreo1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
             // 
             // txtCorreo2
             // 
-            this.txtCorreo2.Location = new System.Drawing.Point(87, 232);
+            this.txtCorreo2.Location = new System.Drawing.Point(491, 232);
             this.txtCorreo2.MaskType = Telerik.WinControls.UI.MaskType.EMail;
             this.txtCorreo2.Name = "txtCorreo2";
             this.txtCorreo2.Size = new System.Drawing.Size(328, 20);
-            this.txtCorreo2.TabIndex = 16;
-            this.txtCorreo2.TabStop = false;
+            this.txtCorreo2.TabIndex = 17;
             this.txtCorreo2.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
             // 
             // label50
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label50.Location = new System.Drawing.Point(27, 238);
+            this.label50.Location = new System.Drawing.Point(431, 236);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(54, 13);
             this.label50.TabIndex = 28;
@@ -486,7 +489,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label49.Location = new System.Drawing.Point(27, 214);
+            this.label49.Location = new System.Drawing.Point(27, 236);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(54, 13);
             this.label49.TabIndex = 26;
@@ -795,11 +798,11 @@
             this.txtClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtClave.Location = new System.Drawing.Point(85, 29);
             this.txtClave.Name = "txtClave";
-            this.txtClave.ReadOnly = true;
             this.txtClave.Size = new System.Drawing.Size(79, 20);
             this.txtClave.TabIndex = 1;
             this.txtClave.TabStop = false;
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClave_KeyDown);
             // 
             // label1
             // 
@@ -1109,16 +1112,16 @@
             this.cboRecibo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboRecibo.AutoScroll = true;
             this.cboRecibo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem11.Text = "LUNES";
-            radListDataItem12.Text = "MARTES";
-            radListDataItem13.Text = "MIÉRCOLES";
-            radListDataItem14.Text = "JUEVES";
-            radListDataItem15.Text = "VIERNES";
-            this.cboRecibo.Items.Add(radListDataItem11);
-            this.cboRecibo.Items.Add(radListDataItem12);
-            this.cboRecibo.Items.Add(radListDataItem13);
-            this.cboRecibo.Items.Add(radListDataItem14);
-            this.cboRecibo.Items.Add(radListDataItem15);
+            radListDataItem6.Text = "LUNES";
+            radListDataItem7.Text = "MARTES";
+            radListDataItem8.Text = "MIÉRCOLES";
+            radListDataItem9.Text = "JUEVES";
+            radListDataItem10.Text = "VIERNES";
+            this.cboRecibo.Items.Add(radListDataItem6);
+            this.cboRecibo.Items.Add(radListDataItem7);
+            this.cboRecibo.Items.Add(radListDataItem8);
+            this.cboRecibo.Items.Add(radListDataItem9);
+            this.cboRecibo.Items.Add(radListDataItem10);
             this.cboRecibo.Location = new System.Drawing.Point(103, 114);
             this.cboRecibo.Name = "cboRecibo";
             this.cboRecibo.Size = new System.Drawing.Size(125, 20);
@@ -1138,16 +1141,16 @@
             this.cboPago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboPago.AutoScroll = true;
             this.cboPago.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "LUNES";
-            radListDataItem2.Text = "MARTES";
-            radListDataItem3.Text = "MIÉRCOLES";
-            radListDataItem4.Text = "JUEVES";
-            radListDataItem5.Text = "VIERNES";
-            this.cboPago.Items.Add(radListDataItem1);
-            this.cboPago.Items.Add(radListDataItem2);
-            this.cboPago.Items.Add(radListDataItem3);
-            this.cboPago.Items.Add(radListDataItem4);
-            this.cboPago.Items.Add(radListDataItem5);
+            radListDataItem11.Text = "LUNES";
+            radListDataItem12.Text = "MARTES";
+            radListDataItem13.Text = "MIÉRCOLES";
+            radListDataItem14.Text = "JUEVES";
+            radListDataItem15.Text = "VIERNES";
+            this.cboPago.Items.Add(radListDataItem11);
+            this.cboPago.Items.Add(radListDataItem12);
+            this.cboPago.Items.Add(radListDataItem13);
+            this.cboPago.Items.Add(radListDataItem14);
+            this.cboPago.Items.Add(radListDataItem15);
             this.cboPago.Location = new System.Drawing.Point(103, 89);
             this.cboPago.Name = "cboPago";
             this.cboPago.Size = new System.Drawing.Size(125, 20);
@@ -1653,6 +1656,24 @@
             this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
             this.commandBarStripElement6.Name = "commandBarStripElement6";
             // 
+            // txtPais
+            // 
+            this.txtPais.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPais.Location = new System.Drawing.Point(87, 209);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(221, 20);
+            this.txtPais.TabIndex = 15;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label51.Location = new System.Drawing.Point(36, 213);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(30, 13);
+            this.label51.TabIndex = 30;
+            this.label51.Text = "Pais:";
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1746,6 +1767,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMonto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1888,5 +1910,7 @@
         private System.Windows.Forms.Label label49;
         private Telerik.WinControls.UI.RadMaskedEditBox txtCorreo2;
         private Telerik.WinControls.UI.RadMaskedEditBox txtCorreo1;
+        private Telerik.WinControls.UI.RadTextBox txtPais;
+        private System.Windows.Forms.Label label51;
     }
 }

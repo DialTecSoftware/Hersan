@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Xml;
 
 namespace Hersan.Datos.Catalogos
 {
@@ -15,6 +17,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_CHU_ORGANIG_OBTENER = "CHU_Organigrama_GET";
         const string CONST_USP_CHU_ORGANIG_GUARDA = "CHU_Organigrama_Guarda";
         const string CONST_USP_CHU_ORGANIG_ACTUALIZA = "CHU_Organigrama_Actualiza";
+        const string CONST_USP_CHU_ORGANIG_xmlOBTENER = "CHU_Organigrama_Obtener";
 
 
         public List<OrganigramaBE> CHUOrganigrama_Obtener()
@@ -101,6 +104,70 @@ namespace Hersan.Datos.Catalogos
                 return Result;
             } catch (Exception ex) {
                 throw ex;
+            }
+        }
+
+        public DataTable CHU_OrganigramaXML_Obtener(int parent)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable oData = new DataTable("Element");
+            DataSet dts = new DataSet();
+
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_ORGANIG_xmlOBTENER, conn)) {
+                      
+                        cmd.Parameters.AddWithValue("@PARENT", parent);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        da = new SqlDataAdapter(cmd);
+                       
+                        da.Fill(oData);
+                      
+                        oData.WriteXml(@"C:\Temp\Organizacion.xml",true);
+                        //oData.WriteXmlSchema(@"C:\Temp\Organizacion.xml", false);
+
+                        XmlDocument doc = new XmlDocument();
+                        string filename = @"C:\Temp\Organizaciones.xml";
+                        doc.Load(@"C:\Temp\Organizacion.xml");
+                        XmlWriterSettings settings = new XmlWriterSettings {
+                            Indent = true,
+                            IndentChars = @"    ",
+                            NewLineChars = Environment.NewLine,
+                            NewLineHandling = NewLineHandling.Replace,
+                            OmitXmlDeclaration = true,
+                            //HttpUtility.
+
+                        }; ;
+                      
+                        using (var writers = XmlWriter.Create(filename, settings)) {
+                           
+
+                            doc.Save(writers);
+                        }
+
+
+
+                        ////// Save the document to a file and auto-indent the output.
+
+                        //XmlDocument doc2 = new XmlDocument();
+                        //StringBuilder output = new StringBuilder();
+                        //XmlNode newBook = doc2.ImportNode(doc.DocumentElement.LastChild, true);
+                        //XmlWriter writer = XmlWriter.Create(filename, settings);
+                        //doc2.DocumentElement.AppendChild(newBook);
+
+                        //doc.Save(writer);
+                        ////writer.Close();
+
+
+
+                    }
+                   
+                }
+                return oData;
+            } catch (Exception) {
+
+                throw;
             }
         }
     }

@@ -33,6 +33,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
@@ -49,6 +50,8 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.cboMonedas = new Telerik.WinControls.UI.RadDropDownList();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtPrecio = new Telerik.WinControls.UI.RadTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtClave = new Telerik.WinControls.UI.RadTextBox();
@@ -65,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMonedas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
@@ -84,7 +88,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(648, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(744, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -194,6 +198,8 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.cboMonedas);
+            this.radPanel1.Controls.Add(this.label9);
             this.radPanel1.Controls.Add(this.txtPrecio);
             this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.txtClave);
@@ -207,17 +213,35 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(648, 116);
+            this.radPanel1.Size = new System.Drawing.Size(744, 142);
             this.radPanel1.TabIndex = 1;
+            // 
+            // cboMonedas
+            // 
+            this.cboMonedas.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboMonedas.Location = new System.Drawing.Point(70, 17);
+            this.cboMonedas.Name = "cboMonedas";
+            this.cboMonedas.Size = new System.Drawing.Size(144, 20);
+            this.cboMonedas.SortStyle = Telerik.WinControls.Enumerations.SortStyle.Ascending;
+            this.cboMonedas.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Moneda:";
             // 
             // txtPrecio
             // 
             this.txtPrecio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrecio.Location = new System.Drawing.Point(181, 62);
+            this.txtPrecio.Location = new System.Drawing.Point(181, 86);
             this.txtPrecio.MaxLength = 1000;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(88, 20);
-            this.txtPrecio.TabIndex = 4;
+            this.txtPrecio.TabIndex = 5;
             this.txtPrecio.Text = "0.00";
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
@@ -225,7 +249,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(137, 66);
+            this.label3.Location = new System.Drawing.Point(137, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 23;
@@ -234,16 +258,16 @@
             // txtClave
             // 
             this.txtClave.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtClave.Location = new System.Drawing.Point(70, 62);
+            this.txtClave.Location = new System.Drawing.Point(70, 86);
             this.txtClave.MaxLength = 5;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(47, 20);
-            this.txtClave.TabIndex = 3;
+            this.txtClave.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 66);
+            this.label2.Location = new System.Drawing.Point(30, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 21;
@@ -252,15 +276,15 @@
             // cboEntidad
             // 
             this.cboEntidad.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboEntidad.Location = new System.Drawing.Point(70, 16);
+            this.cboEntidad.Location = new System.Drawing.Point(70, 40);
             this.cboEntidad.Name = "cboEntidad";
             this.cboEntidad.Size = new System.Drawing.Size(192, 20);
-            this.cboEntidad.TabIndex = 1;
+            this.cboEntidad.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 20);
+            this.label7.Location = new System.Drawing.Point(17, 44);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 20;
@@ -280,26 +304,26 @@
             this.chkEstatus.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkEstatus.Checked = true;
             this.chkEstatus.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstatus.Location = new System.Drawing.Point(25, 82);
+            this.chkEstatus.Location = new System.Drawing.Point(25, 106);
             this.chkEstatus.Name = "chkEstatus";
             this.chkEstatus.Size = new System.Drawing.Size(61, 24);
-            this.chkEstatus.TabIndex = 5;
+            this.chkEstatus.TabIndex = 6;
             this.chkEstatus.Text = "Activo:";
             this.chkEstatus.UseVisualStyleBackColor = true;
             // 
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(70, 39);
-            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Location = new System.Drawing.Point(70, 63);
+            this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(256, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.Size = new System.Drawing.Size(321, 20);
+            this.txtNombre.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 43);
+            this.label1.Location = new System.Drawing.Point(16, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 14;
@@ -309,9 +333,9 @@
             // 
             this.radPanel2.Controls.Add(this.gvDatos);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel2.Location = new System.Drawing.Point(0, 169);
+            this.radPanel2.Location = new System.Drawing.Point(0, 195);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(648, 188);
+            this.radPanel2.Size = new System.Drawing.Size(744, 162);
             this.radPanel2.TabIndex = 2;
             // 
             // gvDatos
@@ -321,6 +345,9 @@
             // 
             // 
             // 
+            this.gvDatos.MasterTemplate.AllowAddNewRow = false;
+            this.gvDatos.MasterTemplate.AllowDeleteRow = false;
+            this.gvDatos.MasterTemplate.AllowSearchRow = true;
             this.gvDatos.MasterTemplate.AutoExpandGroups = true;
             gridViewTextBoxColumn1.FieldName = "Entidad.Id";
             gridViewTextBoxColumn1.HeaderText = "IdEntidad";
@@ -336,18 +363,24 @@
             gridViewTextBoxColumn3.MinWidth = 100;
             gridViewTextBoxColumn3.Name = "Entidad";
             gridViewTextBoxColumn3.Width = 100;
-            gridViewTextBoxColumn4.FieldName = "Clave";
-            gridViewTextBoxColumn4.HeaderText = "Clave";
+            gridViewTextBoxColumn4.FieldName = "Moneda.Moneda";
+            gridViewTextBoxColumn4.HeaderText = "Moneda";
             gridViewTextBoxColumn4.MaxWidth = 100;
-            gridViewTextBoxColumn4.MinWidth = 100;
-            gridViewTextBoxColumn4.Name = "Clave";
-            gridViewTextBoxColumn4.Width = 100;
-            gridViewTextBoxColumn5.FieldName = "Nombre";
-            gridViewTextBoxColumn5.HeaderText = "Servicio";
-            gridViewTextBoxColumn5.MaxWidth = 300;
-            gridViewTextBoxColumn5.MinWidth = 180;
-            gridViewTextBoxColumn5.Name = "Nombre";
-            gridViewTextBoxColumn5.Width = 250;
+            gridViewTextBoxColumn4.MinWidth = 80;
+            gridViewTextBoxColumn4.Name = "Moneda";
+            gridViewTextBoxColumn4.Width = 80;
+            gridViewTextBoxColumn5.FieldName = "Clave";
+            gridViewTextBoxColumn5.HeaderText = "Clave";
+            gridViewTextBoxColumn5.MaxWidth = 100;
+            gridViewTextBoxColumn5.MinWidth = 100;
+            gridViewTextBoxColumn5.Name = "Clave";
+            gridViewTextBoxColumn5.Width = 100;
+            gridViewTextBoxColumn6.FieldName = "Nombre";
+            gridViewTextBoxColumn6.HeaderText = "Servicio";
+            gridViewTextBoxColumn6.MaxWidth = 400;
+            gridViewTextBoxColumn6.MinWidth = 300;
+            gridViewTextBoxColumn6.Name = "Nombre";
+            gridViewTextBoxColumn6.Width = 300;
             gridViewDecimalColumn1.FieldName = "Precio";
             gridViewDecimalColumn1.FormatString = "{0:C2}";
             gridViewDecimalColumn1.HeaderText = "Precio";
@@ -372,6 +405,7 @@
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
             gridViewDecimalColumn1,
             gridViewCheckBoxColumn1});
             this.gvDatos.MasterTemplate.ShowFilteringRow = false;
@@ -379,10 +413,9 @@
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ReadOnly = true;
-            this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(648, 188);
+            this.gvDatos.Size = new System.Drawing.Size(744, 162);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -395,7 +428,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 357);
+            this.ClientSize = new System.Drawing.Size(744, 357);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -411,6 +444,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMonedas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
@@ -454,5 +488,7 @@
         private System.Windows.Forms.CheckBox chkEstatus;
         private Telerik.WinControls.UI.RadTextBox txtNombre;
         private System.Windows.Forms.Label label1;
+        private Telerik.WinControls.UI.RadDropDownList cboMonedas;
+        private System.Windows.Forms.Label label9;
     }
 }

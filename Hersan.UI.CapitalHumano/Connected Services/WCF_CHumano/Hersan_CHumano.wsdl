@@ -61,6 +61,12 @@
   <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_SolicitudP_ActualizarResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_ActualizarDictamen_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_SolicitudP_ActualizarDictamen" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_ActualizarDictamen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_SolicitudP_ActualizarDictamenResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHUDictamenSolicitud_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:CHUDictamenSolicitud_Obtener" />
   </wsdl:message>
@@ -187,6 +193,12 @@
   <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_ActualizarResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_ActualizarDictamen_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_ActualizarDictamen" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_ActualizarDictamen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_ActualizarDictamenResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHU_DictamenNuevoP_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:CHU_DictamenNuevoP_Obtener" />
   </wsdl:message>
@@ -228,6 +240,12 @@
   </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHU_EvaluacionInduccion_Guardar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_EvaluacionInduccion_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Evaluacion_ReporteDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Evaluacion_ReporteDetalle" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Evaluacion_ReporteDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Evaluacion_ReporteDetalleResponse" />
   </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHU_SeguimientoCan_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:CHU_SeguimientoCan_Obtener" />
@@ -313,6 +331,24 @@
   <wsdl:message name="IHersan_CHumano_CHU_DescPuestos_Elimina_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_DescPuestos_EliminaResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescPuesto_ReporteDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescPuesto_ReporteDetalle" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescPuesto_ReporteDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescPuesto_ReporteDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescPuesto_ReporteDetalle2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescPuesto_ReporteDetalle2" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescPuesto_ReporteDetalle2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescPuesto_ReporteDetalle2Response" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Empleados_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Empleados_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Empleados_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Empleados_ConsultarResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHUEmpleados_Guardar_InputMessage">
     <wsdl:part name="parameters" element="tns:CHUEmpleados_Guardar" />
   </wsdl:message>
@@ -324,6 +360,12 @@
   </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHU_EmpleadosActualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_EmpleadosActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Empleados_Elimina_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Empleados_Elimina" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Empleados_Elimina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Empleados_EliminaResponse" />
   </wsdl:message>
   <wsdl:portType name="IHersan_CHumano">
     <wsdl:operation name="CHU_Perfiles_Guardar">
@@ -353,6 +395,10 @@
     <wsdl:operation name="CHU_SolicitudP_Actualizar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Actualizar" message="tns:IHersan_CHumano_CHU_SolicitudP_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ActualizarResponse" message="tns:IHersan_CHumano_CHU_SolicitudP_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_SolicitudP_ActualizarDictamen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ActualizarDictamen" message="tns:IHersan_CHumano_CHU_SolicitudP_ActualizarDictamen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ActualizarDictamenResponse" message="tns:IHersan_CHumano_CHU_SolicitudP_ActualizarDictamen_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CHUDictamenSolicitud_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUDictamenSolicitud_Obtener" message="tns:IHersan_CHumano_CHUDictamenSolicitud_Obtener_InputMessage" />
@@ -438,6 +484,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Actualizar" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ActualizarResponse" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Actualizar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CHU_NuevoPuesto_ActualizarDictamen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ActualizarDictamen" message="tns:IHersan_CHumano_CHU_NuevoPuesto_ActualizarDictamen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ActualizarDictamenResponse" message="tns:IHersan_CHumano_CHU_NuevoPuesto_ActualizarDictamen_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CHU_DictamenNuevoP_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Obtener" message="tns:IHersan_CHumano_CHU_DictamenNuevoP_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_ObtenerResponse" message="tns:IHersan_CHumano_CHU_DictamenNuevoP_Obtener_OutputMessage" />
@@ -465,6 +515,10 @@
     <wsdl:operation name="CHU_EvaluacionInduccion_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_Guardar" message="tns:IHersan_CHumano_CHU_EvaluacionInduccion_Guardar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_GuardarResponse" message="tns:IHersan_CHumano_CHU_EvaluacionInduccion_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Evaluacion_ReporteDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Evaluacion_ReporteDetalle" message="tns:IHersan_CHumano_CHU_Evaluacion_ReporteDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Evaluacion_ReporteDetalleResponse" message="tns:IHersan_CHumano_CHU_Evaluacion_ReporteDetalle_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CHU_SeguimientoCan_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SeguimientoCan_Obtener" message="tns:IHersan_CHumano_CHU_SeguimientoCan_Obtener_InputMessage" />
@@ -522,6 +576,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_Elimina" message="tns:IHersan_CHumano_CHU_DescPuestos_Elimina_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuestos_EliminaResponse" message="tns:IHersan_CHumano_CHU_DescPuestos_Elimina_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CHU_DescPuesto_ReporteDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle" message="tns:IHersan_CHumano_CHU_DescPuesto_ReporteDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalleResponse" message="tns:IHersan_CHumano_CHU_DescPuesto_ReporteDetalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescPuesto_ReporteDetalle2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2" message="tns:IHersan_CHumano_CHU_DescPuesto_ReporteDetalle2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2Response" message="tns:IHersan_CHumano_CHU_DescPuesto_ReporteDetalle2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Empleados_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Consultar" message="tns:IHersan_CHumano_CHU_Empleados_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Empleados_Consultar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CHUEmpleados_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUEmpleados_Guardar" message="tns:IHersan_CHumano_CHUEmpleados_Guardar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHUEmpleados_GuardarResponse" message="tns:IHersan_CHumano_CHUEmpleados_Guardar_OutputMessage" />
@@ -529,6 +595,10 @@
     <wsdl:operation name="CHU_EmpleadosActualizar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_EmpleadosActualizar" message="tns:IHersan_CHumano_CHU_EmpleadosActualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_EmpleadosActualizarResponse" message="tns:IHersan_CHumano_CHU_EmpleadosActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Empleados_Elimina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Elimina" message="tns:IHersan_CHumano_CHU_Empleados_Elimina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_EliminaResponse" message="tns:IHersan_CHumano_CHU_Empleados_Elimina_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_CHumano" type="tns:IHersan_CHumano">
@@ -590,6 +660,15 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_SolicitudP_Actualizar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_SolicitudP_ActualizarDictamen">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ActualizarDictamen" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -786,6 +865,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CHU_NuevoPuesto_ActualizarDictamen">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ActualizarDictamen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CHU_DictamenNuevoP_Obtener">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DictamenNuevoP_Obtener" style="document" />
       <wsdl:input>
@@ -842,6 +930,15 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_EvaluacionInduccion_Guardar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_EvaluacionInduccion_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Evaluacion_ReporteDetalle">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Evaluacion_ReporteDetalle" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -975,6 +1072,33 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CHU_DescPuesto_ReporteDetalle">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescPuesto_ReporteDetalle2">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Empleados_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CHUEmpleados_Guardar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHUEmpleados_Guardar" style="document" />
       <wsdl:input>
@@ -986,6 +1110,15 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_EmpleadosActualizar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_EmpleadosActualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Empleados_Elimina">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Elimina" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

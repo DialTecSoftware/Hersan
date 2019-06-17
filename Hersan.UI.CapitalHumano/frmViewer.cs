@@ -18,12 +18,10 @@ namespace Hersan.UI.CapitalHumano
         }
         public Modo VerImprimir;
 
-
         public frmViewer()
         {
             InitializeComponent();
         }
-
         private void frmViewer_Load(object sender, EventArgs e)
         {
             try {
@@ -38,5 +36,6 @@ namespace Hersan.UI.CapitalHumano
                 throw ex;
             }
         }
+
     }
 }

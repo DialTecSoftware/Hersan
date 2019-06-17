@@ -8,6 +8,7 @@ namespace Hersan.Entidades.Ensamble
     {
         public ClientesBE()
         {
+            Sel = false;
             Id = 0;
             Nombre = string.Empty;
             RFC = string.Empty;
@@ -18,10 +19,12 @@ namespace Hersan.Entidades.Ensamble
             CP = 0;
             Ciudad = string.Empty;
             Estado = string.Empty;
+            Pais = string.Empty;
             Nacional = true;
             VIP = false;
             Correo1 = string.Empty;
             Correo2 = string.Empty;
+            Agente = new AgentesBE();
             TipoCliente = new TiposClienteBE();
             Entidades = new List<ClientesEntidadesBE>();
             Condiciones = new ClientesCondicionesBE();
@@ -32,6 +35,7 @@ namespace Hersan.Entidades.Ensamble
             DatosUsuario = new GeneralBE();
         }
 
+        public bool Sel { get; set; }
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string RFC { get; set; }
@@ -42,10 +46,12 @@ namespace Hersan.Entidades.Ensamble
         public int CP { get; set; }
         public string Ciudad { get; set; }
         public string Estado { get; set; }
+        public string Pais { get; set; }
         public bool Nacional { get; set; }
         public bool VIP { get; set; }
         public string Correo1 { get; set; }
         public string Correo2 { get; set; }
+        public AgentesBE Agente { get; set; }
         public TiposClienteBE TipoCliente{ get; set; }
         public List<ClientesEntidadesBE> Entidades { get; set; }
         public ClientesCondicionesBE Condiciones { get; set; }

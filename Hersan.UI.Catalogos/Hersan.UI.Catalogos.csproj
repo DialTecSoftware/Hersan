@@ -74,11 +74,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\WCF_Ensamble\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="frmAccesorios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAccesorios.Designer.cs">
       <DependentUpon>frmAccesorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgenteCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgenteCliente.Designer.cs">
+      <DependentUpon>frmAgenteCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgentes.Designer.cs">
+      <DependentUpon>frmAgentes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmColores.cs">
       <SubType>Form</SubType>
@@ -91,6 +108,12 @@
     </Compile>
     <Compile Include="frmComplementos.Designer.cs">
       <DependentUpon>frmComplementos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCondicionesVta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCondicionesVta.Designer.cs">
+      <DependentUpon>frmCondicionesVta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmContactos.cs">
       <SubType>Form</SubType>
@@ -152,6 +175,12 @@
     <Compile Include="frmFunciones.Designer.cs">
       <DependentUpon>frmFunciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMonedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonedas.Designer.cs">
+      <DependentUpon>frmMonedas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,11 +217,20 @@
     <EmbeddedResource Include="frmAccesorios.resx">
       <DependentUpon>frmAccesorios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgenteCliente.resx">
+      <DependentUpon>frmAgenteCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgentes.resx">
+      <DependentUpon>frmAgentes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmColores.resx">
       <DependentUpon>frmColores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmComplementos.resx">
       <DependentUpon>frmComplementos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCondicionesVta.resx">
+      <DependentUpon>frmCondicionesVta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmContactos.resx">
       <DependentUpon>frmContactos.cs</DependentUpon>
@@ -223,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFunciones.resx">
       <DependentUpon>frmFunciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonedas.resx">
+      <DependentUpon>frmMonedas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPuestos.resx">
       <DependentUpon>frmPuestos.cs</DependentUpon>
@@ -263,6 +304,31 @@
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.wsdl" />
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble6.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
@@ -284,10 +350,12 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.AccesoriosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.AgentesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoniasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ColoresBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ComplementosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CondicionesExpBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ContactosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DepartamentosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.DocumentosBE.datasource" />
@@ -297,16 +365,28 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EquipoHerramientasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.EstadosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.FamiliasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.FormasPagoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.MetodosPagoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ModendasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.MonedasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.OrganigramaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE1.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ReflejantesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TipoProductoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposClienteBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE1.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.UsoCFDIBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ClientesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.PedidosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.PreciosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ProductoEnsambleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ServiciosBE.datasource" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WCF_Catalogos\" />
+    <WCFMetadataStorage Include="Connected Services\WCF_Ensamble\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos.disco" />
@@ -336,6 +416,21 @@
       <Project>{EE64995C-6BCC-43D1-8E12-43125E2DB6C2}</Project>
       <Name>Hersan.UI.CapitalHumano</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Ensamble\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Ensamble\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Ensamble\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

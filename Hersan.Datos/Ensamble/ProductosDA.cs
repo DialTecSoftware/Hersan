@@ -123,13 +123,16 @@ namespace Hersan.Datos.Ensamble
                 throw ex;
             }
         }
-        public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo()
+        public List<ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda)
         {
             List<ProductoEnsambleBE> oList = new List<ProductoEnsambleBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_ENS_PRODUCTOSCOTIZACION_COMBO, conn)) {
+                        cmd.Parameters.AddWithValue("@Nacional", Nacional);
+                        cmd.Parameters.AddWithValue("@Moneda", Moneda);
+
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
@@ -144,6 +147,11 @@ namespace Hersan.Datos.Ensamble
                                 obj.Producto.Nombre = reader["TPR_Nombre"].ToString();
                                 obj.Reflejantes = int.Parse(reader["PFI_Reflejantes"].ToString());
                                 obj.Precio.Precio = decimal.Parse(reader["Precio"].ToString());
+                                obj.Precio.CantidadVol = int.Parse(reader["PRE_CantVolumen"].ToString());
+                                obj.Precio.Volumen = decimal.Parse(reader["PRE_Volumen"].ToString());
+                                obj.Precio.CantidadMay = int.Parse(reader["PRE_CantMayoreo"].ToString());
+                                obj.Precio.Mayoreo = decimal.Parse(reader["PRE_Mayoreo"].ToString());
+                                obj.Precio.AAA = decimal.Parse(reader["PRE_AAA"].ToString());
 
                                 oList.Add(obj);
                             }

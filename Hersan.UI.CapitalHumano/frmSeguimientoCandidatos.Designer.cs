@@ -61,18 +61,18 @@
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnCorreo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
-            this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnCorreo = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
@@ -104,7 +104,7 @@
             this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 74);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(982, 112);
             this.radPanel1.TabIndex = 1;
@@ -138,27 +138,29 @@
             // 
             // txtCorreo
             // 
+            this.txtCorreo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCorreo.Location = new System.Drawing.Point(401, 8);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(233, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(233, 20);
             this.txtCorreo.TabIndex = 25;
             // 
             // txtNombreC
             // 
+            this.txtNombreC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombreC.Location = new System.Drawing.Point(91, 82);
             this.txtNombreC.Name = "txtNombreC";
-            this.txtNombreC.Size = new System.Drawing.Size(230, 22);
+            this.txtNombreC.Size = new System.Drawing.Size(230, 20);
             this.txtNombreC.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 81);
+            this.label4.Location = new System.Drawing.Point(29, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 23;
-            this.label4.Text = "Nombre Cpto:";
+            this.label4.Text = "Nombre :";
             // 
             // label2
             // 
@@ -174,8 +176,10 @@
             // 
             this.txtId.Location = new System.Drawing.Point(736, 38);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(48, 22);
+            this.txtId.Size = new System.Drawing.Size(48, 20);
             this.txtId.TabIndex = 13;
+            this.txtId.Text = "-1";
+            this.txtId.Visible = false;
             // 
             // rdbRechazado
             // 
@@ -234,7 +238,7 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 186);
+            this.gvDatos.Location = new System.Drawing.Point(0, 165);
             // 
             // 
             // 
@@ -323,7 +327,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(982, 219);
+            this.gvDatos.Size = new System.Drawing.Size(982, 240);
             this.gvDatos.TabIndex = 4;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -364,6 +368,20 @@
             this.commandBarStripElement1.UseCompatibleTextRendering = false;
             ((Telerik.WinControls.UI.RadCommandBarOverflowButton)(this.commandBarStripElement1.GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnNuevo.DisplayName = "commandBarButton2";
+            this.btnNuevo.DrawText = true;
+            this.btnNuevo.EnableBorderHighlight = false;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNuevo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnNuevo.UseCompatibleTextRendering = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // commandBarSeparator2
             // 
             this.commandBarSeparator2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -373,11 +391,34 @@
             this.commandBarSeparator2.UseCompatibleTextRendering = false;
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnGuardar.DisplayName = "commandBarButton3";
+            this.btnGuardar.DrawText = true;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuardar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnGuardar.UseCompatibleTextRendering = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // commandBarSeparator1
             // 
             this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
             this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
+            // 
+            // btnCorreo
+            // 
+            this.btnCorreo.DisplayName = "commandBarButton1";
+            this.btnCorreo.DrawText = true;
+            this.btnCorreo.Image = ((System.Drawing.Image)(resources.GetObject("btnCorreo.Image")));
+            this.btnCorreo.Name = "btnCorreo";
+            this.btnCorreo.Text = "Enviar Correo";
+            this.btnCorreo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCorreo.Click += new System.EventHandler(this.btnCorreo_Click);
             // 
             // commandBarSeparator3
             // 
@@ -388,6 +429,19 @@
             this.commandBarSeparator3.UseCompatibleTextRendering = false;
             this.commandBarSeparator3.VisibleInOverflowMenu = false;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnEliminar.DisplayName = "commandBarButton4";
+            this.btnEliminar.DrawText = true;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnEliminar.UseCompatibleTextRendering = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // commandBarSeparator4
             // 
             this.commandBarSeparator4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -396,6 +450,16 @@
             this.commandBarSeparator4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarSeparator4.UseCompatibleTextRendering = false;
             this.commandBarSeparator4.VisibleInOverflowMenu = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.DisplayName = "commandBarButton1";
+            this.btnSalir.DrawText = true;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // commandBarSeparator5
             // 
@@ -422,69 +486,9 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(982, 74);
+            this.radCommandBar1.Size = new System.Drawing.Size(982, 53);
             this.radCommandBar1.TabIndex = 0;
             this.radCommandBar1.ThemeName = "Material";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnNuevo.DisplayName = "commandBarButton2";
-            this.btnNuevo.DrawText = true;
-            this.btnNuevo.EnableBorderHighlight = false;
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnNuevo.UseCompatibleTextRendering = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnGuardar.DisplayName = "commandBarButton3";
-            this.btnGuardar.DrawText = true;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuardar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnGuardar.UseCompatibleTextRendering = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCorreo
-            // 
-            this.btnCorreo.DisplayName = "commandBarButton1";
-            this.btnCorreo.DrawText = true;
-            this.btnCorreo.Image = ((System.Drawing.Image)(resources.GetObject("btnCorreo.Image")));
-            this.btnCorreo.Name = "btnCorreo";
-            this.btnCorreo.Text = "Enviar Correo";
-            this.btnCorreo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCorreo.Click += new System.EventHandler(this.btnCorreo_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnEliminar.DisplayName = "commandBarButton4";
-            this.btnEliminar.DrawText = true;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnEliminar.UseCompatibleTextRendering = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.DisplayName = "commandBarButton1";
-            this.btnSalir.DrawText = true;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmSeguimientoCandidatos
             // 
@@ -499,7 +503,8 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "frmSeguimientoCandidatos";
+            this.ShowIcon = false;
+            this.Text = "Seguimiento A Candidatos";
             this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmSeguimientoCandidatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

@@ -16,9 +16,10 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_CHU_NVP_OBTENER = "CHU_NuevoPuesto_Obtener";
         const string CONST_CHU_NVP_GUARDAR = "CHU_NuevoPuesto_Guarda";
         const string CONST_CHU_NVP_ACTUALIZAR = "CHU_NuevoPuesto_Actualiza";
+        const string CONST_CHU_NVP_ACTUALIZARDICTAMEN = "CHU_NuevoPuesto_ActualizaDictamen";
         #endregion
 
-
+        
         public List<NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser)
         {
             List<NuevoPuestoBE> oList = new List<NuevoPuestoBE>();
@@ -45,12 +46,13 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Prestaciones = (reader["NVP_Prestaciones"].ToString());
                                 obj.Ocupantes = int.Parse(reader["NVP_Ocupantes"].ToString());
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["NVP_Estatus"].ToString());
-                                obj.Autorizado = bool.Parse(reader["NVP_Autorizado"].ToString());
-                                obj.NoAutorizado = !obj.Autorizado;
+                                obj.Estado = (reader["Estado"].ToString());
                                 obj.PuestosCargo = (reader["NVP_PuestosCargo"].ToString());
                                 obj.Sueldo = decimal.Parse(reader["NVP_Sueldo"].ToString());
                                 obj.Justificacion = (reader["NVP_Justificacion"].ToString());
                                 obj.Indicadores = (reader["NVP_Indicadores"].ToString());
+                                obj.OpinionesDG = (reader["NVP_OpinionesDG"].ToString());
+                                obj.OpinionesCH = (reader["NVP_OpinionesCH"].ToString());
                                 oList.Add(obj);
                             }
                         }
@@ -126,7 +128,32 @@ namespace Hersan.Datos.CapitalHumano
                     throw ex;
                 }
             }
-        
+
+        public int CHU_NuevoPuesto_ActualizarDictamen(NuevoPuestoBE obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_NVP_ACTUALIZARDICTAMEN, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", obj.Id);
+                        cmd.Parameters.AddWithValue("@OpinionesCH", obj.OpinionesCH);
+                        cmd.Parameters.AddWithValue("@OpinionesDG", obj.OpinionesDG);
+                        cmd.Parameters.AddWithValue("@Estado", obj.Estado);
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+                        cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+
     }
 }
 

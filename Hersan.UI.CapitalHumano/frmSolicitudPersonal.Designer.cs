@@ -35,14 +35,14 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -61,6 +61,7 @@
             this.txtSueldo = new System.Windows.Forms.TextBox();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.txtDictamen = new System.Windows.Forms.TextBox();
             this.txtJustif = new System.Windows.Forms.TextBox();
             this.txtIndicad = new System.Windows.Forms.TextBox();
             this.chkEstatus = new Telerik.WinControls.UI.RadCheckBox();
@@ -94,7 +95,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(866, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(1070, 81);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -218,8 +219,9 @@
             // 
             this.txtSueldo.Location = new System.Drawing.Point(355, 95);
             this.txtSueldo.Name = "txtSueldo";
-            this.txtSueldo.Size = new System.Drawing.Size(79, 20);
+            this.txtSueldo.Size = new System.Drawing.Size(65, 20);
             this.txtSueldo.TabIndex = 2;
+            this.txtSueldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldo_KeyPress);
             // 
             // radPanel1
@@ -227,6 +229,7 @@
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.txtSueldo);
             this.radPanel1.Controls.Add(this.label8);
+            this.radPanel1.Controls.Add(this.txtDictamen);
             this.radPanel1.Controls.Add(this.txtJustif);
             this.radPanel1.Controls.Add(this.txtIndicad);
             this.radPanel1.Controls.Add(this.chkEstatus);
@@ -241,9 +244,9 @@
             this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 56);
+            this.radPanel1.Location = new System.Drawing.Point(0, 81);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(866, 161);
+            this.radPanel1.Size = new System.Drawing.Size(1070, 161);
             this.radPanel1.TabIndex = 6;
             // 
             // txtId
@@ -254,8 +257,19 @@
             this.txtId.TabIndex = 15;
             this.txtId.Visible = false;
             // 
+            // txtDictamen
+            // 
+            this.txtDictamen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDictamen.Location = new System.Drawing.Point(729, 11);
+            this.txtDictamen.Multiline = true;
+            this.txtDictamen.Name = "txtDictamen";
+            this.txtDictamen.ReadOnly = true;
+            this.txtDictamen.Size = new System.Drawing.Size(338, 75);
+            this.txtDictamen.TabIndex = 13;
+            // 
             // txtJustif
             // 
+            this.txtJustif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtJustif.Location = new System.Drawing.Point(355, 51);
             this.txtJustif.Multiline = true;
             this.txtJustif.Name = "txtJustif";
@@ -264,6 +278,7 @@
             // 
             // txtIndicad
             // 
+            this.txtIndicad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIndicad.Location = new System.Drawing.Point(354, 11);
             this.txtIndicad.Multiline = true;
             this.txtIndicad.Name = "txtIndicad";
@@ -359,14 +374,13 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 217);
+            this.gvDatos.Location = new System.Drawing.Point(0, 242);
             // 
             // 
             // 
             this.gvDatos.MasterTemplate.AllowAddNewRow = false;
             this.gvDatos.MasterTemplate.AllowColumnReorder = false;
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
-            this.gvDatos.MasterTemplate.AllowDragToGroup = false;
             this.gvDatos.MasterTemplate.AllowEditRow = false;
             this.gvDatos.MasterTemplate.AutoExpandGroups = true;
             gridViewTextBoxColumn1.FieldName = "Id";
@@ -393,14 +407,6 @@
             gridViewTextBoxColumn6.HeaderText = "Sueldo";
             gridViewTextBoxColumn6.Name = "Sueldo";
             gridViewTextBoxColumn6.Width = 70;
-            gridViewCheckBoxColumn1.FieldName = "Autorizado";
-            gridViewCheckBoxColumn1.HeaderText = "Autorizado";
-            gridViewCheckBoxColumn1.Name = "Autorizado";
-            gridViewCheckBoxColumn1.Width = 70;
-            gridViewCheckBoxColumn2.FieldName = "NoAutorizado";
-            gridViewCheckBoxColumn2.HeaderText = "No Autorizado";
-            gridViewCheckBoxColumn2.Name = "NoAutorizado";
-            gridViewCheckBoxColumn2.Width = 80;
             gridViewTextBoxColumn7.FieldName = "Indicadores";
             gridViewTextBoxColumn7.HeaderText = "Indicadores";
             gridViewTextBoxColumn7.IsVisible = false;
@@ -425,6 +431,14 @@
             gridViewTextBoxColumn12.HeaderText = "idTpoContrato";
             gridViewTextBoxColumn12.IsVisible = false;
             gridViewTextBoxColumn12.Name = "TCO_Id";
+            gridViewTextBoxColumn13.FieldName = "Dictamen";
+            gridViewTextBoxColumn13.HeaderText = "Dictamen";
+            gridViewTextBoxColumn13.IsVisible = false;
+            gridViewTextBoxColumn13.Name = "Dictamen";
+            gridViewTextBoxColumn14.FieldName = "Estado";
+            gridViewTextBoxColumn14.HeaderText = "Estado";
+            gridViewTextBoxColumn14.Name = "Estado";
+            gridViewTextBoxColumn14.Width = 100;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -432,21 +446,22 @@
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
-            gridViewCheckBoxColumn1,
-            gridViewCheckBoxColumn2,
             gridViewTextBoxColumn7,
             gridViewTextBoxColumn8,
             gridViewTextBoxColumn9,
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12});
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14});
+            this.gvDatos.MasterTemplate.ShowGroupedColumns = true;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(866, 179);
+            this.gvDatos.Size = new System.Drawing.Size(1070, 154);
             this.gvDatos.TabIndex = 7;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -454,7 +469,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 396);
+            this.ClientSize = new System.Drawing.Size(1070, 396);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -464,7 +479,8 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
-            this.Text = "SolicitudPersonal";
+            this.Text = "Solicitud de Personal";
+            this.ThemeName = "EvalFormTheme";
             this.Load += new System.EventHandler(this.frmSolicitud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).EndInit();
@@ -515,5 +531,6 @@
         private System.Windows.Forms.TextBox txtIndicad;
         private System.Windows.Forms.TextBox txtId;
         private Telerik.WinControls.UI.RadCheckBox chkEstatus;
+        private System.Windows.Forms.TextBox txtDictamen;
     }
 }

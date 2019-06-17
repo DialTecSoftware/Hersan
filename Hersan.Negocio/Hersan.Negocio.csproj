@@ -61,9 +61,12 @@
     <Compile Include="CapitalHumano\SeguimientoCandidatosBP.cs" />
     <Compile Include="CapitalHumano\SolicitudPersonalBP.cs" />
     <Compile Include="Catalogos\AccesoriosBP.cs" />
+    <Compile Include="Catalogos\AgentesBP.cs" />
     <Compile Include="Catalogos\CiudadesBP.cs" />
     <Compile Include="Catalogos\ColoniasBP.cs" />
     <Compile Include="Catalogos\ColoresBP.cs" />
+    <Compile Include="Catalogos\CondicionesExpBP.cs" />
+    <Compile Include="Catalogos\MonedasBP.cs" />
     <Compile Include="Catalogos\ReflejantesBP.cs" />
     <Compile Include="Catalogos\ContactosBP.cs" />
     <Compile Include="Catalogos\DepartamentosBP.cs" />
@@ -99,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Datos\Hersan.Datos.csproj">
-      <Project>{220A1C2F-41CE-44CC-A90B-32EC8DBC535A}</Project>
+      <Project>{220a1c2f-41ce-44cc-a90b-32ec8dbc535a}</Project>
       <Name>Hersan.Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">

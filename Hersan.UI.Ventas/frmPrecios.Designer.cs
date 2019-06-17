@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrecios));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn8 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn9 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn10 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn11 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn12 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn13 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn14 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -55,6 +56,14 @@
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.cboMonedas = new Telerik.WinControls.UI.RadDropDownList();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtExWorks = new Telerik.WinControls.UI.RadTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPzasVolumen = new Telerik.WinControls.UI.RadTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPzasMayoreo = new Telerik.WinControls.UI.RadTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtProdId = new Telerik.WinControls.UI.RadTextBox();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
             this.txtCodigo = new Telerik.WinControls.UI.RadTextBox();
@@ -73,13 +82,13 @@
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.txtPzasMayoreo = new Telerik.WinControls.UI.RadTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPzasVolumen = new Telerik.WinControls.UI.RadTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMonedas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtExWorks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPzasVolumen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPzasMayoreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProdId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo)).BeginInit();
@@ -91,8 +100,6 @@
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPzasMayoreo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPzasVolumen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,6 +202,10 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.cboMonedas);
+            this.radPanel1.Controls.Add(this.label9);
+            this.radPanel1.Controls.Add(this.txtExWorks);
+            this.radPanel1.Controls.Add(this.label8);
             this.radPanel1.Controls.Add(this.txtPzasVolumen);
             this.radPanel1.Controls.Add(this.label7);
             this.radPanel1.Controls.Add(this.txtPzasMayoreo);
@@ -214,8 +225,91 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(911, 141);
+            this.radPanel1.Size = new System.Drawing.Size(911, 167);
             this.radPanel1.TabIndex = 1;
+            // 
+            // cboMonedas
+            // 
+            this.cboMonedas.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboMonedas.Location = new System.Drawing.Point(101, 17);
+            this.cboMonedas.Name = "cboMonedas";
+            this.cboMonedas.Size = new System.Drawing.Size(144, 20);
+            this.cboMonedas.SortStyle = Telerik.WinControls.Enumerations.SortStyle.Ascending;
+            this.cboMonedas.TabIndex = 1;
+            this.cboMonedas.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboMonedas_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(47, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Moneda:";
+            // 
+            // txtExWorks
+            // 
+            this.txtExWorks.Location = new System.Drawing.Point(272, 63);
+            this.txtExWorks.MaxLength = 12;
+            this.txtExWorks.Name = "txtExWorks";
+            this.txtExWorks.ReadOnly = true;
+            this.txtExWorks.Size = new System.Drawing.Size(74, 20);
+            this.txtExWorks.TabIndex = 4;
+            this.txtExWorks.TabStop = false;
+            this.txtExWorks.Text = "0.00";
+            this.txtExWorks.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtExWorks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(217, 67);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "ExWorks:";
+            // 
+            // txtPzasVolumen
+            // 
+            this.txtPzasVolumen.Location = new System.Drawing.Point(101, 85);
+            this.txtPzasVolumen.MaxLength = 12;
+            this.txtPzasVolumen.Name = "txtPzasVolumen";
+            this.txtPzasVolumen.ReadOnly = true;
+            this.txtPzasVolumen.Size = new System.Drawing.Size(74, 20);
+            this.txtPzasVolumen.TabIndex = 5;
+            this.txtPzasVolumen.TabStop = false;
+            this.txtPzasVolumen.Text = "0.00";
+            this.txtPzasVolumen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Pzas. Volúmen:";
+            // 
+            // txtPzasMayoreo
+            // 
+            this.txtPzasMayoreo.Location = new System.Drawing.Point(101, 107);
+            this.txtPzasMayoreo.MaxLength = 12;
+            this.txtPzasMayoreo.Name = "txtPzasMayoreo";
+            this.txtPzasMayoreo.ReadOnly = true;
+            this.txtPzasMayoreo.Size = new System.Drawing.Size(74, 20);
+            this.txtPzasMayoreo.TabIndex = 7;
+            this.txtPzasMayoreo.TabStop = false;
+            this.txtPzasMayoreo.Text = "0.00";
+            this.txtPzasMayoreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Pzas. Mayoreo:";
             // 
             // txtProdId
             // 
@@ -243,12 +337,12 @@
             // 
             this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.txtCodigo.Location = new System.Drawing.Point(101, 17);
+            this.txtCodigo.Location = new System.Drawing.Point(101, 39);
             this.txtCodigo.MaxLength = 50;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(98, 23);
-            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TabIndex = 2;
             this.txtCodigo.TabStop = false;
             this.txtCodigo.Text = "CODIGO";
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -257,7 +351,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(52, 21);
+            this.label1.Location = new System.Drawing.Point(52, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 15;
@@ -265,12 +359,13 @@
             // 
             // txt3A
             // 
-            this.txt3A.Location = new System.Drawing.Point(101, 110);
+            this.txt3A.Location = new System.Drawing.Point(101, 131);
             this.txt3A.MaxLength = 5;
             this.txt3A.Name = "txt3A";
             this.txt3A.ReadOnly = true;
             this.txt3A.Size = new System.Drawing.Size(74, 20);
-            this.txt3A.TabIndex = 7;
+            this.txt3A.TabIndex = 9;
+            this.txt3A.TabStop = false;
             this.txt3A.Text = "0.00";
             this.txt3A.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt3A.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal);
@@ -278,7 +373,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 114);
+            this.label5.Location = new System.Drawing.Point(54, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 8;
@@ -286,12 +381,13 @@
             // 
             // txtMayoreo
             // 
-            this.txtMayoreo.Location = new System.Drawing.Point(272, 86);
+            this.txtMayoreo.Location = new System.Drawing.Point(272, 107);
             this.txtMayoreo.MaxLength = 5;
             this.txtMayoreo.Name = "txtMayoreo";
             this.txtMayoreo.ReadOnly = true;
             this.txtMayoreo.Size = new System.Drawing.Size(74, 20);
-            this.txtMayoreo.TabIndex = 6;
+            this.txtMayoreo.TabIndex = 8;
+            this.txtMayoreo.TabStop = false;
             this.txtMayoreo.Text = "0.00";
             this.txtMayoreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMayoreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal);
@@ -299,7 +395,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 90);
+            this.label3.Location = new System.Drawing.Point(204, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 6;
@@ -307,12 +403,13 @@
             // 
             // txtVolumen
             // 
-            this.txtVolumen.Location = new System.Drawing.Point(272, 64);
+            this.txtVolumen.Location = new System.Drawing.Point(272, 85);
             this.txtVolumen.MaxLength = 5;
             this.txtVolumen.Name = "txtVolumen";
             this.txtVolumen.ReadOnly = true;
             this.txtVolumen.Size = new System.Drawing.Size(74, 20);
-            this.txtVolumen.TabIndex = 4;
+            this.txtVolumen.TabIndex = 6;
+            this.txtVolumen.TabStop = false;
             this.txtVolumen.Text = "0.00";
             this.txtVolumen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtVolumen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal);
@@ -320,7 +417,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(204, 68);
+            this.label4.Location = new System.Drawing.Point(204, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 4;
@@ -328,12 +425,13 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(101, 42);
+            this.txtPrecio.Location = new System.Drawing.Point(101, 63);
             this.txtPrecio.MaxLength = 12;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(74, 20);
-            this.txtPrecio.TabIndex = 2;
+            this.txtPrecio.TabIndex = 3;
+            this.txtPrecio.TabStop = false;
             this.txtPrecio.Text = "0.00";
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal);
@@ -341,7 +439,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 46);
+            this.label2.Location = new System.Drawing.Point(67, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 2;
@@ -351,9 +449,9 @@
             // 
             this.radPanel2.Controls.Add(this.gvDatos);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel2.Location = new System.Drawing.Point(0, 194);
+            this.radPanel2.Location = new System.Drawing.Point(0, 220);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(911, 242);
+            this.radPanel2.Size = new System.Drawing.Size(911, 216);
             this.radPanel2.TabIndex = 2;
             // 
             // gvDatos
@@ -369,138 +467,163 @@
             this.gvDatos.MasterTemplate.AllowSearchRow = true;
             this.gvDatos.MasterTemplate.AutoExpandGroups = true;
             this.gvDatos.MasterTemplate.AutoGenerateColumns = false;
-            gridViewTextBoxColumn1.FieldName = "Id";
-            gridViewTextBoxColumn1.HeaderText = "Id";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "Id";
-            gridViewTextBoxColumn2.FieldName = "Producto.Id";
-            gridViewTextBoxColumn2.HeaderText = "IdProducto";
-            gridViewTextBoxColumn2.IsVisible = false;
-            gridViewTextBoxColumn2.Name = "IdProducto";
-            gridViewTextBoxColumn3.FieldName = "Producto.Familia.Entidad.Id";
-            gridViewTextBoxColumn3.HeaderText = "IdEntidad";
-            gridViewTextBoxColumn3.IsVisible = false;
-            gridViewTextBoxColumn3.Name = "IdEntidad";
-            gridViewTextBoxColumn4.FieldName = "Producto.Familia.Id";
-            gridViewTextBoxColumn4.HeaderText = "IdFamilia";
-            gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "IdFamilia";
-            gridViewTextBoxColumn5.FieldName = "Producto.Familia.Entidad.Nombre";
-            gridViewTextBoxColumn5.HeaderText = "Entidad";
-            gridViewTextBoxColumn5.MaxWidth = 100;
-            gridViewTextBoxColumn5.MinWidth = 100;
-            gridViewTextBoxColumn5.Name = "Entidad";
-            gridViewTextBoxColumn5.ReadOnly = true;
-            gridViewTextBoxColumn5.Width = 100;
-            gridViewTextBoxColumn6.FieldName = "Producto.Familia.Nombre";
-            gridViewTextBoxColumn6.HeaderText = "Familia";
-            gridViewTextBoxColumn6.MaxWidth = 150;
-            gridViewTextBoxColumn6.MinWidth = 100;
-            gridViewTextBoxColumn6.Name = "Familia";
-            gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.Width = 100;
-            gridViewTextBoxColumn7.FieldName = "Codigo";
-            gridViewTextBoxColumn7.HeaderText = "Código";
-            gridViewTextBoxColumn7.MaxWidth = 80;
-            gridViewTextBoxColumn7.MinWidth = 60;
-            gridViewTextBoxColumn7.Name = "Codigo";
-            gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 60;
-            gridViewTextBoxColumn8.FieldName = "Producto.Nombre";
-            gridViewTextBoxColumn8.HeaderText = "Producto";
-            gridViewTextBoxColumn8.MaxWidth = 200;
-            gridViewTextBoxColumn8.MinWidth = 150;
-            gridViewTextBoxColumn8.Name = "Producto";
-            gridViewTextBoxColumn8.ReadOnly = true;
-            gridViewTextBoxColumn8.Width = 150;
-            gridViewDecimalColumn1.FieldName = "Precio";
-            gridViewDecimalColumn1.FormatString = "{0:C2}";
-            gridViewDecimalColumn1.HeaderText = "Precio Lista";
-            gridViewDecimalColumn1.MaxWidth = 80;
-            gridViewDecimalColumn1.Minimum = new decimal(new int[] {
+            gridViewTextBoxColumn9.FieldName = "Id";
+            gridViewTextBoxColumn9.HeaderText = "Id";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "Id";
+            gridViewTextBoxColumn10.FieldName = "Producto.Id";
+            gridViewTextBoxColumn10.HeaderText = "IdProducto";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "IdProducto";
+            gridViewTextBoxColumn11.FieldName = "Producto.Familia.Entidad.Id";
+            gridViewTextBoxColumn11.HeaderText = "IdEntidad";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "IdEntidad";
+            gridViewTextBoxColumn12.FieldName = "Producto.Familia.Id";
+            gridViewTextBoxColumn12.HeaderText = "IdFamilia";
+            gridViewTextBoxColumn12.IsVisible = false;
+            gridViewTextBoxColumn12.Name = "IdFamilia";
+            gridViewTextBoxColumn13.FieldName = "Producto.Familia.Entidad.Nombre";
+            gridViewTextBoxColumn13.HeaderText = "Entidad";
+            gridViewTextBoxColumn13.MaxWidth = 100;
+            gridViewTextBoxColumn13.MinWidth = 100;
+            gridViewTextBoxColumn13.Name = "Entidad";
+            gridViewTextBoxColumn13.ReadOnly = true;
+            gridViewTextBoxColumn13.Width = 100;
+            gridViewTextBoxColumn14.FieldName = "Producto.Familia.Nombre";
+            gridViewTextBoxColumn14.HeaderText = "Familia";
+            gridViewTextBoxColumn14.MaxWidth = 150;
+            gridViewTextBoxColumn14.MinWidth = 100;
+            gridViewTextBoxColumn14.Name = "Familia";
+            gridViewTextBoxColumn14.ReadOnly = true;
+            gridViewTextBoxColumn14.Width = 100;
+            gridViewTextBoxColumn15.FieldName = "Codigo";
+            gridViewTextBoxColumn15.HeaderText = "Código";
+            gridViewTextBoxColumn15.MaxWidth = 80;
+            gridViewTextBoxColumn15.MinWidth = 60;
+            gridViewTextBoxColumn15.Name = "Codigo";
+            gridViewTextBoxColumn15.ReadOnly = true;
+            gridViewTextBoxColumn15.Width = 60;
+            gridViewTextBoxColumn16.FieldName = "Producto.Nombre";
+            gridViewTextBoxColumn16.HeaderText = "Producto";
+            gridViewTextBoxColumn16.MaxWidth = 200;
+            gridViewTextBoxColumn16.MinWidth = 150;
+            gridViewTextBoxColumn16.Name = "Producto";
+            gridViewTextBoxColumn16.ReadOnly = true;
+            gridViewTextBoxColumn16.Width = 150;
+            gridViewDecimalColumn8.FieldName = "Precio";
+            gridViewDecimalColumn8.FormatString = "{0:C2}";
+            gridViewDecimalColumn8.HeaderText = "Precio Lista";
+            gridViewDecimalColumn8.MaxWidth = 100;
+            gridViewDecimalColumn8.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn1.MinWidth = 80;
-            gridViewDecimalColumn1.Name = "Precio";
-            gridViewDecimalColumn1.ShowUpDownButtons = false;
-            gridViewDecimalColumn1.Width = 80;
-            gridViewTextBoxColumn9.FieldName = "CantidadVol";
-            gridViewTextBoxColumn9.FormatString = "{0:N2}";
-            gridViewTextBoxColumn9.HeaderText = "# Piezas";
-            gridViewTextBoxColumn9.MaxWidth = 100;
-            gridViewTextBoxColumn9.MinWidth = 80;
-            gridViewTextBoxColumn9.Name = "PzasVol";
-            gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn9.Width = 80;
-            gridViewDecimalColumn2.FieldName = "Volumen";
-            gridViewDecimalColumn2.FormatString = "{0:P2}";
-            gridViewDecimalColumn2.HeaderText = "Volúmen (%)";
-            gridViewDecimalColumn2.MaxWidth = 80;
-            gridViewDecimalColumn2.Minimum = new decimal(new int[] {
+            gridViewDecimalColumn8.MinWidth = 80;
+            gridViewDecimalColumn8.Name = "Precio";
+            gridViewDecimalColumn8.ShowUpDownButtons = false;
+            gridViewDecimalColumn8.ThousandsSeparator = true;
+            gridViewDecimalColumn8.Width = 80;
+            gridViewDecimalColumn9.FieldName = "ExWorks";
+            gridViewDecimalColumn9.FormatString = "{0:C2}";
+            gridViewDecimalColumn9.HeaderText = "Ex Works";
+            gridViewDecimalColumn9.MaxWidth = 100;
+            gridViewDecimalColumn9.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn2.MinWidth = 80;
-            gridViewDecimalColumn2.Name = "Volumen";
-            gridViewDecimalColumn2.ShowUpDownButtons = false;
-            gridViewDecimalColumn2.Width = 80;
-            gridViewTextBoxColumn10.FieldName = "CantidadMay";
-            gridViewTextBoxColumn10.FormatString = "{0:N2}";
-            gridViewTextBoxColumn10.HeaderText = "# Piezas";
-            gridViewTextBoxColumn10.MaxWidth = 100;
-            gridViewTextBoxColumn10.MinWidth = 80;
-            gridViewTextBoxColumn10.Name = "PzasMay";
-            gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn10.Width = 80;
-            gridViewDecimalColumn3.FieldName = "Mayoreo";
-            gridViewDecimalColumn3.FormatString = "{0:P2}";
-            gridViewDecimalColumn3.HeaderText = "Mayoreo (%)";
-            gridViewDecimalColumn3.MaxWidth = 80;
-            gridViewDecimalColumn3.Minimum = new decimal(new int[] {
+            gridViewDecimalColumn9.MinWidth = 80;
+            gridViewDecimalColumn9.Name = "ExWorks";
+            gridViewDecimalColumn9.ThousandsSeparator = true;
+            gridViewDecimalColumn9.Width = 80;
+            gridViewDecimalColumn10.DecimalPlaces = 0;
+            gridViewDecimalColumn10.FieldName = "CantidadVol";
+            gridViewDecimalColumn10.FormatString = "{0:N0}";
+            gridViewDecimalColumn10.HeaderText = "# Piezas";
+            gridViewDecimalColumn10.MaxWidth = 100;
+            gridViewDecimalColumn10.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn3.MinWidth = 80;
-            gridViewDecimalColumn3.Name = "Mayoreo";
-            gridViewDecimalColumn3.ShowUpDownButtons = false;
-            gridViewDecimalColumn3.Width = 80;
-            gridViewDecimalColumn4.FieldName = "AAA";
-            gridViewDecimalColumn4.FormatString = "{0:P2}";
-            gridViewDecimalColumn4.HeaderText = "AAA (%)";
-            gridViewDecimalColumn4.MaxWidth = 80;
-            gridViewDecimalColumn4.Minimum = new decimal(new int[] {
+            gridViewDecimalColumn10.MinWidth = 80;
+            gridViewDecimalColumn10.Name = "PzasVol";
+            gridViewDecimalColumn10.Width = 80;
+            gridViewDecimalColumn11.FieldName = "Volumen";
+            gridViewDecimalColumn11.FormatString = "{0:P2}";
+            gridViewDecimalColumn11.HeaderText = "Volúmen (%)";
+            gridViewDecimalColumn11.MaxWidth = 80;
+            gridViewDecimalColumn11.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn4.MinWidth = 80;
-            gridViewDecimalColumn4.Name = "AAA";
-            gridViewDecimalColumn4.ShowUpDownButtons = false;
-            gridViewDecimalColumn4.Width = 80;
+            gridViewDecimalColumn11.MinWidth = 80;
+            gridViewDecimalColumn11.Name = "Volumen";
+            gridViewDecimalColumn11.ShowUpDownButtons = false;
+            gridViewDecimalColumn11.Width = 80;
+            gridViewDecimalColumn12.DecimalPlaces = 0;
+            gridViewDecimalColumn12.FieldName = "CantidadMay";
+            gridViewDecimalColumn12.FormatString = "{0:N0}";
+            gridViewDecimalColumn12.HeaderText = "# Piezas";
+            gridViewDecimalColumn12.MaxWidth = 100;
+            gridViewDecimalColumn12.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn12.MinWidth = 80;
+            gridViewDecimalColumn12.Name = "PzasMay";
+            gridViewDecimalColumn12.Width = 80;
+            gridViewDecimalColumn13.FieldName = "Mayoreo";
+            gridViewDecimalColumn13.FormatString = "{0:P2}";
+            gridViewDecimalColumn13.HeaderText = "Mayoreo (%)";
+            gridViewDecimalColumn13.MaxWidth = 80;
+            gridViewDecimalColumn13.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn13.MinWidth = 80;
+            gridViewDecimalColumn13.Name = "Mayoreo";
+            gridViewDecimalColumn13.ShowUpDownButtons = false;
+            gridViewDecimalColumn13.Width = 80;
+            gridViewDecimalColumn14.FieldName = "AAA";
+            gridViewDecimalColumn14.FormatString = "{0:P2}";
+            gridViewDecimalColumn14.HeaderText = "AAA (%)";
+            gridViewDecimalColumn14.MaxWidth = 80;
+            gridViewDecimalColumn14.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn14.MinWidth = 80;
+            gridViewDecimalColumn14.Name = "AAA";
+            gridViewDecimalColumn14.ShowUpDownButtons = false;
+            gridViewDecimalColumn14.Width = 80;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewDecimalColumn1,
             gridViewTextBoxColumn9,
-            gridViewDecimalColumn2,
             gridViewTextBoxColumn10,
-            gridViewDecimalColumn3,
-            gridViewDecimalColumn4});
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewDecimalColumn8,
+            gridViewDecimalColumn9,
+            gridViewDecimalColumn10,
+            gridViewDecimalColumn11,
+            gridViewDecimalColumn12,
+            gridViewDecimalColumn13,
+            gridViewDecimalColumn14});
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(911, 242);
+            this.gvDatos.Size = new System.Drawing.Size(911, 216);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -524,46 +647,6 @@
             this.commandBarStripElement5.DisplayName = "commandBarStripElement5";
             this.commandBarStripElement5.Name = "commandBarStripElement5";
             // 
-            // txtPzasMayoreo
-            // 
-            this.txtPzasMayoreo.Location = new System.Drawing.Point(101, 86);
-            this.txtPzasMayoreo.MaxLength = 12;
-            this.txtPzasMayoreo.Name = "txtPzasMayoreo";
-            this.txtPzasMayoreo.ReadOnly = true;
-            this.txtPzasMayoreo.Size = new System.Drawing.Size(74, 20);
-            this.txtPzasMayoreo.TabIndex = 5;
-            this.txtPzasMayoreo.Text = "0.00";
-            this.txtPzasMayoreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 90);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Pzas. Mayoreo:";
-            // 
-            // txtPzasVolumen
-            // 
-            this.txtPzasVolumen.Location = new System.Drawing.Point(101, 64);
-            this.txtPzasVolumen.MaxLength = 12;
-            this.txtPzasVolumen.Name = "txtPzasVolumen";
-            this.txtPzasVolumen.ReadOnly = true;
-            this.txtPzasVolumen.Size = new System.Drawing.Size(74, 20);
-            this.txtPzasVolumen.TabIndex = 3;
-            this.txtPzasVolumen.Text = "0.00";
-            this.txtPzasVolumen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Pzas. Volúmen:";
-            // 
             // frmPrecios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +667,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMonedas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtExWorks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPzasVolumen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPzasMayoreo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProdId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo)).EndInit();
@@ -595,8 +682,6 @@
             this.radPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPzasMayoreo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPzasVolumen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -638,5 +723,9 @@
         private System.Windows.Forms.Label label7;
         private Telerik.WinControls.UI.RadTextBox txtPzasMayoreo;
         private System.Windows.Forms.Label label6;
+        private Telerik.WinControls.UI.RadTextBox txtExWorks;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private Telerik.WinControls.UI.RadDropDownList cboMonedas;
     }
 }

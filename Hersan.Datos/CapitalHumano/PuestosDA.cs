@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Catalogos;
+﻿
+using Hersan.Entidades.Catalogos;
 using System;
 using System.Collections.Generic;
 using System.Data;

@@ -15,8 +15,9 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_CHU_SPE_OBTENER = "CHU_SolicitudPersonal_Obtener";
         const string CONST_CHU_SPE_GUARDAR = "CHU_SolicitudPersonal_Guarda";
         const string CONST_CHU_SPE_ACTUALIZAR = "CHU_SolicitudPersonal_Actualiza";
+        const string CONST_CHU_SPE_ACTUALIZARDICTAMEN = "CHU_SolicitudPersonal_ActualizaDictamen";
         #endregion
-
+        
 
         public List<SolicitudPersonalBE> CHU_SolicitudP_Obtener(int IdUser)
         {
@@ -41,12 +42,12 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
                                 obj.Puestos.Id = int.Parse(reader["PUE_Id"].ToString());
                                 obj.TiposContrato.Id = int.Parse(reader["TCO_Id"].ToString());
+                                obj.Dictamen = (reader["SPE_Dictamen"].ToString());
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["SPE_Estatus"].ToString());
-                                obj.Autorizado = bool.Parse(reader["SPE_Autorizado"].ToString());
-                                obj.NoAutorizado = !obj.Autorizado;
                                 obj.Sueldo = decimal.Parse(reader["SPE_Sueldo"].ToString());
                                 obj.Justificacion = (reader["SPE_Justificacion"].ToString());
                                 obj.Indicadores = (reader["SPE_Indicadores"].ToString());
+                                obj.Estado = (reader["Estado"].ToString());
                                 oList.Add(obj);
                             }
                         }
@@ -71,7 +72,7 @@ namespace Hersan.Datos.CapitalHumano
                         cmd.Parameters.AddWithValue("@Id_PUE", obj.Puestos.Id);
                         cmd.Parameters.AddWithValue("@Id_TCO", obj.TiposContrato.Id);                     
                         cmd.Parameters.AddWithValue("@Sueldo", obj.Sueldo);
-                        cmd.Parameters.AddWithValue("@Indicadores", obj.Indicadores);
+                        cmd.Parameters.AddWithValue("@Indicadores", obj.Indicadores);                    
                         cmd.Parameters.AddWithValue("@Justificacion", obj.Justificacion);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
 
@@ -100,6 +101,29 @@ namespace Hersan.Datos.CapitalHumano
                         cmd.Parameters.AddWithValue("@Sueldo", obj.Sueldo);
                         cmd.Parameters.AddWithValue("@Indicadores", obj.Indicadores);
                         cmd.Parameters.AddWithValue("@Justificacion", obj.Justificacion);
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+                        cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public int CHU_SolicitudP_ActualizarDictamen(SolicitudPersonalBE obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_SPE_ACTUALIZARDICTAMEN, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", obj.Id);
+                        cmd.Parameters.AddWithValue("@Dictamen", obj.Dictamen);
+                        cmd.Parameters.AddWithValue("@Estado", obj.Estado);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
                         cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
 

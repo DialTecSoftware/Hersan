@@ -1,6 +1,7 @@
 ﻿using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
 using System.Collections.Generic;
+using System.Data;
 using System.ServiceModel;
 
 namespace Hersan.Catalogos.Contract
@@ -153,7 +154,8 @@ namespace Hersan.Catalogos.Contract
         int CHUOrganigrama_Guardar(OrganigramaBE obj);
         [OperationContract]
         int CHUOrganigrama_Actualizar(OrganigramaBE obj);
-
+        [OperationContract]
+        DataTable CHU_OrganigramaXML_Obtener(int parent);
         #endregion
 
         #region Estados
@@ -237,6 +239,39 @@ namespace Hersan.Catalogos.Contract
         List<TiposClienteBE> ABC_TipoCliente_Obtener();
         [OperationContract]
         List<TiposClienteBE> ABC_TipoCliente_Combo();
+        #endregion
+
+        #region Agentes
+        [OperationContract]
+        List<AgentesBE> ABC_Agentes_Obtener();
+        [OperationContract]
+        int ABC_Agentes_Guardar(AgentesBE obj);
+        [OperationContract]
+        int ABC_Agentes_Actualizar(AgentesBE obj);
+        [OperationContract]
+        List<AgentesBE> ABC_Agentes_Combo();
+        #endregion
+
+        #region Condiciones Venta
+        [OperationContract]
+        int ABC_CondicionesExportacion_Guardar(CondicionesExpBE obj);
+        [OperationContract]
+        int ABC_CondicionesExportacion_Actualizar(CondicionesExpBE obj);
+        [OperationContract]
+        List<CondicionesExpBE> ABC_CondicionesExportacion_Obtener();
+        [OperationContract]
+        List<CondicionesExpBE> ABC_CondicionesExportacion_Combo();
+        #endregion
+
+        #region Monedas
+        [OperationContract]
+        List<MonedasBE> ABC_Monedas_Obtener();
+        [OperationContract]
+        int ABC_Monedas_Guardar(MonedasBE obj);
+        [OperationContract]
+        int ABC_Monedas_Actualizar(MonedasBE obj);
+        [OperationContract]
+        List<MonedasBE> ABC_Monedas_Combo();
         #endregion
     }
 }

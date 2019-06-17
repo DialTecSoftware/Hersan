@@ -7,9 +7,8 @@ using System.Windows.Forms;
 
 namespace Hersan.UI.CapitalHumano
 {
-    class program
-    {
-        static class Program
+    
+       static class Program
         {
             /// <summary>
             /// Punto de entrada principal para la aplicación.
@@ -19,8 +18,8 @@ namespace Hersan.UI.CapitalHumano
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmEmpleados());
+                Application.Run(new Organigrama.OrgChartForm());
             }
         }
     }
-}
+

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Element Name="HERSAN" Area="">
+  <Element Name="Direccion" Area="">
+    <Child Name="Moise Gregoryy" Puesto=""/>
+    <Child Name="Laura Callahan" Puesto=" 2"/>
+  <Element Name="Capital Humano" Area="Capital Humano" >
+    <Child Name="Laura Callahan" Puesto="Director"/>
+    <Child Name="Andrew Fuller" Puesto="Co-Director"/>
+  <Element Name="Nomina" Area="Capital Humano" >
+    <Child Name="Andrew Fuller" Puesto="JEFE 1"/>
+    <Child Name="Elizabeth Lincoln" Puesto="Asistente 1"/>
+    <Child Name="Ana Trujilo" Puesto="Asistente 2"/>
+  </Element>
+  </Element>
+  <Element Name="Contabilidad"  Area="Contabilidad">
+    <Child Name="Elizabeth Lincoln" Puesto="COntador 1"/>
+    <Child Name="Ana Trujilo" Puesto="Contador 2"/>
+    <Child Name="Hanna Moos" Puesto="Contador 3"/>
+  <Element Name="Ventas"  Area="Contabilidad">
+    <Child Name="Elizabeth Lincoln" Puesto="Vendedor 1"/>
+    <Child Name="Hanna Moos" Puesto=" Vendedor 2"/>
+    <Child Name="Ana Trujilo" Puesto="Asistente vendedor"/>
+  </Element>
+  </Element>
+  <Element Name="Proyecto1" Area="Proyecto">
+    <Child Name="Andrew Fuller" Puesto="JEFE 1"/>
+  <Element Name="Proyecto 2"  Area="DIRECCION"> 
+    <Child Name="Janine Labrune" Puesto="Graphic Designer"/>
+  </Element>
+  <Element Name="Proyecto3" Area="Proyecto">
+    <Child Name="Hanna Moos" Puesto="Junior Brand Manager"/>
+    <Child Name="Elizabeth Lincoln" Puesto="Desarrollador"/>
+  </Element>
+  </Element>
+  </Element>
+  </Element>
+  
+</Root>

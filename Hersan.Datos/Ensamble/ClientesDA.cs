@@ -13,6 +13,8 @@ namespace Hersan.Datos.Ventas
         const string CONS_USP_ABC_CLIENTES_ACTUALIZAR = "ABC_Clientes_Actualizar";
         const string CONS_USP_ABC_CLIENTES_BUSCAR = "ABC_Clientes_Buscar";
         const string CONS_USP_ABC_CLIENTES_OBTENER = "ABC_Clientes_Obtener";
+        const string CONS_USP_ABC_CLIENTES_AGENTES_OBTENER = "ABC_Clientes_Agentes_Obtener";
+        const string CONS_USP_ABC_CLIENTESAGENTE_GUARDAR = "ABC_ClientesAgente_Guardar";
         #endregion
 
         public int ABC_Clientes_Guardar(DataSet Tablas, string Entidades, int IdUsuario)
@@ -141,9 +143,12 @@ namespace Hersan.Datos.Ventas
                                 obj.CP = int.Parse(reader["CLI_CP"].ToString());
                                 obj.Ciudad = reader["CLI_Ciudad"].ToString();
                                 obj.Estado = reader["CLI_Estado"].ToString();
+                                obj.Pais = reader["CLI_Pais"].ToString();
                                 obj.VIP = bool.Parse(reader["CLI_VIP"].ToString());
                                 obj.Correo1 = reader["CLI_Correo1"].ToString();
                                 obj.Correo2 = reader["CLI_Correo2"].ToString();
+                                obj.Agente.Id = int.Parse(reader["AGE_Id"].ToString());
+                                obj.Agente.Nombre = reader["AGE_Nombre"].ToString();
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["CLI_Estatus"].ToString());
 
                                 /* CONDICIONES COMERCIALES */
@@ -220,6 +225,58 @@ namespace Hersan.Datos.Ventas
                     }
                 }
                 return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<ClientesBE> ABC_ClientesAgente_Combo(int IdAgente)
+        {
+            List<ClientesBE> oList = new List<ClientesBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_ABC_CLIENTES_AGENTES_OBTENER, conn)) {
+                        cmd.Parameters.AddWithValue("@IdAgente", IdAgente);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                ClientesBE obj = new ClientesBE();
+
+                                obj.Sel = false;
+                                obj.Id = int.Parse(reader["CLI_Id"].ToString());
+                                obj.Nombre = reader["CLI_Nombre"].ToString();
+                                obj.RFC = reader["CLI_RFC"].ToString();
+                                obj.VIP = bool.Parse(reader["CLI_VIP"].ToString());
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public int ABC_ClientesAgente_Guardar(ClientesBE obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_ABC_CLIENTESAGENTE_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", obj.Nombre);
+                        cmd.Parameters.AddWithValue("@IdAgente", obj.Agente.Id);
+                        cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
+                        cmd.Parameters.AddWithValue("@Estatus", obj.DatosUsuario.Estatus);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
             } catch (Exception ex) {
                 throw ex;
             }

@@ -50,21 +50,25 @@ namespace Hersan.UI.Ensamble
             
             int Result = 0;
             try {
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe asignar un Tipo de Cliente y Seleccionar al menos una Entidad", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    return;
+                }
 
                 if (RadMessageBox.Show("Desea guardar la información capturada...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
                         return;
 
                 /* VALIDAR SI ES NUEVO O ACTUALIZACIÓN */
                 if (int.Parse(txtId.Text) == 0) {
-                    //ClientesBE obj = new ClientesBE();
-                    //obj.Nombre = txtNombre.Text;
-                    //obj.RFC = txtRFC.Text;
-                    //var oItem = oEnsamble.ABC_Clientes_Buscar(obj, "");
-                    //if (oItem.Count > 0) {
-                    //    RadMessageBox.Show("EL cliente capturado ya existe: " + oItem[0].Nombre, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    //    obj = null;
-                    //    return;
-                    //}
+                    ClientesBE obj = new ClientesBE();
+                    obj.Nombre = txtNombre.Text;
+                    obj.RFC = txtRFC.Text;
+                    var oItem = oEnsamble.ABC_Clientes_Buscar(obj, "");
+                    if (oItem.Count > 0) {
+                        RadMessageBox.Show("EL cliente capturado ya existe: " + oItem[0].Nombre, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        obj = null;
+                        return;
+                    }
                 }
 
                 #region Entidades Seleccionadas
@@ -164,6 +168,15 @@ namespace Hersan.UI.Ensamble
                 this.Close();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void txtClave_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.Enter && txtId.Text.Trim().Length > 0)
+                    CargaCliente(int.Parse(txtClave.Text));
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar el cliente\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void rbNacional_CheckedChanged(object sender, EventArgs e)
@@ -302,7 +315,8 @@ namespace Hersan.UI.Ensamble
                 txtTelefono.Clear();
                 txtTelPag.Clear();
                 txtCorreo1.Clear();
-                txtCorreo2.Clear();                
+                txtCorreo2.Clear();
+                txtPais.Clear();
                 #endregion
 
                 foreach(var items in lstEntidades.Items) {
@@ -338,6 +352,7 @@ namespace Hersan.UI.Ensamble
                 oData.Columns.Add("CP");
                 oData.Columns.Add("Ciudad");
                 oData.Columns.Add("Estado");
+                oData.Columns.Add("Pais");
                 oData.Columns.Add("Telefono");
                 oData.Columns.Add("Nacional");
                 oData.Columns.Add("VIP");
@@ -435,13 +450,16 @@ namespace Hersan.UI.Ensamble
                     txtColonia.Text = item.Colonia;
                     txtCP.Text = item.CP.ToString();
                     txtCiudad.Text = item.Ciudad;
+                    txtPais.Text = item.Pais;
                     txtEstado.Text = item.Estado;
                     txtFecha.Text = item.DatosUsuario.FechaCreacion.ToShortDateString();
                     rbNacional.Checked = item.Nacional ? true : false;
+                    rbExporta.Checked = !rbNacional.Checked;
                     chkVIP.Checked = item.VIP ? true : false;
                     txtCorreo1.Text = item.Correo1;
                     txtCorreo2.Text = item.Correo2;
                     chkActivo.Checked = item.DatosUsuario.Estatus;
+
 
                     /*COMPRAS*/
                     txtCompras.Text = item.Compras.Nombre;
@@ -511,6 +529,8 @@ namespace Hersan.UI.Ensamble
                     txtMonto.Text = item.Condiciones.MontoCredito.ToString();
                     txtDescto.Text = item.Condiciones.Descuento.ToString();
                     #endregion
+                } else {
+                    RadMessageBox.Show("Cliente no existe o está inactivo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
             } catch (Exception ex) {
                 throw ex;
@@ -529,10 +549,11 @@ namespace Hersan.UI.Ensamble
                 oRow["Nombre"] = txtNombre.Text;
                 oRow["RFC"] = txtRFC.Text;
                 oRow["Direccion"] = txtDireccion.Text;
-                oRow["Colonia"] = txtDireccion.Text;
+                oRow["Colonia"] = txtColonia.Text;
                 oRow["CP"] = txtCP.Text;
                 oRow["Ciudad"] = txtCiudad.Text;
                 oRow["Estado"] = txtEstado.Text;
+                oRow["Pais"] = txtPais.Text;
                 oRow["Telefono"] = txtTelefono.Text;
                 oRow["Nacional"] = rbNacional.Checked;
                 oRow["VIP"] = chkVIP.Checked;
@@ -619,11 +640,36 @@ namespace Hersan.UI.Ensamble
                 oData.Tables["Referencias"].Rows.Add(oRow);
                 #endregion
 
-                
-
             } catch (Exception ex) {
                 throw ex;
             }
         }
+        private bool ValidarCampos()
+        {
+            bool bFlag = true;
+            try {
+                if (cboTipoCliente.SelectedValue == null) {
+                    bFlag = false;
+                    return bFlag;
+                }
+
+                string Entidades = string.Empty;
+                foreach (var item in lstEntidades.Items) {
+                    if (item.CheckState == Telerik.WinControls.Enumerations.ToggleState.On) {
+                        Entidades += item.Value.ToString() + ",";
+                    }
+                }
+
+                if (Entidades.Length == 0) {
+                    bFlag = false;
+                    return bFlag;
+                }
+
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return bFlag;
+        }
+        
     }
 }

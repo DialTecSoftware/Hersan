@@ -435,6 +435,8 @@
             this.txtId.TabIndex = 1;
             this.txtId.Text = "0";
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtId_KeyDown);
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
             // txtNombre
             // 

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53833478-BCA4-40B4-9F60-6848355DB152}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EstructuraOrganizacional</RootNamespace>
+    <AssemblyName>EstructuraOrganizacional</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2019.1.117.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.117.40.Trial\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OrgChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrgChartForm.Designer.cs">
+      <DependentUpon>OrgChartForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="OrgChartForm.resx">
+      <DependentUpon>OrgChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="OrgContainerShape.cs" />
+    <Compile Include="OrgHeaderPresenterElement.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="bin\Debug\Hersan.UI.EstructuraOrganizacional.exe.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--sirinie -->
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EstructuraOrganizacional.dll" />
+    <Content Include="bin\Debug\EstructuraOrganizacional.exe" />
+    <Content Include="bin\Debug\Hersan.UI.EstructuraOrganizacional.exe" />
+    <Content Include="bin\Debug\Hersan.UI.EstructuraOrganizacional.pdb" />
+    <Content Include="bin\Debug\Telerik.WinControls.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.RadDiagram.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.RadDiagram.xml" />
+    <Content Include="bin\Debug\Telerik.WinControls.UI.dll" />
+    <Content Include="bin\Debug\Telerik.WinControls.UI.xml" />
+    <Content Include="bin\Debug\Telerik.WinControls.xml" />
+    <Content Include="bin\Debug\TelerikCommon.dll" />
+    <Content Include="bin\Debug\Resources\Ana Trujilo.png" />
+    <Content Include="bin\Debug\Resources\Andrew Fuller.png" />
+    <Content Include="bin\Debug\Resources\Brenda Smith.png" />
+    <Content Include="bin\Debug\Resources\Elizabeth Lincoln.png" />
+    <Content Include="bin\Debug\Resources\Georg Pipps.png" />
+    <Content Include="bin\Debug\Resources\Hanna Moos.png" />
+    <Content Include="bin\Debug\Resources\Janet Levering.png" />
+    <Content Include="bin\Debug\Resources\Janine Labrune.png" />
+    <Content Include="bin\Debug\Resources\Jason Roland.png" />
+    <Content Include="bin\Debug\Resources\Jeremy Boather.png" />
+    <Content Include="bin\Debug\Resources\John Steel.png" />
+    <Content Include="bin\Debug\Resources\Karin Josephs.png" />
+    <Content Include="bin\Debug\Resources\Karl Jablonski.png" />
+    <Content Include="bin\Debug\Resources\Laura Callahan.png" />
+    <Content Include="bin\Debug\Resources\Margaret Peacock.png" />
+    <Content Include="bin\Debug\Resources\Marie Bertrand.png" />
+    <Content Include="bin\Debug\Resources\Martin Sommer.png" />
+    <Content Include="bin\Debug\Resources\Mary Saveley.png" />
+    <Content Include="bin\Debug\Resources\Moise Gregoryy.png" />
+    <Content Include="bin\Debug\Resources\Nancy Davolio.png" />
+    <Content Include="bin\Debug\Resources\Organizacion.xml" />
+    <Content Include="bin\Debug\Resources\Organization.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\Debug\Resources\Paula Wilson.png" />
+    <Content Include="bin\Debug\Resources\Pedro Alfonso.png" />
+    <Content Include="bin\Debug\Resources\settingsBlack.png" />
+    <Content Include="bin\Debug\Resources\Steven Buchanan.png" />
+    <Content Include="bin\Debug\Resources\Viktoria Ashworth.png" />
+    <EmbeddedResource Include="Resources\Ana Trujilo.png" />
+    <EmbeddedResource Include="Resources\Andrew Fuller.png" />
+    <EmbeddedResource Include="Resources\Brenda Smith.png" />
+    <EmbeddedResource Include="Resources\Elizabeth Lincoln.png" />
+    <EmbeddedResource Include="Resources\Georg Pipps.png" />
+    <EmbeddedResource Include="Resources\Hanna Moos.png" />
+    <EmbeddedResource Include="Resources\Janet Levering.png" />
+    <EmbeddedResource Include="Resources\Janine Labrune.png" />
+    <EmbeddedResource Include="Resources\Jason Roland.png" />
+    <EmbeddedResource Include="Resources\Jeremy Boather.png" />
+    <EmbeddedResource Include="Resources\John Steel.png" />
+    <EmbeddedResource Include="Resources\Karin Josephs.png" />
+    <EmbeddedResource Include="Resources\Karl Jablonski.png" />
+    <EmbeddedResource Include="Resources\Laura Callahan.png" />
+    <EmbeddedResource Include="Resources\Margaret Peacock.png" />
+    <EmbeddedResource Include="Resources\Marie Bertrand.png" />
+    <EmbeddedResource Include="Resources\Martin Sommer.png" />
+    <EmbeddedResource Include="Resources\Mary Saveley.png" />
+    <EmbeddedResource Include="Resources\Moise Gregoryy.png" />
+    <EmbeddedResource Include="Resources\Nancy Davolio.png" />
+    <EmbeddedResource Include="Resources\Organizacion.xml" />
+    <EmbeddedResource Include="Resources\Organization.xml" />
+    <EmbeddedResource Include="Resources\Paula Wilson.png" />
+    <EmbeddedResource Include="Resources\Pedro Alfonso.png" />
+    <EmbeddedResource Include="Resources\settingsBlack.png" />
+    <EmbeddedResource Include="Resources\Steven Buchanan.png" />
+    <EmbeddedResource Include="Resources\Viktoria Ashworth.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ShouldAddDPIScalingManifest="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

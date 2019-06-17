@@ -13,7 +13,7 @@ namespace Hersan.Datos.Ensamble
         const string CONS_USP_ENS_PRECIOS_OBTENER = "ENS_Precios_Obtener";
         #endregion
 
-        public int ENS_Precios_Guardar(DataTable oData, int IdUsuario)
+        public int ENS_Precios_Guardar(DataTable oData, string Moneda, int IdUsuario)
         {
             int Result = 0;
             try {
@@ -21,6 +21,7 @@ namespace Hersan.Datos.Ensamble
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_PRECIOS_GUARDAR, conn)) {
                         cmd.Parameters.AddWithValue("@Precios", oData);
+                        cmd.Parameters.AddWithValue("@Moneda", Moneda);
                         cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -33,13 +34,14 @@ namespace Hersan.Datos.Ensamble
                 throw ex;
             }
         }
-        public List<PreciosBE> ENS_Precios_Obtener()
+        public List<PreciosBE> ENS_Precios_Obtener(string Moneda)
         {
             List<PreciosBE> oList = new List<PreciosBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_PRECIOS_OBTENER, conn)) {
+                        cmd.Parameters.AddWithValue("@Moneda", Moneda);
 
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -62,6 +64,7 @@ namespace Hersan.Datos.Ensamble
                                 obj.CantidadMay = int.Parse(reader["PRE_CantMayoreo"].ToString());
                                 obj.Mayoreo = decimal.Parse(reader["PRE_Mayoreo"].ToString());
                                 obj.AAA = decimal.Parse(reader["PRE_AAA"].ToString());
+                                obj.ExWorks = decimal.Parse(reader["PRE_ExWorks"].ToString());
 
                                 oList.Add(obj);
                             }

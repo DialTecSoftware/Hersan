@@ -26,10 +26,6 @@ namespace Hersan.UI.Ensamble
                 Entidades.GroupNames.Add("Familia", ListSortDirection.Ascending);
                 this.gvDatos.GroupDescriptors.Add(Entidades);
 
-                //GroupDescriptor Familias = new GroupDescriptor();
-                //Familias.GroupNames.Add("Familia", ListSortDirection.Ascending);
-                //this.gvDatos.GroupDescriptors.Add(Entidades);
-
                 LimpiarCampos();
                 CargarEntidades();
                 CargarDatos();
@@ -68,6 +64,8 @@ namespace Hersan.UI.Ensamble
                 obj.Familia.Id = int.Parse(cboFamilia.SelectedValue.ToString());
                 obj.Clave = txtClave.Text;
                 obj.Nombre = txtNombre.Text;
+                obj.Name = txtName.Text;
+                obj.Fraccion = txtFraccion.Text;
                 obj.DatosUsuario.Estatus = chkEstatus.Checked;
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
@@ -144,6 +142,8 @@ namespace Hersan.UI.Ensamble
                     cboFamilia.SelectedValue = int.Parse(e.CurrentRow.Cells["IdFamilia"].Value.ToString());
                     txtClave.Text = e.CurrentRow.Cells["CveProd"].Value.ToString();
                     txtNombre.Text = e.CurrentRow.Cells["Tipo"].Value.ToString();
+                    txtName.Text = e.CurrentRow.Cells["Name"].Value.ToString();
+                    txtFraccion.Text = e.CurrentRow.Cells["Fraccion"].Value.ToString();
                     chkEstatus.Checked = bool.Parse(e.CurrentRow.Cells["Estatus"].Value.ToString());
                 }
             } catch (Exception ex) {
@@ -186,6 +186,8 @@ namespace Hersan.UI.Ensamble
                 cboEntidad.SelectedIndex = 0;
                 txtClave.Clear();
                 txtNombre.Clear();
+                txtName.Clear();
+                txtFraccion.Clear();
                 chkEstatus.Checked = true;
             } catch (Exception ex) {
                 throw ex;

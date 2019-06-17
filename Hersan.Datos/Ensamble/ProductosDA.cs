@@ -147,6 +147,11 @@ namespace Hersan.Datos.Ensamble
                                 obj.Producto.Nombre = reader["TPR_Nombre"].ToString();
                                 obj.Reflejantes = int.Parse(reader["PFI_Reflejantes"].ToString());
                                 obj.Precio.Precio = decimal.Parse(reader["Precio"].ToString());
+                                obj.Precio.CantidadVol = int.Parse(reader["PRE_CantVolumen"].ToString());
+                                obj.Precio.Volumen = decimal.Parse(reader["PRE_Volumen"].ToString());
+                                obj.Precio.CantidadMay = int.Parse(reader["PRE_CantMayoreo"].ToString());
+                                obj.Precio.Mayoreo = decimal.Parse(reader["PRE_Mayoreo"].ToString());
+                                obj.Precio.AAA = decimal.Parse(reader["PRE_AAA"].ToString());
 
                                 oList.Add(obj);
                             }

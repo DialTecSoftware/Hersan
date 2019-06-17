@@ -69,6 +69,7 @@ namespace Hersan.Entidades.Ensamble
         public string Reflec { get; set; }
         public int Cantidad { get; set; }
         public decimal Precio { get; set; }
+        public decimal Descto { get; set; }
         public decimal Total { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }

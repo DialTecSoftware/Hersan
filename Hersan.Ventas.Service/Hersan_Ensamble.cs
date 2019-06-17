@@ -88,13 +88,13 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Productos
-        public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario)
+        public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario)
         {
-            return new ProductosBP().ENS_ProductosFicha_Guardar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario);
+            return new ProductosBP().ENS_ProductosFicha_Guardar(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario);
         }
-        public int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus)
+        public int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus)
         {
-            return new ProductosBP().ENS_ProductosFicha_Actualizar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
+            return new ProductosBP().ENS_ProductosFicha_Actualizar(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
         }
         public List<ProductoEnsambleBE> ENS_ProductosFicha_Obtener(ProductoEnsambleBE obj)
         {

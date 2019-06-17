@@ -371,6 +371,7 @@ namespace Hersan.UI.Ensamble
         private void btnProductos_Click(object sender, EventArgs e)
         {
             PedidoDetalleBE oDetalle = new PedidoDetalleBE();
+            decimal Descto = 0;
             try {
                 if (txtCantidadP.Value > 0 && decimal.Parse(txtPrecio.Text) > 0) {
                     if (oReflejantes.Count > 0) {
@@ -387,7 +388,27 @@ namespace Hersan.UI.Ensamble
                             oDetalle.Accesorios.Nombre = cboAccesorios.Text;
                             oDetalle.Precio = decimal.Parse(txtPrecio.Text);
                             oDetalle.Cantidad = int.Parse(txtCantidadP.Text);
-                            oDetalle.Total = oDetalle.Cantidad * oDetalle.Precio;
+                            /* CÁLCULO DE DESCUENTOS */
+                            if (Nacional) {
+                                /* SI ES CLIENTE VIP */
+                                if (bool.Parse(txtVIP.Text)) {
+                                    Descto = prod.Precio.AAA;
+                                } else {
+                                    switch (oDetalle.Cantidad) {
+                                        case int n when (n >= prod.Precio.CantidadVol && n < prod.Precio.CantidadMay):
+                                            Descto = prod.Precio.Volumen;
+                                            break;
+                                        case int n when (n >= prod.Precio.CantidadMay):
+                                            Descto = prod.Precio.Mayoreo;
+                                            break;
+                                        default:
+                                            Descto = 0;
+                                            break;
+                                    }
+                                }
+                                oDetalle.Descto = (oDetalle.Cantidad * oDetalle.Precio) * Descto;
+                                oDetalle.Total = (oDetalle.Cantidad * oDetalle.Precio) - oDetalle.Descto;
+                            }
 
                             string Reflejantes = string.Empty;
                             oReflejantes.ForEach(item => {
@@ -588,6 +609,7 @@ namespace Hersan.UI.Ensamble
                         cboCondiciones.Visible = !Nacional;
                         lblGastos.Visible = !Nacional;
                         txtGastos.Visible = !Nacional;
+                        txtVIP.Text = item.VIP.ToString();
 
                         CargaProductos(Nacional);
                         CargaServicios();
@@ -642,6 +664,7 @@ namespace Hersan.UI.Ensamble
                 cboCondiciones.Visible = false;
                 lblGastos.Visible = false;
                 txtGastos.Text = "0.00";
+                txtVIP.Text = "false";
                 txtGastos.Visible = false;
                 gvDatos.DataSource = null;
 
@@ -698,6 +721,7 @@ namespace Hersan.UI.Ensamble
                 oData.Columns.Add("COD_Reflejantes");
                 oData.Columns.Add("COD_Cantidad");
                 oData.Columns.Add("COD_Precio");
+                oData.Columns.Add("COD_Dscto");
 
                 CargarTablas(ref oData);
 
@@ -729,6 +753,7 @@ namespace Hersan.UI.Ensamble
                     }
                     oRow["COD_Cantidad"] = item.Cantidad;
                     oRow["COD_Precio"] = item.Precio;
+                    oRow["COD_Dscto"] = item.Descto;
 
                     oData.Rows.Add(oRow);
                 }
@@ -745,9 +770,13 @@ namespace Hersan.UI.Ensamble
                 if (oCotiza.Count > 0) {
                     txtId.Text = oCotiza[0].Id.ToString();
                     txtClave.Text = oCotiza[0].Cliente.Id.ToString();
-                    txtNombre.Text = oCotiza[0].Cliente.Nombre.ToString();
+                    txtNombre.Text = oCotiza[0].Cliente.Nombre;
+                    txtVIP.Text = oCotiza[0].Cliente.VIP.ToString();
                     txtFecha.Text = oCotiza[0].DatosUsuario.FechaCreacion.ToShortDateString();
                     txtProyecto.Text = oCotiza[0].Proyecto;
+                    txtAgente.Text = oCotiza[0].Agente.Nombre;
+                    cboMonedas.SelectedValue = oCotiza[0].Moneda.Moneda;
+
                     if (oCotiza[0].Condiciones.Id > 0){
                         Nacional = false;
                         lblCondicion.Visible = !Nacional;

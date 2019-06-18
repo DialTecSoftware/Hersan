@@ -22,6 +22,8 @@ namespace Hersan.Entidades.CapitalHumano
             NumeroCuenta = string.Empty;
             Pension = 0;
             Ahorro = 0;
+            SueldoDiario = 0;
+            SueldoDiarioIntegrado = 0;
             EstatusEmpleado = string.Empty;
             FechaIngreso = string.Empty;
             DatosUsuarios = new GeneralBE();
@@ -36,6 +38,8 @@ namespace Hersan.Entidades.CapitalHumano
         public string NumeroCuenta { get; set; }
         public decimal Pension { get; set; }
         public decimal Ahorro { get; set; }
+        public decimal  SueldoDiario { get; set; }
+        public decimal  SueldoDiarioIntegrado { get; set; }
         public string EstatusEmpleado { get; set; }
         public string FechaIngreso { get; set; }
         public GeneralBE DatosUsuarios { get; set; }

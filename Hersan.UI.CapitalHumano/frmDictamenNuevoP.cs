@@ -61,37 +61,8 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al cargar las propuestas de puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally { oCHumano = null; }
         }
-        //private void CargarElementos_Dictamen()
-        //{
-        //    oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
-        //    try {
-        //        DockWindow activeDocument = this.radDock1.DocumentManager.ActiveDocument;
-
-        //        list = oCHumano.CHU_DictamenNuevoP_Obtener();
-        //        gvDictamenes.DataSource = list;
-        //        //gvDictamenes.ClearSelection();
-               
-        //        btnEliminar.Enabled = true;
-
-        //    } catch (Exception ex) {
-        //        RadMessageBox.Show("Ocurrio un error al cargar los elementos del dictamen\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-        //    } finally {
-        //        oCHumano = null;
-        //    }
-        //}
-        private bool ValidarCampos()
-        {
-            bool Flag = true;
-            try {
-                Flag = txtOpinionesCH.Text.Trim().Length == 0 ? false : true;
-                Flag = txtOpinionesDG.Text.Trim().Length == 0 ? false : true;
-
-
-                return Flag;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
+       
+       
         public frmDictamenNuevoP()
         {
             InitializeComponent();
@@ -167,11 +138,6 @@ namespace Hersan.UI.CapitalHumano
             try {
                 if (rdbRevisiones.IsChecked == rdbAceptado.IsChecked == rdbRechazado.IsChecked == false) {
                     RadMessageBox.Show("Debe de selecciona un estatus para el dictamen", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    return;
-                }
-
-                if (!ValidarCampos()) {
-                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
 

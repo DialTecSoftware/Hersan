@@ -144,9 +144,7 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 LimpiarCampos();
-                //txtInfonavit.Visible = true; ;
-                //cboTipoF.Visible = true;
-                //lblFona.Visible = true;
+                
 
                 NoVoluntario.IsChecked = false;
                 rdbNo.IsChecked = false;
@@ -398,6 +396,11 @@ namespace Hersan.UI.CapitalHumano
                 lblcantidad.Visible = false;
                 txtcantidad.Visible = false;
             }
+        }
+
+        private void radGroupBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

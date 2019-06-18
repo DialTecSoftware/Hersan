@@ -66,14 +66,18 @@
             this.documentWindow1 = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtPension = new System.Windows.Forms.TextBox();
+            this.txtCuenta = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dtIMSS = new Telerik.WinControls.UI.RadDateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtCuenta = new System.Windows.Forms.TextBox();
             this.dtFecha = new Telerik.WinControls.UI.RadDateTimePicker();
             this.cboEstatus = new Telerik.WinControls.UI.RadDropDownList();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
@@ -98,10 +102,6 @@
             this.lblinfonavit = new System.Windows.Forms.Label();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -448,6 +448,43 @@
             this.radGroupBox3.TabIndex = 34;
             this.radGroupBox3.Click += new System.EventHandler(this.radGroupBox3_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(115, 94);
+            this.textBox2.MaxLength = 7;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(70, 20);
+            this.textBox2.TabIndex = 35;
+            this.textBox2.Text = "0.00";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(115, 68);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(70, 20);
+            this.textBox1.TabIndex = 35;
+            this.textBox1.Text = "0.00";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 97);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(93, 13);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Sueldo diario Int";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(33, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Sueldo diario";
+            // 
             // txtPension
             // 
             this.txtPension.Location = new System.Drawing.Point(115, 43);
@@ -458,6 +495,24 @@
             this.txtPension.Text = "0.00";
             this.txtPension.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPension.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
+            // 
+            // txtCuenta
+            // 
+            this.txtCuenta.Location = new System.Drawing.Point(115, 120);
+            this.txtCuenta.Name = "txtCuenta";
+            this.txtCuenta.Size = new System.Drawing.Size(119, 20);
+            this.txtCuenta.TabIndex = 6;
+            this.txtCuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(42, 120);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "No Cuenta";
             // 
             // dtIMSS
             // 
@@ -497,15 +552,6 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Pension %";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "No Cuenta";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -514,15 +560,6 @@
             this.label11.Size = new System.Drawing.Size(95, 13);
             this.label11.TabIndex = 16;
             this.label11.Text = "Fecha de Ingreso";
-            // 
-            // txtCuenta
-            // 
-            this.txtCuenta.Location = new System.Drawing.Point(115, 120);
-            this.txtCuenta.Name = "txtCuenta";
-            this.txtCuenta.Size = new System.Drawing.Size(119, 20);
-            this.txtCuenta.TabIndex = 6;
-            this.txtCuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
             // 
             // dtFecha
             // 
@@ -748,7 +785,7 @@
             // 
             // txtInfonavit
             // 
-            this.txtInfonavit.Location = new System.Drawing.Point(77, 99);
+            this.txtInfonavit.Location = new System.Drawing.Point(77, 102);
             this.txtInfonavit.Name = "txtInfonavit";
             this.txtInfonavit.Size = new System.Drawing.Size(97, 20);
             this.txtInfonavit.TabIndex = 8;
@@ -788,43 +825,6 @@
             this.documentTabStrip1.Size = new System.Drawing.Size(1032, 473);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 71);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Sueldo diario";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(115, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(70, 20);
-            this.textBox1.TabIndex = 35;
-            this.textBox1.Text = "0.00";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 97);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(93, 13);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Sueldo diario Int";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(115, 94);
-            this.textBox2.MaxLength = 7;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(70, 20);
-            this.textBox2.TabIndex = 35;
-            this.textBox2.Text = "0.00";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmEmpleados
             // 

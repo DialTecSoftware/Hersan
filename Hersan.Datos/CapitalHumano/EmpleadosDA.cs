@@ -1,12 +1,9 @@
 ﻿using Hersan.Entidades.CapitalHumano;
-using Hersan.Entidades.Catalogos;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Hersan.Datos.CapitalHumano
 {

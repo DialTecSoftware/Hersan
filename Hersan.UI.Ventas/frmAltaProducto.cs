@@ -487,6 +487,8 @@ namespace Hersan.UI.Ensamble
                     if (oProducto[0].Foto != null) {
                         Imagen = oProducto[0].Foto;
                         picFoto.Image = ConvertImage.ByteToImage(Imagen);
+                    } else {
+                        picFoto.Image = null;
                     }
                 } else {
                     oList.Clear();

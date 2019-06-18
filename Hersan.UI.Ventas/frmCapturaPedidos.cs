@@ -162,6 +162,7 @@ namespace Hersan.UI.Ensamble
                 oData.Columns.Add("COD_Reflejantes");
                 oData.Columns.Add("COD_Cantidad");
                 oData.Columns.Add("COD_Precio");
+                oData.Columns.Add("COD_Dscto");
 
                 CargarTablas(ref oData);
 
@@ -193,6 +194,7 @@ namespace Hersan.UI.Ensamble
                     }
                     oRow["COD_Cantidad"] = item.Cantidad;
                     oRow["COD_Precio"] = item.Precio;
+                    oRow["COD_Dscto"] = item.Descto;
 
                     oData.Rows.Add(oRow);
                 }

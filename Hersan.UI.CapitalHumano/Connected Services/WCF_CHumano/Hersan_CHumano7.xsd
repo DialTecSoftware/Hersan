@@ -10,15 +10,11 @@
   <xs:complexType name="HorariosBE">
     <xs:sequence>
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q1:GeneralBE" />
-      <xs:element minOccurs="0" name="HorEntComida" type="xs:int" />
-      <xs:element minOccurs="0" name="HorSalComida" type="xs:int" />
-      <xs:element minOccurs="0" name="HoraEnt" type="xs:int" />
-      <xs:element minOccurs="0" name="HoraSalida" type="xs:int" />
+      <xs:element minOccurs="0" name="HorEntComida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HorSalComida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoraEnt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoraSalida" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="MinEntComida" type="xs:int" />
-      <xs:element minOccurs="0" name="MinSalComida" type="xs:int" />
-      <xs:element minOccurs="0" name="MinutoEnt" type="xs:int" />
-      <xs:element minOccurs="0" name="MinutoSalida" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Tolerancia" type="xs:int" />
     </xs:sequence>

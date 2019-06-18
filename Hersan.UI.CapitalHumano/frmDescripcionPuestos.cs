@@ -26,6 +26,7 @@ namespace Hersan.UI.CapitalHumano
         List<ContactosBE> cList = new List<ContactosBE>();
         List<PuestosBE> puList = new List<PuestosBE>();
         bool Flag;
+        decimal resultado;
         DescPuestosContactosBE obj;
         #endregion
         public frmDescripcionPuestos()
@@ -72,7 +73,7 @@ namespace Hersan.UI.CapitalHumano
                     /* DATOS GENERALES DEL PERFIL */
                     if (oAux.Tables[0].Rows.Count > 0) {
                        txtIdPerfil.Text= (oAux.Tables[0].Rows[0]["PER_Id"].ToString());
-                        txtExperiencia.Text = oAux.Tables[0].Rows[0]["PER_Experiencia"].ToString();
+                        lblExperiencia.Text = oAux.Tables[0].Rows[0]["PER_Experiencia"].ToString();
                     }
                 }
                 ActualizaGrid();
@@ -107,7 +108,9 @@ namespace Hersan.UI.CapitalHumano
             txtId.Text = "0";
             txtIdPerfil.Text = "0";
             txtObjetivo.Text = String.Empty;
-            txtExperiencia.Text = string.Empty;
+            lblExperiencia.Text = string.Empty;
+            lblValor.Text = "0.00";
+            lblSueldoMax.Text = "0.00";
             txtRiesgo.Text = string.Empty;
             txtAutoridad.Text = string.Empty;
             txtClave.Text = string.Empty;
@@ -166,7 +169,9 @@ namespace Hersan.UI.CapitalHumano
                     Suma += Convert.ToDecimal(row.Cells["Total"].Value);
                 }
                 //Total = Suma;
-             
+               resultado = Suma * decimal.Parse(lblValor.Text);
+                lblSueldoMax.Text = resultado.ToString();
+
             } catch (Exception) {
 
                 throw;
@@ -182,7 +187,7 @@ namespace Hersan.UI.CapitalHumano
                 Flag = txtCondiciones.Text.Trim().Length == 0 ? false : true;
                 Flag = txtEquipo.Text.Trim().Length == 0 ? false : true;
                 Flag = txtEsfuerzo.Text.Trim().Length == 0 ? false : true;
-                Flag = txtExperiencia.Text.Trim().Length == 0 ? false : true;
+                Flag = lblExperiencia.Text.Trim().Length == 0 ? false : true;
                 Flag = txtObjetivo.Text.Trim().Length == 0 ? false : true;
                 Flag = txtObservaciones.Text.Trim().Length == 0 ? false : true;
                 Flag = txtRiesgo.Text.Trim().Length == 0 ? false : true;
@@ -299,6 +304,7 @@ namespace Hersan.UI.CapitalHumano
                 gvContactos.DataSource = null;
                 gvContactos.DataSource = pList.FindAll(item => item.DatosUsuario.Estatus == true);
 
+                
             } catch (Exception ex) {
                 throw ex;
             }
@@ -350,6 +356,21 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
+        private void CargarPuntos()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
+                    var Temp = oCatalogos.CHUPuestos_Puntos(int.Parse(cboPuestos.SelectedValue.ToString()));
+                    lblValor.Text = Temp[0].Puntos.ToString(); ;
+                } else
+                    lblValor.Text = "0.00";
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar los puntos asociados a los p...\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogos = null;
+            }
+        }
 
         private void CargarInferior()
         {
@@ -381,7 +402,7 @@ namespace Hersan.UI.CapitalHumano
                     cboPuestos.ValueMember = "Id";
                     cboPuestos.DisplayMember = "Nombre";
                     cboPuestos.DataSource = puList;
-
+                   
                 } else
                  cboPuestos.DataSource = null;
             
@@ -449,7 +470,9 @@ namespace Hersan.UI.CapitalHumano
                     LimpiarDatos();
                     CargarGrid();
                     CargarGridContactos();
+                    CargarPuntos();
                     CalcularPuntos();
+                   
                 }
 
 
@@ -703,6 +726,7 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+
     }
     }
     

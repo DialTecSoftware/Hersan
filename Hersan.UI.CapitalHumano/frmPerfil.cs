@@ -63,6 +63,7 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 LimpiarCampos();
+                cboEntidad.SelectedIndex = 0;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -132,6 +133,7 @@ namespace Hersan.UI.CapitalHumano
                     }
        
                     LimpiarCampos();
+                    cboEntidad.SelectedIndex = 0;
                 } 
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al guardar el perfil\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -152,6 +154,7 @@ namespace Hersan.UI.CapitalHumano
                             RadMessageBox.Show("Ocurrió un error al eliminar el perfil", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                         }
                         LimpiarCampos();
+                        cboEntidad.SelectedIndex = 0;
                     }
                 }
                 
@@ -275,7 +278,7 @@ namespace Hersan.UI.CapitalHumano
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                cboExperiencia.Text = "";
+              
                 cboPuestos.ValueMember = "Id";
                 cboPuestos.DisplayMember = "Nombre";
                 if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
@@ -295,7 +298,6 @@ namespace Hersan.UI.CapitalHumano
                 if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
                     LimpiarCampos();
                     CargarPuntos();
-                    //CargarGridEdu();
                     CargarGrid();
                     CalcularPuntos();
                 }
@@ -418,11 +420,12 @@ namespace Hersan.UI.CapitalHumano
                 txtId.Text = "0";
                 cboCompetencia.SelectedIndex = 1;
                 cboEducacion.SelectedIndex = 0;
-                cboExperiencia.SelectedIndex = 0;
+                cboExperiencia.Text = "-1";
                 cboNivel.SelectedIndex = 0;
                 cboPeso.SelectedIndex = 0;
                 txtValor.Text = "0";
                 txtSueldo.Text = "0";
+      
                 grdDatos.DataSource = null;
                 grdDatosEdu.DataSource = null;
             } catch (Exception ex) {

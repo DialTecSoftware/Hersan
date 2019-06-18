@@ -32,10 +32,10 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -44,8 +44,6 @@
             this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnBuscarEMp = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
@@ -66,8 +64,8 @@
             this.documentWindow1 = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSueldoIntegrado = new System.Windows.Forms.TextBox();
+            this.txtSueldoDiario = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPension = new System.Windows.Forms.TextBox();
@@ -102,6 +100,7 @@
             this.lblinfonavit = new System.Windows.Forms.Label();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
+            this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -142,15 +141,19 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1042, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(1042, 78);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
             // 
+            this.commandBarRowElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
             this.commandBarRowElement1.Name = "commandBarRowElement1";
             this.commandBarRowElement1.Strips.AddRange(new Telerik.WinControls.UI.CommandBarStripElement[] {
             this.commandBarStripElement1});
+            this.commandBarRowElement1.Text = "";
+            this.commandBarRowElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.commandBarRowElement1.UseCompatibleTextRendering = false;
             // 
             // commandBarStripElement1
             // 
@@ -162,8 +165,6 @@
             this.btnNuevo,
             this.commandBarSeparator2,
             this.btnGuardar,
-            this.commandBarSeparator3,
-            this.btnEliminar,
             this.commandBarSeparator4,
             this.btnBuscarEMp,
             this.commandBarSeparator5,
@@ -223,22 +224,6 @@
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // commandBarSeparator3
-            // 
-            this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
-            this.commandBarSeparator3.Name = "commandBarSeparator3";
-            this.commandBarSeparator3.VisibleInOverflowMenu = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayName = "commandBarButton4";
-            this.btnEliminar.DrawText = true;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // commandBarSeparator4
             // 
             this.commandBarSeparator4.DisplayName = "commandBarSeparator4";
@@ -251,7 +236,7 @@
             this.btnBuscarEMp.DrawText = true;
             this.btnBuscarEMp.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarEMp.Image")));
             this.btnBuscarEMp.Name = "btnBuscarEMp";
-            this.btnBuscarEMp.Text = "Buscar Emp";
+            this.btnBuscarEMp.Text = "Credencial";
             this.btnBuscarEMp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBuscarEMp.Click += new System.EventHandler(this.btnBuscarEMp_Click);
             // 
@@ -296,7 +281,7 @@
             this.radPanel1.Controls.Add(this.txtNombres);
             this.radPanel1.Controls.Add(this.txtApellidos);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 53);
+            this.radPanel1.Location = new System.Drawing.Point(0, 78);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(1042, 94);
             this.radPanel1.TabIndex = 1;
@@ -386,14 +371,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 147);
+            this.radDock1.Location = new System.Drawing.Point(0, 172);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1042, 483);
+            this.radDock1.Size = new System.Drawing.Size(1042, 458);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -405,7 +390,7 @@
             this.documentWindow1.Location = new System.Drawing.Point(6, 29);
             this.documentWindow1.Name = "documentWindow1";
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(1020, 438);
+            this.documentWindow1.Size = new System.Drawing.Size(1020, 413);
             this.documentWindow1.Text = "DATOS DEL EMPLEADO";
             this.documentWindow1.Click += new System.EventHandler(this.documentWindow1_Click);
             // 
@@ -425,8 +410,8 @@
             // radGroupBox3
             // 
             this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox3.Controls.Add(this.textBox2);
-            this.radGroupBox3.Controls.Add(this.textBox1);
+            this.radGroupBox3.Controls.Add(this.txtSueldoIntegrado);
+            this.radGroupBox3.Controls.Add(this.txtSueldoDiario);
             this.radGroupBox3.Controls.Add(this.label14);
             this.radGroupBox3.Controls.Add(this.label7);
             this.radGroupBox3.Controls.Add(this.txtPension);
@@ -448,24 +433,26 @@
             this.radGroupBox3.TabIndex = 34;
             this.radGroupBox3.Click += new System.EventHandler(this.radGroupBox3_Click);
             // 
-            // textBox2
+            // txtSueldoIntegrado
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 94);
-            this.textBox2.MaxLength = 7;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(70, 20);
-            this.textBox2.TabIndex = 35;
-            this.textBox2.Text = "0.00";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSueldoIntegrado.Location = new System.Drawing.Point(115, 94);
+            this.txtSueldoIntegrado.MaxLength = 7;
+            this.txtSueldoIntegrado.Name = "txtSueldoIntegrado";
+            this.txtSueldoIntegrado.Size = new System.Drawing.Size(70, 20);
+            this.txtSueldoIntegrado.TabIndex = 35;
+            this.txtSueldoIntegrado.Text = "0.00";
+            this.txtSueldoIntegrado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSueldoIntegrado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
-            // textBox1
+            // txtSueldoDiario
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(70, 20);
-            this.textBox1.TabIndex = 35;
-            this.textBox1.Text = "0.00";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSueldoDiario.Location = new System.Drawing.Point(115, 68);
+            this.txtSueldoDiario.Name = "txtSueldoDiario";
+            this.txtSueldoDiario.Size = new System.Drawing.Size(70, 20);
+            this.txtSueldoDiario.TabIndex = 35;
+            this.txtSueldoDiario.Text = "0.00";
+            this.txtSueldoDiario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSueldoDiario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label14
             // 
@@ -488,13 +475,13 @@
             // txtPension
             // 
             this.txtPension.Location = new System.Drawing.Point(115, 43);
-            this.txtPension.MaxLength = 2;
+            this.txtPension.MaxLength = 7;
             this.txtPension.Name = "txtPension";
             this.txtPension.Size = new System.Drawing.Size(70, 20);
             this.txtPension.TabIndex = 2;
             this.txtPension.Text = "0.00";
             this.txtPension.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPension.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
+            this.txtPension.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtCuenta
             // 
@@ -580,12 +567,12 @@
             radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             radListDataItem3.Text = "Vacaciones";
             radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            radListDataItem4.Text = "Incapacidad";
-            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem11.Text = "Incapacidad";
+            radListDataItem11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.cboEstatus.Items.Add(radListDataItem1);
             this.cboEstatus.Items.Add(radListDataItem2);
             this.cboEstatus.Items.Add(radListDataItem3);
-            this.cboEstatus.Items.Add(radListDataItem4);
+            this.cboEstatus.Items.Add(radListDataItem11);
             this.cboEstatus.Location = new System.Drawing.Point(115, 196);
             this.cboEstatus.Name = "cboEstatus";
             this.cboEstatus.Size = new System.Drawing.Size(102, 20);
@@ -704,7 +691,7 @@
             this.txtcantidad.Size = new System.Drawing.Size(132, 20);
             this.txtcantidad.TabIndex = 8;
             this.txtcantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtcantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
+            this.txtcantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // lblcantidad
             // 
@@ -742,15 +729,15 @@
             // 
             // cboTipoF
             // 
-            radListDataItem5.Text = "Cuota Fija";
-            radListDataItem6.Text = "Porcentaje de Desc";
-            radListDataItem7.Text = "VSM";
+            radListDataItem4.Text = "Cuota Fija";
+            radListDataItem5.Text = "Porcentaje de Desc";
+            radListDataItem6.Text = "VSM";
+            this.cboTipoF.Items.Add(radListDataItem4);
             this.cboTipoF.Items.Add(radListDataItem5);
             this.cboTipoF.Items.Add(radListDataItem6);
-            this.cboTipoF.Items.Add(radListDataItem7);
             this.cboTipoF.Location = new System.Drawing.Point(77, 72);
             this.cboTipoF.Name = "cboTipoF";
-            this.cboTipoF.Size = new System.Drawing.Size(123, 20);
+            this.cboTipoF.Size = new System.Drawing.Size(135, 20);
             this.cboTipoF.TabIndex = 7;
             this.cboTipoF.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboTipoF_SelectedIndexChanged);
             // 
@@ -790,7 +777,7 @@
             this.txtInfonavit.Size = new System.Drawing.Size(97, 20);
             this.txtInfonavit.TabIndex = 8;
             this.txtInfonavit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtInfonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
+            this.txtInfonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // lblinfonavit
             // 
@@ -822,9 +809,14 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(1032, 473);
+            this.documentTabStrip1.Size = new System.Drawing.Size(1032, 448);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
+            // 
+            // commandBarStripElement2
+            // 
+            this.commandBarStripElement2.DisplayName = "commandBarStripElement2";
+            this.commandBarStripElement2.Name = "commandBarStripElement2";
             // 
             // frmEmpleados
             // 
@@ -893,8 +885,6 @@
         private Telerik.WinControls.UI.CommandBarButton btnNuevo;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
         private Telerik.WinControls.UI.CommandBarButton btnGuardar;
-        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator3;
-        private Telerik.WinControls.UI.CommandBarButton btnEliminar;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator4;
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
         private Telerik.WinControls.UI.RadPanel radPanel1;
@@ -947,9 +937,10 @@
         private System.Windows.Forms.TextBox txtcantidad;
         private System.Windows.Forms.Label lblcantidad;
         private System.Windows.Forms.Label lblNumfona;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSueldoIntegrado;
+        private System.Windows.Forms.TextBox txtSueldoDiario;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement2;
     }
 }

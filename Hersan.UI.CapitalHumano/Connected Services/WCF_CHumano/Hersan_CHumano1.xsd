@@ -521,6 +521,8 @@
       <xs:element minOccurs="0" name="Numero" type="xs:int" />
       <xs:element minOccurs="0" name="NumeroCuenta" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Pension" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SueldoDiario" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SueldoDiarioIntegrado" type="xs:decimal" />
       <xs:element minOccurs="0" name="TipoInfonavit" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

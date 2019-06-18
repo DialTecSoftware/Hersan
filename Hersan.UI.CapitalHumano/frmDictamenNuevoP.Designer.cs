@@ -155,7 +155,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1284, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(1284, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -262,7 +262,7 @@
             this.radPanel1.Controls.Add(this.label7);
             this.radPanel1.Controls.Add(this.label8);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 81);
+            this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(1284, 201);
             this.radPanel1.TabIndex = 1;
@@ -468,20 +468,20 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.toolWindow1;
+            this.radDock1.ActiveWindow = this.DockNuevoP;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Cursor = System.Windows.Forms.Cursors.VSplit;
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 282);
+            this.radDock1.Location = new System.Drawing.Point(0, 257);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1284, 467);
+            this.radDock1.Size = new System.Drawing.Size(1284, 492);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -510,7 +510,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 22);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(495, 433);
+            this.toolWindow1.Size = new System.Drawing.Size(495, 458);
             this.toolWindow1.Text = "DATOS DE DICTAMEN ";
             this.toolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -655,7 +655,7 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(497, 457);
+            this.toolTabStrip1.Size = new System.Drawing.Size(497, 482);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(497, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(297, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -685,8 +685,8 @@
             // 
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentTabStrip1.SelectedIndex = 1;
-            this.documentTabStrip1.Size = new System.Drawing.Size(773, 457);
+            this.documentTabStrip1.SelectedIndex = 0;
+            this.documentTabStrip1.Size = new System.Drawing.Size(773, 482);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -738,6 +738,7 @@
             gridViewTextBoxColumn6.FieldName = "Ocupantes";
             gridViewTextBoxColumn6.HeaderText = "# Ocupantes";
             gridViewTextBoxColumn6.Name = "Ocupantes";
+            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn6.Width = 100;
             gridViewTextBoxColumn7.FieldName = "Objetivos";
             gridViewTextBoxColumn7.HeaderText = "Objetivos";
@@ -825,7 +826,7 @@
             this.documentWindow1.Location = new System.Drawing.Point(6, 29);
             this.documentWindow1.Name = "documentWindow1";
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(761, 422);
+            this.documentWindow1.Size = new System.Drawing.Size(761, 447);
             this.documentWindow1.Text = "DICTAMEN DE NUEVOS PUESTOS";
             // 
             // gvDictamen
@@ -859,12 +860,15 @@
             gridViewTextBoxColumn22.Width = 130;
             gridViewTextBoxColumn23.DataType = typeof(decimal);
             gridViewTextBoxColumn23.FieldName = "Sueldo";
+            gridViewTextBoxColumn23.FormatString = "{0:C2}";
             gridViewTextBoxColumn23.HeaderText = "Sueldo";
             gridViewTextBoxColumn23.Name = "Sueldo";
+            gridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn23.Width = 70;
             gridViewTextBoxColumn24.FieldName = "Ocupantes";
             gridViewTextBoxColumn24.HeaderText = "# Ocupantes";
             gridViewTextBoxColumn24.Name = "Ocupantes";
+            gridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn24.Width = 100;
             gridViewTextBoxColumn25.FieldName = "Objetivos";
             gridViewTextBoxColumn25.HeaderText = "Objetivos";
@@ -941,7 +945,7 @@
             this.gvDictamen.ShowGroupPanel = false;
             this.gvDictamen.ShowNoDataText = false;
             this.gvDictamen.ShowRowErrors = false;
-            this.gvDictamen.Size = new System.Drawing.Size(761, 422);
+            this.gvDictamen.Size = new System.Drawing.Size(761, 447);
             this.gvDictamen.TabIndex = 10;
             this.gvDictamen.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDictamen_CurrentRowChanged);
             // 

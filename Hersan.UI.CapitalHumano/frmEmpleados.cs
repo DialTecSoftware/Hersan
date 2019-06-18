@@ -34,6 +34,8 @@ namespace Hersan.UI.CapitalHumano
             txtNumEmp.Text = "0";
             txtcantidad.Text = "0";
             txtPension.Text = "0";
+            txtSueldoDiario.Text = "0.00";
+            txtSueldoIntegrado.Text = "0.00";
             cboEstatus.SelectedIndex = 0;
             cboTipoF.SelectedIndex = 0;
             dtFecha.Value = DateTime.Today;
@@ -50,26 +52,23 @@ namespace Hersan.UI.CapitalHumano
         }
         private void Decimal_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            try {
+                if (BaseWinBP.isDecimal(e.KeyChar)) {
+                    e.Handled = true;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
         private bool ValidarCampos()
         {
             bool Flag = true;
             try {
                
-                if (SiVoluntario.IsChecked == true) {
-                    Flag = txtcantidad.Text.Trim().Length == 0 ? false : true;
-                }
-               else if (rdbUi.IsChecked == true) {
-                    Flag = txtInfonavit.Text.Trim().Length == 0 ? false : true;
-                }
-             else   if (rdbUi.IsChecked == true) {
-                    Flag = txtFonacot.Text.Trim().Length == 0 ? false : true;
-                }
-                Flag = txtPension.Text.Trim().Length == 0 ? false : true;                      
+            
+                Flag = txtApellidos.Text.Trim().Length == 0 ? false : true;                      
                 Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
-                Flag = txtNumEmp.Text.Trim().Length == 0 ? false : true;
-                Flag = txtCuenta.Text.Trim().Length == 0 ? false : true;
+               
 
 
                 return Flag;
@@ -117,6 +116,8 @@ namespace Hersan.UI.CapitalHumano
                         txtNumEmp.Text = item[0].Numero.ToString();
                         txtcantidad.Text = item[0].Ahorro.ToString();
                         txtCuenta.Text = item[0].NumeroCuenta;
+                        txtSueldoDiario.Text = item[0].SueldoDiario.ToString();
+                        txtSueldoIntegrado.Text = item[0].SueldoDiarioIntegrado.ToString();
                         if (item[0].Ahorro > 0) 
                         {
                             SiVoluntario.IsChecked = true;
@@ -166,6 +167,11 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
             EmpleadosBE obj = new EmpleadosBE();
             try {
+                if ((rdbUi.IsChecked==true && txtInfonavit.Text=="") || (rdbSi.IsChecked==true && txtFonacot.Text=="") || (SiVoluntario.IsChecked==true && txtcantidad.Text == "")) {
+                    RadMessageBox.Show("Al decir que sí existe el dato debe de capturarlo o selecciona No para cotinuar ", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
                 if (!ValidarCampos()) {
                     RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
@@ -181,13 +187,15 @@ namespace Hersan.UI.CapitalHumano
                 obj.Expedientes.Id = int.Parse(txtIdExp.Text);
                 obj.EstatusEmpleado = (cboEstatus.SelectedItem.Text);
                 obj.TipoInfonavit = (cboTipoF.SelectedItem.Text);
-                obj.Fonacot = txtFonacot.Text;
-                obj.Infonavit= txtInfonavit.Text;
-                obj.NumeroCuenta = txtCuenta.Text;
+                obj.Fonacot = txtFonacot.Text.Trim().Length==0 ? "0": txtFonacot.Text;
+                obj.Infonavit= txtInfonavit.Text.Trim().Length == 0 ? "0" :txtInfonavit.Text;
+                obj.NumeroCuenta = txtInfonavit.Text.Trim().Length == 0 ? "0" : txtCuenta.Text;
                 obj.FechaIngreso =  dtFecha.Value.Year.ToString() +"-"+ dtFecha.Value.Month.ToString().PadLeft(2, '0') +"-"+ dtFecha.Value.Day.ToString().PadLeft(2, '0');
                 obj.FechaAltaIMSS = dtIMSS.Value.Year.ToString() + "-" + dtIMSS.Value.Month.ToString().PadLeft(2, '0') + "-" + dtIMSS.Value.Day.ToString().PadLeft(2, '0');
-                obj.Pension = decimal.Parse(txtPension.Text)/100;
-                obj.Ahorro = decimal.Parse(txtcantidad.Text);
+                obj.Pension = txtPension.Text.Trim().Length == 0 ? 0: decimal.Parse(txtPension.Text);
+                obj.Ahorro = txtcantidad.Text.Trim().Length==0? 0: decimal.Parse(txtcantidad.Text);
+                obj.SueldoDiario = txtSueldoDiario.Text.Trim().Length ==0 ? 0: decimal.Parse(txtSueldoDiario.Text);
+                obj.SueldoDiarioIntegrado = 0;
                 obj.DatosUsuarios.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                 #endregion
 

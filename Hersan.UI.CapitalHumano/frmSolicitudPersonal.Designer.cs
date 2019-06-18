@@ -75,6 +75,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -95,7 +96,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1070, 81);
+            this.radCommandBar1.Size = new System.Drawing.Size(1145, 56);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -226,6 +227,7 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.label7);
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.txtSueldo);
             this.radPanel1.Controls.Add(this.label8);
@@ -244,9 +246,9 @@
             this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 81);
+            this.radPanel1.Location = new System.Drawing.Point(0, 56);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1070, 161);
+            this.radPanel1.Size = new System.Drawing.Size(1145, 161);
             this.radPanel1.TabIndex = 6;
             // 
             // txtId
@@ -260,11 +262,11 @@
             // txtDictamen
             // 
             this.txtDictamen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDictamen.Location = new System.Drawing.Point(729, 11);
+            this.txtDictamen.Location = new System.Drawing.Point(804, 11);
             this.txtDictamen.Multiline = true;
             this.txtDictamen.Name = "txtDictamen";
             this.txtDictamen.ReadOnly = true;
-            this.txtDictamen.Size = new System.Drawing.Size(338, 75);
+            this.txtDictamen.Size = new System.Drawing.Size(338, 104);
             this.txtDictamen.TabIndex = 13;
             // 
             // txtJustif
@@ -374,7 +376,7 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 242);
+            this.gvDatos.Location = new System.Drawing.Point(0, 217);
             // 
             // 
             // 
@@ -403,9 +405,12 @@
             gridViewTextBoxColumn5.HeaderText = "Contrato";
             gridViewTextBoxColumn5.Name = "TCO_Nombre";
             gridViewTextBoxColumn5.Width = 150;
+            gridViewTextBoxColumn6.DataType = typeof(decimal);
             gridViewTextBoxColumn6.FieldName = "Sueldo";
+            gridViewTextBoxColumn6.FormatString = "{0:C2}";
             gridViewTextBoxColumn6.HeaderText = "Sueldo";
             gridViewTextBoxColumn6.Name = "Sueldo";
+            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn6.Width = 70;
             gridViewTextBoxColumn7.FieldName = "Indicadores";
             gridViewTextBoxColumn7.HeaderText = "Indicadores";
@@ -461,15 +466,24 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(1070, 154);
+            this.gvDatos.Size = new System.Drawing.Size(1145, 179);
             this.gvDatos.TabIndex = 7;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(740, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "Dictamen:";
             // 
             // frmSolicitudPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 396);
+            this.ClientSize = new System.Drawing.Size(1145, 396);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -532,5 +546,6 @@
         private System.Windows.Forms.TextBox txtId;
         private Telerik.WinControls.UI.RadCheckBox chkEstatus;
         private System.Windows.Forms.TextBox txtDictamen;
+        private System.Windows.Forms.Label label7;
     }
 }

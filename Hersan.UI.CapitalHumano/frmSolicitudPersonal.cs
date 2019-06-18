@@ -300,8 +300,21 @@ namespace Hersan.UI.CapitalHumano
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
             SolicitudPersonalBE obj = new SolicitudPersonalBE();
             try {
-                //if (chkEstatus.Checked) {
-                    if (RadMessageBox.Show("Esta acción dará de baja la solicitud\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+
+
+                if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtId.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtId.Text))).Count > 0) {
+                    RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+
+                    return;
+                }
+
+                if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtId.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtId.Text))).Count > 0) {
+                    RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+
+                    return;
+                }
+
+                if (RadMessageBox.Show("Esta acción dará de baja la solicitud\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         obj.Id = int.Parse(txtId.Text);
                         obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
                         obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());

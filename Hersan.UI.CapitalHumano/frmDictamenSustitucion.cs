@@ -77,16 +77,7 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al cargar las solicitudes\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally { oCHumano = null; }
         }
-        private bool ValidarCampos()
-        {
-            bool Flag = true;
-            try {
-                Flag = txtDictamen.Text.Trim().Length == 0 ? false : true;
-                return Flag;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
+      
 
         private void frmDictamenSustitucion_Load(object sender, EventArgs e)
         {
@@ -99,7 +90,7 @@ namespace Hersan.UI.CapitalHumano
                 obj.CellBackColor = Color.RoyalBlue;
                 obj.ApplyOnSelectedRows = true;
                 this.gvDatos.Columns["Estado"].ConditionalFormattingObjectList.Add(obj);
-
+                  
 
                 LimpiarCampos();
                 lblfecha.Text = DateTime.Now.ToLongDateString();
@@ -124,10 +115,7 @@ namespace Hersan.UI.CapitalHumano
                     RadMessageBox.Show("Debe de selecciona un estatus para el dictamen", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     return;
                 }
-                if (!ValidarCampos()) {
-                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    return;
-                }
+               
                 if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtIdSu.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtIdSu.Text))).Count > 0)
                   {
                     RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);

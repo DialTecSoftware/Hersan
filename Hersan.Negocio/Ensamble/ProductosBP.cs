@@ -16,36 +16,17 @@ namespace Hersan.Negocio.Ensamble
         private void GuardarImagen(int IdProducto, Byte[] Imagen)
         {
             BinaryWriter Writer = null;
-            string DominioRed = "";
-            string UsuarioRed = "cuidado"; string PasswordRed = "Cloud.2018";
             string Name = RutaImagen + IdProducto.ToString() + ".jpg";
             try {
 
-                //string[] userPass = new FacturacionDA().obtenerUserPassFTP();
-                ////array de una dimension solo contiene mensaje de error
-                //if (userPass.Length == 1) {
-                //    result = userPass[0];
-                //    return result;
-                //}
-
-                ///Desencriptamos usuario y password
-                //UsuarioRed = DataEncryptor.Decrypt(userPass[0]);
-                //PasswordRed = DataEncryptor.Decrypt(userPass[1]);
-
-                //Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
-
-                // Create a new stream to write to the file
                 Writer = new BinaryWriter(File.OpenWrite(Name));
 
-                // Writer raw data                
                 Writer.Write(Imagen);
                 Writer.Flush();
                 Writer.Close();
 
             } catch (Exception ex) {
                 throw new Exception("Error al intentar guardar el archivo.", ex);
-            } finally {
-                //Imper.Undo();
             }
         }
         private Byte[] ObtenerImagen(int IdProducto)
@@ -53,11 +34,6 @@ namespace Hersan.Negocio.Ensamble
             byte[] Foto;
             string Imagen = RutaImagen + IdProducto.ToString() + ".jpg"; ;
             try {
-                //string DominioRed = "";
-                //string UsuarioRed = "cuidado"; string PasswordRed = "Cloud.2018";
-
-                //Impersonar.Impersonate(DominioRed, UsuarioRed, PasswordRed);
-
                 if (File.Exists(Imagen)) {
                     Foto = ConvertImage.FileToByteArray(Imagen);
                 } else {

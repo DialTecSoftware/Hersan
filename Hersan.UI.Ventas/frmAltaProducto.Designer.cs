@@ -631,7 +631,7 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.toolWindow1;
+            this.radDock1.ActiveWindow = this.toolDatos;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Controls.Add(this.toolTabStrip2);
@@ -659,7 +659,7 @@
             this.toolDatos.Location = new System.Drawing.Point(1, 22);
             this.toolDatos.Name = "toolDatos";
             this.toolDatos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolDatos.Size = new System.Drawing.Size(336, 363);
+            this.toolDatos.Size = new System.Drawing.Size(314, 363);
             this.toolDatos.Text = "COLOR CARCASA";
             this.toolDatos.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -726,9 +726,9 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(338, 387);
-            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(338, 200);
-            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(138, 0);
+            this.toolTabStrip1.Size = new System.Drawing.Size(316, 387);
+            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(316, 200);
+            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(116, 0);
             this.toolTabStrip1.TabIndex = 1;
             this.toolTabStrip1.TabStop = false;
             // 
@@ -740,9 +740,9 @@
             // 
             // 
             this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentContainer1.SizeInfo.AbsoluteSize = new System.Drawing.Size(423, 200);
+            this.documentContainer1.SizeInfo.AbsoluteSize = new System.Drawing.Size(214, 200);
             this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
-            this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-355, 0);
+            this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-564, 0);
             this.documentContainer1.TabIndex = 2;
             // 
             // documentTabStrip1
@@ -756,7 +756,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(423, 387);
+            this.documentTabStrip1.Size = new System.Drawing.Size(214, 387);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -768,7 +768,7 @@
             this.docDatos.Location = new System.Drawing.Point(6, 29);
             this.docDatos.Name = "docDatos";
             this.docDatos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.docDatos.Size = new System.Drawing.Size(411, 352);
+            this.docDatos.Size = new System.Drawing.Size(202, 352);
             this.docDatos.Text = "VARIANTES DE PRODUCTOS GENERADOS";
             // 
             // radPanel3
@@ -777,7 +777,7 @@
             this.radPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel3.Location = new System.Drawing.Point(0, 0);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(411, 352);
+            this.radPanel3.Size = new System.Drawing.Size(202, 352);
             this.radPanel3.TabIndex = 10;
             // 
             // gvResult
@@ -819,23 +819,23 @@
             this.gvResult.Name = "gvResult";
             this.gvResult.ShowGroupPanelScrollbars = false;
             this.gvResult.ShowNoDataText = false;
-            this.gvResult.Size = new System.Drawing.Size(411, 352);
+            this.gvResult.Size = new System.Drawing.Size(202, 352);
             this.gvResult.TabIndex = 3;
             // 
             // toolTabStrip2
             // 
             this.toolTabStrip2.CanUpdateChildIndex = true;
             this.toolTabStrip2.Controls.Add(this.toolWindow1);
-            this.toolTabStrip2.Location = new System.Drawing.Point(774, 5);
+            this.toolTabStrip2.Location = new System.Drawing.Point(543, 5);
             this.toolTabStrip2.Name = "toolTabStrip2";
             // 
             // 
             // 
             this.toolTabStrip2.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip2.SelectedIndex = 0;
-            this.toolTabStrip2.Size = new System.Drawing.Size(341, 387);
-            this.toolTabStrip2.SizeInfo.AbsoluteSize = new System.Drawing.Size(341, 200);
-            this.toolTabStrip2.SizeInfo.SplitterCorrection = new System.Drawing.Size(141, 0);
+            this.toolTabStrip2.Size = new System.Drawing.Size(572, 387);
+            this.toolTabStrip2.SizeInfo.AbsoluteSize = new System.Drawing.Size(572, 200);
+            this.toolTabStrip2.SizeInfo.SplitterCorrection = new System.Drawing.Size(372, 0);
             this.toolTabStrip2.TabIndex = 3;
             this.toolTabStrip2.TabStop = false;
             // 
@@ -850,7 +850,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 24);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(339, 361);
+            this.toolWindow1.Size = new System.Drawing.Size(570, 361);
             this.toolWindow1.Text = "ACCESORIOS";
             // 
             // txtCantAcce
@@ -888,7 +888,7 @@
             this.lstAccesorios.Name = "lstAccesorios";
             this.lstAccesorios.SelectLastAddedItem = false;
             this.lstAccesorios.ShowCheckBoxes = true;
-            this.lstAccesorios.Size = new System.Drawing.Size(325, 301);
+            this.lstAccesorios.Size = new System.Drawing.Size(556, 301);
             this.lstAccesorios.TabIndex = 54;
             // 
             // label18

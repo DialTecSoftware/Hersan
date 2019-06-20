@@ -32,6 +32,19 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem16 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -42,11 +55,11 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem17 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem18 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem19 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem20 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem21 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -56,19 +69,6 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem16 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem17 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem18 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem19 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem20 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem21 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem22 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem23 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem24 = new Telerik.WinControls.UI.RadListDataItem();
@@ -99,16 +99,18 @@
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnBuscar = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator9 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnBuscar = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnReporte = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator10 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnDoctos = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator11 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
@@ -117,82 +119,17 @@
             this.cboTipoExpediente = new Telerik.WinControls.UI.RadDropDownList();
             this.label119 = new System.Windows.Forms.Label();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
-            this.dtFecha = new Telerik.WinControls.UI.RadDateTimePicker();
             this.txtObserva = new Telerik.WinControls.UI.RadTextBox();
             this.label117 = new System.Windows.Forms.Label();
             this.btnFoto = new Telerik.WinControls.UI.RadButton();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.cboEntidad = new Telerik.WinControls.UI.RadDropDownList();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtAprobado = new Telerik.WinControls.UI.RadTextBox();
-            this.txtDeseado = new Telerik.WinControls.UI.RadTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.cboPuesto = new Telerik.WinControls.UI.RadDropDownList();
             this.cboDepto = new Telerik.WinControls.UI.RadDropDownList();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
-            this.tabFamilia = new Telerik.WinControls.UI.Docking.DocumentWindow();
-            this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
-            this.gvEstudios = new Telerik.WinControls.UI.RadGridView();
-            this.radCommandBar5 = new Telerik.WinControls.UI.RadCommandBar();
-            this.commandBarRowElement5 = new Telerik.WinControls.UI.CommandBarRowElement();
-            this.commandBarStripElement7 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnQuitarEscuela = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator7 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.radPanel6 = new Telerik.WinControls.UI.RadPanel();
-            this.txtEscuela = new Telerik.WinControls.UI.RadTextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.txtTituloEscuela = new Telerik.WinControls.UI.RadTextBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.txtAniosEscuela = new Telerik.WinControls.UI.RadTextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.dtHastaEscuela = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.label92 = new System.Windows.Forms.Label();
-            this.dtDesdeEscuela = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.label91 = new System.Windows.Forms.Label();
-            this.txtDireccionEscuela = new Telerik.WinControls.UI.RadTextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.btnAddEscuela = new Telerik.WinControls.UI.RadButton();
-            this.txtHorarioEscuela = new Telerik.WinControls.UI.RadTextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.txtGradoEscuela = new Telerik.WinControls.UI.RadTextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.txtCursoEscuela = new Telerik.WinControls.UI.RadTextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.txtEstudiosEscuela = new Telerik.WinControls.UI.RadTextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.cboEscolaridad = new Telerik.WinControls.UI.RadDropDownList();
-            this.label52 = new System.Windows.Forms.Label();
-            this.radGroupBox4 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
-            this.gvParientes = new Telerik.WinControls.UI.RadGridView();
-            this.radCommandBar4 = new Telerik.WinControls.UI.RadCommandBar();
-            this.commandBarRowElement4 = new Telerik.WinControls.UI.CommandBarRowElement();
-            this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnQuitarFamilia = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator6 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
-            this.btnAddPariente = new Telerik.WinControls.UI.RadButton();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txtEdadPariente = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox23 = new Telerik.WinControls.UI.RadTextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.txtOcupacionPariente = new Telerik.WinControls.UI.RadTextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.opParienteVive = new Telerik.WinControls.UI.RadRadioButton();
-            this.opParienteFinado = new Telerik.WinControls.UI.RadRadioButton();
-            this.txtDireccionPariente = new Telerik.WinControls.UI.RadTextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtNombrePariente = new Telerik.WinControls.UI.RadTextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.cboParentesco = new Telerik.WinControls.UI.RadDropDownList();
-            this.label41 = new System.Windows.Forms.Label();
-            this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
-            this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
             this.tabDatos = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
@@ -267,6 +204,65 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtCurp = new Telerik.WinControls.UI.RadTextBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
+            this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
+            this.tabFamilia = new Telerik.WinControls.UI.Docking.DocumentWindow();
+            this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
+            this.gvEstudios = new Telerik.WinControls.UI.RadGridView();
+            this.radCommandBar5 = new Telerik.WinControls.UI.RadCommandBar();
+            this.commandBarRowElement5 = new Telerik.WinControls.UI.CommandBarRowElement();
+            this.commandBarStripElement7 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.btnQuitarEscuela = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator7 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.radPanel6 = new Telerik.WinControls.UI.RadPanel();
+            this.txtEscuela = new Telerik.WinControls.UI.RadTextBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.txtTituloEscuela = new Telerik.WinControls.UI.RadTextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.txtAniosEscuela = new Telerik.WinControls.UI.RadTextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.dtHastaEscuela = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.label92 = new System.Windows.Forms.Label();
+            this.dtDesdeEscuela = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.label91 = new System.Windows.Forms.Label();
+            this.txtDireccionEscuela = new Telerik.WinControls.UI.RadTextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.btnAddEscuela = new Telerik.WinControls.UI.RadButton();
+            this.txtHorarioEscuela = new Telerik.WinControls.UI.RadTextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txtGradoEscuela = new Telerik.WinControls.UI.RadTextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.txtCursoEscuela = new Telerik.WinControls.UI.RadTextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.txtEstudiosEscuela = new Telerik.WinControls.UI.RadTextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.cboEscolaridad = new Telerik.WinControls.UI.RadDropDownList();
+            this.label52 = new System.Windows.Forms.Label();
+            this.radGroupBox4 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
+            this.gvParientes = new Telerik.WinControls.UI.RadGridView();
+            this.radCommandBar4 = new Telerik.WinControls.UI.RadCommandBar();
+            this.commandBarRowElement4 = new Telerik.WinControls.UI.CommandBarRowElement();
+            this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.btnQuitarFamilia = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator6 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
+            this.btnAddPariente = new Telerik.WinControls.UI.RadButton();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtEdadPariente = new Telerik.WinControls.UI.RadTextBox();
+            this.radTextBox23 = new Telerik.WinControls.UI.RadTextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.txtOcupacionPariente = new Telerik.WinControls.UI.RadTextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.opParienteVive = new Telerik.WinControls.UI.RadRadioButton();
+            this.opParienteFinado = new Telerik.WinControls.UI.RadRadioButton();
+            this.txtDireccionPariente = new Telerik.WinControls.UI.RadTextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtNombrePariente = new Telerik.WinControls.UI.RadTextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.cboParentesco = new Telerik.WinControls.UI.RadDropDownList();
+            this.label41 = new System.Windows.Forms.Label();
             this.tabEmpleos = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.radGroupBox9 = new Telerik.WinControls.UI.RadGroupBox();
             this.radPanel9 = new Telerik.WinControls.UI.RadPanel();
@@ -455,66 +451,21 @@
             this.commandBarStripElement10 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement11 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement12 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement13 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement14 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoExpediente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObserva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAprobado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeseado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
-            this.tabFamilia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
-            this.radGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).BeginInit();
-            this.radPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEstudios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEstudios.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel6)).BeginInit();
-            this.radPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTituloEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAniosEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtHastaEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDesdeEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDireccionEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHorarioEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGradoEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCursoEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEstudiosEscuela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEscolaridad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).BeginInit();
-            this.radGroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
-            this.radPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvParientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvParientes.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
-            this.radPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPariente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdadPariente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOcupacionPariente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opParienteVive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opParienteFinado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDireccionPariente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNombrePariente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboParentesco)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
-            this.documentContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
-            this.documentTabStrip1.SuspendLayout();
             this.tabDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
@@ -558,6 +509,50 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRFC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAfore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
+            this.documentContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
+            this.documentTabStrip1.SuspendLayout();
+            this.tabFamilia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
+            this.radGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).BeginInit();
+            this.radPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEstudios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEstudios.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel6)).BeginInit();
+            this.radPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTituloEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAniosEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHastaEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesdeEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDireccionEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHorarioEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGradoEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCursoEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEstudiosEscuela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEscolaridad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).BeginInit();
+            this.radGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
+            this.radPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvParientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvParientes.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
+            this.radPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddPariente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadPariente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOcupacionPariente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opParienteVive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opParienteFinado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDireccionPariente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombrePariente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboParentesco)).BeginInit();
             this.tabEmpleos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox9)).BeginInit();
             this.radGroupBox9.SuspendLayout();
@@ -707,7 +702,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1202, 78);
+            this.radCommandBar1.Size = new System.Drawing.Size(1202, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -725,16 +720,18 @@
             // 
             this.commandBarStripElement1.DisplayName = "commandBarStripElement1";
             this.commandBarStripElement1.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
-            this.btnBuscar,
-            this.commandBarSeparator1,
             this.btnNuevo,
             this.commandBarSeparator9,
             this.btnGuardar,
             this.commandBarSeparator2,
             this.btnEliminar,
             this.commandBarSeparator3,
+            this.btnBuscar,
+            this.commandBarSeparator1,
             this.btnReporte,
             this.commandBarSeparator10,
+            this.btnDoctos,
+            this.commandBarSeparator11,
             this.btnSalir,
             this.commandBarSeparator4,
             this.commandBarLabel1});
@@ -745,23 +742,6 @@
             this.commandBarStripElement1.OverflowButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             this.commandBarStripElement1.StretchHorizontally = true;
             ((Telerik.WinControls.UI.RadCommandBarOverflowButton)(this.commandBarStripElement1.GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.DisplayName = "Buscar";
-            this.btnBuscar.DrawText = true;
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // commandBarSeparator1
-            // 
-            this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
-            this.commandBarSeparator1.Name = "commandBarSeparator1";
-            this.commandBarSeparator1.VisibleInOverflowMenu = false;
             // 
             // btnNuevo
             // 
@@ -811,6 +791,23 @@
             this.commandBarSeparator3.Name = "commandBarSeparator3";
             this.commandBarSeparator3.VisibleInOverflowMenu = false;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.DisplayName = "Buscar";
+            this.btnBuscar.DrawText = true;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // commandBarSeparator1
+            // 
+            this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
+            this.commandBarSeparator1.Name = "commandBarSeparator1";
+            this.commandBarSeparator1.VisibleInOverflowMenu = false;
+            // 
             // btnReporte
             // 
             this.btnReporte.DisplayName = "commandBarButton1";
@@ -826,6 +823,22 @@
             this.commandBarSeparator10.DisplayName = "commandBarSeparator10";
             this.commandBarSeparator10.Name = "commandBarSeparator10";
             this.commandBarSeparator10.VisibleInOverflowMenu = false;
+            // 
+            // btnDoctos
+            // 
+            this.btnDoctos.DisplayName = "commandBarButton1";
+            this.btnDoctos.DrawText = true;
+            this.btnDoctos.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctos.Image")));
+            this.btnDoctos.Name = "btnDoctos";
+            this.btnDoctos.Text = "Documentos";
+            this.btnDoctos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDoctos.Click += new System.EventHandler(this.btnDoctos_Click);
+            // 
+            // commandBarSeparator11
+            // 
+            this.commandBarSeparator11.DisplayName = "commandBarSeparator11";
+            this.commandBarSeparator11.Name = "commandBarSeparator11";
+            this.commandBarSeparator11.VisibleInOverflowMenu = false;
             // 
             // btnSalir
             // 
@@ -863,24 +876,18 @@
             this.radPanel1.Controls.Add(this.cboTipoExpediente);
             this.radPanel1.Controls.Add(this.label119);
             this.radPanel1.Controls.Add(this.txtId);
-            this.radPanel1.Controls.Add(this.dtFecha);
             this.radPanel1.Controls.Add(this.txtObserva);
             this.radPanel1.Controls.Add(this.label117);
             this.radPanel1.Controls.Add(this.btnFoto);
             this.radPanel1.Controls.Add(this.picFoto);
             this.radPanel1.Controls.Add(this.cboEntidad);
             this.radPanel1.Controls.Add(this.label7);
-            this.radPanel1.Controls.Add(this.txtAprobado);
-            this.radPanel1.Controls.Add(this.txtDeseado);
-            this.radPanel1.Controls.Add(this.label5);
-            this.radPanel1.Controls.Add(this.label4);
-            this.radPanel1.Controls.Add(this.label3);
             this.radPanel1.Controls.Add(this.cboPuesto);
             this.radPanel1.Controls.Add(this.cboDepto);
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 78);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(1202, 105);
             this.radPanel1.TabIndex = 1;
@@ -910,7 +917,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(616, 37);
+            this.txtId.Location = new System.Drawing.Point(305, 81);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(55, 20);
             this.txtId.TabIndex = 17;
@@ -918,23 +925,10 @@
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtId.Visible = false;
             // 
-            // dtFecha
-            // 
-            this.dtFecha.CustomFormat = "";
-            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha.Location = new System.Drawing.Point(488, 9);
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.ShowCheckBox = true;
-            this.dtFecha.Size = new System.Drawing.Size(108, 20);
-            this.dtFecha.TabIndex = 5;
-            this.dtFecha.TabStop = false;
-            this.dtFecha.Text = "09/02/2019";
-            this.dtFecha.Value = new System.DateTime(2019, 2, 9, 22, 18, 43, 0);
-            // 
             // txtObserva
             // 
             this.txtObserva.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObserva.Location = new System.Drawing.Point(698, 9);
+            this.txtObserva.Location = new System.Drawing.Point(520, 9);
             this.txtObserva.Multiline = true;
             this.txtObserva.Name = "txtObserva";
             // 
@@ -947,7 +941,7 @@
             // label117
             // 
             this.label117.AutoSize = true;
-            this.label117.Location = new System.Drawing.Point(612, 13);
+            this.label117.Location = new System.Drawing.Point(434, 13);
             this.label117.Name = "label117";
             this.label117.Size = new System.Drawing.Size(85, 13);
             this.label117.TabIndex = 16;
@@ -958,7 +952,7 @@
             this.btnFoto.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
             this.btnFoto.Image = ((System.Drawing.Image)(resources.GetObject("btnFoto.Image")));
             this.btnFoto.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnFoto.Location = new System.Drawing.Point(947, 26);
+            this.btnFoto.Location = new System.Drawing.Point(776, 26);
             this.btnFoto.Name = "btnFoto";
             this.btnFoto.Size = new System.Drawing.Size(50, 43);
             this.btnFoto.TabIndex = 9;
@@ -971,7 +965,7 @@
             // 
             this.picFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picFoto.Image = ((System.Drawing.Image)(resources.GetObject("picFoto.Image")));
-            this.picFoto.Location = new System.Drawing.Point(1013, -1);
+            this.picFoto.Location = new System.Drawing.Point(855, -1);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(100, 100);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -996,52 +990,6 @@
             this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 10;
             this.label7.Text = "Entidad:";
-            // 
-            // txtAprobado
-            // 
-            this.txtAprobado.Location = new System.Drawing.Point(488, 56);
-            this.txtAprobado.Name = "txtAprobado";
-            this.txtAprobado.Size = new System.Drawing.Size(108, 20);
-            this.txtAprobado.TabIndex = 7;
-            this.txtAprobado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtAprobado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // txtDeseado
-            // 
-            this.txtDeseado.Location = new System.Drawing.Point(488, 34);
-            this.txtDeseado.Name = "txtDeseado";
-            this.txtDeseado.Size = new System.Drawing.Size(108, 20);
-            this.txtDeseado.TabIndex = 6;
-            this.txtDeseado.Text = "100";
-            this.txtDeseado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtDeseado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(379, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Sueldo Aprobado:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(379, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Sueldo Deseado:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(379, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Fecha Contratación:";
             // 
             // cboPuesto
             // 
@@ -1080,21 +1028,827 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.tabFamilia;
+            this.radDock1.ActiveWindow = this.tabDatos;
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 183);
+            this.radDock1.Location = new System.Drawing.Point(0, 158);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1202, 547);
+            this.radDock1.Size = new System.Drawing.Size(1202, 572);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             this.radDock1.ActiveWindowChanged += new Telerik.WinControls.UI.Docking.DockWindowEventHandler(this.radDock1_ActiveWindowChanged);
+            // 
+            // tabDatos
+            // 
+            this.tabDatos.Controls.Add(this.radPanel2);
+            this.tabDatos.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
+            this.tabDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabDatos.Location = new System.Drawing.Point(6, 29);
+            this.tabDatos.Name = "tabDatos";
+            this.tabDatos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
+            this.tabDatos.Size = new System.Drawing.Size(1180, 527);
+            this.tabDatos.Text = "DATOS PERSONALES / DOCUMENTOS";
+            this.tabDatos.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
+            // 
+            // radPanel2
+            // 
+            this.radPanel2.Controls.Add(this.radGroupBox3);
+            this.radPanel2.Controls.Add(this.radGroupBox2);
+            this.radPanel2.Controls.Add(this.radGroupBox1);
+            this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radPanel2.Location = new System.Drawing.Point(0, 0);
+            this.radPanel2.Name = "radPanel2";
+            this.radPanel2.Size = new System.Drawing.Size(1180, 527);
+            this.radPanel2.TabIndex = 0;
+            // 
+            // radGroupBox3
+            // 
+            this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox3.Controls.Add(this.txtEdoCivilOtro);
+            this.radGroupBox3.Controls.Add(this.label31);
+            this.radGroupBox3.Controls.Add(this.cboEdoCivil);
+            this.radGroupBox3.Controls.Add(this.label30);
+            this.radGroupBox3.Controls.Add(this.txtOtrosDepen);
+            this.radGroupBox3.Controls.Add(this.label29);
+            this.radGroupBox3.Controls.Add(this.cboDependientes);
+            this.radGroupBox3.Controls.Add(this.label28);
+            this.radGroupBox3.Controls.Add(this.cboVive);
+            this.radGroupBox3.Controls.Add(this.label27);
+            this.radGroupBox3.Controls.Add(this.txtNacionalidad);
+            this.radGroupBox3.Controls.Add(this.label24);
+            this.radGroupBox3.Controls.Add(this.cboSexo);
+            this.radGroupBox3.Controls.Add(this.label21);
+            this.radGroupBox3.Controls.Add(this.txtTelefono);
+            this.radGroupBox3.Controls.Add(this.radTextBox5);
+            this.radGroupBox3.Controls.Add(this.label20);
+            this.radGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox3.HeaderText = "Otros Datos";
+            this.radGroupBox3.Location = new System.Drawing.Point(743, 0);
+            this.radGroupBox3.Name = "radGroupBox3";
+            this.radGroupBox3.Size = new System.Drawing.Size(437, 330);
+            this.radGroupBox3.TabIndex = 3;
+            this.radGroupBox3.Text = "Otros Datos";
+            // 
+            // txtEdoCivilOtro
+            // 
+            this.txtEdoCivilOtro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEdoCivilOtro.Location = new System.Drawing.Point(170, 121);
+            this.txtEdoCivilOtro.MaxLength = 30;
+            this.txtEdoCivilOtro.Name = "txtEdoCivilOtro";
+            this.txtEdoCivilOtro.Size = new System.Drawing.Size(168, 20);
+            this.txtEdoCivilOtro.TabIndex = 30;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(170, 105);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(31, 13);
+            this.label31.TabIndex = 91;
+            this.label31.Text = "Otro";
+            // 
+            // cboEdoCivil
+            // 
+            this.cboEdoCivil.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem4.Tag = "Soltero";
+            radListDataItem4.Text = "SOLTERO";
+            radListDataItem5.Tag = "Casado";
+            radListDataItem5.Text = "CASADO";
+            radListDataItem6.Tag = "Otro";
+            radListDataItem6.Text = "OTRO";
+            this.cboEdoCivil.Items.Add(radListDataItem4);
+            this.cboEdoCivil.Items.Add(radListDataItem5);
+            this.cboEdoCivil.Items.Add(radListDataItem6);
+            this.cboEdoCivil.Location = new System.Drawing.Point(18, 121);
+            this.cboEdoCivil.Name = "cboEdoCivil";
+            this.cboEdoCivil.Size = new System.Drawing.Size(127, 20);
+            this.cboEdoCivil.TabIndex = 29;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(18, 105);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(54, 13);
+            this.label30.TabIndex = 88;
+            this.label30.Text = "Edo. Civil";
+            // 
+            // txtOtrosDepen
+            // 
+            this.txtOtrosDepen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtOtrosDepen.Location = new System.Drawing.Point(170, 160);
+            this.txtOtrosDepen.MaxLength = 30;
+            this.txtOtrosDepen.Name = "txtOtrosDepen";
+            this.txtOtrosDepen.Size = new System.Drawing.Size(168, 20);
+            this.txtOtrosDepen.TabIndex = 32;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(170, 144);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(36, 13);
+            this.label29.TabIndex = 87;
+            this.label29.Text = "Otros";
+            // 
+            // cboDependientes
+            // 
+            this.cboDependientes.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem7.Tag = "Hijos";
+            radListDataItem7.Text = "HIJOS";
+            radListDataItem8.Tag = "Conyuge";
+            radListDataItem8.Text = "CONYUGE";
+            radListDataItem9.Tag = "Padres";
+            radListDataItem9.Text = "PADRES";
+            radListDataItem10.Tag = "Otros";
+            radListDataItem10.Text = "OTROS";
+            this.cboDependientes.Items.Add(radListDataItem7);
+            this.cboDependientes.Items.Add(radListDataItem8);
+            this.cboDependientes.Items.Add(radListDataItem9);
+            this.cboDependientes.Items.Add(radListDataItem10);
+            this.cboDependientes.Location = new System.Drawing.Point(15, 160);
+            this.cboDependientes.Name = "cboDependientes";
+            this.cboDependientes.Size = new System.Drawing.Size(130, 20);
+            this.cboDependientes.TabIndex = 31;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(15, 144);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(79, 13);
+            this.label28.TabIndex = 84;
+            this.label28.Text = "Dependientes";
+            // 
+            // cboVive
+            // 
+            this.cboVive.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem11.Tag = "Pades";
+            radListDataItem11.Text = "PADRES";
+            radListDataItem12.Tag = "Familia";
+            radListDataItem12.Text = "FAMILIA";
+            radListDataItem13.Tag = "Parientes";
+            radListDataItem13.Text = "PARIENTES";
+            radListDataItem14.Tag = "Solo";
+            radListDataItem14.Text = "SOLO";
+            this.cboVive.Items.Add(radListDataItem11);
+            this.cboVive.Items.Add(radListDataItem12);
+            this.cboVive.Items.Add(radListDataItem13);
+            this.cboVive.Items.Add(radListDataItem14);
+            this.cboVive.Location = new System.Drawing.Point(170, 81);
+            this.cboVive.Name = "cboVive";
+            this.cboVive.Size = new System.Drawing.Size(148, 20);
+            this.cboVive.TabIndex = 28;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(170, 65);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(52, 13);
+            this.label27.TabIndex = 82;
+            this.label27.Text = "Vive Con";
+            // 
+            // txtNacionalidad
+            // 
+            this.txtNacionalidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNacionalidad.Location = new System.Drawing.Point(15, 80);
+            this.txtNacionalidad.MaxLength = 25;
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(130, 20);
+            this.txtNacionalidad.TabIndex = 27;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(15, 64);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(75, 13);
+            this.label24.TabIndex = 78;
+            this.label24.Text = "Nacionalidad";
+            // 
+            // cboSexo
+            // 
+            this.cboSexo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem15.Tag = "Masculino";
+            radListDataItem15.Text = "MASCULINO";
+            radListDataItem16.Tag = "Femenino";
+            radListDataItem16.Text = "FEMENINO";
+            this.cboSexo.Items.Add(radListDataItem15);
+            this.cboSexo.Items.Add(radListDataItem16);
+            this.cboSexo.Location = new System.Drawing.Point(167, 40);
+            this.cboSexo.Name = "cboSexo";
+            this.cboSexo.Size = new System.Drawing.Size(148, 20);
+            this.cboSexo.TabIndex = 26;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(167, 24);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 13);
+            this.label21.TabIndex = 70;
+            this.label21.Text = "Sexo";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(18, 40);
+            this.txtTelefono.MaxLength = 10;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(103, 20);
+            this.txtTelefono.TabIndex = 25;
+            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
+            // 
+            // radTextBox5
+            // 
+            this.radTextBox5.Location = new System.Drawing.Point(18, 40);
+            this.radTextBox5.Name = "radTextBox5";
+            this.radTextBox5.Size = new System.Drawing.Size(103, 20);
+            this.radTextBox5.TabIndex = 67;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(18, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 13);
+            this.label20.TabIndex = 69;
+            this.label20.Text = "Telefono";
+            // 
+            // radGroupBox2
+            // 
+            this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox2.Controls.Add(this.txtCorreo);
+            this.radGroupBox2.Controls.Add(this.label121);
+            this.radGroupBox2.Controls.Add(this.txtCP);
+            this.radGroupBox2.Controls.Add(this.label18);
+            this.radGroupBox2.Controls.Add(this.cboCiudadNac);
+            this.radGroupBox2.Controls.Add(this.label17);
+            this.radGroupBox2.Controls.Add(this.cboEdoNac);
+            this.radGroupBox2.Controls.Add(this.label16);
+            this.radGroupBox2.Controls.Add(this.cboCiudad);
+            this.radGroupBox2.Controls.Add(this.label15);
+            this.radGroupBox2.Controls.Add(this.cboEstado);
+            this.radGroupBox2.Controls.Add(this.label14);
+            this.radGroupBox2.Controls.Add(this.label25);
+            this.radGroupBox2.Controls.Add(this.cboColonia);
+            this.radGroupBox2.Controls.Add(this.txtPeso);
+            this.radGroupBox2.Controls.Add(this.label13);
+            this.radGroupBox2.Controls.Add(this.label26);
+            this.radGroupBox2.Controls.Add(this.txtDomicilio);
+            this.radGroupBox2.Controls.Add(this.label12);
+            this.radGroupBox2.Controls.Add(this.label11);
+            this.radGroupBox2.Controls.Add(this.label22);
+            this.radGroupBox2.Controls.Add(this.txtEdad);
+            this.radGroupBox2.Controls.Add(this.txtEstatura);
+            this.radGroupBox2.Controls.Add(this.label10);
+            this.radGroupBox2.Controls.Add(this.label23);
+            this.radGroupBox2.Controls.Add(this.txtNombres);
+            this.radGroupBox2.Controls.Add(this.label9);
+            this.radGroupBox2.Controls.Add(this.txtAMaterno);
+            this.radGroupBox2.Controls.Add(this.dtFecNac);
+            this.radGroupBox2.Controls.Add(this.label8);
+            this.radGroupBox2.Controls.Add(this.txtAPaterno);
+            this.radGroupBox2.Controls.Add(this.label6);
+            this.radGroupBox2.Controls.Add(this.label19);
+            this.radGroupBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radGroupBox2.HeaderText = "Datos Personales";
+            this.radGroupBox2.Location = new System.Drawing.Point(0, 0);
+            this.radGroupBox2.Name = "radGroupBox2";
+            this.radGroupBox2.Size = new System.Drawing.Size(743, 330);
+            this.radGroupBox2.TabIndex = 2;
+            this.radGroupBox2.Text = "Datos Personales";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(330, 177);
+            this.txtCorreo.MaxLength = 100;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(239, 20);
+            this.txtCorreo.TabIndex = 25;
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Location = new System.Drawing.Point(330, 161);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(102, 13);
+            this.label121.TabIndex = 83;
+            this.label121.Text = "Correo electrónico";
+            // 
+            // txtCP
+            // 
+            this.txtCP.Location = new System.Drawing.Point(217, 127);
+            this.txtCP.Name = "txtCP";
+            this.txtCP.Size = new System.Drawing.Size(74, 20);
+            this.txtCP.TabIndex = 19;
+            this.txtCP.Tag = "";
+            this.txtCP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(217, 111);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(79, 13);
+            this.label18.TabIndex = 69;
+            this.label18.Text = "Código Postal";
+            // 
+            // cboCiudadNac
+            // 
+            this.cboCiudadNac.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboCiudadNac.Location = new System.Drawing.Point(523, 127);
+            this.cboCiudadNac.Name = "cboCiudadNac";
+            this.cboCiudadNac.Size = new System.Drawing.Size(192, 20);
+            this.cboCiudadNac.TabIndex = 21;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(523, 111);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(121, 13);
+            this.label17.TabIndex = 66;
+            this.label17.Text = "Ciudad de Nacimiento";
+            // 
+            // cboEdoNac
+            // 
+            this.cboEdoNac.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboEdoNac.Location = new System.Drawing.Point(307, 127);
+            this.cboEdoNac.Name = "cboEdoNac";
+            this.cboEdoNac.Size = new System.Drawing.Size(192, 20);
+            this.cboEdoNac.TabIndex = 20;
+            this.cboEdoNac.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboEdoNac_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(307, 111);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(119, 13);
+            this.label16.TabIndex = 64;
+            this.label16.Text = "Estado de Nacimiento";
+            // 
+            // cboCiudad
+            // 
+            this.cboCiudad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboCiudad.Location = new System.Drawing.Point(523, 80);
+            this.cboCiudad.Name = "cboCiudad";
+            this.cboCiudad.Size = new System.Drawing.Size(192, 20);
+            this.cboCiudad.TabIndex = 17;
+            this.cboCiudad.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboCiudad_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(523, 64);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.TabIndex = 62;
+            this.label15.Text = "Ciudad";
+            // 
+            // cboEstado
+            // 
+            this.cboEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboEstado.Location = new System.Drawing.Point(307, 80);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(192, 20);
+            this.cboEstado.TabIndex = 16;
+            this.cboEstado.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboEstado_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(307, 64);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 13);
+            this.label14.TabIndex = 60;
+            this.label14.Text = "Estado";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(293, 181);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(23, 13);
+            this.label25.TabIndex = 81;
+            this.label25.Text = "Kg.";
+            // 
+            // cboColonia
+            // 
+            this.cboColonia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboColonia.Location = new System.Drawing.Point(8, 127);
+            this.cboColonia.Name = "cboColonia";
+            this.cboColonia.Size = new System.Drawing.Size(192, 20);
+            this.cboColonia.TabIndex = 18;
+            this.cboColonia.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboColonia_SelectedIndexChanged);
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(241, 177);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(46, 20);
+            this.txtPeso.TabIndex = 24;
+            this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(8, 111);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 13);
+            this.label13.TabIndex = 58;
+            this.label13.Text = "Colonia";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(241, 161);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(31, 13);
+            this.label26.TabIndex = 80;
+            this.label26.Text = "Peso";
+            // 
+            // txtDomicilio
+            // 
+            this.txtDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDomicilio.Location = new System.Drawing.Point(8, 80);
+            this.txtDomicilio.MaxLength = 300;
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(272, 20);
+            this.txtDomicilio.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 64);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 13);
+            this.label12.TabIndex = 57;
+            this.label12.Text = "Domicilio";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(687, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 13);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Años";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(202, 181);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(24, 13);
+            this.label22.TabIndex = 76;
+            this.label22.Text = "cm.";
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(639, 40);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(46, 20);
+            this.txtEdad.TabIndex = 14;
+            this.txtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
+            // 
+            // txtEstatura
+            // 
+            this.txtEstatura.Location = new System.Drawing.Point(154, 177);
+            this.txtEstatura.Name = "txtEstatura";
+            this.txtEstatura.Size = new System.Drawing.Size(46, 20);
+            this.txtEstatura.TabIndex = 23;
+            this.txtEstatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEstatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(639, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 13);
+            this.label10.TabIndex = 54;
+            this.label10.Text = "Edad";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(154, 161);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(49, 13);
+            this.label23.TabIndex = 75;
+            this.label23.Text = "Estatura";
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombres.Location = new System.Drawing.Point(382, 40);
+            this.txtNombres.MaxLength = 100;
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(242, 20);
+            this.txtNombres.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(382, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Nombre(s)";
+            // 
+            // txtAMaterno
+            // 
+            this.txtAMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAMaterno.Location = new System.Drawing.Point(197, 40);
+            this.txtAMaterno.MaxLength = 100;
+            this.txtAMaterno.Name = "txtAMaterno";
+            this.txtAMaterno.Size = new System.Drawing.Size(169, 20);
+            this.txtAMaterno.TabIndex = 12;
+            // 
+            // dtFecNac
+            // 
+            this.dtFecNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecNac.Location = new System.Drawing.Point(8, 177);
+            this.dtFecNac.Name = "dtFecNac";
+            this.dtFecNac.Size = new System.Drawing.Size(112, 20);
+            this.dtFecNac.TabIndex = 22;
+            this.dtFecNac.TabStop = false;
+            this.dtFecNac.Text = "08/02/2019";
+            this.dtFecNac.Value = new System.DateTime(2019, 2, 8, 12, 11, 1, 847);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(197, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 13);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "Apellido Materno";
+            // 
+            // txtAPaterno
+            // 
+            this.txtAPaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAPaterno.Location = new System.Drawing.Point(8, 40);
+            this.txtAPaterno.MaxLength = 100;
+            this.txtAPaterno.Name = "txtAPaterno";
+            this.txtAPaterno.Size = new System.Drawing.Size(169, 20);
+            this.txtAPaterno.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 13);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Apellido Paterno";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(8, 161);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(98, 13);
+            this.label19.TabIndex = 72;
+            this.label19.Text = "Fecha Nacimiento";
+            // 
+            // radGroupBox1
+            // 
+            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.txtDoctoTrabajo);
+            this.radGroupBox1.Controls.Add(this.label40);
+            this.radGroupBox1.Controls.Add(this.txtLicencia);
+            this.radGroupBox1.Controls.Add(this.label39);
+            this.radGroupBox1.Controls.Add(this.opLicenciaNo);
+            this.radGroupBox1.Controls.Add(this.opLicenciaSi);
+            this.radGroupBox1.Controls.Add(this.label38);
+            this.radGroupBox1.Controls.Add(this.txtPasaporte);
+            this.radGroupBox1.Controls.Add(this.label37);
+            this.radGroupBox1.Controls.Add(this.txtCartilla);
+            this.radGroupBox1.Controls.Add(this.label36);
+            this.radGroupBox1.Controls.Add(this.txtImss);
+            this.radGroupBox1.Controls.Add(this.label35);
+            this.radGroupBox1.Controls.Add(this.txtRFC);
+            this.radGroupBox1.Controls.Add(this.label34);
+            this.radGroupBox1.Controls.Add(this.txtAfore);
+            this.radGroupBox1.Controls.Add(this.label33);
+            this.radGroupBox1.Controls.Add(this.txtCurp);
+            this.radGroupBox1.Controls.Add(this.label32);
+            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.radGroupBox1.HeaderText = "Documentos";
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 330);
+            this.radGroupBox1.Name = "radGroupBox1";
+            this.radGroupBox1.Size = new System.Drawing.Size(1180, 197);
+            this.radGroupBox1.TabIndex = 4;
+            this.radGroupBox1.Text = "Documentos";
+            // 
+            // txtDoctoTrabajo
+            // 
+            this.txtDoctoTrabajo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDoctoTrabajo.Location = new System.Drawing.Point(423, 157);
+            this.txtDoctoTrabajo.MaxLength = 30;
+            this.txtDoctoTrabajo.Name = "txtDoctoTrabajo";
+            this.txtDoctoTrabajo.Size = new System.Drawing.Size(258, 20);
+            this.txtDoctoTrabajo.TabIndex = 42;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(423, 141);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(189, 13);
+            this.label40.TabIndex = 71;
+            this.label40.Text = "Documento de Trabajo (Extranjeros)";
+            // 
+            // txtLicencia
+            // 
+            this.txtLicencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLicencia.Location = new System.Drawing.Point(194, 156);
+            this.txtLicencia.MaxLength = 20;
+            this.txtLicencia.Name = "txtLicencia";
+            this.txtLicencia.Size = new System.Drawing.Size(192, 20);
+            this.txtLicencia.TabIndex = 41;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(194, 140);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(106, 13);
+            this.label39.TabIndex = 69;
+            this.label39.Text = "Clase y No. Licencia";
+            // 
+            // opLicenciaNo
+            // 
+            this.opLicenciaNo.Location = new System.Drawing.Point(45, 156);
+            this.opLicenciaNo.Name = "opLicenciaNo";
+            this.opLicenciaNo.Size = new System.Drawing.Size(35, 18);
+            this.opLicenciaNo.TabIndex = 39;
+            this.opLicenciaNo.Text = "No";
+            // 
+            // opLicenciaSi
+            // 
+            this.opLicenciaSi.Location = new System.Drawing.Point(91, 156);
+            this.opLicenciaSi.Name = "opLicenciaSi";
+            this.opLicenciaSi.Size = new System.Drawing.Size(29, 18);
+            this.opLicenciaSi.TabIndex = 40;
+            this.opLicenciaSi.Text = "Sí";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(28, 140);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(140, 13);
+            this.label38.TabIndex = 65;
+            this.label38.Text = "Tiene Licencias de Manejo";
+            // 
+            // txtPasaporte
+            // 
+            this.txtPasaporte.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPasaporte.Location = new System.Drawing.Point(623, 108);
+            this.txtPasaporte.MaxLength = 30;
+            this.txtPasaporte.Name = "txtPasaporte";
+            this.txtPasaporte.Size = new System.Drawing.Size(258, 20);
+            this.txtPasaporte.TabIndex = 38;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(623, 92);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(79, 13);
+            this.label37.TabIndex = 37;
+            this.label37.Text = "Pasaporte No.";
+            // 
+            // txtCartilla
+            // 
+            this.txtCartilla.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCartilla.Location = new System.Drawing.Point(327, 108);
+            this.txtCartilla.MaxLength = 20;
+            this.txtCartilla.Name = "txtCartilla";
+            this.txtCartilla.Size = new System.Drawing.Size(258, 20);
+            this.txtCartilla.TabIndex = 37;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(327, 92);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(142, 13);
+            this.label36.TabIndex = 35;
+            this.label36.Text = "Cartilla Servicio Militar No.";
+            // 
+            // txtImss
+            // 
+            this.txtImss.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtImss.Location = new System.Drawing.Point(626, 59);
+            this.txtImss.MaxLength = 11;
+            this.txtImss.Name = "txtImss";
+            this.txtImss.Size = new System.Drawing.Size(258, 20);
+            this.txtImss.TabIndex = 35;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(626, 43);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(153, 13);
+            this.label35.TabIndex = 33;
+            this.label35.Text = "Número de Seguridad Social";
+            // 
+            // txtRFC
+            // 
+            this.txtRFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRFC.Location = new System.Drawing.Point(25, 108);
+            this.txtRFC.MaxLength = 13;
+            this.txtRFC.Name = "txtRFC";
+            this.txtRFC.Size = new System.Drawing.Size(258, 20);
+            this.txtRFC.TabIndex = 36;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(25, 92);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(189, 13);
+            this.label34.TabIndex = 31;
+            this.label34.Text = "Registro Federal de Contribuyentes";
+            // 
+            // txtAfore
+            // 
+            this.txtAfore.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAfore.Location = new System.Drawing.Point(327, 59);
+            this.txtAfore.Name = "txtAfore";
+            this.txtAfore.Size = new System.Drawing.Size(258, 20);
+            this.txtAfore.TabIndex = 34;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(327, 43);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(35, 13);
+            this.label33.TabIndex = 29;
+            this.label33.Text = "Afore";
+            // 
+            // txtCurp
+            // 
+            this.txtCurp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCurp.Location = new System.Drawing.Point(25, 59);
+            this.txtCurp.MaxLength = 20;
+            this.txtCurp.Name = "txtCurp";
+            this.txtCurp.Size = new System.Drawing.Size(258, 20);
+            this.txtCurp.TabIndex = 33;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(25, 43);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(198, 13);
+            this.label32.TabIndex = 27;
+            this.label32.Text = "Clave Única de Registro de Población";
+            // 
+            // documentContainer1
+            // 
+            this.documentContainer1.Controls.Add(this.documentTabStrip1);
+            this.documentContainer1.Name = "documentContainer1";
+            // 
+            // 
+            // 
+            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
+            // 
+            // documentTabStrip1
+            // 
+            this.documentTabStrip1.CanUpdateChildIndex = true;
+            this.documentTabStrip1.Controls.Add(this.tabDatos);
+            this.documentTabStrip1.Controls.Add(this.tabFamilia);
+            this.documentTabStrip1.Controls.Add(this.tabEmpleos);
+            this.documentTabStrip1.Controls.Add(this.tabConoc);
+            this.documentTabStrip1.Controls.Add(this.tabEconomia);
+            this.documentTabStrip1.Location = new System.Drawing.Point(0, 0);
+            this.documentTabStrip1.Name = "documentTabStrip1";
+            // 
+            // 
+            // 
+            this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.documentTabStrip1.SelectedIndex = 0;
+            this.documentTabStrip1.Size = new System.Drawing.Size(1192, 562);
+            this.documentTabStrip1.TabIndex = 0;
+            this.documentTabStrip1.TabStop = false;
             // 
             // tabFamilia
             // 
@@ -1105,7 +1859,7 @@
             this.tabFamilia.Location = new System.Drawing.Point(6, 29);
             this.tabFamilia.Name = "tabFamilia";
             this.tabFamilia.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.tabFamilia.Size = new System.Drawing.Size(1180, 502);
+            this.tabFamilia.Size = new System.Drawing.Size(1180, 527);
             this.tabFamilia.Text = "DATOS FAMILIARES / ESCOLARIDAD";
             this.tabFamilia.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -1118,7 +1872,7 @@
             this.radGroupBox5.HeaderText = "Escolaridad";
             this.radGroupBox5.Location = new System.Drawing.Point(0, 187);
             this.radGroupBox5.Name = "radGroupBox5";
-            this.radGroupBox5.Size = new System.Drawing.Size(1180, 315);
+            this.radGroupBox5.Size = new System.Drawing.Size(1180, 340);
             this.radGroupBox5.TabIndex = 1;
             this.radGroupBox5.Text = "Escolaridad";
             // 
@@ -1129,14 +1883,14 @@
             this.radPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel5.Location = new System.Drawing.Point(516, 18);
             this.radPanel5.Name = "radPanel5";
-            this.radPanel5.Size = new System.Drawing.Size(662, 295);
+            this.radPanel5.Size = new System.Drawing.Size(662, 320);
             this.radPanel5.TabIndex = 3;
             // 
             // gvEstudios
             // 
             this.gvEstudios.AutoScroll = true;
             this.gvEstudios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvEstudios.Location = new System.Drawing.Point(0, 53);
+            this.gvEstudios.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
@@ -1212,7 +1966,7 @@
             this.gvEstudios.Name = "gvEstudios";
             this.gvEstudios.ShowGroupPanel = false;
             this.gvEstudios.ShowNoDataText = false;
-            this.gvEstudios.Size = new System.Drawing.Size(662, 242);
+            this.gvEstudios.Size = new System.Drawing.Size(662, 320);
             this.gvEstudios.TabIndex = 10;
             // 
             // radCommandBar5
@@ -1222,7 +1976,7 @@
             this.radCommandBar5.Name = "radCommandBar5";
             this.radCommandBar5.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement5});
-            this.radCommandBar5.Size = new System.Drawing.Size(662, 53);
+            this.radCommandBar5.Size = new System.Drawing.Size(662, 0);
             this.radCommandBar5.TabIndex = 0;
             // 
             // commandBarRowElement5
@@ -1295,7 +2049,7 @@
             this.radPanel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.radPanel6.Location = new System.Drawing.Point(2, 18);
             this.radPanel6.Name = "radPanel6";
-            this.radPanel6.Size = new System.Drawing.Size(514, 295);
+            this.radPanel6.Size = new System.Drawing.Size(514, 320);
             this.radPanel6.TabIndex = 8;
             // 
             // txtEscuela
@@ -1311,7 +2065,7 @@
             this.label118.AutoSize = true;
             this.label118.Location = new System.Drawing.Point(158, 12);
             this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(173, 13);
+            this.label118.Size = new System.Drawing.Size(164, 13);
             this.label118.TabIndex = 101;
             this.label118.Text = "Escuela / Colgegio / Universidad";
             // 
@@ -1328,7 +2082,7 @@
             this.label94.AutoSize = true;
             this.label94.Location = new System.Drawing.Point(12, 96);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(84, 13);
+            this.label94.Size = new System.Drawing.Size(80, 13);
             this.label94.TabIndex = 99;
             this.label94.Text = "Título Recibido";
             // 
@@ -1346,7 +2100,7 @@
             this.label93.AutoSize = true;
             this.label93.Location = new System.Drawing.Point(290, 96);
             this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(33, 13);
+            this.label93.Size = new System.Drawing.Size(31, 13);
             this.label93.TabIndex = 97;
             this.label93.Text = "Años";
             // 
@@ -1407,7 +2161,7 @@
             this.label90.AutoSize = true;
             this.label90.Location = new System.Drawing.Point(9, 54);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(55, 13);
+            this.label90.Size = new System.Drawing.Size(52, 13);
             this.label90.TabIndex = 91;
             this.label90.Text = "Dirección";
             // 
@@ -1438,7 +2192,7 @@
             this.label48.AutoSize = true;
             this.label48.Location = new System.Drawing.Point(292, 136);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(46, 13);
+            this.label48.Size = new System.Drawing.Size(41, 13);
             this.label48.TabIndex = 86;
             this.label48.Text = "Horario";
             // 
@@ -1455,7 +2209,7 @@
             this.label49.AutoSize = true;
             this.label49.Location = new System.Drawing.Point(295, 174);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(39, 13);
+            this.label49.Size = new System.Drawing.Size(36, 13);
             this.label49.TabIndex = 84;
             this.label49.Text = "Grado";
             // 
@@ -1472,7 +2226,7 @@
             this.label50.AutoSize = true;
             this.label50.Location = new System.Drawing.Point(12, 174);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(87, 13);
+            this.label50.Size = new System.Drawing.Size(80, 13);
             this.label50.TabIndex = 80;
             this.label50.Text = "Curso o Carrera";
             // 
@@ -1489,28 +2243,28 @@
             this.label51.AutoSize = true;
             this.label51.Location = new System.Drawing.Point(12, 136);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(218, 13);
+            this.label51.Size = new System.Drawing.Size(204, 13);
             this.label51.TabIndex = 78;
             this.label51.Text = "Estudios Cursando Actualmente (Escuela)";
             // 
             // cboEscolaridad
             // 
             this.cboEscolaridad.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem4.Tag = "Primaria";
-            radListDataItem4.Text = "Primaria";
-            radListDataItem5.Tag = "Secundaria";
-            radListDataItem5.Text = "Secundaria";
-            radListDataItem6.Tag = "Preparatoria";
-            radListDataItem6.Text = "Preparatoria";
-            radListDataItem7.Tag = "Profesional";
-            radListDataItem7.Text = "Profesional";
-            radListDataItem8.Tag = "Comercial u Otra";
-            radListDataItem8.Text = "Comercial u Otra";
-            this.cboEscolaridad.Items.Add(radListDataItem4);
-            this.cboEscolaridad.Items.Add(radListDataItem5);
-            this.cboEscolaridad.Items.Add(radListDataItem6);
-            this.cboEscolaridad.Items.Add(radListDataItem7);
-            this.cboEscolaridad.Items.Add(radListDataItem8);
+            radListDataItem17.Tag = "Primaria";
+            radListDataItem17.Text = "Primaria";
+            radListDataItem18.Tag = "Secundaria";
+            radListDataItem18.Text = "Secundaria";
+            radListDataItem19.Tag = "Preparatoria";
+            radListDataItem19.Text = "Preparatoria";
+            radListDataItem20.Tag = "Profesional";
+            radListDataItem20.Text = "Profesional";
+            radListDataItem21.Tag = "Comercial u Otra";
+            radListDataItem21.Text = "Comercial u Otra";
+            this.cboEscolaridad.Items.Add(radListDataItem17);
+            this.cboEscolaridad.Items.Add(radListDataItem18);
+            this.cboEscolaridad.Items.Add(radListDataItem19);
+            this.cboEscolaridad.Items.Add(radListDataItem20);
+            this.cboEscolaridad.Items.Add(radListDataItem21);
             this.cboEscolaridad.Location = new System.Drawing.Point(12, 28);
             this.cboEscolaridad.Name = "cboEscolaridad";
             this.cboEscolaridad.Size = new System.Drawing.Size(140, 20);
@@ -1521,7 +2275,7 @@
             this.label52.AutoSize = true;
             this.label52.Location = new System.Drawing.Point(12, 12);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(66, 13);
+            this.label52.Size = new System.Drawing.Size(62, 13);
             this.label52.TabIndex = 75;
             this.label52.Text = "Escolaridad";
             // 
@@ -1552,7 +2306,7 @@
             // 
             this.gvParientes.AutoScroll = true;
             this.gvParientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvParientes.Location = new System.Drawing.Point(0, 53);
+            this.gvParientes.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
@@ -1628,7 +2382,7 @@
             this.gvParientes.Name = "gvParientes";
             this.gvParientes.ShowGroupPanel = false;
             this.gvParientes.ShowNoDataText = false;
-            this.gvParientes.Size = new System.Drawing.Size(662, 114);
+            this.gvParientes.Size = new System.Drawing.Size(662, 167);
             this.gvParientes.TabIndex = 8;
             // 
             // radCommandBar4
@@ -1638,7 +2392,7 @@
             this.radCommandBar4.Name = "radCommandBar4";
             this.radCommandBar4.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement4});
-            this.radCommandBar4.Size = new System.Drawing.Size(662, 53);
+            this.radCommandBar4.Size = new System.Drawing.Size(662, 0);
             this.radCommandBar4.TabIndex = 0;
             // 
             // commandBarRowElement4
@@ -1725,7 +2479,7 @@
             this.label45.AutoSize = true;
             this.label45.Location = new System.Drawing.Point(348, 66);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(33, 13);
+            this.label45.Size = new System.Drawing.Size(31, 13);
             this.label45.TabIndex = 87;
             this.label45.Text = "Años";
             // 
@@ -1752,7 +2506,7 @@
             this.label46.AutoSize = true;
             this.label46.Location = new System.Drawing.Point(300, 46);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(33, 13);
+            this.label46.Size = new System.Drawing.Size(32, 13);
             this.label46.TabIndex = 86;
             this.label46.Text = "Edad";
             // 
@@ -1769,7 +2523,7 @@
             this.label44.AutoSize = true;
             this.label44.Location = new System.Drawing.Point(14, 124);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(63, 13);
+            this.label44.Size = new System.Drawing.Size(59, 13);
             this.label44.TabIndex = 84;
             this.label44.Text = "Ocupación";
             // 
@@ -1805,7 +2559,7 @@
             this.label43.AutoSize = true;
             this.label43.Location = new System.Drawing.Point(14, 84);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(55, 13);
+            this.label43.Size = new System.Drawing.Size(49, 13);
             this.label43.TabIndex = 80;
             this.label43.Text = "Domicilio";
             // 
@@ -1822,25 +2576,25 @@
             this.label42.AutoSize = true;
             this.label42.Location = new System.Drawing.Point(14, 46);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(48, 13);
+            this.label42.Size = new System.Drawing.Size(44, 13);
             this.label42.TabIndex = 78;
             this.label42.Text = "Nombre";
             // 
             // cboParentesco
             // 
             this.cboParentesco.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem9.Tag = "Padre";
-            radListDataItem9.Text = "Padre";
-            radListDataItem10.Tag = "Madre";
-            radListDataItem10.Text = "Madre";
-            radListDataItem11.Tag = "Esposo(a)";
-            radListDataItem11.Text = "Esposo(a)";
-            radListDataItem12.Tag = "Hijo(a)";
-            radListDataItem12.Text = "Hijo(a)";
-            this.cboParentesco.Items.Add(radListDataItem9);
-            this.cboParentesco.Items.Add(radListDataItem10);
-            this.cboParentesco.Items.Add(radListDataItem11);
-            this.cboParentesco.Items.Add(radListDataItem12);
+            radListDataItem22.Tag = "Padre";
+            radListDataItem22.Text = "Padre";
+            radListDataItem23.Tag = "Madre";
+            radListDataItem23.Text = "Madre";
+            radListDataItem24.Tag = "Esposo(a)";
+            radListDataItem24.Text = "Esposo(a)";
+            radListDataItem25.Tag = "Hijo(a)";
+            radListDataItem25.Text = "Hijo(a)";
+            this.cboParentesco.Items.Add(radListDataItem22);
+            this.cboParentesco.Items.Add(radListDataItem23);
+            this.cboParentesco.Items.Add(radListDataItem24);
+            this.cboParentesco.Items.Add(radListDataItem25);
             this.cboParentesco.Location = new System.Drawing.Point(14, 23);
             this.cboParentesco.Name = "cboParentesco";
             this.cboParentesco.Size = new System.Drawing.Size(192, 20);
@@ -1851,815 +2605,9 @@
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(14, 7);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(63, 13);
+            this.label41.Size = new System.Drawing.Size(61, 13);
             this.label41.TabIndex = 75;
             this.label41.Text = "Parentesco";
-            // 
-            // documentContainer1
-            // 
-            this.documentContainer1.Controls.Add(this.documentTabStrip1);
-            this.documentContainer1.Name = "documentContainer1";
-            // 
-            // 
-            // 
-            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
-            // 
-            // documentTabStrip1
-            // 
-            this.documentTabStrip1.CanUpdateChildIndex = true;
-            this.documentTabStrip1.Controls.Add(this.tabDatos);
-            this.documentTabStrip1.Controls.Add(this.tabFamilia);
-            this.documentTabStrip1.Controls.Add(this.tabEmpleos);
-            this.documentTabStrip1.Controls.Add(this.tabConoc);
-            this.documentTabStrip1.Controls.Add(this.tabEconomia);
-            this.documentTabStrip1.Location = new System.Drawing.Point(0, 0);
-            this.documentTabStrip1.Name = "documentTabStrip1";
-            // 
-            // 
-            // 
-            this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentTabStrip1.SelectedIndex = 1;
-            this.documentTabStrip1.Size = new System.Drawing.Size(1192, 537);
-            this.documentTabStrip1.TabIndex = 0;
-            this.documentTabStrip1.TabStop = false;
-            // 
-            // tabDatos
-            // 
-            this.tabDatos.Controls.Add(this.radPanel2);
-            this.tabDatos.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None;
-            this.tabDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabDatos.Location = new System.Drawing.Point(6, 29);
-            this.tabDatos.Name = "tabDatos";
-            this.tabDatos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.tabDatos.Size = new System.Drawing.Size(1180, 527);
-            this.tabDatos.Text = "DATOS PERSONALES / DOCUMENTOS";
-            this.tabDatos.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
-            // 
-            // radPanel2
-            // 
-            this.radPanel2.Controls.Add(this.radGroupBox3);
-            this.radPanel2.Controls.Add(this.radGroupBox2);
-            this.radPanel2.Controls.Add(this.radGroupBox1);
-            this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel2.Location = new System.Drawing.Point(0, 0);
-            this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(1180, 527);
-            this.radPanel2.TabIndex = 0;
-            // 
-            // radGroupBox3
-            // 
-            this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox3.Controls.Add(this.txtEdoCivilOtro);
-            this.radGroupBox3.Controls.Add(this.label31);
-            this.radGroupBox3.Controls.Add(this.cboEdoCivil);
-            this.radGroupBox3.Controls.Add(this.label30);
-            this.radGroupBox3.Controls.Add(this.txtOtrosDepen);
-            this.radGroupBox3.Controls.Add(this.label29);
-            this.radGroupBox3.Controls.Add(this.cboDependientes);
-            this.radGroupBox3.Controls.Add(this.label28);
-            this.radGroupBox3.Controls.Add(this.cboVive);
-            this.radGroupBox3.Controls.Add(this.label27);
-            this.radGroupBox3.Controls.Add(this.txtNacionalidad);
-            this.radGroupBox3.Controls.Add(this.label24);
-            this.radGroupBox3.Controls.Add(this.cboSexo);
-            this.radGroupBox3.Controls.Add(this.label21);
-            this.radGroupBox3.Controls.Add(this.txtTelefono);
-            this.radGroupBox3.Controls.Add(this.radTextBox5);
-            this.radGroupBox3.Controls.Add(this.label20);
-            this.radGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGroupBox3.HeaderText = "Otros Datos";
-            this.radGroupBox3.Location = new System.Drawing.Point(743, 0);
-            this.radGroupBox3.Name = "radGroupBox3";
-            this.radGroupBox3.Size = new System.Drawing.Size(437, 330);
-            this.radGroupBox3.TabIndex = 3;
-            this.radGroupBox3.Text = "Otros Datos";
-            // 
-            // txtEdoCivilOtro
-            // 
-            this.txtEdoCivilOtro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEdoCivilOtro.Location = new System.Drawing.Point(170, 121);
-            this.txtEdoCivilOtro.MaxLength = 30;
-            this.txtEdoCivilOtro.Name = "txtEdoCivilOtro";
-            this.txtEdoCivilOtro.Size = new System.Drawing.Size(168, 20);
-            this.txtEdoCivilOtro.TabIndex = 30;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(170, 105);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(27, 13);
-            this.label31.TabIndex = 91;
-            this.label31.Text = "Otro";
-            // 
-            // cboEdoCivil
-            // 
-            this.cboEdoCivil.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem13.Tag = "Soltero";
-            radListDataItem13.Text = "SOLTERO";
-            radListDataItem14.Tag = "Casado";
-            radListDataItem14.Text = "CASADO";
-            radListDataItem15.Tag = "Otro";
-            radListDataItem15.Text = "OTRO";
-            this.cboEdoCivil.Items.Add(radListDataItem13);
-            this.cboEdoCivil.Items.Add(radListDataItem14);
-            this.cboEdoCivil.Items.Add(radListDataItem15);
-            this.cboEdoCivil.Location = new System.Drawing.Point(18, 121);
-            this.cboEdoCivil.Name = "cboEdoCivil";
-            this.cboEdoCivil.Size = new System.Drawing.Size(127, 20);
-            this.cboEdoCivil.TabIndex = 29;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(18, 105);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(51, 13);
-            this.label30.TabIndex = 88;
-            this.label30.Text = "Edo. Civil";
-            // 
-            // txtOtrosDepen
-            // 
-            this.txtOtrosDepen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtOtrosDepen.Location = new System.Drawing.Point(170, 160);
-            this.txtOtrosDepen.MaxLength = 30;
-            this.txtOtrosDepen.Name = "txtOtrosDepen";
-            this.txtOtrosDepen.Size = new System.Drawing.Size(168, 20);
-            this.txtOtrosDepen.TabIndex = 32;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(170, 144);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(32, 13);
-            this.label29.TabIndex = 87;
-            this.label29.Text = "Otros";
-            // 
-            // cboDependientes
-            // 
-            this.cboDependientes.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem16.Tag = "Hijos";
-            radListDataItem16.Text = "HIJOS";
-            radListDataItem17.Tag = "Conyuge";
-            radListDataItem17.Text = "CONYUGE";
-            radListDataItem18.Tag = "Padres";
-            radListDataItem18.Text = "PADRES";
-            radListDataItem19.Tag = "Otros";
-            radListDataItem19.Text = "OTROS";
-            this.cboDependientes.Items.Add(radListDataItem16);
-            this.cboDependientes.Items.Add(radListDataItem17);
-            this.cboDependientes.Items.Add(radListDataItem18);
-            this.cboDependientes.Items.Add(radListDataItem19);
-            this.cboDependientes.Location = new System.Drawing.Point(15, 160);
-            this.cboDependientes.Name = "cboDependientes";
-            this.cboDependientes.Size = new System.Drawing.Size(130, 20);
-            this.cboDependientes.TabIndex = 31;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(15, 144);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(73, 13);
-            this.label28.TabIndex = 84;
-            this.label28.Text = "Dependientes";
-            // 
-            // cboVive
-            // 
-            this.cboVive.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem20.Tag = "Pades";
-            radListDataItem20.Text = "PADRES";
-            radListDataItem21.Tag = "Familia";
-            radListDataItem21.Text = "FAMILIA";
-            radListDataItem22.Tag = "Parientes";
-            radListDataItem22.Text = "PARIENTES";
-            radListDataItem23.Tag = "Solo";
-            radListDataItem23.Text = "SOLO";
-            this.cboVive.Items.Add(radListDataItem20);
-            this.cboVive.Items.Add(radListDataItem21);
-            this.cboVive.Items.Add(radListDataItem22);
-            this.cboVive.Items.Add(radListDataItem23);
-            this.cboVive.Location = new System.Drawing.Point(170, 81);
-            this.cboVive.Name = "cboVive";
-            this.cboVive.Size = new System.Drawing.Size(148, 20);
-            this.cboVive.TabIndex = 28;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(170, 65);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(50, 13);
-            this.label27.TabIndex = 82;
-            this.label27.Text = "Vive Con";
-            // 
-            // txtNacionalidad
-            // 
-            this.txtNacionalidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNacionalidad.Location = new System.Drawing.Point(15, 80);
-            this.txtNacionalidad.MaxLength = 25;
-            this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(130, 20);
-            this.txtNacionalidad.TabIndex = 27;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(15, 64);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(69, 13);
-            this.label24.TabIndex = 78;
-            this.label24.Text = "Nacionalidad";
-            // 
-            // cboSexo
-            // 
-            this.cboSexo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem24.Tag = "Masculino";
-            radListDataItem24.Text = "MASCULINO";
-            radListDataItem25.Tag = "Femenino";
-            radListDataItem25.Text = "FEMENINO";
-            this.cboSexo.Items.Add(radListDataItem24);
-            this.cboSexo.Items.Add(radListDataItem25);
-            this.cboSexo.Location = new System.Drawing.Point(167, 40);
-            this.cboSexo.Name = "cboSexo";
-            this.cboSexo.Size = new System.Drawing.Size(148, 20);
-            this.cboSexo.TabIndex = 26;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(167, 24);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(31, 13);
-            this.label21.TabIndex = 70;
-            this.label21.Text = "Sexo";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(18, 40);
-            this.txtTelefono.MaxLength = 10;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(103, 20);
-            this.txtTelefono.TabIndex = 25;
-            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
-            // 
-            // radTextBox5
-            // 
-            this.radTextBox5.Location = new System.Drawing.Point(18, 40);
-            this.radTextBox5.Name = "radTextBox5";
-            this.radTextBox5.Size = new System.Drawing.Size(103, 20);
-            this.radTextBox5.TabIndex = 67;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(18, 24);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 13);
-            this.label20.TabIndex = 69;
-            this.label20.Text = "Telefono";
-            // 
-            // radGroupBox2
-            // 
-            this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox2.Controls.Add(this.txtCorreo);
-            this.radGroupBox2.Controls.Add(this.label121);
-            this.radGroupBox2.Controls.Add(this.txtCP);
-            this.radGroupBox2.Controls.Add(this.label18);
-            this.radGroupBox2.Controls.Add(this.cboCiudadNac);
-            this.radGroupBox2.Controls.Add(this.label17);
-            this.radGroupBox2.Controls.Add(this.cboEdoNac);
-            this.radGroupBox2.Controls.Add(this.label16);
-            this.radGroupBox2.Controls.Add(this.cboCiudad);
-            this.radGroupBox2.Controls.Add(this.label15);
-            this.radGroupBox2.Controls.Add(this.cboEstado);
-            this.radGroupBox2.Controls.Add(this.label14);
-            this.radGroupBox2.Controls.Add(this.label25);
-            this.radGroupBox2.Controls.Add(this.cboColonia);
-            this.radGroupBox2.Controls.Add(this.txtPeso);
-            this.radGroupBox2.Controls.Add(this.label13);
-            this.radGroupBox2.Controls.Add(this.label26);
-            this.radGroupBox2.Controls.Add(this.txtDomicilio);
-            this.radGroupBox2.Controls.Add(this.label12);
-            this.radGroupBox2.Controls.Add(this.label11);
-            this.radGroupBox2.Controls.Add(this.label22);
-            this.radGroupBox2.Controls.Add(this.txtEdad);
-            this.radGroupBox2.Controls.Add(this.txtEstatura);
-            this.radGroupBox2.Controls.Add(this.label10);
-            this.radGroupBox2.Controls.Add(this.label23);
-            this.radGroupBox2.Controls.Add(this.txtNombres);
-            this.radGroupBox2.Controls.Add(this.label9);
-            this.radGroupBox2.Controls.Add(this.txtAMaterno);
-            this.radGroupBox2.Controls.Add(this.dtFecNac);
-            this.radGroupBox2.Controls.Add(this.label8);
-            this.radGroupBox2.Controls.Add(this.txtAPaterno);
-            this.radGroupBox2.Controls.Add(this.label6);
-            this.radGroupBox2.Controls.Add(this.label19);
-            this.radGroupBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radGroupBox2.HeaderText = "Datos Personales";
-            this.radGroupBox2.Location = new System.Drawing.Point(0, 0);
-            this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(743, 330);
-            this.radGroupBox2.TabIndex = 2;
-            this.radGroupBox2.Text = "Datos Personales";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(330, 177);
-            this.txtCorreo.MaxLength = 100;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(239, 20);
-            this.txtCorreo.TabIndex = 25;
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.Location = new System.Drawing.Point(330, 161);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(93, 13);
-            this.label121.TabIndex = 83;
-            this.label121.Text = "Correo electrónico";
-            // 
-            // txtCP
-            // 
-            this.txtCP.Location = new System.Drawing.Point(217, 127);
-            this.txtCP.Name = "txtCP";
-            this.txtCP.Size = new System.Drawing.Size(74, 20);
-            this.txtCP.TabIndex = 19;
-            this.txtCP.Tag = "";
-            this.txtCP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(217, 111);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 13);
-            this.label18.TabIndex = 69;
-            this.label18.Text = "Código Postal";
-            // 
-            // cboCiudadNac
-            // 
-            this.cboCiudadNac.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboCiudadNac.Location = new System.Drawing.Point(523, 127);
-            this.cboCiudadNac.Name = "cboCiudadNac";
-            this.cboCiudadNac.Size = new System.Drawing.Size(192, 20);
-            this.cboCiudadNac.TabIndex = 21;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(523, 111);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(111, 13);
-            this.label17.TabIndex = 66;
-            this.label17.Text = "Ciudad de Nacimiento";
-            // 
-            // cboEdoNac
-            // 
-            this.cboEdoNac.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboEdoNac.Location = new System.Drawing.Point(307, 127);
-            this.cboEdoNac.Name = "cboEdoNac";
-            this.cboEdoNac.Size = new System.Drawing.Size(192, 20);
-            this.cboEdoNac.TabIndex = 20;
-            this.cboEdoNac.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboEdoNac_SelectedIndexChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(307, 111);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(111, 13);
-            this.label16.TabIndex = 64;
-            this.label16.Text = "Estado de Nacimiento";
-            // 
-            // cboCiudad
-            // 
-            this.cboCiudad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboCiudad.Location = new System.Drawing.Point(523, 80);
-            this.cboCiudad.Name = "cboCiudad";
-            this.cboCiudad.Size = new System.Drawing.Size(192, 20);
-            this.cboCiudad.TabIndex = 17;
-            this.cboCiudad.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboCiudad_SelectedIndexChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(523, 64);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 13);
-            this.label15.TabIndex = 62;
-            this.label15.Text = "Ciudad";
-            // 
-            // cboEstado
-            // 
-            this.cboEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboEstado.Location = new System.Drawing.Point(307, 80);
-            this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(192, 20);
-            this.cboEstado.TabIndex = 16;
-            this.cboEstado.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboEstado_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(307, 64);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 13);
-            this.label14.TabIndex = 60;
-            this.label14.Text = "Estado";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(293, 181);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(23, 13);
-            this.label25.TabIndex = 81;
-            this.label25.Text = "Kg.";
-            // 
-            // cboColonia
-            // 
-            this.cboColonia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboColonia.Location = new System.Drawing.Point(8, 127);
-            this.cboColonia.Name = "cboColonia";
-            this.cboColonia.Size = new System.Drawing.Size(192, 20);
-            this.cboColonia.TabIndex = 18;
-            this.cboColonia.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboColonia_SelectedIndexChanged);
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(241, 177);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(46, 20);
-            this.txtPeso.TabIndex = 24;
-            this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 111);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 13);
-            this.label13.TabIndex = 58;
-            this.label13.Text = "Colonia";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(241, 161);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(31, 13);
-            this.label26.TabIndex = 80;
-            this.label26.Text = "Peso";
-            // 
-            // txtDomicilio
-            // 
-            this.txtDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDomicilio.Location = new System.Drawing.Point(8, 80);
-            this.txtDomicilio.MaxLength = 300;
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(272, 20);
-            this.txtDomicilio.TabIndex = 15;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 64);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 13);
-            this.label12.TabIndex = 57;
-            this.label12.Text = "Domicilio";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(687, 44);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(31, 13);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Años";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(202, 181);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(24, 13);
-            this.label22.TabIndex = 76;
-            this.label22.Text = "cm.";
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.Location = new System.Drawing.Point(639, 40);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(46, 20);
-            this.txtEdad.TabIndex = 14;
-            this.txtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
-            // 
-            // txtEstatura
-            // 
-            this.txtEstatura.Location = new System.Drawing.Point(154, 177);
-            this.txtEstatura.Name = "txtEstatura";
-            this.txtEstatura.Size = new System.Drawing.Size(46, 20);
-            this.txtEstatura.TabIndex = 23;
-            this.txtEstatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtEstatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(639, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
-            this.label10.TabIndex = 54;
-            this.label10.Text = "Edad";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(154, 161);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(46, 13);
-            this.label23.TabIndex = 75;
-            this.label23.Text = "Estatura";
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombres.Location = new System.Drawing.Point(382, 40);
-            this.txtNombres.MaxLength = 100;
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(242, 20);
-            this.txtNombres.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(382, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "Nombre(s)";
-            // 
-            // txtAMaterno
-            // 
-            this.txtAMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAMaterno.Location = new System.Drawing.Point(197, 40);
-            this.txtAMaterno.MaxLength = 100;
-            this.txtAMaterno.Name = "txtAMaterno";
-            this.txtAMaterno.Size = new System.Drawing.Size(169, 20);
-            this.txtAMaterno.TabIndex = 12;
-            // 
-            // dtFecNac
-            // 
-            this.dtFecNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecNac.Location = new System.Drawing.Point(8, 177);
-            this.dtFecNac.Name = "dtFecNac";
-            this.dtFecNac.Size = new System.Drawing.Size(112, 20);
-            this.dtFecNac.TabIndex = 22;
-            this.dtFecNac.TabStop = false;
-            this.dtFecNac.Text = "08/02/2019";
-            this.dtFecNac.Value = new System.DateTime(2019, 2, 8, 12, 11, 1, 847);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(197, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 13);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "Apellido Materno";
-            // 
-            // txtAPaterno
-            // 
-            this.txtAPaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAPaterno.Location = new System.Drawing.Point(8, 40);
-            this.txtAPaterno.MaxLength = 100;
-            this.txtAPaterno.Name = "txtAPaterno";
-            this.txtAPaterno.Size = new System.Drawing.Size(169, 20);
-            this.txtAPaterno.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 13);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Apellido Paterno";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(8, 161);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 13);
-            this.label19.TabIndex = 72;
-            this.label19.Text = "Fecha Nacimiento";
-            // 
-            // radGroupBox1
-            // 
-            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.txtDoctoTrabajo);
-            this.radGroupBox1.Controls.Add(this.label40);
-            this.radGroupBox1.Controls.Add(this.txtLicencia);
-            this.radGroupBox1.Controls.Add(this.label39);
-            this.radGroupBox1.Controls.Add(this.opLicenciaNo);
-            this.radGroupBox1.Controls.Add(this.opLicenciaSi);
-            this.radGroupBox1.Controls.Add(this.label38);
-            this.radGroupBox1.Controls.Add(this.txtPasaporte);
-            this.radGroupBox1.Controls.Add(this.label37);
-            this.radGroupBox1.Controls.Add(this.txtCartilla);
-            this.radGroupBox1.Controls.Add(this.label36);
-            this.radGroupBox1.Controls.Add(this.txtImss);
-            this.radGroupBox1.Controls.Add(this.label35);
-            this.radGroupBox1.Controls.Add(this.txtRFC);
-            this.radGroupBox1.Controls.Add(this.label34);
-            this.radGroupBox1.Controls.Add(this.txtAfore);
-            this.radGroupBox1.Controls.Add(this.label33);
-            this.radGroupBox1.Controls.Add(this.txtCurp);
-            this.radGroupBox1.Controls.Add(this.label32);
-            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.radGroupBox1.HeaderText = "Documentos";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 330);
-            this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1180, 197);
-            this.radGroupBox1.TabIndex = 4;
-            this.radGroupBox1.Text = "Documentos";
-            // 
-            // txtDoctoTrabajo
-            // 
-            this.txtDoctoTrabajo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDoctoTrabajo.Location = new System.Drawing.Point(423, 157);
-            this.txtDoctoTrabajo.MaxLength = 30;
-            this.txtDoctoTrabajo.Name = "txtDoctoTrabajo";
-            this.txtDoctoTrabajo.Size = new System.Drawing.Size(258, 20);
-            this.txtDoctoTrabajo.TabIndex = 42;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(423, 141);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(177, 13);
-            this.label40.TabIndex = 71;
-            this.label40.Text = "Documento de Trabajo (Extranjeros)";
-            // 
-            // txtLicencia
-            // 
-            this.txtLicencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLicencia.Location = new System.Drawing.Point(194, 156);
-            this.txtLicencia.MaxLength = 20;
-            this.txtLicencia.Name = "txtLicencia";
-            this.txtLicencia.Size = new System.Drawing.Size(192, 20);
-            this.txtLicencia.TabIndex = 41;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(194, 140);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(104, 13);
-            this.label39.TabIndex = 69;
-            this.label39.Text = "Clase y No. Licencia";
-            // 
-            // opLicenciaNo
-            // 
-            this.opLicenciaNo.Location = new System.Drawing.Point(45, 156);
-            this.opLicenciaNo.Name = "opLicenciaNo";
-            this.opLicenciaNo.Size = new System.Drawing.Size(35, 18);
-            this.opLicenciaNo.TabIndex = 39;
-            this.opLicenciaNo.Text = "No";
-            // 
-            // opLicenciaSi
-            // 
-            this.opLicenciaSi.Location = new System.Drawing.Point(91, 156);
-            this.opLicenciaSi.Name = "opLicenciaSi";
-            this.opLicenciaSi.Size = new System.Drawing.Size(29, 18);
-            this.opLicenciaSi.TabIndex = 40;
-            this.opLicenciaSi.Text = "Sí";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(28, 140);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(135, 13);
-            this.label38.TabIndex = 65;
-            this.label38.Text = "Tiene Licencias de Manejo";
-            // 
-            // txtPasaporte
-            // 
-            this.txtPasaporte.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPasaporte.Location = new System.Drawing.Point(623, 108);
-            this.txtPasaporte.MaxLength = 30;
-            this.txtPasaporte.Name = "txtPasaporte";
-            this.txtPasaporte.Size = new System.Drawing.Size(258, 20);
-            this.txtPasaporte.TabIndex = 38;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(623, 92);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(75, 13);
-            this.label37.TabIndex = 37;
-            this.label37.Text = "Pasaporte No.";
-            // 
-            // txtCartilla
-            // 
-            this.txtCartilla.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCartilla.Location = new System.Drawing.Point(327, 108);
-            this.txtCartilla.MaxLength = 20;
-            this.txtCartilla.Name = "txtCartilla";
-            this.txtCartilla.Size = new System.Drawing.Size(258, 20);
-            this.txtCartilla.TabIndex = 37;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(327, 92);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(129, 13);
-            this.label36.TabIndex = 35;
-            this.label36.Text = "Cartilla Servicio Militar No.";
-            // 
-            // txtImss
-            // 
-            this.txtImss.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtImss.Location = new System.Drawing.Point(626, 59);
-            this.txtImss.MaxLength = 11;
-            this.txtImss.Name = "txtImss";
-            this.txtImss.Size = new System.Drawing.Size(258, 20);
-            this.txtImss.TabIndex = 35;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(626, 43);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(142, 13);
-            this.label35.TabIndex = 33;
-            this.label35.Text = "Número de Seguridad Social";
-            // 
-            // txtRFC
-            // 
-            this.txtRFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtRFC.Location = new System.Drawing.Point(25, 108);
-            this.txtRFC.MaxLength = 13;
-            this.txtRFC.Name = "txtRFC";
-            this.txtRFC.Size = new System.Drawing.Size(258, 20);
-            this.txtRFC.TabIndex = 36;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(25, 92);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(172, 13);
-            this.label34.TabIndex = 31;
-            this.label34.Text = "Registro Federal de Contribuyentes";
-            // 
-            // txtAfore
-            // 
-            this.txtAfore.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAfore.Location = new System.Drawing.Point(327, 59);
-            this.txtAfore.Name = "txtAfore";
-            this.txtAfore.Size = new System.Drawing.Size(258, 20);
-            this.txtAfore.TabIndex = 34;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(327, 43);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(32, 13);
-            this.label33.TabIndex = 29;
-            this.label33.Text = "Afore";
-            // 
-            // txtCurp
-            // 
-            this.txtCurp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCurp.Location = new System.Drawing.Point(25, 59);
-            this.txtCurp.MaxLength = 20;
-            this.txtCurp.Name = "txtCurp";
-            this.txtCurp.Size = new System.Drawing.Size(258, 20);
-            this.txtCurp.TabIndex = 33;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(25, 43);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(187, 13);
-            this.label32.TabIndex = 27;
-            this.label32.Text = "Clave Única de Registro de Población";
             // 
             // tabEmpleos
             // 
@@ -4695,6 +4643,16 @@
             this.commandBarStripElement12.DisplayName = "commandBarStripElement12";
             this.commandBarStripElement12.Name = "commandBarStripElement12";
             // 
+            // commandBarStripElement13
+            // 
+            this.commandBarStripElement13.DisplayName = "commandBarStripElement13";
+            this.commandBarStripElement13.Name = "commandBarStripElement13";
+            // 
+            // commandBarStripElement14
+            // 
+            this.commandBarStripElement14.DisplayName = "commandBarStripElement14";
+            this.commandBarStripElement14.Name = "commandBarStripElement14";
+            // 
             // frmExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4718,65 +4676,14 @@
             this.radPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoExpediente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObserva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAprobado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeseado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).EndInit();
             this.radDock1.ResumeLayout(false);
-            this.tabFamilia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
-            this.radGroupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).EndInit();
-            this.radPanel5.ResumeLayout(false);
-            this.radPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEstudios.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEstudios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel6)).EndInit();
-            this.radPanel6.ResumeLayout(false);
-            this.radPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTituloEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAniosEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtHastaEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDesdeEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDireccionEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHorarioEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGradoEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCursoEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEstudiosEscuela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEscolaridad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).EndInit();
-            this.radGroupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
-            this.radPanel4.ResumeLayout(false);
-            this.radPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvParientes.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvParientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
-            this.radPanel3.ResumeLayout(false);
-            this.radPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPariente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdadPariente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOcupacionPariente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opParienteVive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opParienteFinado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDireccionPariente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNombrePariente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboParentesco)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
-            this.documentContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
-            this.documentTabStrip1.ResumeLayout(false);
             this.tabDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
@@ -4823,6 +4730,54 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRFC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAfore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
+            this.documentContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
+            this.documentTabStrip1.ResumeLayout(false);
+            this.tabFamilia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
+            this.radGroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).EndInit();
+            this.radPanel5.ResumeLayout(false);
+            this.radPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEstudios.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEstudios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel6)).EndInit();
+            this.radPanel6.ResumeLayout(false);
+            this.radPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTituloEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAniosEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHastaEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesdeEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDireccionEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHorarioEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGradoEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCursoEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEstudiosEscuela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEscolaridad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).EndInit();
+            this.radGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
+            this.radPanel4.ResumeLayout(false);
+            this.radPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvParientes.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvParientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
+            this.radPanel3.ResumeLayout(false);
+            this.radPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddPariente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadPariente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOcupacionPariente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opParienteVive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opParienteFinado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDireccionPariente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombrePariente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboParentesco)).EndInit();
             this.tabEmpleos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox9)).EndInit();
             this.radGroupBox9.ResumeLayout(false);
@@ -5016,11 +4971,6 @@
         private Telerik.WinControls.UI.RadDropDownList cboDepto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private Telerik.WinControls.UI.RadTextBox txtAprobado;
-        private Telerik.WinControls.UI.RadTextBox txtDeseado;
         private Telerik.WinControls.UI.RadDropDownList cboEntidad;
         private System.Windows.Forms.Label label7;
         private Telerik.WinControls.UI.RadPanel radPanel2;
@@ -5274,7 +5224,6 @@
         private Telerik.WinControls.UI.RadTextBox txtObserva;
         private System.Windows.Forms.Label label117;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
-        private Telerik.WinControls.UI.RadDateTimePicker dtFecha;
         private Telerik.WinControls.UI.RadTextBox txtId;
         private Telerik.WinControls.UI.RadTextBox txtEscuela;
         private System.Windows.Forms.Label label118;
@@ -5349,5 +5298,9 @@
         private Telerik.WinControls.UI.CommandBarButton btnReporte;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator10;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement12;
+        private Telerik.WinControls.UI.CommandBarButton btnDoctos;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator11;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement13;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement14;
     }
 }

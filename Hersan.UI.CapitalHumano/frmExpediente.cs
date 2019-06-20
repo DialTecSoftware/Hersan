@@ -39,7 +39,6 @@ namespace Hersan.UI.CapitalHumano
         private void frmExpediente_Load(object sender, EventArgs e)
         {
             try {
-                dtFecha.Value = DateTime.Today;
                 this.tabDatos.Select();
 
                 LimpiarCampos();
@@ -113,16 +112,9 @@ namespace Hersan.UI.CapitalHumano
                 oRow["EXP_Id"] = int.Parse(txtId.Text);
                 oRow["DEP_Id"] = int.Parse(cboDepto.SelectedValue.ToString());
                 oRow["PUE_Id"] = int.Parse(cboPuesto.SelectedValue.ToString());
-                oRow["EXP_Deseado"] = txtDeseado.Text.Trim().Length == 0 ? 0 : decimal.Parse(txtDeseado.Text);
-                oRow["EXP_Aprobado"] = txtAprobado.Text.Trim().Length == 0 ? 0 : decimal.Parse(txtAprobado.Text);                
                 oRow["EXP_TipoExpediente"] = cboTipoExpediente.Text;
                 oRow["EXP_Comentarios"] = txtObserva.Text;
                 oRow["EXP_RutaFoto"] = RutaImagen;
-                if (dtFecha.Checked && cboTipoExpediente.Text == "EMPLEADO")
-                    oRow["EXP_Contratado"] = dtFecha.Value.Year.ToString() + dtFecha.Value.Month.ToString().PadLeft(2, '0') + dtFecha.Value.Day.ToString().PadLeft(2, '0');
-                else
-                    oRow["EXP_Contratado"] = "19000101";
-
 
                 oData.Tables["Expediente"].Rows.Add(oRow);
                 #endregion
@@ -425,6 +417,24 @@ namespace Hersan.UI.CapitalHumano
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void btnDoctos_Click(object sender, EventArgs e)
+        {
+            try {
+                if (int.Parse(txtId.Text) > 0) {
+                    frmDocumentosDigitalizados ofrm = new frmDocumentosDigitalizados();
+                    ofrm.IdExpediente = int.Parse(txtId.Text);
+                    ofrm.WindowState = FormWindowState.Normal;
+                    ofrm.StartPosition = FormStartPosition.CenterScreen;
+                    ofrm.MaximizeBox = false;
+                    ofrm.MinimizeBox = false;
+                    ofrm.ShowDialog();
+                }else
+                    RadMessageBox.Show("Es necesario guardar el expediente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar los documentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)
@@ -961,7 +971,6 @@ namespace Hersan.UI.CapitalHumano
                 txtAMaterno.Text = string.Empty;
                 txtAniosEscuela.Text = string.Empty;
                 txtAPaterno.Text = string.Empty;
-                txtAprobado.Text = string.Empty;
                 txtCambiarNo.Text = string.Empty;
                 txtCartilla.Text = string.Empty;
                 txtClub.Text = string.Empty;
@@ -971,7 +980,6 @@ namespace Hersan.UI.CapitalHumano
                 txtCurp.Text = string.Empty;
                 txtCursoEscuela.Text = string.Empty;
                 txtDeporte.Text = string.Empty;
-                txtDeseado.Text = string.Empty;
                 txtDeudaImporte.Text = string.Empty;
                 txtDeudaSi.Text = string.Empty;
                 txtDireccionEmpleo.Text = string.Empty;
@@ -1276,8 +1284,6 @@ namespace Hersan.UI.CapitalHumano
                     cboDepto.SelectedValue = oExpediente[0].Puesto.Departamentos.Id;
                     cboPuesto.SelectedValue = oExpediente[0].Puesto.Id;
                     cboTipoExpediente.Text = oExpediente[0].Tipo;
-                    txtDeseado.Text = oExpediente[0].SueldoDeseado.ToString();
-                    txtAprobado.Text = oExpediente[0].SueldoAprobado.ToString();
                     txtObserva.Text = oExpediente[0].Comentarios;
                     RutaImagen = oExpediente[0].RutaImagen;
                     if (oExpediente[0].Foto != null) {
@@ -1345,5 +1351,6 @@ namespace Hersan.UI.CapitalHumano
         }
         #endregion
 
+        
     }
 }

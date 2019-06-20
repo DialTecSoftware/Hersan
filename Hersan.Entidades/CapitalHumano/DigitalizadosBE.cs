@@ -8,46 +8,27 @@ using System.Threading.Tasks;
 
 namespace Hersan.Entidades.CapitalHumano
 {
-   public class DigitalizadosBE
-    {
-        public DigitalizadosBE()
-        {
-            Id = 0;
-            Empleados = new EmpleadosBE();
-            Expedientes = new ExpedientesBE();
-            DatosUsuario = new GeneralBE();
-           
-        }
-        public int Id { get; set; }
-        public EmpleadosBE Empleados { get; set; }
-        public ExpedientesBE Expedientes { get; set; }
-        public List<DigitalizadosDetalleBE> Digitalizados { get; set; }
-        public GeneralBE DatosUsuario { get; set; }
-    }
-
-
+   
     public class DigitalizadosDetalleBE
     {
         public DigitalizadosDetalleBE()
         {
-            Id = 0;
-            Tipo = string.Empty;
             Sel = false;
+            Expediente = new ExpedientesBE();
             NombreArchivo = string.Empty;
             RutaArchivo = string.Empty;
             RutaArchivo = string.Empty;
-            IdTipo = 0;
-            Digitalizados = new DigitalizadosBE();
+            Documento = new DocumentosBE();
             DatosUsuario = new GeneralBE();
         }
-        public int Id { get; set; }
+
+        public bool Sel { get; set; }
+        public ExpedientesBE Expediente { get; set; }
         public string NombreArchivo { get; set; }
         public string RutaOriginal;
-        public string Tipo { get; set; }
         public string RutaArchivo { get; set; }
-        public bool Sel { get; set; }
-        public int IdTipo { get; set; }
-        public DigitalizadosBE Digitalizados { get; set; }
+        public byte[] Archivo { get; set; }
+        public DocumentosBE Documento { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
         

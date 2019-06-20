@@ -334,6 +334,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenSustitucionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DigitalizadosDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.EmpleadosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteConocimiento.datasource" />

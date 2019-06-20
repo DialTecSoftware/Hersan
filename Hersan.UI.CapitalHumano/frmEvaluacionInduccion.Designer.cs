@@ -588,7 +588,7 @@
             // 
             // txtIdd
             // 
-            this.txtIdd.Location = new System.Drawing.Point(517, 79);
+            this.txtIdd.Location = new System.Drawing.Point(508, 83);
             this.txtIdd.Name = "txtIdd";
             this.txtIdd.Size = new System.Drawing.Size(63, 20);
             this.txtIdd.TabIndex = 66;

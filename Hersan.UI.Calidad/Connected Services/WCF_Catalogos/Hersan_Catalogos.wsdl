@@ -1,0 +1,1728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Hersan_Catalogos" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IHersan_Catalogos_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Monedas_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEmpresas_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEmpresas_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Cbo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEmpresas_Cbo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Cbo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEmpresas_CboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDepartamentos_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDepartamentos_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDepartamentos_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDepartamentos_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDEpartamentos_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDEpartamentos_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDEpartamentos_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDEpartamentos_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDEpartamentos_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDEpartamentos_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDEpartamentos_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDEpartamentos_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDepartamentos_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDepartamentos_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDepartamentos_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDepartamentos_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_TiposContrato_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:TiposContrato_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_TiposContrato_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TiposContrato_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCTiposcontrato_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCTiposcontrato_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCTiposcontrato_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCTiposcontrato_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCTiposContrato_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCTiposContrato_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCTiposContrato_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCTiposContrato_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCTiposContrato_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCTiposContrato_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCTiposContrato_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCTiposContrato_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCPuestos_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCPuestos_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUPuestos_Puntos_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUPuestos_Puntos" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUPuestos_Puntos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUPuestos_PuntosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCompetencias_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCompetencias_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Competencias_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Competencias_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Competencias_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Competencias_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCompetencias_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCompetencias_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCompetencias_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCompetencias_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_Entidades_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:Entidades_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_Entidades_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Entidades_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEntidades_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEntidades_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEntidades_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEntidades_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEntidades_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEntidades_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEntidades_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEntidades_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_Entidades_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Entidades_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_Entidades_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Entidades_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEducacion_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEducacion_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCFunciones_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCFunciones_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCFunciones_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCFunciones_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCFunciones_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCFunciones_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCFunciones_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCFunciones_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCFunciones_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCFunciones_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCFunciones_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCFunciones_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCFunciones_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCFunciones_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCFunciones_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCFunciones_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContactos_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContactos_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContactos_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContactos_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContactos_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContactos_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContactos_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContactos_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContactos_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContactos_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContactos_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContactos_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContactos_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContactos_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContactos_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContactos_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEquipoHerramientas_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEquipoHerramientas_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEquipoHerramientas_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEquipoHerramientas_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEquipoHerramientas_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEquipoHerramientas_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEquipoHerramientas_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEquipoHerramientas_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEquipoHerramientas_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEquipoHerramientas_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEquipoHerramientas_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEquipoHerramientas_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContratos_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContratos_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContratos_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContratos_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContratos_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContratos_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContratos_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContratos_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContratos_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContratos_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCContratos_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCContratos_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDocumentos_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDocumentos_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDocumentos_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDocumentos_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDocumentos_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDocumentos_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDocumentos_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCDocumentos_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCDocumentos_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHUOrganigrama_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHUOrganigrama_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHU_OrganigramaXML_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_OrganigramaXML_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CHU_OrganigramaXML_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_OrganigramaXML_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEstados_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEstados_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCEstados_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCEstados_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCiudades_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCiudades_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCCiudades_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCCiudades_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCColonias_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABCColonias_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABCColonias_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABCColonias_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Familias_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Familias_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Familias_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Familias_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Familias_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Familias_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Familias_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Familias_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Familias_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Familias_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Familias_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Familias_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Familias_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Familias_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Familias_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Familias_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Colores_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Colores_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Colores_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Colores_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Colores_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Colores_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Colores_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Colores_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Colores_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Colores_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Colores_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Colores_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Colores_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Colores_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Colores_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Colores_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Reflejantes_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Reflejantes_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Reflejantes_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Reflejantes_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Reflejantes_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Reflejantes_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Reflejantes_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Reflejantes_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Reflejantes_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Reflejantes_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Reflejantes_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Reflejantes_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Reflejantes_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Reflejantes_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Reflejantes_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Reflejantes_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_TipoProducto_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_TipoProducto_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_TipoProducto_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_TipoProducto_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_TipoProducto_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_TipoProducto_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_TipoProducto_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_TipoProducto_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_TipoProducto_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_TipoProducto_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_TipoProducto_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_TipoProducto_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_TipoProducto_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_TipoProducto_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_TipoProducto_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_TipoProducto_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Accesorios_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Accesorios_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Accesorios_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Accesorios_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Accesorios_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Accesorios_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Accesorios_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_Accesorios_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_Accesorios_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_AccesoriosCotizacion_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_AccesoriosCotizacion_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ENS_AccesoriosCotizacion_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_AccesoriosCotizacion_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_TipoCliente_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_TipoCliente_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_TipoCliente_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_TipoCliente_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_TipoCliente_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_TipoCliente_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_TipoCliente_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_TipoCliente_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_TipoCliente_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Agentes_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Agentes_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Agentes_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Agentes_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Agentes_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Agentes_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Agentes_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Agentes_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Agentes_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Agentes_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Agentes_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Agentes_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Agentes_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Agentes_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Agentes_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Agentes_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ComboResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHersan_Catalogos">
+    <wsdl:operation name="ABC_Monedas_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener" message="tns:IHersan_Catalogos_ABC_Monedas_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Guardar" message="tns:IHersan_Catalogos_ABC_Monedas_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_GuardarResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Actualizar" message="tns:IHersan_Catalogos_ABC_Monedas_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ActualizarResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo" message="tns:IHersan_Catalogos_ABC_Monedas_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ComboResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEmpresas_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEmpresas_Cbo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Cbo" message="tns:IHersan_Catalogos_ABCEmpresas_Cbo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_CboResponse" message="tns:IHersan_Catalogos_ABCEmpresas_Cbo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDepartamentos_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener" message="tns:IHersan_Catalogos_ABCDepartamentos_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_ObtenerResponse" message="tns:IHersan_Catalogos_ABCDepartamentos_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDEpartamentos_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Guardar" message="tns:IHersan_Catalogos_ABCDEpartamentos_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_GuardarResponse" message="tns:IHersan_Catalogos_ABCDEpartamentos_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDEpartamentos_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Actualizar" message="tns:IHersan_Catalogos_ABCDEpartamentos_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_ActualizarResponse" message="tns:IHersan_Catalogos_ABCDEpartamentos_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDepartamentos_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Combo" message="tns:IHersan_Catalogos_ABCDepartamentos_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_ComboResponse" message="tns:IHersan_Catalogos_ABCDepartamentos_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposContrato_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener" message="tns:IHersan_Catalogos_TiposContrato_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/TiposContrato_ObtenerResponse" message="tns:IHersan_Catalogos_TiposContrato_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCTiposcontrato_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCTiposcontrato_Combo" message="tns:IHersan_Catalogos_ABCTiposcontrato_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCTiposcontrato_ComboResponse" message="tns:IHersan_Catalogos_ABCTiposcontrato_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCTiposContrato_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Guardar" message="tns:IHersan_Catalogos_ABCTiposContrato_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_GuardarResponse" message="tns:IHersan_Catalogos_ABCTiposContrato_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCTiposContrato_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Actualizar" message="tns:IHersan_Catalogos_ABCTiposContrato_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_ActualizarResponse" message="tns:IHersan_Catalogos_ABCTiposContrato_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Obtener" message="tns:IHersan_Catalogos_ABCPuestos_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ObtenerResponse" message="tns:IHersan_Catalogos_ABCPuestos_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Guardar" message="tns:IHersan_Catalogos_ABCPuestos_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_GuardarResponse" message="tns:IHersan_Catalogos_ABCPuestos_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Actualizar" message="tns:IHersan_Catalogos_ABCPuestos_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ActualizarResponse" message="tns:IHersan_Catalogos_ABCPuestos_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo" message="tns:IHersan_Catalogos_ABCPuestos_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCPuestos_ComboResponse" message="tns:IHersan_Catalogos_ABCPuestos_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUPuestos_Puntos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Puntos" message="tns:IHersan_Catalogos_CHUPuestos_Puntos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_PuntosResponse" message="tns:IHersan_Catalogos_CHUPuestos_Puntos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCCompetencias_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener" message="tns:IHersan_Catalogos_ABCCompetencias_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ObtenerResponse" message="tns:IHersan_Catalogos_ABCCompetencias_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Competencias_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Competencias_Guardar" message="tns:IHersan_Catalogos_ABC_Competencias_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Competencias_GuardarResponse" message="tns:IHersan_Catalogos_ABC_Competencias_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCCompetencias_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Actualizar" message="tns:IHersan_Catalogos_ABCCompetencias_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ActualizarResponse" message="tns:IHersan_Catalogos_ABCCompetencias_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCCompetencias_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Combo" message="tns:IHersan_Catalogos_ABCCompetencias_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ComboResponse" message="tns:IHersan_Catalogos_ABCCompetencias_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Entidades_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/Entidades_Obtener" message="tns:IHersan_Catalogos_Entidades_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/Entidades_ObtenerResponse" message="tns:IHersan_Catalogos_Entidades_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEntidades_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Guardar" message="tns:IHersan_Catalogos_ABCEntidades_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_GuardarResponse" message="tns:IHersan_Catalogos_ABCEntidades_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEntidades_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Actualizar" message="tns:IHersan_Catalogos_ABCEntidades_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEntidades_ActualizarResponse" message="tns:IHersan_Catalogos_ABCEntidades_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Entidades_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/Entidades_Combo" message="tns:IHersan_Catalogos_Entidades_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/Entidades_ComboResponse" message="tns:IHersan_Catalogos_Entidades_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Obtener" message="tns:IHersan_Catalogos_ABCEducacion_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEducacion_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Guardar" message="tns:IHersan_Catalogos_ABCEducacion_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_GuardarResponse" message="tns:IHersan_Catalogos_ABCEducacion_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Actualizar" message="tns:IHersan_Catalogos_ABCEducacion_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ActualizarResponse" message="tns:IHersan_Catalogos_ABCEducacion_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Combo" message="tns:IHersan_Catalogos_ABCEducacion_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEducacion_ComboResponse" message="tns:IHersan_Catalogos_ABCEducacion_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCFunciones_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Obtener" message="tns:IHersan_Catalogos_ABCFunciones_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ObtenerResponse" message="tns:IHersan_Catalogos_ABCFunciones_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCFunciones_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Guardar" message="tns:IHersan_Catalogos_ABCFunciones_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_GuardarResponse" message="tns:IHersan_Catalogos_ABCFunciones_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCFunciones_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Actualizar" message="tns:IHersan_Catalogos_ABCFunciones_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ActualizarResponse" message="tns:IHersan_Catalogos_ABCFunciones_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCFunciones_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Combo" message="tns:IHersan_Catalogos_ABCFunciones_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCFunciones_ComboResponse" message="tns:IHersan_Catalogos_ABCFunciones_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCContactos_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Obtener" message="tns:IHersan_Catalogos_ABCContactos_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_ObtenerResponse" message="tns:IHersan_Catalogos_ABCContactos_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCContactos_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Guardar" message="tns:IHersan_Catalogos_ABCContactos_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_GuardarResponse" message="tns:IHersan_Catalogos_ABCContactos_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCContactos_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Actualizar" message="tns:IHersan_Catalogos_ABCContactos_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_ActualizarResponse" message="tns:IHersan_Catalogos_ABCContactos_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCContactos_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_Combo" message="tns:IHersan_Catalogos_ABCContactos_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContactos_ComboResponse" message="tns:IHersan_Catalogos_ABCContactos_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEquipoHerramientas_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Obtener" message="tns:IHersan_Catalogos_ABCEquipoHerramientas_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEquipoHerramientas_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEquipoHerramientas_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Guardar" message="tns:IHersan_Catalogos_ABCEquipoHerramientas_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_GuardarResponse" message="tns:IHersan_Catalogos_ABCEquipoHerramientas_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEquipoHerramientas_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Actualizar" message="tns:IHersan_Catalogos_ABCEquipoHerramientas_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_ActualizarResponse" message="tns:IHersan_Catalogos_ABCEquipoHerramientas_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCContratos_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Obtener" message="tns:IHersan_Catalogos_ABCContratos_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_ObtenerResponse" message="tns:IHersan_Catalogos_ABCContratos_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCContratos_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Actualizar" message="tns:IHersan_Catalogos_ABCContratos_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_ActualizarResponse" message="tns:IHersan_Catalogos_ABCContratos_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCContratos_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_Guardar" message="tns:IHersan_Catalogos_ABCContratos_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCContratos_GuardarResponse" message="tns:IHersan_Catalogos_ABCContratos_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDocumentos_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Obtener" message="tns:IHersan_Catalogos_ABCDocumentos_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_ObtenerResponse" message="tns:IHersan_Catalogos_ABCDocumentos_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDocumentos_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Guardar" message="tns:IHersan_Catalogos_ABCDocumentos_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_GuardarResponse" message="tns:IHersan_Catalogos_ABCDocumentos_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDocumentos_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Actualizar" message="tns:IHersan_Catalogos_ABCDocumentos_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_ActualizarResponse" message="tns:IHersan_Catalogos_ABCDocumentos_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCDocumentos_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Combo" message="tns:IHersan_Catalogos_ABCDocumentos_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_ComboResponse" message="tns:IHersan_Catalogos_ABCDocumentos_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Obtener" message="tns:IHersan_Catalogos_CHUOrganigrama_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ObtenerResponse" message="tns:IHersan_Catalogos_CHUOrganigrama_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Guardar" message="tns:IHersan_Catalogos_CHUOrganigrama_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_GuardarResponse" message="tns:IHersan_Catalogos_CHUOrganigrama_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar" message="tns:IHersan_Catalogos_CHUOrganigrama_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_ActualizarResponse" message="tns:IHersan_Catalogos_CHUOrganigrama_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_OrganigramaXML_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener" message="tns:IHersan_Catalogos_CHU_OrganigramaXML_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_ObtenerResponse" message="tns:IHersan_Catalogos_CHU_OrganigramaXML_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCEstados_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener" message="tns:IHersan_Catalogos_ABCEstados_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEstados_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCCiudades_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCiudades_Obtener" message="tns:IHersan_Catalogos_ABCCiudades_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCiudades_ObtenerResponse" message="tns:IHersan_Catalogos_ABCCiudades_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABCColonias_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCColonias_Obtener" message="tns:IHersan_Catalogos_ABCColonias_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCColonias_ObtenerResponse" message="tns:IHersan_Catalogos_ABCColonias_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Familias_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Familias_Guardar" message="tns:IHersan_Catalogos_ENS_Familias_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Familias_GuardarResponse" message="tns:IHersan_Catalogos_ENS_Familias_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Familias_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Familias_Actualizar" message="tns:IHersan_Catalogos_ENS_Familias_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Familias_ActualizarResponse" message="tns:IHersan_Catalogos_ENS_Familias_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Familias_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Familias_Obtener" message="tns:IHersan_Catalogos_ENS_Familias_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Familias_ObtenerResponse" message="tns:IHersan_Catalogos_ENS_Familias_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Familias_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Familias_Combo" message="tns:IHersan_Catalogos_ENS_Familias_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Familias_ComboResponse" message="tns:IHersan_Catalogos_ENS_Familias_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Colores_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Colores_Guardar" message="tns:IHersan_Catalogos_ABC_Colores_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Colores_GuardarResponse" message="tns:IHersan_Catalogos_ABC_Colores_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Colores_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Colores_Actualizar" message="tns:IHersan_Catalogos_ABC_Colores_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Colores_ActualizarResponse" message="tns:IHersan_Catalogos_ABC_Colores_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Colores_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Colores_Obtener" message="tns:IHersan_Catalogos_ABC_Colores_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Colores_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_Colores_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Colores_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Colores_Combo" message="tns:IHersan_Catalogos_ABC_Colores_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Colores_ComboResponse" message="tns:IHersan_Catalogos_ABC_Colores_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Reflejantes_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_Guardar" message="tns:IHersan_Catalogos_ENS_Reflejantes_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_GuardarResponse" message="tns:IHersan_Catalogos_ENS_Reflejantes_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Reflejantes_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_Actualizar" message="tns:IHersan_Catalogos_ENS_Reflejantes_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_ActualizarResponse" message="tns:IHersan_Catalogos_ENS_Reflejantes_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Reflejantes_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_Obtener" message="tns:IHersan_Catalogos_ENS_Reflejantes_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_ObtenerResponse" message="tns:IHersan_Catalogos_ENS_Reflejantes_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Reflejantes_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_Combo" message="tns:IHersan_Catalogos_ENS_Reflejantes_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_ComboResponse" message="tns:IHersan_Catalogos_ENS_Reflejantes_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_TipoProducto_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_Guardar" message="tns:IHersan_Catalogos_ENS_TipoProducto_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_GuardarResponse" message="tns:IHersan_Catalogos_ENS_TipoProducto_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_TipoProducto_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_Actualizar" message="tns:IHersan_Catalogos_ENS_TipoProducto_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_ActualizarResponse" message="tns:IHersan_Catalogos_ENS_TipoProducto_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_TipoProducto_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_Obtener" message="tns:IHersan_Catalogos_ENS_TipoProducto_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_ObtenerResponse" message="tns:IHersan_Catalogos_ENS_TipoProducto_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_TipoProducto_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_Combo" message="tns:IHersan_Catalogos_ENS_TipoProducto_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_ComboResponse" message="tns:IHersan_Catalogos_ENS_TipoProducto_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Accesorios_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Guardar" message="tns:IHersan_Catalogos_ENS_Accesorios_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_GuardarResponse" message="tns:IHersan_Catalogos_ENS_Accesorios_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Accesorios_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Actualizar" message="tns:IHersan_Catalogos_ENS_Accesorios_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_ActualizarResponse" message="tns:IHersan_Catalogos_ENS_Accesorios_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Accesorios_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Obtener" message="tns:IHersan_Catalogos_ENS_Accesorios_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_ObtenerResponse" message="tns:IHersan_Catalogos_ENS_Accesorios_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Accesorios_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Combo" message="tns:IHersan_Catalogos_ENS_Accesorios_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_ComboResponse" message="tns:IHersan_Catalogos_ENS_Accesorios_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_AccesoriosCotizacion_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_AccesoriosCotizacion_Combo" message="tns:IHersan_Catalogos_ENS_AccesoriosCotizacion_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ENS_AccesoriosCotizacion_ComboResponse" message="tns:IHersan_Catalogos_ENS_AccesoriosCotizacion_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_TipoCliente_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Guardar" message="tns:IHersan_Catalogos_ABC_TipoCliente_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_GuardarResponse" message="tns:IHersan_Catalogos_ABC_TipoCliente_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_TipoCliente_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Actualizar" message="tns:IHersan_Catalogos_ABC_TipoCliente_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_ActualizarResponse" message="tns:IHersan_Catalogos_ABC_TipoCliente_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_TipoCliente_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Obtener" message="tns:IHersan_Catalogos_ABC_TipoCliente_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_TipoCliente_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_TipoCliente_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Combo" message="tns:IHersan_Catalogos_ABC_TipoCliente_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_ComboResponse" message="tns:IHersan_Catalogos_ABC_TipoCliente_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Agentes_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Obtener" message="tns:IHersan_Catalogos_ABC_Agentes_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_Agentes_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Agentes_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Guardar" message="tns:IHersan_Catalogos_ABC_Agentes_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_GuardarResponse" message="tns:IHersan_Catalogos_ABC_Agentes_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Agentes_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Actualizar" message="tns:IHersan_Catalogos_ABC_Agentes_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_ActualizarResponse" message="tns:IHersan_Catalogos_ABC_Agentes_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Agentes_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Combo" message="tns:IHersan_Catalogos_ABC_Agentes_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_ComboResponse" message="tns:IHersan_Catalogos_ABC_Agentes_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Guardar" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_GuardarResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Actualizar" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ActualizarResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Obtener" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ComboResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Combo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IHersan_Catalogos" type="tns:IHersan_Catalogos">
+    <wsp:PolicyReference URI="#WSHttpBinding_IHersan_Catalogos_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ABC_Monedas_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Monedas_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEmpresas_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEmpresas_Cbo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Cbo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDepartamentos_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDEpartamentos_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDEpartamentos_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDEpartamentos_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDepartamentos_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposContrato_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/TiposContrato_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCTiposcontrato_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCTiposcontrato_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCTiposContrato_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCTiposContrato_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCTiposContrato_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCPuestos_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCPuestos_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUPuestos_Puntos">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Puntos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCCompetencias_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Competencias_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Competencias_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCCompetencias_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCCompetencias_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entidades_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/Entidades_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEntidades_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEntidades_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEntidades_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entidades_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/Entidades_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEducacion_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEducacion_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCFunciones_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCFunciones_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCFunciones_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCFunciones_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCFunciones_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCContactos_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCContactos_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCContactos_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCContactos_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCContactos_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEquipoHerramientas_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEquipoHerramientas_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEquipoHerramientas_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEquipoHerramientas_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCContratos_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCContratos_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCContratos_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCContratos_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDocumentos_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDocumentos_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDocumentos_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCDocumentos_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCDocumentos_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHUOrganigrama_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUOrganigrama_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_OrganigramaXML_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCEstados_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCCiudades_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCCiudades_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABCColonias_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCColonias_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Familias_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Familias_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Familias_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Familias_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Familias_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Familias_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Familias_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Familias_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Colores_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Colores_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Colores_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Colores_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Colores_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Colores_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Colores_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Colores_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Reflejantes_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Reflejantes_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Reflejantes_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Reflejantes_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Reflejantes_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_TipoProducto_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_TipoProducto_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_TipoProducto_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_TipoProducto_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_TipoProducto_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Accesorios_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Accesorios_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Accesorios_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_Accesorios_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_Accesorios_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_AccesoriosCotizacion_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ENS_AccesoriosCotizacion_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_TipoCliente_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_TipoCliente_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_TipoCliente_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_TipoCliente_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_TipoCliente_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Agentes_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Agentes_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Agentes_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Agentes_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Agentes_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Hersan_Catalogos">
+    <wsdl:port name="WSHttpBinding_IHersan_Catalogos" binding="tns:WSHttpBinding_IHersan_Catalogos">
+      <soap12:address location="http://localhost:56779/Hersan_Catalogos.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:56779/Hersan_Catalogos.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

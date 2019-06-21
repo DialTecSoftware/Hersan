@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:complexType name="InyeccionBE">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Color" nillable="true" type="q1:ColoresBE" />
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:InyeccionDetalleBE" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InyeccionBE" nillable="true" type="tns:InyeccionBE" />
+  <xs:complexType name="InyeccionDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cav1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav4" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav5" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav6" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav7" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav8" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Inicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Master" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Piezas" type="xs:int" />
+      <xs:element minOccurs="0" name="Remolido" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Turno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Virgen" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InyeccionDetalleBE" nillable="true" type="tns:InyeccionDetalleBE" />
+  <xs:complexType name="ArrayOfInyeccionDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InyeccionDetalleBE" nillable="true" type="tns:InyeccionDetalleBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInyeccionDetalleBE" nillable="true" type="tns:ArrayOfInyeccionDetalleBE" />
+</xs:schema>

@@ -1,5 +1,6 @@
 ﻿using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Ensamble;
+using Hersan.Entidades.Inyeccion;
 using System.Collections.Generic;
 using System.ServiceModel;
 
@@ -84,6 +85,14 @@ namespace Hersan.Ensamble.Contract
         List<PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final);
         [OperationContract]
         List<PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final);
+        #endregion
+
+
+        #region Calidad
+        [OperationContract]
+        int PRO_Inyeccion_Guardar(InyeccionBE Obj, System.Data.DataTable Detalle);
+        [OperationContract]
+        List<InyeccionDetalleBE> PRO_Inyeccion_Obtener(InyeccionBE Obj);
         #endregion
     }
 }

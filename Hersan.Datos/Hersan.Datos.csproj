@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDA.cs" />
+    <Compile Include="Calidad\InyeccionDA.cs" />
     <Compile Include="CapitalHumano\CompetenciasDA.cs" />
     <Compile Include="CapitalHumano\ContratosDA.cs" />
     <Compile Include="CapitalHumano\DescripcionPuestosDA.cs" />
@@ -120,5 +121,6 @@
       <Name>Hersan.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

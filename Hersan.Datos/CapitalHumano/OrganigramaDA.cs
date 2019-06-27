@@ -6,8 +6,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
+using System.Xml.XPath;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Hersan.Datos.Catalogos
 {
@@ -107,12 +108,13 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-        public DataTable CHU_OrganigramaXML_Obtener(int parent)
+        public DataSet CHU_OrganigramaXML_Obtener(int parent)
         {
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable oData = new DataTable("Element");
             DataSet dts = new DataSet();
-
+            var doc = new XmlDocument();
+         
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
@@ -125,49 +127,25 @@ namespace Hersan.Datos.Catalogos
                         da.Fill(oData);
                       
                         oData.WriteXml(@"C:\Temp\Organizacion.xml",true);
-                        //oData.WriteXmlSchema(@"C:\Temp\Organizacion.xml", false);
-
-                        XmlDocument doc = new XmlDocument();
-                        string filename = @"C:\Temp\Organizaciones.xml";
-                        doc.Load(@"C:\Temp\Organizacion.xml");
-                        XmlWriterSettings settings = new XmlWriterSettings {
-                            Indent = true,
-                            IndentChars = @"    ",
-                            NewLineChars = Environment.NewLine,
-                            NewLineHandling = NewLineHandling.Replace,
-                            OmitXmlDeclaration = true,
-                            //HttpUtility.
-
-                        }; ;
-                      
-                        using (var writers = XmlWriter.Create(filename, settings)) {
+                        
+                        var reader = cmd.ExecuteXmlReader();
+                        if (reader.Read()) {
                            
 
-                            doc.Save(writers);
+                            doc.Load(reader);
+                            doc.Save(@"C:\Temp\Hersan.xml");
+                            conn.Close();
+                          
                         }
-
-
-
-                        ////// Save the document to a file and auto-indent the output.
-
-                        //XmlDocument doc2 = new XmlDocument();
-                        //StringBuilder output = new StringBuilder();
-                        //XmlNode newBook = doc2.ImportNode(doc.DocumentElement.LastChild, true);
-                        //XmlWriter writer = XmlWriter.Create(filename, settings);
-                        //doc2.DocumentElement.AppendChild(newBook);
-
-                        //doc.Save(writer);
-                        ////writer.Close();
-
-
-
+                                                                                      
                     }
-                   
-                }
-                return oData;
-            } catch (Exception) {
 
-                throw;
+                }
+
+                return dts;
+            } catch (Exception ex) {
+
+                throw ex;
             }
         }
     }

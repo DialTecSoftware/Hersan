@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Hersan.Negocio.Catalogos
 {
@@ -24,7 +25,7 @@ namespace Hersan.Negocio.Catalogos
             return new OrganigramaDA().CHUOrganigrama_Actualizar(obj);
         }
 
-        public DataTable CHU_OrganigramaXML_Obtener(int parent)
+        public DataSet CHU_OrganigramaXML_Obtener(int parent)
         {
             return new OrganigramaDA().CHU_OrganigramaXML_Obtener(parent);
         }

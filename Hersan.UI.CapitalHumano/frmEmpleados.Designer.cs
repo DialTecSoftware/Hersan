@@ -32,10 +32,10 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -567,12 +567,12 @@
             radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             radListDataItem3.Text = "Vacaciones";
             radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            radListDataItem11.Text = "Incapacidad";
-            radListDataItem11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem4.Text = "Incapacidad";
+            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.cboEstatus.Items.Add(radListDataItem1);
             this.cboEstatus.Items.Add(radListDataItem2);
             this.cboEstatus.Items.Add(radListDataItem3);
-            this.cboEstatus.Items.Add(radListDataItem11);
+            this.cboEstatus.Items.Add(radListDataItem4);
             this.cboEstatus.Location = new System.Drawing.Point(115, 196);
             this.cboEstatus.Name = "cboEstatus";
             this.cboEstatus.Size = new System.Drawing.Size(102, 20);
@@ -729,12 +729,12 @@
             // 
             // cboTipoF
             // 
-            radListDataItem4.Text = "Cuota Fija";
-            radListDataItem5.Text = "Porcentaje de Desc";
-            radListDataItem6.Text = "VSM";
-            this.cboTipoF.Items.Add(radListDataItem4);
+            radListDataItem5.Text = "Cuota Fija";
+            radListDataItem6.Text = "Porcentaje de Desc";
+            radListDataItem7.Text = "VSM";
             this.cboTipoF.Items.Add(radListDataItem5);
             this.cboTipoF.Items.Add(radListDataItem6);
+            this.cboTipoF.Items.Add(radListDataItem7);
             this.cboTipoF.Location = new System.Drawing.Point(77, 72);
             this.cboTipoF.Name = "cboTipoF";
             this.cboTipoF.Size = new System.Drawing.Size(135, 20);

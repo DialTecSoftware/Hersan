@@ -141,7 +141,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1042, 78);
+            this.radCommandBar1.Size = new System.Drawing.Size(1042, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -281,7 +281,7 @@
             this.radPanel1.Controls.Add(this.txtNombres);
             this.radPanel1.Controls.Add(this.txtApellidos);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 78);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(1042, 94);
             this.radPanel1.TabIndex = 1;
@@ -371,14 +371,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 172);
+            this.radDock1.Location = new System.Drawing.Point(0, 147);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1042, 458);
+            this.radDock1.Size = new System.Drawing.Size(1042, 338);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -390,7 +390,7 @@
             this.documentWindow1.Location = new System.Drawing.Point(6, 29);
             this.documentWindow1.Name = "documentWindow1";
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(1020, 413);
+            this.documentWindow1.Size = new System.Drawing.Size(1020, 293);
             this.documentWindow1.Text = "DATOS DEL EMPLEADO";
             this.documentWindow1.Click += new System.EventHandler(this.documentWindow1_Click);
             // 
@@ -589,7 +589,7 @@
             this.radGroupBox2.HeaderText = "";
             this.radGroupBox2.Location = new System.Drawing.Point(700, 3);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(287, 175);
+            this.radGroupBox2.Size = new System.Drawing.Size(287, 133);
             this.radGroupBox2.TabIndex = 32;
             // 
             // rdbNo
@@ -649,7 +649,7 @@
             this.radGroupBox4.Controls.Add(this.txtcantidad);
             this.radGroupBox4.Controls.Add(this.lblcantidad);
             this.radGroupBox4.HeaderText = "";
-            this.radGroupBox4.Location = new System.Drawing.Point(3, 236);
+            this.radGroupBox4.Location = new System.Drawing.Point(403, 142);
             this.radGroupBox4.Name = "radGroupBox4";
             this.radGroupBox4.Size = new System.Drawing.Size(394, 136);
             this.radGroupBox4.TabIndex = 31;
@@ -715,7 +715,7 @@
             this.radGroupBox1.HeaderText = "";
             this.radGroupBox1.Location = new System.Drawing.Point(400, 3);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(294, 175);
+            this.radGroupBox1.Size = new System.Drawing.Size(294, 133);
             this.radGroupBox1.TabIndex = 31;
             // 
             // rdbNon
@@ -809,7 +809,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(1032, 448);
+            this.documentTabStrip1.Size = new System.Drawing.Size(1032, 328);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -822,7 +822,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 630);
+            this.ClientSize = new System.Drawing.Size(1042, 485);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);

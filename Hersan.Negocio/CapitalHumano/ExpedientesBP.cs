@@ -18,9 +18,12 @@ namespace Hersan.Negocio.CapitalHumano
 
         private void GuardarImagen(int Expediente, Byte[] Imagen)
         {            
-            BinaryWriter Writer = null;
+            BinaryWriter Writer = null;            
             string Name = RutaImagen + Expediente.ToString() + ".jpg";
             try {
+                if (!Directory.Exists(RutaImagen))
+                    Directory.CreateDirectory(RutaImagen);
+
                 Writer = new BinaryWriter(File.OpenWrite(Name));
                 Writer.Write(Imagen);
                 Writer.Flush();
@@ -35,7 +38,11 @@ namespace Hersan.Negocio.CapitalHumano
             byte[] Foto;
             string Imagen = RutaImagen + Expediente.ToString() + ".jpg"; ;
             try {
-                Foto =ConvertImage.FileToByteArray(Imagen);
+                if (File.Exists(Imagen)) {
+                    Foto = ConvertImage.FileToByteArray(Imagen);
+                } else {
+                    Foto = null;
+                }
             } catch (Exception ex) {
                 throw new Exception("Error al intentar guardar el archivo.", ex);
             }

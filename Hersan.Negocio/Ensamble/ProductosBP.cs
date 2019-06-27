@@ -20,7 +20,6 @@ namespace Hersan.Negocio.Ensamble
             try {
 
                 Writer = new BinaryWriter(File.OpenWrite(Name));
-
                 Writer.Write(Imagen);
                 Writer.Flush();
                 Writer.Close();

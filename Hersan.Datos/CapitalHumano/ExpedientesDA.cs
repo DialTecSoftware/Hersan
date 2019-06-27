@@ -172,9 +172,6 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Puesto.Id = int.Parse(reader["PUE_Id"].ToString());
                                 obj.Puesto.Nombre = reader["PUE_Nombre"].ToString();
                                 obj.Tipo = reader["EXP_TipoExpediente"].ToString();
-                                obj.FechaContratado = reader["EXP_Contratado"].ToString();
-                                obj.SueldoDeseado = decimal.Parse(reader["EXP_Deseado"].ToString());
-                                obj.SueldoAprobado= decimal.Parse(reader["EXP_Aprobado"].ToString());
                                 obj.Comentarios = reader["EXP_Comentarios"].ToString();
                                 obj.RutaImagen = reader["EXP_RutaFoto"].ToString();
 

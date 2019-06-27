@@ -16,8 +16,7 @@ namespace Hersan.UI.CapitalHumano
 {
     public partial class frmEvaluacionInduccion : Telerik.WinControls.UI.RadForm
     {
-         #region Constantes
-
+        #region Constantes
         public int IdExpediente { get; set; }
         CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient oCatalogo;
         CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;

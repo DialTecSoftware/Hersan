@@ -5,7 +5,8 @@ using Hersan.Ensamble.Contract;
 using System.Collections.Generic;
 using Hersan.Negocio.Ensamble;
 using Hersan.Entidades.Ensamble;
-
+using Hersan.Entidades.Inyeccion;
+using Hersan.Negocio.Calidad;
 
 namespace Hersan.Ensamble.Service
 {
@@ -146,6 +147,17 @@ namespace Hersan.Ensamble.Service
         public List<PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final)
         {
             return new PedidosBP().ENS_Pedido_Consulta(IdAgente, Pedido, Inicial, Final);
+        }
+        #endregion
+
+        #region Calidad
+        public int PRO_Inyeccion_Guardar(InyeccionBE Obj, System.Data.DataTable Detalle)
+        {
+            return new InyecccionBP().PRO_Inyeccion_Guardar(Obj, Detalle);
+        }
+        public List<InyeccionDetalleBE> PRO_Inyeccion_Obtener(InyeccionBE Obj)
+        {
+            return new InyecccionBP().PRO_Inyeccion_Obtener(Obj);
         }
         #endregion
     }

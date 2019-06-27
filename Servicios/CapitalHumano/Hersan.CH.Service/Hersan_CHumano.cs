@@ -219,22 +219,13 @@ namespace Hersan.CH.Service
 
         #region Digitalizados
      
-        public DataSet CHU_Digitalizados_Obtener(int IdExp)
+        public List<DigitalizadosDetalleBE> CHU_Digitalizados_Obtener(int IdExp)
         {
             return new DigitalizadosBP().CHU_Digitalizados_Obtener(IdExp);
         }
-        public int CHU_Digitalizados_Guardar(DigitalizadosBE obj, DataTable Detalle)
+        public int CHU_Digitalizados_Guardar(int IdExpediente, DataTable Detalle, int IdUsuario, List<DigitalizadosDetalleBE> Archivos)
         {
-            return new DigitalizadosBP().CHU_Digitalizados_Guardar(obj, Detalle);
-        }
-        public int CHU_Digitalizados_Actualiza(DigitalizadosBE obj, DataTable Detalle)
-        {
-            return new DigitalizadosBP().CHU_Digitalizados_Actualiza(obj, Detalle);
-        }
-
-        public int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario)
-        {
-            return new DigitalizadosBP().CHU_Digitalizados_Elimina(IdDocs, IdUsuario);
+            return new DigitalizadosBP().CHU_Digitalizados_Guardar(IdExpediente, Detalle, IdUsuario, Archivos);
         }
         #endregion
 

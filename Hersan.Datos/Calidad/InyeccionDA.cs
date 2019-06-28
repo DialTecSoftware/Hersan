@@ -8,10 +8,16 @@ namespace Hersan.Datos.Calidad
 {
     public class InyeccionDA : BaseDA
     {
-
         #region Constantes
         const string CONS_USP_PRO_INYECCION_GUARDAR = "PRO_Inyeccion_Guardar";
         const string CONS_USP_PRO_INYECCION_OBTENER = "PRO_Inyeccion_Obtener";
+        const string CONS_USP_PRO_TEMPERATURAS_GUARDAR = "PRO_Temperaturas_Guardar";
+        const string CONS_USP_PRO_TEMPERATURAS_OBTENER = "PRO_Temperaturas_Obtener";
+        const string CONS_USP_PRO_TEMPERATURASMOLDE_GUARDAR = "PRO_TemperaturasMolde_Guardar";
+        const string CONS_USP_PRO_TEMPERATURASMOLDE_OBTENER = "PRO_TemperaturasMolde_Obtener";
+        const string CONS_USP_PRO_PARAMETROS_GUARDAR = "PRO_Parametros_Guardar";
+        const string CONS_USP_PRO_PARAMETROS_OBTENER = "PRO_Parametros_Obtener";
+        const string CONS_USP_PRO_INYECCION_CONSULTA = "PRO_Inyeccion_Consulta";
         #endregion
 
         public int PRO_Inyeccion_Guardar(InyeccionBE Obj, DataTable Detalle)
@@ -81,6 +87,226 @@ namespace Hersan.Datos.Calidad
                 throw ex;
             }
         }
+        public InyeccionBE PRO_Inyeccion_Consulta(int Lista)
+        {
+            InyeccionBE obj = new InyeccionBE();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_INYECCION_CONSULTA, conn)) {
+                        cmd.Parameters.AddWithValue("@Lista", Lista);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                /* ENCABEZADO */
+                                obj.Id = int.Parse(reader["Id"].ToString());
+                                obj.OP = reader["OP"].ToString();
+                                obj.Color.Nombre = reader["Color"].ToString();
+                                /* DETALLE */
+                                obj.Detalle.Fecha = DateTime.Parse(reader["Fecha"].ToString());
+                                obj.Detalle.Real = int.Parse(reader["Virgen"].ToString());
+                                obj.Detalle.Turno = reader["Turno"].ToString();
+                                obj.Detalle.Virgen = decimal.Parse(reader["Virgen"].ToString());
+                                obj.Detalle.Remolido = decimal.Parse(reader["Remolido"].ToString());
+                                obj.Detalle.Master = decimal.Parse(reader["Master"].ToString());
+                                obj.Detalle.Cav1 = bool.Parse(reader["CAV1"].ToString());
+                                obj.Detalle.Cav2 = bool.Parse(reader["CAV2"].ToString());
+                                obj.Detalle.Cav3 = bool.Parse(reader["CAV3"].ToString());
+                                obj.Detalle.Cav4 = bool.Parse(reader["CAV4"].ToString());
+                                obj.Detalle.Cav5 = bool.Parse(reader["CAV5"].ToString());
+                                obj.Detalle.Cav6 = bool.Parse(reader["CAV6"].ToString());
+                                obj.Detalle.Cav7 = bool.Parse(reader["CAV7"].ToString());
+                                obj.Detalle.Cav8 = bool.Parse(reader["CAV8"].ToString());
+
+                            }
+                        }
+                    }
+                }
+                return obj;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public int PRO_Temperaturas_Guardar(TemperaturasBE Obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_TEMPERATURAS_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@Cav1", Obj.Cav1);
+                        cmd.Parameters.AddWithValue("@Cav2", Obj.Cav2);
+                        cmd.Parameters.AddWithValue("@Cav3", Obj.Cav3);
+                        cmd.Parameters.AddWithValue("@Cav4", Obj.Cav4);
+                        cmd.Parameters.AddWithValue("@Cav5", Obj.Cav5);
+                        cmd.Parameters.AddWithValue("@Cav6", Obj.Cav6);
+                        cmd.Parameters.AddWithValue("@Cav7", Obj.Cav7);
+                        cmd.Parameters.AddWithValue("@Cav8", Obj.Cav8);
+                        cmd.Parameters.AddWithValue("@Cav9", Obj.Cav9);
+                        cmd.Parameters.AddWithValue("@Cav10", Obj.Cav10);
+                        cmd.Parameters.AddWithValue("@Cav11", Obj.Cav11);
+                        cmd.Parameters.AddWithValue("@Cav12", Obj.Cav12);
+                        cmd.Parameters.AddWithValue("@Comentarios", Obj.Observa);
+                        cmd.Parameters.AddWithValue("@IdUsuario", Obj.IdUsuario);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public TemperaturasBE PRO_Temperaturas_Obtener()
+        {
+            TemperaturasBE obj = null;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_TEMPERATURAS_OBTENER, conn)) {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                obj = new TemperaturasBE();
+
+                                obj.Cav1 = decimal.Parse(reader["CAV1"].ToString());
+                                obj.Cav2 = decimal.Parse(reader["CAV2"].ToString());
+                                obj.Cav3 = decimal.Parse(reader["CAV3"].ToString());
+                                obj.Cav4 = decimal.Parse(reader["CAV4"].ToString());
+                                obj.Cav5 = decimal.Parse(reader["CAV5"].ToString());
+                                obj.Cav6 = decimal.Parse(reader["CAV6"].ToString());
+                                obj.Cav7 = decimal.Parse(reader["CAV7"].ToString());
+                                obj.Cav8 = decimal.Parse(reader["CAV8"].ToString());
+                                obj.Cav9 = decimal.Parse(reader["CAV9"].ToString());
+                                obj.Cav10 = decimal.Parse(reader["CAV10"].ToString());
+                                obj.Cav11 = decimal.Parse(reader["CAV11"].ToString());
+                                obj.Cav12 = decimal.Parse(reader["CAV12"].ToString());
+                                obj.Observa = reader["Comentarios"].ToString();
+                            }
+                        }
+
+                    }
+                }
+                return obj;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public int PRO_TemperaturasMolde_Guardar(TempMoldesBE Obj)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_TEMPERATURASMOLDE_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@Fija", Obj.Fija);
+                        cmd.Parameters.AddWithValue("@Movil", Obj.Movil);
+                        cmd.Parameters.AddWithValue("@IdUsuario", Obj.IdUsuario);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public TempMoldesBE PRO_TemperaturasMolde_Obtener()
+        {
+            TempMoldesBE obj = null;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_TEMPERATURASMOLDE_OBTENER, conn)) {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                obj = new TempMoldesBE();
+
+                                obj.Fija = decimal.Parse(reader["Fija"].ToString());
+                                obj.Movil = decimal.Parse(reader["Movil"].ToString());
+                            }
+                        }
+
+                    }
+                }
+                return obj;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public int PRO_Parametros_Guardar(DataTable Tabla)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_PARAMETROS_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@Parametos", Tabla);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public ParametrosInyeccion PRO_Parametros_Obtener()
+        {
+            ParametrosInyeccion obj = null;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_PARAMETROS_OBTENER, conn)) {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                obj = new ParametrosInyeccion();
+
+                                obj.Presion1 = decimal.Parse(reader["Presion1"].ToString());
+                                obj.Presion2 = decimal.Parse(reader["Presion2"].ToString());
+                                obj.Presion3 = decimal.Parse(reader["Presion3"].ToString());
+                                obj.Velocidad1 = decimal.Parse(reader["Velocidad1"].ToString());
+                                obj.Velocidad2 = decimal.Parse(reader["Velocidad2"].ToString());
+                                obj.Velocidad3 = decimal.Parse(reader["Velocidad3"].ToString());
+                                obj.PosicionC1 = decimal.Parse(reader["PosicionC1"].ToString());
+                                obj.PosicionC2 = decimal.Parse(reader["PosicionC2"].ToString());
+                                obj.PresionC1 = decimal.Parse(reader["PresionC1"].ToString());
+                                obj.PresionC2 = decimal.Parse(reader["PresionC2"].ToString());
+                                obj.VelocidadC1 = decimal.Parse(reader["VelocidadC1"].ToString());
+                                obj.VelocidadC2 = decimal.Parse(reader["VelocidadC2"].ToString());
+                                obj.Posicion = decimal.Parse(reader["Posicion"].ToString());
+                                obj.Presion = decimal.Parse(reader["Presion"].ToString());
+                                obj.Velocidad = decimal.Parse(reader["Velocidad"].ToString());
+                                obj.Retardo = decimal.Parse(reader["RetardEnfria"].ToString());
+                                obj.Zona4 = decimal.Parse(reader["Zona4"].ToString());
+                                obj.Zona3 = decimal.Parse(reader["Zona3"].ToString());
+                                obj.Zona2 = decimal.Parse(reader["Zona2"].ToString());
+                                obj.Zona1 = decimal.Parse(reader["Zona1"].ToString());
+
+                            }
+                        }
+
+                    }
+                }
+                return obj;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+      
 
     }
 }

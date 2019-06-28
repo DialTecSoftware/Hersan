@@ -12,7 +12,6 @@ namespace Hersan.UI.Calidad
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
-        
         List<InyeccionDetalleBE> oList = new List<InyeccionDetalleBE>();
 
         public frmInyeccion()
@@ -140,6 +139,7 @@ namespace Hersan.UI.Calidad
                 oData.Columns.Add("Master");
                 oData.Columns.Add("Inicio");
                 oData.Columns.Add("Fin");
+                oData.Columns.Add("Real");
                 oData.Columns.Add("CAV1");
                 oData.Columns.Add("CAV2");
                 oData.Columns.Add("CAV3");
@@ -171,6 +171,7 @@ namespace Hersan.UI.Calidad
                     oRow["Master"] = item.Master;
                     oRow["Inicio"] = item.Inicio;
                     oRow["Fin"] = item.Fin;
+                    oRow["Real"] = item.Real;
                     oRow["CAV1"] = item.Cav1;
                     oRow["CAV2"] = item.Cav2;
                     oRow["CAV3"] = item.Cav3;

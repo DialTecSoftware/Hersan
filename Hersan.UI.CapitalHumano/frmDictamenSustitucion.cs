@@ -4,9 +4,7 @@ using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -17,94 +15,41 @@ namespace Hersan.UI.CapitalHumano
 {
     public partial class frmDictamenSustitucion : Telerik.WinControls.UI.RadForm
     {
-        public frmDictamenSustitucion()
-        {
-            InitializeComponent();
-        }
-
-        CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;
+        WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<SolicitudPersonalBE> oList = new List<SolicitudPersonalBE>();
         List<DictamenSustitucionBE> list = new List<DictamenSustitucionBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
 
-        private void LimpiarCampos()
+        public frmDictamenSustitucion()
         {
-            try {
-                txtJustif.Text = string.Empty;
-                txtIndicad.Text = string.Empty;
-                lblContrato.Text = string.Empty;
-                lblDepto.Text = string.Empty;
-                lblEntidad.Text = string.Empty;
-                txtIdSu.Text = "0";
-                lblPuesto.Text = string.Empty;
-                lblSueldo.Text = string.Empty;
-                txtIdDictam.Text = "0";
-                txtDictamen.Text = string.Empty;
-             
-
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
+            InitializeComponent();
         }
-        //private void CargarElementos_Dictamen()
-        //{
-        //    oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
-        //    try {
-        //        DockWindow activeDocument = this.radDock1.DocumentManager.ActiveDocument;
-
-        //        list = oCHumano.CHUDictamenSolicitud_Obtener();
-        //        gvDictamen.DataSource = list;
-                
-        //        btnEliminar.Enabled = true;
-
-        //    } catch (Exception ex) {
-        //        RadMessageBox.Show("Ocurrio un error al cargar los elementos del dictamen\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-        //    } finally {
-        //        oCHumano = null;
-        //    }
-        //}
-        private void CargarSolicitudes()
-        {
-            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
-            try {
-                DockWindow activeDocumen = this.radDock1.DocumentManager.ActiveDocument;
-                oList = oCHumano.CHU_SolicitudP_Obtener(BaseWinBP.UsuarioLogueado.ID);
-                var lista = oList.FindAll(item => item.Estado == "REVISADO" || item.Estado == "CAPTURADO" || item.Estado == "ACTUALIZADO");
-                var dList = oList.FindAll(item => item.Estado == "ACEPTADO" || item.Estado == "RECHAZADO");
-                gvDatos.DataSource = lista;
-                gvDictamen.DataSource = dList;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cargar las solicitudes\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally { oCHumano = null; }
-        }
-      
-
         private void frmDictamenSustitucion_Load(object sender, EventArgs e)
         {
             try {
+                lblfecha.Text = DateTime.Now.ToLongDateString();
+
                 GroupDescriptor Entidades = new GroupDescriptor();
                 Entidades.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
                 this.gvDatos.GroupDescriptors.Add(Entidades);
+
+                GroupDescriptor Grupo = new GroupDescriptor();
+                Grupo.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
+                this.gvDictamen.GroupDescriptors.Add(Grupo);
+
                 ConditionalFormattingObject obj = new ConditionalFormattingObject("MyCondition", ConditionTypes.Greater, "30", "", true);
                 obj.CellForeColor = Color.White;
                 obj.CellBackColor = Color.RoyalBlue;
                 obj.ApplyOnSelectedRows = true;
-                this.gvDatos.Columns["Estado"].ConditionalFormattingObjectList.Add(obj);
-                  
+                this.gvDatos.Columns["Estado"].ConditionalFormattingObjectList.Add(obj);                
 
                 LimpiarCampos();
-                lblfecha.Text = DateTime.Now.ToLongDateString();
-
                 CargarSolicitudes();
-             
+                this.docSustitucion.Select();
             } catch (Exception) {
-
                 throw;
             }
-
-
         }
-      
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
@@ -173,7 +118,6 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
-    
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -182,7 +126,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-       
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
@@ -220,16 +163,23 @@ namespace Hersan.UI.CapitalHumano
             } finally {
                 oCHumano = null;
             }
-        }
+        }        
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            try {
+                LimpiarCampos();
 
-        private void gvDatos_CurrentRowChanged_1(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+        private void gvDatos_CurrentRowChanged_1(object sender, CurrentRowChangedEventArgs e)
         {
             try {
                 LimpiarCampos();
 
                 if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
-
-
                     txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
                     txtIndicad.Text = e.CurrentRow.Cells["Indicadores"].Value.ToString();
                     lblSueldo.Text = "$" + (e.CurrentRow.Cells["Sueldo"].Value.ToString());
@@ -241,19 +191,14 @@ namespace Hersan.UI.CapitalHumano
                     txtDictamen.Text = (e.CurrentRow.Cells["Dictamen"].Value.ToString());
                     string estatus = e.CurrentRow.Cells["Estado"].Value.ToString();
 
-                    if (estatus== "REVISADO") 
-                    {
+                    if (estatus == "REVISADO") {
                         rdbRevisiones.IsChecked = true;
-                    }
-                   else if (estatus == "ACEPTADO") {
+                    } else if (estatus == "ACEPTADO") {
                         rdbAceptado.IsChecked = true;
-                   
-                    }
-                 else   if (estatus == "RECHAZADO") {
+
+                    } else if (estatus == "RECHAZADO") {
                         rdbRechazado.IsChecked = true;
-                    }
-                    else
-                    {
+                    } else {
                         rdbRevisiones.IsChecked = rdbRechazado.IsChecked =
                             rdbAceptado.IsChecked = false;
                     }
@@ -264,25 +209,11 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-        private void btnNuevo_Click_1(object sender, EventArgs e)
-        {
-            try {
-                LimpiarCampos();
-
-            } catch (Exception) {
-
-                throw;
-            }
-        }
-
         private void gvDictamen_CurrentRowChanged(object sender, CurrentRowChangedEventArgs e)
         {
             try {
 
                 if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
-
-
                     txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
                     txtIndicad.Text = e.CurrentRow.Cells["Indicadores"].Value.ToString();
                     lblSueldo.Text = "$" + (e.CurrentRow.Cells["Sueldo"].Value.ToString());
@@ -311,6 +242,68 @@ namespace Hersan.UI.CapitalHumano
             } catch (Exception ex) {
 
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void radDock1_ActiveWindowChanged(object sender, DockWindowEventArgs e)
+        {
+            try {
+                if (e.DockWindow.Name.Equals("docDictamen")) {
+                    if (gvDictamen.RowCount == 0) {
+                        gvDictamen.DataSource = null;
+                        var dList = oList.FindAll(item => item.Estado == "ACEPTADO" || item.Estado == "RECHAZADO");
+                        gvDictamen.DataSource = dList;
+                    } else {
+                        gvDictamen.ClearSelection();
+                        gvDictamen.Rows[0].IsSelected = true;
+                        gvDictamen_CurrentRowChanged(new object(), new CurrentRowChangedEventArgs(null, gvDictamen.Rows[0]));
+                    }
+                } else {
+                    if(gvDatos.RowCount > 0) {
+                        gvDatos.ClearSelection();
+                        gvDatos.Rows[0].IsSelected = true;
+                        gvDatos_CurrentRowChanged_1(new object(), new CurrentRowChangedEventArgs(null, gvDatos.Rows[0]));
+                    }
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            try {
+                txtJustif.Text = string.Empty;
+                txtIndicad.Text = string.Empty;
+                lblContrato.Text = string.Empty;
+                lblDepto.Text = string.Empty;
+                lblEntidad.Text = string.Empty;
+                txtIdSu.Text = "0";
+                lblPuesto.Text = string.Empty;
+                lblSueldo.Text = string.Empty;
+                txtIdDictam.Text = "0";
+                txtDictamen.Text = string.Empty;
+
+
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void CargarSolicitudes()
+        {
+            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
+            try {
+                //DockWindow activeDocumen = this.radDock1.DocumentManager.ActiveDocument;
+
+                oList = oCHumano.CHU_SolicitudP_Obtener(BaseWinBP.UsuarioLogueado.ID);
+                var lista = oList.FindAll(item => item.Estado == "REVISADO" || item.Estado == "CAPTURADO" || item.Estado == "ACTUALIZADO");
+                gvDatos.DataSource = lista;
+
+                //var dList = oList.FindAll(item => item.Estado == "ACEPTADO" || item.Estado == "RECHAZADO");
+                //gvDictamen.DataSource = dList;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar las solicitudes\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
             }
         }
     }

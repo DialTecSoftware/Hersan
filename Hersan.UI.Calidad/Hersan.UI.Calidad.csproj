@@ -53,6 +53,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
@@ -73,15 +74,51 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmCalidadAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadAnalisis.Designer.cs">
+      <DependentUpon>frmCalidadAnalisis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadUno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadUno.Designer.cs">
+      <DependentUpon>frmCalidadUno.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInyeccion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInyeccion.Designer.cs">
       <DependentUpon>frmInyeccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParametros.Designer.cs">
+      <DependentUpon>frmParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemperaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemperaturas.Designer.cs">
+      <DependentUpon>frmTemperaturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCalidadAnalisis.resx">
+      <DependentUpon>frmCalidadAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadUno.resx">
+      <DependentUpon>frmCalidadUno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInyeccion.resx">
       <DependentUpon>frmInyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParametros.resx">
+      <DependentUpon>frmParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemperaturas.resx">
+      <DependentUpon>frmTemperaturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -138,6 +175,9 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble7.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble8.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
@@ -173,6 +213,9 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ServiciosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.InyeccionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.InyeccionDetalleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.ParametrosInyeccion.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TemperaturasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TempMoldesBE.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

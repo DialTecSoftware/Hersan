@@ -32,10 +32,6 @@ namespace Hersan.UI.CapitalHumano
         {
             InitializeComponent();
         }
-
-        
-
-
         private void frmPerfil_Load(object sender, EventArgs e)
         {
             try {
@@ -250,28 +246,37 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al agregar la competencia\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void btnQuitarTodo_Click(object sender, EventArgs e)
+        {
+            try {
+                if (oList.Count > 0) {
+                    if (RadMessageBox.Show("Esta acción eliminara todos los elementos\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
+                        return;
+                } else {
+                    RadMessageBox.Show("No se han agregado contacto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
+                if (txtId.Text == "0")
+                    oList.Clear();
+                else {
+                    oList.ForEach(item => item.DatosUsuario.Estatus = false);
+                    oList.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                }
+
+
+                ActualizaGrid();
+                CalcularPuntos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al quitar todos los items\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
                 CargarDeptos();
             } catch (Exception ex) {
                 throw ex;
-            }
-        }
-
-        private void CargarPuntos()
-        {
-            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
-            try {
-                if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
-                    var Temp = oCatalogos.CHUPuestos_Puntos(int.Parse(cboPuestos.SelectedValue.ToString()));
-                    txtValor.Text = Temp[0].Puntos.ToString(); ;
-                } else
-                    txtValor.Text = "0.00";
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar los puntos asociados a los p...\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCatalogos = null;
             }
         }
         private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
@@ -333,6 +338,22 @@ namespace Hersan.UI.CapitalHumano
             }
         }
 
+
+        private void CargarPuntos()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                if (Flag && cboPuestos.Items.Count > 0 && cboPuestos.SelectedValue != null) {
+                    var Temp = oCatalogos.CHUPuestos_Puntos(int.Parse(cboPuestos.SelectedValue.ToString()));
+                    txtValor.Text = Temp[0].Puntos.ToString(); ;
+                } else
+                    txtValor.Text = "0.00";
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar los puntos asociados a los p...\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogos = null;
+            }
+        }
         private void CargarEntidades()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -398,7 +419,6 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
-
         private void CargarCompetencias()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -499,31 +519,7 @@ namespace Hersan.UI.CapitalHumano
             }
         }
 
-        private void btnQuitarTodo_Click(object sender, EventArgs e)
-        {
-            try {
-                if (oList.Count > 0) {
-                    if (RadMessageBox.Show("Esta acción eliminara todos los elementos\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
-                        return;
-                } else {
-                    RadMessageBox.Show("No se han agregado contacto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    return;
-                }
-
-                if (txtId.Text == "0")
-                    oList.Clear();
-                else {
-                    oList.ForEach(item => item.DatosUsuario.Estatus = false);
-                    oList.RemoveAll(item => item.DatosUsuario.Estatus == false);
-                }
-
-
-                ActualizaGrid();
-                CalcularPuntos();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al quitar todos los items\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+        
 
        
     }

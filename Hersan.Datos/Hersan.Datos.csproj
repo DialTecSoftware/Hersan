@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDA.cs" />
+    <Compile Include="Calidad\CalidadDA.cs" />
     <Compile Include="Calidad\InyeccionDA.cs" />
     <Compile Include="CapitalHumano\CompetenciasDA.cs" />
     <Compile Include="CapitalHumano\ContratosDA.cs" />

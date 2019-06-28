@@ -4,14 +4,11 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
-using Hersan.Entidades.CapitalHumano;
+
 
 namespace Hersan.UI.CapitalHumano.Organigrama
 {

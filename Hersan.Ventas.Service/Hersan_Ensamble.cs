@@ -7,6 +7,7 @@ using Hersan.Negocio.Ensamble;
 using Hersan.Entidades.Ensamble;
 using Hersan.Entidades.Inyeccion;
 using Hersan.Negocio.Calidad;
+using Hersan.Entidades.Calidad;
 
 namespace Hersan.Ensamble.Service
 {
@@ -158,6 +159,40 @@ namespace Hersan.Ensamble.Service
         public List<InyeccionDetalleBE> PRO_Inyeccion_Obtener(InyeccionBE Obj)
         {
             return new InyecccionBP().PRO_Inyeccion_Obtener(Obj);
+        }
+        public InyeccionBE PRO_Inyeccion_Consulta(int Lista)
+        {
+            return new InyecccionBP().PRO_Inyeccion_Consulta(Lista);
+        }
+        public int PRO_Temperaturas_Guardar(TemperaturasBE Obj)
+        {
+            return new InyecccionBP().PRO_Temperaturas_Guardar(Obj);
+        }
+        public TemperaturasBE PRO_Temperaturas_Obtener()
+        {
+            return new InyecccionBP().PRO_Temperaturas_Obtener();
+        }
+        public int PRO_TemperaturasMolde_Guardar(TempMoldesBE Obj)
+        {
+            return new InyecccionBP().PRO_TemperaturasMolde_Guardar(Obj);
+        }
+        public TempMoldesBE PRO_TemperaturasMolde_Obtener()
+        {
+            return new InyecccionBP().PRO_TemperaturasMolde_Obtener();
+        }
+        public int PRO_Parametros_Guardar(System.Data.DataTable Tabla)
+        {
+            return new InyecccionBP().PRO_Parametros_Guardar(Tabla);
+        }
+        public ParametrosInyeccion PRO_Parametros_Obtener()
+        {
+            return new InyecccionBP().PRO_Parametros_Obtener();
+        }
+
+
+        public int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, System.Data.DataTable Detalle)
+        {
+            return new CalidadBP().CAL_InspeccionInyeccion_Guarda(Obj, Detalle);
         }
         #endregion
     }

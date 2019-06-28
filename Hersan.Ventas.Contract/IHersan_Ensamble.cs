@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Catalogos;
+﻿using Hersan.Entidades.Calidad;
+using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Ensamble;
 using Hersan.Entidades.Inyeccion;
 using System.Collections.Generic;
@@ -93,6 +94,23 @@ namespace Hersan.Ensamble.Contract
         int PRO_Inyeccion_Guardar(InyeccionBE Obj, System.Data.DataTable Detalle);
         [OperationContract]
         List<InyeccionDetalleBE> PRO_Inyeccion_Obtener(InyeccionBE Obj);
+        [OperationContract]
+        InyeccionBE PRO_Inyeccion_Consulta(int Lista);
+        [OperationContract]
+        int PRO_Temperaturas_Guardar(TemperaturasBE Obj);
+        [OperationContract]
+        TemperaturasBE PRO_Temperaturas_Obtener();
+        [OperationContract]
+        int PRO_TemperaturasMolde_Guardar(TempMoldesBE Obj);
+        [OperationContract]
+        TempMoldesBE PRO_TemperaturasMolde_Obtener();
+        [OperationContract]
+        int PRO_Parametros_Guardar(System.Data.DataTable Tabla);
+        [OperationContract]
+        ParametrosInyeccion PRO_Parametros_Obtener();
+
+        [OperationContract]
+        int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, System.Data.DataTable Detalle);
         #endregion
     }
 }

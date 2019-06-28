@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calidad\CalidadBE.cs" />
     <Compile Include="CapitalHumano\CompetenciasBE.cs" />
     <Compile Include="CapitalHumano\ContratosBE.cs" />
     <Compile Include="CapitalHumano\DescripcionPuestosBE.cs" />

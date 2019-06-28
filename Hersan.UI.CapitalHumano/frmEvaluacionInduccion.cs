@@ -39,7 +39,6 @@ namespace Hersan.UI.CapitalHumano
             txtId.Text = string.Empty;
             LimpiarRespuestas();
         }
-
         private bool ValidarCampos()
         {
             bool Flag = true;
@@ -58,7 +57,6 @@ namespace Hersan.UI.CapitalHumano
         {
           
         }
-       
         private void LimpiarRespuestas()
         {
             try {
@@ -72,7 +70,6 @@ namespace Hersan.UI.CapitalHumano
                 throw;
             }
         }
-
         private void CalcularResultado()
         {
             try {
@@ -175,8 +172,6 @@ namespace Hersan.UI.CapitalHumano
             }
             return oDataset;
         }
-
-
         private void CargaExpediente(int IdExpediente)
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
@@ -255,7 +250,37 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
+        private Stream Reporte(bool Correo)
+        {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            Stream archivo = null;
+            try {
+                DataTable Aux = oCHumano.CHU_Evaluacion_ReporteDetalle(int.Parse(txtIdExp.Text));
+                if (Aux.Rows.Count > 0) {
+                    frmViewer frm = new frmViewer();
+                    frm.iReport = new Reportes.rtpEvaluacionInduccion();
 
+                    frm.iReport.SetDataSource(Aux);
+
+
+
+                    if (Correo) {
+                        archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                    } else {
+                        //MOSTRAR EN PANTALLA
+                        frm.WindowState = FormWindowState.Maximized;
+                        frm.ShowDialog();
+                    }
+                } else {
+                    RadMessageBox.Show("Aun no hay evaluacción realizada para el numero de expediente seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
+            }
+            return archivo;
+        }
 
 
         public frmEvaluacionInduccion()
@@ -286,8 +311,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-
         private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
           
@@ -313,7 +336,6 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -414,7 +436,6 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -424,7 +445,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al cerra la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int IdExpediente = 0;
@@ -447,45 +467,11 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void lblNum_Click(object sender, EventArgs e)
         {
 
         }
-        private Stream Reporte(bool Correo)
-        {
-            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
-            Stream archivo = null;
-            try {
-                DataTable Aux = oCHumano.CHU_Evaluacion_ReporteDetalle(int.Parse(txtIdExp.Text));
-               if (Aux.Rows.Count > 0) {
-                    frmViewer frm = new frmViewer();
-                    frm.iReport = new Reportes.rtpEvaluacionInduccion();
-
-                    frm.iReport.SetDataSource(Aux);
-
-
-
-                    if (Correo) {
-                        archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-                    } else {
-                        //MOSTRAR EN PANTALLA
-                        frm.WindowState = FormWindowState.Maximized;
-                        frm.ShowDialog();
-                    }
-                }
-              else
-              {
-                    RadMessageBox.Show("Aun no hay evaluacción realizada para el numero de expediente seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCHumano = null;
-            }
-            return archivo;
-        }
-
+        
         private void txtCalif_Validating(object sender, CancelEventArgs e)
         {
             int val = 0;
@@ -498,7 +484,6 @@ namespace Hersan.UI.CapitalHumano
             } else
                 errorProvider1.Clear();
         }
-
         private void btnReporte_Click(object sender, EventArgs e)
         {
             try {

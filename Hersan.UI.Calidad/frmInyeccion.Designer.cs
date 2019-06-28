@@ -39,6 +39,7 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTimeSpanColumn gridViewTimeSpanColumn1 = new Telerik.WinControls.UI.GridViewTimeSpanColumn();
             Telerik.WinControls.UI.GridViewTimeSpanColumn gridViewTimeSpanColumn2 = new Telerik.WinControls.UI.GridViewTimeSpanColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
@@ -322,12 +323,25 @@
             gridViewTimeSpanColumn2.Format = "hh:mm";
             gridViewTimeSpanColumn2.FormatString = "hh:mm";
             gridViewTimeSpanColumn2.HeaderText = "Hora Final";
-            gridViewTimeSpanColumn2.MaxWidth = 60;
-            gridViewTimeSpanColumn2.MinWidth = 60;
+            gridViewTimeSpanColumn2.MaxWidth = 50;
+            gridViewTimeSpanColumn2.MinWidth = 50;
             gridViewTimeSpanColumn2.Name = "Fin";
             gridViewTimeSpanColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTimeSpanColumn2.Width = 60;
             gridViewTimeSpanColumn2.WrapText = true;
+            gridViewDecimalColumn5.DecimalPlaces = 0;
+            gridViewDecimalColumn5.FieldName = "Real";
+            gridViewDecimalColumn5.FormatString = "{0:N0}";
+            gridViewDecimalColumn5.HeaderText = "Piezas Reales";
+            gridViewDecimalColumn5.MaxWidth = 90;
+            gridViewDecimalColumn5.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn5.MinWidth = 90;
+            gridViewDecimalColumn5.Name = "Real";
+            gridViewDecimalColumn5.Width = 90;
+            gridViewDecimalColumn5.WrapText = true;
             gridViewCheckBoxColumn1.FieldName = "Cav1";
             gridViewCheckBoxColumn1.HeaderText = "Cavidad 1";
             gridViewCheckBoxColumn1.MaxWidth = 60;
@@ -387,6 +401,7 @@
             gridViewDecimalColumn4,
             gridViewTimeSpanColumn1,
             gridViewTimeSpanColumn2,
+            gridViewDecimalColumn5,
             gridViewCheckBoxColumn1,
             gridViewCheckBoxColumn2,
             gridViewCheckBoxColumn3,

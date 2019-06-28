@@ -463,6 +463,23 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void txtExpediente_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.F3) {
+                    btnBuscar_Click(new object(), new EventArgs());
+                } else {
+                    if (e.KeyData == Keys.Enter)
+                        if (int.Parse(txtExpediente.Text) > 0) {
+                            IdExpediente = int.Parse(txtExpediente.Text);
+                            LimpiarCampos();
+                            CargaExpediente(IdExpediente);
+                        }
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
@@ -943,7 +960,7 @@ namespace Hersan.UI.CapitalHumano
         }
         private void LimpiarCampos()
         {
-            try {
+            try {                
                 RutaImagen = string.Empty;
                 Foto = null;
                 picFoto.Image = null;
@@ -964,6 +981,7 @@ namespace Hersan.UI.CapitalHumano
                 #endregion
 
                 #region RadTextBox
+                txtExpediente.Text = "0";
                 txtId.Text = "-1";
                 txtAbonoMes.Text = string.Empty;
                 txtAfianzadoSi.Text = string.Empty;
@@ -1279,6 +1297,7 @@ namespace Hersan.UI.CapitalHumano
                 if (oExpediente.Count > 0) {
 
                     #region  SE CARGA EL EXPEDIENTE
+                    txtExpediente.Text = IdExpediente.ToString();
                     txtId.Text = IdExpediente.ToString();
                     cboEntidad.SelectedValue = oExpediente[0].Puesto.Departamentos.Entidades.Id;
                     cboDepto.SelectedValue = oExpediente[0].Puesto.Departamentos.Id;
@@ -1351,6 +1370,5 @@ namespace Hersan.UI.CapitalHumano
         }
         #endregion
 
-        
     }
 }

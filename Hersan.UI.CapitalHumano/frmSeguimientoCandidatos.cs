@@ -23,90 +23,10 @@ namespace Hersan.UI.CapitalHumano
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         List<SeguimientoCandidatosBE> oList = new List<SeguimientoCandidatosBE>();
 
-
         public frmSeguimientoCandidatos()
         {
             InitializeComponent();
         }
-        private string CreateBody()
-        {
-       
-            string body = string.Empty;
-            if (rdbAceptado.IsChecked == true) {
-                using (StreamReader reader = new StreamReader((Directory.GetCurrentDirectory() + "/Correo/Correo_Aceptado.html"))) {
-                    body = reader.ReadToEnd();
-                }
-            }
-            if (rdbRechazado.IsChecked == true) {
-                using (StreamReader reader = new StreamReader(Directory.GetCurrentDirectory() + "/Correo/Correo_Rechazado.html")) {
-                    body = reader.ReadToEnd();
-                }
-                } 
-                body = body.Replace("{Nombre}", txtNombreC.Text);
-            return body;
-        }
-
-        private void LimpiarCampos()
-        {
-            txtCorreo.Text = string.Empty;
-            txtId.Text = "-1";
-            txtNombreC.Text = string.Empty;
-            cboEntidad.SelectedIndex = 0;
-            cboDepto.SelectedIndex = 0;
-            cboPuesto.SelectedIndex = 0;
-            rdbProceso.IsChecked = true;
-         
-        }
-        private void CargarEntidades()
-        {
-            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
-            try {
-                oEntidades = oCatalogos.Entidades_Combo(BaseWinBP.UsuarioLogueado.Empresa.Id);
-                oEntidades.Add(new EntidadesBE { Id = 0, Nombre = "TODAS" });
-                cboEntidad.ValueMember = "Id";
-                cboEntidad.DisplayMember = "Nombre";
-                cboEntidad.DataSource = oEntidades;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-
-        private void CargarSeguimientos()
-        {
-            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
-            try {
-                oList = oCHumano.CHU_SeguimientoCan_Obtener();
-                gvDatos.DataSource = oList;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cargar las solicitudes\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally { oCHumano = null; }
-        }
-        private void CargarDeptos()
-        {
-            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
-            try {
-                cboDepto.ValueMember = "Id";
-                cboDepto.DisplayMember = "Nombre";
-                cboDepto.DataSource = oCatalogos.ABCDepartamentos_Combo(int.Parse(cboEntidad.SelectedValue.ToString()));
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCatalogos = null;
-            }
-        }
-
-        private bool ValidarCampos()
-        {
-            bool Flag = true;
-            try {
-                Flag = txtCorreo.Text.Trim().Length == 0 ? false : true;
-                Flag = txtNombreC.Text.Trim().Length == 0 ? false : true;
-                return Flag;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-
         private void frmSeguimientoCandidatos_Load(object sender, EventArgs e)
         {
             try {
@@ -123,7 +43,6 @@ namespace Hersan.UI.CapitalHumano
 
 
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -134,7 +53,6 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
-
         private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -151,7 +69,6 @@ namespace Hersan.UI.CapitalHumano
                 oCatalogos = null;
             }
         }
-
         private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
@@ -164,7 +81,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al seleccionar la entidad\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
@@ -230,7 +146,6 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
-
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -260,7 +175,6 @@ namespace Hersan.UI.CapitalHumano
 
 
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
 
@@ -270,7 +184,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnCorreo_Click(object sender, EventArgs e)
         {
 
@@ -293,7 +206,7 @@ namespace Hersan.UI.CapitalHumano
                     string smtp = "smtp.GMAIL.com";
                     string emisor = "Key.Solutions.Test@gmail.com";
                     string destinatario = txtCorreo.Text;
-                    string asunto = "Reclutamiento Hersan HiTech sapi de cv ";
+                    string asunto = "Reclutamiento Hersan HiTech SAPI de C.V. ";
                     int port = 587;
                     if (txtId.Text != "-1") {
                         string CuerpoMsg = CreateBody();
@@ -309,7 +222,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al mandar el correo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
@@ -348,6 +260,83 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
+
+        private string CreateBody()
+        {
+
+            string body = string.Empty;
+            if (rdbAceptado.IsChecked == true) {
+                using (StreamReader reader = new StreamReader((Directory.GetCurrentDirectory() + "/Correo/Correo_Aceptado.html"))) {
+                    body = reader.ReadToEnd();
+                }
+            }
+            if (rdbRechazado.IsChecked == true) {
+                using (StreamReader reader = new StreamReader(Directory.GetCurrentDirectory() + "/Correo/Correo_Rechazado.html")) {
+                    body = reader.ReadToEnd();
+                }
+            }
+            body = body.Replace("{Nombre}", txtNombreC.Text);
+            return body;
+        }
+        private void LimpiarCampos()
+        {
+            txtCorreo.Text = string.Empty;
+            txtId.Text = "-1";
+            txtNombreC.Text = string.Empty;
+            cboEntidad.SelectedIndex = 0;
+            cboDepto.SelectedIndex = 0;
+            cboPuesto.SelectedIndex = 0;
+            rdbProceso.IsChecked = true;
+
+        }
+        private void CargarEntidades()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                oEntidades = oCatalogos.Entidades_Combo(BaseWinBP.UsuarioLogueado.Empresa.Id);
+                oEntidades.Add(new EntidadesBE { Id = 0, Nombre = "TODAS" });
+                cboEntidad.ValueMember = "Id";
+                cboEntidad.DisplayMember = "Nombre";
+                cboEntidad.DataSource = oEntidades;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void CargarSeguimientos()
+        {
+            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
+            try {
+                oList = oCHumano.CHU_SeguimientoCan_Obtener();
+                gvDatos.DataSource = oList;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar las solicitudes\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally { oCHumano = null; }
+        }
+        private void CargarDeptos()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboDepto.ValueMember = "Id";
+                cboDepto.DisplayMember = "Nombre";
+                cboDepto.DataSource = oCatalogos.ABCDepartamentos_Combo(int.Parse(cboEntidad.SelectedValue.ToString()));
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cargar los departamentos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogos = null;
+            }
+        }
+        private bool ValidarCampos()
+        {
+            bool Flag = true;
+            try {
+                Flag = txtCorreo.Text.Trim().Length == 0 ? false : true;
+                Flag = txtNombreC.Text.Trim().Length == 0 ? false : true;
+                return Flag;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
     }
 }
 

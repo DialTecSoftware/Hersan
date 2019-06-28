@@ -14,7 +14,7 @@
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
-      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Obtener_InputMessage">

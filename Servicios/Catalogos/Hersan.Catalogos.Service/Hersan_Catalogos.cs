@@ -5,6 +5,7 @@ using Hersan.Negocio.CapitalHumano;
 using Hersan.Negocio.Catalogos;
 using System.Collections.Generic;
 using System.Data;
+using System.Xml;
 
 namespace Hersan.Catalogos.Service
 {
@@ -236,7 +237,7 @@ namespace Hersan.Catalogos.Service
         {
             return new OrganigramaBP().CHUOrganigrama_Guardar(obj);
         }
-        public DataTable CHU_OrganigramaXML_Obtener(int parent)
+        public DataSet CHU_OrganigramaXML_Obtener(int parent)
         {
             return new OrganigramaBP().CHU_OrganigramaXML_Obtener(parent);
         }

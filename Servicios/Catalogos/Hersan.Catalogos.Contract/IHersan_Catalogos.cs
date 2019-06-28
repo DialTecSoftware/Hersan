@@ -3,6 +3,7 @@ using Hersan.Entidades.Catalogos;
 using System.Collections.Generic;
 using System.Data;
 using System.ServiceModel;
+using System.Xml;
 
 namespace Hersan.Catalogos.Contract
 {
@@ -155,7 +156,7 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         int CHUOrganigrama_Actualizar(OrganigramaBE obj);
         [OperationContract]
-        DataTable CHU_OrganigramaXML_Obtener(int parent);
+        DataSet CHU_OrganigramaXML_Obtener(int parent);
         #endregion
 
         #region Estados

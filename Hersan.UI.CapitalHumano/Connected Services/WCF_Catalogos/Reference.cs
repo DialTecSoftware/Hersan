@@ -172,7 +172,60 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
         int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_ObtenerResponse")]
-        System.Data.DataTable CHU_OrganigramaXML_Obtener(int parent);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.MonedasBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.EmpresasBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.CiudadesBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.EstadosBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.PaisesBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.ColoniasBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.DepartamentosBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.DepartamentosBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.EntidadesBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposContratoBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.TiposContratoBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.PuestosBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.EntidadesBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.EducacionBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.EducacionBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.ContactosBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.ContactosBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.EquipoHerramientasBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.EquipoHerramientasBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.DocumentosBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.DocumentosBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.OrganigramaBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.OrganigramaBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.CiudadesBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoniasBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.FamiliasBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.FamiliasBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.ColoresBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoresBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.ReflejantesBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.TipoProductoBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.TipoProductoBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.AccesoriosBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.AccesoriosBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.TiposClienteBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.TiposClienteBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.AgentesBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.AgentesBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Catalogos.CondicionesExpBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.CapitalHumano.CompetenciasBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.FuncionesBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.CapitalHumano.FuncionesBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ContratosBE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.CapitalHumano.ContratosBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Hersan.Entidades.Comun.GeneralBE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<object>))]
+        System.Collections.Generic.List<object> CHU_OrganigramaXML_Obtener(int parent);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais);
@@ -519,7 +572,7 @@ namespace Hersan.UI.CapitalHumano.WCF_Catalogos {
             return base.Channel.CHUOrganigrama_Actualizar(obj);
         }
         
-        public System.Data.DataTable CHU_OrganigramaXML_Obtener(int parent) {
+        public System.Collections.Generic.List<object> CHU_OrganigramaXML_Obtener(int parent) {
             return base.Channel.CHU_OrganigramaXML_Obtener(parent);
         }
         

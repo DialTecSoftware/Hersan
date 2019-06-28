@@ -23,6 +23,8 @@ namespace Hersan.UI.CapitalHumano.Organigrama
         internal static Telerik.Windows.Diagrams.Core.TreeLayoutSettings currentLayoutSettings;
         private Color[] groupColor = new Color[] { Color.FromArgb(49, 49, 49), Color.FromArgb(47, 153, 69), Color.FromArgb(36, 159, 217), Color.FromArgb(49, 189, 117) };
 
+        public string Nombre;
+        public string Nom;
         public OrgChartForm()
         {
             this.InitializeComponent();
@@ -75,6 +77,7 @@ namespace Hersan.UI.CapitalHumano.Organigrama
             };
             
                 this.PopulateWithData();
+           
 
             this.radDiagram1.Zoom = 0.8;
             this.radDiagram1.DiagramElement.HorizontalScrollbar.Value = 250;
@@ -106,36 +109,21 @@ namespace Hersan.UI.CapitalHumano.Organigrama
 
         }
 
-        //public Image GetImageFromResource(string fileName)
-        //{
-        //    using (Stream stream = this.GetType().Assembly.GetManifestResourceStream(string.Format("EstructuraOrganizacional.Resources.{0}.png", fileName))) {
-
-        //        return new Bitmap(Image.FromStream(stream), 40, 40);
-
-        //    }
-        //}
 
         #region OrgExample
        
         private void PopulateWithData()
         {
 
-            //XElement dataXml = XElement.Load(@"C:\Temp\Organizacion.xml");
-            XElement dataXml = XElement.Load(Directory.GetCurrentDirectory() + "/Resources/Organization.xml");
+            XElement dataXml = XElement.Load(@"C:\Temp\Hersan.xml");
+            //XElement dataXml = XElement.Load(Directory.GetCurrentDirectory() + "/Resources/Organization.xml");
 
             IEnumerable<XElement> employees = dataXml.Elements();
 
 
-            foreach (XElement element in dataXml.Elements("Element")) {
+            foreach (XElement element in dataXml.Elements("Element")  ) {
                 OrgContainerShape node = this.CreateNode(element, null);
-                if (element.ToString() == "HERSAN") {
-                    node.ToggleCollapseButton.ImagePrimitive.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
-                    node.BaseColor = Color.IndianRed;
-                    this.radDiagram1.AddShape(node);
-                    currentLayoutSettings.Roots.Add(node);
-                    this.GetSubNodes(element, node, 2);
-                    node.IsCollapsed = true;
-                }
+             
 
                 node.BaseColor = Color.IndianRed;
                 this.radDiagram1.AddShape(node);
@@ -146,17 +134,19 @@ namespace Hersan.UI.CapitalHumano.Organigrama
             }
         }
 
+   
+
         private OrgContainerShape CreateNode(XElement element, OrgContainerShape parentNode)
         {
             OrgContainerShape orgTeam = new OrgContainerShape() {
-                Name = element.Attribute("Name").Value,
+                Name = Nom= element.Attribute("Depto").Value,
 
             };
 
             orgTeam.ToggleCollapseButton.ImagePrimitive.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
 
             orgTeam.Text = orgTeam.Name;
-            orgTeam.Tag = element.Attribute("Area").Value;
+            orgTeam.Tag =Nombre= element.Attribute("Name").Value;
             orgTeam.Path = parentNode == null ? orgTeam.Name : string.Format("{0}|{1}", parentNode.Path, orgTeam.Name);
             currentLayoutSettings.Roots.Add(orgTeam);
             if (parentNode != null) {
@@ -189,16 +179,18 @@ namespace Hersan.UI.CapitalHumano.Organigrama
 
         private ObservableCollection<RadDiagramShape> GetTeamMembers(XContainer element, OrgContainerShape team)
         {
+            XElement data = XElement.Load(@"C:\Temp\Hersan.xml");
+            
             var members = new ObservableCollection<RadDiagramShape>();
-            foreach (var xmlNodeMember in element.Elements("Child")) {
-                RadDiagramShape member = this.CreateMemberShape(team, xmlNodeMember);
+            foreach (var xmlNodeMember in data.Elements("Element")) {
+                RadDiagramShape member = this.CreateMemberShape(team, Nombre);
                 members.Add(member);
             }
 
             return members;
         }
 
-        private RadDiagramShape CreateMemberShape(OrgContainerShape team, XElement xmlNodeMember)
+        private RadDiagramShape CreateMemberShape(OrgContainerShape team,string xmlNodeMember)
         {
             RadDiagramShape member = new RadDiagramShape();
             member.IsConnectorsManipulationEnabled = false;
@@ -210,7 +202,7 @@ namespace Hersan.UI.CapitalHumano.Organigrama
             member.Width = 190;
             member.Height = 50;
             member.Tag = team;
-            member.Name = xmlNodeMember.Attribute("Name").Value;
+            //member.Name = xmlNodeMember.ToString();
             member.DiagramShapeElement.TextAlignment = ContentAlignment.MiddleLeft;
             member.DiagramShapeElement.ImageLayout = ImageLayout.None;
             member.DiagramShapeElement.Padding = new System.Windows.Forms.Padding(5, 2, 2, 0);
@@ -218,7 +210,7 @@ namespace Hersan.UI.CapitalHumano.Organigrama
             member.DiagramShapeElement.ImageAlignment = ContentAlignment.MiddleLeft;
             member.DiagramShapeElement.TextImageRelation = TextImageRelation.ImageBeforeText;
             member.DiagramShapeElement.TextWrap = false;
-            member.Text = string.Format(" {0}\n {1}", member.Name, xmlNodeMember.Attribute("Puesto").Value);
+            member.Text = string.Format(" {0}\n {1}", member.Name, xmlNodeMember.ToString());
             return member;
         }
 
@@ -238,19 +230,10 @@ namespace Hersan.UI.CapitalHumano.Organigrama
             foreach (var subElement in elements) {
                 OrgContainerShape node = this.CreateNode(subElement, parent);
                 node.ShowCollapseButton = level < 4;
-                if (node.Path.Contains("Direccion")) {
+                if (node.Path.ToString()!="") {
                     node.BaseColor = Color.IndianRed;
                 }
-                if (node.Path.Contains("Proyecto")) {
-                    node.BaseColor = Color.Tomato;
-                }
-
-                if (node.Path.Contains("Capital Humano")) {
-                    node.BaseColor = Color.Tomato;
-                }
-                if (node.Path.Contains("Contabilidad")) {
-                    node.BaseColor = Color.Tomato;
-                }
+               
 
                 this.radDiagram1.AddShape(node);
 
@@ -277,7 +260,7 @@ namespace Hersan.UI.CapitalHumano.Organigrama
         {
             OrgContainerShape sh = new OrgContainerShape();
             sh.ToggleCollapseButton.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            //sh.Colapsar();
+            
         }
 
         private void btnColapse_Click(object sender, EventArgs e)

@@ -12,5 +12,9 @@ namespace Hersan.Negocio.Calidad
         {
             return new CalidadDA().CAL_InspeccionInyeccion_Guarda(Obj, Detalle);
         }
+        public int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, System.Data.DataTable Detalle)
+        {
+            return new CalidadDA().CAL_InspeccionInyeccion_Actualiza(IdInyeccion, Detalle);
+        }
     }
 }

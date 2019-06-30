@@ -40,6 +40,8 @@
             Telerik.WinControls.UI.GridViewTimeSpanColumn gridViewTimeSpanColumn1 = new Telerik.WinControls.UI.GridViewTimeSpanColumn();
             Telerik.WinControls.UI.GridViewTimeSpanColumn gridViewTimeSpanColumn2 = new Telerik.WinControls.UI.GridViewTimeSpanColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn6 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn7 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
@@ -263,7 +265,7 @@
             0,
             0,
             0});
-            gridViewDecimalColumn2.MaxWidth = 80;
+            gridViewDecimalColumn2.MaxWidth = 60;
             gridViewDecimalColumn2.Minimum = new decimal(new int[] {
             0,
             0,
@@ -272,7 +274,7 @@
             gridViewDecimalColumn2.MinWidth = 80;
             gridViewDecimalColumn2.Name = "Virgen";
             gridViewDecimalColumn2.ShowUpDownButtons = false;
-            gridViewDecimalColumn2.Width = 80;
+            gridViewDecimalColumn2.Width = 60;
             gridViewDecimalColumn3.FieldName = "Remolido";
             gridViewDecimalColumn3.FormatString = "{0:N2}";
             gridViewDecimalColumn3.HeaderText = "Remolido";
@@ -281,7 +283,7 @@
             0,
             0,
             0});
-            gridViewDecimalColumn3.MaxWidth = 80;
+            gridViewDecimalColumn3.MaxWidth = 60;
             gridViewDecimalColumn3.Minimum = new decimal(new int[] {
             0,
             0,
@@ -290,7 +292,7 @@
             gridViewDecimalColumn3.MinWidth = 80;
             gridViewDecimalColumn3.Name = "Remolido";
             gridViewDecimalColumn3.ShowUpDownButtons = false;
-            gridViewDecimalColumn3.Width = 80;
+            gridViewDecimalColumn3.Width = 60;
             gridViewDecimalColumn4.FieldName = "Master";
             gridViewDecimalColumn4.FormatString = "{0:N2}";
             gridViewDecimalColumn4.HeaderText = "Master";
@@ -299,7 +301,7 @@
             0,
             0,
             0});
-            gridViewDecimalColumn4.MaxWidth = 80;
+            gridViewDecimalColumn4.MaxWidth = 60;
             gridViewDecimalColumn4.Minimum = new decimal(new int[] {
             0,
             0,
@@ -308,7 +310,7 @@
             gridViewDecimalColumn4.MinWidth = 80;
             gridViewDecimalColumn4.Name = "Master";
             gridViewDecimalColumn4.ShowUpDownButtons = false;
-            gridViewDecimalColumn4.Width = 80;
+            gridViewDecimalColumn4.Width = 60;
             gridViewTimeSpanColumn1.FieldName = "Inicio";
             gridViewTimeSpanColumn1.Format = "hh:mm";
             gridViewTimeSpanColumn1.FormatString = "hh:mm";
@@ -332,16 +334,45 @@
             gridViewDecimalColumn5.FieldName = "Real";
             gridViewDecimalColumn5.FormatString = "{0:N0}";
             gridViewDecimalColumn5.HeaderText = "Piezas Reales";
-            gridViewDecimalColumn5.MaxWidth = 90;
+            gridViewDecimalColumn5.MaxWidth = 71;
             gridViewDecimalColumn5.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn5.MinWidth = 90;
+            gridViewDecimalColumn5.MinWidth = 80;
             gridViewDecimalColumn5.Name = "Real";
-            gridViewDecimalColumn5.Width = 90;
+            gridViewDecimalColumn5.ThousandsSeparator = true;
+            gridViewDecimalColumn5.Width = 71;
             gridViewDecimalColumn5.WrapText = true;
+            gridViewDecimalColumn6.FieldName = "Muestra";
+            gridViewDecimalColumn6.FormatString = "{0:N0}";
+            gridViewDecimalColumn6.HeaderText = "Total Muestra";
+            gridViewDecimalColumn6.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn6.Name = "Muestra";
+            gridViewDecimalColumn6.ReadOnly = true;
+            gridViewDecimalColumn6.ThousandsSeparator = true;
+            gridViewDecimalColumn6.WrapText = true;
+            gridViewDecimalColumn7.EnableExpressionEditor = false;
+            gridViewDecimalColumn7.Expression = "";
+            gridViewDecimalColumn7.FieldName = "Porcentaje";
+            gridViewDecimalColumn7.FormatString = "{0:N2}";
+            gridViewDecimalColumn7.HeaderText = "% Muestreo";
+            gridViewDecimalColumn7.MaxWidth = 60;
+            gridViewDecimalColumn7.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn7.MinWidth = 60;
+            gridViewDecimalColumn7.Name = "Porcentaje";
+            gridViewDecimalColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn7.Width = 60;
+            gridViewDecimalColumn7.WrapText = true;
             gridViewCheckBoxColumn1.FieldName = "Cav1";
             gridViewCheckBoxColumn1.HeaderText = "Cavidad 1";
             gridViewCheckBoxColumn1.MaxWidth = 60;
@@ -402,6 +433,8 @@
             gridViewTimeSpanColumn1,
             gridViewTimeSpanColumn2,
             gridViewDecimalColumn5,
+            gridViewDecimalColumn6,
+            gridViewDecimalColumn7,
             gridViewCheckBoxColumn1,
             gridViewCheckBoxColumn2,
             gridViewCheckBoxColumn3,

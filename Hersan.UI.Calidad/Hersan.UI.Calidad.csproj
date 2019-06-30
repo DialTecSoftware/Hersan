@@ -98,6 +98,12 @@
     <Compile Include="frmParametros.Designer.cs">
       <DependentUpon>frmParametros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmParametrosCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParametrosCalidad.Designer.cs">
+      <DependentUpon>frmParametrosCalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTemperaturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmParametros.resx">
       <DependentUpon>frmParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParametrosCalidad.resx">
+      <DependentUpon>frmParametrosCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTemperaturas.resx">
       <DependentUpon>frmTemperaturas.cs</DependentUpon>
@@ -178,6 +187,7 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble8.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.NormaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />

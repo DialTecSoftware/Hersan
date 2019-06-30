@@ -68,6 +68,9 @@ namespace Hersan.Datos.Calidad
                                 obj.Master = decimal.Parse(reader["Master"].ToString());
                                 obj.Inicio = TimeSpan.Parse(reader["Inicio"].ToString());
                                 obj.Fin = TimeSpan.Parse(reader["Fin"].ToString());
+                                obj.Real = int.Parse(reader["Real"].ToString());
+                                obj.Muestra = int.Parse(reader["Muestra"].ToString());
+                                obj.Porcentaje = decimal.Parse(reader["Porcentaje"].ToString());
                                 obj.Cav1 = bool.Parse(reader["CAV1"].ToString());
                                 obj.Cav2 = bool.Parse(reader["CAV2"].ToString());
                                 obj.Cav3 = bool.Parse(reader["CAV3"].ToString());
@@ -89,7 +92,7 @@ namespace Hersan.Datos.Calidad
         }
         public InyeccionBE PRO_Inyeccion_Consulta(int Lista)
         {
-            InyeccionBE obj = new InyeccionBE();
+            InyeccionBE obj = null;
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
@@ -100,13 +103,19 @@ namespace Hersan.Datos.Calidad
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
+                                obj = new InyeccionBE();
+
                                 /* ENCABEZADO */
                                 obj.Id = int.Parse(reader["Id"].ToString());
                                 obj.OP = reader["OP"].ToString();
                                 obj.Color.Nombre = reader["Color"].ToString();
+                                obj.Operador = reader["Operador"].ToString();
+                                obj.Muestra = int.Parse(reader["Muestra"].ToString());
+
                                 /* DETALLE */
+                                obj.Detalle.Id = int.Parse(reader["IdInspecion"].ToString());
                                 obj.Detalle.Fecha = DateTime.Parse(reader["Fecha"].ToString());
-                                obj.Detalle.Real = int.Parse(reader["Virgen"].ToString());
+                                obj.Detalle.Piezas = int.Parse(reader["Piezas"].ToString());
                                 obj.Detalle.Turno = reader["Turno"].ToString();
                                 obj.Detalle.Virgen = decimal.Parse(reader["Virgen"].ToString());
                                 obj.Detalle.Remolido = decimal.Parse(reader["Remolido"].ToString());

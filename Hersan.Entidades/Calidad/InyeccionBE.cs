@@ -13,6 +13,8 @@ namespace Hersan.Entidades.Inyeccion
         {
             Id = 0;
             OP = string.Empty;
+            Operador = string.Empty;
+            Muestra = 0;
             Color = new ColoresBE();
             Detalle = new InyeccionDetalleBE();
             IdUsuario = 0;
@@ -21,6 +23,8 @@ namespace Hersan.Entidades.Inyeccion
 
         public int Id { get; set; }
         public string OP { get; set; }
+        public string Operador { get; set; }
+        public int Muestra { get; set; }
         public int IdUsuario { get; set; }
         public DateTime Fecha { get; set; }
         public ColoresBE Color { get; set; }
@@ -42,6 +46,8 @@ namespace Hersan.Entidades.Inyeccion
             Inicio = new TimeSpan();
             Fin = new TimeSpan();
             Real = 0;
+            Muestra = 0;
+            Porcentaje = 0;
             Cav1 = false;
             Cav2 = false;
             Cav3 = false;
@@ -63,6 +69,8 @@ namespace Hersan.Entidades.Inyeccion
         public TimeSpan Inicio { get; set; }
         public TimeSpan Fin { get; set; }
         public int Real { get; set; }
+        public int Muestra { get; set; }
+        public decimal Porcentaje { get; set; }
         public bool Cav1 { get; set; }
         public bool Cav2 { get; set; }
         public bool Cav3 { get; set; }

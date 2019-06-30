@@ -149,16 +149,10 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         int ABCHorarios_Actualiza(Hersan.Entidades.Relchec.HorariosBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_ObtenerResponse")]
-        System.Data.DataSet CHU_Digitalizados_Obtener(int IdExp);
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.DigitalizadosDetalleBE> CHU_Digitalizados_Obtener(int IdExp);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Guardar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_GuardarResponse")]
-        int CHU_Digitalizados_Guardar(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Actualiza", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_ActualizaResponse")]
-        int CHU_Digitalizados_Actualiza(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_EliminaResponse")]
-        int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario);
+        int CHU_Digitalizados_Guardar(int IdExpediente, System.Data.DataTable Detalle, int IdUsuario, System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.DigitalizadosDetalleBE> Archivos);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_ObtenerResponse")]
         System.Data.DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl);
@@ -394,20 +388,12 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
             return base.Channel.ABCHorarios_Actualiza(obj);
         }
         
-        public System.Data.DataSet CHU_Digitalizados_Obtener(int IdExp) {
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.DigitalizadosDetalleBE> CHU_Digitalizados_Obtener(int IdExp) {
             return base.Channel.CHU_Digitalizados_Obtener(IdExp);
         }
         
-        public int CHU_Digitalizados_Guardar(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle) {
-            return base.Channel.CHU_Digitalizados_Guardar(obj, Detalle);
-        }
-        
-        public int CHU_Digitalizados_Actualiza(Hersan.Entidades.CapitalHumano.DigitalizadosBE obj, System.Data.DataTable Detalle) {
-            return base.Channel.CHU_Digitalizados_Actualiza(obj, Detalle);
-        }
-        
-        public int CHU_Digitalizados_Elimina(int IdDocs, int IdUsuario) {
-            return base.Channel.CHU_Digitalizados_Elimina(IdDocs, IdUsuario);
+        public int CHU_Digitalizados_Guardar(int IdExpediente, System.Data.DataTable Detalle, int IdUsuario, System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.DigitalizadosDetalleBE> Archivos) {
+            return base.Channel.CHU_Digitalizados_Guardar(IdExpediente, Detalle, IdUsuario, Archivos);
         }
         
         public System.Data.DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl) {

@@ -15,7 +15,6 @@ namespace Hersan.UI.Calidad
     public partial class frmCalidadUno : Telerik.WinControls.UI.RadForm
     {
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
-        bool Flag;
 
         public frmCalidadUno()
         {
@@ -26,7 +25,6 @@ namespace Hersan.UI.Calidad
             try {
                 this.WindowState = FormWindowState.Normal;
                 this.StartPosition = FormStartPosition.CenterScreen;
-                Flag = true;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -71,26 +69,33 @@ namespace Hersan.UI.Calidad
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            int Result = 0;
+            bool bFlag = false;
             try {
+                CalidadBE Obj = new CalidadBE();
+                Obj.Lista = int.Parse(txtLista.Text);
+                Obj.Inyeccion.Id = int.Parse(txtId.Text);
+                Obj.Operador = txtOperador.Text;
+                Obj.IdUsuario = BaseWinBP.UsuarioLogueado.ID;
 
-                if (RadMessageBox.Show("Desea guardar los datos...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
 
-                    CalidadBE Obj = new CalidadBE();
-                    Obj.Lista = int.Parse(txtLista.Text);
-                    Obj.Inyeccion.Id = int.Parse(txtId.Text);
-                    Obj.Operador = txtOperador.Text;
-                    Obj.IdUsuario = BaseWinBP.UsuarioLogueado.ID;
-                    Obj.Flag = Flag;
+                if (int.Parse(txtIdDetalle.Text) == 0)
+                    Result = oEnsamble.CAL_InspeccionInyeccion_Guarda(Obj, ObtenerDetalle());
+                else {
+                    Result = oEnsamble.CAL_InspeccionInyeccion_Actualiza(int.Parse(txtIdDetalle.Text), ObtenerDetalle());
+                    bFlag = true;
+                }
 
-                    int Result = oEnsamble.CAL_InspeccionInyeccion_Guarda(Obj, ObtenerDetalle());
-                    if (Result == 0) {
-                        RadMessageBox.Show("Ocurrió un error al guardar la informacion", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    } else {
-                        RadMessageBox.Show("Información guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                        Limpiar(true);
-                        txtLista.Focus();
-                        Flag = false;
-                    }
+                if (Result == 0) {
+                    RadMessageBox.Show("Ocurrió un error al guardar la informacion", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                } else {
+                    RadMessageBox.Show("Información guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    Limpiar(true);
+                    txtLista.Focus();
+                    if (bFlag)
+                        txtMuestra.Text = Result.ToString();
+                    else 
+                        CargarDatos();
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al guardar los datos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -106,24 +111,26 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-
+       
         private void CargarDatos()
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
                 if (txtLista.Text.Trim().Length > 0) {
                     InyeccionBE Obj = oEnsamble.PRO_Inyeccion_Consulta(int.Parse(txtLista.Text));
-                    if(Obj != null) {
+                    if (Obj != null) {
                         txtId.Text = Obj.Id.ToString();
+                        txtIdDetalle.Text = Obj.Detalle.Id.ToString();
                         txtOp.Text = Obj.OP;
+                        txtOperador.Text = Obj.Operador;
                         txtColor.Text = Obj.Color.Nombre;
                         txtFecha.Text = Obj.Detalle.Fecha.ToShortDateString();
-                        txtReal.Text = Obj.Detalle.Real.ToString();
+                        txtReal.Text = Obj.Detalle.Piezas.ToString();
                         txtTurno.Text = Obj.Detalle.Turno;
                         txtVirgen.Text = Obj.Detalle.Virgen.ToString();
                         txtRemolido.Text = Obj.Detalle.Remolido.ToString();
                         txtMaster.Text = Obj.Detalle.Master.ToString();
+                        txtMuestra.Text = Obj.Muestra.ToString();
 
                         #region CAVIDADES                         
                         txtCav1_1.Enabled = Obj.Detalle.Cav1;
@@ -145,8 +152,10 @@ namespace Hersan.UI.Calidad
                         #endregion
 
                         SendKeys.Send("{TAB}");
-                    } else 
+                    } else {
                         RadMessageBox.Show("No existe información para la lista capturada", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        Limpiar(false);
+                    }
                 }else
                     RadMessageBox.Show("El número de lista es incorrecto o no existe", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } catch (Exception ex) {
@@ -207,23 +216,63 @@ namespace Hersan.UI.Calidad
             
         }
         private void Limpiar(bool Detalle)
-        {            
-            foreach (Control ctrl in this.Controls) {
-                if (ctrl is Telerik.WinControls.UI.RadTextBox) {
-                    if (Detalle) {
-                        if (ctrl.Name.Contains("txtCav"))
-                            ctrl.Text = "0.00";
-                    } else {
-                        ctrl.Text = string.Empty;
-                    }
+        {
 
-                }
+            if (!Detalle) {
+                txtId.Clear();
+                txtColor.Clear();
+                txtFecha.Clear();
+                txtId.Clear();
+                txtIdDetalle.Clear();
+                txtLista.Clear();
+                txtMaster.Clear();
+                txtMuestra.Clear();
+                txtOp.Clear();
+                txtOperador.Clear();
+                txtReal.Clear();
+                txtRemolido.Clear();
+                txtTurno.Clear();
+                txtVirgen.Clear();
+                Detalle = true;
+
+                #region CAVIDADES                         
+                txtCav1_1.Enabled = false;
+                txtCav1_2.Enabled = false;
+                txtCav2_1.Enabled = false;
+                txtCav2_2.Enabled = false;
+                txtCav3_1.Enabled = false;
+                txtCav3_2.Enabled = false;
+                txtCav4_1.Enabled = false; 
+                txtCav4_2.Enabled = false;
+                txtCav5_1.Enabled = false;
+                txtCav5_2.Enabled = false;
+                txtCav6_1.Enabled = false;
+                txtCav6_2.Enabled = false;
+                txtCav7_1.Enabled = false;
+                txtCav7_2.Enabled = false;
+                txtCav8_1.Enabled = false;
+                txtCav8_2.Enabled = false;
+                #endregion
+            }
+            if (Detalle) {
+                txtCav1_1.Clear();
+                txtCav1_2.Clear();
+                txtCav2_1.Clear();
+                txtCav2_2.Clear();
+                txtCav3_1.Clear();
+                txtCav3_2.Clear();
+                txtCav4_1.Clear();
+                txtCav4_2.Clear();
+                txtCav5_1.Clear();
+                txtCav5_2.Clear();
+                txtCav6_1.Clear();
+                txtCav6_2.Clear();
+                txtCav7_1.Clear();
+                txtCav7_2.Clear();
+                txtCav8_1.Clear();
+                txtCav8_2.Clear();
             }
         }
 
-        private void txtOperador_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -194,6 +194,23 @@ namespace Hersan.Ensamble.Service
         {
             return new CalidadBP().CAL_InspeccionInyeccion_Guarda(Obj, Detalle);
         }
+        public int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, System.Data.DataTable Detalle)
+        {
+            return new CalidadBP().CAL_InspeccionInyeccion_Actualiza(IdInyeccion, Detalle);
+        }
+
+        public int CAL_ReflejantesNorma_Guardar(NormaBE Obj)
+        {
+            return new NormaBP().CAL_ReflejantesNorma_Guardar(Obj);
+        }
+        public int CAL_ReflejantesNorma_Actualizar(NormaBE Obj)
+        {
+            return new NormaBP().CAL_ReflejantesNorma_Actualizar(Obj);
+        }
+        public List<NormaBE> CAL_ReflejantesNorma_Obtener()
+        {
+            return new NormaBP().CAL_ReflejantesNorma_Obtener();
+        }
         #endregion
     }
 }

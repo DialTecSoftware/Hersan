@@ -111,6 +111,15 @@ namespace Hersan.Ensamble.Contract
 
         [OperationContract]
         int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, System.Data.DataTable Detalle);
+        [OperationContract]
+        int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, System.Data.DataTable Detalle);
+
+        [OperationContract]
+        int CAL_ReflejantesNorma_Guardar(NormaBE Obj);
+        [OperationContract]
+        int CAL_ReflejantesNorma_Actualizar(NormaBE Obj);
+        [OperationContract]
+        List<NormaBE> CAL_ReflejantesNorma_Obtener();
         #endregion
     }
 }

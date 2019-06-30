@@ -295,18 +295,6 @@
   <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Guardar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_Digitalizados_GuardarResponse" />
   </wsdl:message>
-  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Actualiza_InputMessage">
-    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_Actualiza" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Actualiza_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_ActualizaResponse" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Elimina_InputMessage">
-    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_Elimina" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_CHumano_CHU_Digitalizados_Elimina_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CHU_Digitalizados_EliminaResponse" />
-  </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_Obtener" />
   </wsdl:message>
@@ -551,14 +539,6 @@
     <wsdl:operation name="CHU_Digitalizados_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Guardar" message="tns:IHersan_CHumano_CHU_Digitalizados_Guardar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_GuardarResponse" message="tns:IHersan_CHumano_CHU_Digitalizados_Guardar_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CHU_Digitalizados_Actualiza">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Actualiza" message="tns:IHersan_CHumano_CHU_Digitalizados_Actualiza_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_ActualizaResponse" message="tns:IHersan_CHumano_CHU_Digitalizados_Actualiza_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CHU_Digitalizados_Elimina">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Elimina" message="tns:IHersan_CHumano_CHU_Digitalizados_Elimina_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_EliminaResponse" message="tns:IHersan_CHumano_CHU_Digitalizados_Elimina_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CHU_DescripcionPuestos_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Obtener" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Obtener_InputMessage" />
@@ -1011,24 +991,6 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_Digitalizados_Guardar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Guardar" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CHU_Digitalizados_Actualiza">
-      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Actualiza" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CHU_Digitalizados_Elimina">
-      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Digitalizados_Elimina" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

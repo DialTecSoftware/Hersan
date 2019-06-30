@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+  <xs:complexType name="CalidadBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:CalidadDetalleBE" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Flag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" minOccurs="0" name="Inyeccion" nillable="true" type="q1:InyeccionBE" />
+      <xs:element minOccurs="0" name="Lista" type="xs:int" />
+      <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadBE" nillable="true" type="tns:CalidadBE" />
+  <xs:complexType name="CalidadDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cav1_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav1_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav2_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav2_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav3_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav3_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav4_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav4_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav5_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav5_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav6_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav6_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav7_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav7_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav8_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav8_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadDetalleBE" nillable="true" type="tns:CalidadDetalleBE" />
+  <xs:complexType name="NormaBE">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Color" nillable="true" type="q2:ColoresBE" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q3:GeneralBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Limite" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Norma" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NormaBE" nillable="true" type="tns:NormaBE" />
+  <xs:complexType name="ArrayOfNormaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NormaBE" nillable="true" type="tns:NormaBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNormaBE" nillable="true" type="tns:ArrayOfNormaBE" />
+</xs:schema>

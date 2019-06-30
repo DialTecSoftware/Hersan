@@ -40,6 +40,9 @@
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtIdDetalle = new Telerik.WinControls.UI.RadTextBox();
+            this.txtMuestra = new Telerik.WinControls.UI.RadTextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
             this.txtReal = new Telerik.WinControls.UI.RadTextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -94,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFecha)).BeginInit();
@@ -181,7 +186,6 @@
             // 
             this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
             this.commandBarSeparator1.Name = "commandBarSeparator1";
-            this.commandBarSeparator1.Text = "";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
             // 
             // btnGuardar
@@ -198,7 +202,6 @@
             // 
             this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
             this.commandBarSeparator2.Name = "commandBarSeparator2";
-            this.commandBarSeparator2.Text = "";
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
             // 
             // btnSalir
@@ -215,7 +218,6 @@
             // 
             this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
             this.commandBarSeparator3.Name = "commandBarSeparator3";
-            this.commandBarSeparator3.Text = "";
             this.commandBarSeparator3.VisibleInOverflowMenu = false;
             // 
             // commandBarStripElement2
@@ -226,6 +228,9 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.txtIdDetalle);
+            this.radGroupBox1.Controls.Add(this.txtMuestra);
+            this.radGroupBox1.Controls.Add(this.label20);
             this.radGroupBox1.Controls.Add(this.txtId);
             this.radGroupBox1.Controls.Add(this.txtReal);
             this.radGroupBox1.Controls.Add(this.label19);
@@ -256,18 +261,52 @@
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "LISTA INYECCIÓN";
             // 
+            // txtIdDetalle
+            // 
+            this.txtIdDetalle.Location = new System.Drawing.Point(225, 63);
+            this.txtIdDetalle.Name = "txtIdDetalle";
+            this.txtIdDetalle.Size = new System.Drawing.Size(36, 20);
+            this.txtIdDetalle.TabIndex = 19;
+            this.txtIdDetalle.TabStop = false;
+            this.txtIdDetalle.Text = "0";
+            this.txtIdDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIdDetalle.Visible = false;
+            // 
+            // txtMuestra
+            // 
+            this.txtMuestra.Location = new System.Drawing.Point(222, 134);
+            this.txtMuestra.Name = "txtMuestra";
+            this.txtMuestra.ReadOnly = true;
+            this.txtMuestra.Size = new System.Drawing.Size(66, 20);
+            this.txtMuestra.TabIndex = 18;
+            this.txtMuestra.TabStop = false;
+            this.txtMuestra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(167, 136);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 13);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "Muestra:";
+            // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(225, 37);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(36, 20);
             this.txtId.TabIndex = 16;
+            this.txtId.TabStop = false;
+            this.txtId.Text = "0";
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtId.Visible = false;
             // 
             // txtReal
             // 
-            this.txtReal.Location = new System.Drawing.Point(70, 134);
+            this.txtReal.Location = new System.Drawing.Point(52, 134);
             this.txtReal.Name = "txtReal";
             this.txtReal.ReadOnly = true;
             this.txtReal.Size = new System.Drawing.Size(88, 20);
@@ -280,7 +319,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(30, 136);
+            this.label19.Location = new System.Drawing.Point(12, 136);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 14;
@@ -291,7 +330,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(149, 37);
+            this.label3.Location = new System.Drawing.Point(131, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 13;
@@ -299,7 +338,7 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(70, 108);
+            this.txtFecha.Location = new System.Drawing.Point(52, 108);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(88, 20);
@@ -312,7 +351,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(31, 110);
+            this.label10.Location = new System.Drawing.Point(13, 110);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 11;
@@ -413,7 +452,7 @@
             // 
             // txtColor
             // 
-            this.txtColor.Location = new System.Drawing.Point(70, 83);
+            this.txtColor.Location = new System.Drawing.Point(52, 83);
             this.txtColor.Name = "txtColor";
             this.txtColor.ReadOnly = true;
             this.txtColor.Size = new System.Drawing.Size(132, 20);
@@ -423,7 +462,7 @@
             // 
             // txtOp
             // 
-            this.txtOp.Location = new System.Drawing.Point(70, 59);
+            this.txtOp.Location = new System.Drawing.Point(52, 59);
             this.txtOp.Name = "txtOp";
             this.txtOp.ReadOnly = true;
             this.txtOp.Size = new System.Drawing.Size(113, 20);
@@ -450,7 +489,6 @@
             this.txtOperador.Size = new System.Drawing.Size(190, 20);
             this.txtOperador.TabIndex = 2;
             this.txtOperador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtOperador.TextChanged += new System.EventHandler(this.txtOperador_TextChanged);
             this.txtOperador.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label5
@@ -469,7 +507,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(31, 85);
+            this.label4.Location = new System.Drawing.Point(13, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 4;
@@ -477,7 +515,7 @@
             // 
             // txtLista
             // 
-            this.txtLista.Location = new System.Drawing.Point(70, 33);
+            this.txtLista.Location = new System.Drawing.Point(52, 33);
             this.txtLista.Name = "txtLista";
             this.txtLista.Size = new System.Drawing.Size(73, 20);
             this.txtLista.TabIndex = 1;
@@ -490,7 +528,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(44, 63);
+            this.label2.Location = new System.Drawing.Point(26, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 1;
@@ -501,7 +539,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(35, 37);
+            this.label1.Location = new System.Drawing.Point(17, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
@@ -554,6 +592,7 @@
             this.txtCav8_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav8_2.TabIndex = 29;
             this.txtCav8_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav8_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav8_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav7_2
@@ -561,8 +600,9 @@
             this.txtCav7_2.Location = new System.Drawing.Point(311, 126);
             this.txtCav7_2.Name = "txtCav7_2";
             this.txtCav7_2.Size = new System.Drawing.Size(54, 20);
-            this.txtCav7_2.TabIndex = 28;
+            this.txtCav7_2.TabIndex = 27;
             this.txtCav7_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav7_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav7_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav8_1
@@ -570,8 +610,9 @@
             this.txtCav8_1.Location = new System.Drawing.Point(413, 105);
             this.txtCav8_1.Name = "txtCav8_1";
             this.txtCav8_1.Size = new System.Drawing.Size(54, 20);
-            this.txtCav8_1.TabIndex = 21;
+            this.txtCav8_1.TabIndex = 28;
             this.txtCav8_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav8_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav8_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label15
@@ -590,8 +631,9 @@
             this.txtCav7_1.Location = new System.Drawing.Point(311, 105);
             this.txtCav7_1.Name = "txtCav7_1";
             this.txtCav7_1.Size = new System.Drawing.Size(54, 20);
-            this.txtCav7_1.TabIndex = 20;
+            this.txtCav7_1.TabIndex = 26;
             this.txtCav7_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav7_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav7_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label16
@@ -610,8 +652,9 @@
             this.txtCav6_2.Location = new System.Drawing.Point(207, 127);
             this.txtCav6_2.Name = "txtCav6_2";
             this.txtCav6_2.Size = new System.Drawing.Size(54, 20);
-            this.txtCav6_2.TabIndex = 27;
+            this.txtCav6_2.TabIndex = 25;
             this.txtCav6_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav6_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav6_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav6_1
@@ -619,8 +662,9 @@
             this.txtCav6_1.Location = new System.Drawing.Point(207, 105);
             this.txtCav6_1.Name = "txtCav6_1";
             this.txtCav6_1.Size = new System.Drawing.Size(54, 20);
-            this.txtCav6_1.TabIndex = 19;
+            this.txtCav6_1.TabIndex = 24;
             this.txtCav6_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav6_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav6_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label17
@@ -639,8 +683,9 @@
             this.txtCav5_2.Location = new System.Drawing.Point(100, 127);
             this.txtCav5_2.Name = "txtCav5_2";
             this.txtCav5_2.Size = new System.Drawing.Size(54, 20);
-            this.txtCav5_2.TabIndex = 26;
+            this.txtCav5_2.TabIndex = 23;
             this.txtCav5_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav5_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav5_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav5_1
@@ -648,8 +693,9 @@
             this.txtCav5_1.Location = new System.Drawing.Point(100, 105);
             this.txtCav5_1.Name = "txtCav5_1";
             this.txtCav5_1.Size = new System.Drawing.Size(54, 20);
-            this.txtCav5_1.TabIndex = 18;
+            this.txtCav5_1.TabIndex = 22;
             this.txtCav5_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav5_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav5_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label18
@@ -668,8 +714,9 @@
             this.txtCav4_2.Location = new System.Drawing.Point(413, 65);
             this.txtCav4_2.Name = "txtCav4_2";
             this.txtCav4_2.Size = new System.Drawing.Size(54, 20);
-            this.txtCav4_2.TabIndex = 25;
+            this.txtCav4_2.TabIndex = 21;
             this.txtCav4_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav4_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav4_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav3_2
@@ -677,8 +724,9 @@
             this.txtCav3_2.Location = new System.Drawing.Point(311, 65);
             this.txtCav3_2.Name = "txtCav3_2";
             this.txtCav3_2.Size = new System.Drawing.Size(54, 20);
-            this.txtCav3_2.TabIndex = 24;
+            this.txtCav3_2.TabIndex = 19;
             this.txtCav3_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav3_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav3_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav4_1
@@ -686,8 +734,9 @@
             this.txtCav4_1.Location = new System.Drawing.Point(413, 44);
             this.txtCav4_1.Name = "txtCav4_1";
             this.txtCav4_1.Size = new System.Drawing.Size(54, 20);
-            this.txtCav4_1.TabIndex = 17;
+            this.txtCav4_1.TabIndex = 20;
             this.txtCav4_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav4_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav4_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label14
@@ -706,8 +755,9 @@
             this.txtCav3_1.Location = new System.Drawing.Point(311, 44);
             this.txtCav3_1.Name = "txtCav3_1";
             this.txtCav3_1.Size = new System.Drawing.Size(54, 20);
-            this.txtCav3_1.TabIndex = 16;
+            this.txtCav3_1.TabIndex = 18;
             this.txtCav3_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav3_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav3_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label13
@@ -726,8 +776,9 @@
             this.txtCav2_2.Location = new System.Drawing.Point(207, 66);
             this.txtCav2_2.Name = "txtCav2_2";
             this.txtCav2_2.Size = new System.Drawing.Size(54, 20);
-            this.txtCav2_2.TabIndex = 23;
+            this.txtCav2_2.TabIndex = 17;
             this.txtCav2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav2_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav2_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav2_1
@@ -735,8 +786,9 @@
             this.txtCav2_1.Location = new System.Drawing.Point(207, 44);
             this.txtCav2_1.Name = "txtCav2_1";
             this.txtCav2_1.Size = new System.Drawing.Size(54, 20);
-            this.txtCav2_1.TabIndex = 15;
+            this.txtCav2_1.TabIndex = 16;
             this.txtCav2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav2_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav2_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label12
@@ -755,8 +807,9 @@
             this.txtCav1_2.Location = new System.Drawing.Point(100, 66);
             this.txtCav1_2.Name = "txtCav1_2";
             this.txtCav1_2.Size = new System.Drawing.Size(54, 20);
-            this.txtCav1_2.TabIndex = 22;
+            this.txtCav1_2.TabIndex = 15;
             this.txtCav1_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav1_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav1_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav1_1
@@ -766,6 +819,7 @@
             this.txtCav1_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav1_1.TabIndex = 14;
             this.txtCav1_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav1_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav1_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label11
@@ -817,6 +871,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFecha)).EndInit();
@@ -919,5 +975,8 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement4;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement5;
+        private Telerik.WinControls.UI.RadTextBox txtMuestra;
+        private System.Windows.Forms.Label label20;
+        private Telerik.WinControls.UI.RadTextBox txtIdDetalle;
     }
 }

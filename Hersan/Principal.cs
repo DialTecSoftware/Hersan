@@ -139,7 +139,7 @@ namespace Hersan.UI.Principal
             foreach (Form frm in this.MdiChildren) {
                 if (frm.Name == str) {
                     frm.Activate();
-                    frm.WindowState = FormWindowState.Maximized;
+                    //frm.WindowState = FormWindowState.Maximized;
                     isOpen = true;
                     break;
                 }

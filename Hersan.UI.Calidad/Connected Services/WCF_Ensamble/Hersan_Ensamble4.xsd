@@ -100,4 +100,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ParametrosInyeccion" nillable="true" type="tns:ParametrosInyeccion" />
+  <xs:complexType name="ArrayOfInyeccionBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InyeccionBE" nillable="true" type="tns:InyeccionBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInyeccionBE" nillable="true" type="tns:ArrayOfInyeccionBE" />
 </xs:schema>

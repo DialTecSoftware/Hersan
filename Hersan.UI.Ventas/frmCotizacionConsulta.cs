@@ -107,6 +107,8 @@ namespace Hersan.UI.Ensamble
 
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al seleccionar la cotización\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oEnsamble = null;
             }
         }
 

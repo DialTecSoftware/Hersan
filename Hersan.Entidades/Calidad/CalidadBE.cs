@@ -36,6 +36,8 @@ namespace Hersan.Entidades.Calidad
         public CalidadDetalleBE()
         {
             Id = 0;
+            Hora = new TimeSpan();
+            Resumen = new List<CalidadResumenBE>();
             Cav1_1 = 0;
             Cav1_2 = 0;
             Cav2_1 = 0;
@@ -55,6 +57,7 @@ namespace Hersan.Entidades.Calidad
         }
 
         public int Id { get; set; }
+        public TimeSpan Hora { get; set; }
         public int Cav1_1 { get; set; }
         public int Cav1_2 { get; set; }
         public int Cav2_1 { get; set; }
@@ -71,7 +74,25 @@ namespace Hersan.Entidades.Calidad
         public int Cav7_2 { get; set; }
         public int Cav8_1 { get; set; }
         public int Cav8_2 { get; set; }
+        public List<CalidadResumenBE> Resumen { get; set; }
+    }
 
+    public class CalidadResumenBE
+    {
 
+        public CalidadResumenBE()
+        {
+            Cavidad = 0;
+            Maximo = 0;
+            Minimo = 0;
+            Promedio = 0;
+            DesvEst = 0;
+        }
+
+        public int Cavidad { get; set; }
+        public int Maximo { get; set; }
+        public int Minimo { get; set; }
+        public decimal Promedio { get; set; }
+        public decimal DesvEst { get; set; }
     }
 }

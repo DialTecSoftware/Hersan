@@ -211,6 +211,14 @@ namespace Hersan.Ensamble.Service
         {
             return new NormaBP().CAL_ReflejantesNorma_Obtener();
         }
+        public List<InyeccionBE> CAL_InspeccionInyeccion_Analisis(CalidadBE Obj)
+        {
+            return new CalidadBP().CAL_InspeccionInyeccion_Analisis(Obj);
+        }
+        public List<CalidadDetalleBE> CAL_InspeccionInyeccion_AnalisisDetalle(int Lista)
+        {
+            return new CalidadBP().CAL_InspeccionInyeccion_AnalisisDetalle(Lista);
+        }
         #endregion
     }
 }

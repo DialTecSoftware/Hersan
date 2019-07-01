@@ -120,6 +120,10 @@ namespace Hersan.Ensamble.Contract
         int CAL_ReflejantesNorma_Actualizar(NormaBE Obj);
         [OperationContract]
         List<NormaBE> CAL_ReflejantesNorma_Obtener();
+        [OperationContract]
+        List<InyeccionBE> CAL_InspeccionInyeccion_Analisis(CalidadBE Obj);
+        [OperationContract]
+        List<CalidadDetalleBE> CAL_InspeccionInyeccion_AnalisisDetalle(int Lista);
         #endregion
     }
 }

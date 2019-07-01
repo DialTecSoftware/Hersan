@@ -187,6 +187,8 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble8.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.NormaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />

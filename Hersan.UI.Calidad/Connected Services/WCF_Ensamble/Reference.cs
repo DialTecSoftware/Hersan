@@ -146,6 +146,13 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.NormaBE> CAL_ReflejantesNorma_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Analisis", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionBE> CAL_InspeccionInyeccion_Analisis(Hersan.Entidades.Calidad.CalidadBE Obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalleRespon" +
+            "se")]
+        System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadDetalleBE> CAL_InspeccionInyeccion_AnalisisDetalle(int Lista);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -349,6 +356,14 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.NormaBE> CAL_ReflejantesNorma_Obtener() {
             return base.Channel.CAL_ReflejantesNorma_Obtener();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionBE> CAL_InspeccionInyeccion_Analisis(Hersan.Entidades.Calidad.CalidadBE Obj) {
+            return base.Channel.CAL_InspeccionInyeccion_Analisis(Obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadDetalleBE> CAL_InspeccionInyeccion_AnalisisDetalle(int Lista) {
+            return base.Channel.CAL_InspeccionInyeccion_AnalisisDetalle(Lista);
         }
     }
 }

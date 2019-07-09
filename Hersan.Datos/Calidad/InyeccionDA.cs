@@ -130,6 +130,19 @@ namespace Hersan.Datos.Calidad
                                 obj.Detalle.Cav8 = bool.Parse(reader["CAV8"].ToString());
 
                             }
+
+                            if (reader.NextResult()) {
+                                while (reader.Read()) {
+                                    obj.Norma.Cav1 = decimal.Parse(reader["NOR_Cav1"].ToString());
+                                    obj.Norma.Cav2 = decimal.Parse(reader["NOR_Cav2"].ToString());
+                                    obj.Norma.Cav3 = decimal.Parse(reader["NOR_Cav3"].ToString());
+                                    obj.Norma.Cav4 = decimal.Parse(reader["NOR_Cav4"].ToString());
+                                    obj.Norma.Cav5 = decimal.Parse(reader["NOR_Cav5"].ToString());
+                                    obj.Norma.Cav6 = decimal.Parse(reader["NOR_Cav6"].ToString());
+                                    obj.Norma.Cav7 = decimal.Parse(reader["NOR_Cav7"].ToString());
+                                    obj.Norma.Cav8 = decimal.Parse(reader["NOR_Cav8"].ToString());
+                                }
+                            }
                         }
                     }
                 }

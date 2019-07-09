@@ -38,6 +38,7 @@
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.txtIdDetalle = new Telerik.WinControls.UI.RadTextBox();
@@ -66,7 +67,7 @@
             this.txtLista = new Telerik.WinControls.UI.RadTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
+            this.pnlCaptura = new Telerik.WinControls.UI.RadGroupBox();
             this.txtCav8_2 = new Telerik.WinControls.UI.RadTextBox();
             this.txtCav7_2 = new Telerik.WinControls.UI.RadTextBox();
             this.txtCav8_1 = new Telerik.WinControls.UI.RadTextBox();
@@ -94,6 +95,7 @@
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
@@ -112,8 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOperador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).BeginInit();
-            this.radGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlCaptura)).BeginInit();
+            this.pnlCaptura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav8_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav7_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav8_1)).BeginInit();
@@ -163,7 +165,8 @@
             this.btnGuardar,
             this.commandBarSeparator2,
             this.btnSalir,
-            this.commandBarSeparator3});
+            this.commandBarSeparator3,
+            this.commandBarLabel1});
             this.commandBarStripElement1.Name = "commandBarStripElement1";
             // 
             // 
@@ -219,6 +222,15 @@
             this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
             this.commandBarSeparator3.Name = "commandBarSeparator3";
             this.commandBarSeparator3.VisibleInOverflowMenu = false;
+            // 
+            // commandBarLabel1
+            // 
+            this.commandBarLabel1.DisplayName = "commandBarLabel1";
+            this.commandBarLabel1.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.commandBarLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.commandBarLabel1.Name = "commandBarLabel1";
+            this.commandBarLabel1.StretchHorizontally = true;
+            this.commandBarLabel1.Text = "CALIDAD INYECCIÓN";
             // 
             // commandBarStripElement2
             // 
@@ -545,45 +557,45 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista:";
             // 
-            // radGroupBox3
+            // pnlCaptura
             // 
-            this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox3.Controls.Add(this.txtCav8_2);
-            this.radGroupBox3.Controls.Add(this.txtCav7_2);
-            this.radGroupBox3.Controls.Add(this.txtCav8_1);
-            this.radGroupBox3.Controls.Add(this.label15);
-            this.radGroupBox3.Controls.Add(this.txtCav7_1);
-            this.radGroupBox3.Controls.Add(this.label16);
-            this.radGroupBox3.Controls.Add(this.txtCav6_2);
-            this.radGroupBox3.Controls.Add(this.txtCav6_1);
-            this.radGroupBox3.Controls.Add(this.label17);
-            this.radGroupBox3.Controls.Add(this.txtCav5_2);
-            this.radGroupBox3.Controls.Add(this.txtCav5_1);
-            this.radGroupBox3.Controls.Add(this.label18);
-            this.radGroupBox3.Controls.Add(this.txtCav4_2);
-            this.radGroupBox3.Controls.Add(this.txtCav3_2);
-            this.radGroupBox3.Controls.Add(this.txtCav4_1);
-            this.radGroupBox3.Controls.Add(this.label14);
-            this.radGroupBox3.Controls.Add(this.txtCav3_1);
-            this.radGroupBox3.Controls.Add(this.label13);
-            this.radGroupBox3.Controls.Add(this.txtCav2_2);
-            this.radGroupBox3.Controls.Add(this.txtCav2_1);
-            this.radGroupBox3.Controls.Add(this.label12);
-            this.radGroupBox3.Controls.Add(this.txtCav1_2);
-            this.radGroupBox3.Controls.Add(this.txtCav1_1);
-            this.radGroupBox3.Controls.Add(this.label11);
-            this.radGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGroupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radGroupBox3.ForeColor = System.Drawing.Color.Red;
-            this.radGroupBox3.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
-            this.radGroupBox3.HeaderText = "REFLECTIVIDAD";
-            this.radGroupBox3.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radGroupBox3.Location = new System.Drawing.Point(0, 222);
-            this.radGroupBox3.Name = "radGroupBox3";
-            this.radGroupBox3.Size = new System.Drawing.Size(559, 172);
-            this.radGroupBox3.TabIndex = 4;
-            this.radGroupBox3.Text = "REFLECTIVIDAD";
-            this.radGroupBox3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
+            this.pnlCaptura.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.pnlCaptura.Controls.Add(this.txtCav8_2);
+            this.pnlCaptura.Controls.Add(this.txtCav7_2);
+            this.pnlCaptura.Controls.Add(this.txtCav8_1);
+            this.pnlCaptura.Controls.Add(this.label15);
+            this.pnlCaptura.Controls.Add(this.txtCav7_1);
+            this.pnlCaptura.Controls.Add(this.label16);
+            this.pnlCaptura.Controls.Add(this.txtCav6_2);
+            this.pnlCaptura.Controls.Add(this.txtCav6_1);
+            this.pnlCaptura.Controls.Add(this.label17);
+            this.pnlCaptura.Controls.Add(this.txtCav5_2);
+            this.pnlCaptura.Controls.Add(this.txtCav5_1);
+            this.pnlCaptura.Controls.Add(this.label18);
+            this.pnlCaptura.Controls.Add(this.txtCav4_2);
+            this.pnlCaptura.Controls.Add(this.txtCav3_2);
+            this.pnlCaptura.Controls.Add(this.txtCav4_1);
+            this.pnlCaptura.Controls.Add(this.label14);
+            this.pnlCaptura.Controls.Add(this.txtCav3_1);
+            this.pnlCaptura.Controls.Add(this.label13);
+            this.pnlCaptura.Controls.Add(this.txtCav2_2);
+            this.pnlCaptura.Controls.Add(this.txtCav2_1);
+            this.pnlCaptura.Controls.Add(this.label12);
+            this.pnlCaptura.Controls.Add(this.txtCav1_2);
+            this.pnlCaptura.Controls.Add(this.txtCav1_1);
+            this.pnlCaptura.Controls.Add(this.label11);
+            this.pnlCaptura.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCaptura.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.pnlCaptura.ForeColor = System.Drawing.Color.Red;
+            this.pnlCaptura.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
+            this.pnlCaptura.HeaderText = "REFLECTIVIDAD";
+            this.pnlCaptura.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlCaptura.Location = new System.Drawing.Point(0, 222);
+            this.pnlCaptura.Name = "pnlCaptura";
+            this.pnlCaptura.Size = new System.Drawing.Size(559, 172);
+            this.pnlCaptura.TabIndex = 4;
+            this.pnlCaptura.Text = "REFLECTIVIDAD";
+            this.pnlCaptura.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtCav8_2
             // 
@@ -591,6 +603,7 @@
             this.txtCav8_2.Name = "txtCav8_2";
             this.txtCav8_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav8_2.TabIndex = 29;
+            this.txtCav8_2.Tag = "Cav8";
             this.txtCav8_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav8_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav8_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -601,6 +614,7 @@
             this.txtCav7_2.Name = "txtCav7_2";
             this.txtCav7_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav7_2.TabIndex = 27;
+            this.txtCav7_2.Tag = "Cav7";
             this.txtCav7_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav7_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav7_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -611,6 +625,7 @@
             this.txtCav8_1.Name = "txtCav8_1";
             this.txtCav8_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav8_1.TabIndex = 28;
+            this.txtCav8_1.Tag = "Cav8";
             this.txtCav8_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav8_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav8_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -632,6 +647,7 @@
             this.txtCav7_1.Name = "txtCav7_1";
             this.txtCav7_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav7_1.TabIndex = 26;
+            this.txtCav7_1.Tag = "Cav7";
             this.txtCav7_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav7_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav7_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -653,6 +669,7 @@
             this.txtCav6_2.Name = "txtCav6_2";
             this.txtCav6_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav6_2.TabIndex = 25;
+            this.txtCav6_2.Tag = "Cav6";
             this.txtCav6_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav6_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav6_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -663,6 +680,7 @@
             this.txtCav6_1.Name = "txtCav6_1";
             this.txtCav6_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav6_1.TabIndex = 24;
+            this.txtCav6_1.Tag = "Cav6";
             this.txtCav6_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav6_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav6_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -684,6 +702,7 @@
             this.txtCav5_2.Name = "txtCav5_2";
             this.txtCav5_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav5_2.TabIndex = 23;
+            this.txtCav5_2.Tag = "Cav5";
             this.txtCav5_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav5_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav5_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -694,6 +713,7 @@
             this.txtCav5_1.Name = "txtCav5_1";
             this.txtCav5_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav5_1.TabIndex = 22;
+            this.txtCav5_1.Tag = "Cav5";
             this.txtCav5_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav5_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav5_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -715,6 +735,7 @@
             this.txtCav4_2.Name = "txtCav4_2";
             this.txtCav4_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav4_2.TabIndex = 21;
+            this.txtCav4_2.Tag = "Cav4";
             this.txtCav4_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav4_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav4_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -725,6 +746,7 @@
             this.txtCav3_2.Name = "txtCav3_2";
             this.txtCav3_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav3_2.TabIndex = 19;
+            this.txtCav3_2.Tag = "Cav3";
             this.txtCav3_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav3_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav3_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -735,6 +757,7 @@
             this.txtCav4_1.Name = "txtCav4_1";
             this.txtCav4_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav4_1.TabIndex = 20;
+            this.txtCav4_1.Tag = "Cav4";
             this.txtCav4_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav4_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav4_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -756,6 +779,7 @@
             this.txtCav3_1.Name = "txtCav3_1";
             this.txtCav3_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav3_1.TabIndex = 18;
+            this.txtCav3_1.Tag = "Cav3";
             this.txtCav3_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav3_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav3_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -777,6 +801,7 @@
             this.txtCav2_2.Name = "txtCav2_2";
             this.txtCav2_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav2_2.TabIndex = 17;
+            this.txtCav2_2.Tag = "Cav2";
             this.txtCav2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav2_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav2_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -787,6 +812,7 @@
             this.txtCav2_1.Name = "txtCav2_1";
             this.txtCav2_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav2_1.TabIndex = 16;
+            this.txtCav2_1.Tag = "Cav2";
             this.txtCav2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav2_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav2_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -808,6 +834,7 @@
             this.txtCav1_2.Name = "txtCav1_2";
             this.txtCav1_2.Size = new System.Drawing.Size(54, 20);
             this.txtCav1_2.TabIndex = 15;
+            this.txtCav1_2.Tag = "Cav1";
             this.txtCav1_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav1_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav1_2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -818,6 +845,7 @@
             this.txtCav1_1.Name = "txtCav1_1";
             this.txtCav1_1.Size = new System.Drawing.Size(54, 20);
             this.txtCav1_1.TabIndex = 14;
+            this.txtCav1_1.Tag = "Cav1";
             this.txtCav1_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCav1_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtCav1_1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -848,12 +876,17 @@
             this.commandBarStripElement5.DisplayName = "commandBarStripElement5";
             this.commandBarStripElement5.Name = "commandBarStripElement5";
             // 
+            // commandBarStripElement6
+            // 
+            this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
+            this.commandBarStripElement6.Name = "commandBarStripElement6";
+            // 
             // frmCalidadUno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 394);
-            this.Controls.Add(this.radGroupBox3);
+            this.Controls.Add(this.pnlCaptura);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radCommandBar1);
             this.MaximizeBox = false;
@@ -887,9 +920,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOperador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).EndInit();
-            this.radGroupBox3.ResumeLayout(false);
-            this.radGroupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlCaptura)).EndInit();
+            this.pnlCaptura.ResumeLayout(false);
+            this.pnlCaptura.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav8_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav7_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav8_1)).EndInit();
@@ -947,7 +980,7 @@
         private Telerik.WinControls.UI.RadTextBox txtLista;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Telerik.WinControls.UI.RadGroupBox radGroupBox3;
+        private Telerik.WinControls.UI.RadGroupBox pnlCaptura;
         private Telerik.WinControls.UI.RadTextBox txtCav8_2;
         private Telerik.WinControls.UI.RadTextBox txtCav7_2;
         private Telerik.WinControls.UI.RadTextBox txtCav8_1;
@@ -978,5 +1011,7 @@
         private Telerik.WinControls.UI.RadTextBox txtMuestra;
         private System.Windows.Forms.Label label20;
         private Telerik.WinControls.UI.RadTextBox txtIdDetalle;
+        private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement6;
     }
 }

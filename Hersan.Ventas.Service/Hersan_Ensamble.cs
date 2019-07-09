@@ -8,17 +8,18 @@ using Hersan.Entidades.Ensamble;
 using Hersan.Entidades.Inyeccion;
 using Hersan.Negocio.Calidad;
 using Hersan.Entidades.Calidad;
+using System.Data;
 
 namespace Hersan.Ensamble.Service
 {
     public class Hersan_Ensamble : IHersan_Ensamble
     {
         #region Clientes
-        public int ABC_Clientes_Guardar(System.Data.DataSet Tablas, string Entidades, int IdUsuario)
+        public int ABC_Clientes_Guardar(DataSet Tablas, string Entidades, int IdUsuario)
         {
             return new ClientesBP().ABC_Clientes_Guardar(Tablas, Entidades, IdUsuario);
         }
-        public int ABC_Clientes_Actualizar(System.Data.DataSet Tablas, string Entidades, int IdUsuario, bool Estatus)
+        public int ABC_Clientes_Actualizar(DataSet Tablas, string Entidades, int IdUsuario, bool Estatus)
         {
             return new ClientesBP().ABC_Clientes_Actualizar(Tablas, Entidades, IdUsuario, Estatus);
         }
@@ -79,7 +80,7 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Precios
-        public int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario)
+        public int ENS_Precios_Guardar(DataTable oData, string Moneda, int IdUsuario)
         {
             return new PreciosBP().ENS_Precios_Guardar(oData, Moneda, IdUsuario);
         }
@@ -90,11 +91,11 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Productos
-        public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario)
+        public int ENS_ProductosFicha_Guardar(DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario)
         {
             return new ProductosBP().ENS_ProductosFicha_Guardar(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario);
         }
-        public int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus)
+        public int ENS_ProductosFicha_Actualizar(DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus)
         {
             return new ProductosBP().ENS_ProductosFicha_Actualizar(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
         }
@@ -117,7 +118,7 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Cotizaciones y Pedidos
-        public int ENS_Cotizacion_Guardar(PedidosBE obj, System.Data.DataTable oDetalle)
+        public int ENS_Cotizacion_Guardar(PedidosBE obj, DataTable oDetalle)
         {
             return new PedidosBP().ENS_Cotizacion_Guardar(obj, oDetalle);
         }
@@ -129,15 +130,15 @@ namespace Hersan.Ensamble.Service
         {
             return new PedidosBP().ENS_Cotizacion_Obtener(IdCotizacion);
         }
-        public int ENS_Cotizacion_Actualizar(PedidosBE obj, System.Data.DataTable oDetalle)
+        public int ENS_Cotizacion_Actualizar(PedidosBE obj, DataTable oDetalle)
         {
             return new PedidosBP().ENS_Cotizacion_Actualizar(obj, oDetalle);
         }
-        public System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza)
+        public DataTable ENS_Cotizacion_Reporte(int IdCotiza)
         {
             return new PedidosBP().ENS_Cotizacion_Reporte(IdCotiza);
         }
-        public System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza)
+        public DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza)
         {
             return new PedidosBP().ENS_Cotizacion_ReporteDetalle(IdCotiza);
         }
@@ -152,7 +153,7 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Calidad
-        public int PRO_Inyeccion_Guardar(InyeccionBE Obj, System.Data.DataTable Detalle)
+        public int PRO_Inyeccion_Guardar(InyeccionBE Obj, DataTable Detalle)
         {
             return new InyecccionBP().PRO_Inyeccion_Guardar(Obj, Detalle);
         }
@@ -180,7 +181,7 @@ namespace Hersan.Ensamble.Service
         {
             return new InyecccionBP().PRO_TemperaturasMolde_Obtener();
         }
-        public int PRO_Parametros_Guardar(System.Data.DataTable Tabla)
+        public int PRO_Parametros_Guardar(DataTable Tabla)
         {
             return new InyecccionBP().PRO_Parametros_Guardar(Tabla);
         }
@@ -190,22 +191,22 @@ namespace Hersan.Ensamble.Service
         }
 
 
-        public int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, System.Data.DataTable Detalle)
+        public int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, DataTable Detalle)
         {
             return new CalidadBP().CAL_InspeccionInyeccion_Guarda(Obj, Detalle);
         }
-        public int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, System.Data.DataTable Detalle)
+        public int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, DataTable Detalle)
         {
             return new CalidadBP().CAL_InspeccionInyeccion_Actualiza(IdInyeccion, Detalle);
         }
 
-        public int CAL_ReflejantesNorma_Guardar(NormaBE Obj)
+        public int CAL_ReflejantesNorma_Guardar(DataTable Tabla, int IdUsuario)
         {
-            return new NormaBP().CAL_ReflejantesNorma_Guardar(Obj);
+            return new NormaBP().CAL_ReflejantesNorma_Guardar(Tabla, IdUsuario);
         }
-        public int CAL_ReflejantesNorma_Actualizar(NormaBE Obj)
+        public int CAL_ReflejantesNorma_Actualizar(DataTable Tabla, int IdUsuario, bool Estatus)
         {
-            return new NormaBP().CAL_ReflejantesNorma_Actualizar(Obj);
+            return new NormaBP().CAL_ReflejantesNorma_Actualizar(Tabla, IdUsuario, Estatus);
         }
         public List<NormaBE> CAL_ReflejantesNorma_Obtener()
         {
@@ -219,6 +220,60 @@ namespace Hersan.Ensamble.Service
         {
             return new CalidadBP().CAL_InspeccionInyeccion_AnalisisDetalle(Lista);
         }
+
+        public int PRO_Ensamble_Parametros_Guardar(EnsambleParametrosBE Obj, DataTable Detalle)
+        {
+            return new EnsambleBP().PRO_Ensamble_Parametros_Guardar(Obj, Detalle);
+        }
+        public List<EnsambleParametrosBE> PRO_Ensamble_Parametros_Obtener(EnsambleParametrosBE Obj)
+        {
+            return new EnsambleBP().PRO_Ensamble_Parametros_Obtener(Obj);
+        }
+        public List<CalidadEnsambleBE> CAL_InspeccionEnsamble_Consultar(int Lista)
+        {
+            return new EnsambleBP().CAL_InspeccionEnsamble_Consultar(Lista);
+        }
+
+        public int CAL_InspeccionEnsamble_Guardar(CalidadEnsambleBE Obj, DataTable Detalle)
+        {
+            return new EnsambleBP().CAL_InspeccionEnsamble_Guardar(Obj, Detalle);
+        }
+        public int CAL_InspeccionEnsamble_Actualizar(CalidadEnsambleBE Obj, DataTable Detalle)
+        {
+            return new EnsambleBP().CAL_InspeccionEnsamble_Actualizar(Obj, Detalle);
+        }
+        public List<CalidadEnsambleDetalleBE> CAL_InspeccionEnsamble_Obtener(int Lista)
+        {
+            return new EnsambleBP().CAL_InspeccionEnsamble_Obtener(Lista);
+        }
+
+        public List<CalidadEnsambleBE> CAL_InspeccionEnsamble_Analisis(CalidadEnsambleBE Obj)
+        {
+            return new CalidadBP().CAL_InspeccionEnsamble_Analisis(Obj);
+        }
+        public List<CalidadEnsambleDetalleBE> CAL_InspeccionEnsamble_AnalisisDetalle(int Lista)
+        {
+            return new CalidadBP().CAL_InspeccionEnsamble_AnalisisDetalle(Lista);
+        }
+
+        public int CAL_ResguardoQA_Guardar(CalidadResguardoQA Obj, DataTable Detalle)
+        {
+            return new CalidadBP().CAL_ResguardoQA_Guardar(Obj, Detalle);
+        }
+        public int CAL_ResguardoQA_Actualizar(CalidadResguardoQA Obj, DataTable Detalle)
+        {
+            return new CalidadBP().CAL_ResguardoQA_Actualizar(Obj, Detalle);
+        }
+        public List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto)
+        {
+            return new CalidadBP().CAL_ResguardoQA_Obtener(IdProducto);
+        }
+
+        public List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista)
+        {
+            return new CalidadBP().CAL_AnalisisInyeccion_Histograma(Lista);
+        }
         #endregion
     }
 }
+    

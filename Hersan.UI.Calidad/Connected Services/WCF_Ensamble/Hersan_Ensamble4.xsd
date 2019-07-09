@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" />
   <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="InyeccionBE">
     <xs:sequence>
@@ -10,6 +11,7 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
       <xs:element minOccurs="0" name="Muestra" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Norma" nillable="true" type="q2:NormaBE" />
       <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -32,6 +34,14 @@
       <xs:element minOccurs="0" name="Lista" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Master" type="xs:decimal" />
       <xs:element minOccurs="0" name="Muestra" type="xs:int" />
+      <xs:element minOccurs="0" name="NCav1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav7" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav8" type="xs:decimal" />
       <xs:element minOccurs="0" name="Piezas" type="xs:int" />
       <xs:element minOccurs="0" name="Porcentaje" type="xs:decimal" />
       <xs:element minOccurs="0" name="Real" type="xs:int" />

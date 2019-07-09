@@ -15,6 +15,7 @@ namespace Hersan.UI.Calidad
     public partial class frmCalidadUno : Telerik.WinControls.UI.RadForm
     {
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
+        private List<NormaBE> oNorma = new List<NormaBE>();
 
         public frmCalidadUno()
         {
@@ -41,7 +42,7 @@ namespace Hersan.UI.Calidad
         private void txtLista_KeyDown(object sender, KeyEventArgs e)
         {
             try {
-                if (e.KeyData == Keys.Enter || e.KeyData == Keys.F3) {
+                if (e.KeyData == Keys.Enter || (e.KeyCode == Keys.F3)) {
                     CargarDatos();
                 }
             } catch (Exception ex) {
@@ -52,7 +53,7 @@ namespace Hersan.UI.Calidad
         {
             try {
                 if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return)) {
-                    SendKeys.Send("{TAB}");
+                    ValidarNorma(sender);                    
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -111,7 +112,7 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-       
+
         private void CargarDatos()
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
@@ -149,6 +150,10 @@ namespace Hersan.UI.Calidad
                         txtCav7_2.Enabled = Obj.Detalle.Cav7;
                         txtCav8_1.Enabled = Obj.Detalle.Cav8;
                         txtCav8_2.Enabled = Obj.Detalle.Cav8;
+                        #endregion
+
+                        #region NORMA X CAVIDAD
+                        oNorma.Add(Obj.Norma);
                         #endregion
 
                         SendKeys.Send("{TAB}");
@@ -235,44 +240,88 @@ namespace Hersan.UI.Calidad
                 txtVirgen.Clear();
                 Detalle = true;
 
-                #region CAVIDADES                         
-                txtCav1_1.Enabled = false;
-                txtCav1_2.Enabled = false;
-                txtCav2_1.Enabled = false;
-                txtCav2_2.Enabled = false;
-                txtCav3_1.Enabled = false;
-                txtCav3_2.Enabled = false;
-                txtCav4_1.Enabled = false; 
-                txtCav4_2.Enabled = false;
-                txtCav5_1.Enabled = false;
-                txtCav5_2.Enabled = false;
-                txtCav6_1.Enabled = false;
-                txtCav6_2.Enabled = false;
-                txtCav7_1.Enabled = false;
-                txtCav7_2.Enabled = false;
-                txtCav8_1.Enabled = false;
-                txtCav8_2.Enabled = false;
+                #region SE DESHABILITAN LAS CAVIDADES
+                foreach (Control ctrl in pnlCaptura.Controls) {
+                    if (ctrl is Telerik.WinControls.UI.RadTextBox) {
+                        if (ctrl.Name.Contains("txtCav")) {
+                            ctrl.Enabled = false;
+                        }
+                    }
+                }               
                 #endregion
             }
             if (Detalle) {
-                txtCav1_1.Clear();
-                txtCav1_2.Clear();
-                txtCav2_1.Clear();
-                txtCav2_2.Clear();
-                txtCav3_1.Clear();
-                txtCav3_2.Clear();
-                txtCav4_1.Clear();
-                txtCav4_2.Clear();
-                txtCav5_1.Clear();
-                txtCav5_2.Clear();
-                txtCav6_1.Clear();
-                txtCav6_2.Clear();
-                txtCav7_1.Clear();
-                txtCav7_2.Clear();
-                txtCav8_1.Clear();
-                txtCav8_2.Clear();
+                foreach (Control ctrl in pnlCaptura.Controls) {
+                    if (ctrl is Telerik.WinControls.UI.RadTextBox) {
+                        if (ctrl.Name.Contains("txtCav")) {
+                            ctrl.Text = "";
+                            ctrl.BackColor = Color.White;
+                        }
+                    }
+                }
             }
         }
-
+        private void ValidarNorma(Object sender)
+        {
+            try {
+                Control ctrl = (Telerik.WinControls.UI.RadTextBox)sender;
+                if (ctrl.Text.Trim().Length > 0) {
+                    switch (ctrl.Tag) {
+                        case "Cav1":
+                            if (decimal.Parse(ctrl.Text) < oNorma[0].Cav1) {
+                                ctrl.BackColor = Color.Red;
+                                RadMessageBox.Show("El reflejante capturado no cumple con la Norma", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            }
+                            break;
+                        case "Cav2":
+                            if (decimal.Parse(ctrl.Text) < oNorma[0].Cav2) {
+                                ctrl.BackColor = Color.Red;
+                                RadMessageBox.Show("El reflejante capturado no cumple con la Norma", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            }
+                            break;
+                        case "Cav3":
+                            if (decimal.Parse(ctrl.Text) < oNorma[0].Cav3) {
+                                ctrl.BackColor = Color.Red;
+                                RadMessageBox.Show("El reflejante capturado no cumple con la Norma", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            }
+                            break;
+                        case "Cav4":
+                            if (decimal.Parse(ctrl.Text) < oNorma[0].Cav4) {
+                                ctrl.BackColor = Color.Red;
+                                RadMessageBox.Show("El reflejante capturado no cumple con la Norma", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            }
+                            break;
+                        case "Cav5":
+                            if (decimal.Parse(ctrl.Text) < oNorma[0].Cav5) {
+                                ctrl.BackColor = Color.Red;
+                                RadMessageBox.Show("El reflejante no capturado cumple con la Norma", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            }
+                            break;
+                        case "Cav6":
+                            if (decimal.Parse(ctrl.Text) < oNorma[0].Cav6) {
+                                ctrl.BackColor = Color.Red;
+                                RadMessageBox.Show("El reflejante no capturado cumple con la Norma", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            }
+                            break;
+                        case "Cav7":
+                            if (decimal.Parse(ctrl.Text) < oNorma[0].Cav7) {
+                                ctrl.BackColor = Color.Red;
+                                RadMessageBox.Show("El reflejante no capturado cumple con la Norma", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            }
+                            break;
+                        case "Cav8":
+                            if (decimal.Parse(ctrl.Text) < oNorma[0].Cav8) {
+                                ctrl.BackColor = Color.Red;
+                                RadMessageBox.Show("El reflejante no capturado cumple con la Norma", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            }
+                            break;
+                    }
+                    SendKeys.Send("{TAB}");
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+       
     }
 }

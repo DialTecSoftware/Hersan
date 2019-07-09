@@ -1,5 +1,4 @@
 ﻿using Hersan.Entidades.Calidad;
-using Hersan.Entidades.Inyeccion;
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
@@ -8,29 +7,27 @@ using Telerik.WinControls;
 
 namespace Hersan.UI.Calidad
 {
-    public partial class frmCalidadAnalisis : Telerik.WinControls.UI.RadForm
+    public partial class frmCalidadEnsambleAnalisis : Telerik.WinControls.UI.RadForm
     {
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
-        List<InyeccionBE> oList;
-        List<CalidadDetalleBE> oDetalle;
+        List<CalidadEnsambleBE> oList;
+        List<CalidadEnsambleDetalleBE> oDetalle;
 
-        public frmCalidadAnalisis()
+        public frmCalidadEnsambleAnalisis()
         {
             InitializeComponent();
         }
-        private void frmCalidadAnalisis_Load(object sender, EventArgs e)
+        private void frmCalidadEnsambleAnalisis_Load(object sender, EventArgs e)
         {
             try {
                 dtInicial.Value = DateTime.Today;
                 dtInicial.Checked = false;
                 dtFinal.Enabled = dtInicial.Checked;
 
-                dtHInicial.Value = DateTime.Now.ToLocalTime();
-                dtHInicial.Checked = false;
-                dtHFinal.Enabled = dtInicial.Checked;
-
-                CargarColores();
+                CargarProductos();
+                CargaCarcasas();
+                CargaReflejantes();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -40,20 +37,21 @@ namespace Hersan.UI.Calidad
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
 
             try {
-                CalidadBE Obj = new CalidadBE();
-                Obj.Inyeccion.OP = txtOp.Text;
-                Obj.Inyeccion.Color.Nombre = cboColores.SelectedValue.ToString();
-                Obj.Inyeccion.Detalle.Lista = txtLista.Text;
-                Obj.Inyeccion.Detalle.Turno = txtTurno.Text;
+                CalidadEnsambleBE Obj = new CalidadEnsambleBE();
+                
+                Obj.Parametros.OP = txtOp.Text;
+                Obj.Parametros.Lista = txtLista.Text.Trim().Length == 0 ? 0 : int.Parse(txtLista.Text);
+                Obj.Parametros.Producto.Id = cboProducto.SelectedValue == null ? 0 : int.Parse(cboProducto.SelectedValue.ToString());
+                Obj.Parametros.Carcasa.Id = cboCarcasa.SelectedValue == null ? 0 : int.Parse(cboCarcasa.SelectedValue.ToString());
+                Obj.Parametros.Reflex1.Id = cboReflejante1.SelectedValue == null ? 0 : int.Parse(cboReflejante1.SelectedValue.ToString());
+                Obj.Parametros.Reflex2.Id = cboReflejante2.SelectedValue == null ? 0 : int.Parse(cboReflejante1.SelectedValue.ToString());
                 Obj.Operador = txtOperador.Text;
-                Obj.Inyeccion.Fecha = DateTime.Parse(dtInicial.Checked ? dtInicial.Value.Year.ToString() + "/" + dtInicial.Value.Month.ToString().PadLeft(2, '0')
+                Obj.Parametros.DatosUsuario.FechaCreacion = DateTime.Parse(dtInicial.Checked ? dtInicial.Value.Year.ToString() + "/" + dtInicial.Value.Month.ToString().PadLeft(2, '0')
                     + "/" + dtInicial.Value.Day.ToString().PadLeft(2, '0') : "1900/01/01");
-                Obj.Inyeccion.Detalle.Fecha = DateTime.Parse(dtInicial.Checked ? dtFinal.Value.Year.ToString() + "/" + dtFinal.Value.Month.ToString().PadLeft(2, '0')
+                Obj.Parametros.DatosUsuario.FechaModif = DateTime.Parse(dtInicial.Checked ? dtFinal.Value.Year.ToString() + "/" + dtFinal.Value.Month.ToString().PadLeft(2, '0')
                     + "/" + dtFinal.Value.Day.ToString().PadLeft(2, '0') : "2900/01/01");
-                Obj.Inyeccion.Detalle.Inicio = TimeSpan.Parse(dtHInicial.Checked ? dtHInicial.Value.ToString() : "00:00:00");
-                Obj.Inyeccion.Detalle.Fin = TimeSpan.Parse(dtHInicial.Checked ? dtHFinal.Value.ToString() : "23:59:00");
 
-                oList = oEnsamble.CAL_InspeccionInyeccion_Analisis(Obj);
+                oList = oEnsamble.CAL_InspeccionEnsamble_Analisis(Obj);
                 if (oList.Count > 0)
                     gvDatos.DataSource = oList;
                 else {
@@ -70,20 +68,7 @@ namespace Hersan.UI.Calidad
         }
         private void btnGrafica1_Click(object sender, EventArgs e)
         {
-            try {
-                if (gvDetalle.RowCount > 0) {
-                    frmHistograma frm = new frmHistograma();
-                    frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
-                    frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
-                    frm.StartPosition = FormStartPosition.CenterScreen;
-                    //frm.WindowState = FormWindowState.Maximized;
-                    frm.ShowDialog();
-                } else {
-                    RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                }
-            } catch (Exception ex) {
-                throw ex;
-            }
+
         }
         private void btnGrafica2_Click(object sender, EventArgs e)
         {
@@ -123,22 +108,6 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al cambiar la fecha\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-        private void dtHInicial_CheckedChanged(object sender, EventArgs e)
-        {
-            try {
-                dtHFinal.Enabled = dtHInicial.Checked;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al seleccionar la hora\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void dtHInicial_ValueChanged(object sender, EventArgs e)
-        {
-            try {
-                dtHFinal.MinDate = dtHInicial.Value;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cambiar la hora\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
@@ -147,7 +116,7 @@ namespace Hersan.UI.Calidad
                 gvResumen.DataSource = null;
 
                 if (gvDatos.RowCount > 0) {
-                    oDetalle = oEnsamble.CAL_InspeccionInyeccion_AnalisisDetalle(int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString()));
+                    oDetalle = oEnsamble.CAL_InspeccionEnsamble_AnalisisDetalle(int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString()));
                     gvDetalle.DataSource = oDetalle;
                     gvResumen.DataSource = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
                 }
@@ -158,13 +127,45 @@ namespace Hersan.UI.Calidad
             }
         }
 
-        private void CargarColores()
+
+        private void CargarProductos()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                cboColores.DisplayMember = "Nombre";
-                cboColores.ValueMember = "Nombre";
-                cboColores.DataSource = oCatalogos.ABC_Colores_Combo();
+                cboProducto.DisplayMember = "Nombre";
+                cboProducto.ValueMember = "Id";
+                cboProducto.DataSource = oCatalogos.ENS_TipoProducto_Combo(0);
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oCatalogos = null;
+            }
+        }
+        private void CargaCarcasas()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboCarcasa.DisplayMember = "Nombre";
+                cboCarcasa.ValueMember = "Id";
+                cboCarcasa.DataSource = oCatalogos.ABC_Colores_Combo();
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oCatalogos = null;
+            }
+        }
+        private void CargaReflejantes()
+        {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
+            try {
+                cboReflejante1.DisplayMember = "Nombre";
+                cboReflejante1.ValueMember = "Id";
+                cboReflejante1.DataSource = oCatalogos.ABC_Colores_Combo();
+
+                cboReflejante2.DisplayMember = "Nombre";
+                cboReflejante2.ValueMember = "Id";
+                cboReflejante2.DataSource = oCatalogos.ABC_Colores_Combo();
+
             } catch (Exception ex) {
                 throw ex;
             } finally {

@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Catalogos;
+﻿using Hersan.Entidades.Calidad;
+using Hersan.Entidades.Catalogos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Hersan.Entidades.Inyeccion
             Muestra = 0;
             Color = new ColoresBE();
             Detalle = new InyeccionDetalleBE();
+            Norma = new NormaBE();
             IdUsuario = 0;
             Fecha = DateTime.Today;
         }
@@ -29,6 +31,7 @@ namespace Hersan.Entidades.Inyeccion
         public DateTime Fecha { get; set; }
         public ColoresBE Color { get; set; }
         public InyeccionDetalleBE Detalle { get; set; }
+        public NormaBE Norma { get; set; }
     }
 
     public class InyeccionDetalleBE
@@ -79,6 +82,15 @@ namespace Hersan.Entidades.Inyeccion
         public bool Cav6 { get; set; }
         public bool Cav7 { get; set; }
         public bool Cav8 { get; set; }
+
+        public decimal NCav1 { get; set; }
+        public decimal NCav2 { get; set; }
+        public decimal NCav3 { get; set; }
+        public decimal NCav4 { get; set; }
+        public decimal NCav5 { get; set; }
+        public decimal NCav6 { get; set; }
+        public decimal NCav7 { get; set; }
+        public decimal NCav8 { get; set; }
     }
 
     public class TemperaturasBE

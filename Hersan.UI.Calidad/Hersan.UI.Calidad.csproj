@@ -52,6 +52,7 @@
       <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.GridView, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.RadDock, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
@@ -80,17 +81,47 @@
     <Compile Include="frmCalidadAnalisis.Designer.cs">
       <DependentUpon>frmCalidadAnalisis.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCalidadDos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadDos.Designer.cs">
+      <DependentUpon>frmCalidadDos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadEnsambleAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadEnsambleAnalisis.Designer.cs">
+      <DependentUpon>frmCalidadEnsambleAnalisis.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCalidadUno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCalidadUno.Designer.cs">
       <DependentUpon>frmCalidadUno.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEnsambleSup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnsambleSup.Designer.cs">
+      <DependentUpon>frmEnsambleSup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistograma.Designer.cs">
+      <DependentUpon>frmHistograma.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInyeccion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInyeccion.Designer.cs">
       <DependentUpon>frmInyeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMuestreoQA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMuestreoQA.Designer.cs">
+      <DependentUpon>frmMuestreoQA.cs</DependentUpon>
     </Compile>
     <Compile Include="frmParametros.cs">
       <SubType>Form</SubType>
@@ -114,11 +145,26 @@
     <EmbeddedResource Include="frmCalidadAnalisis.resx">
       <DependentUpon>frmCalidadAnalisis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadDos.resx">
+      <DependentUpon>frmCalidadDos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadEnsambleAnalisis.resx">
+      <DependentUpon>frmCalidadEnsambleAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCalidadUno.resx">
       <DependentUpon>frmCalidadUno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEnsambleSup.resx">
+      <DependentUpon>frmEnsambleSup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistograma.resx">
+      <DependentUpon>frmHistograma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInyeccion.resx">
       <DependentUpon>frmInyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMuestreoQA.resx">
+      <DependentUpon>frmMuestreoQA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmParametros.resx">
       <DependentUpon>frmParametros.cs</DependentUpon>
@@ -189,6 +235,13 @@
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadDetalleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadEnsambleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficas.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficasCavidades.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadResguardoQA.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.EnsambleParametrosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.EnsambleParametrosDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.NormaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />

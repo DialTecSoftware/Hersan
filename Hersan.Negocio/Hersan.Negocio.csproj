@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BaseWinBP.cs" />
     <Compile Include="Calidad\CalidadBP.cs" />
+    <Compile Include="Calidad\EnsambleBP.cs" />
     <Compile Include="Calidad\InyecccionBP.cs" />
     <Compile Include="Calidad\NormaBP.cs" />
     <Compile Include="CapitalHumano\CompetenciasBP.cs" />

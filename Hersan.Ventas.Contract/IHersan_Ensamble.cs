@@ -3,6 +3,7 @@ using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Ensamble;
 using Hersan.Entidades.Inyeccion;
 using System.Collections.Generic;
+using System.Data;
 using System.ServiceModel;
 
 namespace Hersan.Ensamble.Contract
@@ -12,9 +13,9 @@ namespace Hersan.Ensamble.Contract
     {
         #region Clientes
         [OperationContract]
-        int ABC_Clientes_Guardar(System.Data.DataSet Tablas, string Entidades, int IdUsuario);
+        int ABC_Clientes_Guardar(DataSet Tablas, string Entidades, int IdUsuario);
         [OperationContract]
-        int ABC_Clientes_Actualizar(System.Data.DataSet Tablas, string Entidades, int IdUsuario, bool Estatus);
+        int ABC_Clientes_Actualizar(DataSet Tablas, string Entidades, int IdUsuario, bool Estatus);
         [OperationContract]
         List<ClientesBE> ABC_Clientes_Buscar(ClientesBE Lista, string Entidades);
         [OperationContract]
@@ -49,16 +50,16 @@ namespace Hersan.Ensamble.Contract
 
         #region Precios
         [OperationContract]
-        int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario);
+        int ENS_Precios_Guardar(DataTable oData, string Moneda, int IdUsuario);
         [OperationContract]
         List<PreciosBE> ENS_Precios_Obtener(string Moneda);
         #endregion
 
         #region Productos
         [OperationContract]
-        int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
+        int ENS_ProductosFicha_Guardar(DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
         [OperationContract]
-        int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus);
+        int ENS_ProductosFicha_Actualizar(DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus);
         [OperationContract]
         List<ProductoEnsambleBE> ENS_ProductosFicha_Obtener(ProductoEnsambleBE obj);
         [OperationContract]
@@ -71,17 +72,17 @@ namespace Hersan.Ensamble.Contract
 
         #region Cotizaciones y Pedidos
         [OperationContract]
-        int ENS_Cotizacion_Guardar(PedidosBE obj, System.Data.DataTable oDetalle);
+        int ENS_Cotizacion_Guardar(PedidosBE obj, DataTable oDetalle);
         [OperationContract]
         List<PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final);
         [OperationContract]
         List<PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion);
         [OperationContract]
-        int ENS_Cotizacion_Actualizar(PedidosBE obj, System.Data.DataTable oDetalle);
+        int ENS_Cotizacion_Actualizar(PedidosBE obj, DataTable oDetalle);
         [OperationContract]
-        System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza);
+        DataTable ENS_Cotizacion_Reporte(int IdCotiza);
         [OperationContract]
-        System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza);
+        DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza);
         [OperationContract]
         List<PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final);
         [OperationContract]
@@ -91,7 +92,7 @@ namespace Hersan.Ensamble.Contract
 
         #region Calidad
         [OperationContract]
-        int PRO_Inyeccion_Guardar(InyeccionBE Obj, System.Data.DataTable Detalle);
+        int PRO_Inyeccion_Guardar(InyeccionBE Obj, DataTable Detalle);
         [OperationContract]
         List<InyeccionDetalleBE> PRO_Inyeccion_Obtener(InyeccionBE Obj);
         [OperationContract]
@@ -105,25 +106,54 @@ namespace Hersan.Ensamble.Contract
         [OperationContract]
         TempMoldesBE PRO_TemperaturasMolde_Obtener();
         [OperationContract]
-        int PRO_Parametros_Guardar(System.Data.DataTable Tabla);
+        int PRO_Parametros_Guardar(DataTable Tabla);
         [OperationContract]
         ParametrosInyeccion PRO_Parametros_Obtener();
 
         [OperationContract]
-        int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, System.Data.DataTable Detalle);
+        int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, DataTable Detalle);
         [OperationContract]
-        int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, System.Data.DataTable Detalle);
+        int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, DataTable Detalle);
 
         [OperationContract]
-        int CAL_ReflejantesNorma_Guardar(NormaBE Obj);
+        int CAL_ReflejantesNorma_Guardar(DataTable Tabla, int IdUsuario);
         [OperationContract]
-        int CAL_ReflejantesNorma_Actualizar(NormaBE Obj);
+        int CAL_ReflejantesNorma_Actualizar(DataTable Tabla, int IdUsuario, bool Estatus);
         [OperationContract]
         List<NormaBE> CAL_ReflejantesNorma_Obtener();
         [OperationContract]
         List<InyeccionBE> CAL_InspeccionInyeccion_Analisis(CalidadBE Obj);
         [OperationContract]
         List<CalidadDetalleBE> CAL_InspeccionInyeccion_AnalisisDetalle(int Lista);
+
+        [OperationContract]
+        int PRO_Ensamble_Parametros_Guardar(EnsambleParametrosBE Obj, DataTable Detalle);
+        [OperationContract]
+        List<EnsambleParametrosBE> PRO_Ensamble_Parametros_Obtener(EnsambleParametrosBE Obj);
+        [OperationContract]
+        List<CalidadEnsambleBE> CAL_InspeccionEnsamble_Consultar(int Lista);
+
+        [OperationContract]
+        int CAL_InspeccionEnsamble_Guardar(CalidadEnsambleBE Obj, DataTable Detalle);
+        [OperationContract]
+        int CAL_InspeccionEnsamble_Actualizar(CalidadEnsambleBE Obj, DataTable Detalle);
+        [OperationContract]
+        List<CalidadEnsambleDetalleBE> CAL_InspeccionEnsamble_Obtener(int Lista);
+
+        [OperationContract]
+        List<CalidadEnsambleBE> CAL_InspeccionEnsamble_Analisis(CalidadEnsambleBE Obj);
+        [OperationContract]
+        List<CalidadEnsambleDetalleBE> CAL_InspeccionEnsamble_AnalisisDetalle(int Lista);
+
+        [OperationContract]
+        int CAL_ResguardoQA_Guardar(CalidadResguardoQA Obj, DataTable Detalle);
+        [OperationContract]
+        int CAL_ResguardoQA_Actualizar(CalidadResguardoQA Obj, DataTable Detalle);
+        [OperationContract]
+        List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto);
+
+        [OperationContract]
+        List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista);
         #endregion
     }
 }

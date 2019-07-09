@@ -94,6 +94,7 @@ namespace Hersan.UI.Calidad
                         LineSeries lineSeries = new LineSeries();
                         LineSeries Max = new LineSeries();
                         LineSeries Min = new LineSeries();
+                        LineSeries Norma = new LineSeries();
                         oList[0].Valores.ForEach(item => {
                         if (Aux.Tag.ToString() == "Cav1") {
                                 vMax = Resumen[0].Promedio + (3 * Resumen[0].DesvEst);
@@ -101,6 +102,7 @@ namespace Hersan.UI.Calidad
                                 Max.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMax.ToString()), item.Hora));
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val1, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
+                                Norma.DataPoints.Add(new CategoricalDataPoint(double.Parse(oList[0].Norma.Cav1.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav2") {
                                 vMax = Resumen[1].Promedio + (3 * Resumen[1].DesvEst);
@@ -108,6 +110,7 @@ namespace Hersan.UI.Calidad
                                 Max.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMax.ToString()), item.Hora));
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val2, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
+                                Norma.DataPoints.Add(new CategoricalDataPoint(double.Parse(oList[0].Norma.Cav2.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav3") {
                                 vMax = Resumen[2].Promedio + (3 * Resumen[2].DesvEst);
@@ -115,6 +118,7 @@ namespace Hersan.UI.Calidad
                                 Max.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMax.ToString()), item.Hora));
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val3, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
+                                Norma.DataPoints.Add(new CategoricalDataPoint(double.Parse(oList[0].Norma.Cav3.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav4") {
                                 vMax = Resumen[3].Promedio + (3 * Resumen[3].DesvEst);
@@ -122,6 +126,7 @@ namespace Hersan.UI.Calidad
                                 Max.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMax.ToString()), item.Hora));
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val4, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
+                                Norma.DataPoints.Add(new CategoricalDataPoint(double.Parse(oList[0].Norma.Cav4.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav5") {
                                 vMax = Resumen[4].Promedio + (3 * Resumen[4].DesvEst);
@@ -129,6 +134,7 @@ namespace Hersan.UI.Calidad
                                 Max.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMax.ToString()), item.Hora));
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val5, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
+                                Norma.DataPoints.Add(new CategoricalDataPoint(double.Parse(oList[0].Norma.Cav5.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav6") {
                                 vMax = Resumen[5].Promedio + (3 * Resumen[5].DesvEst);
@@ -136,6 +142,7 @@ namespace Hersan.UI.Calidad
                                 Max.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMax.ToString()), item.Hora));
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val6, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
+                                Norma.DataPoints.Add(new CategoricalDataPoint(double.Parse(oList[0].Norma.Cav6.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav7") {
                                 vMax = Resumen[6].Promedio + (3 * Resumen[6].DesvEst);
@@ -143,6 +150,7 @@ namespace Hersan.UI.Calidad
                                 Max.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMax.ToString()), item.Hora));
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val7, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
+                                Norma.DataPoints.Add(new CategoricalDataPoint(double.Parse(oList[0].Norma.Cav7.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav8") {
                                 vMax = Resumen[7].Promedio + (3 * Resumen[7].DesvEst);
@@ -150,12 +158,14 @@ namespace Hersan.UI.Calidad
                                 Max.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMax.ToString()), item.Hora));
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val8, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
+                                Norma.DataPoints.Add(new CategoricalDataPoint(double.Parse(oList[0].Norma.Cav8.ToString()), item.Hora));
                             }
                         });
 
                         chart.Series.Add(lineSeries);
                         chart.Series.Add(Max);
                         chart.Series.Add(Min);
+                        chart.Series.Add(Norma);
                         chart.Dock = DockStyle.Fill;
                         Aux.Controls.Add(chart);
                     }

@@ -284,6 +284,7 @@ namespace Hersan.Datos.Calidad
                         cmd.Parameters.AddWithValue("@Reflex1", Obj.Reflex1.Id);
                         cmd.Parameters.AddWithValue("@Reflex2", Obj.Reflex2.Id);
                         cmd.Parameters.AddWithValue("@Piezas", Obj.Piezas);
+                        cmd.Parameters.AddWithValue("@Fecha", Obj.Fecha);
                         cmd.Parameters.AddWithValue("@Detalle", Detalle);
                         cmd.Parameters.AddWithValue("@IdUsuario", Obj.IdUsuario);
 
@@ -316,7 +317,7 @@ namespace Hersan.Datos.Calidad
                 throw ex;
             }
         }
-        public List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto)
+        public List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha)
         {
             List<CalidadResguardoQA> oList = new List<CalidadResguardoQA>();
             try {
@@ -324,6 +325,7 @@ namespace Hersan.Datos.Calidad
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_CAL_RESGUARDOQA_OBTENER, conn)) {
                         cmd.Parameters.AddWithValue("@IdProducto", IdProducto);
+                        cmd.Parameters.AddWithValue("@Fecha", Fecha);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
@@ -350,9 +352,12 @@ namespace Hersan.Datos.Calidad
                                         Item.IdResguardo = int.Parse(reader["RES_Id"].ToString());
                                         Item.Lote = reader["Lote"].ToString();
                                         Item.Valor0 = int.Parse(reader["Valor0"].ToString());
-                                        Item.Valor1 = int.Parse(reader["Valor0"].ToString());
-                                        Item.Valor2 = int.Parse(reader["Valor0"].ToString());
+                                        Item.Valor1 = int.Parse(reader["Valor1"].ToString());
+                                        Item.Valor2 = int.Parse(reader["Valor2"].ToString());
                                         Item.Lista = int.Parse(reader["Lista"].ToString());
+                                        Item.Promedio = int.Parse(reader["Promedio"].ToString());
+                                        Item.Minimo = int.Parse(reader["Minimo"].ToString());
+                                        Item.Maximo = int.Parse(reader["Maximo"].ToString());
                                         Item.OP = reader["OP"].ToString();
 
                                         oList[0].Detalle.Add(Item);                                    }
@@ -465,6 +470,20 @@ namespace Hersan.Datos.Calidad
                                             Item.Val8 = int.Parse(reader["Cav8"].ToString());
 
                                             oList[0].Valores.Add(Item);
+                                        }
+                                    }
+
+                                    /* VALORES DE LA NORMA POR CAVIDAD */
+                                    if (reader.NextResult()) {
+                                        while (reader.Read()) {
+                                            Obj.Norma.Cav1 = decimal.Parse(reader["NOR_Cav1"].ToString());
+                                            Obj.Norma.Cav2 = decimal.Parse(reader["NOR_Cav2"].ToString());
+                                            Obj.Norma.Cav3 = decimal.Parse(reader["NOR_Cav3"].ToString());
+                                            Obj.Norma.Cav4 = decimal.Parse(reader["NOR_Cav4"].ToString());
+                                            Obj.Norma.Cav5 = decimal.Parse(reader["NOR_Cav5"].ToString());
+                                            Obj.Norma.Cav6 = decimal.Parse(reader["NOR_Cav6"].ToString());
+                                            Obj.Norma.Cav7 = decimal.Parse(reader["NOR_Cav7"].ToString());
+                                            Obj.Norma.Cav8 = decimal.Parse(reader["NOR_Cav8"].ToString());
                                         }
                                     }
                                 }

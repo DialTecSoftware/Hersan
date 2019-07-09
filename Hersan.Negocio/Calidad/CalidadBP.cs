@@ -44,9 +44,9 @@ namespace Hersan.Negocio.Calidad
         {
             return new CalidadDA().CAL_ResguardoQA_Actualizar(Obj, Detalle);
         }
-        public List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto)
+        public List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha)
         {
-            return new CalidadDA().CAL_ResguardoQA_Obtener(IdProducto);
+            return new CalidadDA().CAL_ResguardoQA_Obtener(IdProducto, Fecha);
         }
 
         public List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista)

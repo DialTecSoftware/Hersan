@@ -169,7 +169,7 @@ namespace Hersan.Entidades.Calidad
             Reflex1 = new ColoresBE();
             Reflex2 = new ColoresBE();
             Piezas = 0;
-            Fecha = DateTime.Today;
+            Fecha = string.Empty;
             IdUsuario = 0;
             Detalle = new List<CalidadResguardoQADetalle>();
         }
@@ -181,7 +181,7 @@ namespace Hersan.Entidades.Calidad
         public ColoresBE Reflex1 { get; set; }
         public ColoresBE Reflex2 { get; set; }
         public int Piezas { get; set; }
-        public DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
         public int IdUsuario { get; set; }
         public List<CalidadResguardoQADetalle> Detalle { get; set; }
 
@@ -198,6 +198,9 @@ namespace Hersan.Entidades.Calidad
             Valor1 = 0;
             Valor2 = 0;
             Lista = 0;
+            Promedio = 0;
+            Maximo = 0;
+            Minimo = 0;
             OP = string.Empty;
             Fecha = DateTime.Today;
             IdUsuario = 0;
@@ -210,6 +213,9 @@ namespace Hersan.Entidades.Calidad
         public int Valor1 { get; set; }
         public int Valor2 { get; set; }
         public int Lista { get; set; }
+        public int Promedio { get; set; }
+        public decimal Maximo { get; set; }
+        public decimal Minimo { get; set; }
         public string OP { get; set; }
         public DateTime Fecha { get; set; }
         public int IdUsuario { get; set; }
@@ -228,6 +234,7 @@ namespace Hersan.Entidades.Calidad
             Cav7 = false;
             Cav8 = false;
             Valores = new List<CalidadGraficasValores>();
+            Norma = new NormaBE();
         }
 
         public bool Cav1 { get; set; }
@@ -239,7 +246,8 @@ namespace Hersan.Entidades.Calidad
         public bool Cav7 { get; set; }
         public bool Cav8 { get; set; }
         public List<CalidadGraficasValores> Valores { get; set; }
-        
+        public NormaBE Norma { get; set; }
+
 
     }
 

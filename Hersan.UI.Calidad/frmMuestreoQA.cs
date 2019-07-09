@@ -51,6 +51,7 @@ namespace Hersan.UI.Calidad
                 Obj.Reflex1.Id = cboReflejante1.SelectedValue != null ? int.Parse(cboReflejante1.SelectedValue.ToString()) : 0;
                 Obj.Reflex2.Id = cboReflejante2.SelectedValue != null ? int.Parse(cboReflejante2.SelectedValue.ToString()) : 0;
                 Obj.Piezas = txtPiezas.Text.Trim().Length == 0 ? 0 : int.Parse(txtPiezas.Text);
+                Obj.Fecha = dtFecha.Value.Year.ToString() + dtFecha.Value.Month.ToString().PadLeft(2, '0') + dtFecha.Value.Day.ToString().PadLeft(2, '0');
                 Obj.IdUsuario = BaseWinBP.UsuarioLogueado.ID;
 
                 if (int.Parse(txtId.Text) == 0) {
@@ -101,6 +102,14 @@ namespace Hersan.UI.Calidad
                     CargaDatos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al seleccionar el producto\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void dtFecha_ValueChanged(object sender, EventArgs e)
+        {
+            try {
+                CargaDatos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al modificar la fecha\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void gvDatos_ViewCellFormatting(object sender, Telerik.WinControls.UI.CellFormattingEventArgs e)
@@ -184,7 +193,8 @@ namespace Hersan.UI.Calidad
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
                 gvDatos.DataSource = null;
-                oList = oEnsamble.CAL_ResguardoQA_Obtener(int.Parse(cboProducto.SelectedValue.ToString()));
+                string Fecha = dtFecha.Value.Year.ToString() + dtFecha.Value.Month.ToString().PadLeft(2, '0') + dtFecha.Value.Day.ToString().PadLeft(2, '0');
+                oList = oEnsamble.CAL_ResguardoQA_Obtener(int.Parse(cboProducto.SelectedValue.ToString()), Fecha);
 
                 if (oList.Count > 0) {                    
                     txtId.Text = oList[0].Id.ToString();
@@ -208,7 +218,7 @@ namespace Hersan.UI.Calidad
         {
             try {
                 #region Tabla
-                DataTable oData = new System.Data.DataTable("Datos");
+                DataTable oData = new DataTable("Datos");
                 oData.Columns.Add("RDE_Id");
                 oData.Columns.Add("RES_Id");
                 oData.Columns.Add("Lote");
@@ -240,5 +250,6 @@ namespace Hersan.UI.Calidad
 
         }
 
+        
     }
 }

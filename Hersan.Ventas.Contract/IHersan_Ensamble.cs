@@ -150,7 +150,7 @@ namespace Hersan.Ensamble.Contract
         [OperationContract]
         int CAL_ResguardoQA_Actualizar(CalidadResguardoQA Obj, DataTable Detalle);
         [OperationContract]
-        List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto);
+        List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha);
 
         [OperationContract]
         List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista);

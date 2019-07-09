@@ -68,11 +68,36 @@ namespace Hersan.UI.Calidad
         }
         private void btnGrafica1_Click(object sender, EventArgs e)
         {
-
+            try {
+                if (gvDetalle.RowCount > 0) {
+                    frmHistograma frm = new frmHistograma();
+                    frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
+                    frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+                    //frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                } else {
+                    RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void btnGrafica2_Click(object sender, EventArgs e)
         {
-
+            try {
+                if (gvDetalle.RowCount > 0) {
+                    frmGraficaControl frm = new frmGraficaControl();
+                    frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
+                    frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+                    frm.ShowDialog();
+                } else {
+                    RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

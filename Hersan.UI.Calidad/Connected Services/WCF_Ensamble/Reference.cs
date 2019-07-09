@@ -186,7 +186,7 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         int CAL_ResguardoQA_Actualizar(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_ObtenerResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto);
+        System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_HistogramaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista);
@@ -446,8 +446,8 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
             return base.Channel.CAL_ResguardoQA_Actualizar(Obj, Detalle);
         }
         
-        public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto) {
-            return base.Channel.CAL_ResguardoQA_Obtener(IdProducto);
+        public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha) {
+            return base.Channel.CAL_ResguardoQA_Obtener(IdProducto, Fecha);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista) {

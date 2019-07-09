@@ -22,8 +22,6 @@ namespace Hersan.UI.Calidad
         private void frmHistograma_Load(object sender, EventArgs e)
         {
             try {
-                //PageView.SelectedPage = Page1;
-
                 CargarDatos();
                 GenerarGraficas();
             } catch (Exception ex) {

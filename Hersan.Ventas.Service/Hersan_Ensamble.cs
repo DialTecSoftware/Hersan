@@ -264,9 +264,9 @@ namespace Hersan.Ensamble.Service
         {
             return new CalidadBP().CAL_ResguardoQA_Actualizar(Obj, Detalle);
         }
-        public List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto)
+        public List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha)
         {
-            return new CalidadBP().CAL_ResguardoQA_Obtener(IdProducto);
+            return new CalidadBP().CAL_ResguardoQA_Obtener(IdProducto, Fecha);
         }
 
         public List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista)

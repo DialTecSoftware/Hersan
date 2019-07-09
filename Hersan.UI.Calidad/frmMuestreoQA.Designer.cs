@@ -37,6 +37,9 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn6 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn7 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -53,6 +56,8 @@
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtFecha = new Telerik.WinControls.UI.RadDateTimePicker();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
             this.cboReflejante2 = new Telerik.WinControls.UI.RadDropDownList();
             this.cboReflejante1 = new Telerik.WinControls.UI.RadDropDownList();
@@ -72,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante1)).BeginInit();
@@ -108,7 +114,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(715, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(781, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -205,6 +211,8 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.label2);
+            this.radPanel1.Controls.Add(this.dtFecha);
             this.radPanel1.Controls.Add(this.txtId);
             this.radPanel1.Controls.Add(this.cboReflejante2);
             this.radPanel1.Controls.Add(this.cboReflejante1);
@@ -221,8 +229,31 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(715, 102);
+            this.radPanel1.Size = new System.Drawing.Size(781, 142);
             this.radPanel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(365, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "Fecha:";
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha.Location = new System.Drawing.Point(408, 42);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(95, 20);
+            this.dtFecha.TabIndex = 6;
+            this.dtFecha.TabStop = false;
+            this.dtFecha.Text = "09/07/2019";
+            this.dtFecha.Value = new System.DateTime(2019, 7, 9, 11, 33, 48, 577);
+            this.dtFecha.ValueChanged += new System.EventHandler(this.dtFecha_ValueChanged);
             // 
             // txtId
             // 
@@ -238,23 +269,23 @@
             // cboReflejante2
             // 
             this.cboReflejante2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboReflejante2.Location = new System.Drawing.Point(449, 62);
+            this.cboReflejante2.Location = new System.Drawing.Point(89, 92);
             this.cboReflejante2.Name = "cboReflejante2";
             this.cboReflejante2.Size = new System.Drawing.Size(153, 20);
-            this.cboReflejante2.TabIndex = 6;
+            this.cboReflejante2.TabIndex = 4;
             // 
             // cboReflejante1
             // 
             this.cboReflejante1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboReflejante1.Location = new System.Drawing.Point(449, 37);
+            this.cboReflejante1.Location = new System.Drawing.Point(89, 68);
             this.cboReflejante1.Name = "cboReflejante1";
             this.cboReflejante1.Size = new System.Drawing.Size(153, 20);
-            this.cboReflejante1.TabIndex = 5;
+            this.cboReflejante1.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(377, 66);
+            this.label3.Location = new System.Drawing.Point(15, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 69;
@@ -263,7 +294,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(377, 41);
+            this.label4.Location = new System.Drawing.Point(15, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 68;
@@ -273,24 +304,24 @@
             // 
             this.cboProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboProducto.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboProducto.Location = new System.Drawing.Point(69, 40);
+            this.cboProducto.Location = new System.Drawing.Point(68, 16);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(174, 20);
-            this.cboProducto.TabIndex = 3;
+            this.cboProducto.TabIndex = 1;
             this.cboProducto.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboProducto_SelectedIndexChanged);
             // 
             // cboCarcasa
             // 
             this.cboCarcasa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboCarcasa.Location = new System.Drawing.Point(69, 65);
+            this.cboCarcasa.Location = new System.Drawing.Point(68, 42);
             this.cboCarcasa.Name = "cboCarcasa";
             this.cboCarcasa.Size = new System.Drawing.Size(153, 20);
-            this.cboCarcasa.TabIndex = 4;
+            this.cboCarcasa.TabIndex = 2;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 69);
+            this.label10.Location = new System.Drawing.Point(15, 46);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 65;
@@ -299,7 +330,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 44);
+            this.label6.Location = new System.Drawing.Point(10, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 64;
@@ -308,10 +339,10 @@
             // txtPiezas
             // 
             this.txtPiezas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPiezas.Location = new System.Drawing.Point(449, 12);
+            this.txtPiezas.Location = new System.Drawing.Point(408, 68);
             this.txtPiezas.Name = "txtPiezas";
             this.txtPiezas.Size = new System.Drawing.Size(91, 20);
-            this.txtPiezas.TabIndex = 2;
+            this.txtPiezas.TabIndex = 7;
             this.txtPiezas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPiezas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPiezas_KeyPress);
             // 
@@ -320,26 +351,26 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(367, 16);
+            this.label1.Location = new System.Drawing.Point(364, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Piezas Totales:";
+            this.label1.Text = "Piezas:";
             // 
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(69, 15);
+            this.txtNombre.Location = new System.Drawing.Point(408, 16);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(190, 20);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(15, 19);
+            this.label5.Location = new System.Drawing.Point(354, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 33;
@@ -354,9 +385,9 @@
             // 
             this.radPanel2.Controls.Add(this.gvDatos);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel2.Location = new System.Drawing.Point(0, 155);
+            this.radPanel2.Location = new System.Drawing.Point(0, 195);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(715, 231);
+            this.radPanel2.Size = new System.Drawing.Size(781, 191);
             this.radPanel2.TabIndex = 2;
             // 
             // gvDatos
@@ -368,7 +399,6 @@
             // 
             // 
             // 
-            this.gvDatos.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
             gridViewTextBoxColumn1.FieldName = "Id";
@@ -445,6 +475,45 @@
             gridViewTextBoxColumn4.Name = "OP";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn4.Width = 100;
+            gridViewDecimalColumn5.FieldName = "Promedio";
+            gridViewDecimalColumn5.FormatString = "{0:N0}";
+            gridViewDecimalColumn5.HeaderText = "Promedio";
+            gridViewDecimalColumn5.MaxWidth = 80;
+            gridViewDecimalColumn5.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn5.MinWidth = 60;
+            gridViewDecimalColumn5.Name = "Prom";
+            gridViewDecimalColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn5.Width = 60;
+            gridViewDecimalColumn6.FieldName = "Maximo";
+            gridViewDecimalColumn6.FormatString = "{0:N0}";
+            gridViewDecimalColumn6.HeaderText = "Máximo";
+            gridViewDecimalColumn6.MaxWidth = 80;
+            gridViewDecimalColumn6.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn6.MinWidth = 60;
+            gridViewDecimalColumn6.Name = "Max";
+            gridViewDecimalColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn6.Width = 60;
+            gridViewDecimalColumn7.FieldName = "Minimo";
+            gridViewDecimalColumn7.FormatString = "{0:N0}";
+            gridViewDecimalColumn7.HeaderText = "Mínimo";
+            gridViewDecimalColumn7.MaxWidth = 80;
+            gridViewDecimalColumn7.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn7.MinWidth = 60;
+            gridViewDecimalColumn7.Name = "Min";
+            gridViewDecimalColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn7.Width = 60;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -453,7 +522,10 @@
             gridViewDecimalColumn2,
             gridViewDecimalColumn3,
             gridViewDecimalColumn4,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn4,
+            gridViewDecimalColumn5,
+            gridViewDecimalColumn6,
+            gridViewDecimalColumn7});
             this.gvDatos.MasterTemplate.EnableAlternatingRowColor = true;
             this.gvDatos.MasterTemplate.ShowFilteringRow = false;
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
@@ -462,7 +534,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(715, 231);
+            this.gvDatos.Size = new System.Drawing.Size(781, 191);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.ViewCellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gvDatos_ViewCellFormatting);
             // 
@@ -470,7 +542,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 386);
+            this.ClientSize = new System.Drawing.Size(781, 386);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -486,6 +558,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante1)).EndInit();
@@ -535,5 +608,7 @@
         private Telerik.WinControls.UI.RadPanel radPanel2;
         private Telerik.WinControls.UI.RadGridView gvDatos;
         private Telerik.WinControls.UI.RadTextBox txtId;
+        private System.Windows.Forms.Label label2;
+        private Telerik.WinControls.UI.RadDateTimePicker dtFecha;
     }
 }

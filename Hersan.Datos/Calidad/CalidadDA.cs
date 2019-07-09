@@ -23,6 +23,7 @@ namespace Hersan.Datos.Calidad
         const string CONS_USP_CAL_RESGUARDOQA_OBTENER = "CAL_ResguardoQA_Obtener";
 
         const string CONS_USP_CAL_ANALISISINYECCION_HISTOGRAMA = "CAL_AnalisisInyeccion_Histograma";
+        const string CONS_USP_CAL_ANALISISINYECCION_GRAFICACONTROL = "CAL_AnalisisInyeccion_GraficaControl";
         #endregion
 
         public int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, DataTable Detalle)
@@ -407,6 +408,61 @@ namespace Hersan.Datos.Calidad
                                             Item.Val6 = int.Parse(reader["Val6"].ToString());
                                             Item.Val7 = int.Parse(reader["Val7"].ToString());
                                             Item.Val8 = int.Parse(reader["Val8"].ToString());
+
+                                            oList[0].Valores.Add(Item);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha)
+        {
+            List<CalidadGraficasCavidades> oList = new List<CalidadGraficasCavidades>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_CAL_ANALISISINYECCION_GRAFICACONTROL, conn)) {
+                        cmd.Parameters.AddWithValue("@Lista", Lista);
+                        cmd.Parameters.AddWithValue("@Fecha", Fecha);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                CalidadGraficasCavidades Obj = new CalidadGraficasCavidades();
+
+                                Obj.Cav1 = bool.Parse(reader["Cav1"].ToString());
+                                Obj.Cav2 = bool.Parse(reader["Cav2"].ToString());
+                                Obj.Cav3 = bool.Parse(reader["Cav3"].ToString());
+                                Obj.Cav4 = bool.Parse(reader["Cav4"].ToString());
+                                Obj.Cav5 = bool.Parse(reader["Cav5"].ToString());
+                                Obj.Cav6 = bool.Parse(reader["Cav6"].ToString());
+                                Obj.Cav7 = bool.Parse(reader["Cav7"].ToString());
+                                Obj.Cav8 = bool.Parse(reader["Cav8"].ToString());
+
+                                oList.Add(Obj);
+
+                                if (oList.Count > 0) {
+                                    if (reader.NextResult()) {
+                                        while (reader.Read()) {
+                                            CalidadGraficasValores Item = new CalidadGraficasValores();
+
+                                            Item.Hora = TimeSpan.Parse(reader["Hora"].ToString());
+                                            Item.Val1 = int.Parse(reader["Cav1"].ToString());
+                                            Item.Val2 = int.Parse(reader["Cav2"].ToString());
+                                            Item.Val3 = int.Parse(reader["Cav3"].ToString());
+                                            Item.Val4 = int.Parse(reader["Cav4"].ToString());
+                                            Item.Val5 = int.Parse(reader["Cav5"].ToString());
+                                            Item.Val6 = int.Parse(reader["Cav6"].ToString());
+                                            Item.Val7 = int.Parse(reader["Cav7"].ToString());
+                                            Item.Val8 = int.Parse(reader["Cav8"].ToString());
 
                                             oList[0].Valores.Add(Item);
                                         }

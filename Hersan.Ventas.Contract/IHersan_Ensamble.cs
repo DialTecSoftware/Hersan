@@ -154,6 +154,8 @@ namespace Hersan.Ensamble.Contract
 
         [OperationContract]
         List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista);
+        [OperationContract]
+        List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha);
         #endregion
     }
 }

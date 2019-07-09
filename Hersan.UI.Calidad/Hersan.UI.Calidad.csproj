@@ -105,6 +105,12 @@
     <Compile Include="frmEnsambleSup.Designer.cs">
       <DependentUpon>frmEnsambleSup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGraficaControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGraficaControl.Designer.cs">
+      <DependentUpon>frmGraficaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHistograma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEnsambleSup.resx">
       <DependentUpon>frmEnsambleSup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGraficaControl.resx">
+      <DependentUpon>frmGraficaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistograma.resx">
       <DependentUpon>frmHistograma.cs</DependentUpon>
@@ -239,6 +248,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficas.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficasCavidades.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficasValores.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadResguardoQA.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.EnsambleParametrosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.EnsambleParametrosDetalleBE.datasource" />

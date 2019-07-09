@@ -1083,4 +1083,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CAL_AnalisisInyeccion_GraficaControl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Lista" type="xs:int" />
+        <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CAL_AnalisisInyeccion_GraficaControlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_GraficaControlResult" nillable="true" type="q54:ArrayOfCalidadGraficasCavidades" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

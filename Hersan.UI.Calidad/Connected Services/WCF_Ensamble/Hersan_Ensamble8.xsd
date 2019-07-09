@@ -243,6 +243,7 @@
   <xs:element name="ArrayOfCalidadGraficasValores" nillable="true" type="tns:ArrayOfCalidadGraficasValores" />
   <xs:complexType name="CalidadGraficasValores">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Hora" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Limite" type="xs:int" />
       <xs:element minOccurs="0" name="Val1" type="xs:int" />
       <xs:element minOccurs="0" name="Val2" type="xs:int" />

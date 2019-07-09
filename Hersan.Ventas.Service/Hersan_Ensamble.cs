@@ -273,6 +273,10 @@ namespace Hersan.Ensamble.Service
         {
             return new CalidadBP().CAL_AnalisisInyeccion_Histograma(Lista);
         }
+        public List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha)
+        {
+            return new CalidadBP().CAL_AnalisisInyeccion_GraficaControl(Lista, Fecha);
+        }
         #endregion
     }
 }

@@ -53,5 +53,9 @@ namespace Hersan.Negocio.Calidad
         {
             return new CalidadDA().CAL_AnalisisInyeccion_Histograma(Lista);
         }
+        public List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha)
+        {
+            return new CalidadDA().CAL_AnalisisInyeccion_GraficaControl(Lista, Fecha);
+        }
     }
 }

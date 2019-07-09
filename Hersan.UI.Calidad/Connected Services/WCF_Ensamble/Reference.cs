@@ -190,6 +190,9 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_HistogramaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControl", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControlResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -449,6 +452,10 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista) {
             return base.Channel.CAL_AnalisisInyeccion_Histograma(Lista);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha) {
+            return base.Channel.CAL_AnalisisInyeccion_GraficaControl(Lista, Fecha);
         }
     }
 }

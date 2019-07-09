@@ -247,6 +247,7 @@ namespace Hersan.Entidades.Calidad
     {
         public CalidadGraficasValores()
         {
+            Hora = new TimeSpan();
             Limite = 0;
             Val1 = 0;
             Val2 = 0;
@@ -258,6 +259,7 @@ namespace Hersan.Entidades.Calidad
             Val8 = 0;
         }
 
+        public TimeSpan Hora { get; set; }
         public int Limite { get; set; }
         public int Val1 { get; set; }
         public int Val2 { get; set; }

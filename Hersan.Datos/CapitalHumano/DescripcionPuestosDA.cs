@@ -17,7 +17,7 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_USP_CHU_DESCPUESTO_ACTUALIZA = "CHU_DescripcionPuestos_Actualiza";
         const string CONST_USP_CHU_DESCPUESTO_ELIMINAR = "CHU_DescripcionPuestos_Eliminar";
         const string CONST_USP_CHU_DESCPUESTO_REPORTE1 = "CHU_RptDescPuestos_Obtener";
-        const string CONST_USP_CHU_DESCPUESTO_REPORTE2 = "CHU_RptDescPuestos2_Obtener";
+        const string CONST_USP_CHU_DESCPUESTO_REPORTE2 = "CHU_RptDescPuestos2_Obtener";        
         #endregion
 
 
@@ -72,7 +72,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
         public int CHU_DescPuestos_Actualizar(DescripcionPuestosBE obj, DataTable Contactos, DataTable Condiciones)
         {
             int Result = 0;
@@ -103,7 +102,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
         public int CHU_DescPuestos_Elimina(int IdDesc, int IdUsuario)
         {
             int Result = 0;
@@ -124,7 +122,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
         public DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil,int idPuesto,int IdDepto)
         {
             DataTable oData = new DataTable("Reporte");
@@ -146,7 +143,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
         public DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil)
         {
             DataTable oData = new DataTable("Reporte2");

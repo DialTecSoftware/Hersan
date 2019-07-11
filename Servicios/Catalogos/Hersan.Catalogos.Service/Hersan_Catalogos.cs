@@ -3,6 +3,7 @@ using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
 using Hersan.Negocio.CapitalHumano;
 using Hersan.Negocio.Catalogos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Xml;
@@ -81,6 +82,10 @@ namespace Hersan.Catalogos.Service
         public List<PuestosBE> CHUPuestos_Puntos(int idPuesto)
         {
             return new PuestosBP().CHUPuestos_Puntos(idPuesto);
+        }
+        public List<PuestosBE> CH_TramoControl_Obtener(int idPuesto)
+        {
+            return new PuestosBP().CH_TramoControl_Obtener(idPuesto);
         }
         #endregion
 
@@ -237,7 +242,7 @@ namespace Hersan.Catalogos.Service
         {
             return new OrganigramaBP().CHUOrganigrama_Guardar(obj);
         }
-        public DataSet CHU_OrganigramaXML_Obtener(int parent)
+        public Byte[] CHU_OrganigramaXML_Obtener(int parent)
         {
             return new OrganigramaBP().CHU_OrganigramaXML_Obtener(parent);
         }

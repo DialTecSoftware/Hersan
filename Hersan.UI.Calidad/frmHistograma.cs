@@ -10,11 +10,17 @@ namespace Hersan.UI.Calidad
 {
     public partial class frmHistograma : Telerik.WinControls.UI.RadForm
     {
+        #region Variables y Propiedades
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
         List<CalidadGraficasCavidades> oList;
+        List<CalidadGraficasValores> oHistoria;
         public int Lista { get; set; }
         public List<CalidadResumenBE> Resumen { get; set; }
-        
+        public bool Historica { get; set; }
+        public string Inicial { get; set; }
+        public string Final { get; set; }
+        #endregion
+
         public frmHistograma()
         {
             InitializeComponent();
@@ -22,7 +28,12 @@ namespace Hersan.UI.Calidad
         private void frmHistograma_Load(object sender, EventArgs e)
         {
             try {
-                CargarDatos();
+                if (!Historica) {
+                    CargarDatos();
+                } else {
+                    CargaHistorica();
+                }
+
                 GenerarGraficas();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las gráficas\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -70,38 +81,46 @@ namespace Hersan.UI.Calidad
                 oEnsamble = null;
             }
         }
+        private void CargaHistorica()
+        {
+            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            try {
+                oHistoria = oEnsamble.CAL_AnalisisInyeccion_Histograma_Historico(Inicial, Final);
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oEnsamble = null;
+            }
+        }
         private void GenerarGraficas()
         {
-            try {               
-                if (oList.Count > 0) {
-                    var Aux = PageView.SelectedPage;
+            try {
 
-                    if (Aux.Enabled) {                  
-                        BarSeries barSeria = new BarSeries();
-                        barSeria.DataSource = oList[0].Valores;
-                        barSeria.ValueMember = Aux.Tag.ToString();
-                        barSeria.CategoryMember = "Limite";
+                var Aux = PageView.SelectedPage;
 
-                        ChartPanZoomController panZoomController = new ChartPanZoomController();
-                        panZoomController.PanZoomMode = ChartPanZoomMode.Horizontal;
-                        chart1.View.Palette = KnownPalette.Arctic;
+                if (Aux.Enabled) {
+                    BarSeries barSeria = new BarSeries();
+                    barSeria.DataSource = Historica ? oHistoria : oList[0].Valores;
+                    barSeria.ValueMember = Aux.Tag.ToString();
+                    barSeria.CategoryMember = "Limite";
 
-                        RadChartView chart = chart1;
-                        chart.Series.Clear();
-                        chart.Series.Add(barSeria);
-                        chart.Title = Aux.Text;
-                        chart.ShowPanZoom = true;
-                        chart.Controllers.Add(panZoomController);
+                    ChartPanZoomController panZoomController = new ChartPanZoomController();
+                    panZoomController.PanZoomMode = ChartPanZoomMode.Horizontal;
+                    chart1.View.Palette = KnownPalette.Arctic;
 
-                        //foreach (var series in chart.Series) {
-                        //    series.ShowLabels = true;
-                        //}
+                    RadChartView chart = chart1;
+                    chart.Series.Clear();
+                    chart.Series.Add(barSeria);
+                    chart.Title = Aux.Text;
+                    chart.ShowPanZoom = true;
+                    chart.Controllers.Add(panZoomController);
 
-                        chart.Dock = DockStyle.Fill;
-                        Aux.Controls.Add(chart);
-                    }
-                } else {
-                    RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    //foreach (var series in chart.Series) {
+                    //    series.ShowLabels = true;
+                    //}
+
+                    chart.Dock = DockStyle.Fill;
+                    Aux.Controls.Add(chart);
                 }
             } catch (Exception ex) {
                 throw ex;

@@ -193,6 +193,13 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControl", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControlResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_Historico", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_HistoricoRes" +
+            "ponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores> CAL_AnalisisInyeccion_Histograma_Historico(string Inicial, string Final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeries", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeriesResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficaSeries> CAL_AnalisisInyeccion_GraficaSeries(string Inicial, string Final);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -456,6 +463,14 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha) {
             return base.Channel.CAL_AnalisisInyeccion_GraficaControl(Lista, Fecha);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores> CAL_AnalisisInyeccion_Histograma_Historico(string Inicial, string Final) {
+            return base.Channel.CAL_AnalisisInyeccion_Histograma_Historico(Inicial, Final);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficaSeries> CAL_AnalisisInyeccion_GraficaSeries(string Inicial, string Final) {
+            return base.Channel.CAL_AnalisisInyeccion_GraficaSeries(Inicial, Final);
         }
     }
 }

@@ -30,5 +30,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new PuestosDA().CHUPuestos_Puntos(idPuesto);
         }
+        public List<PuestosBE> CH_TramoControl_Obtener(int idPuesto)
+        {
+            return new PuestosDA().CH_TramoControl_Obtener(idPuesto);
+        }
     }
 }

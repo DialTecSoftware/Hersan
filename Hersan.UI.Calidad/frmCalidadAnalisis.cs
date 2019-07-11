@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
+using Telerik.WinControls.UI.Export;
 
 namespace Hersan.UI.Calidad
 {
@@ -22,14 +24,6 @@ namespace Hersan.UI.Calidad
         private void frmCalidadAnalisis_Load(object sender, EventArgs e)
         {
             try {
-                dtInicial.Value = DateTime.Today;
-                dtInicial.Checked = false;
-                dtFinal.Enabled = dtInicial.Checked;
-
-                dtHInicial.Value = DateTime.Now.ToLocalTime();
-                dtHInicial.Checked = false;
-                dtHFinal.Enabled = dtInicial.Checked;
-
                 CargarColores();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -46,12 +40,6 @@ namespace Hersan.UI.Calidad
                 Obj.Inyeccion.Detalle.Lista = txtLista.Text;
                 Obj.Inyeccion.Detalle.Turno = txtTurno.Text;
                 Obj.Operador = txtOperador.Text;
-                Obj.Inyeccion.Fecha = DateTime.Parse(dtInicial.Checked ? dtInicial.Value.Year.ToString() + "/" + dtInicial.Value.Month.ToString().PadLeft(2, '0')
-                    + "/" + dtInicial.Value.Day.ToString().PadLeft(2, '0') : "1900/01/01");
-                Obj.Inyeccion.Detalle.Fecha = DateTime.Parse(dtInicial.Checked ? dtFinal.Value.Year.ToString() + "/" + dtFinal.Value.Month.ToString().PadLeft(2, '0')
-                    + "/" + dtFinal.Value.Day.ToString().PadLeft(2, '0') : "2900/01/01");
-                Obj.Inyeccion.Detalle.Inicio = TimeSpan.Parse(dtHInicial.Checked ? dtHInicial.Value.ToString() : "00:00:00");
-                Obj.Inyeccion.Detalle.Fin = TimeSpan.Parse(dtHInicial.Checked ? dtHFinal.Value.ToString() : "23:59:00");
 
                 oList = oEnsamble.CAL_InspeccionInyeccion_Analisis(Obj);
                 if (oList.Count > 0)
@@ -101,6 +89,15 @@ namespace Hersan.UI.Calidad
                 throw ex;
             }
         }
+        private void btnGraph_Click(object sender, EventArgs e)
+        {
+           try {
+                frmGraficaHistorica frm = new frmGraficaHistorica();
+                frm.ShowDialog();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -117,38 +114,6 @@ namespace Hersan.UI.Calidad
                 }
             } catch (Exception ex) {
                 throw ex;
-            }
-        }
-        private void dtInicial_CheckedChanged(object sender, EventArgs e)
-        {
-            try {
-                dtFinal.Enabled = dtInicial.Checked;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al seleccionar la fecha\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void dtInicial_ValueChanged(object sender, EventArgs e)
-        {
-            try {
-                dtFinal.MinDate = dtInicial.Value;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cambiar la fecha\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void dtHInicial_CheckedChanged(object sender, EventArgs e)
-        {
-            try {
-                dtHFinal.Enabled = dtHInicial.Checked;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al seleccionar la hora\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void dtHInicial_ValueChanged(object sender, EventArgs e)
-        {
-            try {
-                dtHFinal.MinDate = dtHInicial.Value;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cambiar la hora\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
@@ -169,6 +134,61 @@ namespace Hersan.UI.Calidad
                 oEnsamble = null;
             }
         }
+        private void gvDetalle_ContextMenuOpening(object sender, Telerik.WinControls.UI.ContextMenuOpeningEventArgs e)
+        {
+            try {
+                if (this.gvDetalle.RowCount > 0) {
+                    RadDropDownMenu Menu = new RadDropDownMenu();
+                    RadMenuItem MenuItem = new RadMenuItem("Exportar a Excel");
+                    MenuItem.Click += new EventHandler(MenuItem_Click);
+                    Menu.Items.Add(MenuItem);
+                    e.ContextMenu = Menu;
+                }
+
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void MenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();           
+            try {
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xls";
+                saveFileDialog.RestoreDirectory = true;                
+
+                if (saveFileDialog.ShowDialog() != DialogResult.OK) {
+                    return;
+                }
+
+                if (saveFileDialog.FileName.Equals(String.Empty)) {
+                    RadMessageBox.SetThemeName(this.gvDetalle.ThemeName);
+                    RadMessageBox.Show("Capture el nombre del archivo");
+                    return;
+                }
+
+                string fileName = saveFileDialog.FileName;
+
+                ExportToExcelML excelExporter = new ExportToExcelML(this.gvDetalle);
+                excelExporter.SheetName = "Datos";
+                excelExporter.SummariesExportOption = SummariesOption.ExportAll;
+
+                try {
+                    excelExporter.RunExport(fileName);
+
+                    RadMessageBox.SetThemeName(this.gvDetalle.ThemeName);
+                    if (RadMessageBox.Show("Los datos se han exportado correctamente. Desea abrir el archivo...?", "Exportar",
+                            MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+
+                        BaseWinBP.AbrirArchivoExcel(fileName);
+                    }
+                } catch (System.IO.IOException ex) {
+                    RadMessageBox.Show(this, ex.Message, "Error I/O", MessageBoxButtons.OK, RadMessageIcon.Error);
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
 
         private void CargarColores()
         {
@@ -184,5 +204,6 @@ namespace Hersan.UI.Calidad
             }
         }
 
+      
     }
 }

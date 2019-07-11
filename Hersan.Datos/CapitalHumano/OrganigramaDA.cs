@@ -1,6 +1,7 @@
 ﻿using Hersan.Entidades.Catalogos;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,12 +14,12 @@ namespace Hersan.Datos.Catalogos
 {
     public class OrganigramaDA: BaseDA
     {
+        private string Ruta = @ConfigurationManager.AppSettings["Ruta"];
 
         const string CONST_USP_CHU_ORGANIG_OBTENER = "CHU_Organigrama_GET";
         const string CONST_USP_CHU_ORGANIG_GUARDA = "CHU_Organigrama_Guarda";
         const string CONST_USP_CHU_ORGANIG_ACTUALIZA = "CHU_Organigrama_Actualiza";
         const string CONST_USP_CHU_ORGANIG_xmlOBTENER = "CHU_Organigrama_Obtener";
-
 
         public List<OrganigramaBE> CHUOrganigrama_Obtener()
         {
@@ -41,7 +42,6 @@ namespace Hersan.Datos.Catalogos
                                 obj.Entidades.Id = int.Parse(reader["ENT_Id"].ToString());
                                 obj.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
                                 obj.Puestos.Id = int.Parse(reader["PUE_Id"].ToString());
-                                obj.Nivel = int.Parse(reader["ORG_Nivel"].ToString());
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["ORG_Estatus"].ToString());
 
                                 oList.Add(obj);
@@ -65,11 +65,7 @@ namespace Hersan.Datos.Catalogos
                         cmd.Parameters.AddWithValue("@Id_DEP", obj.Departamentos.Id);
                         cmd.Parameters.AddWithValue("@Id_PUE", obj.Puestos.Id);
                         cmd.Parameters.AddWithValue("@Id_Jefe", obj.IdJefe);
-                        cmd.Parameters.AddWithValue("@Nivel", obj.Nivel);
                         cmd.Parameters.AddWithValue("@IdUsuario", obj.DatosUsuario.IdUsuarioCreo);
-
-
-
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         Result = Convert.ToInt32(cmd.ExecuteScalar());
@@ -107,43 +103,26 @@ namespace Hersan.Datos.Catalogos
             }
         }
 
-        public DataSet CHU_OrganigramaXML_Obtener(int parent)
+        public void CHU_OrganigramaXML_Obtener(int parent)
         {
-            SqlDataAdapter da = new SqlDataAdapter();
-            DataTable oData = new DataTable("Element");
-            DataSet dts = new DataSet();
-            var doc = new XmlDocument();
-         
+            XmlDocument doc = new XmlDocument();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_ORGANIG_xmlOBTENER, conn)) {
-                      
                         cmd.Parameters.AddWithValue("@PARENT", parent);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        da = new SqlDataAdapter(cmd);
-                       
-                        da.Fill(oData);
-                      
-                        oData.WriteXml(@"C:\Temp\Organizacion.xml",true);
-                        
+
                         var reader = cmd.ExecuteXmlReader();
                         if (reader.Read()) {
-                           
-
                             doc.Load(reader);
-                            doc.Save(@"C:\Temp\Hersan.xml");
+                            doc.Save(Ruta + "\\Hersan.xml");
+                            //doc.Save(System.IO.Directory.GetCurrentDirectory() + @"\Hersan.xml");
                             conn.Close();
-                          
                         }
-                                                                                      
                     }
-
                 }
-
-                return dts;
             } catch (Exception ex) {
-
                 throw ex;
             }
         }

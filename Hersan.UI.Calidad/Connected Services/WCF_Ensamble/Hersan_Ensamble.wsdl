@@ -374,6 +374,18 @@
   <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaControl_OutputMessage">
     <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_GraficaControlResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_Historico_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_Histograma_Historico" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_Historico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_Histograma_HistoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaSeries_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_GraficaSeries" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaSeries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_GraficaSeriesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_Ensamble">
     <wsdl:operation name="ABC_Clientes_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Guardar" message="tns:IHersan_Ensamble_ABC_Clientes_Guardar_InputMessage" />
@@ -610,6 +622,14 @@
     <wsdl:operation name="CAL_AnalisisInyeccion_GraficaControl">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControl" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaControl_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControlResponse" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_Histograma_Historico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_Historico" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_Historico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_HistoricoResponse" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_Historico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_GraficaSeries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeries" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaSeries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeriesResponse" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaSeries_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Ensamble" type="tns:IHersan_Ensamble">
@@ -1139,6 +1159,24 @@
     </wsdl:operation>
     <wsdl:operation name="CAL_AnalisisInyeccion_GraficaControl">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_Histograma_Historico">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_Historico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_GraficaSeries">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeries" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

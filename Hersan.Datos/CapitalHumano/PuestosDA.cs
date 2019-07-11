@@ -18,6 +18,7 @@ namespace Hersan.Datos.Catalogos
         const string CONST_USP_ABC_PUESTO_ACTUALIZA = "ABC_Puesto_Actualiza";
         const string CONST_USP_ABC_PUESTOS_COMBO = "ABC_Puestos_Combo";
         const string CONST_USP_CHU_PUESTOS_COMBO = "CHU_Puntos_Puestos";
+        const string CONST_USP_CH_TRAMOCONTROL_OBTENER = "CH_TramoControl_Obtener";
         #endregion
 
         public List<PuestosBE> ABCPuestos_Obtener()
@@ -127,7 +128,6 @@ namespace Hersan.Datos.Catalogos
                 throw ex;
             }
         }
-
         public List<PuestosBE> CHUPuestos_Puntos(int idPuesto)
         {
             List<PuestosBE> oList = new List<PuestosBE>();
@@ -144,6 +144,35 @@ namespace Hersan.Datos.Catalogos
                                 PuestosBE obj = new PuestosBE();
                                 obj.Puntos = decimal.Parse(reader["PUE_Puntos"].ToString());
                               
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<PuestosBE> CH_TramoControl_Obtener(int idPuesto)
+        {
+            List<PuestosBE> oList = new List<PuestosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_CH_TRAMOCONTROL_OBTENER, conn)) {
+                        cmd.Parameters.AddWithValue("@IdPuesto", idPuesto);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                PuestosBE obj = new PuestosBE();
+
+                                obj.Abrev = reader["Tipo"].ToString();
+                                obj.Id = int.Parse(reader["IdPuesto"].ToString());
+                                obj.Nombre = reader["Puesto"].ToString();
 
                                 oList.Add(obj);
                             }

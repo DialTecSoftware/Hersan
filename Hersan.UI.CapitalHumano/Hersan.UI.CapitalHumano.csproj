@@ -302,9 +302,6 @@
     <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos5.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.wsdl" />
     <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.xsd">
       <SubType>Designer</SubType>
@@ -394,21 +391,6 @@
     <WCFMetadataStorage Include="Connected Services\WCF_CHumano\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCF_Catalogos\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCF_Catalogos\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCF_Catalogos\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -469,6 +451,13 @@
     <Content Include="bin\Debug\Telerik.WinControls.UI.xml" />
     <Content Include="bin\Debug\Telerik.WinControls.xml" />
     <Content Include="bin\Debug\TelerikCommon.dll" />
+    <None Include="Connected Services\WCF_Catalogos\Hersan_Catalogos.disco" />
+    <None Include="Connected Services\WCF_Catalogos\configuration91.svcinfo" />
+    <None Include="Connected Services\WCF_Catalogos\configuration.svcinfo" />
+    <None Include="Connected Services\WCF_Catalogos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Correo\Correo_Aceptado.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -476,6 +465,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\DataSources\System.Xml.XmlReader.datasource" />
     <None Include="Resources\Documents-icon.png" />
   </ItemGroup>
   <ItemGroup>

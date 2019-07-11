@@ -1099,4 +1099,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CAL_AnalisisInyeccion_Histograma_Historico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CAL_AnalisisInyeccion_Histograma_HistoricoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_Histograma_HistoricoResult" nillable="true" type="q55:ArrayOfCalidadGraficasValores" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CAL_AnalisisInyeccion_GraficaSeries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CAL_AnalisisInyeccion_GraficaSeriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_GraficaSeriesResult" nillable="true" type="q56:ArrayOfCalidadGraficaSeries" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

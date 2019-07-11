@@ -177,7 +177,7 @@
     <xs:sequence>
       <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Carcasa" nillable="true" type="q9:ColoresBE" />
       <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:ArrayOfCalidadResguardoQADetalle" />
-      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
@@ -202,7 +202,10 @@
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
       <xs:element minOccurs="0" name="Lista" type="xs:int" />
       <xs:element minOccurs="0" name="Lote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maximo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Minimo" type="xs:decimal" />
       <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Promedio" type="xs:int" />
       <xs:element minOccurs="0" name="Valor0" type="xs:int" />
       <xs:element minOccurs="0" name="Valor1" type="xs:int" />
       <xs:element minOccurs="0" name="Valor2" type="xs:int" />
@@ -231,6 +234,7 @@
       <xs:element minOccurs="0" name="Cav6" type="xs:boolean" />
       <xs:element minOccurs="0" name="Cav7" type="xs:boolean" />
       <xs:element minOccurs="0" name="Cav8" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Norma" nillable="true" type="tns:NormaBE" />
       <xs:element minOccurs="0" name="Valores" nillable="true" type="tns:ArrayOfCalidadGraficasValores" />
     </xs:sequence>
   </xs:complexType>
@@ -256,4 +260,40 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CalidadGraficasValores" nillable="true" type="tns:CalidadGraficasValores" />
+  <xs:complexType name="ArrayOfCalidadGraficaSeries">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadGraficaSeries" nillable="true" type="tns:CalidadGraficaSeries" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadGraficaSeries" nillable="true" type="tns:ArrayOfCalidadGraficaSeries" />
+  <xs:complexType name="CalidadGraficaSeries">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max1" type="xs:int" />
+      <xs:element minOccurs="0" name="Max2" type="xs:int" />
+      <xs:element minOccurs="0" name="Max3" type="xs:int" />
+      <xs:element minOccurs="0" name="Max4" type="xs:int" />
+      <xs:element minOccurs="0" name="Max5" type="xs:int" />
+      <xs:element minOccurs="0" name="Max6" type="xs:int" />
+      <xs:element minOccurs="0" name="Max7" type="xs:int" />
+      <xs:element minOccurs="0" name="Max8" type="xs:int" />
+      <xs:element minOccurs="0" name="Min1" type="xs:int" />
+      <xs:element minOccurs="0" name="Min2" type="xs:int" />
+      <xs:element minOccurs="0" name="Min3" type="xs:int" />
+      <xs:element minOccurs="0" name="Min4" type="xs:int" />
+      <xs:element minOccurs="0" name="Min5" type="xs:int" />
+      <xs:element minOccurs="0" name="Min6" type="xs:int" />
+      <xs:element minOccurs="0" name="Min7" type="xs:int" />
+      <xs:element minOccurs="0" name="Min8" type="xs:int" />
+      <xs:element minOccurs="0" name="Val1" type="xs:int" />
+      <xs:element minOccurs="0" name="Val2" type="xs:int" />
+      <xs:element minOccurs="0" name="Val3" type="xs:int" />
+      <xs:element minOccurs="0" name="Val4" type="xs:int" />
+      <xs:element minOccurs="0" name="Val5" type="xs:int" />
+      <xs:element minOccurs="0" name="Val6" type="xs:int" />
+      <xs:element minOccurs="0" name="Val7" type="xs:int" />
+      <xs:element minOccurs="0" name="Val8" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadGraficaSeries" nillable="true" type="tns:CalidadGraficaSeries" />
 </xs:schema>

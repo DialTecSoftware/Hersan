@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Telerik.WinControls;
@@ -30,26 +31,25 @@ namespace Hersan.UI.CapitalHumano.Organigrama
         }
         private void CargaDocumento()
         {
-            oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
+            oCatalogo = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                oCatalogo.CHU_OrganigramaXML_Obtener(0);
+                Byte[] Archivo = oCatalogo.CHU_OrganigramaXML_Obtener(0);
+                if (Archivo != null) {
+                    System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                    string xml = System.Text.Encoding.UTF8.GetString(Archivo);
+                    doc.LoadXml(xml);
+                    doc.Save(Directory.GetCurrentDirectory() + "\\Hersan.xml");
+                }
             } catch (Exception ex) {
-
                 RadMessageBox.Show("Ocurrió un error al cargar los datos del organigrama" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
-          
         }
         private void InitializeDiagram()
         {
             CargaDocumento();
             OrgContainerShape org = new OrgContainerShape();
             this.WindowState = FormWindowState.Maximized;
-            //if (Program.themeName != "") //set the example theme to the same theme QSF uses
-            //{
-            //    this.ThemeName = Program.themeName;
-            //} else {
-            //    this.ThemeName = "TelerikMetro";
-            //}
+           
             this.ApplyThemeRecursively(this.Controls);
             this.radDiagram1.BackColor = System.Drawing.Color.White;
             this.radDiagram1.ForeColor = System.Drawing.Color.Black;
@@ -112,8 +112,8 @@ namespace Hersan.UI.CapitalHumano.Organigrama
         private void PopulateWithData()
         {
 
-            XElement dataXml = XElement.Load(@"C:\Temp\Hersan.xml");
-            //XElement dataXml = XElement.Load(Directory.GetCurrentDirectory() + "/Resources/Organization.xml");
+            //XElement dataXml = XElement.Load(@"C:\Temp\Hersan.xml");
+            XElement dataXml = XElement.Load(Directory.GetCurrentDirectory() + "\\Hersan.xml");
 
             IEnumerable<XElement> employees = dataXml.Elements();
 
@@ -176,7 +176,8 @@ namespace Hersan.UI.CapitalHumano.Organigrama
 
         private ObservableCollection<RadDiagramShape> GetTeamMembers(XContainer element, OrgContainerShape team)
         {
-            XElement data = XElement.Load(@"C:\Temp\Hersan.xml");
+            //XElement data = XElement.Load(@"C:\Temp\Hersan.xml");
+            XElement data = XElement.Load(Directory.GetCurrentDirectory() + "\\Hersan.xml");
             
             var members = new ObservableCollection<RadDiagramShape>();
             foreach (var xmlNodeMember in data.Elements("Element")) {

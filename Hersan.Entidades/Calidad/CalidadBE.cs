@@ -278,4 +278,67 @@ namespace Hersan.Entidades.Calidad
         public int Val7 { get; set; }
         public int Val8 { get; set; }
     }
+
+    public class CalidadGraficaSeries
+    {
+        public CalidadGraficaSeries()
+        {
+            Fecha = string.Empty;
+            Val1 = 0;
+            Val2 = 0;
+            Val3 = 0;
+            Val4 = 0;
+            Val5 = 0;
+            Val6 = 0;
+            Val7 = 0;
+            Val8 = 0;
+
+            Max1 = 0;
+            Max2 = 0;
+            Max3 = 0;
+            Max4 = 0;
+            Max5 = 0;
+            Max6 = 0;
+            Max7 = 0;
+            Max8 = 0;
+
+            Min1 = 0;
+            Min2 = 0;
+            Min3 = 0;
+            Min4 = 0;
+            Min5 = 0;
+            Min6 = 0;
+            Min7 = 0;
+            Min8 = 0;
+        }
+
+        public String Fecha { get; set; }
+        public int Val1 { get; set; }
+        public int Val2 { get; set; }
+        public int Val3 { get; set; }
+        public int Val4 { get; set; }
+        public int Val5 { get; set; }
+        public int Val6 { get; set; }
+        public int Val7 { get; set; }
+        public int Val8 { get; set; }
+
+        public int Max1 { get; set; }
+        public int Max2 { get; set; }
+        public int Max3 { get; set; }
+        public int Max4 { get; set; }
+        public int Max5 { get; set; }
+        public int Max6 { get; set; }
+        public int Max7 { get; set; }
+        public int Max8 { get; set; }
+
+        public int Min1 { get; set; }
+        public int Min2 { get; set; }
+        public int Min3 { get; set; }
+        public int Min4 { get; set; }
+        public int Min5 { get; set; }
+        public int Min6 { get; set; }
+        public int Min7 { get; set; }
+        public int Min8 { get; set; }
+
+    }
 }

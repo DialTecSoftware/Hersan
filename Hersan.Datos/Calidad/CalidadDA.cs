@@ -24,6 +24,8 @@ namespace Hersan.Datos.Calidad
 
         const string CONS_USP_CAL_ANALISISINYECCION_HISTOGRAMA = "CAL_AnalisisInyeccion_Histograma";
         const string CONS_USP_CAL_ANALISISINYECCION_GRAFICACONTROL = "CAL_AnalisisInyeccion_GraficaControl";
+        const string CONS_USP_CAL_ANALISISINYECCION_HISTOGRAMA_HISTORICO = "CAL_AnalisisInyeccion_Histograma_Historico";
+        const string CONS_USP_CAL_ANALISISINYECCION_GRAFICASERIES = "CAL_AnalisisInyeccion_GraficaSeries";
         #endregion
 
         public int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, DataTable Detalle)
@@ -487,6 +489,96 @@ namespace Hersan.Datos.Calidad
                                         }
                                     }
                                 }
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<CalidadGraficasValores> CAL_AnalisisInyeccion_Histograma_Historico(string Inicial, string Final)
+        {
+            List<CalidadGraficasValores> oList = new List<CalidadGraficasValores>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_CAL_ANALISISINYECCION_HISTOGRAMA_HISTORICO, conn)) {
+                        cmd.Parameters.AddWithValue("@Inicial", Inicial);
+                        cmd.Parameters.AddWithValue("@Final", Final);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                CalidadGraficasValores Item = new CalidadGraficasValores();
+
+                                Item.Limite = int.Parse(reader["Superior"].ToString());
+                                Item.Val1 = int.Parse(reader["Val1"].ToString());
+                                Item.Val2 = int.Parse(reader["Val2"].ToString());
+                                Item.Val3 = int.Parse(reader["Val3"].ToString());
+                                Item.Val4 = int.Parse(reader["Val4"].ToString());
+                                Item.Val5 = int.Parse(reader["Val5"].ToString());
+                                Item.Val6 = int.Parse(reader["Val6"].ToString());
+                                Item.Val7 = int.Parse(reader["Val7"].ToString());
+                                Item.Val8 = int.Parse(reader["Val8"].ToString());
+
+                                oList.Add(Item);
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<CalidadGraficaSeries> CAL_AnalisisInyeccion_GraficaSeries(string Inicial, string Final)
+        {
+            List<CalidadGraficaSeries> oList = new List<CalidadGraficaSeries>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_CAL_ANALISISINYECCION_GRAFICASERIES, conn)) {
+                        cmd.Parameters.AddWithValue("@Inicial", Inicial);
+                        cmd.Parameters.AddWithValue("@Final", Final);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                CalidadGraficaSeries Item = new CalidadGraficaSeries();
+
+                                Item.Fecha = reader["Fecha"].ToString();
+                                Item.Val1 = int.Parse(reader["Cav1"].ToString());
+                                Item.Val2 = int.Parse(reader["Cav2"].ToString());
+                                Item.Val3 = int.Parse(reader["Cav3"].ToString());
+                                Item.Val4 = int.Parse(reader["Cav4"].ToString());
+                                Item.Val5 = int.Parse(reader["Cav5"].ToString());
+                                Item.Val6 = int.Parse(reader["Cav6"].ToString());
+                                Item.Val7 = int.Parse(reader["Cav7"].ToString());
+                                Item.Val8 = int.Parse(reader["Cav8"].ToString());
+
+                                Item.Max1 = int.Parse(reader["Max1"].ToString());
+                                Item.Max2 = int.Parse(reader["Max2"].ToString());
+                                Item.Max3 = int.Parse(reader["Max3"].ToString());
+                                Item.Max4 = int.Parse(reader["Max4"].ToString());
+                                Item.Max5 = int.Parse(reader["Max5"].ToString());
+                                Item.Max6 = int.Parse(reader["Max6"].ToString());
+                                Item.Max7 = int.Parse(reader["Max7"].ToString());
+                                Item.Max8 = int.Parse(reader["Max8"].ToString());
+
+                                Item.Min1 = int.Parse(reader["Min1"].ToString());
+                                Item.Min2 = int.Parse(reader["Min2"].ToString());
+                                Item.Min3 = int.Parse(reader["Min3"].ToString());
+                                Item.Min4 = int.Parse(reader["Min4"].ToString());
+                                Item.Min5 = int.Parse(reader["Min5"].ToString());
+                                Item.Min6 = int.Parse(reader["Min6"].ToString());
+                                Item.Min7 = int.Parse(reader["Min7"].ToString());
+                                Item.Min8 = int.Parse(reader["Min8"].ToString());
+
+                                oList.Add(Item);
                             }
                         }
 

@@ -1,5 +1,6 @@
 ﻿using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Catalogos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.ServiceModel;
@@ -55,6 +56,8 @@ namespace Hersan.Catalogos.Contract
         List<PuestosBE> ABCPuestos_Combo(int IdDepto);
         [OperationContract]
         List<PuestosBE> CHUPuestos_Puntos(int idPuesto);
+        [OperationContract]
+        List<PuestosBE> CH_TramoControl_Obtener(int idPuesto);
         #endregion
 
         #region Competencias
@@ -155,8 +158,9 @@ namespace Hersan.Catalogos.Contract
         int CHUOrganigrama_Guardar(OrganigramaBE obj);
         [OperationContract]
         int CHUOrganigrama_Actualizar(OrganigramaBE obj);
+        //[OperationContract, XmlSerializerFormat]
         [OperationContract]
-        DataSet CHU_OrganigramaXML_Obtener(int parent);
+        Byte[] CHU_OrganigramaXML_Obtener(int parent);
         #endregion
 
         #region Estados

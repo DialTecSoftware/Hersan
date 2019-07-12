@@ -125,6 +125,7 @@
             this.chart1.TabIndex = 2;
             this.chart1.Title = "Cavidad";
             this.chart1.UseDataSource = false;
+            this.chart1.ContextMenuOpening += new Telerik.WinControls.UI.ChartViewContextMenuOpeningEventHandler(this.Chart_ContextMenuOpening);
             // 
             // Page2
             // 

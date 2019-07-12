@@ -11,6 +11,7 @@ namespace Hersan.UI.Calidad
 {
     public partial class frmGraficaHistorica : Telerik.WinControls.UI.RadForm
     {
+        public bool Ensamble { get; set; }
 
         public frmGraficaHistorica()
         {
@@ -20,9 +21,11 @@ namespace Hersan.UI.Calidad
         {
             try {
                 frmHistograma frm = new frmHistograma();
-                frm.Historica = true;
+                frm.Ensamble = Ensamble;
+                frm.Historica = !Ensamble;
                 frm.Inicial = dtDesde.Value.Year.ToString() + dtDesde.Value.Month.ToString().PadLeft(2, '0') + dtDesde.Value.Day.ToString().PadLeft(2, '0');
                 frm.Final = dtHasta.Value.Year.ToString() + dtHasta.Value.Month.ToString().PadLeft(2, '0') + dtHasta.Value.Day.ToString().PadLeft(2, '0');
+                frm.Ensamble = Ensamble;
                 frm.StartPosition = FormStartPosition.CenterScreen;
                 frm.ShowDialog();
                 this.Close();

@@ -14,6 +14,7 @@ namespace Hersan.UI.Calidad
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
+        public bool Ensamble { get; set; }
 
         public frmFiltrosGraficaQA()
         {
@@ -40,18 +41,27 @@ namespace Hersan.UI.Calidad
                 Obj.Carcasa.Id = int.Parse(cboCarcasa.SelectedValue.ToString());
                 Obj.Reflex1.Id = int.Parse(cboReflejante1.SelectedValue.ToString());
                 Obj.Reflex2.Id = cboReflejante2.SelectedValue != null ? int.Parse(cboReflejante2.SelectedValue.ToString()) : 0;
-                string Inicial = dtDesde.Value.Year.ToString() + dtDesde.Value.Month.ToString().PadLeft(2,'0') + dtDesde.Value.Day.ToString().PadLeft(2, '0');
+                string Inicial = dtDesde.Value.Year.ToString() + dtDesde.Value.Month.ToString().PadLeft(2, '0') + dtDesde.Value.Day.ToString().PadLeft(2, '0');
                 string Final = dtHasta.Value.Year.ToString() + dtHasta.Value.Month.ToString().PadLeft(2, '0') + dtHasta.Value.Day.ToString().PadLeft(2, '0');
 
-                List<CalidadResguardoQADetalle> oList = oEnsamble.CAL_ResguardoQA_Grafica(Obj, Inicial, Final);
-                if (oList.Count > 0) {
-                    frmGraficaQA frm = new frmGraficaQA();
+                if (Ensamble) {
+                    frmHistograma frm = new frmHistograma();
+                    frm.Ensamble = Ensamble;
+                    frm.oHistoria = oEnsamble.CAL_InspeccionEnsamble_HistogramaHistorico(Obj, Inicial, Final);
                     frm.StartPosition = FormStartPosition.CenterScreen;
-                    frm.oList = oList;
                     frm.ShowDialog();
                     this.Close();
                 } else {
-                    RadMessageBox.Show("No existen datos a graficar con los criterios seleccionados", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    List<CalidadResguardoQADetalle> oList = oEnsamble.CAL_ResguardoQA_Grafica(Obj, Inicial, Final);
+                    if (oList.Count > 0) {
+                        frmGraficaQA frm = new frmGraficaQA();
+                        frm.StartPosition = FormStartPosition.CenterScreen;
+                        frm.oList = oList;
+                        frm.ShowDialog();
+                        this.Close();
+                    } else {
+                        RadMessageBox.Show("No existen datos a graficar con los criterios seleccionados", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    }
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar las gráficas\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

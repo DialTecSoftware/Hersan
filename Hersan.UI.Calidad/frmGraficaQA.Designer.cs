@@ -79,12 +79,12 @@
             this.chart1.AreaDesign = cartesianArea1;
             categoricalAxis1.IsPrimary = true;
             categoricalAxis1.LabelRotationAngle = 300D;
-            categoricalAxis1.Title = "Tiempo";
+            categoricalAxis1.Title = "Reflectividad";
             linearAxis1.AxisType = Telerik.Charting.AxisType.Second;
             linearAxis1.IsPrimary = true;
             linearAxis1.LabelRotationAngle = 300D;
             linearAxis1.TickOrigin = null;
-            linearAxis1.Title = "Reflectividad";
+            linearAxis1.Title = "Frecuencia";
             this.chart1.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
             categoricalAxis1,
             linearAxis1});

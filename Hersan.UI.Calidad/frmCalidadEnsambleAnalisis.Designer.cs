@@ -49,8 +49,11 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
@@ -63,14 +66,17 @@
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGrafica1 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnGrafica2 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnGraficas = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
+            this.toolResultados = new Telerik.WinControls.UI.Docking.ToolWindow();
+            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.toolFiltro = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.cboReflejante2 = new Telerik.WinControls.UI.RadDropDownList();
             this.cboReflejante1 = new Telerik.WinControls.UI.RadDropDownList();
@@ -86,10 +92,7 @@
             this.txtLista = new Telerik.WinControls.UI.RadTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.toolTabStrip2 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
-            this.toolResultados = new Telerik.WinControls.UI.Docking.ToolWindow();
-            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
             this.docDetalle = new Telerik.WinControls.UI.Docking.DocumentWindow();
@@ -97,9 +100,16 @@
             this.docResumen = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.gvResumen = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
+            this.toolResultados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
+            this.toolTabStrip1.SuspendLayout();
             this.toolFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante1)).BeginInit();
@@ -108,13 +118,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOperador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
-            this.toolTabStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip2)).BeginInit();
             this.toolTabStrip2.SuspendLayout();
-            this.toolResultados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
             this.documentContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
@@ -157,8 +162,8 @@
             this.commandBarSeparator1,
             this.btnGrafica1,
             this.commandBarSeparator2,
-            this.btnGrafica2,
-            this.commandBarSeparator3,
+            this.btnGraficas,
+            this.commandBarSeparator5,
             this.btnSalir,
             this.commandBarSeparator4,
             this.commandBarLabel1});
@@ -202,21 +207,21 @@
             this.commandBarSeparator2.Name = "commandBarSeparator2";
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
             // 
-            // btnGrafica2
+            // btnGraficas
             // 
-            this.btnGrafica2.DisplayName = "commandBarButton3";
-            this.btnGrafica2.DrawText = true;
-            this.btnGrafica2.Image = ((System.Drawing.Image)(resources.GetObject("btnGrafica2.Image")));
-            this.btnGrafica2.Name = "btnGrafica2";
-            this.btnGrafica2.Text = "Gráfica Control";
-            this.btnGrafica2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGrafica2.Click += new System.EventHandler(this.btnGrafica2_Click);
+            this.btnGraficas.DisplayName = "commandBarButton1";
+            this.btnGraficas.DrawText = true;
+            this.btnGraficas.Image = ((System.Drawing.Image)(resources.GetObject("btnGraficas.Image")));
+            this.btnGraficas.Name = "btnGraficas";
+            this.btnGraficas.Text = "Gráfica Histórica";
+            this.btnGraficas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGraficas.Click += new System.EventHandler(this.btnGraficas_Click);
             // 
-            // commandBarSeparator3
+            // commandBarSeparator5
             // 
-            this.commandBarSeparator3.DisplayName = "commandBarSeparator3";
-            this.commandBarSeparator3.Name = "commandBarSeparator3";
-            this.commandBarSeparator3.VisibleInOverflowMenu = false;
+            this.commandBarSeparator5.DisplayName = "commandBarSeparator5";
+            this.commandBarSeparator5.Name = "commandBarSeparator5";
+            this.commandBarSeparator5.VisibleInOverflowMenu = false;
             // 
             // btnSalir
             // 
@@ -256,7 +261,7 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.toolFiltro;
+            this.radDock1.ActiveWindow = this.toolResultados;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.toolTabStrip2);
             this.radDock1.Controls.Add(this.documentContainer1);
@@ -273,193 +278,6 @@
             this.radDock1.Size = new System.Drawing.Size(833, 501);
             this.radDock1.TabIndex = 1;
             this.radDock1.TabStop = false;
-            // 
-            // toolFiltro
-            // 
-            this.toolFiltro.Caption = null;
-            this.toolFiltro.Controls.Add(this.cboReflejante2);
-            this.toolFiltro.Controls.Add(this.cboReflejante1);
-            this.toolFiltro.Controls.Add(this.label3);
-            this.toolFiltro.Controls.Add(this.cboProducto);
-            this.toolFiltro.Controls.Add(this.cboCarcasa);
-            this.toolFiltro.Controls.Add(this.label10);
-            this.toolFiltro.Controls.Add(this.label4);
-            this.toolFiltro.Controls.Add(this.label6);
-            this.toolFiltro.Controls.Add(this.txtOp);
-            this.toolFiltro.Controls.Add(this.txtOperador);
-            this.toolFiltro.Controls.Add(this.label5);
-            this.toolFiltro.Controls.Add(this.txtLista);
-            this.toolFiltro.Controls.Add(this.label2);
-            this.toolFiltro.Controls.Add(this.label1);
-            this.toolFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolFiltro.Location = new System.Drawing.Point(1, 22);
-            this.toolFiltro.Name = "toolFiltro";
-            this.toolFiltro.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolFiltro.Size = new System.Drawing.Size(821, 119);
-            this.toolFiltro.Text = "Filtros";
-            this.toolFiltro.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide;
-            // 
-            // cboReflejante2
-            // 
-            this.cboReflejante2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboReflejante2.Location = new System.Drawing.Point(378, 86);
-            this.cboReflejante2.Name = "cboReflejante2";
-            this.cboReflejante2.Size = new System.Drawing.Size(153, 20);
-            this.cboReflejante2.TabIndex = 9;
-            // 
-            // cboReflejante1
-            // 
-            this.cboReflejante1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboReflejante1.Location = new System.Drawing.Point(378, 61);
-            this.cboReflejante1.Name = "cboReflejante1";
-            this.cboReflejante1.Size = new System.Drawing.Size(153, 20);
-            this.cboReflejante1.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 63;
-            this.label3.Text = "Reflejante 2:";
-            // 
-            // cboProducto
-            // 
-            this.cboProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboProducto.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboProducto.Location = new System.Drawing.Point(90, 61);
-            this.cboProducto.Name = "cboProducto";
-            this.cboProducto.Size = new System.Drawing.Size(174, 20);
-            this.cboProducto.TabIndex = 3;
-            // 
-            // cboCarcasa
-            // 
-            this.cboCarcasa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboCarcasa.Location = new System.Drawing.Point(90, 86);
-            this.cboCarcasa.Name = "cboCarcasa";
-            this.cboCarcasa.Size = new System.Drawing.Size(153, 20);
-            this.cboCarcasa.TabIndex = 4;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(37, 90);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
-            this.label10.TabIndex = 61;
-            this.label10.Text = "Carcasa:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "Reflejante 1:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 59;
-            this.label6.Text = "Producto:";
-            // 
-            // txtOp
-            // 
-            this.txtOp.Location = new System.Drawing.Point(90, 36);
-            this.txtOp.Name = "txtOp";
-            this.txtOp.Size = new System.Drawing.Size(113, 20);
-            this.txtOp.TabIndex = 2;
-            this.txtOp.TabStop = false;
-            this.txtOp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtOperador
-            // 
-            this.txtOperador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtOperador.Location = new System.Drawing.Point(378, 11);
-            this.txtOperador.Name = "txtOperador";
-            this.txtOperador.Size = new System.Drawing.Size(190, 20);
-            this.txtOperador.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(313, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Operador:";
-            // 
-            // txtLista
-            // 
-            this.txtLista.Location = new System.Drawing.Point(90, 11);
-            this.txtLista.Name = "txtLista";
-            this.txtLista.Size = new System.Drawing.Size(73, 20);
-            this.txtLista.TabIndex = 1;
-            this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtLista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(62, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "OP:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(53, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Lista:";
-            // 
-            // toolTabStrip1
-            // 
-            this.toolTabStrip1.CanUpdateChildIndex = true;
-            this.toolTabStrip1.Controls.Add(this.toolFiltro);
-            this.toolTabStrip1.Location = new System.Drawing.Point(5, 5);
-            this.toolTabStrip1.Name = "toolTabStrip1";
-            // 
-            // 
-            // 
-            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(823, 143);
-            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(200, 143);
-            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, -57);
-            this.toolTabStrip1.TabIndex = 3;
-            this.toolTabStrip1.TabStop = false;
-            // 
-            // toolTabStrip2
-            // 
-            this.toolTabStrip2.CanUpdateChildIndex = true;
-            this.toolTabStrip2.Controls.Add(this.toolResultados);
-            this.toolTabStrip2.Location = new System.Drawing.Point(5, 152);
-            this.toolTabStrip2.Name = "toolTabStrip2";
-            // 
-            // 
-            // 
-            this.toolTabStrip2.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.toolTabStrip2.SelectedIndex = 0;
-            this.toolTabStrip2.Size = new System.Drawing.Size(823, 177);
-            this.toolTabStrip2.SizeInfo.AbsoluteSize = new System.Drawing.Size(200, 177);
-            this.toolTabStrip2.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, 8);
-            this.toolTabStrip2.TabIndex = 2;
-            this.toolTabStrip2.TabStop = false;
             // 
             // toolResultados
             // 
@@ -596,6 +414,193 @@
             this.gvDatos.TabIndex = 2;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
+            // toolTabStrip1
+            // 
+            this.toolTabStrip1.CanUpdateChildIndex = true;
+            this.toolTabStrip1.Controls.Add(this.toolFiltro);
+            this.toolTabStrip1.Location = new System.Drawing.Point(5, 5);
+            this.toolTabStrip1.Name = "toolTabStrip1";
+            // 
+            // 
+            // 
+            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.toolTabStrip1.SelectedIndex = 0;
+            this.toolTabStrip1.Size = new System.Drawing.Size(823, 143);
+            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(200, 143);
+            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, -57);
+            this.toolTabStrip1.TabIndex = 3;
+            this.toolTabStrip1.TabStop = false;
+            // 
+            // toolFiltro
+            // 
+            this.toolFiltro.Caption = null;
+            this.toolFiltro.Controls.Add(this.cboReflejante2);
+            this.toolFiltro.Controls.Add(this.cboReflejante1);
+            this.toolFiltro.Controls.Add(this.label3);
+            this.toolFiltro.Controls.Add(this.cboProducto);
+            this.toolFiltro.Controls.Add(this.cboCarcasa);
+            this.toolFiltro.Controls.Add(this.label10);
+            this.toolFiltro.Controls.Add(this.label4);
+            this.toolFiltro.Controls.Add(this.label6);
+            this.toolFiltro.Controls.Add(this.txtOp);
+            this.toolFiltro.Controls.Add(this.txtOperador);
+            this.toolFiltro.Controls.Add(this.label5);
+            this.toolFiltro.Controls.Add(this.txtLista);
+            this.toolFiltro.Controls.Add(this.label2);
+            this.toolFiltro.Controls.Add(this.label1);
+            this.toolFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolFiltro.Location = new System.Drawing.Point(1, 24);
+            this.toolFiltro.Name = "toolFiltro";
+            this.toolFiltro.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
+            this.toolFiltro.Size = new System.Drawing.Size(821, 117);
+            this.toolFiltro.Text = "Filtros";
+            this.toolFiltro.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide;
+            // 
+            // cboReflejante2
+            // 
+            this.cboReflejante2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboReflejante2.Location = new System.Drawing.Point(378, 86);
+            this.cboReflejante2.Name = "cboReflejante2";
+            this.cboReflejante2.Size = new System.Drawing.Size(153, 20);
+            this.cboReflejante2.TabIndex = 9;
+            // 
+            // cboReflejante1
+            // 
+            this.cboReflejante1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboReflejante1.Location = new System.Drawing.Point(378, 61);
+            this.cboReflejante1.Name = "cboReflejante1";
+            this.cboReflejante1.Size = new System.Drawing.Size(153, 20);
+            this.cboReflejante1.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(306, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 63;
+            this.label3.Text = "Reflejante 2:";
+            // 
+            // cboProducto
+            // 
+            this.cboProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboProducto.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboProducto.Location = new System.Drawing.Point(90, 61);
+            this.cboProducto.Name = "cboProducto";
+            this.cboProducto.Size = new System.Drawing.Size(174, 20);
+            this.cboProducto.TabIndex = 3;
+            // 
+            // cboCarcasa
+            // 
+            this.cboCarcasa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboCarcasa.Location = new System.Drawing.Point(90, 86);
+            this.cboCarcasa.Name = "cboCarcasa";
+            this.cboCarcasa.Size = new System.Drawing.Size(153, 20);
+            this.cboCarcasa.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(37, 90);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 61;
+            this.label10.Text = "Carcasa:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(306, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 60;
+            this.label4.Text = "Reflejante 1:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 65);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "Producto:";
+            // 
+            // txtOp
+            // 
+            this.txtOp.Location = new System.Drawing.Point(90, 36);
+            this.txtOp.Name = "txtOp";
+            this.txtOp.Size = new System.Drawing.Size(113, 20);
+            this.txtOp.TabIndex = 2;
+            this.txtOp.TabStop = false;
+            this.txtOp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtOperador
+            // 
+            this.txtOperador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtOperador.Location = new System.Drawing.Point(378, 11);
+            this.txtOperador.Name = "txtOperador";
+            this.txtOperador.Size = new System.Drawing.Size(190, 20);
+            this.txtOperador.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(313, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Operador:";
+            // 
+            // txtLista
+            // 
+            this.txtLista.Location = new System.Drawing.Point(90, 11);
+            this.txtLista.Name = "txtLista";
+            this.txtLista.Size = new System.Drawing.Size(73, 20);
+            this.txtLista.TabIndex = 1;
+            this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(62, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "OP:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(53, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Lista:";
+            // 
+            // toolTabStrip2
+            // 
+            this.toolTabStrip2.CanUpdateChildIndex = true;
+            this.toolTabStrip2.Controls.Add(this.toolResultados);
+            this.toolTabStrip2.Location = new System.Drawing.Point(5, 152);
+            this.toolTabStrip2.Name = "toolTabStrip2";
+            // 
+            // 
+            // 
+            this.toolTabStrip2.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.toolTabStrip2.SelectedIndex = 0;
+            this.toolTabStrip2.Size = new System.Drawing.Size(823, 177);
+            this.toolTabStrip2.SizeInfo.AbsoluteSize = new System.Drawing.Size(200, 177);
+            this.toolTabStrip2.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, 8);
+            this.toolTabStrip2.TabIndex = 2;
+            this.toolTabStrip2.TabStop = false;
+            // 
             // documentContainer1
             // 
             this.documentContainer1.Controls.Add(this.documentTabStrip1);
@@ -698,6 +703,30 @@
             gridViewTextBoxColumn17.Name = "Obs5";
             gridViewTextBoxColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn17.WrapText = true;
+            gridViewTextBoxColumn18.FieldName = "Minimo";
+            gridViewTextBoxColumn18.FormatString = "{0:N0}";
+            gridViewTextBoxColumn18.HeaderText = "Mínimo";
+            gridViewTextBoxColumn18.MaxWidth = 80;
+            gridViewTextBoxColumn18.MinWidth = 60;
+            gridViewTextBoxColumn18.Name = "Minimo";
+            gridViewTextBoxColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn18.Width = 60;
+            gridViewTextBoxColumn19.FieldName = "Maximo";
+            gridViewTextBoxColumn19.FormatString = "{0:N0}";
+            gridViewTextBoxColumn19.HeaderText = "Máximo";
+            gridViewTextBoxColumn19.MaxWidth = 80;
+            gridViewTextBoxColumn19.MinWidth = 60;
+            gridViewTextBoxColumn19.Name = "Maximo";
+            gridViewTextBoxColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn19.Width = 60;
+            gridViewTextBoxColumn20.FieldName = "Promedio";
+            gridViewTextBoxColumn20.FormatString = "{0:N0}";
+            gridViewTextBoxColumn20.HeaderText = "Promedio";
+            gridViewTextBoxColumn20.MaxWidth = 80;
+            gridViewTextBoxColumn20.MinWidth = 60;
+            gridViewTextBoxColumn20.Name = "Promedio";
+            gridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn20.Width = 60;
             this.gvDetalle.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn11,
             gridViewTextBoxColumn12,
@@ -705,7 +734,10 @@
             gridViewTextBoxColumn14,
             gridViewTextBoxColumn15,
             gridViewTextBoxColumn16,
-            gridViewTextBoxColumn17});
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewTextBoxColumn20});
             this.gvDetalle.MasterTemplate.EnableAlternatingRowColor = true;
             this.gvDetalle.MasterTemplate.ShowRowHeaderColumn = false;
             this.gvDetalle.MasterTemplate.ViewDefinition = tableViewDefinition2;
@@ -715,6 +747,7 @@
             this.gvDetalle.ShowNoDataText = false;
             this.gvDetalle.Size = new System.Drawing.Size(811, 128);
             this.gvDetalle.TabIndex = 3;
+            this.gvDetalle.ContextMenuOpening += new Telerik.WinControls.UI.ContextMenuOpeningEventHandler(this.gvDetalle_ContextMenuOpening);
             // 
             // docResumen
             // 
@@ -735,14 +768,14 @@
             // 
             // 
             // 
-            gridViewTextBoxColumn18.FieldName = "Fecha";
-            gridViewTextBoxColumn18.FormatString = "{0:dd/MM/yyyy}";
-            gridViewTextBoxColumn18.HeaderText = "Fecha";
-            gridViewTextBoxColumn18.MaxWidth = 80;
-            gridViewTextBoxColumn18.MinWidth = 80;
-            gridViewTextBoxColumn18.Name = "Fecha";
-            gridViewTextBoxColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn18.Width = 80;
+            gridViewTextBoxColumn21.FieldName = "Fecha";
+            gridViewTextBoxColumn21.FormatString = "{0:dd/MM/yyyy}";
+            gridViewTextBoxColumn21.HeaderText = "Fecha";
+            gridViewTextBoxColumn21.MaxWidth = 80;
+            gridViewTextBoxColumn21.MinWidth = 80;
+            gridViewTextBoxColumn21.Name = "Fecha";
+            gridViewTextBoxColumn21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn21.Width = 80;
             gridViewDecimalColumn3.FieldName = "Minimo";
             gridViewDecimalColumn3.FormatString = "{0:N0}";
             gridViewDecimalColumn3.HeaderText = "Mínimo";
@@ -792,7 +825,7 @@
             gridViewDecimalColumn6.Width = 90;
             gridViewDecimalColumn6.WrapText = true;
             this.gvResumen.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn21,
             gridViewDecimalColumn3,
             gridViewDecimalColumn4,
             gridViewDecimalColumn5,
@@ -812,6 +845,16 @@
             this.commandBarStripElement4.DisplayName = "commandBarStripElement4";
             this.commandBarStripElement4.Name = "commandBarStripElement4";
             // 
+            // commandBarStripElement5
+            // 
+            this.commandBarStripElement5.DisplayName = "commandBarStripElement5";
+            this.commandBarStripElement5.Name = "commandBarStripElement5";
+            // 
+            // commandBarStripElement6
+            // 
+            this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
+            this.commandBarStripElement6.Name = "commandBarStripElement6";
+            // 
             // frmCalidadEnsambleAnalisis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -830,6 +873,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).EndInit();
             this.radDock1.ResumeLayout(false);
+            this.toolResultados.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
+            this.toolTabStrip1.ResumeLayout(false);
             this.toolFiltro.ResumeLayout(false);
             this.toolFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante2)).EndInit();
@@ -839,13 +887,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOperador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
-            this.toolTabStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip2)).EndInit();
             this.toolTabStrip2.ResumeLayout(false);
-            this.toolResultados.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
             this.documentContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
@@ -871,8 +914,6 @@
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator1;
         private Telerik.WinControls.UI.CommandBarButton btnGrafica1;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
-        private Telerik.WinControls.UI.CommandBarButton btnGrafica2;
-        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator3;
         private Telerik.WinControls.UI.CommandBarButton btnSalir;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator4;
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
@@ -905,5 +946,9 @@
         private Telerik.WinControls.UI.RadGridView gvDetalle;
         private Telerik.WinControls.UI.RadGridView gvResumen;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement4;
+        private Telerik.WinControls.UI.CommandBarButton btnGraficas;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator5;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement5;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement6;
     }
 }

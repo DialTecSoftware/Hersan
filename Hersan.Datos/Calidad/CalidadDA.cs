@@ -27,6 +27,9 @@ namespace Hersan.Datos.Calidad
         const string CONS_USP_CAL_ANALISISINYECCION_HISTOGRAMA_HISTORICO = "CAL_AnalisisInyeccion_Histograma_Historico";
         const string CONS_USP_CAL_ANALISISINYECCION_GRAFICASERIES = "CAL_AnalisisInyeccion_GraficaSeries";
 
+        const string CONS_USP_CAL_INSPECCIONENSAMBLE_HISTOGRAMA = "CAL_InspeccionEnsamble_Histograma";
+        const string CONS_USP_CAL_INSPECCIONENSAMBLE_HISTOGRAMAHISTORICO = "CAL_InspeccionEnsamble_HistogramaHistorico";
+
         const string CONS_USP_CAL_RESGUARDOQA_GRAFICA = "CAL_ResguardoQA_Grafica";
         #endregion
 
@@ -378,7 +381,6 @@ namespace Hersan.Datos.Calidad
             }
         }
 
-
         public List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista)
         {
             List<CalidadGraficasCavidades> oList = new List<CalidadGraficasCavidades>();
@@ -593,6 +595,77 @@ namespace Hersan.Datos.Calidad
             }
         }
 
+        public List<CalidadGraficasValores> CAL_InspeccionEnsamble_Histograma(int Lista)
+        {
+            List<CalidadGraficasValores> oList = new List<CalidadGraficasValores>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_CAL_INSPECCIONENSAMBLE_HISTOGRAMA, conn)) {
+                        cmd.Parameters.AddWithValue("@Lista", Lista);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                CalidadGraficasValores Item = new CalidadGraficasValores();
+
+                                Item.Limite = int.Parse(reader["Superior"].ToString());
+                                Item.Val1 = int.Parse(reader["Obs1"].ToString());
+                                Item.Val2 = int.Parse(reader["Obs2"].ToString());
+                                Item.Val3 = int.Parse(reader["Obs3"].ToString());
+                                Item.Val4 = int.Parse(reader["Obs4"].ToString());
+                                Item.Val5 = int.Parse(reader["Obs5"].ToString());
+
+                                oList.Add(Item);
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<CalidadGraficasValores> CAL_InspeccionEnsamble_HistogramaHistorico(CalidadResguardoQA Obj, string Inicial, string Final)
+        {
+            List<CalidadGraficasValores> oList = new List<CalidadGraficasValores>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_CAL_INSPECCIONENSAMBLE_HISTOGRAMAHISTORICO, conn)) {
+                        cmd.Parameters.AddWithValue("@IdProducto", Obj.Producto.Id);
+                        cmd.Parameters.AddWithValue("@IdColor", Obj.Carcasa.Id);
+                        cmd.Parameters.AddWithValue("@Reflex1", Obj.Reflex1.Id);
+                        cmd.Parameters.AddWithValue("@Reflex2", Obj.Reflex2.Id);
+                        cmd.Parameters.AddWithValue("@Inicial", Inicial);
+                        cmd.Parameters.AddWithValue("@Final", Final);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                CalidadGraficasValores Item = new CalidadGraficasValores();
+
+                                Item.Limite = int.Parse(reader["Superior"].ToString());
+                                Item.Val1 = int.Parse(reader["Obs1"].ToString());
+                                Item.Val2 = int.Parse(reader["Obs2"].ToString());
+                                Item.Val3 = int.Parse(reader["Obs3"].ToString());
+                                Item.Val4 = int.Parse(reader["Obs4"].ToString());
+                                Item.Val5 = int.Parse(reader["Obs5"].ToString());
+
+                                oList.Add(Item);
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+
         public List<CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(CalidadResguardoQA Item, string Inicial, string Final)
         {
             List<CalidadResguardoQADetalle> oList = new List<CalidadResguardoQADetalle>();
@@ -612,7 +685,7 @@ namespace Hersan.Datos.Calidad
                             while (reader.Read()) {
                                 CalidadResguardoQADetalle Obj = new CalidadResguardoQADetalle();
 
-                                Obj.Lote = DateTime.Parse(reader["Fecha"].ToString()).ToShortDateString();
+                                Obj.Id = int.Parse(reader["Superior"].ToString());
                                 Obj.Valor0 = int.Parse(reader["Valor0"].ToString());
                                 Obj.Valor1 = int.Parse(reader["Valor1"].ToString());
                                 Obj.Valor2 = int.Parse(reader["Valor2"].ToString());

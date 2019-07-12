@@ -78,7 +78,6 @@ namespace Hersan.UI.Calidad
                 if (gvDetalle.RowCount > 0) {
                     frmGraficaControl frm = new frmGraficaControl();
                     frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
-                    //frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
                     frm.StartPosition = FormStartPosition.CenterScreen;
                     frm.ShowDialog();
                 } else {
@@ -175,7 +174,7 @@ namespace Hersan.UI.Calidad
                     excelExporter.RunExport(fileName);
 
                     RadMessageBox.SetThemeName(this.gvDetalle.ThemeName);
-                    if (RadMessageBox.Show("Los datos se han exportado correctamente. Desea abrir el archivo...?", "Exportar",
+                    if (RadMessageBox.Show("Los datos se han exportado correctamente. Desea abrir el archivo...?", this.Text,
                             MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
 
                         BaseWinBP.AbrirArchivoExcel(fileName);
@@ -187,7 +186,6 @@ namespace Hersan.UI.Calidad
                 throw ex;
             }
         }
-
 
         private void CargarColores()
         {
@@ -202,7 +200,6 @@ namespace Hersan.UI.Calidad
                 oCatalogos = null;
             }
         }
-
       
     }
 }

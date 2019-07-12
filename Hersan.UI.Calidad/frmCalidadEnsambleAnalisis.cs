@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
+using Telerik.WinControls.UI.Export;
 
 namespace Hersan.UI.Calidad
 {
@@ -60,32 +62,29 @@ namespace Hersan.UI.Calidad
         }
         private void btnGrafica1_Click(object sender, EventArgs e)
         {
+            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
                 if (gvDetalle.RowCount > 0) {
                     frmHistograma frm = new frmHistograma();
                     frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
-                    //frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
+                    frm.Ensamble = true;
                     frm.StartPosition = FormStartPosition.CenterScreen;
                     frm.ShowDialog();
-                } else {
+                } else
                     RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                }
             } catch (Exception ex) {
                 throw ex;
+            } finally {
+                oEnsamble = null;
             }
-        }
-        private void btnGrafica2_Click(object sender, EventArgs e)
+        }        
+        private void btnGraficas_Click(object sender, EventArgs e)
         {
             try {
-                if (gvDetalle.RowCount > 0) {
-                    frmGraficaControl frm = new frmGraficaControl();
-                    frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
-                    //frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
-                    frm.StartPosition = FormStartPosition.CenterScreen;
-                    frm.ShowDialog();
-                } else {
-                    RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                }
+                frmFiltrosGraficaQA frm = new frmFiltrosGraficaQA();
+                frm.Ensamble = true;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
             } catch (Exception ex) {
                 throw ex;
             }
@@ -124,6 +123,60 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al seleccionar la lista\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oEnsamble = null;
+            }
+        }
+        private void gvDetalle_ContextMenuOpening(object sender, Telerik.WinControls.UI.ContextMenuOpeningEventArgs e)
+        {
+            try {
+                if (this.gvDetalle.RowCount > 0) {
+                    Telerik.WinControls.UI.RadDropDownMenu Menu = new RadDropDownMenu();
+                    RadMenuItem MenuItem = new RadMenuItem("Exportar a Excel");
+                    MenuItem.Click += new EventHandler(MenuItem_Click);
+                    Menu.Items.Add(MenuItem);
+                    e.ContextMenu = Menu;
+                }
+
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void MenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            try {
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xls";
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() != DialogResult.OK) {
+                    return;
+                }
+
+                if (saveFileDialog.FileName.Equals(String.Empty)) {
+                    RadMessageBox.SetThemeName(this.gvDetalle.ThemeName);
+                    RadMessageBox.Show("Capture el nombre del archivo");
+                    return;
+                }
+
+                string fileName = saveFileDialog.FileName;
+
+                ExportToExcelML excelExporter = new ExportToExcelML(this.gvDetalle);
+                excelExporter.SheetName = "Datos";
+                excelExporter.SummariesExportOption = SummariesOption.ExportAll;
+
+                try {
+                    excelExporter.RunExport(fileName);
+
+                    RadMessageBox.SetThemeName(this.gvDetalle.ThemeName);
+                    if (RadMessageBox.Show("Los datos se han exportado correctamente. Desea abrir el archivo...?", this.Text,
+                            MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+
+                        BaseWinBP.AbrirArchivoExcel(fileName);
+                    }
+                } catch (System.IO.IOException ex) {
+                    RadMessageBox.Show(this, ex.Message, "Error I/O", MessageBoxButtons.OK, RadMessageIcon.Error);
+                }
+            } catch (Exception ex) {
+                throw ex;
             }
         }
 
@@ -172,6 +225,6 @@ namespace Hersan.UI.Calidad
                 oCatalogos = null;
             }
         }
-
+        
     }
 }

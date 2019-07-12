@@ -154,6 +154,9 @@ namespace Hersan.Entidades.Calidad
         public int Obs3 { get; set; }
         public int Obs4 { get; set; }
         public int Obs5 { get; set; }
+        public int Maximo { get; set; }
+        public int Minimo { get; set; }
+        public int Promedio { get; set; }
         public List<CalidadResumenBE> Resumen { get; set; }
         public DateTime Fecha { get; set; }
         public int IdUsuario { get; set; }

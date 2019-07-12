@@ -203,7 +203,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
-            this.Text = "frmFiltrosGraficaQA";
+            this.Text = "FILTROS GRÁFICA";
             this.Load += new System.EventHandler(this.frmFiltrosGraficaQA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante1)).EndInit();

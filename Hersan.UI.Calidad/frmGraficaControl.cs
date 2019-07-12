@@ -7,6 +7,7 @@ using Telerik.WinControls.UI;
 using Telerik.Charting;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Hersan.UI.Calidad
 {
@@ -21,6 +22,8 @@ namespace Hersan.UI.Calidad
         public string Inicial { get; set; }
         public string Final{ get; set; }
         public bool Series { get; set; }
+
+        RadChartView chart = new RadChartView();
         #endregion
 
         public frmGraficaControl()
@@ -30,6 +33,8 @@ namespace Hersan.UI.Calidad
         private void frmHistograma_Load(object sender, EventArgs e)
         {
             try {
+                chart.ContextMenuOpening += new ChartViewContextMenuOpeningEventHandler(Chart_ContextMenuOpening);
+
                 if (!Series) {
                     CargarDatos();
                     GenerarGraficas();
@@ -51,7 +56,33 @@ namespace Hersan.UI.Calidad
                     GenerarSerie();
                 }
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al seleccionar la pestaña\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void Chart_ContextMenuOpening(object sender, ChartViewContextMenuOpeningEventArgs e)
+        {
+            try {
+                RadContextMenu Menu = new RadContextMenu();
+                RadMenuItem MenuItem = new RadMenuItem("Exportar Gráfica");
+                MenuItem.Click += new EventHandler(MenuItem_Click);
+                Menu.Items.Add(MenuItem);
+                e.ContextMenu = Menu;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al mostrar el menú\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void MenuItem_Click(object sender, EventArgs e)
+        {
+            try {
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = string.Format("Image (*.{0};)|*.{0}", "Jpeg");
+
+                if (dialog.ShowDialog() == DialogResult.OK) {
+                    this.chart.ExportToImage(dialog.FileName, new Size(800, 600), ImageFormat.Jpeg);
+                    RadMessageBox.Show("Gráfica exportada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al exportar la gráfica\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -110,7 +141,7 @@ namespace Hersan.UI.Calidad
                         panZoomController.PanZoomMode = ChartPanZoomMode.Horizontal;
                         chart1.View.Palette = KnownPalette.Material;
 
-                        RadChartView chart = chart1;
+                        chart = chart1;
                         chart.Series.Clear();
                         chart.Title = Aux.Text;
                         chart.ShowPanZoom = true;
@@ -174,7 +205,7 @@ namespace Hersan.UI.Calidad
                     RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al generar la gráfica\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
 
         }
@@ -187,7 +218,7 @@ namespace Hersan.UI.Calidad
                     panZoomController.PanZoomMode = ChartPanZoomMode.Horizontal;
                     chart1.View.Palette = KnownPalette.Material;
 
-                    RadChartView chart = chart1;
+                    chart = chart1;
                     chart.Series.Clear();
                     chart.Title = Aux.Text;
                     chart.ShowPanZoom = true;
@@ -266,7 +297,7 @@ namespace Hersan.UI.Calidad
                     Aux.Controls.Add(chart);
                 }
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al generar la gráfica\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oEnsamble = null;
             }

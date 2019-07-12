@@ -159,11 +159,14 @@
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
       <xs:element minOccurs="0" name="Lote" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Maquina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maximo" type="xs:int" />
+      <xs:element minOccurs="0" name="Minimo" type="xs:int" />
       <xs:element minOccurs="0" name="Obs1" type="xs:int" />
       <xs:element minOccurs="0" name="Obs2" type="xs:int" />
       <xs:element minOccurs="0" name="Obs3" type="xs:int" />
       <xs:element minOccurs="0" name="Obs4" type="xs:int" />
       <xs:element minOccurs="0" name="Obs5" type="xs:int" />
+      <xs:element minOccurs="0" name="Promedio" type="xs:int" />
       <xs:element minOccurs="0" name="Reflejante" type="xs:int" />
       <xs:element minOccurs="0" name="Resumen" nillable="true" type="tns:ArrayOfCalidadResumenBE" />
     </xs:sequence>

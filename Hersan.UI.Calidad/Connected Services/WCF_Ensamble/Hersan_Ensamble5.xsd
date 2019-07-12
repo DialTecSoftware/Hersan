@@ -1129,10 +1129,40 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CAL_InspeccionEnsamble_Histograma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Lista" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CAL_InspeccionEnsamble_HistogramaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_HistogramaResult" nillable="true" type="q57:ArrayOfCalidadGraficasValores" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CAL_InspeccionEnsamble_HistogramaHistorico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q58:CalidadResguardoQA" />
+        <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CAL_InspeccionEnsamble_HistogramaHistoricoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_HistogramaHistoricoResult" nillable="true" type="q59:ArrayOfCalidadGraficasValores" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CAL_ResguardoQA_Grafica">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Item" nillable="true" type="q57:CalidadResguardoQA" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Item" nillable="true" type="q60:CalidadResguardoQA" />
         <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1141,7 +1171,7 @@
   <xs:element name="CAL_ResguardoQA_GraficaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ResguardoQA_GraficaResult" nillable="true" type="q58:ArrayOfCalidadResguardoQADetalle" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ResguardoQA_GraficaResult" nillable="true" type="q61:ArrayOfCalidadResguardoQADetalle" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

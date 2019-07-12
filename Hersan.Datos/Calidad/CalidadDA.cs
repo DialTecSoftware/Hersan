@@ -26,6 +26,8 @@ namespace Hersan.Datos.Calidad
         const string CONS_USP_CAL_ANALISISINYECCION_GRAFICACONTROL = "CAL_AnalisisInyeccion_GraficaControl";
         const string CONS_USP_CAL_ANALISISINYECCION_HISTOGRAMA_HISTORICO = "CAL_AnalisisInyeccion_Histograma_Historico";
         const string CONS_USP_CAL_ANALISISINYECCION_GRAFICASERIES = "CAL_AnalisisInyeccion_GraficaSeries";
+
+        const string CONS_USP_CAL_RESGUARDOQA_GRAFICA = "CAL_ResguardoQA_Grafica";
         #endregion
 
         public int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, DataTable Detalle)
@@ -193,8 +195,6 @@ namespace Hersan.Datos.Calidad
                         cmd.Parameters.AddWithValue("@IdRef1", Obj.Parametros.Reflex1.Id);
                         cmd.Parameters.AddWithValue("@IdRef2", Obj.Parametros.Reflex2.Id);
                         cmd.Parameters.AddWithValue("@Operador", Obj.Operador);
-                        cmd.Parameters.AddWithValue("@Inicial", Obj.Parametros.DatosUsuario.FechaCreacion);
-                        cmd.Parameters.AddWithValue("@Final", Obj.Parametros.DatosUsuario.FechaModif);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
@@ -202,6 +202,9 @@ namespace Hersan.Datos.Calidad
                                 CalidadEnsambleBE item = new CalidadEnsambleBE();
 
                                 item.Id = int.Parse(reader["Id"].ToString());
+                                item.Muestra = int.Parse(reader["Muestra"].ToString());
+                                item.Total = int.Parse(reader["Total"].ToString());
+                                item.Porcentaje = reader["Porcentaje"].ToString();
                                 item.Fecha = DateTime.Parse(reader["Fecha"].ToString());
                                 item.Parametros.OP = reader["OP"].ToString();
                                 item.Parametros.Lista = int.Parse(reader["Lista"].ToString());
@@ -550,7 +553,7 @@ namespace Hersan.Datos.Calidad
                             while (reader.Read()) {
                                 CalidadGraficaSeries Item = new CalidadGraficaSeries();
 
-                                Item.Fecha = reader["Fecha"].ToString();
+                                Item.Fecha = DateTime.Parse(reader["Fecha"].ToString()).ToShortDateString();
                                 Item.Val1 = int.Parse(reader["Cav1"].ToString());
                                 Item.Val2 = int.Parse(reader["Cav2"].ToString());
                                 Item.Val3 = int.Parse(reader["Cav3"].ToString());
@@ -579,6 +582,42 @@ namespace Hersan.Datos.Calidad
                                 Item.Min8 = int.Parse(reader["Min8"].ToString());
 
                                 oList.Add(Item);
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public List<CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(CalidadResguardoQA Item, string Inicial, string Final)
+        {
+            List<CalidadResguardoQADetalle> oList = new List<CalidadResguardoQADetalle>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_CAL_RESGUARDOQA_GRAFICA, conn)) {
+                        cmd.Parameters.AddWithValue("@IdProducto", Item.Producto.Id);
+                        cmd.Parameters.AddWithValue("@IdColor", Item.Carcasa.Id);
+                        cmd.Parameters.AddWithValue("@Reflex1", Item.Reflex1.Id);
+                        cmd.Parameters.AddWithValue("@Reflex2", Item.Reflex2.Id);
+                        cmd.Parameters.AddWithValue("@Inicial", Inicial);
+                        cmd.Parameters.AddWithValue("@Final", Final);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                CalidadResguardoQADetalle Obj = new CalidadResguardoQADetalle();
+
+                                Obj.Lote = DateTime.Parse(reader["Fecha"].ToString()).ToShortDateString();
+                                Obj.Valor0 = int.Parse(reader["Valor0"].ToString());
+                                Obj.Valor1 = int.Parse(reader["Valor1"].ToString());
+                                Obj.Valor2 = int.Parse(reader["Valor2"].ToString());
+
+                                oList.Add(Obj);
                             }
                         }
 

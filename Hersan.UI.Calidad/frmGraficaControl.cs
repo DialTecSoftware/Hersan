@@ -23,7 +23,6 @@ namespace Hersan.UI.Calidad
         public bool Series { get; set; }
         #endregion
 
-
         public frmGraficaControl()
         {
             InitializeComponent();
@@ -56,13 +55,11 @@ namespace Hersan.UI.Calidad
             }
         }
 
-
         private void CargarDatos()
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
                 oList = oEnsamble.CAL_AnalisisInyeccion_GraficaControl(Lista, "20190708");
-                //gvResumen.DataSource = Resumen;
 
                 if (oList.Count > 0) {
                     foreach (var crtl in PageView.Pages) {
@@ -123,42 +120,42 @@ namespace Hersan.UI.Calidad
                         LineSeries Min = new LineSeries();
                         oList[0].Valores.ForEach(item => {
                         if (Aux.Tag.ToString() == "Cav1") {
-                                vMin = Resumen[0].Promedio - (3 * Resumen[0].DesvEst);
+                                vMin = oList[0].Norma.Cav1;
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val1, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav2") {
-                                vMin = Resumen[1].Promedio - (3 * Resumen[1].DesvEst);
+                                vMin = oList[0].Norma.Cav2;
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val2, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav3") {
-                                vMin = Resumen[2].Promedio - (3 * Resumen[2].DesvEst);
+                                vMin = oList[0].Norma.Cav3;
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val3, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav4") {
-                                vMin = Resumen[3].Promedio - (3 * Resumen[3].DesvEst);
+                                vMin = oList[0].Norma.Cav4;
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val4, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav5") {
-                                vMin = Resumen[4].Promedio - (3 * Resumen[4].DesvEst);
+                                vMin = oList[0].Norma.Cav5;
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val5, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav6") {
-                                vMin = Resumen[5].Promedio - (3 * Resumen[5].DesvEst);
+                                vMin = oList[0].Norma.Cav6;
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val6, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav7") {
-                                vMin = Resumen[6].Promedio - (3 * Resumen[6].DesvEst);
+                                vMin = oList[0].Norma.Cav7;
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val7, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
                             }
                             if (Aux.Tag.ToString() == "Cav8") {
-                                vMin = Resumen[7].Promedio - (3 * Resumen[7].DesvEst);
+                                vMin = oList[0].Norma.Cav8;
                                 lineSeries.DataPoints.Add(new CategoricalDataPoint(item.Val8, item.Hora));
                                 Min.DataPoints.Add(new CategoricalDataPoint(double.Parse(vMin.ToString()), item.Hora));
                             }

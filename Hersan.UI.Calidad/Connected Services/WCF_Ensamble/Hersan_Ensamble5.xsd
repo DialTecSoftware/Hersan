@@ -1129,4 +1129,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CAL_ResguardoQA_Grafica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Item" nillable="true" type="q57:CalidadResguardoQA" />
+        <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CAL_ResguardoQA_GraficaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ResguardoQA_GraficaResult" nillable="true" type="q58:ArrayOfCalidadResguardoQADetalle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

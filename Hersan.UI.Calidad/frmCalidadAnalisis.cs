@@ -62,9 +62,8 @@ namespace Hersan.UI.Calidad
                 if (gvDetalle.RowCount > 0) {
                     frmHistograma frm = new frmHistograma();
                     frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
-                    frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
+                    //frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
                     frm.StartPosition = FormStartPosition.CenterScreen;
-                    //frm.WindowState = FormWindowState.Maximized;
                     frm.ShowDialog();
                 } else {
                     RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
@@ -79,7 +78,7 @@ namespace Hersan.UI.Calidad
                 if (gvDetalle.RowCount > 0) {
                     frmGraficaControl frm = new frmGraficaControl();
                     frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
-                    frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
+                    //frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
                     frm.StartPosition = FormStartPosition.CenterScreen;
                     frm.ShowDialog();
                 } else {

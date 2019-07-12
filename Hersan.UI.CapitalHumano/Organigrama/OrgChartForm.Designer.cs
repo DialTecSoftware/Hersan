@@ -1,4 +1,4 @@
-﻿namespace Hersan.UI.CapitalHumano.Organigrama
+﻿namespace Hersan.UI.CapitalHumano
 {
     partial class OrgChartForm
     {

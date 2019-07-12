@@ -116,6 +116,8 @@ namespace Hersan.Entidades.Calidad
         public int Id { get; set; }
         public int Norma { get; set; }
         public int Muestra { get; set; }
+        public int Total { get; set; }
+        public string Porcentaje { get; set; }
         public EnsambleParametrosBE Parametros { get; set; }
         public string Operador { get; set; }
         public DateTime Fecha { get; set; }

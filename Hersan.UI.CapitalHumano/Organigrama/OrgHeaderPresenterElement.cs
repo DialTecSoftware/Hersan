@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Telerik.WinControls.UI;
 
-namespace Hersan.UI.CapitalHumano.Organigrama
+namespace Hersan.UI.CapitalHumano
 {
     class OrgHeaderPresenterElement : LightVisualElement
     {

@@ -18,7 +18,7 @@ namespace Hersan.UI.CapitalHumano
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Organigrama.OrgChartForm());
+                Application.Run(new OrgChartForm());
             }
         }
     }

@@ -285,6 +285,11 @@ namespace Hersan.Ensamble.Service
         {
             return new CalidadBP().CAL_AnalisisInyeccion_GraficaSeries(Inicial, Final);
         }
+
+        public List<CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(CalidadResguardoQA Item, string Inicial, string Final)
+        {
+            return new CalidadBP().CAL_ResguardoQA_Grafica(Item, Inicial, Final);
+        }
         #endregion
     }
 }

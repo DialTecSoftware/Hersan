@@ -200,6 +200,9 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeries", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeriesResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficaSeries> CAL_AnalisisInyeccion_GraficaSeries(string Inicial, string Final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GraficaResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -471,6 +474,10 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficaSeries> CAL_AnalisisInyeccion_GraficaSeries(string Inicial, string Final) {
             return base.Channel.CAL_AnalisisInyeccion_GraficaSeries(Inicial, Final);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final) {
+            return base.Channel.CAL_ResguardoQA_Grafica(Item, Inicial, Final);
         }
     }
 }

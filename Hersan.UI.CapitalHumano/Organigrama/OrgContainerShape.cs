@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
-namespace Hersan.UI.CapitalHumano.Organigrama
+namespace Hersan.UI.CapitalHumano
 {
     class OrgContainerShape: RadDiagramContainerShape
     {

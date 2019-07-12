@@ -146,6 +146,8 @@
       <xs:element minOccurs="0" name="Norma" type="xs:int" />
       <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Parametros" nillable="true" type="tns:EnsambleParametrosBE" />
+      <xs:element minOccurs="0" name="Porcentaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CalidadEnsambleBE" nillable="true" type="tns:CalidadEnsambleBE" />

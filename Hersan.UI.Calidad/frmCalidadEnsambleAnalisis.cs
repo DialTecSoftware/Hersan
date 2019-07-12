@@ -21,10 +21,6 @@ namespace Hersan.UI.Calidad
         private void frmCalidadEnsambleAnalisis_Load(object sender, EventArgs e)
         {
             try {
-                dtInicial.Value = DateTime.Today;
-                dtInicial.Checked = false;
-                dtFinal.Enabled = dtInicial.Checked;
-
                 CargarProductos();
                 CargaCarcasas();
                 CargaReflejantes();
@@ -46,10 +42,6 @@ namespace Hersan.UI.Calidad
                 Obj.Parametros.Reflex1.Id = cboReflejante1.SelectedValue == null ? 0 : int.Parse(cboReflejante1.SelectedValue.ToString());
                 Obj.Parametros.Reflex2.Id = cboReflejante2.SelectedValue == null ? 0 : int.Parse(cboReflejante1.SelectedValue.ToString());
                 Obj.Operador = txtOperador.Text;
-                Obj.Parametros.DatosUsuario.FechaCreacion = DateTime.Parse(dtInicial.Checked ? dtInicial.Value.Year.ToString() + "/" + dtInicial.Value.Month.ToString().PadLeft(2, '0')
-                    + "/" + dtInicial.Value.Day.ToString().PadLeft(2, '0') : "1900/01/01");
-                Obj.Parametros.DatosUsuario.FechaModif = DateTime.Parse(dtInicial.Checked ? dtFinal.Value.Year.ToString() + "/" + dtFinal.Value.Month.ToString().PadLeft(2, '0')
-                    + "/" + dtFinal.Value.Day.ToString().PadLeft(2, '0') : "2900/01/01");
 
                 oList = oEnsamble.CAL_InspeccionEnsamble_Analisis(Obj);
                 if (oList.Count > 0)
@@ -72,9 +64,8 @@ namespace Hersan.UI.Calidad
                 if (gvDetalle.RowCount > 0) {
                     frmHistograma frm = new frmHistograma();
                     frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
-                    frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
+                    //frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
                     frm.StartPosition = FormStartPosition.CenterScreen;
-                    //frm.WindowState = FormWindowState.Maximized;
                     frm.ShowDialog();
                 } else {
                     RadMessageBox.Show("No existen datos a graficar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
@@ -89,7 +80,7 @@ namespace Hersan.UI.Calidad
                 if (gvDetalle.RowCount > 0) {
                     frmGraficaControl frm = new frmGraficaControl();
                     frm.Lista = int.Parse(gvDatos.CurrentRow.Cells["Lista"].Value.ToString());
-                    frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
+                    //frm.Resumen = oDetalle.Count > 0 ? oDetalle[0].Resumen : null;
                     frm.StartPosition = FormStartPosition.CenterScreen;
                     frm.ShowDialog();
                 } else {
@@ -115,22 +106,6 @@ namespace Hersan.UI.Calidad
                 }
             } catch (Exception ex) {
                 throw ex;
-            }
-        }
-        private void dtInicial_CheckedChanged(object sender, EventArgs e)
-        {
-            try {
-                dtFinal.Enabled = dtInicial.Checked;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al seleccionar la fecha\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void dtInicial_ValueChanged(object sender, EventArgs e)
-        {
-            try {
-                dtFinal.MinDate = dtInicial.Value;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cambiar la fecha\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)

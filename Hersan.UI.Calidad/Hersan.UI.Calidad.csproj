@@ -106,6 +106,12 @@
     <Compile Include="frmEnsambleSup.Designer.cs">
       <DependentUpon>frmEnsambleSup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFiltrosGraficaQA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFiltrosGraficaQA.Designer.cs">
+      <DependentUpon>frmFiltrosGraficaQA.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGraficaControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,12 @@
     </Compile>
     <Compile Include="frmGraficaHistorica.Designer.cs">
       <DependentUpon>frmGraficaHistorica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGraficaQA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGraficaQA.Designer.cs">
+      <DependentUpon>frmGraficaQA.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHistograma.cs">
       <SubType>Form</SubType>
@@ -170,11 +182,17 @@
     <EmbeddedResource Include="frmEnsambleSup.resx">
       <DependentUpon>frmEnsambleSup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFiltrosGraficaQA.resx">
+      <DependentUpon>frmFiltrosGraficaQA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGraficaControl.resx">
       <DependentUpon>frmGraficaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGraficaHistorica.resx">
       <DependentUpon>frmGraficaHistorica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGraficaQA.resx">
+      <DependentUpon>frmGraficaQA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistograma.resx">
       <DependentUpon>frmHistograma.cs</DependentUpon>
@@ -261,6 +279,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficaSeries.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficasValores.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadResguardoQA.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadResguardoQADetalle.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.EnsambleParametrosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.EnsambleParametrosDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.NormaBE.datasource" />

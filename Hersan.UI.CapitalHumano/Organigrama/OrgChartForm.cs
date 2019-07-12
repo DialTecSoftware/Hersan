@@ -11,7 +11,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 
 
-namespace Hersan.UI.CapitalHumano.Organigrama
+namespace Hersan.UI.CapitalHumano
 {
     public partial class OrgChartForm : Telerik.WinControls.UI.RadForm
     {

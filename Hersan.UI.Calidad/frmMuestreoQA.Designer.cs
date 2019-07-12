@@ -51,6 +51,8 @@
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnGrafica = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
@@ -74,6 +76,8 @@
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.commandBarStripElement7 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement8 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -136,6 +140,8 @@
             this.commandBarSeparator1,
             this.btnGuardar,
             this.commandBarSeparator2,
+            this.btnGrafica,
+            this.commandBarSeparator4,
             this.btnSalir,
             this.commandBarSeparator3,
             this.commandBarLabel1});
@@ -178,6 +184,22 @@
             this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
             this.commandBarSeparator2.Name = "commandBarSeparator2";
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
+            // 
+            // btnGrafica
+            // 
+            this.btnGrafica.DisplayName = "commandBarButton1";
+            this.btnGrafica.DrawText = true;
+            this.btnGrafica.Image = ((System.Drawing.Image)(resources.GetObject("btnGrafica.Image")));
+            this.btnGrafica.Name = "btnGrafica";
+            this.btnGrafica.Text = "Histograma";
+            this.btnGrafica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGrafica.Click += new System.EventHandler(this.btnGrafica_Click);
+            // 
+            // commandBarSeparator4
+            // 
+            this.commandBarSeparator4.DisplayName = "commandBarSeparator4";
+            this.commandBarSeparator4.Name = "commandBarSeparator4";
+            this.commandBarSeparator4.VisibleInOverflowMenu = false;
             // 
             // btnSalir
             // 
@@ -538,6 +560,16 @@
             this.gvDatos.TabIndex = 0;
             this.gvDatos.ViewCellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gvDatos_ViewCellFormatting);
             // 
+            // commandBarStripElement7
+            // 
+            this.commandBarStripElement7.DisplayName = "commandBarStripElement7";
+            this.commandBarStripElement7.Name = "commandBarStripElement7";
+            // 
+            // commandBarStripElement8
+            // 
+            this.commandBarStripElement8.DisplayName = "commandBarStripElement8";
+            this.commandBarStripElement8.Name = "commandBarStripElement8";
+            // 
             // frmMuestreoQA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -610,5 +642,9 @@
         private Telerik.WinControls.UI.RadTextBox txtId;
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.UI.RadDateTimePicker dtFecha;
+        private Telerik.WinControls.UI.CommandBarButton btnGrafica;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator4;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement7;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement8;
     }
 }

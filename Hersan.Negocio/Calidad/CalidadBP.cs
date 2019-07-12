@@ -65,5 +65,10 @@ namespace Hersan.Negocio.Calidad
         {
             return new CalidadDA().CAL_AnalisisInyeccion_GraficaSeries(Inicial, Final);
         }
+
+        public List<CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(CalidadResguardoQA Item, string Inicial, string Final)
+        {
+            return new CalidadDA().CAL_ResguardoQA_Grafica(Item, Inicial, Final);
+        }
     }
 }

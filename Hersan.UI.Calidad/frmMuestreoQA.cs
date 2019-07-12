@@ -22,7 +22,7 @@ namespace Hersan.UI.Calidad
         }
         private void frmMuestreoQA_Load(object sender, EventArgs e)
         {
-            try {                
+            try {              
                 CargaCarcasas();
                 CargaReflejantes();
                 CargarProductos();
@@ -76,6 +76,16 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al guardar los datos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oEnsamble = null;
+            }
+        }
+        private void btnGrafica_Click(object sender, EventArgs e)
+        {
+            try {
+                frmFiltrosGraficaQA frm = new frmFiltrosGraficaQA();
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
+            } catch (Exception ex) {
+                throw ex;
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)
@@ -250,6 +260,6 @@ namespace Hersan.UI.Calidad
 
         }
 
-        
+       
     }
 }

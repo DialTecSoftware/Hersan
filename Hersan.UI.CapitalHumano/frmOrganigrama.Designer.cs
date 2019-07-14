@@ -54,6 +54,14 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.radCheckBox1 = new Telerik.WinControls.UI.RadCheckBox();
+            this.gpoJefe = new Telerik.WinControls.UI.RadGroupBox();
+            this.cboDeptoJefe = new Telerik.WinControls.UI.RadDropDownList();
+            this.cboEntidadJefe = new Telerik.WinControls.UI.RadDropDownList();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboPadre = new Telerik.WinControls.UI.RadDropDownList();
+            this.label2 = new System.Windows.Forms.Label();
             this.chkEstatus = new Telerik.WinControls.UI.RadCheckBox();
             this.cboDepto = new Telerik.WinControls.UI.RadDropDownList();
             this.cboEntidad = new Telerik.WinControls.UI.RadDropDownList();
@@ -63,29 +71,21 @@
             this.cboPuestos = new Telerik.WinControls.UI.RadDropDownList();
             this.label4 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
-            this.gpoJefe = new Telerik.WinControls.UI.RadGroupBox();
-            this.cboDeptoJefe = new Telerik.WinControls.UI.RadDropDownList();
-            this.cboEntidadJefe = new Telerik.WinControls.UI.RadDropDownList();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboPadre = new Telerik.WinControls.UI.RadDropDownList();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radCheckBox1 = new Telerik.WinControls.UI.RadCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gpoJefe)).BeginInit();
+            this.gpoJefe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboDeptoJefe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEntidadJefe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboPadre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPuestos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gpoJefe)).BeginInit();
-            this.gpoJefe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cboDeptoJefe)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEntidadJefe)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboPadre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +96,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(811, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(811, 81);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -232,14 +232,93 @@
             this.radPanel1.Controls.Add(this.cboPuestos);
             this.radPanel1.Controls.Add(this.label4);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 56);
+            this.radPanel1.Location = new System.Drawing.Point(0, 81);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(811, 109);
             this.radPanel1.TabIndex = 1;
             // 
+            // radCheckBox1
+            // 
+            this.radCheckBox1.Location = new System.Drawing.Point(285, 72);
+            this.radCheckBox1.Name = "radCheckBox1";
+            this.radCheckBox1.Size = new System.Drawing.Size(109, 18);
+            this.radCheckBox1.TabIndex = 44;
+            this.radCheckBox1.Text = "Direccion General";
+            this.radCheckBox1.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox1_ToggleStateChanged);
+            // 
+            // gpoJefe
+            // 
+            this.gpoJefe.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.gpoJefe.Controls.Add(this.cboDeptoJefe);
+            this.gpoJefe.Controls.Add(this.cboEntidadJefe);
+            this.gpoJefe.Controls.Add(this.label1);
+            this.gpoJefe.Controls.Add(this.label6);
+            this.gpoJefe.Controls.Add(this.cboPadre);
+            this.gpoJefe.Controls.Add(this.label2);
+            this.gpoJefe.HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Far;
+            this.gpoJefe.HeaderText = "Jefe Inmediato";
+            this.gpoJefe.Location = new System.Drawing.Point(417, 2);
+            this.gpoJefe.Name = "gpoJefe";
+            this.gpoJefe.Size = new System.Drawing.Size(365, 98);
+            this.gpoJefe.TabIndex = 43;
+            this.gpoJefe.Text = "Jefe Inmediato";
+            // 
+            // cboDeptoJefe
+            // 
+            this.cboDeptoJefe.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboDeptoJefe.Location = new System.Drawing.Point(91, 44);
+            this.cboDeptoJefe.Name = "cboDeptoJefe";
+            this.cboDeptoJefe.Size = new System.Drawing.Size(208, 20);
+            this.cboDeptoJefe.TabIndex = 48;
+            this.cboDeptoJefe.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboDeptoJefe_SelectedIndexChanged);
+            // 
+            // cboEntidadJefe
+            // 
+            this.cboEntidadJefe.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboEntidadJefe.Location = new System.Drawing.Point(91, 19);
+            this.cboEntidadJefe.Name = "cboEntidadJefe";
+            this.cboEntidadJefe.Size = new System.Drawing.Size(208, 20);
+            this.cboEntidadJefe.TabIndex = 47;
+            this.cboEntidadJefe.SelectedValueChanged += new System.EventHandler(this.cboEntidadJefe_SelectedValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Depto.:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Entidad:";
+            // 
+            // cboPadre
+            // 
+            this.cboPadre.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cboPadre.Location = new System.Drawing.Point(91, 69);
+            this.cboPadre.Name = "cboPadre";
+            this.cboPadre.Size = new System.Drawing.Size(208, 20);
+            this.cboPadre.TabIndex = 44;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Jefe Inmed.";
+            // 
             // chkEstatus
             // 
-            this.chkEstatus.Location = new System.Drawing.Point(261, 20);
+            this.chkEstatus.Location = new System.Drawing.Point(319, 20);
             this.chkEstatus.Name = "chkEstatus";
             this.chkEstatus.Size = new System.Drawing.Size(55, 18);
             this.chkEstatus.TabIndex = 38;
@@ -251,7 +330,7 @@
             this.cboDepto.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cboDepto.Location = new System.Drawing.Point(63, 46);
             this.cboDepto.Name = "cboDepto";
-            this.cboDepto.Size = new System.Drawing.Size(160, 20);
+            this.cboDepto.Size = new System.Drawing.Size(210, 20);
             this.cboDepto.TabIndex = 37;
             this.cboDepto.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboDepto_SelectedIndexChanged);
             // 
@@ -260,7 +339,7 @@
             this.cboEntidad.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cboEntidad.Location = new System.Drawing.Point(63, 21);
             this.cboEntidad.Name = "cboEntidad";
-            this.cboEntidad.Size = new System.Drawing.Size(160, 20);
+            this.cboEntidad.Size = new System.Drawing.Size(210, 20);
             this.cboEntidad.TabIndex = 36;
             this.cboEntidad.SelectedValueChanged += new System.EventHandler(this.cboEntidad_SelectedValueChanged);
             // 
@@ -284,7 +363,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(261, 43);
+            this.txtId.Location = new System.Drawing.Point(319, 43);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(56, 20);
             this.txtId.TabIndex = 33;
@@ -295,7 +374,7 @@
             this.cboPuestos.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cboPuestos.Location = new System.Drawing.Point(63, 71);
             this.cboPuestos.Name = "cboPuestos";
-            this.cboPuestos.Size = new System.Drawing.Size(160, 20);
+            this.cboPuestos.Size = new System.Drawing.Size(210, 20);
             this.cboPuestos.TabIndex = 31;
             // 
             // label4
@@ -310,7 +389,7 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 165);
+            this.gvDatos.Location = new System.Drawing.Point(0, 190);
             // 
             // 
             // 
@@ -380,88 +459,9 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.ShowRowErrors = false;
-            this.gvDatos.Size = new System.Drawing.Size(811, 243);
+            this.gvDatos.Size = new System.Drawing.Size(811, 218);
             this.gvDatos.TabIndex = 8;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
-            // 
-            // gpoJefe
-            // 
-            this.gpoJefe.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.gpoJefe.Controls.Add(this.cboDeptoJefe);
-            this.gpoJefe.Controls.Add(this.cboEntidadJefe);
-            this.gpoJefe.Controls.Add(this.label1);
-            this.gpoJefe.Controls.Add(this.label6);
-            this.gpoJefe.Controls.Add(this.cboPadre);
-            this.gpoJefe.Controls.Add(this.label2);
-            this.gpoJefe.HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Far;
-            this.gpoJefe.HeaderText = "Jefe Inmediato";
-            this.gpoJefe.Location = new System.Drawing.Point(386, 2);
-            this.gpoJefe.Name = "gpoJefe";
-            this.gpoJefe.Size = new System.Drawing.Size(264, 98);
-            this.gpoJefe.TabIndex = 43;
-            this.gpoJefe.Text = "Jefe Inmediato";
-            // 
-            // cboDeptoJefe
-            // 
-            this.cboDeptoJefe.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboDeptoJefe.Location = new System.Drawing.Point(91, 44);
-            this.cboDeptoJefe.Name = "cboDeptoJefe";
-            this.cboDeptoJefe.Size = new System.Drawing.Size(160, 20);
-            this.cboDeptoJefe.TabIndex = 48;
-            this.cboDeptoJefe.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboDeptoJefe_SelectedIndexChanged);
-            // 
-            // cboEntidadJefe
-            // 
-            this.cboEntidadJefe.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboEntidadJefe.Location = new System.Drawing.Point(91, 19);
-            this.cboEntidadJefe.Name = "cboEntidadJefe";
-            this.cboEntidadJefe.Size = new System.Drawing.Size(160, 20);
-            this.cboEntidadJefe.TabIndex = 47;
-            this.cboEntidadJefe.SelectedValueChanged += new System.EventHandler(this.cboEntidadJefe_SelectedValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Depto.:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Entidad:";
-            // 
-            // cboPadre
-            // 
-            this.cboPadre.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboPadre.Location = new System.Drawing.Point(91, 69);
-            this.cboPadre.Name = "cboPadre";
-            this.cboPadre.Size = new System.Drawing.Size(158, 20);
-            this.cboPadre.TabIndex = 44;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Jefe Inmed.";
-            // 
-            // radCheckBox1
-            // 
-            this.radCheckBox1.Location = new System.Drawing.Point(238, 72);
-            this.radCheckBox1.Name = "radCheckBox1";
-            this.radCheckBox1.Size = new System.Drawing.Size(109, 18);
-            this.radCheckBox1.TabIndex = 44;
-            this.radCheckBox1.Text = "Direccion General";
-            this.radCheckBox1.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox1_ToggleStateChanged);
             // 
             // frmOrganigrama
             // 
@@ -484,19 +484,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboPuestos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gpoJefe)).EndInit();
             this.gpoJefe.ResumeLayout(false);
             this.gpoJefe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboDeptoJefe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEntidadJefe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPadre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboDepto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEntidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboPuestos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

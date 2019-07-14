@@ -16,6 +16,7 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_USP_CHU_PERFILES_OBTENER = "CHU_Perfiles_Obtener";
         const string CONST_USP_CHU_PERFILES_ACTUALIZA = "CHU_Perfiles_Actualiza";
         const string CONST_USP_CHU_PERFILES_ELIMINAR = "CHU_Perfiles_Eliminar";
+        const string CONST_USP_CHU_TABULADOR_PUESTOS_OBTENER = "CHU_Tabulador_Puestos_Obtener";
         #endregion
 
         public int CHU_Perfiles_Guardar(PerfilesBE obj, DataTable Detalle)
@@ -131,5 +132,39 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
+        public List<TabuladorBE> CHU_Tabulador_Puestos_Obtener()
+        {
+            List<TabuladorBE> oList = new List<TabuladorBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_TABULADOR_PUESTOS_OBTENER, conn)) {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                TabuladorBE obj = new TabuladorBE();
+
+                                obj.Depto.Nombre = reader["DEP_Nombre"].ToString();
+                                obj.Puesto.Nombre = reader["PUE_Nombre"].ToString();
+                                obj.Puesto.Puntos = decimal.Parse(reader["PUE_Puntos"].ToString());
+                                obj.Puntaje = decimal.Parse(reader["Puntaje"].ToString());
+                                obj.Sueldo85 = decimal.Parse(reader["TBR_Sueldo85"].ToString());
+                                obj.Sueldo90 = decimal.Parse(reader["TBR_Sueldo90"].ToString());
+                                obj.Sueldo95 = decimal.Parse(reader["TBR_Sueldo95"].ToString());
+                                obj.SueldoMax = decimal.Parse(reader["TBR_SueldoMax"].ToString());
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
     }
 }

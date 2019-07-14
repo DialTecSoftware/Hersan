@@ -166,6 +166,12 @@
     <Compile Include="frmSolicitudPersonal.Designer.cs">
       <DependentUpon>frmSolicitudPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTabulador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTabulador.Designer.cs">
+      <DependentUpon>frmTabulador.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSolicitudPersonal.resx">
       <DependentUpon>frmSolicitudPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTabulador.resx">
+      <DependentUpon>frmTabulador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewer.resx">
       <DependentUpon>frmViewer.cs</DependentUpon>
@@ -351,6 +360,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.TabuladorBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.AccesoriosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.AgentesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.CiudadesBE1.datasource" />

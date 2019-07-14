@@ -20,7 +20,6 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_USP_CHU_DESCPUESTO_REPORTE2 = "CHU_RptDescPuestos2_Obtener";        
         #endregion
 
-
         public DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl)
         {
             SqlDataAdapter da = new SqlDataAdapter();

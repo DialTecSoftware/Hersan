@@ -43,6 +43,12 @@
   <wsdl:message name="IHersan_CHumano_CHU_Perfiles_Elimina_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_Perfiles_EliminaResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Tabulador_Puestos_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Tabulador_Puestos_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Tabulador_Puestos_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Tabulador_Puestos_ObtenerResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHU_SolicitudP_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:CHU_SolicitudP_Obtener" />
   </wsdl:message>
@@ -372,6 +378,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Elimina" message="tns:IHersan_CHumano_CHU_Perfiles_Elimina_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_EliminaResponse" message="tns:IHersan_CHumano_CHU_Perfiles_Elimina_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CHU_Tabulador_Puestos_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Tabulador_Puestos_Obtener" message="tns:IHersan_CHumano_CHU_Tabulador_Puestos_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Tabulador_Puestos_ObtenerResponse" message="tns:IHersan_CHumano_CHU_Tabulador_Puestos_Obtener_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CHU_SolicitudP_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_Obtener" message="tns:IHersan_CHumano_CHU_SolicitudP_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_SolicitudP_ObtenerResponse" message="tns:IHersan_CHumano_CHU_SolicitudP_Obtener_OutputMessage" />
@@ -613,6 +623,15 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_Perfiles_Elimina">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Elimina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Tabulador_Puestos_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Tabulador_Puestos_Obtener" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

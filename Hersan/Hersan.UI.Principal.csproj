@@ -138,6 +138,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Correo\Correo_Aceptado.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Correo\Correo_Rechazado.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Hersan.ico" />
     <Content Include="Hersan_Logo.ico" />
     <Content Include="llave_privada.xml">

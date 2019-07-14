@@ -186,16 +186,13 @@ namespace Hersan.UI.CapitalHumano
         }
         private void btnCorreo_Click(object sender, EventArgs e)
         {
-
             try {
-
-                if (txtId.Text=="-1") 
-                {
+                if (txtId.Text=="-1") { 
                     RadMessageBox.Show("No hay ningun candidato seleccionado", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;
                 }
 
-                    if (!rdbAceptado.IsChecked && !rdbRechazado.IsChecked) {
+                if (!rdbAceptado.IsChecked && !rdbRechazado.IsChecked) {
                     RadMessageBox.Show("Actualiza el estatus del Candidato(Rechazado o Acpetado)\n antes de enviar correo"
                          , this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     return;

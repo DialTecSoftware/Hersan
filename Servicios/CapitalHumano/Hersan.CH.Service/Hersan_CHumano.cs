@@ -27,6 +27,10 @@ namespace Hersan.CH.Service
         {
             return new PerfilesBP().CHU_Perfiles_Elimina(IdPerfil, IdUsuario);
         }
+        public List<TabuladorBE> CHU_Tabulador_Puestos_Obtener()
+        {
+            return new PerfilesBP().CHU_Tabulador_Puestos_Obtener();
+        }
         #endregion
 
         #region SolicitudPersonal

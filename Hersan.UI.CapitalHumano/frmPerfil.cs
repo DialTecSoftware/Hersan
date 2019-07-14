@@ -329,7 +329,6 @@ namespace Hersan.UI.CapitalHumano
                         row.Cells["Total"].Value = total;
                         Suma += Convert.ToDecimal(row.Cells["Total"].Value);
                     }
-                    //Total = Suma;
                     resultado = Suma * decimal.Parse(txtValor.Text);
                 }
                 txtSueldo.Text = resultado.ToString();
@@ -410,7 +409,6 @@ namespace Hersan.UI.CapitalHumano
                         row.Cells["Total"].Value = total;
                         Suma += Convert.ToDecimal(row.Cells["Total"].Value);
                     }
-                    //Total = Suma;
                     resultado = Suma * decimal.Parse(txtValor.Text);
                     txtSueldo.Text = resultado.ToString();
                 }
@@ -518,9 +516,6 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
-
-        
-
        
     }
 

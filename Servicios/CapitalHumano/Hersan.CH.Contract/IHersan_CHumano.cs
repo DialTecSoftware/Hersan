@@ -18,6 +18,8 @@ namespace Hersan.CH.Contract
         int CHU_Perfiles_Actualiza(PerfilesBE obj, DataTable Detalle);
         [OperationContract]
         int CHU_Perfiles_Elimina(int IdPerfil, int IdUsuario);
+        [OperationContract]
+        List<TabuladorBE> CHU_Tabulador_Puestos_Obtener();
         #endregion
 
         #region SolicitudPersonal

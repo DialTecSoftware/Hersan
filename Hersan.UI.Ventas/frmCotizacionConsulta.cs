@@ -59,7 +59,8 @@ namespace Hersan.UI.Ensamble
                 else
                     RadMessageBox.Show("No ha seleccionado una cotización", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                throw ex;
+                //RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -150,7 +151,8 @@ namespace Hersan.UI.Ensamble
                     frm.ShowDialog();
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                throw ex;
+                //RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oEnsamble = null;
             }

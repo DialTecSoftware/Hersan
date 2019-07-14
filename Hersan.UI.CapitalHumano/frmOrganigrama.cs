@@ -42,14 +42,6 @@ namespace Hersan.UI.CapitalHumano
             oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
             OrganigramaBE obj = new OrganigramaBE();
             try {
-
-                //if (oList.FindAll(item => item.Nombre.Trim() == txtNombre.Text.Trim() && item.Id_puesto == int.Parse(cboPuesto.SelectedValue.ToString())).Count > 0
-                //    && int.Parse(txtIdPuesto.Text) == 0) {
-                //    RadMessageBox.Show("La información capturada ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                //    LimpiarCampos();
-                //    return;
-                //}
-
                 if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                     obj.Id = int.Parse(txtId.Text);
                     obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
@@ -58,7 +50,6 @@ namespace Hersan.UI.CapitalHumano
                     obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
                     obj.DatosUsuario.Estatus = true;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
                     if (txtId.Text == "0") {
@@ -95,8 +86,6 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 LimpiarCampos();
-                btnGuardar.Text = "Guardar";
-
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -207,7 +196,7 @@ namespace Hersan.UI.CapitalHumano
         {
             oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+                if (cboDeptoJefe.Items.Count > 0 && cboDeptoJefe.SelectedValue != null) {
                     cboPadre.ValueMember = "ID";
                     cboPadre.DisplayMember = "Nombre";
                     cboPadre.DataSource = oCatalogo.ABCPuestos_Combo(int.Parse(cboDeptoJefe.SelectedValue.ToString()));
@@ -256,7 +245,6 @@ namespace Hersan.UI.CapitalHumano
         {
             try {
                 txtId.Text = "0";
-                btnGuardar.Text = "Actualizar";
                 cboEntidad.SelectedIndex = 0;
                 cboEntidadJefe.SelectedIndex = 0;
                 chkEstatus.Checked = false;
@@ -270,6 +258,8 @@ namespace Hersan.UI.CapitalHumano
             try {
                 oList = oCatalogo.CHUOrganigrama_Obtener();
                 gvDatos.DataSource = oList;
+
+                
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al cargar los elementos del organigrama\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {

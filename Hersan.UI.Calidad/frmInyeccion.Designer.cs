@@ -449,6 +449,7 @@
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
+            this.gvDatos.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.Size = new System.Drawing.Size(783, 253);
             this.gvDatos.TabIndex = 2;

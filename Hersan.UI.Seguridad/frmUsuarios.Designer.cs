@@ -144,7 +144,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1076, 56);
+            this.radCommandBar1.Size = new System.Drawing.Size(1076, 81);
             this.radCommandBar1.TabIndex = 1;
             // 
             // commandBarRowElement1
@@ -311,14 +311,14 @@
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 56);
+            this.radDock1.Location = new System.Drawing.Point(0, 81);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1076, 303);
+            this.radDock1.Size = new System.Drawing.Size(1076, 278);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -331,7 +331,7 @@
             this.dwUsuarios.Location = new System.Drawing.Point(6, 29);
             this.dwUsuarios.Name = "dwUsuarios";
             this.dwUsuarios.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.dwUsuarios.Size = new System.Drawing.Size(737, 258);
+            this.dwUsuarios.Size = new System.Drawing.Size(737, 233);
             this.dwUsuarios.Text = "Usuarios";
             // 
             // rgvUsuarios
@@ -410,7 +410,7 @@
             this.rgvUsuarios.Name = "rgvUsuarios";
             this.rgvUsuarios.ReadOnly = true;
             this.rgvUsuarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rgvUsuarios.Size = new System.Drawing.Size(737, 165);
+            this.rgvUsuarios.Size = new System.Drawing.Size(737, 140);
             this.rgvUsuarios.TabIndex = 0;
             this.rgvUsuarios.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.rgvUsuarios_CurrentRowChanged);
             // 
@@ -575,7 +575,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(749, 293);
+            this.documentTabStrip1.Size = new System.Drawing.Size(749, 268);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -591,7 +591,7 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(313, 293);
+            this.toolTabStrip1.Size = new System.Drawing.Size(313, 268);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(313, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(113, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -607,7 +607,7 @@
             this.twPerfiles.Location = new System.Drawing.Point(1, 22);
             this.twPerfiles.Name = "twPerfiles";
             this.twPerfiles.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Hidden;
-            this.twPerfiles.Size = new System.Drawing.Size(311, 269);
+            this.twPerfiles.Size = new System.Drawing.Size(311, 244);
             this.twPerfiles.Text = "Perfiles";
             this.twPerfiles.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide;
             // 
@@ -617,7 +617,7 @@
             this.rtvPerfiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtvPerfiles.Location = new System.Drawing.Point(0, 110);
             this.rtvPerfiles.Name = "rtvPerfiles";
-            this.rtvPerfiles.Size = new System.Drawing.Size(311, 159);
+            this.rtvPerfiles.Size = new System.Drawing.Size(311, 134);
             this.rtvPerfiles.SpacingBetweenNodes = -1;
             this.rtvPerfiles.TabIndex = 5;
             this.rtvPerfiles.CreateNodeElement += new Telerik.WinControls.UI.CreateTreeNodeElementEventHandler(this.rtvPerfiles_CreateNodeElement);

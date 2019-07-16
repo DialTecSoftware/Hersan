@@ -86,10 +86,6 @@ namespace Hersan.Datos.Calidad
                         cmd.Parameters.AddWithValue("@Lista", Obj.Inyeccion.Detalle.Lista);
                         cmd.Parameters.AddWithValue("@Turno", Obj.Inyeccion.Detalle.Turno);
                         cmd.Parameters.AddWithValue("@Operador", Obj.Operador);
-                        cmd.Parameters.AddWithValue("@Inicial", Obj.Inyeccion.Fecha);
-                        cmd.Parameters.AddWithValue("@Final", Obj.Inyeccion.Detalle.Fecha);
-                        cmd.Parameters.AddWithValue("@HInicial", Obj.Inyeccion.Detalle.Inicio);
-                        cmd.Parameters.AddWithValue("@HIFinal", Obj.Inyeccion.Detalle.Fin);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
@@ -103,9 +99,9 @@ namespace Hersan.Datos.Calidad
                                 item.Detalle.Turno = reader["Turno"].ToString();
                                 item.Operador = reader["Operador"].ToString();
                                 item.Detalle.Piezas = int.Parse(reader["Piezas"].ToString());
-                                item.Detalle.Virgen = int.Parse(reader["Virgen"].ToString());
-                                item.Detalle.Remolido = int.Parse(reader["Remolido"].ToString());
-                                item.Detalle.Master = int.Parse(reader["Master"].ToString());
+                                item.Detalle.Virgen = decimal.Parse(reader["Virgen"].ToString());
+                                item.Detalle.Remolido = decimal.Parse(reader["Remolido"].ToString());
+                                item.Detalle.Master = decimal.Parse(reader["Master"].ToString());
                                 item.Detalle.Inicio = TimeSpan.Parse(reader["Inicio"].ToString());
                                 item.Detalle.Fin = TimeSpan.Parse(reader["Fin"].ToString());
                                 item.Detalle.Real = int.Parse(reader["Real"].ToString());

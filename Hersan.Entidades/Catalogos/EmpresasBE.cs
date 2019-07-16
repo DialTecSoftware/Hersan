@@ -12,10 +12,11 @@ namespace Hersan.Entidades.Catalogos
             Direccion = string.Empty;
             NoExterior = string.Empty;
             NoInterior = string.Empty;
-            RegimenFiscal = string.Empty;
+            RegimenFiscal = new RegimenSATBE();
             Telefonos = string.Empty;
             Correo = string.Empty;
             Contacto = string.Empty;
+            Pais = new PaisesBE();
             Estado = new EstadosBE();
             Ciudad = new CiudadesBE();
             Colonia = new ColoniasBE();
@@ -29,10 +30,11 @@ namespace Hersan.Entidades.Catalogos
         public string Direccion { get; set; }
         public string NoExterior  { get; set; }
         public string NoInterior { get; set; }
-        public string RegimenFiscal { get; set; }
+        public RegimenSATBE RegimenFiscal { get; set; }
         public string Telefonos { get; set; }
         public string Correo { get; set; }
         public string Contacto { get; set; }
+        public PaisesBE Pais { get; set; }
         public EstadosBE Estado { get; set; }
         public CiudadesBE Ciudad { get; set; }
         public ColoniasBE Colonia { get; set; }

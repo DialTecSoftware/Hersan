@@ -13,10 +13,22 @@
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
       <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
-      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
-      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:56779/Hersan_Catalogos.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ComboResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABC_Monedas_Obtener" />
   </wsdl:message>
@@ -52,6 +64,12 @@
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Cbo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABCEmpresas_CboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Empresas_Guarda_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Empresas_Guarda" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Empresas_Guarda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Empresas_GuardaResponse" />
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCDepartamentos_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABCDepartamentos_Obtener" />
@@ -130,6 +148,12 @@
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_CHUPuestos_Puntos_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHUPuestos_PuntosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CH_TramoControl_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CH_TramoControl_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_CH_TramoControl_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CH_TramoControl_ObtenerResponse" />
   </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCCompetencias_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABCCompetencias_Obtener" />
@@ -539,19 +563,15 @@
   <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Actualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ActualizarResponse" />
   </wsdl:message>
-  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_InputMessage">
-    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_Obtener" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ObtenerResponse" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Combo_InputMessage">
-    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_Combo" />
-  </wsdl:message>
-  <wsdl:message name="IHersan_Catalogos_ABC_CondicionesExportacion_Combo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ABC_CondicionesExportacion_ComboResponse" />
-  </wsdl:message>
   <wsdl:portType name="IHersan_Catalogos">
+    <wsdl:operation name="ABC_CondicionesExportacion_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Obtener" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ComboResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Combo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ABC_Monedas_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener" message="tns:IHersan_Catalogos_ABC_Monedas_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Obtener_OutputMessage" />
@@ -575,6 +595,10 @@
     <wsdl:operation name="ABCEmpresas_Cbo">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Cbo" message="tns:IHersan_Catalogos_ABCEmpresas_Cbo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_CboResponse" message="tns:IHersan_Catalogos_ABCEmpresas_Cbo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Empresas_Guarda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Empresas_Guarda" message="tns:IHersan_Catalogos_ABC_Empresas_Guarda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Empresas_GuardaResponse" message="tns:IHersan_Catalogos_ABC_Empresas_Guarda_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ABCDepartamentos_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener" message="tns:IHersan_Catalogos_ABCDepartamentos_Obtener_InputMessage" />
@@ -627,6 +651,10 @@
     <wsdl:operation name="CHUPuestos_Puntos">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Puntos" message="tns:IHersan_Catalogos_CHUPuestos_Puntos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_PuntosResponse" message="tns:IHersan_Catalogos_CHUPuestos_Puntos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CH_TramoControl_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/CH_TramoControl_Obtener" message="tns:IHersan_Catalogos_CH_TramoControl_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/CH_TramoControl_ObtenerResponse" message="tns:IHersan_Catalogos_CH_TramoControl_Obtener_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ABCCompetencias_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener" message="tns:IHersan_Catalogos_ABCCompetencias_Obtener_InputMessage" />
@@ -900,18 +928,28 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Actualizar" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Actualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ActualizarResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Actualizar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ABC_CondicionesExportacion_Obtener">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Obtener" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Obtener_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ABC_CondicionesExportacion_Combo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Combo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ComboResponse" message="tns:IHersan_Catalogos_ABC_CondicionesExportacion_Combo_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Catalogos" type="tns:IHersan_Catalogos">
     <wsp:PolicyReference URI="#WSHttpBinding_IHersan_Catalogos_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ABC_CondicionesExportacion_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_CondicionesExportacion_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ABC_Monedas_Obtener">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener" style="document" />
       <wsdl:input>
@@ -959,6 +997,15 @@
     </wsdl:operation>
     <wsdl:operation name="ABCEmpresas_Cbo">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Cbo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Empresas_Guarda">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Empresas_Guarda" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1076,6 +1123,15 @@
     </wsdl:operation>
     <wsdl:operation name="CHUPuestos_Puntos">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Puntos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CH_TramoControl_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/CH_TramoControl_Obtener" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1688,24 +1744,6 @@
     </wsdl:operation>
     <wsdl:operation name="ABC_CondicionesExportacion_Actualizar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Actualizar" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ABC_CondicionesExportacion_Obtener">
-      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Obtener" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ABC_CondicionesExportacion_Combo">
-      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

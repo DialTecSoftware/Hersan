@@ -102,7 +102,7 @@
     <Compile Include="Seguridad\RolesUsuarioBP.cs" />
     <Compile Include="Seguridad\UsuariosBP.cs" />
     <Compile Include="Ensamble\ClientesBP.cs" />
-    <Compile Include="Ensamble\FacturacionBE.cs" />
+    <Compile Include="Ensamble\FacturacionBP.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hersan.Datos\Hersan.Datos.csproj">

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hersan.Negocio.Ventas
 {
-    public class FacturacionBE
+    public class FacturacionBP
     {
         public List<FormasPagoBE> ABC_FormaPago_Combo()
         {
@@ -21,6 +21,10 @@ namespace Hersan.Negocio.Ventas
         public List<UsoCFDIBE> ABC_UsoCFDI_Combo()
         {
             return new FacturacionDA().ABC_UsoCFDI_Combo();
+        }
+        public List<RegimenSATBE> ABC_RegimenFiscal_Combo()
+        {
+            return new FacturacionDA().ABC_RegimenFiscal_Combo();
         }
     }
 }

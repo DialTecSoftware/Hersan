@@ -98,6 +98,7 @@
     <Compile Include="CapitalHumano\PuestosBE.cs" />
     <Compile Include="CapitalHumano\TiposContratoBE.cs" />
     <Compile Include="Catalogos\ReflejantesBE.cs" />
+    <Compile Include="Catalogos\RegimenSATBE.cs" />
     <Compile Include="Catalogos\TipoProductoBE.cs" />
     <Compile Include="Catalogos\TiposClienteBE.cs" />
     <Compile Include="Ensamble\CaracteristicasBE.cs" />

@@ -15,6 +15,7 @@ namespace Hersan.Datos.Ventas
         const string CONS_ABC_FORMAPAGO_COMBO = "ABC_FormaPago_Combo";
         const string CONS_ABC_METODOPAGO_COMBO = "ABC_MetodoPago_Combo";
         const string CONS_ABC_USOCFDI_COMBO = "ABC_UsoCFDI_Combo";
+        const string CONS_ABC_REGIMENFISCAL_COMBO = "ABC_RegimenFiscal_Combo";
         #endregion
 
 
@@ -88,6 +89,33 @@ namespace Hersan.Datos.Ventas
 
                                 obj.Clave = reader["UCF_Clave"].ToString();
                                 obj.Descripcion = reader["UCF_Descripcion"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<RegimenSATBE> ABC_RegimenFiscal_Combo()
+        {
+            List<RegimenSATBE> oList = new List<RegimenSATBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_ABC_REGIMENFISCAL_COMBO, conn)) {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                RegimenSATBE obj = new RegimenSATBE();
+
+                                obj.Id = int.Parse(reader["REF_Id"].ToString());
+                                obj.Regimen = reader["REF_Descripcion"].ToString();
 
                                 oList.Add(obj);
                             }

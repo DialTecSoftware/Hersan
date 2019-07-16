@@ -15,6 +15,12 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCF_Catalogos.IHersan_Catalogos")]
     public interface IHersan_Catalogos {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Combo();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Obtener();
         
@@ -32,6 +38,9 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Cbo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_CboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE> ABCEmpresas_Cbo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Empresas_Guarda", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Empresas_GuardaResponse")]
+        int ABC_Empresas_Guarda(System.Data.DataTable Empresa, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCDepartamentos_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.DepartamentosBE> ABCDepartamentos_Obtener();
@@ -71,6 +80,9 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHUPuestos_Puntos", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHUPuestos_PuntosResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> CHUPuestos_Puntos(int idPuesto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CH_TramoControl_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/CH_TramoControl_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> CH_TramoControl_Obtener(int idPuesto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCCompetencias_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener();
@@ -172,7 +184,7 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         int CHUOrganigrama_Actualizar(Hersan.Entidades.Catalogos.OrganigramaBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/CHU_OrganigramaXML_ObtenerResponse")]
-        System.Data.DataTable CHU_OrganigramaXML_Obtener(int parent);
+        byte[] CHU_OrganigramaXML_Obtener(int parent);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEstados_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEstados_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EstadosBE> ABCEstados_Obtener(int IdPais);
@@ -276,12 +288,6 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ActualizarRespons" +
             "e")]
         int ABC_CondicionesExportacion_Actualizar(Hersan.Entidades.Catalogos.CondicionesExpBE obj);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ObtenerResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Obtener();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_CondicionesExportacion_ComboResponse")]
-        System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Combo();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -311,6 +317,14 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
                 base(binding, remoteAddress) {
         }
         
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Obtener() {
+            return base.Channel.ABC_CondicionesExportacion_Obtener();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Combo() {
+            return base.Channel.ABC_CondicionesExportacion_Combo();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Obtener() {
             return base.Channel.ABC_Monedas_Obtener();
         }
@@ -333,6 +347,10 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE> ABCEmpresas_Cbo() {
             return base.Channel.ABCEmpresas_Cbo();
+        }
+        
+        public int ABC_Empresas_Guarda(System.Data.DataTable Empresa, int IdUsuario) {
+            return base.Channel.ABC_Empresas_Guarda(Empresa, IdUsuario);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.DepartamentosBE> ABCDepartamentos_Obtener() {
@@ -385,6 +403,10 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> CHUPuestos_Puntos(int idPuesto) {
             return base.Channel.CHUPuestos_Puntos(idPuesto);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.PuestosBE> CH_TramoControl_Obtener(int idPuesto) {
+            return base.Channel.CH_TramoControl_Obtener(idPuesto);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.CompetenciasBE> ABCCompetencias_Obtener() {
@@ -519,7 +541,7 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
             return base.Channel.CHUOrganigrama_Actualizar(obj);
         }
         
-        public System.Data.DataTable CHU_OrganigramaXML_Obtener(int parent) {
+        public byte[] CHU_OrganigramaXML_Obtener(int parent) {
             return base.Channel.CHU_OrganigramaXML_Obtener(parent);
         }
         
@@ -657,14 +679,6 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public int ABC_CondicionesExportacion_Actualizar(Hersan.Entidades.Catalogos.CondicionesExpBE obj) {
             return base.Channel.ABC_CondicionesExportacion_Actualizar(obj);
-        }
-        
-        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Obtener() {
-            return base.Channel.ABC_CondicionesExportacion_Obtener();
-        }
-        
-        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.CondicionesExpBE> ABC_CondicionesExportacion_Combo() {
-            return base.Channel.ABC_CondicionesExportacion_Combo();
         }
     }
 }

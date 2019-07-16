@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="NormaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cav1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav7" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav8" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Color" nillable="true" type="q1:ColoresBE" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q2:GeneralBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Norma" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NormaBE" nillable="true" type="tns:NormaBE" />
+  <xs:complexType name="CalidadBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:CalidadDetalleBE" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Flag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" minOccurs="0" name="Inyeccion" nillable="true" type="q3:InyeccionBE" />
+      <xs:element minOccurs="0" name="Lista" type="xs:int" />
+      <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadBE" nillable="true" type="tns:CalidadBE" />
+  <xs:complexType name="CalidadDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cav1_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav1_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav2_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav2_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav3_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav3_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav4_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav4_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav5_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav5_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav6_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav6_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav7_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav7_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav8_1" type="xs:int" />
+      <xs:element minOccurs="0" name="Cav8_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Hora" type="ser:duration" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Resumen" nillable="true" type="tns:ArrayOfCalidadResumenBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadDetalleBE" nillable="true" type="tns:CalidadDetalleBE" />
+  <xs:complexType name="ArrayOfCalidadResumenBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadResumenBE" nillable="true" type="tns:CalidadResumenBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadResumenBE" nillable="true" type="tns:ArrayOfCalidadResumenBE" />
+  <xs:complexType name="CalidadResumenBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cavidad" type="xs:int" />
+      <xs:element minOccurs="0" name="DesvEst" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Maximo" type="xs:int" />
+      <xs:element minOccurs="0" name="Minimo" type="xs:int" />
+      <xs:element minOccurs="0" name="Promedio" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadResumenBE" nillable="true" type="tns:CalidadResumenBE" />
+  <xs:complexType name="ArrayOfNormaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NormaBE" nillable="true" type="tns:NormaBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNormaBE" nillable="true" type="tns:ArrayOfNormaBE" />
+  <xs:complexType name="ArrayOfCalidadDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadDetalleBE" nillable="true" type="tns:CalidadDetalleBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadDetalleBE" nillable="true" type="tns:ArrayOfCalidadDetalleBE" />
+  <xs:complexType name="EnsambleParametrosBE">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Carcasa" nillable="true" type="q4:ColoresBE" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q5:GeneralBE" />
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:ArrayOfEnsambleParametrosDetalleBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lista" type="xs:int" />
+      <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Producto" nillable="true" type="q6:TipoProductoBE" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflex1" nillable="true" type="q7:ColoresBE" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflex2" nillable="true" type="q8:ColoresBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnsambleParametrosBE" nillable="true" type="tns:EnsambleParametrosBE" />
+  <xs:complexType name="ArrayOfEnsambleParametrosDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnsambleParametrosDetalleBE" nillable="true" type="tns:EnsambleParametrosDetalleBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnsambleParametrosDetalleBE" nillable="true" type="tns:ArrayOfEnsambleParametrosDetalleBE" />
+  <xs:complexType name="EnsambleParametrosDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Colapso" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Comentarios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Energia" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Estatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdParametro" type="xs:int" />
+      <xs:element minOccurs="0" name="Maquina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Planeada" type="xs:int" />
+      <xs:element minOccurs="0" name="Presion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Real" type="xs:int" />
+      <xs:element minOccurs="0" name="Tiempo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnsambleParametrosDetalleBE" nillable="true" type="tns:EnsambleParametrosDetalleBE" />
+  <xs:complexType name="ArrayOfEnsambleParametrosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnsambleParametrosBE" nillable="true" type="tns:EnsambleParametrosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnsambleParametrosBE" nillable="true" type="tns:ArrayOfEnsambleParametrosBE" />
+  <xs:complexType name="ArrayOfCalidadEnsambleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadEnsambleBE" nillable="true" type="tns:CalidadEnsambleBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadEnsambleBE" nillable="true" type="tns:ArrayOfCalidadEnsambleBE" />
+  <xs:complexType name="CalidadEnsambleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:CalidadEnsambleDetalleBE" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Muestra" type="xs:int" />
+      <xs:element minOccurs="0" name="Norma" type="xs:int" />
+      <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parametros" nillable="true" type="tns:EnsambleParametrosBE" />
+      <xs:element minOccurs="0" name="Porcentaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadEnsambleBE" nillable="true" type="tns:CalidadEnsambleBE" />
+  <xs:complexType name="CalidadEnsambleDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdInspeccion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Lote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maquina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maximo" type="xs:int" />
+      <xs:element minOccurs="0" name="Minimo" type="xs:int" />
+      <xs:element minOccurs="0" name="Obs1" type="xs:int" />
+      <xs:element minOccurs="0" name="Obs2" type="xs:int" />
+      <xs:element minOccurs="0" name="Obs3" type="xs:int" />
+      <xs:element minOccurs="0" name="Obs4" type="xs:int" />
+      <xs:element minOccurs="0" name="Obs5" type="xs:int" />
+      <xs:element minOccurs="0" name="Promedio" type="xs:int" />
+      <xs:element minOccurs="0" name="Reflejante" type="xs:int" />
+      <xs:element minOccurs="0" name="Resumen" nillable="true" type="tns:ArrayOfCalidadResumenBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadEnsambleDetalleBE" nillable="true" type="tns:CalidadEnsambleDetalleBE" />
+  <xs:complexType name="ArrayOfCalidadEnsambleDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadEnsambleDetalleBE" nillable="true" type="tns:CalidadEnsambleDetalleBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadEnsambleDetalleBE" nillable="true" type="tns:ArrayOfCalidadEnsambleDetalleBE" />
+  <xs:complexType name="CalidadResguardoQA">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Carcasa" nillable="true" type="q9:ColoresBE" />
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:ArrayOfCalidadResguardoQADetalle" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Piezas" type="xs:int" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Producto" nillable="true" type="q10:TipoProductoBE" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflex1" nillable="true" type="q11:ColoresBE" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflex2" nillable="true" type="q12:ColoresBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadResguardoQA" nillable="true" type="tns:CalidadResguardoQA" />
+  <xs:complexType name="ArrayOfCalidadResguardoQADetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadResguardoQADetalle" nillable="true" type="tns:CalidadResguardoQADetalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadResguardoQADetalle" nillable="true" type="tns:ArrayOfCalidadResguardoQADetalle" />
+  <xs:complexType name="CalidadResguardoQADetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdResguardo" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Lista" type="xs:int" />
+      <xs:element minOccurs="0" name="Lote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maximo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Minimo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Promedio" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor0" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor1" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor2" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadResguardoQADetalle" nillable="true" type="tns:CalidadResguardoQADetalle" />
+  <xs:complexType name="ArrayOfCalidadResguardoQA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadResguardoQA" nillable="true" type="tns:CalidadResguardoQA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadResguardoQA" nillable="true" type="tns:ArrayOfCalidadResguardoQA" />
+  <xs:complexType name="ArrayOfCalidadGraficasCavidades">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadGraficasCavidades" nillable="true" type="tns:CalidadGraficasCavidades" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadGraficasCavidades" nillable="true" type="tns:ArrayOfCalidadGraficasCavidades" />
+  <xs:complexType name="CalidadGraficasCavidades">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cav1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav4" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav5" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav6" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav7" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav8" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Norma" nillable="true" type="tns:NormaBE" />
+      <xs:element minOccurs="0" name="Valores" nillable="true" type="tns:ArrayOfCalidadGraficasValores" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadGraficasCavidades" nillable="true" type="tns:CalidadGraficasCavidades" />
+  <xs:complexType name="ArrayOfCalidadGraficasValores">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadGraficasValores" nillable="true" type="tns:CalidadGraficasValores" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadGraficasValores" nillable="true" type="tns:ArrayOfCalidadGraficasValores" />
+  <xs:complexType name="CalidadGraficasValores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Hora" type="ser:duration" />
+      <xs:element minOccurs="0" name="Limite" type="xs:int" />
+      <xs:element minOccurs="0" name="Val1" type="xs:int" />
+      <xs:element minOccurs="0" name="Val2" type="xs:int" />
+      <xs:element minOccurs="0" name="Val3" type="xs:int" />
+      <xs:element minOccurs="0" name="Val4" type="xs:int" />
+      <xs:element minOccurs="0" name="Val5" type="xs:int" />
+      <xs:element minOccurs="0" name="Val6" type="xs:int" />
+      <xs:element minOccurs="0" name="Val7" type="xs:int" />
+      <xs:element minOccurs="0" name="Val8" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadGraficasValores" nillable="true" type="tns:CalidadGraficasValores" />
+  <xs:complexType name="ArrayOfCalidadGraficaSeries">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadGraficaSeries" nillable="true" type="tns:CalidadGraficaSeries" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalidadGraficaSeries" nillable="true" type="tns:ArrayOfCalidadGraficaSeries" />
+  <xs:complexType name="CalidadGraficaSeries">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max1" type="xs:int" />
+      <xs:element minOccurs="0" name="Max2" type="xs:int" />
+      <xs:element minOccurs="0" name="Max3" type="xs:int" />
+      <xs:element minOccurs="0" name="Max4" type="xs:int" />
+      <xs:element minOccurs="0" name="Max5" type="xs:int" />
+      <xs:element minOccurs="0" name="Max6" type="xs:int" />
+      <xs:element minOccurs="0" name="Max7" type="xs:int" />
+      <xs:element minOccurs="0" name="Max8" type="xs:int" />
+      <xs:element minOccurs="0" name="Min1" type="xs:int" />
+      <xs:element minOccurs="0" name="Min2" type="xs:int" />
+      <xs:element minOccurs="0" name="Min3" type="xs:int" />
+      <xs:element minOccurs="0" name="Min4" type="xs:int" />
+      <xs:element minOccurs="0" name="Min5" type="xs:int" />
+      <xs:element minOccurs="0" name="Min6" type="xs:int" />
+      <xs:element minOccurs="0" name="Min7" type="xs:int" />
+      <xs:element minOccurs="0" name="Min8" type="xs:int" />
+      <xs:element minOccurs="0" name="Val1" type="xs:int" />
+      <xs:element minOccurs="0" name="Val2" type="xs:int" />
+      <xs:element minOccurs="0" name="Val3" type="xs:int" />
+      <xs:element minOccurs="0" name="Val4" type="xs:int" />
+      <xs:element minOccurs="0" name="Val5" type="xs:int" />
+      <xs:element minOccurs="0" name="Val6" type="xs:int" />
+      <xs:element minOccurs="0" name="Val7" type="xs:int" />
+      <xs:element minOccurs="0" name="Val8" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalidadGraficaSeries" nillable="true" type="tns:CalidadGraficaSeries" />
+</xs:schema>

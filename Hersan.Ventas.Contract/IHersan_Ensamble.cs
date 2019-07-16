@@ -33,6 +33,8 @@ namespace Hersan.Ensamble.Contract
         List<MetodosPagoBE> ABC_MetodoPago_Combo();
         [OperationContract]
         List<UsoCFDIBE> ABC_UsoCFDI_Combo();
+        [OperationContract]
+        List<RegimenSATBE> ABC_RegimenFiscal_Combo();
         #endregion
 
         #region Servicios

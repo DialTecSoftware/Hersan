@@ -264,6 +264,12 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble42.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble5.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -273,6 +279,16 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble7.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadDetalleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadEnsambleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficasCavidades.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficaSeries.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadGraficasValores.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadResguardoQA.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadResguardoQADetalle.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.EnsambleParametrosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Calidad.NormaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.CompetenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ContratosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.FuncionesBE.datasource" />
@@ -298,6 +314,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.OrganigramaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ReflejantesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.RegimenSATBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TipoProductoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposClienteBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE.datasource" />
@@ -308,6 +325,11 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.PreciosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ProductoEnsambleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Ensamble.ServiciosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.InyeccionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.InyeccionDetalleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.ParametrosInyeccion.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TemperaturasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TempMoldesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.MenusBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.RolesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.UsuariosBE.datasource" />

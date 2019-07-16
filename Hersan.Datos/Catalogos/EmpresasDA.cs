@@ -10,12 +10,10 @@ namespace Hersan.Datos.Catalogos {
         #region Constantes
         const string CONST_ABC_EMPRESAS_OBTENER = "ABC_Empresas_Obtener";
         const string CONST_ABC_EMPRESAS_COMBO = "ABC_Empresas_Combo";
+        const string CONST_ABC_EMPRESAS_GUARDA = "ABC_Empresas_Guarda";
         #endregion
 
-        /// <summary>
-        /// Obtiene el listado de Empresas
-        /// </summary>
-        /// <returns></returns>
+
         public List<EmpresasBE> ABCEmpresas_Obtener(int IdEmpresa)
         {
             try {
@@ -40,11 +38,20 @@ namespace Hersan.Datos.Catalogos {
                                 obj.Telefonos = reader["EMP_Telefonos"].ToString();
                                 obj.Correo = reader["EMP_CorreoElectronico"].ToString();
                                 obj.Contacto = reader["EMP_Contacto"].ToString();
-                                obj.RegimenFiscal = reader["EMP_RegimenFiscal"].ToString();
+                                obj.RegimenFiscal.Id = int.Parse(reader["REF_Id"].ToString());
+                                obj.RegimenFiscal.Regimen = reader["RegimenFiscal"].ToString();
                                 obj.NoExterior = reader["EMP_NoExterior"].ToString();
                                 obj.NoInterior = reader["EMP_NoInterior"].ToString();
+                                obj.Pais.Id = int.Parse(reader["PAI_ID"].ToString());
+                                obj.Pais.Nombre = reader["PAI_Nombre"].ToString();
                                 obj.Estado.Id = int.Parse(reader["EST_ID"].ToString());
                                 obj.Estado.Nombre = reader["EST_Nombre"].ToString();
+                                obj.Ciudad.Id = int.Parse(reader["CIU_ID"].ToString());
+                                obj.Ciudad.Nombre = reader["CIU_Nombre"].ToString();
+                                obj.Colonia.Id = int.Parse(reader["COL_ID"].ToString());
+                                obj.Colonia.Nombre = reader["COL_Nombre"].ToString();
+                                obj.Colonia.CP = int.Parse(reader["COL_CP"].ToString());
+
 
                                 oList.Add(obj);
                             }
@@ -56,11 +63,6 @@ namespace Hersan.Datos.Catalogos {
                 throw ex;
             }
         }
-
-        /// <summary>
-        /// Obtiene el listado de Empresas Para Combo
-        /// </summary>
-        /// <returns></returns>
         public List<EmpresasBE> ABCEmpresas_Cbo()
         {
             try {
@@ -85,6 +87,26 @@ namespace Hersan.Datos.Catalogos {
                     }
                 }
                 return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public int ABC_Empresas_Guarda(DataTable Empresa, int IdUsuario)
+        {
+            try {
+                int Result = 0;
+
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_EMPRESAS_GUARDA, conn)) {
+                        cmd.Parameters.AddWithValue("@Empresa", Empresa);
+                        cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
             } catch (Exception ex) {
                 throw ex;
             }

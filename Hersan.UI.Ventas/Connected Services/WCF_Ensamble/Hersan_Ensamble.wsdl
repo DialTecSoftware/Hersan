@@ -16,6 +16,8 @@
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" />
+      <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IHersan_Ensamble_ABC_Clientes_Guardar_InputMessage">
@@ -71,6 +73,12 @@
   </wsdl:message>
   <wsdl:message name="IHersan_Ensamble_ABC_UsoCFDI_Combo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABC_UsoCFDI_ComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_ABC_RegimenFiscal_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_RegimenFiscal_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_ABC_RegimenFiscal_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_RegimenFiscal_ComboResponse" />
   </wsdl:message>
   <wsdl:message name="IHersan_Ensamble_ENS_Servicios_Guardar_InputMessage">
     <wsdl:part name="parameters" element="tns:ENS_Servicios_Guardar" />
@@ -198,6 +206,210 @@
   <wsdl:message name="IHersan_Ensamble_ENS_Pedido_Consulta_OutputMessage">
     <wsdl:part name="parameters" element="tns:ENS_Pedido_ConsultaResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Inyeccion_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Inyeccion_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Inyeccion_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Inyeccion_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Inyeccion_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Inyeccion_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Inyeccion_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Inyeccion_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Inyeccion_Consulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Inyeccion_Consulta" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Inyeccion_Consulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Inyeccion_ConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Temperaturas_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Temperaturas_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Temperaturas_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Temperaturas_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Temperaturas_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Temperaturas_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Temperaturas_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Temperaturas_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_TemperaturasMolde_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_TemperaturasMolde_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_TemperaturasMolde_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_TemperaturasMolde_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_TemperaturasMolde_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_TemperaturasMolde_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_TemperaturasMolde_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_TemperaturasMolde_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Parametros_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Parametros_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Parametros_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Parametros_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Parametros_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Parametros_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Parametros_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Parametros_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionInyeccion_Guarda_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionInyeccion_Guarda" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionInyeccion_Guarda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionInyeccion_GuardaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionInyeccion_Actualiza_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionInyeccion_Actualiza" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionInyeccion_Actualiza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionInyeccion_ActualizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ReflejantesNorma_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ReflejantesNorma_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ReflejantesNorma_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ReflejantesNorma_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ReflejantesNorma_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ReflejantesNorma_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ReflejantesNorma_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ReflejantesNorma_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ReflejantesNorma_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ReflejantesNorma_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ReflejantesNorma_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ReflejantesNorma_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionInyeccion_Analisis_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionInyeccion_Analisis" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionInyeccion_Analisis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionInyeccion_AnalisisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionInyeccion_AnalisisDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionInyeccion_AnalisisDetalle" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionInyeccion_AnalisisDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionInyeccion_AnalisisDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Ensamble_Parametros_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Ensamble_Parametros_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Ensamble_Parametros_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Ensamble_Parametros_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Ensamble_Parametros_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Ensamble_Parametros_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_PRO_Ensamble_Parametros_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PRO_Ensamble_Parametros_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Consultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Consultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Analisis_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_Analisis" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Analisis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_AnalisisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_AnalisisDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_AnalisisDetalle" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_AnalisisDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_AnalisisDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_Histograma" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_HistogramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_GraficaControl" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_GraficaControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_Historico_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_Histograma_Historico" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_Historico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_Histograma_HistoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaSeries_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_GraficaSeries" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaSeries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_AnalisisInyeccion_GraficaSeriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Histograma_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_Histograma" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_Histograma_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_HistogramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_HistogramaHistorico_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_HistogramaHistorico" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_InspeccionEnsamble_HistogramaHistorico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_InspeccionEnsamble_HistogramaHistoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Grafica_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_Grafica" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Grafica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_GraficaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_Ensamble">
     <wsdl:operation name="ABC_Clientes_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Guardar" message="tns:IHersan_Ensamble_ABC_Clientes_Guardar_InputMessage" />
@@ -234,6 +446,10 @@
     <wsdl:operation name="ABC_UsoCFDI_Combo">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_Combo" message="tns:IHersan_Ensamble_ABC_UsoCFDI_Combo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_ComboResponse" message="tns:IHersan_Ensamble_ABC_UsoCFDI_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_RegimenFiscal_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_Combo" message="tns:IHersan_Ensamble_ABC_RegimenFiscal_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_ComboResponse" message="tns:IHersan_Ensamble_ABC_RegimenFiscal_Combo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ENS_Servicios_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Guardar" message="tns:IHersan_Ensamble_ENS_Servicios_Guardar_InputMessage" />
@@ -319,6 +535,142 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_Consulta" message="tns:IHersan_Ensamble_ENS_Pedido_Consulta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_ConsultaResponse" message="tns:IHersan_Ensamble_ENS_Pedido_Consulta_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PRO_Inyeccion_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Guardar" message="tns:IHersan_Ensamble_PRO_Inyeccion_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_GuardarResponse" message="tns:IHersan_Ensamble_PRO_Inyeccion_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Inyeccion_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Obtener" message="tns:IHersan_Ensamble_PRO_Inyeccion_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_ObtenerResponse" message="tns:IHersan_Ensamble_PRO_Inyeccion_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Inyeccion_Consulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Consulta" message="tns:IHersan_Ensamble_PRO_Inyeccion_Consulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_ConsultaResponse" message="tns:IHersan_Ensamble_PRO_Inyeccion_Consulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Temperaturas_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Guardar" message="tns:IHersan_Ensamble_PRO_Temperaturas_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_GuardarResponse" message="tns:IHersan_Ensamble_PRO_Temperaturas_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Temperaturas_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Obtener" message="tns:IHersan_Ensamble_PRO_Temperaturas_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_ObtenerResponse" message="tns:IHersan_Ensamble_PRO_Temperaturas_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_TemperaturasMolde_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_Guardar" message="tns:IHersan_Ensamble_PRO_TemperaturasMolde_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_GuardarResponse" message="tns:IHersan_Ensamble_PRO_TemperaturasMolde_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_TemperaturasMolde_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_Obtener" message="tns:IHersan_Ensamble_PRO_TemperaturasMolde_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_ObtenerResponse" message="tns:IHersan_Ensamble_PRO_TemperaturasMolde_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Parametros_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Guardar" message="tns:IHersan_Ensamble_PRO_Parametros_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_GuardarResponse" message="tns:IHersan_Ensamble_PRO_Parametros_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Parametros_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Obtener" message="tns:IHersan_Ensamble_PRO_Parametros_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_ObtenerResponse" message="tns:IHersan_Ensamble_PRO_Parametros_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionInyeccion_Guarda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Guarda" message="tns:IHersan_Ensamble_CAL_InspeccionInyeccion_Guarda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_GuardaResponse" message="tns:IHersan_Ensamble_CAL_InspeccionInyeccion_Guarda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionInyeccion_Actualiza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Actualiza" message="tns:IHersan_Ensamble_CAL_InspeccionInyeccion_Actualiza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_ActualizaResponse" message="tns:IHersan_Ensamble_CAL_InspeccionInyeccion_Actualiza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ReflejantesNorma_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Guardar" message="tns:IHersan_Ensamble_CAL_ReflejantesNorma_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_GuardarResponse" message="tns:IHersan_Ensamble_CAL_ReflejantesNorma_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ReflejantesNorma_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Actualizar" message="tns:IHersan_Ensamble_CAL_ReflejantesNorma_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_ActualizarResponse" message="tns:IHersan_Ensamble_CAL_ReflejantesNorma_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ReflejantesNorma_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Obtener" message="tns:IHersan_Ensamble_CAL_ReflejantesNorma_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_ObtenerResponse" message="tns:IHersan_Ensamble_CAL_ReflejantesNorma_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionInyeccion_Analisis">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Analisis" message="tns:IHersan_Ensamble_CAL_InspeccionInyeccion_Analisis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisResponse" message="tns:IHersan_Ensamble_CAL_InspeccionInyeccion_Analisis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionInyeccion_AnalisisDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalle" message="tns:IHersan_Ensamble_CAL_InspeccionInyeccion_AnalisisDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalleResponse" message="tns:IHersan_Ensamble_CAL_InspeccionInyeccion_AnalisisDetalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Ensamble_Parametros_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_Guardar" message="tns:IHersan_Ensamble_PRO_Ensamble_Parametros_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_GuardarResponse" message="tns:IHersan_Ensamble_PRO_Ensamble_Parametros_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Ensamble_Parametros_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_Obtener" message="tns:IHersan_Ensamble_PRO_Ensamble_Parametros_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_ObtenerResponse" message="tns:IHersan_Ensamble_PRO_Ensamble_Parametros_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Consultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Consultar" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Consultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ConsultarResponse" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Guardar" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_GuardarResponse" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Actualizar" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ActualizarResponse" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Obtener" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ObtenerResponse" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Analisis">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Analisis" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Analisis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisResponse" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Analisis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_AnalisisDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisDetalle" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_AnalisisDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisDetalleResponse" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_AnalisisDetalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ResguardoQA_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Guardar" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GuardarResponse" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ResguardoQA_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Actualizar" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_ActualizarResponse" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ResguardoQA_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Obtener" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_ObtenerResponse" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_Histograma">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_HistogramaResponse" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_GraficaControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControl" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControlResponse" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_Histograma_Historico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_Historico" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_Historico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_HistoricoResponse" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_Histograma_Historico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_GraficaSeries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeries" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaSeries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeriesResponse" message="tns:IHersan_Ensamble_CAL_AnalisisInyeccion_GraficaSeries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Histograma">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Histograma" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Histograma_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaResponse" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_Histograma_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_HistogramaHistorico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaHistorico" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_HistogramaHistorico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaHistoricoResponse" message="tns:IHersan_Ensamble_CAL_InspeccionEnsamble_HistogramaHistorico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ResguardoQA_Grafica">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Grafica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GraficaResponse" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Grafica_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Ensamble" type="tns:IHersan_Ensamble">
     <wsp:PolicyReference URI="#WSHttpBinding_IHersan_Ensamble_policy" />
@@ -397,6 +749,15 @@
     </wsdl:operation>
     <wsdl:operation name="ABC_UsoCFDI_Combo">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_RegimenFiscal_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_Combo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -586,6 +947,312 @@
     </wsdl:operation>
     <wsdl:operation name="ENS_Pedido_Consulta">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_Consulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Inyeccion_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Inyeccion_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Inyeccion_Consulta">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Consulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Temperaturas_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Temperaturas_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_TemperaturasMolde_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_TemperaturasMolde_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Parametros_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Parametros_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionInyeccion_Guarda">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Guarda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionInyeccion_Actualiza">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Actualiza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ReflejantesNorma_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ReflejantesNorma_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ReflejantesNorma_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionInyeccion_Analisis">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Analisis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionInyeccion_AnalisisDetalle">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Ensamble_Parametros_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRO_Ensamble_Parametros_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Analisis">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Analisis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_AnalisisDetalle">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ResguardoQA_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ResguardoQA_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ResguardoQA_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_Histograma">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_GraficaControl">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_Histograma_Historico">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_Historico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_AnalisisInyeccion_GraficaSeries">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_Histograma">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Histograma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_InspeccionEnsamble_HistogramaHistorico">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaHistorico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAL_ResguardoQA_Grafica">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

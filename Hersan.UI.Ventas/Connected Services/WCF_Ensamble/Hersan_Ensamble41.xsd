@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="InyeccionBE">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Color" nillable="true" type="q1:ColoresBE" />
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:InyeccionDetalleBE" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Muestra" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Norma" nillable="true" type="q2:NormaBE" />
+      <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InyeccionBE" nillable="true" type="tns:InyeccionBE" />
+  <xs:complexType name="InyeccionDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cav1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav4" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav5" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav6" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav7" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cav8" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fin" type="ser:duration" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Inicio" type="ser:duration" />
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Master" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Muestra" type="xs:int" />
+      <xs:element minOccurs="0" name="NCav1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav7" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCav8" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Piezas" type="xs:int" />
+      <xs:element minOccurs="0" name="Porcentaje" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Real" type="xs:int" />
+      <xs:element minOccurs="0" name="Remolido" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Turno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Virgen" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InyeccionDetalleBE" nillable="true" type="tns:InyeccionDetalleBE" />
+  <xs:complexType name="ArrayOfInyeccionDetalleBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InyeccionDetalleBE" nillable="true" type="tns:InyeccionDetalleBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInyeccionDetalleBE" nillable="true" type="tns:ArrayOfInyeccionDetalleBE" />
+  <xs:complexType name="TemperaturasBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cav1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav10" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav11" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav12" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav7" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav8" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cav9" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Observa" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TemperaturasBE" nillable="true" type="tns:TemperaturasBE" />
+  <xs:complexType name="TempMoldesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fija" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Movil" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TempMoldesBE" nillable="true" type="tns:TempMoldesBE" />
+  <xs:complexType name="ParametrosInyeccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Posicion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PosicionC1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PosicionC2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Presion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Presion1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Presion2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Presion3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PresionC1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PresionC2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Retardo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Velocidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Velocidad1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Velocidad2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Velocidad3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VelocidadC1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VelocidadC2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Zona1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Zona2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Zona3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Zona4" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametrosInyeccion" nillable="true" type="tns:ParametrosInyeccion" />
+  <xs:complexType name="ArrayOfInyeccionBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InyeccionBE" nillable="true" type="tns:InyeccionBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInyeccionBE" nillable="true" type="tns:ArrayOfInyeccionBE" />
+</xs:schema>

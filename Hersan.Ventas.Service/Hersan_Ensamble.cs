@@ -1,5 +1,4 @@
-﻿using Hersan.Datos.Ventas;
-using Hersan.Entidades.Catalogos;
+﻿using Hersan.Entidades.Catalogos;
 using Hersan.Negocio.Ventas;
 using Hersan.Ensamble.Contract;
 using System.Collections.Generic;
@@ -44,15 +43,19 @@ namespace Hersan.Ensamble.Service
         #region Facturación
         public List<FormasPagoBE> ABC_FormaPago_Combo()
         {
-            return new FacturacionDA().ABC_FormaPago_Combo();
+            return new FacturacionBP().ABC_FormaPago_Combo();
         }
         public List<MetodosPagoBE> ABC_MetodoPago_Combo()
         {
-            return new FacturacionDA().ABC_MetodoPago_Combo();
+            return new FacturacionBP().ABC_MetodoPago_Combo();
         }
         public List<UsoCFDIBE> ABC_UsoCFDI_Combo()
         {
-            return new FacturacionDA().ABC_UsoCFDI_Combo();
+            return new FacturacionBP().ABC_UsoCFDI_Combo();
+        }
+        public List<RegimenSATBE> ABC_RegimenFiscal_Combo()
+        {
+            return new FacturacionBP().ABC_RegimenFiscal_Combo();
         }
         #endregion
 

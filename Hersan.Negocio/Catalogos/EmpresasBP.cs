@@ -19,5 +19,9 @@ namespace Hersan.Negocio.Catalogos
         {
             return new EmpresasDA().ABC_Empresas_Guarda(Empresa, IdUsuario);
         }
+        public int ABC_Empresas_Actualizar(DataTable Empresa, int IdUsuario)
+        {
+            return new EmpresasDA().ABC_Empresas_Actualizar(Empresa, IdUsuario);
+        }
     }
 }

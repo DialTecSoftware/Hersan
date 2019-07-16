@@ -25,6 +25,10 @@ namespace Hersan.Catalogos.Service
         {
             return new EmpresasBP().ABC_Empresas_Guarda(Empresa, IdUsuario);
         }
+        public int ABC_Empresas_Actualizar(DataTable Empresa, int IdUsuario)
+        {
+            return new EmpresasBP().ABC_Empresas_Actualizar(Empresa, IdUsuario);
+        }
         #endregion
 
         #region Deptos

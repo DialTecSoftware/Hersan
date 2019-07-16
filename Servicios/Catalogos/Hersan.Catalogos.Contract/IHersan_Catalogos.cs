@@ -18,6 +18,8 @@ namespace Hersan.Catalogos.Contract
         List<EmpresasBE> ABCEmpresas_Cbo();
         [OperationContract]
         int ABC_Empresas_Guarda(DataTable Empresa, int IdUsuario);
+        [OperationContract]
+        int ABC_Empresas_Actualizar(DataTable Empresa, int IdUsuario);
         #endregion
 
         #region Deptos

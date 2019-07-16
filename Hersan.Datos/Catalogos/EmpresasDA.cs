@@ -11,6 +11,7 @@ namespace Hersan.Datos.Catalogos {
         const string CONST_ABC_EMPRESAS_OBTENER = "ABC_Empresas_Obtener";
         const string CONST_ABC_EMPRESAS_COMBO = "ABC_Empresas_Combo";
         const string CONST_ABC_EMPRESAS_GUARDA = "ABC_Empresas_Guarda";
+        const string CONST_ABC_EMPRESAS_ACTUALIZAR = "ABC_Empresas_Actualizar";
         #endregion
 
 
@@ -99,6 +100,26 @@ namespace Hersan.Datos.Catalogos {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_ABC_EMPRESAS_GUARDA, conn)) {
+                        cmd.Parameters.AddWithValue("@Empresa", Empresa);
+                        cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public int ABC_Empresas_Actualizar(DataTable Empresa, int IdUsuario)
+        {
+            try {
+                int Result = 0;
+
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_ABC_EMPRESAS_ACTUALIZAR, conn)) {
                         cmd.Parameters.AddWithValue("@Empresa", Empresa);
                         cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);
 

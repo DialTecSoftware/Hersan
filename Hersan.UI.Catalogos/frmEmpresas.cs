@@ -57,8 +57,6 @@ namespace Hersan.UI.Catalogos
                 }
 
                 if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                   
-
                     //PROCESO DE GUARDADO Y ACTUALIZACION
                     if (txtId.Text == "0") {
                         Result = oCatalogos.ABC_Empresas_Guarda(CrearTablasAuxiliares(false), BaseWinBP.UsuarioLogueado.ID);
@@ -69,17 +67,16 @@ namespace Hersan.UI.Catalogos
                             LimpiarCampos();
                             CargarDatos();
                         }
-                    } 
-                    //else {
-                    //    Result = oCatalogos.ABC_Agentes_Actualizar(obj);
-                    //    if (Result == 0) {
-                    //        RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    //    } else {
-                    //        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    //        LimpiarCampos();
-                    //        CargarDatos();
-                    //    }
-                    //}
+                    } else {
+                        Result = oCatalogos.ABC_Empresas_Actualizar(CrearTablasAuxiliares(false), BaseWinBP.UsuarioLogueado.ID);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarDatos();
+                        }
+                    }
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al guardar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -90,25 +87,20 @@ namespace Hersan.UI.Catalogos
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
-            EmpresasBE obj = new EmpresasBE();
-
             try {
                 if (RadMessageBox.Show("Esta acción dará de baja la empresa\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                    obj.Id = int.Parse(txtId.Text);
-                    obj.DatosUsuario.Estatus = false;
-                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
-                    //int Result = oCatalogos.ABC_Agentes_Actualizar(obj);
-                    //if (Result == 0) {
-                    //    RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    //} else {
-                    //    RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    //    LimpiarCampos();
-                    //    CargarDatos();
-                    //}
+                    int Result = oCatalogos.ABC_Empresas_Actualizar(CrearTablasAuxiliares(true), BaseWinBP.UsuarioLogueado.ID);
+                    if (Result == 0) {
+                        RadMessageBox.Show("Ocurrió un error al dar de baja la empresa", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    } else {
+                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        LimpiarCampos();
+                        CargarDatos();
+                    }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al dar de baja al Agente\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrio un error al dar de baja la empresa\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCatalogos = null;
             }
@@ -166,38 +158,70 @@ namespace Hersan.UI.Catalogos
         }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
+            //try {
+            //    if (gvDatos.RowCount > 0) {
+            //        var obj = oList.Find(item => item.Id == int.Parse(e.CurrentRow.Cells["Id"].Value.ToString()));
+            //        txtId.Text = obj.Id.ToString();
+            //        txtComercial.Text = obj.NombreComercial;
+            //        txtCorreo.Text = obj.Correo;
+            //        txtCP.Text = obj.Colonia.CP.ToString();
+            //        txtDireccion.Text = obj.Direccion;
+            //        txtExterior.Text = obj.NoExterior;
+            //        txtFiscal.Text = obj.NombreFiscal;
+            //        txtInterior.Text = obj.NoInterior;
+            //        txtRFC.Text = obj.RFC;
+            //        txtTelefono.Text = obj.Telefonos;
+            //        cboCiudad.SelectedValue = obj.Ciudad.Id;
+            //        cboColonia.SelectedValue = obj.Colonia.Id;
+            //        cboEstado.SelectedValue = obj.Estado.Id;
+            //        cboRegimen.SelectedValue = obj.RegimenFiscal.Id;
+            //    }
+            //} catch (Exception ex) {
+            //    RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            //}
+        }
+        private void gvDatos_SelectionChanged(object sender, EventArgs e)
+        {
             try {
-                if (gvDatos.RowCount > 0) {
-                    var obj = oList.Find(item => item.Id == int.Parse(e.CurrentRow.Cells["Id"].Value.ToString()));
-                    txtId.Text = obj.Id.ToString();
-                    txtComercial.Text = obj.NombreComercial;
-                    txtCorreo.Text = obj.Correo;
-                    txtCP.Text = obj.Colonia.CP.ToString();
-                    txtDireccion.Text = obj.Direccion;
-                    txtExterior.Text = obj.NoExterior;
-                    txtFiscal.Text = obj.NombreFiscal;
-                    txtInterior.Text = obj.NoInterior;
-                    txtRFC.Text = obj.RFC;
-                    txtTelefono.Text = obj.Telefonos;
-                    cboCiudad.SelectedValue = obj.Ciudad.Id;
-                    cboColonia.SelectedValue = obj.Colonia.Id;
-                    cboEstado.SelectedValue = obj.Estado.Id;
-                    cboRegimen.SelectedValue = obj.RegimenFiscal.Id;
+                if (((Telerik.WinControls.UI.RadGridView)sender).SelectedRows.Count > 0) {
+                    if (gvDatos.RowCount > 0) {
+                        var obj = oList.Find(item => item.Id == int.Parse(((Telerik.WinControls.UI.RadGridView)sender).CurrentRow.Cells["Id"].Value.ToString()));
+                        txtId.Text = obj.Id.ToString();
+                        txtComercial.Text = obj.NombreComercial;
+                        txtCorreo.Text = obj.Correo;
+                        txtCP.Text = obj.Colonia.CP.ToString();
+                        txtDireccion.Text = obj.Direccion;
+                        txtExterior.Text = obj.NoExterior;
+                        txtFiscal.Text = obj.NombreFiscal;
+                        txtInterior.Text = obj.NoInterior;
+                        txtRFC.Text = obj.RFC;
+                        txtTelefono.Text = obj.Telefonos;
+                        cboCiudad.SelectedValue = obj.Ciudad.Id;
+                        cboColonia.SelectedValue = obj.Colonia.Id;
+                        cboEstado.SelectedValue = obj.Estado.Id;
+                        cboRegimen.SelectedValue = obj.RegimenFiscal.Id;
+                    }
                 }
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                throw ex;
             }
         }
 
         private void LimpiarCampos()
         {
             try {
-                //txtId.Text = "0";
-                //txtCorreo.Clear();
-                //txtComision.Text = "0.00";
-                //txtClave.Clear();
-                //txtNombre.Clear();
-                //chkEstatus.Checked = true;
+                foreach (Control ctrl in this.radPanel1.Controls) {
+                    if (ctrl is Telerik.WinControls.UI.RadTextBox) {
+                        ctrl.Text = "";
+                    }
+                }
+                txtId.Text = "0";
+                cboEstado.SelectedIndex = 0;
+                cboCiudad.SelectedIndex = 0;
+                cboColonia.SelectedIndex = 0;
+                cboRegimen.SelectedIndex = 0;
+
+                gvDatos.ClearSelection();
             } catch (Exception ex) {
                 throw ex;
             }
@@ -216,14 +240,13 @@ namespace Hersan.UI.Catalogos
         }
         private bool ValidarCampos()
         {
-            return false;
-            //bool Flag = true;
-            //try {
-            //    Flag = txtNombre.Text.Trim().Length == 0 ? false : true;
-            //    return Flag;
-            //} catch (Exception ex) {
-            //    throw ex;
-            //}
+            bool Flag = true;
+            try {
+                Flag = txtRFC.Text.Trim().Length == 0 || txtFiscal.Text.Trim().Length == 0 || cboRegimen.SelectedValue == null ? false : true;
+                return Flag;
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void CargaEstados()
         {
@@ -309,6 +332,6 @@ namespace Hersan.UI.Catalogos
             }
         }
 
-      
+        
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpresas));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -509,49 +509,50 @@
             this.gvDatos.MasterTemplate.AllowRowResize = false;
             this.gvDatos.MasterTemplate.AllowSearchRow = true;
             this.gvDatos.MasterTemplate.AutoGenerateColumns = false;
-            gridViewTextBoxColumn11.FieldName = "Id";
-            gridViewTextBoxColumn11.HeaderText = "Id";
-            gridViewTextBoxColumn11.IsVisible = false;
-            gridViewTextBoxColumn11.Name = "Id";
-            gridViewTextBoxColumn12.FieldName = "NombreFiscal";
-            gridViewTextBoxColumn12.HeaderText = "Nombre Fiscal";
-            gridViewTextBoxColumn12.MaxWidth = 250;
-            gridViewTextBoxColumn12.MinWidth = 200;
-            gridViewTextBoxColumn12.Name = "Fisca";
-            gridViewTextBoxColumn12.Width = 200;
-            gridViewTextBoxColumn13.FieldName = "NombreComercial";
-            gridViewTextBoxColumn13.HeaderText = "Nombre Comercial";
-            gridViewTextBoxColumn13.MaxWidth = 250;
-            gridViewTextBoxColumn13.MinWidth = 200;
-            gridViewTextBoxColumn13.Name = "Comercial";
-            gridViewTextBoxColumn13.Width = 200;
-            gridViewTextBoxColumn14.FieldName = "RFC";
-            gridViewTextBoxColumn14.HeaderText = "RFC";
-            gridViewTextBoxColumn14.MaxWidth = 100;
-            gridViewTextBoxColumn14.MinWidth = 80;
-            gridViewTextBoxColumn14.Name = "rfc";
-            gridViewTextBoxColumn14.Width = 80;
-            gridViewTextBoxColumn15.FieldName = "Direccion";
-            gridViewTextBoxColumn15.HeaderText = "Dirección";
-            gridViewTextBoxColumn15.MaxWidth = 250;
-            gridViewTextBoxColumn15.MinWidth = 200;
-            gridViewTextBoxColumn15.Name = "Dir";
-            gridViewTextBoxColumn15.Width = 200;
+            gridViewTextBoxColumn1.FieldName = "Id";
+            gridViewTextBoxColumn1.HeaderText = "Id";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "Id";
+            gridViewTextBoxColumn2.FieldName = "NombreFiscal";
+            gridViewTextBoxColumn2.HeaderText = "Nombre Fiscal";
+            gridViewTextBoxColumn2.MaxWidth = 250;
+            gridViewTextBoxColumn2.MinWidth = 200;
+            gridViewTextBoxColumn2.Name = "Fisca";
+            gridViewTextBoxColumn2.Width = 200;
+            gridViewTextBoxColumn3.FieldName = "NombreComercial";
+            gridViewTextBoxColumn3.HeaderText = "Nombre Comercial";
+            gridViewTextBoxColumn3.MaxWidth = 250;
+            gridViewTextBoxColumn3.MinWidth = 200;
+            gridViewTextBoxColumn3.Name = "Comercial";
+            gridViewTextBoxColumn3.Width = 200;
+            gridViewTextBoxColumn4.FieldName = "RFC";
+            gridViewTextBoxColumn4.HeaderText = "RFC";
+            gridViewTextBoxColumn4.MaxWidth = 120;
+            gridViewTextBoxColumn4.MinWidth = 100;
+            gridViewTextBoxColumn4.Name = "rfc";
+            gridViewTextBoxColumn4.Width = 100;
+            gridViewTextBoxColumn5.FieldName = "Direccion";
+            gridViewTextBoxColumn5.HeaderText = "Dirección";
+            gridViewTextBoxColumn5.MaxWidth = 250;
+            gridViewTextBoxColumn5.MinWidth = 200;
+            gridViewTextBoxColumn5.Name = "Dir";
+            gridViewTextBoxColumn5.Width = 200;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.gvDatos.MasterTemplate.ShowGroupedColumns = true;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ReadOnly = true;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.Size = new System.Drawing.Size(992, 265);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
+            this.gvDatos.SelectionChanged += new System.EventHandler(this.gvDatos_SelectionChanged);
             // 
             // commandBarStripElement2
             // 

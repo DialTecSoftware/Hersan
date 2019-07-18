@@ -2,6 +2,7 @@
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -14,129 +15,12 @@ namespace Hersan.UI.CapitalHumano
         List<EmpleadosBE> oList = new List<EmpleadosBE>();
         List<ExpedientesBE> oExpediente = new List<ExpedientesBE>();
         List<EmpleadosBE> eList = new List<EmpleadosBE>();
+
+
         public frmEmpleados()
         {
             InitializeComponent();
-        }
-        private void LimpiarCampos()
-        {
-            txtApellidos.Text = string.Empty;
-            txtFonacot.Text = "0";
-            txtId.Text = "0";
-            txtCuenta.Text ="0000-0000-0000-0000";
-            txtIdExp.Text ="0";
-            txtInfonavit.Text = "0";
-            txtNombres.Text = string.Empty;
-            txtNumEmp.Text = "0";
-            txtcantidad.Text = "0";
-            txtPension.Text = "0";
-            txtSueldoDiario.Text = "0.00";
-            txtSueldoIntegrado.Text = "0.00";
-            cboEstatus.SelectedIndex = 0;
-            cboTipoF.SelectedIndex = 0;
-            dtFecha.Value = DateTime.Today;
-
-        }
-        private void Entero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try {
-                if (!BaseWinBP.isNumero(e.KeyChar))
-                    e.Handled = true;
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private void Decimal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try {
-                if (BaseWinBP.isDecimal(e.KeyChar)) {
-                    e.Handled = true;
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-        private bool ValidarCampos()
-        {
-            bool Flag = true;
-            try {
-               
-            
-                Flag = txtApellidos.Text.Trim().Length == 0 ? false : true;                      
-                Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
-               
-
-
-                return Flag;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-        private void CargaExpediente(int IdExpediente)
-        {
-            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
-
-            try {
-                oExpediente = oCHumano.CHU_Expedientes_Obtener(IdExpediente);
-                if (oExpediente.Count > 0) {
-
-                    //  SE CARGA EL EXPEDIENTE
-                    txtIdExp.Text = IdExpediente.ToString();
-
-                    ExpedientesDatosPersonales oAux = new ExpedientesDatosPersonales();
-                    oAux.IdExpediente = int.Parse(txtIdExp.Text);
-                    var Item = oCHumano.CHU_ExpedientesDatosPersonales_Consultar(oAux);
-
-                    if (Item.Count > 0) {
-                        txtApellidos.Text = Item[0].APaterno + " " + Item[0].AMaterno;
-                        txtNombres.Text = Item[0].Nombres;
-
-                    }
-                }
-            } catch (Exception) {
-
-                throw;
-            }
-        }
-
-        private void CargarEmpleados()
-        {
-
-            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
-           
-            try {
-                if (int.Parse(txtIdExp.Text) >0) {
-                    var item = oCHumano.CHU_Empleados_Consultar(int.Parse(txtIdExp.Text));
-                    if (item.Count > 0) {
-                        txtId.Text = item[0].Id.ToString();
-                        txtNumEmp.Text = item[0].Numero.ToString();
-                        txtcantidad.Text = item[0].Ahorro.ToString();
-                        txtCuenta.Text = item[0].NumeroCuenta;
-                        txtSueldoDiario.Text = item[0].SueldoDiario.ToString();
-                        txtSueldoIntegrado.Text = item[0].SueldoDiarioIntegrado.ToString();
-                        if (item[0].Ahorro > 0) 
-                        {
-                            SiVoluntario.IsChecked = true;
-                        }
-                        txtFonacot.Text = item[0].Fonacot;
-                        txtInfonavit.Text = item[0].Infonavit;
-                
-                        txtPension.Text = item[0].Pension.ToString();
-                        cboEstatus.Text = Convert.ToString(item[0].EstatusEmpleado);
-                        cboTipoF.Text = Convert.ToString(item[0].TipoInfonavit);
-                        dtFecha.Value = DateTime.Parse( item[0].FechaIngreso.ToString());
-                        dtIMSS.Value = DateTime.Parse(item[0].FechaAltaIMSS.ToString());
-
-                        if (item[0].Fonacot != "")
-                            rdbSi.IsChecked=true;
-                                             
-                    }
-                }
-            } catch (Exception) {
-
-                throw;
-            }
-        }
+        }        
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
             try {
@@ -151,12 +35,6 @@ namespace Hersan.UI.CapitalHumano
                 throw;
             }
         }
-
-        private void radPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
@@ -229,7 +107,6 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -241,7 +118,6 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int IdExpediente = 0;
@@ -254,7 +130,6 @@ namespace Hersan.UI.CapitalHumano
                 ofrm.ShowDialog();
                 IdExpediente = ofrm.IdExpediente;
 
-
                 if (IdExpediente > 0) {
                     LimpiarCampos();
                     CargaExpediente(IdExpediente);
@@ -264,32 +139,33 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
         private void btnBuscarEMp_Click(object sender, EventArgs e)
         {
-        
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            string path = string.Empty;
+            try {
+                if (txtIdExp.Text.Trim().Length != 0) {
+                    frmViewer frm = new frmViewer();
+                    frm.iReport = new Reportes.rptCredencial();
+                    frm.iReport.SetDataSource(oCHumano.CHU_Empleados_Credencial(int.Parse(txtIdExp.Text)));
 
-                int IdEmpleado = 0;
-                try {
-                    frmEmpleadosConsulta ofrm = new frmEmpleadosConsulta();
-                    ofrm.WindowState = FormWindowState.Normal;
-                    ofrm.StartPosition = FormStartPosition.CenterScreen;
-                    ofrm.MaximizeBox = false;
-                    ofrm.MinimizeBox = false;
-                    ofrm.ShowDialog();
-                IdEmpleado = ofrm.IdEmpleado;
+                    if (oExpediente[0].Foto != null) {
+                        ObtenerFoto();
+                        path = Directory.GetCurrentDirectory() + @"\" + oExpediente[0].Id.ToString() + ".png";
+                    }else
+                        path = Directory.GetCurrentDirectory() + @"\" + "Hersan.png";
 
-                } catch (Exception ex) {
-                    RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                    throw;
+                    frm.iReport.SetParameterValue("picturePath", path);
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                } else
+                    RadMessageBox.Show("No ha seleccionado un expediente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al mostrar la credencial\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
             }
         }
-
-        private void radGroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void rdbSi_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
 
@@ -302,7 +178,6 @@ namespace Hersan.UI.CapitalHumano
                 lblNumfona.Visible = false;
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
@@ -324,7 +199,6 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -335,17 +209,6 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurió un errror al salir de la pantalla" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
-        private void documentWindow1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rdbNo_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
-        {
-
-        }
-
         private void rdbUi_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
 
@@ -367,7 +230,6 @@ namespace Hersan.UI.CapitalHumano
 
            
         }
-
         private void cboTipoF_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             if (cboTipoF.SelectedIndex == 0)
@@ -387,7 +249,6 @@ namespace Hersan.UI.CapitalHumano
             }
 
         }
-
         private void SiVoluntario_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             if (SiVoluntario.IsChecked==true) 
@@ -402,9 +263,131 @@ namespace Hersan.UI.CapitalHumano
             }
         }
 
-        private void radGroupBox3_Click(object sender, EventArgs e)
+        private void LimpiarCampos()
         {
+            txtApellidos.Text = string.Empty;
+            txtFonacot.Text = "0";
+            txtId.Text = "0";
+            txtCuenta.Text = "0000-0000-0000-0000";
+            txtIdExp.Text = "0";
+            txtInfonavit.Text = "0";
+            txtNombres.Text = string.Empty;
+            txtNumEmp.Text = "0";
+            txtcantidad.Text = "0";
+            txtPension.Text = "0";
+            txtSueldoDiario.Text = "0.00";
+            txtSueldoIntegrado.Text = "0.00";
+            cboEstatus.SelectedIndex = 0;
+            cboTipoF.SelectedIndex = 0;
+            dtFecha.Value = DateTime.Today;
 
         }
+        private void Entero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (!BaseWinBP.isNumero(e.KeyChar))
+                    e.Handled = true;
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void Decimal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (BaseWinBP.isDecimal(e.KeyChar)) {
+                    e.Handled = true;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private bool ValidarCampos()
+        {
+            bool Flag = true;
+            try {
+
+
+                Flag = txtApellidos.Text.Trim().Length == 0 ? false : true;
+                Flag = txtNombres.Text.Trim().Length == 0 ? false : true;
+
+
+
+                return Flag;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void CargaExpediente(int IdExpediente)
+        {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+
+            try {
+                oExpediente = oCHumano.CHU_Expedientes_Obtener(IdExpediente);
+                if (oExpediente.Count > 0) {
+                    //  SE CARGA EL EXPEDIENTE
+                    txtIdExp.Text = IdExpediente.ToString();
+                    
+                    ExpedientesDatosPersonales oAux = new ExpedientesDatosPersonales();
+                    oAux.IdExpediente = int.Parse(txtIdExp.Text);
+                    var Item = oCHumano.CHU_ExpedientesDatosPersonales_Consultar(oAux);
+
+                    if (Item.Count > 0) {
+                        txtApellidos.Text = Item[0].APaterno + " " + Item[0].AMaterno;
+                        txtNombres.Text = Item[0].Nombres;
+                    }
+                }
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+        private void CargarEmpleados()
+        {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
+            try {
+                if (int.Parse(txtIdExp.Text) > 0) {
+                    var item = oCHumano.CHU_Empleados_Consultar(int.Parse(txtIdExp.Text));
+                    if (item.Count > 0) {
+                        txtId.Text = item[0].Id.ToString();
+                        txtNumEmp.Text = item[0].Numero.ToString();
+                        txtcantidad.Text = item[0].Ahorro.ToString();
+                        txtCuenta.Text = item[0].NumeroCuenta;
+                        txtSueldoDiario.Text = item[0].SueldoDiario.ToString();
+                        txtSueldoIntegrado.Text = item[0].SueldoDiarioIntegrado.ToString();
+                        if (item[0].Ahorro > 0) {
+                            SiVoluntario.IsChecked = true;
+                        }
+                        txtFonacot.Text = item[0].Fonacot;
+                        txtInfonavit.Text = item[0].Infonavit;
+
+                        txtPension.Text = item[0].Pension.ToString();
+                        cboEstatus.Text = Convert.ToString(item[0].EstatusEmpleado);
+                        cboTipoF.Text = Convert.ToString(item[0].TipoInfonavit);
+                        dtFecha.Value = DateTime.Parse(item[0].FechaIngreso.ToString());
+                        dtIMSS.Value = DateTime.Parse(item[0].FechaAltaIMSS.ToString());
+
+                        if (item[0].Fonacot != "")
+                            rdbSi.IsChecked = true;
+                    }
+                }
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+        private void ObtenerFoto()
+        {
+            BinaryWriter Writer = null;
+            string Name = Directory.GetCurrentDirectory() + oExpediente[0].Id.ToString() + ".png";
+            try {
+                Writer = new BinaryWriter(File.OpenWrite(Name));
+                Writer.Write(oExpediente[0].Foto);
+                Writer.Flush();
+                Writer.Close();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Error al intentar descargar la imagen\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
     }
 }

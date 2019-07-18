@@ -107,22 +107,13 @@ namespace Hersan.UI.Calidad
         private void Iniciales()
         {
             try {
-                txtCav1.Text = "0.00";
-                txtCav2.Text = "0.00";
-                txtCav3.Text = "0.00";
-                txtCav4.Text = "0.00";
-                txtCav5.Text = "0.00";
-                txtCav6.Text = "0.00";
-                txtCav7.Text = "0.00";
-                txtCav8.Text = "0.00";
-                txtCav9.Text = "0.00";
-                txtCav10.Text = "0.00";
-                txtCav11.Text = "0.00";
-                txtCav12.Text = "0.00";
-                txtObserva.Clear();
-
-                txtFija.Text = "0.00";
-                txtMovil.Text = "0.00";
+                foreach (Control ctrl in this.radGroupBox1.Controls) {
+                    if (ctrl is Telerik.WinControls.UI.RadTextBox) {
+                        ctrl.Text = "";
+                    }
+                }                
+                txtFija.Clear();
+                txtMovil.Clear();
             } catch (Exception ex) {
                 throw ex;
             }

@@ -110,7 +110,6 @@ namespace Hersan.UI.CapitalHumano
                     #endregion
                 });
                 if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-
                     /* ALTA DE PERFIL */
                     if (int.Parse(txtId.Text) == 0) {
                         int Result = oCHumano.CHU_Perfiles_Guardar(obj, oData);

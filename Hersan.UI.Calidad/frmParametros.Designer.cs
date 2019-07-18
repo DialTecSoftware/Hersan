@@ -69,12 +69,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtPresion = new Telerik.WinControls.UI.RadTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtRetardo = new Telerik.WinControls.UI.RadTextBox();
             this.txtVelocidad = new Telerik.WinControls.UI.RadTextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.txtPosicion = new Telerik.WinControls.UI.RadTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.btnSalir = new Telerik.WinControls.UI.RadButton();
@@ -105,7 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtZona3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtZona1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtZona4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPresion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRetardo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVelocidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPosicion)).BeginInit();
@@ -484,7 +481,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(48, 13);
             this.label16.TabIndex = 12;
-            this.label16.Text = "ZONA 1";
+            this.label16.Text = "ZONA 3";
             // 
             // txtZona2
             // 
@@ -497,19 +494,19 @@
             // 
             // txtZona3
             // 
-            this.txtZona3.Location = new System.Drawing.Point(79, 59);
+            this.txtZona3.Location = new System.Drawing.Point(195, 59);
             this.txtZona3.Name = "txtZona3";
             this.txtZona3.Size = new System.Drawing.Size(44, 20);
-            this.txtZona3.TabIndex = 8;
+            this.txtZona3.TabIndex = 10;
             this.txtZona3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtZona3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtZona1
             // 
-            this.txtZona1.Location = new System.Drawing.Point(197, 59);
+            this.txtZona1.Location = new System.Drawing.Point(80, 59);
             this.txtZona1.Name = "txtZona1";
             this.txtZona1.Size = new System.Drawing.Size(41, 20);
-            this.txtZona1.TabIndex = 10;
+            this.txtZona1.TabIndex = 8;
             this.txtZona1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtZona4
@@ -541,7 +538,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(48, 13);
             this.label14.TabIndex = 4;
-            this.label14.Text = "ZONA 3";
+            this.label14.Text = "ZONA 1";
             // 
             // label15
             // 
@@ -550,18 +547,9 @@
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(19, 39);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 13);
+            this.label15.Size = new System.Drawing.Size(51, 13);
             this.label15.TabIndex = 3;
-            this.label15.Text = "ZONA 4";
-            // 
-            // txtPresion
-            // 
-            this.txtPresion.Location = new System.Drawing.Point(617, 72);
-            this.txtPresion.Name = "txtPresion";
-            this.txtPresion.Size = new System.Drawing.Size(44, 20);
-            this.txtPresion.TabIndex = 18;
-            this.txtPresion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPresion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
+            this.label15.Text = "ZONA N";
             // 
             // label19
             // 
@@ -576,19 +564,19 @@
             // 
             // txtRetardo
             // 
-            this.txtRetardo.Location = new System.Drawing.Point(617, 122);
+            this.txtRetardo.Location = new System.Drawing.Point(617, 98);
             this.txtRetardo.Name = "txtRetardo";
             this.txtRetardo.Size = new System.Drawing.Size(44, 20);
-            this.txtRetardo.TabIndex = 20;
+            this.txtRetardo.TabIndex = 19;
             this.txtRetardo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRetardo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtVelocidad
             // 
-            this.txtVelocidad.Location = new System.Drawing.Point(617, 97);
+            this.txtVelocidad.Location = new System.Drawing.Point(617, 73);
             this.txtVelocidad.Name = "txtVelocidad";
             this.txtVelocidad.Size = new System.Drawing.Size(44, 20);
-            this.txtVelocidad.TabIndex = 19;
+            this.txtVelocidad.TabIndex = 18;
             this.txtVelocidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtVelocidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
@@ -597,22 +585,11 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(542, 101);
+            this.label21.Location = new System.Drawing.Point(566, 77);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 13);
+            this.label21.Size = new System.Drawing.Size(46, 13);
             this.label21.TabIndex = 47;
-            this.label21.Text = "VELOCIDAD:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(557, 76);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(55, 13);
-            this.label22.TabIndex = 46;
-            this.label22.Text = "PRESIÓN:";
+            this.label21.Text = "CARGA:";
             // 
             // txtPosicion
             // 
@@ -628,7 +605,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(523, 126);
+            this.label20.Location = new System.Drawing.Point(523, 102);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(89, 13);
             this.label20.TabIndex = 53;
@@ -655,12 +632,10 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.txtPosicion);
-            this.Controls.Add(this.txtPresion);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtRetardo);
             this.Controls.Add(this.txtVelocidad);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.radGroupBox3);
             this.Controls.Add(this.radGroupBox2);
             this.Controls.Add(this.btnGuardar);
@@ -707,7 +682,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtZona3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtZona1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtZona4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPresion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRetardo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVelocidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPosicion)).EndInit();
@@ -759,12 +733,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private Telerik.WinControls.UI.RadTextBox txtPresion;
         private System.Windows.Forms.Label label19;
         private Telerik.WinControls.UI.RadTextBox txtRetardo;
         private Telerik.WinControls.UI.RadTextBox txtVelocidad;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
         private Telerik.WinControls.UI.RadTextBox txtPosicion;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label16;

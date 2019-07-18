@@ -51,6 +51,8 @@ namespace Hersan.UI.Calidad
                 Obj.Reflex1.Id = cboReflejante1.SelectedValue != null ? int.Parse(cboReflejante1.SelectedValue.ToString()) : 0;
                 Obj.Reflex2.Id = cboReflejante2.SelectedValue != null ? int.Parse(cboReflejante2.SelectedValue.ToString()) : 0;
                 Obj.Piezas = txtPiezas.Text.Trim().Length == 0 ? 0 : int.Parse(txtPiezas.Text);
+                Obj.OP = txtOP.Text.Trim().Length == 0 ? "" : txtOP.Text;
+                Obj.Lista = txtLista.Text.Trim().Length == 0 ? 0 : int.Parse(txtLista.Text);
                 Obj.Fecha = dtFecha.Value.Year.ToString() + dtFecha.Value.Month.ToString().PadLeft(2, '0') + dtFecha.Value.Day.ToString().PadLeft(2, '0');
                 Obj.IdUsuario = BaseWinBP.UsuarioLogueado.ID;
 
@@ -246,8 +248,8 @@ namespace Hersan.UI.Calidad
                     oRow["Valor0"] = item.Valor0;
                     oRow["Valor1"] = item.Valor1;
                     oRow["Valor2"] = item.Valor2;
-                    oRow["Lista"] = item.Lista;
-                    oRow["OP"] = item.OP;
+                    oRow["Lista"] = 0;
+                    oRow["OP"] = "";
 
                     oData.Rows.Add(oRow);
                 }

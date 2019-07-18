@@ -53,7 +53,7 @@ namespace Hersan.UI.CapitalHumano
         {
             OpenFileDialog oDialog = new OpenFileDialog();
             try {
-                oDialog.Filter = "Archivos jpg (*.jpg)|*.jpg";
+                oDialog.Filter = "Archivos png (*.png)|*.png";
                 oDialog.Title = "Fotografia de Expediente";
 
                 if (oDialog.ShowDialog() == DialogResult.OK) {
@@ -377,26 +377,24 @@ namespace Hersan.UI.CapitalHumano
         }
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            //Datos obj = new Datos();
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             try {
-                frmViewer frm = new frmViewer();
-                frm.iReport = new Reportes.rtpExpediente();
-                //frm.iReport.SetDataSource(SP Origen de Datos);
-                //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, System.IO.Directory.GetCurrentDirectory() + @"\Ganadores_Sorteo.pdf");
-                frm.VerImprimir = frmViewer.Modo.Ver;
-                //frm.iReport.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"c:\Temp\Test.pdf");
+                if (txtId.Text.Trim().Length != 0) {
+                    frmViewer frm = new frmViewer();
+                    frm.iReport = new Reportes.rptExpediente();
 
-                //MOSTRAR EN PANTALLA
-                frm.WindowState = FormWindowState.Maximized;
-                frm.ShowDialog();
+                    frm.iReport.SetDataSource(oCHumano.CHU_Expediente_Reporte(int.Parse(txtId.Text)));
+                    frm.iReport.Subreports["Detalle"].SetDataSource(oCHumano.CHU_Expediente_Estudios_Reporte(int.Parse(txtId.Text)));
 
-                MessageBox.Show("Reporte generado correctamente", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                ////ABRIR ARCHIVO PDF
-                //Process.Start(System.IO.Directory.GetCurrentDirectory() + @"\Ganadores_Sorteo.pdf");
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }else
+                    RadMessageBox.Show("No ha seleccionado un expediente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } 
+            } finally {
+                oCHumano = null;
+            }
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -1061,6 +1059,7 @@ namespace Hersan.UI.CapitalHumano
                 txtTituloEscuela.Text = string.Empty;
                 txtValorAprox.Text = string.Empty;
                 txtViajarNo.Text = string.Empty;
+                txtCorreo.Clear();
                 #endregion
 
                 #region RadGridView

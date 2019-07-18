@@ -97,6 +97,12 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_ConsultarResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.ExpedienteEconomicos> CHU_Expediente_Economicos_Consultar(Hersan.Entidades.CapitalHumano.ExpedienteEconomicos Expediente);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Reporte", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_ReporteResponse")]
+        System.Data.DataTable CHU_Expediente_Reporte(int IdExpediente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_Reporte", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_ReporteResponse")]
+        System.Data.DataTable CHU_Expediente_Estudios_Reporte(int IdExpediente);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser);
         
@@ -186,6 +192,9 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_EliminaResponse")]
         int CHU_Empleados_Elimina(int IdEmp, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Credencial", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_CredencialResponse")]
+        System.Data.DataTable CHU_Empleados_Credencial(int IdExpediente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -323,6 +332,14 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
             return base.Channel.CHU_Expediente_Economicos_Consultar(Expediente);
         }
         
+        public System.Data.DataTable CHU_Expediente_Reporte(int IdExpediente) {
+            return base.Channel.CHU_Expediente_Reporte(IdExpediente);
+        }
+        
+        public System.Data.DataTable CHU_Expediente_Estudios_Reporte(int IdExpediente) {
+            return base.Channel.CHU_Expediente_Estudios_Reporte(IdExpediente);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.NuevoPuestoBE> CHU_NuevoPuesto_Obtener(int IdUser) {
             return base.Channel.CHU_NuevoPuesto_Obtener(IdUser);
         }
@@ -441,6 +458,10 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario) {
             return base.Channel.CHU_Empleados_Elimina(IdEmp, IdUsuario);
+        }
+        
+        public System.Data.DataTable CHU_Empleados_Credencial(int IdExpediente) {
+            return base.Channel.CHU_Empleados_Credencial(IdExpediente);
         }
     }
 }

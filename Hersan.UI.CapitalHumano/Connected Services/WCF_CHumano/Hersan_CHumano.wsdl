@@ -181,6 +181,18 @@
   <wsdl:message name="IHersan_CHumano_CHU_Expediente_Economicos_Consultar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_Expediente_Economicos_ConsultarResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Reporte_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Reporte" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Reporte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_ReporteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Estudios_Reporte_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Estudios_Reporte" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Expediente_Estudios_Reporte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Expediente_Estudios_ReporteResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHU_NuevoPuesto_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:CHU_NuevoPuesto_Obtener" />
   </wsdl:message>
@@ -361,6 +373,12 @@
   <wsdl:message name="IHersan_CHumano_CHU_Empleados_Elimina_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_Empleados_EliminaResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Empleados_Credencial_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Empleados_Credencial" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_Empleados_Credencial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_Empleados_CredencialResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_CHumano">
     <wsdl:operation name="CHU_Perfiles_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Guardar" message="tns:IHersan_CHumano_CHU_Perfiles_Guardar_InputMessage" />
@@ -469,6 +487,14 @@
     <wsdl:operation name="CHU_Expediente_Economicos_Consultar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_Consultar" message="tns:IHersan_CHumano_CHU_Expediente_Economicos_Consultar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_ConsultarResponse" message="tns:IHersan_CHumano_CHU_Expediente_Economicos_Consultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Reporte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Reporte" message="tns:IHersan_CHumano_CHU_Expediente_Reporte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_ReporteResponse" message="tns:IHersan_CHumano_CHU_Expediente_Reporte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Estudios_Reporte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_Reporte" message="tns:IHersan_CHumano_CHU_Expediente_Estudios_Reporte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_ReporteResponse" message="tns:IHersan_CHumano_CHU_Expediente_Estudios_Reporte_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CHU_NuevoPuesto_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_NuevoPuesto_Obtener" message="tns:IHersan_CHumano_CHU_NuevoPuesto_Obtener_InputMessage" />
@@ -589,6 +615,10 @@
     <wsdl:operation name="CHU_Empleados_Elimina">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Elimina" message="tns:IHersan_CHumano_CHU_Empleados_Elimina_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_EliminaResponse" message="tns:IHersan_CHumano_CHU_Empleados_Elimina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Empleados_Credencial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Credencial" message="tns:IHersan_CHumano_CHU_Empleados_Credencial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_CredencialResponse" message="tns:IHersan_CHumano_CHU_Empleados_Credencial_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_CHumano" type="tns:IHersan_CHumano">
@@ -830,6 +860,24 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_Expediente_Economicos_Consultar">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Economicos_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Reporte">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Reporte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Expediente_Estudios_Reporte">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Expediente_Estudios_Reporte" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1100,6 +1148,15 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_Empleados_Elimina">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Elimina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_Empleados_Credencial">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Credencial" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -71,7 +71,7 @@ namespace Hersan.UI.Calidad
                     oRow["VelocidadC1"] = txtVelocidadC1.Text.Trim().Length != 0 ? decimal.Parse(txtVelocidadC1.Text) : 0;
                     oRow["VelocidadC2"] = txtVelocidadC2.Text.Trim().Length != 0 ? decimal.Parse(txtVelocidadC2.Text) : 0;
                     oRow["Posicion"] = txtPosicion.Text.Trim().Length != 0 ? decimal.Parse(txtPosicion.Text) : 0;
-                    oRow["Presion"] = txtPresion.Text.Trim().Length != 0 ? decimal.Parse(txtPresion.Text) : 0;
+                    oRow["Presion"] = 0;
                     oRow["Velocidad"] = txtVelocidad.Text.Trim().Length != 0 ? decimal.Parse(txtVelocidad.Text) : 0;
                     oRow["Retardo"] = txtRetardo.Text.Trim().Length != 0 ? decimal.Parse(txtRetardo.Text) : 0;
                     oRow["Zona1"] = txtZona1.Text.Trim().Length != 0 ? decimal.Parse(txtZona1.Text) : 0;
@@ -118,7 +118,7 @@ namespace Hersan.UI.Calidad
             try {
                 foreach (Control ctrl in this.Controls) {
                     if (ctrl is Telerik.WinControls.UI.RadTextBox) {
-                        ctrl.Text = "0.00";
+                        ctrl.Text = "";
                     }
                 }
             } catch (Exception ex) {
@@ -144,7 +144,7 @@ namespace Hersan.UI.Calidad
                     txtVelocidadC1.Text = Obj.VelocidadC1.ToString();
                     txtVelocidadC2.Text = Obj.VelocidadC2.ToString();
                     txtPosicion.Text = Obj.Posicion.ToString();
-                    txtPresion.Text = Obj.Presion.ToString();
+                    //txtPresion.Text = Obj.Presion.ToString();
                     txtVelocidad.Text = Obj.Velocidad.ToString();
                     txtRetardo.Text = Obj.Retardo.ToString();
                     txtZona1.Text = Obj.Zona1.ToString();

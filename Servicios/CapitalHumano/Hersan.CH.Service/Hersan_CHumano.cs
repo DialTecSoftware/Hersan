@@ -128,6 +128,14 @@ namespace Hersan.CH.Service
         {
             return new ExpedientesBP().CHU_Expediente_Economicos_Consultar(Expediente);
         }
+        public DataTable CHU_Expediente_Reporte(int IdExpediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Reporte(IdExpediente);
+        }
+        public DataTable CHU_Expediente_Estudios_Reporte(int IdExpediente)
+        {
+            return new ExpedientesBP().CHU_Expediente_Estudios_Reporte(IdExpediente);
+        }
         #endregion
 
         #region NuevoPuesto
@@ -222,7 +230,6 @@ namespace Hersan.CH.Service
         #endregion
 
         #region Digitalizados
-     
         public List<DigitalizadosDetalleBE> CHU_Digitalizados_Obtener(int IdExp)
         {
             return new DigitalizadosBP().CHU_Digitalizados_Obtener(IdExp);
@@ -234,7 +241,6 @@ namespace Hersan.CH.Service
         #endregion
 
         #region DescripcionPuestos
-
         public DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl)
         {
             return new DescripcionPuestosBP().CHU_DescripcionPuestos_Obtener(IdPerfifl);
@@ -278,6 +284,10 @@ namespace Hersan.CH.Service
         public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario)
         {
             return new EmpleadosBP().CHU_Empleados_Elimina(IdEmp, IdUsuario);
+        }
+        public DataTable CHU_Empleados_Credencial(int IdExpediente)
+        {
+            return new EmpleadosBP().CHU_Empleados_Credencial(IdExpediente);
         }
         #endregion
     }

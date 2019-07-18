@@ -22,12 +22,227 @@ namespace Hersan.UI.CapitalHumano
         List<SolicitudPersonalBE> oList = new List<SolicitudPersonalBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
         BaseWinBP lista = new BaseWinBP();
-    
 
         public frmSolicitudPersonal()
         {
             InitializeComponent();
         }
+        private void frmSolicitud_Load(object sender, EventArgs e)
+        {
+            try {
+                GroupDescriptor Entidades = new GroupDescriptor();
+                Entidades.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
+                this.gvDatos.GroupDescriptors.Add(Entidades);
+
+                ConditionalFormattingObject obj = new ConditionalFormattingObject("MyCondition", ConditionTypes.Greater, "30", "", true);
+                obj.CellForeColor = Color.White;
+                obj.CellBackColor = Color.RoyalBlue;
+                obj.ApplyOnSelectedRows = true;
+                this.gvDatos.Columns["Estado"].ConditionalFormattingObjectList.Add(obj);
+
+                LimpiarCampos();
+                CargarEntidades();
+                CargarTiposContrato();
+                CargarSolicitudes();
+
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                CargarDeptos();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try {
+                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
+                    CargarPuestos();
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            try {
+                LimpiarCampos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            try {
+                this.Close();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
+            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
+            SolicitudPersonalBE obj = new SolicitudPersonalBE();
+            try {
+
+                if (!ValidarCampos()) {
+                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
+                if (oList.FindAll(item => item.Departamentos.Entidades.Id == int.Parse(cboEntidad.SelectedValue.ToString()) && item.Departamentos.Id == int.Parse(cboDepto.SelectedValue.ToString())).Count > 0
+                   && int.Parse(txtId.Text) == -1) {
+                    RadMessageBox.Show("El departamento capturado ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    LimpiarCampos();
+                    return;
+                }
+
+                if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtId.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtId.Text))).Count > 0) {
+                    RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+
+                    return;
+                }
+
+
+                if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    #region Entidades
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
+                    obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
+                    obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
+                    obj.TiposContrato.Id = int.Parse(cboTipoCon.SelectedValue.ToString());
+                    obj.Sueldo = decimal.Parse(txtSueldo.Text);
+                    obj.Justificacion = txtJustif.Text;
+                    obj.Indicadores = txtIndicad.Text;
+                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+                    #endregion
+
+                    #region Correo
+                    //string pwd = "Catcooptest";
+                    //string smtp = "smtp.GMAIL.com";
+                    //string emisor = "Key.Solutions.Test@gmail.com";
+                    //string destinatario = "gregory.moise@dialtec.com.mx";
+                    //string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la nueva solicitud y hacer las continuaciones necesarias!!";
+                    //int port = 587;
+                    #endregion
+
+                    //PROCESO DE GUARDADO Y ACTUALIZACION
+                    if (txtId.Text == "-1") {
+                        int Result = oCHumano.CHU_SolicitudP_Guardar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Solicitud creada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarSolicitudes();
+                            //string asunto = "Nueva Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
+                            //BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
+                        }
+                    } else {
+                        oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
+                        int Result = oCHumano.CHU_SolicitudP_Actualizar(obj);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                        } else {
+                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                            LimpiarCampos();
+                            CargarSolicitudes();
+                            //string asunto = "Actualización de Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
+                            //BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+
+                oCHumano = null;
+            }
+        }
+        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
+        {
+            try {
+
+                if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
+                    txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
+                    txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
+                    txtDictamen.Text = e.CurrentRow.Cells["Dictamen"].Value.ToString();
+                    txtIndicad.Text = e.CurrentRow.Cells["Indicadores"].Value.ToString();
+                    txtSueldo.Text = (e.CurrentRow.Cells["Sueldo"].Value.ToString());
+                    cboDepto.SelectedValue = int.Parse(e.CurrentRow.Cells["DEP_Id"].Value.ToString());
+                    cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["ENT_Id"].Value.ToString());
+                    cboTipoCon.SelectedValue = int.Parse(e.CurrentRow.Cells["TCO_Id"].Value.ToString());
+                    cboPuesto.SelectedValue = int.Parse(e.CurrentRow.Cells["PUE_Id"].Value.ToString());
+
+
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
+            SolicitudPersonalBE obj = new SolicitudPersonalBE();
+            try {
+
+
+                if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtId.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtId.Text))).Count > 0) {
+                    RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+
+                    return;
+                }
+
+                if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtId.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtId.Text))).Count > 0) {
+                    RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+
+                    return;
+                }
+
+                if (RadMessageBox.Show("Esta acción dará de baja la solicitud\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
+                    obj.Id = int.Parse(txtId.Text);
+                    obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
+                    obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
+                    obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
+                    obj.TiposContrato.Id = int.Parse(cboTipoCon.SelectedValue.ToString());
+                    obj.Sueldo = decimal.Parse(txtSueldo.Text);
+                    obj.Justificacion = txtJustif.Text;
+                    obj.Indicadores = txtIndicad.Text;
+                    obj.DatosUsuario.Estatus = false;
+                    obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
+
+                    int Result = oCHumano.CHU_SolicitudP_Actualizar(obj);
+                    if (Result == 0) {
+                        RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                    } else {
+                        RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        LimpiarCampos();
+                        CargarSolicitudes();
+
+                    }
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al dar de baja la solicitud\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
+            }
+        }
+        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                if (BaseWinBP.isDecimal(e.KeyChar)) {
+                    e.Handled = true;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
 
         private void CargarEntidades()
         {
@@ -92,7 +307,7 @@ namespace Hersan.UI.CapitalHumano
         {
             bool Flag = true;
             try {
-                Flag = txtJustif.Text.Trim().Length == 0? false : true;
+                Flag = txtJustif.Text.Trim().Length == 0 ? false : true;
                 Flag = txtIndicad.Text.Trim().Length == 0 ? false : true;
                 Flag = txtSueldo.Text.Trim().Length == 0 ? false : true;
 
@@ -113,9 +328,8 @@ namespace Hersan.UI.CapitalHumano
             cboDepto.SelectedIndex = 1;
             cboTipoCon.SelectedIndex = 1;
             cboPuesto.SelectedIndex = 1;
-            
-        }
 
+        }
         private void CargarSolicitudes()
         {
             oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
@@ -127,235 +341,7 @@ namespace Hersan.UI.CapitalHumano
             } finally { oCHumano = null; }
         }
 
-
-        private void frmSolicitud_Load(object sender, EventArgs e)
-        {
-             try {
-                GroupDescriptor Entidades = new GroupDescriptor();
-                Entidades.GroupNames.Add("ENT_Nombre", ListSortDirection.Ascending);
-                this.gvDatos.GroupDescriptors.Add(Entidades);
-
-                ConditionalFormattingObject obj = new ConditionalFormattingObject("MyCondition", ConditionTypes.Greater, "30", "", true);
-                obj.CellForeColor = Color.White;
-                obj.CellBackColor = Color.RoyalBlue;
-                obj.ApplyOnSelectedRows =true;
-                this.gvDatos.Columns["Estado"].ConditionalFormattingObjectList.Add(obj);
-
-                LimpiarCampos();
-                CargarEntidades();
-                CargarTiposContrato();
-                CargarSolicitudes();
-
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void cboEntidad_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            try {
-                CargarDeptos();
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-        private void cboDepto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            try {
-                if (cboDepto.Items.Count > 0 && cboDepto.SelectedValue != null) {
-                    CargarPuestos();
-                }
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            try {
-                LimpiarCampos();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            try {
-                this.Close();
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            oCatalogo = new CapitalHumano.WCF_Catalogos.Hersan_CatalogosClient();
-            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
-            SolicitudPersonalBE obj = new SolicitudPersonalBE();
-            try {
-
-                if (!ValidarCampos()) {
-                    RadMessageBox.Show("Debe capturar todos los datos para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    return;
-                }
-
-                if (oList.FindAll(item => item.Departamentos.Entidades.Id == int.Parse(cboEntidad.SelectedValue.ToString()) && item.Departamentos.Id == int.Parse(cboDepto.SelectedValue.ToString())).Count > 0
-                   && int.Parse(txtId.Text) == -1) {
-                    RadMessageBox.Show("El departamento capturado ya existe, no es posible guardar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                    LimpiarCampos();
-                    return;
-                }
-
-                if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtId.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtId.Text))).Count > 0)
-                 {
-                    RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-
-                    return;
-                }
-
-
-                    if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                    #region Entidades
-                    obj.Id = int.Parse(txtId.Text);
-                    obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
-                    obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
-                    obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
-                    obj.TiposContrato.Id = int.Parse(cboTipoCon.SelectedValue.ToString());
-                    obj.Sueldo = decimal.Parse(txtSueldo.Text);
-                    obj.Justificacion = txtJustif.Text;
-                    obj.Indicadores = txtIndicad.Text;
-                    obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
-                    #endregion
-
-                    #region Correo
-                    string pwd = "Catcooptest";
-                    string smtp = "smtp.GMAIL.com";
-                    string emisor = "Key.Solutions.Test@gmail.com";
-                    string destinatario = "gregory.moise@dialtec.com.mx";
-                    string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la nueva solicitud y hacer las continuaciones necesarias!!";
-                    int port = 587;
-
-                    #endregion
-
-
-
-                    //PROCESO DE GUARDADO Y ACTUALIZACION
-                    if (txtId.Text == "-1") {
-                        int Result = oCHumano.CHU_SolicitudP_Guardar(obj);
-                        if (Result == 0) {
-                            RadMessageBox.Show("Ocurrió un error al enviar la solicitud de empleo", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                        } else {
-                            RadMessageBox.Show("Solicitud enviada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                            LimpiarCampos();
-                            CargarSolicitudes();
-                            string asunto = "Nueva Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
-                            BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
-                        }
-                    } else {
-                        oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
-                        int Result = oCHumano.CHU_SolicitudP_Actualizar(obj);
-                        if (Result == 0) {
-                            RadMessageBox.Show("Ocurrió un error al actualizar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                        } else {
-                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                            LimpiarCampos();
-                            CargarSolicitudes();
-                            string asunto = "Actualización de Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
-                            BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
-                        }
-                    }
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al actualizar la información\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-
-                oCHumano = null;
-            }
-        }
-
-        private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
-        {
-            try {
-
-                if (gvDatos.RowCount > 0 && e.CurrentRow.ChildRows.Count == 0) {
-                    txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
-                    txtJustif.Text = e.CurrentRow.Cells["Justificacion"].Value.ToString();
-                    txtDictamen.Text = e.CurrentRow.Cells["Dictamen"].Value.ToString();
-                    txtIndicad.Text = e.CurrentRow.Cells["Indicadores"].Value.ToString();
-                    txtSueldo.Text = (e.CurrentRow.Cells["Sueldo"].Value.ToString());
-                    cboDepto.SelectedValue =int.Parse (e.CurrentRow.Cells["DEP_Id"].Value.ToString());
-                    cboEntidad.SelectedValue = int.Parse(e.CurrentRow.Cells["ENT_Id"].Value.ToString());
-                    cboTipoCon.SelectedValue = int.Parse(e.CurrentRow.Cells["TCO_Id"].Value.ToString());
-                    cboPuesto.SelectedValue =int.Parse (e.CurrentRow.Cells["PUE_Id"].Value.ToString());
-                  
-                   
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            oCHumano = new CapitalHumano.WCF_CHumano.Hersan_CHumanoClient();
-            SolicitudPersonalBE obj = new SolicitudPersonalBE();
-            try {
-
-
-                if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtId.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtId.Text))).Count > 0) {
-                    RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-
-                    return;
-                }
-
-                if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtId.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtId.Text))).Count > 0) {
-                    RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-
-                    return;
-                }
-
-                if (RadMessageBox.Show("Esta acción dará de baja la solicitud\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                        obj.Id = int.Parse(txtId.Text);
-                        obj.Entidades.Id = int.Parse(cboEntidad.SelectedValue.ToString());
-                        obj.Puestos.Id = int.Parse(cboPuesto.SelectedValue.ToString());
-                        obj.Departamentos.Id = int.Parse(cboDepto.SelectedValue.ToString());
-                        obj.TiposContrato.Id = int.Parse(cboTipoCon.SelectedValue.ToString());
-                        obj.Sueldo = decimal.Parse(txtSueldo.Text);
-                        obj.Justificacion = txtJustif.Text;
-                        obj.Indicadores = txtIndicad.Text;                   
-                        obj.DatosUsuario.Estatus = false;
-                        obj.DatosUsuario.IdUsuarioModif = BaseWinBP.UsuarioLogueado.ID;
-
-                        int Result = oCHumano.CHU_SolicitudP_Actualizar(obj);
-                        if (Result == 0) {
-                            RadMessageBox.Show("Ocurrió un error al modificar los datos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-                        } else {
-                            RadMessageBox.Show("Información actualizada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                            LimpiarCampos();
-                            CargarSolicitudes();
-                        
-                    }
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al dar de baja la solicitud\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCHumano = null;
-            }
-        }
-
-        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try {
-                if (BaseWinBP.isDecimal(e.KeyChar)) {
-                    e.Handled = true;
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrio un error al capturar la ponderación\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-     
     }
-    }
+}
 
 

@@ -22,6 +22,7 @@ namespace Hersan.UI.Calidad
         List<EnsambleParametrosBE> oList;
         List<EnsambleParametrosDetalleBE> oDetalle = new List<EnsambleParametrosDetalleBE>();
         private List<ReflejantesBE> oReflejantes = new List<ReflejantesBE>();
+        bool Flag = true;
         #endregion
 
         public frmEnsambleSup()
@@ -118,8 +119,10 @@ namespace Hersan.UI.Calidad
         private void cboProducto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             try {
-                if (cboProducto.SelectedValue != null)
-                    CargaGrid();
+                if (Flag) {
+                    if (cboProducto.SelectedValue != null)
+                        CargaGrid();
+                }
             } catch (Exception ex) {
                 throw ex;
             }
@@ -174,13 +177,14 @@ namespace Hersan.UI.Calidad
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
+                Flag = false;
                 EnsambleParametrosBE obj = new EnsambleParametrosBE();
                 obj.OP = txtOP.Text;
                 obj.Lista = txtLista.Text.Trim().Length != 0 ? int.Parse(txtLista.Text) : 0;
 
                 oList = oEnsamble.PRO_Ensamble_Parametros_Obtener(obj);                
 
-                if (oList.Count > 0) {
+                if (oList.Count > 0) {                    
                     oDetalle = oList[0].Detalle;
 
                     txtId.Text = oList[0].Id.ToString();
@@ -195,6 +199,7 @@ namespace Hersan.UI.Calidad
                 throw ex;
             } finally {
                 oEnsamble = null;
+                Flag = true;
             }
         }
         private DataTable CrearTablasAuxiliares()

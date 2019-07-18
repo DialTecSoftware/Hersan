@@ -534,6 +534,7 @@
             this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLista.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLista_KeyDown);
             this.txtLista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
+            this.txtLista.Leave += new System.EventHandler(this.txtLista_Leave);
             // 
             // label2
             // 

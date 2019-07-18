@@ -261,7 +261,7 @@
             // 
             // radDock1
             // 
-            this.radDock1.ActiveWindow = this.toolResultados;
+            this.radDock1.ActiveWindow = this.toolFiltro;
             this.radDock1.Controls.Add(this.toolTabStrip1);
             this.radDock1.Controls.Add(this.toolTabStrip2);
             this.radDock1.Controls.Add(this.documentContainer1);
@@ -449,10 +449,10 @@
             this.toolFiltro.Controls.Add(this.label2);
             this.toolFiltro.Controls.Add(this.label1);
             this.toolFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolFiltro.Location = new System.Drawing.Point(1, 24);
+            this.toolFiltro.Location = new System.Drawing.Point(1, 22);
             this.toolFiltro.Name = "toolFiltro";
             this.toolFiltro.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolFiltro.Size = new System.Drawing.Size(821, 117);
+            this.toolFiltro.Size = new System.Drawing.Size(821, 119);
             this.toolFiltro.Text = "Filtros";
             this.toolFiltro.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide;
             // 
@@ -541,6 +541,7 @@
             this.txtOperador.Name = "txtOperador";
             this.txtOperador.Size = new System.Drawing.Size(190, 20);
             this.txtOperador.TabIndex = 5;
+            this.txtOperador.Visible = false;
             // 
             // label5
             // 
@@ -552,6 +553,7 @@
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 31;
             this.label5.Text = "Operador:";
+            this.label5.Visible = false;
             // 
             // txtLista
             // 

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleados));
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -101,6 +101,8 @@
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -392,7 +394,6 @@
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
             this.documentWindow1.Size = new System.Drawing.Size(1020, 293);
             this.documentWindow1.Text = "DATOS DEL EMPLEADO";
-            this.documentWindow1.Click += new System.EventHandler(this.documentWindow1_Click);
             // 
             // radPanel2
             // 
@@ -405,7 +406,6 @@
             this.radPanel2.Name = "radPanel2";
             this.radPanel2.Size = new System.Drawing.Size(1020, 444);
             this.radPanel2.TabIndex = 0;
-            this.radPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.radPanel2_Paint);
             // 
             // radGroupBox3
             // 
@@ -431,7 +431,6 @@
             this.radGroupBox3.Name = "radGroupBox3";
             this.radGroupBox3.Size = new System.Drawing.Size(400, 227);
             this.radGroupBox3.TabIndex = 34;
-            this.radGroupBox3.Click += new System.EventHandler(this.radGroupBox3_Click);
             // 
             // txtSueldoIntegrado
             // 
@@ -561,18 +560,18 @@
             // 
             // cboEstatus
             // 
-            radListDataItem1.Text = "Vigente";
-            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            radListDataItem2.Text = "Baja";
-            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            radListDataItem3.Text = "Vacaciones";
-            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            radListDataItem4.Text = "Incapacidad";
+            radListDataItem4.Text = "Vigente";
             radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cboEstatus.Items.Add(radListDataItem1);
-            this.cboEstatus.Items.Add(radListDataItem2);
-            this.cboEstatus.Items.Add(radListDataItem3);
+            radListDataItem5.Text = "Baja";
+            radListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem6.Text = "Vacaciones";
+            radListDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem7.Text = "Incapacidad";
+            radListDataItem7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.cboEstatus.Items.Add(radListDataItem4);
+            this.cboEstatus.Items.Add(radListDataItem5);
+            this.cboEstatus.Items.Add(radListDataItem6);
+            this.cboEstatus.Items.Add(radListDataItem7);
             this.cboEstatus.Location = new System.Drawing.Point(115, 196);
             this.cboEstatus.Name = "cboEstatus";
             this.cboEstatus.Size = new System.Drawing.Size(102, 20);
@@ -600,7 +599,6 @@
             this.rdbNo.TabIndex = 24;
             this.rdbNo.TabStop = false;
             this.rdbNo.Text = "No";
-            this.rdbNo.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.rdbNo_ToggleStateChanged);
             // 
             // txtFonacot
             // 
@@ -729,12 +727,12 @@
             // 
             // cboTipoF
             // 
-            radListDataItem5.Text = "Cuota Fija";
-            radListDataItem6.Text = "Porcentaje de Desc";
-            radListDataItem7.Text = "VSM";
-            this.cboTipoF.Items.Add(radListDataItem5);
-            this.cboTipoF.Items.Add(radListDataItem6);
-            this.cboTipoF.Items.Add(radListDataItem7);
+            radListDataItem8.Text = "Cuota Fija";
+            radListDataItem9.Text = "Porcentaje de Desc";
+            radListDataItem10.Text = "VSM";
+            this.cboTipoF.Items.Add(radListDataItem8);
+            this.cboTipoF.Items.Add(radListDataItem9);
+            this.cboTipoF.Items.Add(radListDataItem10);
             this.cboTipoF.Location = new System.Drawing.Point(77, 72);
             this.cboTipoF.Name = "cboTipoF";
             this.cboTipoF.Size = new System.Drawing.Size(135, 20);
@@ -817,6 +815,16 @@
             // 
             this.commandBarStripElement2.DisplayName = "commandBarStripElement2";
             this.commandBarStripElement2.Name = "commandBarStripElement2";
+            // 
+            // commandBarStripElement3
+            // 
+            this.commandBarStripElement3.DisplayName = "commandBarStripElement3";
+            this.commandBarStripElement3.Name = "commandBarStripElement3";
+            // 
+            // commandBarStripElement4
+            // 
+            this.commandBarStripElement4.DisplayName = "commandBarStripElement4";
+            this.commandBarStripElement4.Name = "commandBarStripElement4";
             // 
             // frmEmpleados
             // 
@@ -942,5 +950,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement2;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement4;
     }
 }

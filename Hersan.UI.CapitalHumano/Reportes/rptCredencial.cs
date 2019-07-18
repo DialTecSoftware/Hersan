@@ -16,14 +16,14 @@ namespace Hersan.UI.CapitalHumano.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rtpExpediente : ReportClass {
+    public class rptCredencial : ReportClass {
         
-        public rtpExpediente() {
+        public rptCredencial() {
         }
         
         public override string ResourceName {
             get {
-                return "rtpExpediente.rpt";
+                return "rptCredencial.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Hersan.UI.CapitalHumano.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Hersan.UI.CapitalHumano.Reportes.rtpExpediente.rpt";
+                return "Hersan.UI.CapitalHumano.Reportes.rptCredencial.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,28 @@ namespace Hersan.UI.CapitalHumano.Reportes {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_PicturePath {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Id {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrtpExpediente : Component, ICachedReport {
+    public class CachedrptCredencial : Component, ICachedReport {
         
-        public CachedrtpExpediente() {
+        public CachedrptCredencial() {
         }
         
         [Browsable(false)]
@@ -129,7 +145,7 @@ namespace Hersan.UI.CapitalHumano.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rtpExpediente rpt = new rtpExpediente();
+            rptCredencial rpt = new rptCredencial();
             rpt.Site = this.Site;
             return rpt;
         }

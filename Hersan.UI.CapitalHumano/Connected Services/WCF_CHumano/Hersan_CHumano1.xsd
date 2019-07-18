@@ -57,7 +57,7 @@
     <xs:sequence>
       <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Depto" nillable="true" type="q6:DepartamentosBE" />
       <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Puesto" nillable="true" type="q7:PuestosBE" />
-      <xs:element minOccurs="0" name="Puntaje" type="xs:int" />
+      <xs:element minOccurs="0" name="Puntaje" type="xs:decimal" />
       <xs:element minOccurs="0" name="Sueldo85" type="xs:decimal" />
       <xs:element minOccurs="0" name="Sueldo90" type="xs:decimal" />
       <xs:element minOccurs="0" name="Sueldo95" type="xs:decimal" />

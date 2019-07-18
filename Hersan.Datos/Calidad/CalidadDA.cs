@@ -288,6 +288,8 @@ namespace Hersan.Datos.Calidad
                         cmd.Parameters.AddWithValue("@Reflex1", Obj.Reflex1.Id);
                         cmd.Parameters.AddWithValue("@Reflex2", Obj.Reflex2.Id);
                         cmd.Parameters.AddWithValue("@Piezas", Obj.Piezas);
+                        cmd.Parameters.AddWithValue("@OP", Obj.OP);
+                        cmd.Parameters.AddWithValue("@Lista", Obj.Lista);
                         cmd.Parameters.AddWithValue("@Fecha", Obj.Fecha);
                         cmd.Parameters.AddWithValue("@Detalle", Detalle);
                         cmd.Parameters.AddWithValue("@IdUsuario", Obj.IdUsuario);
@@ -343,6 +345,8 @@ namespace Hersan.Datos.Calidad
                                 Obj.Reflex1.Id = int.Parse(reader["Reflex1"].ToString());
                                 Obj.Reflex2.Id = int.Parse(reader["Reflex2"].ToString());
                                 Obj.Piezas = int.Parse(reader["Piezas"].ToString());
+                                Obj.OP = reader["OP"].ToString();
+                                Obj.Lista = int.Parse(reader["Lista"].ToString());
 
                                 oList.Add(Obj);
                             }
@@ -358,11 +362,9 @@ namespace Hersan.Datos.Calidad
                                         Item.Valor0 = int.Parse(reader["Valor0"].ToString());
                                         Item.Valor1 = int.Parse(reader["Valor1"].ToString());
                                         Item.Valor2 = int.Parse(reader["Valor2"].ToString());
-                                        Item.Lista = int.Parse(reader["Lista"].ToString());
                                         Item.Promedio = int.Parse(reader["Promedio"].ToString());
                                         Item.Minimo = int.Parse(reader["Minimo"].ToString());
                                         Item.Maximo = int.Parse(reader["Maximo"].ToString());
-                                        Item.OP = reader["OP"].ToString();
 
                                         oList[0].Detalle.Add(Item);                                    }
                                 }

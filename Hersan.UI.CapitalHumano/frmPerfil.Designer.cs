@@ -177,7 +177,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(969, 78);
+            this.radCommandBar1.Size = new System.Drawing.Size(969, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -301,14 +301,14 @@
             this.radPanel1.Controls.Add(this.cboPuestos);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 78);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(969, 101);
             this.radPanel1.TabIndex = 1;
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(454, 40);
+            this.txtValor.Location = new System.Drawing.Point(485, 40);
             this.txtValor.Name = "txtValor";
             this.txtValor.ReadOnly = true;
             this.txtValor.Size = new System.Drawing.Size(77, 20);
@@ -318,7 +318,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(378, 67);
+            this.label8.Location = new System.Drawing.Point(409, 67);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 12;
@@ -326,7 +326,7 @@
             // 
             // txtSueldo
             // 
-            this.txtSueldo.Location = new System.Drawing.Point(454, 65);
+            this.txtSueldo.Location = new System.Drawing.Point(485, 65);
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.ReadOnly = true;
             this.txtSueldo.Size = new System.Drawing.Size(77, 20);
@@ -336,7 +336,7 @@
             // lblPuntos
             // 
             this.lblPuntos.AutoSize = true;
-            this.lblPuntos.Location = new System.Drawing.Point(389, 44);
+            this.lblPuntos.Location = new System.Drawing.Point(420, 44);
             this.lblPuntos.Name = "lblPuntos";
             this.lblPuntos.Size = new System.Drawing.Size(59, 13);
             this.lblPuntos.TabIndex = 9;
@@ -347,7 +347,7 @@
             this.cboEntidad.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cboEntidad.Location = new System.Drawing.Point(102, 16);
             this.cboEntidad.Name = "cboEntidad";
-            this.cboEntidad.Size = new System.Drawing.Size(192, 20);
+            this.cboEntidad.Size = new System.Drawing.Size(246, 20);
             this.cboEntidad.TabIndex = 1;
             this.cboEntidad.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboEntidad_SelectedIndexChanged);
             // 
@@ -374,7 +374,7 @@
             this.cboDepto.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cboDepto.Location = new System.Drawing.Point(102, 40);
             this.cboDepto.Name = "cboDepto";
-            this.cboDepto.Size = new System.Drawing.Size(192, 20);
+            this.cboDepto.Size = new System.Drawing.Size(246, 20);
             this.cboDepto.TabIndex = 2;
             this.cboDepto.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboDepto_SelectedIndexChanged);
             // 
@@ -426,7 +426,7 @@
             this.cboExperiencia.Items.Add(radListDataItem10);
             this.cboExperiencia.Items.Add(radListDataItem11);
             this.cboExperiencia.Items.Add(radListDataItem12);
-            this.cboExperiencia.Location = new System.Drawing.Point(454, 16);
+            this.cboExperiencia.Location = new System.Drawing.Point(485, 16);
             this.cboExperiencia.Name = "cboExperiencia";
             this.cboExperiencia.Size = new System.Drawing.Size(77, 20);
             this.cboExperiencia.TabIndex = 4;
@@ -434,7 +434,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(380, 20);
+            this.label3.Location = new System.Drawing.Point(411, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 2;
@@ -445,7 +445,7 @@
             this.cboPuestos.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cboPuestos.Location = new System.Drawing.Point(102, 63);
             this.cboPuestos.Name = "cboPuestos";
-            this.cboPuestos.Size = new System.Drawing.Size(192, 20);
+            this.cboPuestos.Size = new System.Drawing.Size(246, 20);
             this.cboPuestos.TabIndex = 3;
             this.cboPuestos.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboPuestos_SelectedIndexChanged);
             // 
@@ -465,14 +465,14 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 179);
+            this.radDock1.Location = new System.Drawing.Point(0, 154);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(969, 296);
+            this.radDock1.Size = new System.Drawing.Size(969, 321);
             this.radDock1.TabIndex = 2;
             this.radDock1.TabStop = false;
             // 
@@ -485,7 +485,7 @@
             this.documentWindow1.Location = new System.Drawing.Point(6, 29);
             this.documentWindow1.Name = "documentWindow1";
             this.documentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.documentWindow1.Size = new System.Drawing.Size(569, 251);
+            this.documentWindow1.Size = new System.Drawing.Size(569, 276);
             this.documentWindow1.Text = "Perfil";
             // 
             // radPanel2
@@ -495,7 +495,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 53);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(569, 198);
+            this.radPanel2.Size = new System.Drawing.Size(569, 223);
             this.radPanel2.TabIndex = 1;
             // 
             // grdDatos
@@ -582,7 +582,7 @@
             this.grdDatos.Name = "grdDatos";
             this.grdDatos.ShowGroupPanel = false;
             this.grdDatos.ShowNoDataText = false;
-            this.grdDatos.Size = new System.Drawing.Size(569, 55);
+            this.grdDatos.Size = new System.Drawing.Size(569, 80);
             this.grdDatos.TabIndex = 3;
             this.grdDatos.CellEndEdit += new Telerik.WinControls.UI.GridViewCellEventHandler(this.grdDatos_CellEndEdit_1);
             // 
@@ -619,11 +619,11 @@
             gridViewTextBoxColumn9.Width = 100;
             gridViewTextBoxColumn10.FieldName = "Concepto";
             gridViewTextBoxColumn10.HeaderText = "Concepto";
-            gridViewTextBoxColumn10.MaxWidth = 250;
-            gridViewTextBoxColumn10.MinWidth = 200;
+            gridViewTextBoxColumn10.MaxWidth = 300;
+            gridViewTextBoxColumn10.MinWidth = 280;
             gridViewTextBoxColumn10.Name = "Concepto";
             gridViewTextBoxColumn10.ReadOnly = true;
-            gridViewTextBoxColumn10.Width = 200;
+            gridViewTextBoxColumn10.Width = 280;
             gridViewTextBoxColumn10.WrapText = true;
             gridViewTextBoxColumn11.FieldName = "Tipo";
             gridViewTextBoxColumn11.HeaderText = "Nivel";
@@ -733,7 +733,7 @@
             // 
             this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(374, 286);
+            this.toolTabStrip1.Size = new System.Drawing.Size(374, 311);
             this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(374, 200);
             this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(174, 0);
             this.toolTabStrip1.TabIndex = 1;
@@ -748,7 +748,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 22);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(372, 262);
+            this.toolWindow1.Size = new System.Drawing.Size(372, 287);
             this.toolWindow1.Text = "Detalle";
             this.toolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -950,7 +950,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(581, 286);
+            this.documentTabStrip1.Size = new System.Drawing.Size(581, 311);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 

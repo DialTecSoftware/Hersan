@@ -25,6 +25,8 @@ namespace Hersan.Datos.CapitalHumano
         const string CONS_USP_CHU_EXPEDIENTE_REFERENCIA_OBTENER = "CHU_Expediente_Referencia_Obtener";
         const string CONS_USP_CHU_EXPEDIENTE_GENERALES_OBTENER = "CHU_Expediente_DatosGenerales_Obtener";
         const string CONS_USP_CHU_EXPEDIENTE_ECONOMICOS_OBTENER = "CHU_Expediente_DatosEconomicos_Obtener";
+        const string CONS_USP_CHU_EXPEDIENTE_REPORTE = "CHU_Expediente_Reporte";
+        const string CONS_USP_CHU_EXPEDIENTE_ESTUDIOS_REPORTE = "CHU_Expediente_Estudios_Reporte";
         #endregion
 
         public int CHU_Expedientes_Guardar(DataSet Tablas, int IdUsuario)
@@ -228,7 +230,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.EdoCivil = reader["EDP_EdoCivil"].ToString();
                                 obj.EdoCivilOtro = reader["EDP_EdoCivilOtros"].ToString();
                                 obj.Correo = reader["EDP_Correo"].ToString();
-                                //obj.Empleados.Id = int.Parse(reader["EMP_Numero"].ToString());
+
                                 oList.Add(obj);
                             }
                         }
@@ -568,6 +570,42 @@ namespace Hersan.Datos.CapitalHumano
                     }
                 }
                 return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public DataTable CHU_Expediente_Reporte(int IdExpediente)
+        {
+            DataTable oData = new DataTable("Datos");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_CHU_EXPEDIENTE_REPORTE, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", IdExpediente);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+                }
+                return oData;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public DataTable CHU_Expediente_Estudios_Reporte(int IdExpediente)
+        {
+            DataTable oData = new DataTable("Datos");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_CHU_EXPEDIENTE_ESTUDIOS_REPORTE, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", IdExpediente);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+                }
+                return oData;
             } catch (Exception ex) {
                 throw ex;
             }

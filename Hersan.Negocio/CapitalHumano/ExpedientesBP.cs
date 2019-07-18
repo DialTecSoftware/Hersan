@@ -19,7 +19,7 @@ namespace Hersan.Negocio.CapitalHumano
         private void GuardarImagen(int Expediente, Byte[] Imagen)
         {            
             BinaryWriter Writer = null;            
-            string Name = RutaImagen + Expediente.ToString() + ".jpg";
+            string Name = RutaImagen + Expediente.ToString() + ".png";
             try {
                 if (!Directory.Exists(RutaImagen))
                     Directory.CreateDirectory(RutaImagen);
@@ -36,7 +36,7 @@ namespace Hersan.Negocio.CapitalHumano
         private Byte[] ObtenerImagen(int Expediente)
         {
             byte[] Foto;
-            string Imagen = RutaImagen + Expediente.ToString() + ".jpg"; ;
+            string Imagen = RutaImagen + Expediente.ToString() + ".png"; ;
             try {
                 if (File.Exists(Imagen)) {
                     Foto = ConvertImage.FileToByteArray(Imagen);
@@ -136,6 +136,15 @@ namespace Hersan.Negocio.CapitalHumano
         public List<ExpedienteEconomicos> CHU_Expediente_Economicos_Consultar(ExpedienteEconomicos Expediente)
         {
             return new ExpedientesDA().CHU_Expediente_Economicos_Consultar(Expediente);
+        }
+
+        public DataTable CHU_Expediente_Reporte(int IdExpediente)
+        {
+            return new ExpedientesDA().CHU_Expediente_Reporte(IdExpediente);
+        }
+        public DataTable CHU_Expediente_Estudios_Reporte(int IdExpediente)
+        {
+            return new ExpedientesDA().CHU_Expediente_Estudios_Reporte(IdExpediente);
         }
     }
 }

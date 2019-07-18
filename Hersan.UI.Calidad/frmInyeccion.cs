@@ -13,6 +13,7 @@ namespace Hersan.UI.Calidad
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
         List<InyeccionDetalleBE> oList = new List<InyeccionDetalleBE>();
+        List<string> oTurno = new List<string>();
 
         public frmInyeccion()
         {
@@ -21,6 +22,10 @@ namespace Hersan.UI.Calidad
         private void frmInyeccion_Load(object sender, EventArgs e)
         {
             try {
+                oTurno.Add("MATUTINO");
+                oTurno.Add("VESPERTINO");
+
+                ((Telerik.WinControls.UI.GridViewComboBoxColumn)this.gvDatos.Columns["Turno"]).DataSource = oTurno;
                 Colores();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);

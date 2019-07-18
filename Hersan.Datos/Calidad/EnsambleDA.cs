@@ -83,7 +83,7 @@ namespace Hersan.Datos.Calidad
                                         Item.Maquina = reader["Maquina"].ToString();
                                         Item.Presion = decimal.Parse(reader["Presion"].ToString());
                                         Item.Energia = decimal.Parse(reader["Energia"].ToString());
-                                        Item.Colapso = decimal.Parse(reader["Colapso"].ToString());
+                                        Item.Colapso = reader["Colapso"].ToString();
                                         Item.Tiempo = reader["Tiempo"].ToString();
                                         Item.Planeada = int.Parse(reader["Planeada"].ToString());
                                         Item.Real = int.Parse(reader["Real"].ToString());

@@ -49,10 +49,19 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void txtLista_Leave(object sender, EventArgs e)
+        {
+            try {
+                if (txtLista.Text.Trim().Length > 0)
+                    CargarDatos();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al capturar el dato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void Control_KeyUp(object sender, KeyEventArgs e)
         {
             try {
-                if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return)) {
+                if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return) || (e.KeyCode == Keys.Tab) ) {
                     ValidarNorma(sender);                    
                 }
             } catch (Exception ex) {
@@ -79,7 +88,6 @@ namespace Hersan.UI.Calidad
                 Obj.Operador = txtOperador.Text;
                 Obj.IdUsuario = BaseWinBP.UsuarioLogueado.ID;
 
-
                 if (int.Parse(txtIdDetalle.Text) == 0)
                     Result = oEnsamble.CAL_InspeccionInyeccion_Guarda(Obj, ObtenerDetalle());
                 else {
@@ -92,7 +100,7 @@ namespace Hersan.UI.Calidad
                 } else {
                     RadMessageBox.Show("Información guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     Limpiar(true);
-                    txtLista.Focus();
+                    EstablecerFoco();
                     if (bFlag)
                         txtMuestra.Text = Result.ToString();
                     else 
@@ -156,7 +164,7 @@ namespace Hersan.UI.Calidad
                         oNorma.Add(Obj.Norma);
                         #endregion
 
-                        SendKeys.Send("{TAB}");
+                        //SendKeys.Send("{TAB}");
                     } else {
                         RadMessageBox.Show("No existe información para la lista capturada", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                         Limpiar(false);
@@ -322,6 +330,30 @@ namespace Hersan.UI.Calidad
                 throw ex;
             }
         }
-       
+        private void EstablecerFoco()
+        {
+            try {
+                if (txtCav1_1.Enabled)
+                    txtCav1_1.Focus();
+                else if ((txtCav2_1.Enabled))
+                    txtCav2_1.Focus();
+                else if ((txtCav3_1.Enabled))
+                    txtCav3_1.Focus();
+                else if ((txtCav4_1.Enabled))
+                    txtCav4_1.Focus();
+                else if ((txtCav5_1.Enabled))
+                    txtCav5_1.Focus();
+                else if ((txtCav6_1.Enabled))
+                    txtCav6_1.Focus();
+                else if ((txtCav7_1.Enabled))
+                    txtCav7_1.Focus();
+                else if ((txtCav8_1.Enabled))
+                    txtCav8_1.Focus();
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+      
     }
 }

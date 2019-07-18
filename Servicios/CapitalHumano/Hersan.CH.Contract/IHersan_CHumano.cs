@@ -75,6 +75,10 @@ namespace Hersan.CH.Contract
         List<ExpedienteGenerales> CHU_Expediente_Generales_Consultar(ExpedienteGenerales Expediente);
         [OperationContract]
         List<ExpedienteEconomicos> CHU_Expediente_Economicos_Consultar(ExpedienteEconomicos Expediente);
+        [OperationContract]
+        DataTable CHU_Expediente_Reporte(int IdExpediente);
+        [OperationContract]
+        DataTable CHU_Expediente_Estudios_Reporte(int IdExpediente);
         #endregion
 
         #region NuevoPuesto
@@ -166,6 +170,8 @@ namespace Hersan.CH.Contract
         int CHU_EmpleadosActualizar(EmpleadosBE obj);
         [OperationContract]
         int CHU_Empleados_Elimina(int IdEmp, int IdUsuario);
+        [OperationContract]
+        DataTable CHU_Empleados_Credencial(int IdExpediente);
         #endregion
     }
 }

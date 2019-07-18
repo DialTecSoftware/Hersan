@@ -36,10 +36,8 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn6 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn7 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -78,6 +76,10 @@
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement7 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement8 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.txtOP = new Telerik.WinControls.UI.RadTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtLista = new Telerik.WinControls.UI.RadTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -93,6 +95,8 @@
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,6 +237,10 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.txtLista);
+            this.radPanel1.Controls.Add(this.label8);
+            this.radPanel1.Controls.Add(this.txtOP);
+            this.radPanel1.Controls.Add(this.label7);
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Controls.Add(this.dtFecha);
             this.radPanel1.Controls.Add(this.txtId);
@@ -478,28 +486,24 @@
             gridViewDecimalColumn3.Name = "Valor2";
             gridViewDecimalColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDecimalColumn3.Width = 100;
-            gridViewDecimalColumn4.FieldName = "Lista";
-            gridViewDecimalColumn4.HeaderText = "Lista";
-            gridViewDecimalColumn4.MaxWidth = 100;
+            gridViewDecimalColumn4.FieldName = "Promedio";
+            gridViewDecimalColumn4.FormatString = "{0:N0}";
+            gridViewDecimalColumn4.HeaderText = "Promedio";
+            gridViewDecimalColumn4.IsVisible = false;
+            gridViewDecimalColumn4.MaxWidth = 80;
             gridViewDecimalColumn4.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn4.MinWidth = 80;
-            gridViewDecimalColumn4.Name = "Lista";
+            gridViewDecimalColumn4.MinWidth = 60;
+            gridViewDecimalColumn4.Name = "Prom";
             gridViewDecimalColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn4.Width = 80;
-            gridViewTextBoxColumn4.FieldName = "OP";
-            gridViewTextBoxColumn4.HeaderText = "OP";
-            gridViewTextBoxColumn4.MaxWidth = 120;
-            gridViewTextBoxColumn4.MinWidth = 100;
-            gridViewTextBoxColumn4.Name = "OP";
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 100;
-            gridViewDecimalColumn5.FieldName = "Promedio";
+            gridViewDecimalColumn4.Width = 60;
+            gridViewDecimalColumn5.FieldName = "Maximo";
             gridViewDecimalColumn5.FormatString = "{0:N0}";
-            gridViewDecimalColumn5.HeaderText = "Promedio";
+            gridViewDecimalColumn5.HeaderText = "Máximo";
+            gridViewDecimalColumn5.IsVisible = false;
             gridViewDecimalColumn5.MaxWidth = 80;
             gridViewDecimalColumn5.Minimum = new decimal(new int[] {
             0,
@@ -507,12 +511,13 @@
             0,
             0});
             gridViewDecimalColumn5.MinWidth = 60;
-            gridViewDecimalColumn5.Name = "Prom";
+            gridViewDecimalColumn5.Name = "Max";
             gridViewDecimalColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDecimalColumn5.Width = 60;
-            gridViewDecimalColumn6.FieldName = "Maximo";
+            gridViewDecimalColumn6.FieldName = "Minimo";
             gridViewDecimalColumn6.FormatString = "{0:N0}";
-            gridViewDecimalColumn6.HeaderText = "Máximo";
+            gridViewDecimalColumn6.HeaderText = "Mínimo";
+            gridViewDecimalColumn6.IsVisible = false;
             gridViewDecimalColumn6.MaxWidth = 80;
             gridViewDecimalColumn6.Minimum = new decimal(new int[] {
             0,
@@ -520,22 +525,9 @@
             0,
             0});
             gridViewDecimalColumn6.MinWidth = 60;
-            gridViewDecimalColumn6.Name = "Max";
+            gridViewDecimalColumn6.Name = "Min";
             gridViewDecimalColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDecimalColumn6.Width = 60;
-            gridViewDecimalColumn7.FieldName = "Minimo";
-            gridViewDecimalColumn7.FormatString = "{0:N0}";
-            gridViewDecimalColumn7.HeaderText = "Mínimo";
-            gridViewDecimalColumn7.MaxWidth = 80;
-            gridViewDecimalColumn7.Minimum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            gridViewDecimalColumn7.MinWidth = 60;
-            gridViewDecimalColumn7.Name = "Min";
-            gridViewDecimalColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn7.Width = 60;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -544,10 +536,8 @@
             gridViewDecimalColumn2,
             gridViewDecimalColumn3,
             gridViewDecimalColumn4,
-            gridViewTextBoxColumn4,
             gridViewDecimalColumn5,
-            gridViewDecimalColumn6,
-            gridViewDecimalColumn7});
+            gridViewDecimalColumn6});
             this.gvDatos.MasterTemplate.EnableAlternatingRowColor = true;
             this.gvDatos.MasterTemplate.ShowFilteringRow = false;
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
@@ -569,6 +559,46 @@
             // 
             this.commandBarStripElement8.DisplayName = "commandBarStripElement8";
             this.commandBarStripElement8.Name = "commandBarStripElement8";
+            // 
+            // txtOP
+            // 
+            this.txtOP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtOP.Location = new System.Drawing.Point(408, 92);
+            this.txtOP.Name = "txtOP";
+            this.txtOP.Size = new System.Drawing.Size(91, 20);
+            this.txtOP.TabIndex = 8;
+            this.txtOP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(364, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 13);
+            this.label7.TabIndex = 74;
+            this.label7.Text = "OP:";
+            // 
+            // txtLista
+            // 
+            this.txtLista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLista.Location = new System.Drawing.Point(584, 92);
+            this.txtLista.Name = "txtLista";
+            this.txtLista.Size = new System.Drawing.Size(91, 20);
+            this.txtLista.TabIndex = 9;
+            this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(540, 96);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 76;
+            this.label8.Text = "Lista:";
             // 
             // frmMuestreoQA
             // 
@@ -602,6 +632,8 @@
             this.radPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -646,5 +678,9 @@
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator4;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement7;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement8;
+        private Telerik.WinControls.UI.RadTextBox txtLista;
+        private System.Windows.Forms.Label label8;
+        private Telerik.WinControls.UI.RadTextBox txtOP;
+        private System.Windows.Forms.Label label7;
     }
 }

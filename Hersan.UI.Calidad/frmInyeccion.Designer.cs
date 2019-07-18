@@ -32,7 +32,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
@@ -223,6 +223,7 @@
             gridViewTextBoxColumn1.IsVisible = false;
             gridViewTextBoxColumn1.Name = "Id";
             gridViewDateTimeColumn1.FieldName = "Fecha";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             gridViewDateTimeColumn1.FormatString = "{0:dd/MM/yyyy}";
             gridViewDateTimeColumn1.HeaderText = "Fecha";
             gridViewDateTimeColumn1.MaxWidth = 90;
@@ -236,13 +237,13 @@
             gridViewTextBoxColumn2.MinWidth = 100;
             gridViewTextBoxColumn2.Name = "Lista";
             gridViewTextBoxColumn2.Width = 100;
-            gridViewTextBoxColumn3.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            gridViewTextBoxColumn3.FieldName = "Turno";
-            gridViewTextBoxColumn3.HeaderText = "Turno";
-            gridViewTextBoxColumn3.MaxWidth = 100;
-            gridViewTextBoxColumn3.MinWidth = 90;
-            gridViewTextBoxColumn3.Name = "Turno";
-            gridViewTextBoxColumn3.Width = 90;
+            gridViewComboBoxColumn1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            gridViewComboBoxColumn1.FieldName = "Turno";
+            gridViewComboBoxColumn1.HeaderText = "Turno";
+            gridViewComboBoxColumn1.MaxWidth = 120;
+            gridViewComboBoxColumn1.MinWidth = 100;
+            gridViewComboBoxColumn1.Name = "Turno";
+            gridViewComboBoxColumn1.Width = 100;
             gridViewDecimalColumn1.DecimalPlaces = 0;
             gridViewDecimalColumn1.FieldName = "Piezas";
             gridViewDecimalColumn1.FormatString = "{0:N0}";
@@ -426,7 +427,7 @@
             gridViewTextBoxColumn1,
             gridViewDateTimeColumn1,
             gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
+            gridViewComboBoxColumn1,
             gridViewDecimalColumn1,
             gridViewDecimalColumn2,
             gridViewDecimalColumn3,

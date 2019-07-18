@@ -137,10 +137,10 @@
             this.gvDatos.MasterTemplate.AutoGenerateColumns = false;
             gridViewTextBoxColumn1.FieldName = "Depto.Nombre";
             gridViewTextBoxColumn1.HeaderText = "Departamento";
-            gridViewTextBoxColumn1.MaxWidth = 200;
-            gridViewTextBoxColumn1.MinWidth = 120;
+            gridViewTextBoxColumn1.MaxWidth = 300;
+            gridViewTextBoxColumn1.MinWidth = 300;
             gridViewTextBoxColumn1.Name = "Depto";
-            gridViewTextBoxColumn1.Width = 120;
+            gridViewTextBoxColumn1.Width = 300;
             gridViewTextBoxColumn2.FieldName = "Puesto.Nombre";
             gridViewTextBoxColumn2.HeaderText = "Puesto";
             gridViewTextBoxColumn2.MaxWidth = 200;

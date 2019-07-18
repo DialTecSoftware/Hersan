@@ -14,6 +14,8 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_CHU_EMP_GUARDAR = "CHU_Empleados_Guarda";
         const string CONST_CHU_EMP_ACTUALIZAR = "CHU_Empleados_Actualiza";
         const string CONST_CHU_EMP_ELIMINAR = "CHU_Empleados_Eliminar";
+        const string CONST_CHU_EMPLEADOS_CREDENCIAL = "CHU_Empleados_Credencial";
+        
         #endregion
 
 
@@ -116,7 +118,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
         public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario)
         {
             int Result = 0;
@@ -134,6 +135,24 @@ namespace Hersan.Datos.CapitalHumano
                 return Result;
             } catch (Exception ex) {
 
+                throw ex;
+            }
+        }
+        public DataTable CHU_Empleados_Credencial(int IdExpediente)
+        {
+            DataTable oData = new DataTable("Datos");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMPLEADOS_CREDENCIAL, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", IdExpediente);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+                }
+                return oData;
+            } catch (Exception ex) {
                 throw ex;
             }
         }

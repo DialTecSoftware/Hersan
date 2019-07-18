@@ -2,6 +2,7 @@
 using Hersan.Entidades.CapitalHumano;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,10 @@ namespace Hersan.Negocio.CapitalHumano
         public int CHU_Empleados_Elimina(int IdEmp, int IdUsuario)
         {
             return new EmpleadosDA().CHU_Empleados_Elimina(IdEmp, IdUsuario);
+        }
+        public DataTable CHU_Empleados_Credencial(int IdExpediente)
+        {
+            return new EmpleadosDA().CHU_Empleados_Credencial(IdExpediente);
         }
     }
 }

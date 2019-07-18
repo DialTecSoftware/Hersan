@@ -47,7 +47,7 @@ namespace Hersan.Entidades.Calidad
             Maquina = string.Empty;
             Presion = 0;
             Energia = 0;
-            Colapso = 0;
+            Colapso = string.Empty;
             Tiempo = string.Empty;
             Planeada = 0;
             Real = 0;
@@ -61,7 +61,7 @@ namespace Hersan.Entidades.Calidad
         public string Maquina { get; set; }
         public decimal Presion { get; set; }
         public decimal Energia { get; set; }
-        public decimal Colapso { get; set; }
+        public string Colapso { get; set; }
         public string Tiempo { get; set; }
         public int Planeada { get; set; }
         public int Real { get; set; }

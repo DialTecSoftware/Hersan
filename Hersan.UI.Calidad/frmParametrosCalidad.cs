@@ -242,7 +242,11 @@ namespace Hersan.UI.Calidad
                     DataRow oRow = oData.NewRow();
                     oRow["NOR_Id"] = item.Id;
                     oRow["COL_Id"] = item.Color.Id;
-                    oRow["NOR_Norma"] = item.Norma;
+                    if (item.Color.Id == int.Parse(cboColores.SelectedValue.ToString())) {
+                        oRow["NOR_Norma"] = int.Parse(txtNorma.Text) != item.Norma ? int.Parse(txtNorma.Text) : item.Norma;
+                    } else {
+                        oRow["NOR_Norma"] = item.Norma;
+                    }
                     oRow["NOR_Cav1"] = item.Cav1;
                     oRow["NOR_Cav2"] = item.Cav2;
                     oRow["NOR_Cav3"] = item.Cav3;

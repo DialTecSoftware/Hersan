@@ -384,7 +384,7 @@ namespace Hersan.UI.CapitalHumano
                     frm.iReport = new Reportes.rptExpediente();
 
                     frm.iReport.SetDataSource(oCHumano.CHU_Expediente_Reporte(int.Parse(txtId.Text)));
-                    frm.iReport.Subreports["Detalle"].SetDataSource(oCHumano.CHU_Expediente_Estudios_Reporte(int.Parse(txtId.Text)));
+                    frm.iReport.Subreports["Escolaridad"].SetDataSource(oCHumano.CHU_Expediente_Estudios_Reporte(int.Parse(txtId.Text)));
 
                     frm.WindowState = FormWindowState.Maximized;
                     frm.ShowDialog();

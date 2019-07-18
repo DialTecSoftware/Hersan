@@ -152,7 +152,7 @@ namespace Hersan.UI.CapitalHumano
                     if (oExpediente[0].Foto != null) {
                         ObtenerFoto();
                         path = Directory.GetCurrentDirectory() + @"\" + oExpediente[0].Id.ToString() + ".png";
-                    }else
+                    } else
                         path = Directory.GetCurrentDirectory() + @"\" + "Hersan.png";
 
                     frm.iReport.SetParameterValue("picturePath", path);
@@ -378,7 +378,7 @@ namespace Hersan.UI.CapitalHumano
         private void ObtenerFoto()
         {
             BinaryWriter Writer = null;
-            string Name = Directory.GetCurrentDirectory() + oExpediente[0].Id.ToString() + ".png";
+            string Name = Directory.GetCurrentDirectory() + @"\" + oExpediente[0].Id.ToString() + ".png";
             try {
                 Writer = new BinaryWriter(File.OpenWrite(Name));
                 Writer.Write(oExpediente[0].Foto);

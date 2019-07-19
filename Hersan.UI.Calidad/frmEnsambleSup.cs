@@ -42,6 +42,14 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try {
+                CargaGrid();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -176,6 +184,7 @@ namespace Hersan.UI.Calidad
         private void CargaGrid()
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            oDetalle.Clear();
             try {
                 Flag = false;
                 EnsambleParametrosBE obj = new EnsambleParametrosBE();
@@ -193,7 +202,7 @@ namespace Hersan.UI.Calidad
                     cboReflejante1.SelectedValue = oList[0].Reflex1.Id;
                     cboReflejante2.SelectedValue = oList[0].Reflex2.Id;
                 }
-
+                gvDatos.DataSource = null;
                 gvDatos.DataSource = oDetalle;
             } catch (Exception ex) {
                 throw ex;
@@ -245,6 +254,5 @@ namespace Hersan.UI.Calidad
                 throw ex;
             }
         }
-        
     }
 }

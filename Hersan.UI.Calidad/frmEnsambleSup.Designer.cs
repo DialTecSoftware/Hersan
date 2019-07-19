@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnsambleSup));
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn5 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn17 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn18 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn19 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn20 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.cboReflejante2 = new Telerik.WinControls.UI.RadDropDownList();
             this.cboReflejante1 = new Telerik.WinControls.UI.RadDropDownList();
@@ -55,6 +55,7 @@
             this.txtOP = new Telerik.WinControls.UI.RadTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
+            this.btnBuscar = new Telerik.WinControls.UI.RadButton();
             this.btnSalir = new Telerik.WinControls.UI.RadButton();
             this.btnGuardar = new Telerik.WinControls.UI.RadButton();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
@@ -70,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             this.radPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
@@ -97,7 +99,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(745, 102);
+            this.radPanel1.Size = new System.Drawing.Size(854, 102);
             this.radPanel1.TabIndex = 0;
             // 
             // cboReflejante2
@@ -106,7 +108,7 @@
             this.cboReflejante2.Location = new System.Drawing.Point(468, 65);
             this.cboReflejante2.Name = "cboReflejante2";
             this.cboReflejante2.Size = new System.Drawing.Size(153, 20);
-            this.cboReflejante2.TabIndex = 32;
+            this.cboReflejante2.TabIndex = 6;
             // 
             // cboReflejante1
             // 
@@ -114,7 +116,7 @@
             this.cboReflejante1.Location = new System.Drawing.Point(468, 41);
             this.cboReflejante1.Name = "cboReflejante1";
             this.cboReflejante1.Size = new System.Drawing.Size(153, 20);
-            this.cboReflejante1.TabIndex = 31;
+            this.cboReflejante1.TabIndex = 5;
             // 
             // label5
             // 
@@ -132,7 +134,7 @@
             this.cboProducto.Location = new System.Drawing.Point(67, 65);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(221, 20);
-            this.cboProducto.TabIndex = 28;
+            this.cboProducto.TabIndex = 3;
             this.cboProducto.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboProducto_SelectedIndexChanged);
             // 
             // cboCarcasa
@@ -220,22 +222,36 @@
             // 
             // radPanel3
             // 
+            this.radPanel3.Controls.Add(this.btnBuscar);
             this.radPanel3.Controls.Add(this.btnSalir);
             this.radPanel3.Controls.Add(this.btnGuardar);
             this.radPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.radPanel3.Location = new System.Drawing.Point(0, 297);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(745, 47);
+            this.radPanel3.Size = new System.Drawing.Size(854, 47);
             this.radPanel3.TabIndex = 29;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBuscar.Location = new System.Drawing.Point(12, 3);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(80, 40);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSalir.Location = new System.Drawing.Point(652, 3);
+            this.btnSalir.Location = new System.Drawing.Point(756, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 40);
-            this.btnSalir.TabIndex = 29;
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -245,10 +261,10 @@
             // 
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(566, 3);
+            this.btnGuardar.Location = new System.Drawing.Point(670, 3);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(80, 40);
-            this.btnGuardar.TabIndex = 28;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -260,7 +276,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 102);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(745, 195);
+            this.radPanel2.Size = new System.Drawing.Size(854, 195);
             this.radPanel2.TabIndex = 30;
             // 
             // gvDatos
@@ -272,117 +288,118 @@
             // 
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
-            gridViewDateTimeColumn1.FieldName = "Fecha";
-            gridViewDateTimeColumn1.HeaderText = "FECHA";
-            gridViewDateTimeColumn1.MaxWidth = 150;
-            gridViewDateTimeColumn1.MinWidth = 150;
-            gridViewDateTimeColumn1.Name = "Fecha";
-            gridViewDateTimeColumn1.ReadOnly = true;
-            gridViewDateTimeColumn1.Width = 150;
-            gridViewTextBoxColumn1.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            gridViewTextBoxColumn1.FieldName = "Maquina";
-            gridViewTextBoxColumn1.HeaderText = "MÁQUINA";
-            gridViewTextBoxColumn1.MaxWidth = 60;
-            gridViewTextBoxColumn1.MinWidth = 60;
-            gridViewTextBoxColumn1.Name = "Maquina";
-            gridViewTextBoxColumn1.Width = 60;
-            gridViewDecimalColumn1.FieldName = "Presion";
-            gridViewDecimalColumn1.FormatString = "{0:N2}";
-            gridViewDecimalColumn1.HeaderText = "PRESIÓN";
-            gridViewDecimalColumn1.MaxWidth = 60;
-            gridViewDecimalColumn1.MinWidth = 60;
-            gridViewDecimalColumn1.Name = "Presion";
-            gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn1.ThousandsSeparator = true;
-            gridViewDecimalColumn1.Width = 60;
-            gridViewDecimalColumn2.FieldName = "Energia";
-            gridViewDecimalColumn2.FormatString = "{0:N2}";
-            gridViewDecimalColumn2.HeaderText = "ENERGÍA";
-            gridViewDecimalColumn2.MaxWidth = 60;
-            gridViewDecimalColumn2.MinWidth = 60;
-            gridViewDecimalColumn2.Name = "Energia";
-            gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn2.ThousandsSeparator = true;
-            gridViewDecimalColumn2.Width = 60;
-            gridViewTextBoxColumn2.FieldName = "Colapso";
-            gridViewTextBoxColumn2.HeaderText = "COLAPSO";
-            gridViewTextBoxColumn2.MaxWidth = 200;
-            gridViewTextBoxColumn2.MinWidth = 150;
-            gridViewTextBoxColumn2.Name = "Colapso";
-            gridViewTextBoxColumn2.Width = 150;
-            gridViewTextBoxColumn3.FieldName = "Tiempo";
-            gridViewTextBoxColumn3.HeaderText = "TIEMPO";
-            gridViewTextBoxColumn3.MaxWidth = 50;
-            gridViewTextBoxColumn3.MinWidth = 50;
-            gridViewTextBoxColumn3.Name = "Tiempo";
-            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn3.FieldName = "Planeada";
-            gridViewDecimalColumn3.FormatString = "{0:N0}";
-            gridViewDecimalColumn3.HeaderText = "PROD. PLANEADA";
-            gridViewDecimalColumn3.MaxWidth = 65;
-            gridViewDecimalColumn3.Minimum = new decimal(new int[] {
+            gridViewDateTimeColumn5.FieldName = "Fecha";
+            gridViewDateTimeColumn5.HeaderText = "FECHA";
+            gridViewDateTimeColumn5.MaxWidth = 150;
+            gridViewDateTimeColumn5.MinWidth = 150;
+            gridViewDateTimeColumn5.Name = "Fecha";
+            gridViewDateTimeColumn5.ReadOnly = true;
+            gridViewDateTimeColumn5.Width = 150;
+            gridViewTextBoxColumn21.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            gridViewTextBoxColumn21.FieldName = "Maquina";
+            gridViewTextBoxColumn21.HeaderText = "MÁQUINA";
+            gridViewTextBoxColumn21.MaxWidth = 60;
+            gridViewTextBoxColumn21.MinWidth = 60;
+            gridViewTextBoxColumn21.Name = "Maquina";
+            gridViewTextBoxColumn21.Width = 60;
+            gridViewDecimalColumn17.FieldName = "Presion";
+            gridViewDecimalColumn17.FormatString = "{0:N2}";
+            gridViewDecimalColumn17.HeaderText = "PRESIÓN";
+            gridViewDecimalColumn17.MaxWidth = 60;
+            gridViewDecimalColumn17.MinWidth = 60;
+            gridViewDecimalColumn17.Name = "Presion";
+            gridViewDecimalColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn17.ThousandsSeparator = true;
+            gridViewDecimalColumn17.Width = 60;
+            gridViewDecimalColumn18.FieldName = "Energia";
+            gridViewDecimalColumn18.FormatString = "{0:N2}";
+            gridViewDecimalColumn18.HeaderText = "ENERGÍA";
+            gridViewDecimalColumn18.MaxWidth = 60;
+            gridViewDecimalColumn18.MinWidth = 60;
+            gridViewDecimalColumn18.Name = "Energia";
+            gridViewDecimalColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn18.ThousandsSeparator = true;
+            gridViewDecimalColumn18.Width = 60;
+            gridViewTextBoxColumn22.FieldName = "Colapso";
+            gridViewTextBoxColumn22.HeaderText = "COLAPSO";
+            gridViewTextBoxColumn22.MaxWidth = 200;
+            gridViewTextBoxColumn22.MinWidth = 150;
+            gridViewTextBoxColumn22.Name = "Colapso";
+            gridViewTextBoxColumn22.Width = 150;
+            gridViewTextBoxColumn23.FieldName = "Tiempo";
+            gridViewTextBoxColumn23.HeaderText = "TIEMPO";
+            gridViewTextBoxColumn23.MaxWidth = 50;
+            gridViewTextBoxColumn23.MinWidth = 50;
+            gridViewTextBoxColumn23.Name = "Tiempo";
+            gridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn19.FieldName = "Planeada";
+            gridViewDecimalColumn19.FormatString = "{0:N0}";
+            gridViewDecimalColumn19.HeaderText = "PROD. PLANEADA";
+            gridViewDecimalColumn19.MaxWidth = 65;
+            gridViewDecimalColumn19.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn3.MinWidth = 65;
-            gridViewDecimalColumn3.Name = "Planeada";
-            gridViewDecimalColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn3.ThousandsSeparator = true;
-            gridViewDecimalColumn3.Width = 65;
-            gridViewDecimalColumn3.WrapText = true;
-            gridViewDecimalColumn4.FieldName = "Real";
-            gridViewDecimalColumn4.FormatString = "{0:N0}";
-            gridViewDecimalColumn4.HeaderText = "PROD. REAL";
-            gridViewDecimalColumn4.MaxWidth = 55;
-            gridViewDecimalColumn4.Minimum = new decimal(new int[] {
+            gridViewDecimalColumn19.MinWidth = 65;
+            gridViewDecimalColumn19.Name = "Planeada";
+            gridViewDecimalColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn19.ThousandsSeparator = true;
+            gridViewDecimalColumn19.Width = 65;
+            gridViewDecimalColumn19.WrapText = true;
+            gridViewDecimalColumn20.FieldName = "Real";
+            gridViewDecimalColumn20.FormatString = "{0:N0}";
+            gridViewDecimalColumn20.HeaderText = "PROD. REAL";
+            gridViewDecimalColumn20.MaxWidth = 55;
+            gridViewDecimalColumn20.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn4.MinWidth = 55;
-            gridViewDecimalColumn4.Name = "Real";
-            gridViewDecimalColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn4.ThousandsSeparator = true;
-            gridViewDecimalColumn4.Width = 55;
-            gridViewDecimalColumn4.WrapText = true;
-            gridViewTextBoxColumn4.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            gridViewTextBoxColumn4.FieldName = "Comentarios";
-            gridViewTextBoxColumn4.HeaderText = "COMENTARIOS";
-            gridViewTextBoxColumn4.MaxWidth = 200;
-            gridViewTextBoxColumn4.MinWidth = 180;
-            gridViewTextBoxColumn4.Name = "Comentarios";
-            gridViewTextBoxColumn4.Width = 180;
-            gridViewTextBoxColumn5.FieldName = "Estatus";
-            gridViewTextBoxColumn5.HeaderText = "Estatus";
-            gridViewTextBoxColumn5.IsVisible = false;
-            gridViewTextBoxColumn5.Name = "Estatus";
+            gridViewDecimalColumn20.MinWidth = 55;
+            gridViewDecimalColumn20.Name = "Real";
+            gridViewDecimalColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn20.ThousandsSeparator = true;
+            gridViewDecimalColumn20.Width = 55;
+            gridViewDecimalColumn20.WrapText = true;
+            gridViewTextBoxColumn24.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            gridViewTextBoxColumn24.FieldName = "Comentarios";
+            gridViewTextBoxColumn24.HeaderText = "COMENTARIOS";
+            gridViewTextBoxColumn24.MaxWidth = 200;
+            gridViewTextBoxColumn24.MinWidth = 180;
+            gridViewTextBoxColumn24.Name = "Comentarios";
+            gridViewTextBoxColumn24.Width = 180;
+            gridViewTextBoxColumn25.FieldName = "Estatus";
+            gridViewTextBoxColumn25.HeaderText = "Estatus";
+            gridViewTextBoxColumn25.IsVisible = false;
+            gridViewTextBoxColumn25.Name = "Estatus";
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDateTimeColumn1,
-            gridViewTextBoxColumn1,
-            gridViewDecimalColumn1,
-            gridViewDecimalColumn2,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewDecimalColumn3,
-            gridViewDecimalColumn4,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewDateTimeColumn5,
+            gridViewTextBoxColumn21,
+            gridViewDecimalColumn17,
+            gridViewDecimalColumn18,
+            gridViewTextBoxColumn22,
+            gridViewTextBoxColumn23,
+            gridViewDecimalColumn19,
+            gridViewDecimalColumn20,
+            gridViewTextBoxColumn24,
+            gridViewTextBoxColumn25});
             this.gvDatos.MasterTemplate.EnableAlternatingRowColor = true;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition5;
             this.gvDatos.Name = "gvDatos";
+            this.gvDatos.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(745, 195);
-            this.gvDatos.TabIndex = 6;
+            this.gvDatos.Size = new System.Drawing.Size(854, 195);
+            this.gvDatos.TabIndex = 10;
             this.gvDatos.CellEndEdit += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gvDatos_CellEndEdit);
             // 
             // frmEnsambleSup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 344);
+            this.ClientSize = new System.Drawing.Size(854, 344);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.radPanel1);
@@ -409,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             this.radPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
@@ -440,5 +458,6 @@
         private System.Windows.Forms.Label label5;
         private Telerik.WinControls.UI.RadDropDownList cboReflejante2;
         private Telerik.WinControls.UI.RadDropDownList cboReflejante1;
+        private Telerik.WinControls.UI.RadButton btnBuscar;
     }
 }

@@ -22,11 +22,14 @@ namespace Hersan.UI.Calidad
         }
         private void frmMuestreoQA_Load(object sender, EventArgs e)
         {
-            try {              
+            try {                
+
                 CargaCarcasas();
                 CargaReflejantes();
                 CargarProductos();
                 LimpiarCampos();
+
+                dtFecha.Value = DateTime.Today;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }

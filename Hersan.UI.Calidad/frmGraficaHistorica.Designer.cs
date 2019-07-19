@@ -131,6 +131,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GRAFICAS HISTÓRICAS";
+            this.Load += new System.EventHandler(this.frmGraficaHistorica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnHistograma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde)).EndInit();

@@ -17,6 +17,14 @@ namespace Hersan.UI.Calidad
         {
             InitializeComponent();
         }
+        private void frmGraficaHistorica_Load(object sender, EventArgs e)
+        {
+            try {
+                dtDesde.Value = DateTime.Today;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void btnHistograma_Click(object sender, EventArgs e)
         {
             try {
@@ -55,5 +63,6 @@ namespace Hersan.UI.Calidad
                 throw ex;
             }
         }
+        
     }
 }

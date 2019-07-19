@@ -56,6 +56,10 @@
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.txtLista = new Telerik.WinControls.UI.RadTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtOP = new Telerik.WinControls.UI.RadTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtFecha = new Telerik.WinControls.UI.RadDateTimePicker();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
@@ -76,13 +80,11 @@
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement7 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement8 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.txtOP = new Telerik.WinControls.UI.RadTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtLista = new Telerik.WinControls.UI.RadTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante2)).BeginInit();
@@ -95,8 +97,6 @@
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -262,6 +262,46 @@
             this.radPanel1.Size = new System.Drawing.Size(781, 142);
             this.radPanel1.TabIndex = 1;
             // 
+            // txtLista
+            // 
+            this.txtLista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLista.Location = new System.Drawing.Point(584, 92);
+            this.txtLista.Name = "txtLista";
+            this.txtLista.Size = new System.Drawing.Size(91, 20);
+            this.txtLista.TabIndex = 9;
+            this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(540, 96);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 76;
+            this.label8.Text = "Lista:";
+            // 
+            // txtOP
+            // 
+            this.txtOP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtOP.Location = new System.Drawing.Point(408, 92);
+            this.txtOP.Name = "txtOP";
+            this.txtOP.Size = new System.Drawing.Size(91, 20);
+            this.txtOP.TabIndex = 8;
+            this.txtOP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(364, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 13);
+            this.label7.TabIndex = 74;
+            this.label7.Text = "OP:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -394,6 +434,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(190, 20);
             this.txtNombre.TabIndex = 5;
+            this.txtNombre.Visible = false;
             // 
             // label5
             // 
@@ -405,6 +446,7 @@
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 33;
             this.label5.Text = "Nombre:";
+            this.label5.Visible = false;
             // 
             // commandBarStripElement6
             // 
@@ -560,46 +602,6 @@
             this.commandBarStripElement8.DisplayName = "commandBarStripElement8";
             this.commandBarStripElement8.Name = "commandBarStripElement8";
             // 
-            // txtOP
-            // 
-            this.txtOP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtOP.Location = new System.Drawing.Point(408, 92);
-            this.txtOP.Name = "txtOP";
-            this.txtOP.Size = new System.Drawing.Size(91, 20);
-            this.txtOP.TabIndex = 8;
-            this.txtOP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(364, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 13);
-            this.label7.TabIndex = 74;
-            this.label7.Text = "OP:";
-            // 
-            // txtLista
-            // 
-            this.txtLista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLista.Location = new System.Drawing.Point(584, 92);
-            this.txtLista.Name = "txtLista";
-            this.txtLista.Size = new System.Drawing.Size(91, 20);
-            this.txtLista.TabIndex = 9;
-            this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(540, 96);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
-            this.label8.TabIndex = 76;
-            this.label8.Text = "Lista:";
-            // 
             // frmMuestreoQA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,6 +622,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante2)).EndInit();
@@ -632,8 +636,6 @@
             this.radPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

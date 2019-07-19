@@ -127,6 +127,7 @@ namespace Hersan.UI.Calidad
             try {
                 if (txtLista.Text.Trim().Length > 0) {
                     InyeccionBE Obj = oEnsamble.PRO_Inyeccion_Consulta(int.Parse(txtLista.Text));
+                    decimal Porc = 0;
                     if (Obj != null) {
                         txtId.Text = Obj.Id.ToString();
                         txtIdDetalle.Text = Obj.Detalle.Id.ToString();
@@ -140,6 +141,9 @@ namespace Hersan.UI.Calidad
                         txtRemolido.Text = Obj.Detalle.Remolido.ToString();
                         txtMaster.Text = Obj.Detalle.Master.ToString();
                         txtMuestra.Text = Obj.Muestra.ToString();
+                        Porc = Obj.Detalle.Piezas != 0 ? (decimal.Parse(Obj.Muestra.ToString()) / decimal.Parse(Obj.Detalle.Piezas.ToString())) * 100 : 0;
+                        txtPorc.Text = Porc.ToString("##.#0");
+
 
                         #region CAVIDADES                         
                         txtCav1_1.Enabled = Obj.Detalle.Cav1;

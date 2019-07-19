@@ -96,6 +96,8 @@
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.txtPorc = new Telerik.WinControls.UI.RadTextBox();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
@@ -132,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCav2_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -240,6 +243,8 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.txtPorc);
+            this.radGroupBox1.Controls.Add(this.label21);
             this.radGroupBox1.Controls.Add(this.txtIdDetalle);
             this.radGroupBox1.Controls.Add(this.txtMuestra);
             this.radGroupBox1.Controls.Add(this.label20);
@@ -286,7 +291,7 @@
             // 
             // txtMuestra
             // 
-            this.txtMuestra.Location = new System.Drawing.Point(222, 134);
+            this.txtMuestra.Location = new System.Drawing.Point(222, 108);
             this.txtMuestra.Name = "txtMuestra";
             this.txtMuestra.ReadOnly = true;
             this.txtMuestra.Size = new System.Drawing.Size(66, 20);
@@ -299,7 +304,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(167, 136);
+            this.label20.Location = new System.Drawing.Point(167, 112);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(52, 13);
             this.label20.TabIndex = 17;
@@ -882,6 +887,27 @@
             this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
             this.commandBarStripElement6.Name = "commandBarStripElement6";
             // 
+            // txtPorc
+            // 
+            this.txtPorc.Location = new System.Drawing.Point(222, 134);
+            this.txtPorc.Name = "txtPorc";
+            this.txtPorc.ReadOnly = true;
+            this.txtPorc.Size = new System.Drawing.Size(66, 20);
+            this.txtPorc.TabIndex = 21;
+            this.txtPorc.TabStop = false;
+            this.txtPorc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(155, 138);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(64, 13);
+            this.label21.TabIndex = 20;
+            this.label21.Text = "% Muestra:";
+            // 
             // frmCalidadUno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -940,6 +966,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCav2_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1014,5 +1041,7 @@
         private Telerik.WinControls.UI.RadTextBox txtIdDetalle;
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement6;
+        private Telerik.WinControls.UI.RadTextBox txtPorc;
+        private System.Windows.Forms.Label label21;
     }
 }

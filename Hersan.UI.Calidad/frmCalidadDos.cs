@@ -50,6 +50,15 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void txtLista_Leave(object sender, EventArgs e)
+        {
+            try {
+                CargaDatos();
+                SendKeys.Send("{TAB}");
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
@@ -120,14 +129,14 @@ namespace Hersan.UI.Calidad
         }
         private void gvDatos_CellBeginEdit(object sender, GridViewCellCancelEventArgs e)
         {
-            if (gvDatos.CurrentRow.Cells["Lote"].Value != null) {
-                string x = gvDatos.CurrentRow.Cells["Lote"].Value.ToString();
-                if (oList.Find(item => item.Lote.ToString() == x) != null) {
-                    RadMessageBox.Show("El lote capturado ya existe, no es posible agregar", this.Text, MessageBoxButtons.OK,RadMessageIcon.Exclamation);
-                    e.Cancel = true;
-                    SendKeys.Send("{ESC}");
-                }
-            }
+            //if (gvDatos.CurrentRow.Cells["Lote"].Value != null) {
+            //    string x = gvDatos.CurrentRow.Cells["Lote"].Value.ToString();
+            //    if (oList.Find(item => item.Lote.ToString() == x) != null) {
+            //        RadMessageBox.Show("El lote capturado ya existe, no es posible agregar", this.Text, MessageBoxButtons.OK,RadMessageIcon.Exclamation);
+            //        e.Cancel = true;
+            //        SendKeys.Send("{ESC}");
+            //    }
+            //}
         }
         private void gvDatos_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
@@ -163,7 +172,7 @@ namespace Hersan.UI.Calidad
             try {
                 if (txtLista.Text.Trim().Length != 0) {
                     List<CalidadEnsambleBE> Aux = oEnsamble.CAL_InspeccionEnsamble_Consultar(int.Parse(txtLista.Text));
-                    if(Aux.Count > 0) {
+                    if (Aux.Count > 0) {
                         txtId.Text = Aux[0].Parametros.Id.ToString();
                         txtIdInspeccion.Text = Aux[0].Id.ToString();
                         txtOperador.Text = Aux[0].Operador;
@@ -174,6 +183,7 @@ namespace Hersan.UI.Calidad
                         txtReflex1.Text = Aux[0].Parametros.Reflex1.Nombre;
                         txtReflex2.Text = Aux[0].Parametros.Reflex2.Nombre;
                         txtMuestra.Text = Aux[0].Muestra.ToString();
+                        txtPorc.Text = "5.00";
 
                         CargaGrid();
                     } else

@@ -51,7 +51,6 @@ namespace Hersan.UI.CapitalHumano
                     obj.DatosUsuario.Estatus = true;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
-                    //PROCESO DE GUARDADO Y ACTUALIZACION
                     if (txtId.Text == "0") {
                         int Result = oCatalogo.CHUOrganigrama_Guardar(obj);
                         if (Result == 0) {
@@ -201,7 +200,7 @@ namespace Hersan.UI.CapitalHumano
                     cboPadre.DisplayMember = "Nombre";
                     cboPadre.DataSource = oCatalogo.ABCPuestos_Combo(int.Parse(cboDeptoJefe.SelectedValue.ToString()));
                 } else {
-                    cboPuestos.DataSource = null;
+                    cboPadre.DataSource = null;
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar los puestos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -217,7 +216,6 @@ namespace Hersan.UI.CapitalHumano
                 throw ex;
             }
         }
-
 
         private void CargarEntidades()
         {
@@ -267,6 +265,5 @@ namespace Hersan.UI.CapitalHumano
             }
         }
 
-        
     }
 }

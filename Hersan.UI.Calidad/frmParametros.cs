@@ -131,26 +131,26 @@ namespace Hersan.UI.Calidad
             try {
                 ParametrosInyeccion Obj = oEnsamble.PRO_Parametros_Obtener();
                 if (Obj != null) {
-                    txtPresion1.Text = Obj.Presion1.ToString();
-                    txtPresion2.Text = Obj.Presion2.ToString();
-                    txtPresion3.Text = Obj.Presion3.ToString();
-                    txtVelocidad1.Text = Obj.Velocidad1.ToString();
-                    txtVelocidad2.Text = Obj.Velocidad2.ToString();
-                    txtVelocidad3.Text = Obj.Velocidad3.ToString();
-                    txtPosicionC1.Text = Obj.PosicionC1.ToString();
-                    txtPosicionC2.Text = Obj.PosicionC2.ToString();
-                    txtPresionC1.Text = Obj.PresionC1.ToString();
-                    txtPresionC2.Text = Obj.PresionC2.ToString();
-                    txtVelocidadC1.Text = Obj.VelocidadC1.ToString();
-                    txtVelocidadC2.Text = Obj.VelocidadC2.ToString();
-                    txtPosicion.Text = Obj.Posicion.ToString();
+                    txtPresion1.Text = decimal.Parse(Obj.Presion1.ToString()) == 0 ? "" : Obj.Presion1.ToString();
+                    txtPresion2.Text = decimal.Parse(Obj.Presion2.ToString()) == 0 ? "" : Obj.Presion2.ToString();
+                    txtPresion3.Text = decimal.Parse(Obj.Presion3.ToString()) == 0 ? "" : Obj.Presion3.ToString();
+                    txtVelocidad1.Text = decimal.Parse(Obj.Velocidad1.ToString()) == 0 ? "" : Obj.Velocidad1.ToString();
+                    txtVelocidad2.Text = decimal.Parse(Obj.Velocidad2.ToString()) == 0 ? "" : Obj.Velocidad2.ToString();
+                    txtVelocidad3.Text = decimal.Parse(Obj.Velocidad3.ToString()) == 0 ? "" : Obj.Velocidad3.ToString();
+                    txtPosicionC1.Text = decimal.Parse(Obj.PosicionC1.ToString()) == 0 ? "" : Obj.PosicionC1.ToString();
+                    txtPosicionC2.Text = decimal.Parse(Obj.PosicionC2.ToString()) == 0 ? "" : Obj.PosicionC2.ToString();
+                    txtPresionC1.Text = decimal.Parse(Obj.PresionC1.ToString()) == 0 ? "" : Obj.PresionC1.ToString();
+                    txtPresionC2.Text = decimal.Parse(Obj.PresionC2.ToString()) == 0 ? "" : Obj.PresionC2.ToString();
+                    txtVelocidadC1.Text = decimal.Parse(Obj.VelocidadC1.ToString()) == 0 ? "" : Obj.VelocidadC1.ToString();
+                    txtVelocidadC2.Text = decimal.Parse(Obj.VelocidadC2.ToString()) == 0 ? "" : Obj.VelocidadC2.ToString();
+                    txtPosicion.Text = decimal.Parse(Obj.Posicion.ToString()) == 0 ? "" : Obj.Posicion.ToString();
                     //txtPresion.Text = Obj.Presion.ToString();
-                    txtVelocidad.Text = Obj.Velocidad.ToString();
-                    txtRetardo.Text = Obj.Retardo.ToString();
-                    txtZona1.Text = Obj.Zona1.ToString();
-                    txtZona2.Text = Obj.Zona2.ToString();
-                    txtZona3.Text = Obj.Zona3.ToString();
-                    txtZona4.Text = Obj.Zona4.ToString();
+                    txtVelocidad.Text = decimal.Parse(Obj.Velocidad.ToString()) == 0 ? "" : Obj.Velocidad.ToString();
+                    txtRetardo.Text = decimal.Parse(Obj.Retardo.ToString()) == 0 ? "" : Obj.Retardo.ToString();
+                    txtZona1.Text = decimal.Parse(Obj.Zona1.ToString()) == 0 ? "" : Obj.Zona1.ToString();
+                    txtZona2.Text = decimal.Parse(Obj.Zona2.ToString()) == 0 ? "" : Obj.Zona2.ToString();
+                    txtZona3.Text = decimal.Parse(Obj.Zona3.ToString()) == 0 ? "" : Obj.Zona3.ToString();
+                    txtZona4.Text = decimal.Parse(Obj.Zona4.ToString()) == 0 ? "" : Obj.Zona4.ToString();
                 }
             } catch (Exception ex) {
                 throw ex;

@@ -124,25 +124,25 @@ namespace Hersan.UI.Calidad
             try {
                 TemperaturasBE Obj = oEnsamble.PRO_Temperaturas_Obtener();
                 if(Obj != null) {
-                    txtCav1.Text = Obj.Cav1.ToString();
-                    txtCav2.Text = Obj.Cav2.ToString();
-                    txtCav3.Text = Obj.Cav3.ToString();
-                    txtCav4.Text = Obj.Cav4.ToString();
-                    txtCav5.Text = Obj.Cav5.ToString();
-                    txtCav6.Text = Obj.Cav6.ToString();
-                    txtCav7.Text = Obj.Cav7.ToString();
-                    txtCav8.Text = Obj.Cav8.ToString();
-                    txtCav9.Text = Obj.Cav9.ToString();
-                    txtCav10.Text = Obj.Cav10.ToString();
-                    txtCav11.Text = Obj.Cav11.ToString();
-                    txtCav12.Text = Obj.Cav12.ToString();
+                    txtCav1.Text = decimal.Parse(Obj.Cav1.ToString()) == 0 ? "" : Obj.Cav1.ToString();
+                    txtCav2.Text = decimal.Parse(Obj.Cav2.ToString()) == 0 ? "" : Obj.Cav2.ToString();
+                    txtCav3.Text = decimal.Parse(Obj.Cav3.ToString()) == 0 ? "" : Obj.Cav3.ToString();
+                    txtCav4.Text = decimal.Parse(Obj.Cav4.ToString()) == 0 ? "" : Obj.Cav4.ToString();
+                    txtCav5.Text = decimal.Parse(Obj.Cav5.ToString()) == 0 ? "" : Obj.Cav5.ToString();
+                    txtCav6.Text = decimal.Parse(Obj.Cav6.ToString()) == 0 ? "" : Obj.Cav6.ToString();
+                    txtCav7.Text = decimal.Parse(Obj.Cav7.ToString()) == 0 ? "" : Obj.Cav7.ToString();
+                    txtCav8.Text = decimal.Parse(Obj.Cav8.ToString()) == 0 ? "" : Obj.Cav8.ToString();
+                    txtCav9.Text = decimal.Parse(Obj.Cav9.ToString()) == 0 ? "" : Obj.Cav9.ToString();
+                    txtCav10.Text = decimal.Parse(Obj.Cav10.ToString()) == 0 ? "" : Obj.Cav10.ToString();
+                    txtCav11.Text = decimal.Parse(Obj.Cav11.ToString()) == 0 ? "" : Obj.Cav11.ToString();
+                    txtCav12.Text = decimal.Parse(Obj.Cav12.ToString()) == 0 ? "" : Obj.Cav12.ToString();
                     txtObserva.Text = Obj.Observa;
                 }
 
                 TempMoldesBE aux = oEnsamble.PRO_TemperaturasMolde_Obtener();
                 if(aux != null) {
-                    txtFija.Text = aux.Fija.ToString();
-                    txtMovil.Text = aux.Movil.ToString();
+                    txtFija.Text = decimal.Parse(aux.Fija.ToString()) == 0 ? "" : aux.Fija.ToString();
+                    txtMovil.Text = decimal.Parse(aux.Movil.ToString()) == 0 ? "" : aux.Movil.ToString();
                 } 
             } catch (Exception ex) {
                 throw ex;

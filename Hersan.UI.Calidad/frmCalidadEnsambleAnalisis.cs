@@ -180,7 +180,6 @@ namespace Hersan.UI.Calidad
             }
         }
 
-
         private void CargarProductos()
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();

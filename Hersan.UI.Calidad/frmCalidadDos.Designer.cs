@@ -52,6 +52,8 @@
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtPorc = new Telerik.WinControls.UI.RadTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtIdInspeccion = new Telerik.WinControls.UI.RadTextBox();
             this.txtReflex2 = new Telerik.WinControls.UI.RadTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -77,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdInspeccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReflex2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReflex1)).BeginInit();
@@ -200,6 +203,8 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.txtPorc);
+            this.radGroupBox1.Controls.Add(this.label8);
             this.radGroupBox1.Controls.Add(this.txtIdInspeccion);
             this.radGroupBox1.Controls.Add(this.txtReflex2);
             this.radGroupBox1.Controls.Add(this.label7);
@@ -231,6 +236,27 @@
             this.radGroupBox1.Size = new System.Drawing.Size(601, 159);
             this.radGroupBox1.TabIndex = 4;
             // 
+            // txtPorc
+            // 
+            this.txtPorc.Location = new System.Drawing.Point(354, 93);
+            this.txtPorc.Name = "txtPorc";
+            this.txtPorc.ReadOnly = true;
+            this.txtPorc.Size = new System.Drawing.Size(66, 20);
+            this.txtPorc.TabIndex = 27;
+            this.txtPorc.TabStop = false;
+            this.txtPorc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(289, 97);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "% Muestra:";
+            // 
             // txtIdInspeccion
             // 
             this.txtIdInspeccion.Location = new System.Drawing.Point(237, 49);
@@ -244,7 +270,7 @@
             // 
             // txtReflex2
             // 
-            this.txtReflex2.Location = new System.Drawing.Point(354, 114);
+            this.txtReflex2.Location = new System.Drawing.Point(354, 117);
             this.txtReflex2.Name = "txtReflex2";
             this.txtReflex2.ReadOnly = true;
             this.txtReflex2.Size = new System.Drawing.Size(138, 20);
@@ -257,7 +283,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(280, 118);
+            this.label7.Location = new System.Drawing.Point(280, 121);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 23;
@@ -415,17 +441,17 @@
             this.txtLista.Name = "txtLista";
             this.txtLista.Size = new System.Drawing.Size(73, 20);
             this.txtLista.TabIndex = 1;
-            this.txtLista.Text = "0";
             this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLista.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLista_KeyDown);
             this.txtLista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
+            this.txtLista.Leave += new System.EventHandler(this.txtLista_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(61, 49);
+            this.label2.Location = new System.Drawing.Point(61, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 1;
@@ -436,7 +462,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(52, 25);
+            this.label1.Location = new System.Drawing.Point(52, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
@@ -595,7 +621,6 @@
             this.gvDatos.Size = new System.Drawing.Size(601, 225);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gvDatos_CellFormatting);
-            this.gvDatos.CellBeginEdit += new Telerik.WinControls.UI.GridViewCellCancelEventHandler(this.gvDatos_CellBeginEdit);
             this.gvDatos.CellEndEdit += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gvDatos_CellEndEdit);
             // 
             // frmCalidadDos
@@ -618,6 +643,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdInspeccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReflex2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReflex1)).EndInit();
@@ -675,5 +701,7 @@
         private Telerik.WinControls.UI.RadTextBox txtReflex2;
         private System.Windows.Forms.Label label7;
         private Telerik.WinControls.UI.RadTextBox txtIdInspeccion;
+        private Telerik.WinControls.UI.RadTextBox txtPorc;
+        private System.Windows.Forms.Label label8;
     }
 }

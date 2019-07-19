@@ -90,9 +90,17 @@ namespace Hersan.UI.CapitalHumano.Reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Exp {
+        public CrystalDecisions.Shared.IParameterField Parameter_Id {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Escolaridad_Id {
+            get {
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }

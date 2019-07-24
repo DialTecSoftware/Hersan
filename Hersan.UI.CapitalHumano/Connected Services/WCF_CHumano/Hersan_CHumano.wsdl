@@ -349,6 +349,30 @@
   <wsdl:message name="IHersan_CHumano_CHU_DescPuesto_ReporteDetalle2_OutputMessage">
     <wsdl:part name="parameters" element="tns:CHU_DescPuesto_ReporteDetalle2Response" />
   </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Reporte_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_Reporte" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Reporte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_ReporteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Contactos_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_Reporte_Contactos" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Contactos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_Reporte_ContactosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Perfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_Reporte_Perfil" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Perfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_Reporte_PerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Competencias_InputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_Reporte_Competencias" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Competencias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CHU_DescripcionPuestos_Reporte_CompetenciasResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_CHumano_CHU_Empleados_Consultar_InputMessage">
     <wsdl:part name="parameters" element="tns:CHU_Empleados_Consultar" />
   </wsdl:message>
@@ -599,6 +623,22 @@
     <wsdl:operation name="CHU_DescPuesto_ReporteDetalle2">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2" message="tns:IHersan_CHumano_CHU_DescPuesto_ReporteDetalle2_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2Response" message="tns:IHersan_CHumano_CHU_DescPuesto_ReporteDetalle2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescripcionPuestos_Reporte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Reporte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_ReporteResponse" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Reporte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescripcionPuestos_Reporte_Contactos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Contactos" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Contactos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_ContactosResponse" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Contactos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescripcionPuestos_Reporte_Perfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Perfil" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Perfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_PerfilResponse" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Perfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescripcionPuestos_Reporte_Competencias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Competencias" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Competencias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_CompetenciasResponse" message="tns:IHersan_CHumano_CHU_DescripcionPuestos_Reporte_Competencias_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CHU_Empleados_Consultar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Consultar" message="tns:IHersan_CHumano_CHU_Empleados_Consultar_InputMessage" />
@@ -1112,6 +1152,42 @@
     </wsdl:operation>
     <wsdl:operation name="CHU_DescPuesto_ReporteDetalle2">
       <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescripcionPuestos_Reporte">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescripcionPuestos_Reporte_Contactos">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Contactos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescripcionPuestos_Reporte_Perfil">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Perfil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHU_DescripcionPuestos_Reporte_Competencias">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Competencias" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

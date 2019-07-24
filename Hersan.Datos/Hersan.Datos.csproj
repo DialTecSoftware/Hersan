@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APT\AlmacenDA.cs" />
     <Compile Include="BaseDA.cs" />
     <Compile Include="Calidad\CalidadDA.cs" />
     <Compile Include="Calidad\EnsambleDA.cs" />

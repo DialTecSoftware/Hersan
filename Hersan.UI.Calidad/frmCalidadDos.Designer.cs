@@ -32,7 +32,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
@@ -507,13 +507,14 @@
             gridViewTextBoxColumn3.MinWidth = 60;
             gridViewTextBoxColumn3.Name = "Lote";
             gridViewTextBoxColumn3.Width = 60;
-            gridViewTextBoxColumn4.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            gridViewTextBoxColumn4.FieldName = "Maquina";
-            gridViewTextBoxColumn4.HeaderText = "Máquina";
-            gridViewTextBoxColumn4.MaxWidth = 70;
-            gridViewTextBoxColumn4.MinWidth = 60;
-            gridViewTextBoxColumn4.Name = "Maquina";
-            gridViewTextBoxColumn4.Width = 60;
+            gridViewComboBoxColumn1.FieldName = "Maquina";
+            gridViewComboBoxColumn1.HeaderText = "Maquina";
+            gridViewComboBoxColumn1.MaxWidth = 100;
+            gridViewComboBoxColumn1.MinWidth = 60;
+            gridViewComboBoxColumn1.Name = "Maquina";
+            gridViewComboBoxColumn1.Width = 60;
+            gridViewDecimalColumn1.DataType = typeof(short);
+            gridViewDecimalColumn1.DecimalPlaces = 0;
             gridViewDecimalColumn1.FieldName = "Reflejante";
             gridViewDecimalColumn1.FormatString = "{0:N0}";
             gridViewDecimalColumn1.HeaderText = "Cavidad Reflejante";
@@ -530,7 +531,9 @@
             0});
             gridViewDecimalColumn1.MinWidth = 60;
             gridViewDecimalColumn1.Name = "Reflejante";
+            gridViewDecimalColumn1.ShowUpDownButtons = false;
             gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn1.VisibleInColumnChooser = false;
             gridViewDecimalColumn1.Width = 60;
             gridViewDecimalColumn1.WrapText = true;
             gridViewDecimalColumn2.FieldName = "Obs1";
@@ -602,7 +605,7 @@
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
+            gridViewComboBoxColumn1,
             gridViewDecimalColumn1,
             gridViewDecimalColumn2,
             gridViewDecimalColumn3,

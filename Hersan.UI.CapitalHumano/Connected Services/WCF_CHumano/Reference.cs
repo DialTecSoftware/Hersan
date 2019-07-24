@@ -181,6 +181,20 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescPuesto_ReporteDetalle2Response")]
         System.Data.DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_ReporteResponse")]
+        System.Data.DataTable CHU_DescripcionPuestos_Reporte(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Contactos", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_ContactosRespon" +
+            "se")]
+        System.Data.DataTable CHU_DescripcionPuestos_Reporte_Contactos(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Perfil", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_PerfilResponse")]
+        System.Data.DataTable CHU_DescripcionPuestos_Reporte_Perfil(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_Competencias", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_DescripcionPuestos_Reporte_CompetenciasRes" +
+            "ponse")]
+        System.Data.DataTable CHU_DescripcionPuestos_Reporte_Competencias(int Id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Empleados_Consultar", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Empleados_ConsultarResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EmpleadosBE> CHU_Empleados_Consultar(int IdExp);
         
@@ -442,6 +456,22 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public System.Data.DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil) {
             return base.Channel.CHU_DescPuesto_ReporteDetalle2(IdPerfil);
+        }
+        
+        public System.Data.DataTable CHU_DescripcionPuestos_Reporte(int Id) {
+            return base.Channel.CHU_DescripcionPuestos_Reporte(Id);
+        }
+        
+        public System.Data.DataTable CHU_DescripcionPuestos_Reporte_Contactos(int Id) {
+            return base.Channel.CHU_DescripcionPuestos_Reporte_Contactos(Id);
+        }
+        
+        public System.Data.DataTable CHU_DescripcionPuestos_Reporte_Perfil(int Id) {
+            return base.Channel.CHU_DescripcionPuestos_Reporte_Perfil(Id);
+        }
+        
+        public System.Data.DataTable CHU_DescripcionPuestos_Reporte_Competencias(int Id) {
+            return base.Channel.CHU_DescripcionPuestos_Reporte_Competencias(Id);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.EmpleadosBE> CHU_Empleados_Consultar(int IdExp) {

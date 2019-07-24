@@ -36,5 +36,22 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new DescripcionPuestosDA().CHU_DescPuesto_ReporteDetalle2(IdPerfil);
         }
+
+        public DataTable CHU_DescripcionPuestos_Reporte(int Id)
+        {
+            return new DescripcionPuestosDA().CHU_DescripcionPuestos_Reporte(Id);
+        }
+        public DataTable CHU_DescripcionPuestos_Reporte_Contactos(int Id)
+        {
+            return new DescripcionPuestosDA().CHU_DescripcionPuestos_Reporte_Contactos(Id);
+        }
+        public DataTable CHU_DescripcionPuestos_Reporte_Perfil(int Id)
+        {
+            return new DescripcionPuestosDA().CHU_DescripcionPuestos_Reporte_Perfil(Id);
+        }
+        public DataTable CHU_DescripcionPuestos_Reporte_Competencias(int Id)
+        {
+            return new DescripcionPuestosDA().CHU_DescripcionPuestos_Reporte_Competencias(Id);
+        }
     }
 }

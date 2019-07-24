@@ -16,6 +16,7 @@ namespace Hersan.UI.Calidad
     {
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
         List<CalidadEnsambleDetalleBE> oList = new List<CalidadEnsambleDetalleBE>();
+        List<string> oMaquinas = new List<string>();
 
         public frmCalidadDos()
         {
@@ -24,7 +25,10 @@ namespace Hersan.UI.Calidad
         private void frmCalidadDos_Load(object sender, EventArgs e)
         {
             try {
-               
+                oMaquinas.Add("S1");
+                oMaquinas.Add("S8");
+
+                ((Telerik.WinControls.UI.GridViewComboBoxColumn)this.gvDatos.Columns["Maquina"]).DataSource = oMaquinas;
             } catch (Exception ex) {
                 throw ex;
             }
@@ -113,7 +117,7 @@ namespace Hersan.UI.Calidad
         {
             try {
                 if (gvDatos.RowCount > 0) {
-                    if (e.ColumnIndex > 4 && e.RowIndex != -1) {
+                    if (e.ColumnIndex > 4 && e.RowIndex != -1 && e.CellElement.Value != null) {
                         if (int.Parse(e.CellElement.Value.ToString()) < int.Parse(txtNorma.Text)) {
                             e.CellElement.DrawFill = true;
                             e.CellElement.BackColor = Color.Red;
@@ -141,7 +145,7 @@ namespace Hersan.UI.Calidad
         private void gvDatos_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
             try {
-                if (e.ColumnIndex > 4) {
+                if (e.ColumnIndex > 4 && e.Value != null) {
                     if (int.Parse(e.Value.ToString()) < int.Parse(txtNorma.Text)) {
                         RadMessageBox.Show("NO CUMPLE LOS VALORES LA NORMA",this.Text,MessageBoxButtons.OK,RadMessageIcon.Exclamation);
                     }

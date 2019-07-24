@@ -159,6 +159,15 @@ namespace Hersan.CH.Contract
         DataTable CHU_DescPuesto_ReporteDetalle(int IdPerfil, int idPuesto, int IdDepto);
         [OperationContract]
          DataTable CHU_DescPuesto_ReporteDetalle2(int IdPerfil);
+
+        [OperationContract]
+        DataTable CHU_DescripcionPuestos_Reporte(int Id);
+        [OperationContract]
+        DataTable CHU_DescripcionPuestos_Reporte_Contactos(int Id);
+        [OperationContract]
+        DataTable CHU_DescripcionPuestos_Reporte_Perfil(int Id);
+        [OperationContract]
+        DataTable CHU_DescripcionPuestos_Reporte_Competencias(int Id);
         #endregion
 
         #region Empleados

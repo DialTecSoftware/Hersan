@@ -17,7 +17,13 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_USP_CHU_DESCPUESTO_ACTUALIZA = "CHU_DescripcionPuestos_Actualiza";
         const string CONST_USP_CHU_DESCPUESTO_ELIMINAR = "CHU_DescripcionPuestos_Eliminar";
         const string CONST_USP_CHU_DESCPUESTO_REPORTE1 = "CHU_RptDescPuestos_Obtener";
-        const string CONST_USP_CHU_DESCPUESTO_REPORTE2 = "CHU_RptDescPuestos2_Obtener";        
+        const string CONST_USP_CHU_DESCPUESTO_REPORTE2 = "CHU_RptDescPuestos2_Obtener";
+
+        const string CONST_CHU_DESCRIPCIONPUESTOS_REPORTE = "CHU_DescripcionPuestos_Reporte";
+        const string CONST_CHU_DESCRIPCIONPUESTOS_REPORTE_CONTACTOS = "CHU_DescripcionPuestos_Reporte_Contactos";
+        const string CONST_CHU_DESCRIPCIONPUESTOS_REPORTE_PERFIL = "CHU_DescripcionPuestos_Reporte_Perfil";
+        const string CONST_CHU_DESCRIPCIONPUESTOS_REPORTE_COMPETENCIAS = "CHU_DescripcionPuestos_Reporte_Competencias";
+
         #endregion
 
         public DataSet CHU_DescripcionPuestos_Obtener(int IdPerfifl)
@@ -161,6 +167,81 @@ namespace Hersan.Datos.CapitalHumano
             }
         }
 
+        public DataTable CHU_DescripcionPuestos_Reporte(int Id)
+        {
+            DataTable oData = new DataTable("Reporte");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_DESCRIPCIONPUESTOS_REPORTE, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", Id);
 
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+
+                }
+                return oData;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public DataTable CHU_DescripcionPuestos_Reporte_Contactos(int Id)
+        {
+            DataTable oData = new DataTable("Reporte");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_DESCRIPCIONPUESTOS_REPORTE_CONTACTOS, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", Id);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+
+                }
+                return oData;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public DataTable CHU_DescripcionPuestos_Reporte_Perfil(int Id)
+        {
+            DataTable oData = new DataTable("Reporte");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_DESCRIPCIONPUESTOS_REPORTE_PERFIL, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", Id);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+
+                }
+                return oData;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public DataTable CHU_DescripcionPuestos_Reporte_Competencias(int Id)
+        {
+            DataTable oData = new DataTable("Reporte");
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_DESCRIPCIONPUESTOS_REPORTE_COMPETENCIAS, conn)) {
+                        cmd.Parameters.AddWithValue("@Id", Id);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        oData.Load(cmd.ExecuteReader());
+                    }
+
+                }
+                return oData;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
     }
 }

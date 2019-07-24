@@ -228,7 +228,6 @@ namespace Hersan.UI.CapitalHumano
                 if (int.Parse(txtId.Text) == 0) {
                     int Result = oCHumano.CHU_DescPuestos_Guardar(obj, oData, oData1);
                     if (Result != 0) {
-
                         RadMessageBox.Show("Descripcion de puesto guardada correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     } else {
                         RadMessageBox.Show("Ocurrió un error al guardar la descripcion de puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -319,13 +318,25 @@ namespace Hersan.UI.CapitalHumano
         }
         private void btnReporte_Click(object sender, EventArgs e)
         {
+            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
             try {
-                if (int.Parse(txtIdPerfil.Text) > 0 && cboPuestos.SelectedIndex != -1)
-                    Reporte(false);
-                else
-                    RadMessageBox.Show("No ha seleccionado una descripción de puesto", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                if (txtId.Text.Trim().Length != 0) {
+                    frmViewer frm = new frmViewer();
+                    frm.iReport = new Reportes.rptDescripcionPuestos();
+
+                    frm.iReport.SetDataSource(oCHumano.CHU_DescripcionPuestos_Reporte(int.Parse(txtId.Text)));
+                    frm.iReport.Subreports["Contactos"].SetDataSource(oCHumano.CHU_DescripcionPuestos_Reporte_Contactos(int.Parse(txtId.Text)));
+                    frm.iReport.Subreports["Perfil"].SetDataSource(oCHumano.CHU_DescripcionPuestos_Reporte_Perfil(int.Parse(txtId.Text)));
+                    frm.iReport.Subreports["Competencias"].SetDataSource(oCHumano.CHU_DescripcionPuestos_Reporte_Competencias(int.Parse(txtId.Text)));
+
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                } else
+                    RadMessageBox.Show("No ha seleccionado una descripción de puestos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCHumano = null;
             }
         }
 
@@ -549,33 +560,7 @@ namespace Hersan.UI.CapitalHumano
             } finally {
                 Flag = true;
             }
-        }
-        private Stream Reporte(bool Correo)
-        {
-            oCHumano = new WCF_CHumano.Hersan_CHumanoClient();
-            Stream archivo = null;
-            try {
-                frmViewer frm = new frmViewer();
-                frm.iReport = new Reportes.rtpDescPuestos();
-
-                frm.iReport.SetDataSource(oCHumano.CHU_DescPuesto_ReporteDetalle(int.Parse(txtIdPerfil.Text),
-                    int.Parse(cboPuestos.SelectedValue.ToString()), int.Parse(cboDepto.SelectedValue.ToString())));
-                //frm.iReport.SetDataSource(oCHumano.CHU_DescPuesto_ReporteDetalle2(int.Parse(txtIdPerfil.Text)));
-
-                if (Correo) {
-                    archivo = frm.iReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-                } else {
-                    //MOSTRAR EN PANTALLA
-                    frm.WindowState = FormWindowState.Maximized;
-                    frm.ShowDialog();
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al mostrar el reporte\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            } finally {
-                oCHumano = null;
-            }
-            return archivo;
-        }
+        }        
         private void ActualizaGrid()
         {
             try {

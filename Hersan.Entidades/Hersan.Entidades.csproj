@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APT\AlmacenBE.cs" />
     <Compile Include="Calidad\CalidadBE.cs" />
     <Compile Include="Calidad\EnsambleBE.cs" />
     <Compile Include="Calidad\NormaBE.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Catalogos\RegimenSATBE.cs" />
     <Compile Include="Catalogos\TipoProductoBE.cs" />
     <Compile Include="Catalogos\TiposClienteBE.cs" />
+    <Compile Include="Comun\SemanasBE.cs" />
     <Compile Include="Ensamble\CaracteristicasBE.cs" />
     <Compile Include="Comun\GeneralBE.cs" />
     <Compile Include="Comun\ResultadoBE.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="Ensamble\PreciosBE.cs" />
     <Compile Include="Ensamble\ServiciosBE.cs" />
     <Compile Include="Calidad\InyeccionBE.cs" />
+    <Compile Include="Nomina\PrestamosBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relchec\DiasFestBE.cs" />
     <Compile Include="Relchec\HorariosBE.cs" />

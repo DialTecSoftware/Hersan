@@ -51,34 +51,25 @@ namespace Hersan.UI.CapitalHumano
 
                 if (oList.FindAll((item => item.Estado.Contains("ACEPTADO") && item.Id == int.Parse(txtIdNuevoP.Text))).Count > 0 || oList.FindAll((item => item.Estado.Contains("RECHAZADO") && item.Id == int.Parse(txtIdNuevoP.Text))).Count > 0) {
                     RadMessageBox.Show("Esta propuesta ya ha sido dictmaninada, no es posible modificarla", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-    
                     return;
                 }
-
-
 
                 if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {                 
 
                     if (rdbRevisiones.IsChecked == true)
-                    {
                         obj.Estado = "1";
-                    }
-                    if (rdbAceptado.IsChecked == true) 
-                    {
-                        obj.Estado = "2";
-                    }
-                    if (rdbRechazado.IsChecked == true) 
-                    {
-                        obj.Estado ="3";
-                    }
-
+                    else
+                        if (rdbAceptado.IsChecked == true) 
+                            obj.Estado = "2";
+                        else
+                            if (rdbRechazado.IsChecked == true) 
+                                obj.Estado ="3";
                   
                     obj.Id = int.Parse(txtIdNuevoP.Text);
                     obj.OpinionesCH = txtOpinionesCH.Text;
                     obj.OpinionesDG = txtOpinionesDG.Text;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                     obj.DatosUsuario.Estatus = true;
-
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
                     if (int.Parse(txtIdNuevoP.Text) > 0) {

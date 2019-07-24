@@ -69,31 +69,29 @@ namespace Hersan.UI.CapitalHumano
                 }
 
                 if (RadMessageBox.Show("Desea guardar los datos capturados...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
-                    if (rdbRevisiones.IsChecked == true) {
+                    if (rdbRevisiones.IsChecked == true)
                         obj.Estado = "1";
-                    }
-                    if (rdbAceptado.IsChecked == true) {
+                    else
+                        if (rdbAceptado.IsChecked == true)
                         obj.Estado = "2";
-                    }
-                    if (rdbRechazado.IsChecked == true) {
+                    else
+                    if (rdbRechazado.IsChecked == true)
                         obj.Estado = "3";
-                    }
+                    
                     obj.Id = int.Parse(txtIdSu.Text);
                     obj.Dictamen = txtDictamen.Text;
                     obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
                     obj.DatosUsuario.Estatus = true;
 
                     #region Correo
-                    string pwd = "Catcooptest";
-                    string smtp = "smtp.GMAIL.com";
-                    string emisor = "Key.Solutions.Test@gmail.com";
-                    string destinatario = "gregory.moise@dialtec.com.mx";                  
-                    string asunto = "Respuesta a su Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
-                    string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la  y hacer las continuaciones si necesarias!!";
-                    int port = 587;
-
+                    //string pwd = "Catcooptest";
+                    //string smtp = "smtp.GMAIL.com";
+                    //string emisor = "Key.Solutions.Test@gmail.com";
+                    //string destinatario = "gregory.moise@dialtec.com.mx";                  
+                    //string asunto = "Respuesta a su Solicitud de Sustitución de Personal(" + DateTime.Now.ToString("dd / MMM / yyy hh: mm:ss") + ") ";
+                    //string CuerpoMsg = "¡¡Favor de revisar el sistema para consultar la  y hacer las continuaciones si necesarias!!";
+                    //int port = 587;
                     #endregion
-
 
                     //PROCESO DE GUARDADO Y ACTUALIZACION
                     if (int.Parse(txtIdSu.Text) > 0) {
@@ -104,10 +102,8 @@ namespace Hersan.UI.CapitalHumano
                             RadMessageBox.Show("Elemento guardado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                             LimpiarCampos();
                             CargarSolicitudes();
-       
-
-                            BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
-
+                            
+                            //BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
                         }
                     } 
                 }
@@ -202,8 +198,6 @@ namespace Hersan.UI.CapitalHumano
                         rdbRevisiones.IsChecked = rdbRechazado.IsChecked =
                             rdbAceptado.IsChecked = false;
                     }
-
-
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -258,10 +252,12 @@ namespace Hersan.UI.CapitalHumano
                         gvDictamen_CurrentRowChanged(new object(), new CurrentRowChangedEventArgs(null, gvDictamen.Rows[0]));
                     }
                 } else {
-                    if(gvDatos.RowCount > 0) {
-                        gvDatos.ClearSelection();
-                        gvDatos.Rows[0].IsSelected = true;
-                        gvDatos_CurrentRowChanged_1(new object(), new CurrentRowChangedEventArgs(null, gvDatos.Rows[0]));
+                    if (e.DockWindow.Name.Equals("docSustitucion")) {
+                        if (gvDatos.RowCount > 0) {
+                            gvDatos.ClearSelection();
+                            gvDatos.Rows[0].IsSelected = true;
+                            gvDatos_CurrentRowChanged_1(new object(), new CurrentRowChangedEventArgs(null, gvDatos.Rows[0]));
+                        }
                     }
                 }
             } catch (Exception ex) {

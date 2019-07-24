@@ -28,7 +28,7 @@
     <SuiteName>Sistema Integral Hersan HiTec</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -162,6 +162,10 @@
     <ProjectReference Include="..\Hersan.Negocio\Hersan.Negocio.csproj">
       <Project>{9DC9D350-B0E3-4481-AC7A-DBE3729C8955}</Project>
       <Name>Hersan.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.UI.APT\Hersan.UI.APT.csproj">
+      <Project>{07ab052f-cfbf-4603-bc9d-1d357a86662b}</Project>
+      <Name>Hersan.UI.APT</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hersan.UI.Calidad\Hersan.UI.Calidad.csproj">
       <Project>{a33375dc-1405-4d9a-bc31-41d6ae520715}</Project>

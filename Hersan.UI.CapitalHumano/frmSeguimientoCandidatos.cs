@@ -199,15 +199,16 @@ namespace Hersan.UI.CapitalHumano
                 }
                 if (RadMessageBox.Show("Desea mandar correo al candidato...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                     #region Correo
-                    string pwd = "Catcooptest";
-                    string smtp = "smtp.GMAIL.com";
-                    string emisor = "Key.Solutions.Test@gmail.com";
+                    string usuario = "capher";
+                    string pwd = "her0289";
+                    string smtp = "smtp.hersan.com.mx";
+                    string emisor = "capitalhumano@hersan.com.mx";
                     string destinatario = txtCorreo.Text;
                     string asunto = "Reclutamiento Hersan HiTech SAPI de C.V. ";
-                    int port = 587;
+                    int port = 500;
                     if (txtId.Text != "-1") {
                         string CuerpoMsg = CreateBody();
-                        BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, pwd, port);
+                        BaseWinBP.EnviarMail(emisor, destinatario, asunto, CuerpoMsg, smtp, usuario, pwd, port);
                         RadMessageBox.Show("Correo enviado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
                     } else
                         RadMessageBox.Show("Debe de seleccionar un candidato para mandar el correo\n", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);

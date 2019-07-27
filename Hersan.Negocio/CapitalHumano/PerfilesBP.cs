@@ -27,5 +27,10 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new PerfilesDA().CHU_Tabulador_Puestos_Obtener();
         }
+        public List<PerfilesBE> CHU_Perfil_Consulta(PerfilesBE Item)
+        {
+            return new PerfilesDA().CHU_Perfil_Consulta(Item);
+        }
+
     }
 }

@@ -27,6 +27,9 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_Elimina", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Perfiles_EliminaResponse")]
         int CHU_Perfiles_Elimina(int IdPerfil, int IdUsuario);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Perfil_Consulta", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Perfil_ConsultaResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.PerfilesBE> CHU_Perfil_Consulta(Hersan.Entidades.CapitalHumano.PerfilesBE Item);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_CHumano/CHU_Tabulador_Puestos_Obtener", ReplyAction="http://tempuri.org/IHersan_CHumano/CHU_Tabulador_Puestos_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.TabuladorBE> CHU_Tabulador_Puestos_Obtener();
         
@@ -252,6 +255,10 @@ namespace Hersan.UI.CapitalHumano.WCF_CHumano {
         
         public int CHU_Perfiles_Elimina(int IdPerfil, int IdUsuario) {
             return base.Channel.CHU_Perfiles_Elimina(IdPerfil, IdUsuario);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.PerfilesBE> CHU_Perfil_Consulta(Hersan.Entidades.CapitalHumano.PerfilesBE Item) {
+            return base.Channel.CHU_Perfil_Consulta(Item);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.CapitalHumano.TabuladorBE> CHU_Tabulador_Puestos_Obtener() {

@@ -44,6 +44,7 @@ namespace Hersan.UI.Calidad
             try {
                 if (e.KeyData == Keys.Enter || (e.KeyCode == Keys.F3)) {
                     CargarDatos();
+                    SendKeys.Send("{TAB}");
                 }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -52,8 +53,10 @@ namespace Hersan.UI.Calidad
         private void txtLista_Leave(object sender, EventArgs e)
         {
             try {
-                if (txtLista.Text.Trim().Length > 0)
+                if (txtLista.Text.Trim().Length > 0) {
                     CargarDatos();
+                    EstablecerFoco();
+                }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al capturar el dato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -85,7 +88,7 @@ namespace Hersan.UI.Calidad
                 CalidadBE Obj = new CalidadBE();
                 Obj.Lista = int.Parse(txtLista.Text);
                 Obj.Inyeccion.Id = int.Parse(txtId.Text);
-                Obj.Operador = txtOperador.Text;
+                Obj.Operador = cboOperador.Text;
                 Obj.IdUsuario = BaseWinBP.UsuarioLogueado.ID;
 
                 if (int.Parse(txtIdDetalle.Text) == 0)
@@ -132,7 +135,7 @@ namespace Hersan.UI.Calidad
                         txtId.Text = Obj.Id.ToString();
                         txtIdDetalle.Text = Obj.Detalle.Id.ToString();
                         txtOp.Text = Obj.OP;
-                        txtOperador.Text = Obj.Operador;
+                        cboOperador.Text = Obj.Operador;
                         txtColor.Text = Obj.Color.Nombre;
                         txtFecha.Text = Obj.Detalle.Fecha.ToShortDateString();
                         txtReal.Text = Obj.Detalle.Piezas.ToString();
@@ -245,7 +248,7 @@ namespace Hersan.UI.Calidad
                 txtMaster.Clear();
                 txtMuestra.Clear();
                 txtOp.Clear();
-                txtOperador.Clear();
+                cboOperador.SelectedIndex = 0;
                 txtReal.Clear();
                 txtRemolido.Clear();
                 txtTurno.Clear();

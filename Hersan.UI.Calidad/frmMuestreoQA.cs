@@ -215,6 +215,7 @@ namespace Hersan.UI.Calidad
                     txtId.Text = oList[0].Id.ToString();
                     txtNombre.Text = oList[0].Nombre.ToString();
                     txtPiezas.Text = oList[0].Piezas.ToString();
+                    txtMuestra.Text = oList[0].Muestra.ToString();
                     //cboProducto.SelectedValue = oList[0].Producto.Id;
                     cboCarcasa.SelectedValue = oList[0].Carcasa.Id;
                     cboReflejante1.SelectedValue = oList[0].Reflex1.Id;

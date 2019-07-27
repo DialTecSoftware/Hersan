@@ -27,7 +27,6 @@ namespace Hersan.UI.CapitalHumano
         decimal resultado;
         #endregion
 
-
         public frmPerfil()
         {
             InitializeComponent();
@@ -157,6 +156,29 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al eliminar el perfil\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oCHumano = null;
+            }
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            PerfilesBE Perfil = new PerfilesBE();
+            try {
+                frmPerfilConsulta ofrm = new frmPerfilConsulta();
+                ofrm.WindowState = FormWindowState.Normal;
+                ofrm.StartPosition = FormStartPosition.CenterScreen;
+                ofrm.MaximizeBox = false;
+                ofrm.MinimizeBox = false;
+                ofrm.Titulo = "BUSCAR PERFIL";
+                ofrm.ShowDialog();
+                Perfil = ofrm.Perfil;
+
+                if (Perfil != null) {
+                    LimpiarCampos();
+                    cboEntidad.SelectedValue = Perfil.Puesto.Departamentos.Entidades.Id;
+                    cboDepto.SelectedValue = Perfil.Puesto.Departamentos.Id;
+                    cboPuestos.SelectedValue = Perfil.Puesto.Id;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)
@@ -515,6 +537,7 @@ namespace Hersan.UI.CapitalHumano
                 Flag = true;
             }
         }
+
        
     }
 

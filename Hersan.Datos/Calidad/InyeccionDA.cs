@@ -309,7 +309,7 @@ namespace Hersan.Datos.Calidad
                                 obj.PresionC2 = decimal.Parse(reader["PresionC2"].ToString());
                                 obj.VelocidadC1 = decimal.Parse(reader["VelocidadC1"].ToString());
                                 obj.VelocidadC2 = decimal.Parse(reader["VelocidadC2"].ToString());
-                                obj.Posicion = decimal.Parse(reader["Posicion"].ToString());
+                                obj.Posicion = reader["Posicion"].ToString();
                                 obj.Presion = decimal.Parse(reader["Presion"].ToString());
                                 obj.Velocidad = decimal.Parse(reader["Velocidad"].ToString());
                                 obj.Retardo = decimal.Parse(reader["RetardEnfria"].ToString());
@@ -317,7 +317,8 @@ namespace Hersan.Datos.Calidad
                                 obj.Zona3 = decimal.Parse(reader["Zona3"].ToString());
                                 obj.Zona2 = decimal.Parse(reader["Zona2"].ToString());
                                 obj.Zona1 = decimal.Parse(reader["Zona1"].ToString());
-
+                                obj.Observa = reader["Observa"].ToString();
+                                obj.Cavidades = reader["Cavidades"].ToString();
                             }
                         }
 

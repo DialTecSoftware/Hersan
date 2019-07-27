@@ -160,7 +160,7 @@ namespace Hersan.Entidades.Inyeccion
             PosicionC2 = 0;
             VelocidadC1 = 0;
             VelocidadC2 = 0;
-            Posicion = 0;
+            Posicion = string.Empty;
             Presion = 0;
             Velocidad = 0;
             Retardo = 0;
@@ -168,6 +168,8 @@ namespace Hersan.Entidades.Inyeccion
             Zona2 = 0;
             Zona3 = 0;
             Zona4 = 0;
+            Observa = string.Empty;
+            Cavidades = string.Empty;
             IdUsuario = 0;
         }
 
@@ -183,7 +185,7 @@ namespace Hersan.Entidades.Inyeccion
         public decimal PresionC2 { get; set; }
         public decimal VelocidadC1 { get; set; }
         public decimal VelocidadC2 { get; set; }
-        public decimal Posicion { get; set; }
+        public string Posicion { get; set; }
         public decimal Presion { get; set; }
         public decimal Velocidad { get; set; }
         public decimal Retardo { get; set; }
@@ -191,6 +193,8 @@ namespace Hersan.Entidades.Inyeccion
         public decimal Zona3 { get; set; }
         public decimal Zona2 { get; set; }
         public decimal Zona1 { get; set; }
+        public string Observa { get; set; }
+        public string Cavidades { get; set; }
         public int IdUsuario{ get; set; }
     }
 }

@@ -47,6 +47,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FuncionesBE" nillable="true" type="tns:FuncionesBE" />
+  <xs:complexType name="ArrayOfPerfilesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PerfilesBE" nillable="true" type="tns:PerfilesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerfilesBE" nillable="true" type="tns:ArrayOfPerfilesBE" />
   <xs:complexType name="ArrayOfTabuladorBE">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="TabuladorBE" nillable="true" type="tns:TabuladorBE" />

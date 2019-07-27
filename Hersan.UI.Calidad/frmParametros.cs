@@ -55,6 +55,8 @@ namespace Hersan.UI.Calidad
                     oData.Columns.Add("Zona2");
                     oData.Columns.Add("Zona3");
                     oData.Columns.Add("Zona4");
+                    oData.Columns.Add("Observa");
+                    oData.Columns.Add("Cavidades");
                     oData.Columns.Add("IdUsuario");
 
                     System.Data.DataRow oRow = oData.NewRow();
@@ -70,7 +72,7 @@ namespace Hersan.UI.Calidad
                     oRow["PresionC2"] = txtPosicionC2.Text.Trim().Length != 0 ? decimal.Parse(txtPresionC2.Text) : 0;
                     oRow["VelocidadC1"] = txtVelocidadC1.Text.Trim().Length != 0 ? decimal.Parse(txtVelocidadC1.Text) : 0;
                     oRow["VelocidadC2"] = txtVelocidadC2.Text.Trim().Length != 0 ? decimal.Parse(txtVelocidadC2.Text) : 0;
-                    oRow["Posicion"] = txtPosicion.Text.Trim().Length != 0 ? decimal.Parse(txtPosicion.Text) : 0;
+                    oRow["Posicion"] = txtPosicion.Text.Trim().Length != 0 ? txtPosicion.Text : "";
                     oRow["Presion"] = 0;
                     oRow["Velocidad"] = txtVelocidad.Text.Trim().Length != 0 ? decimal.Parse(txtVelocidad.Text) : 0;
                     oRow["Retardo"] = txtRetardo.Text.Trim().Length != 0 ? decimal.Parse(txtRetardo.Text) : 0;
@@ -78,6 +80,8 @@ namespace Hersan.UI.Calidad
                     oRow["Zona2"] = txtZona2.Text.Trim().Length != 0 ? decimal.Parse(txtZona2.Text) : 0;
                     oRow["Zona3"] = txtZona3.Text.Trim().Length != 0 ? decimal.Parse(txtZona3.Text) : 0;
                     oRow["Zona4"] = txtZona4.Text.Trim().Length != 0 ? decimal.Parse(txtZona4.Text) : 0;
+                    oRow["Observa"] = txtObserva.Text;
+                    oRow["Cavidades"] = txtCavidades.Text;
                     oRow["IdUsuario"] = BaseWinBP.UsuarioLogueado.ID;
 
                     oData.Rows.Add(oRow);
@@ -143,7 +147,7 @@ namespace Hersan.UI.Calidad
                     txtPresionC2.Text = decimal.Parse(Obj.PresionC2.ToString()) == 0 ? "" : Obj.PresionC2.ToString();
                     txtVelocidadC1.Text = decimal.Parse(Obj.VelocidadC1.ToString()) == 0 ? "" : Obj.VelocidadC1.ToString();
                     txtVelocidadC2.Text = decimal.Parse(Obj.VelocidadC2.ToString()) == 0 ? "" : Obj.VelocidadC2.ToString();
-                    txtPosicion.Text = decimal.Parse(Obj.Posicion.ToString()) == 0 ? "" : Obj.Posicion.ToString();
+                    txtPosicion.Text = Obj.Posicion.ToString();
                     //txtPresion.Text = Obj.Presion.ToString();
                     txtVelocidad.Text = decimal.Parse(Obj.Velocidad.ToString()) == 0 ? "" : Obj.Velocidad.ToString();
                     txtRetardo.Text = decimal.Parse(Obj.Retardo.ToString()) == 0 ? "" : Obj.Retardo.ToString();
@@ -151,6 +155,8 @@ namespace Hersan.UI.Calidad
                     txtZona2.Text = decimal.Parse(Obj.Zona2.ToString()) == 0 ? "" : Obj.Zona2.ToString();
                     txtZona3.Text = decimal.Parse(Obj.Zona3.ToString()) == 0 ? "" : Obj.Zona3.ToString();
                     txtZona4.Text = decimal.Parse(Obj.Zona4.ToString()) == 0 ? "" : Obj.Zona4.ToString();
+                    txtObserva.Text = Obj.Observa.ToString();
+                    txtCavidades.Text = Obj.Cavidades.ToString();
                 }
             } catch (Exception ex) {
                 throw ex;

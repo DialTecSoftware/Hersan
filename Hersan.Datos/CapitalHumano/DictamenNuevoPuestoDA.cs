@@ -18,7 +18,6 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_CHU_DNP_ACTUALIZAR = "CHU_DictamenNuevoP_Actualiza";
         #endregion
 
-
         public List<DictamenNuevoPuestoBE> CHU_DictamenNuevoP_Obtener()
         {
             List<DictamenNuevoPuestoBE> oList = new List<DictamenNuevoPuestoBE>();
@@ -61,8 +60,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
-
         public int CHU_DictamenNuevoP_Guardar(DictamenNuevoPuestoBE obj)
         {
             int Result = 0;
@@ -87,7 +84,6 @@ namespace Hersan.Datos.CapitalHumano
             }
 
         }
-
         public int CHU_DictamenNuevoP_Actualizar(DictamenNuevoPuestoBE obj)
         {
             int Result = 0;
@@ -113,5 +109,6 @@ namespace Hersan.Datos.CapitalHumano
             }
 
         }
+
     }
 }

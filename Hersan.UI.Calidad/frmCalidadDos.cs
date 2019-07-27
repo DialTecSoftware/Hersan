@@ -131,23 +131,12 @@ namespace Hersan.UI.Calidad
                 throw ex;
             }
         }
-        private void gvDatos_CellBeginEdit(object sender, GridViewCellCancelEventArgs e)
-        {
-            //if (gvDatos.CurrentRow.Cells["Lote"].Value != null) {
-            //    string x = gvDatos.CurrentRow.Cells["Lote"].Value.ToString();
-            //    if (oList.Find(item => item.Lote.ToString() == x) != null) {
-            //        RadMessageBox.Show("El lote capturado ya existe, no es posible agregar", this.Text, MessageBoxButtons.OK,RadMessageIcon.Exclamation);
-            //        e.Cancel = true;
-            //        SendKeys.Send("{ESC}");
-            //    }
-            //}
-        }
         private void gvDatos_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
             try {
                 if (e.ColumnIndex > 4 && e.Value != null) {
                     if (int.Parse(e.Value.ToString()) < int.Parse(txtNorma.Text)) {
-                        RadMessageBox.Show("NO CUMPLE LOS VALORES LA NORMA",this.Text,MessageBoxButtons.OK,RadMessageIcon.Exclamation);
+                        RadMessageBox.Show("NO CUMPLE LOS VALORES DE LA NORMA",this.Text,MessageBoxButtons.OK,RadMessageIcon.Exclamation);
                     }
                 }
             } catch (Exception ex) {

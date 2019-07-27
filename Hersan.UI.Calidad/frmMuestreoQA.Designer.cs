@@ -56,6 +56,8 @@
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.txtMuestra = new Telerik.WinControls.UI.RadTextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtLista = new Telerik.WinControls.UI.RadTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtOP = new Telerik.WinControls.UI.RadTextBox();
@@ -83,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).BeginInit();
@@ -237,6 +240,8 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.txtMuestra);
+            this.radPanel1.Controls.Add(this.label9);
             this.radPanel1.Controls.Add(this.txtLista);
             this.radPanel1.Controls.Add(this.label8);
             this.radPanel1.Controls.Add(this.txtOP);
@@ -262,10 +267,30 @@
             this.radPanel1.Size = new System.Drawing.Size(781, 142);
             this.radPanel1.TabIndex = 1;
             // 
+            // txtMuestra
+            // 
+            this.txtMuestra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMuestra.Location = new System.Drawing.Point(439, 68);
+            this.txtMuestra.Name = "txtMuestra";
+            this.txtMuestra.Size = new System.Drawing.Size(60, 20);
+            this.txtMuestra.TabIndex = 77;
+            this.txtMuestra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(364, 72);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 13);
+            this.label9.TabIndex = 78;
+            this.label9.Text = "% Muestreo:";
+            // 
             // txtLista
             // 
             this.txtLista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLista.Location = new System.Drawing.Point(584, 92);
+            this.txtLista.Location = new System.Drawing.Point(560, 92);
             this.txtLista.Name = "txtLista";
             this.txtLista.Size = new System.Drawing.Size(91, 20);
             this.txtLista.TabIndex = 9;
@@ -276,7 +301,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(540, 96);
+            this.label8.Location = new System.Drawing.Point(525, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 76;
@@ -307,7 +332,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(365, 46);
+            this.label2.Location = new System.Drawing.Point(365, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 72;
@@ -316,7 +341,7 @@
             // dtFecha
             // 
             this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha.Location = new System.Drawing.Point(408, 42);
+            this.dtFecha.Location = new System.Drawing.Point(408, 16);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(95, 20);
             this.dtFecha.TabIndex = 6;
@@ -409,7 +434,7 @@
             // txtPiezas
             // 
             this.txtPiezas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPiezas.Location = new System.Drawing.Point(408, 68);
+            this.txtPiezas.Location = new System.Drawing.Point(408, 42);
             this.txtPiezas.Name = "txtPiezas";
             this.txtPiezas.Size = new System.Drawing.Size(91, 20);
             this.txtPiezas.TabIndex = 7;
@@ -421,7 +446,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(364, 72);
+            this.label1.Location = new System.Drawing.Point(364, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 35;
@@ -430,7 +455,7 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(408, 16);
+            this.txtNombre.Location = new System.Drawing.Point(579, 16);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(190, 20);
             this.txtNombre.TabIndex = 5;
@@ -441,7 +466,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(354, 20);
+            this.label5.Location = new System.Drawing.Point(525, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 33;
@@ -622,6 +647,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).EndInit();
@@ -684,5 +710,7 @@
         private System.Windows.Forms.Label label8;
         private Telerik.WinControls.UI.RadTextBox txtOP;
         private System.Windows.Forms.Label label7;
+        private Telerik.WinControls.UI.RadTextBox txtMuestra;
+        private System.Windows.Forms.Label label9;
     }
 }

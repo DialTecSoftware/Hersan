@@ -131,6 +131,10 @@
             this.commandBarStripElement8 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement9 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement10 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.btnBuscar = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator7 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.commandBarStripElement11 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement12 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -201,6 +205,8 @@
             this.commandBarSeparator3,
             this.btnEliminar,
             this.commandBarSeparator4,
+            this.btnBuscar,
+            this.commandBarSeparator7,
             this.btnSalir,
             this.commandBarSeparator5,
             this.commandBarLabel1});
@@ -994,6 +1000,33 @@
             this.commandBarStripElement10.DisplayName = "commandBarStripElement10";
             this.commandBarStripElement10.Name = "commandBarStripElement10";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.DisplayName = "commandBarButton1";
+            this.btnBuscar.DrawText = true;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // commandBarSeparator7
+            // 
+            this.commandBarSeparator7.DisplayName = "commandBarSeparator7";
+            this.commandBarSeparator7.Name = "commandBarSeparator7";
+            this.commandBarSeparator7.Text = "";
+            this.commandBarSeparator7.VisibleInOverflowMenu = false;
+            // 
+            // commandBarStripElement11
+            // 
+            this.commandBarStripElement11.DisplayName = "commandBarStripElement11";
+            this.commandBarStripElement11.Name = "commandBarStripElement11";
+            // 
+            // commandBarStripElement12
+            // 
+            this.commandBarStripElement12.DisplayName = "commandBarStripElement12";
+            this.commandBarStripElement12.Name = "commandBarStripElement12";
+            // 
             // frmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1123,5 +1156,9 @@
         private System.Windows.Forms.Label label9;
         private Telerik.WinControls.UI.CommandBarButton btnQuitarTodo;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator6;
+        private Telerik.WinControls.UI.CommandBarButton btnBuscar;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator7;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement11;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement12;
     }
 }

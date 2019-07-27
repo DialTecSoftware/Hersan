@@ -53,6 +53,8 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Indicadores = (reader["NVP_Indicadores"].ToString());
                                 obj.OpinionesDG = (reader["NVP_OpinionesDG"].ToString());
                                 obj.OpinionesCH = (reader["NVP_OpinionesCH"].ToString());
+                                obj.DatosUsuario.FechaCreacion = DateTime.Parse(reader["NVP_FechaCreacion"].ToString());
+
                                 oList.Add(obj);
                             }
                         }

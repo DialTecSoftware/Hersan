@@ -292,6 +292,29 @@ namespace Hersan.UI.CapitalHumano
                 oCHumano = null;
             }
         }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            PerfilesBE Perfil = new PerfilesBE();
+            try {
+                frmPerfilConsulta ofrm = new frmPerfilConsulta();
+                ofrm.WindowState = FormWindowState.Normal;
+                ofrm.StartPosition = FormStartPosition.CenterScreen;
+                ofrm.MaximizeBox = false;
+                ofrm.MinimizeBox = false;
+                ofrm.Titulo = "BUSCAR DESCRIPCIÓN DE PUESTO";
+                ofrm.ShowDialog();
+                Perfil = ofrm.Perfil;
+
+                if (Perfil != null) {
+                    LimpiarCampos();
+                    cboEntidad.SelectedValue = Perfil.Puesto.Departamentos.Entidades.Id;
+                    cboDepto.SelectedValue = Perfil.Puesto.Departamentos.Id;
+                    cboPuestos.SelectedValue = Perfil.Puesto.Id;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al realiza la búsqueda\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void btnAddPariente_Click_1(object sender, EventArgs e)
         {
             obj = new DescPuestosContactosBE();
@@ -662,6 +685,8 @@ namespace Hersan.UI.CapitalHumano
                 oCatalogos = null;
             }
         }
+
+        
     }
 }
     

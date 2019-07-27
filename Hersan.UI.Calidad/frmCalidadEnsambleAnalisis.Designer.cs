@@ -708,6 +708,7 @@
             gridViewTextBoxColumn18.FieldName = "Minimo";
             gridViewTextBoxColumn18.FormatString = "{0:N0}";
             gridViewTextBoxColumn18.HeaderText = "Mínimo";
+            gridViewTextBoxColumn18.IsVisible = false;
             gridViewTextBoxColumn18.MaxWidth = 80;
             gridViewTextBoxColumn18.MinWidth = 60;
             gridViewTextBoxColumn18.Name = "Minimo";
@@ -716,6 +717,7 @@
             gridViewTextBoxColumn19.FieldName = "Maximo";
             gridViewTextBoxColumn19.FormatString = "{0:N0}";
             gridViewTextBoxColumn19.HeaderText = "Máximo";
+            gridViewTextBoxColumn19.IsVisible = false;
             gridViewTextBoxColumn19.MaxWidth = 80;
             gridViewTextBoxColumn19.MinWidth = 60;
             gridViewTextBoxColumn19.Name = "Maximo";
@@ -724,6 +726,7 @@
             gridViewTextBoxColumn20.FieldName = "Promedio";
             gridViewTextBoxColumn20.FormatString = "{0:N0}";
             gridViewTextBoxColumn20.HeaderText = "Promedio";
+            gridViewTextBoxColumn20.IsVisible = false;
             gridViewTextBoxColumn20.MaxWidth = 80;
             gridViewTextBoxColumn20.MinWidth = 60;
             gridViewTextBoxColumn20.Name = "Promedio";

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalidadUno));
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -41,6 +43,8 @@
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtPorc = new Telerik.WinControls.UI.RadTextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.txtIdDetalle = new Telerik.WinControls.UI.RadTextBox();
             this.txtMuestra = new Telerik.WinControls.UI.RadTextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -61,7 +65,6 @@
             this.txtColor = new Telerik.WinControls.UI.RadTextBox();
             this.txtOp = new Telerik.WinControls.UI.RadTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtOperador = new Telerik.WinControls.UI.RadTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtLista = new Telerik.WinControls.UI.RadTextBox();
@@ -96,11 +99,11 @@
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.txtPorc = new Telerik.WinControls.UI.RadTextBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.cboOperador = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
@@ -114,7 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTurno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOperador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCaptura)).BeginInit();
             this.pnlCaptura.SuspendLayout();
@@ -134,7 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCav2_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboOperador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,6 +245,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.cboOperador);
             this.radGroupBox1.Controls.Add(this.txtPorc);
             this.radGroupBox1.Controls.Add(this.label21);
             this.radGroupBox1.Controls.Add(this.txtIdDetalle);
@@ -259,7 +262,6 @@
             this.radGroupBox1.Controls.Add(this.txtColor);
             this.radGroupBox1.Controls.Add(this.txtOp);
             this.radGroupBox1.Controls.Add(this.label6);
-            this.radGroupBox1.Controls.Add(this.txtOperador);
             this.radGroupBox1.Controls.Add(this.label5);
             this.radGroupBox1.Controls.Add(this.label4);
             this.radGroupBox1.Controls.Add(this.txtLista);
@@ -277,6 +279,27 @@
             this.radGroupBox1.Size = new System.Drawing.Size(559, 169);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "LISTA INYECCIÓN";
+            // 
+            // txtPorc
+            // 
+            this.txtPorc.Location = new System.Drawing.Point(222, 134);
+            this.txtPorc.Name = "txtPorc";
+            this.txtPorc.ReadOnly = true;
+            this.txtPorc.Size = new System.Drawing.Size(66, 20);
+            this.txtPorc.TabIndex = 21;
+            this.txtPorc.TabStop = false;
+            this.txtPorc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(155, 138);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(64, 13);
+            this.label21.TabIndex = 20;
+            this.label21.Text = "% Muestra:";
             // 
             // txtIdDetalle
             // 
@@ -497,16 +520,6 @@
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "Turno:";
-            // 
-            // txtOperador
-            // 
-            this.txtOperador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtOperador.Location = new System.Drawing.Point(354, 33);
-            this.txtOperador.Name = "txtOperador";
-            this.txtOperador.Size = new System.Drawing.Size(190, 20);
-            this.txtOperador.TabIndex = 2;
-            this.txtOperador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtOperador.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label5
             // 
@@ -887,26 +900,20 @@
             this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
             this.commandBarStripElement6.Name = "commandBarStripElement6";
             // 
-            // txtPorc
+            // cboOperador
             // 
-            this.txtPorc.Location = new System.Drawing.Point(222, 134);
-            this.txtPorc.Name = "txtPorc";
-            this.txtPorc.ReadOnly = true;
-            this.txtPorc.Size = new System.Drawing.Size(66, 20);
-            this.txtPorc.TabIndex = 21;
-            this.txtPorc.TabStop = false;
-            this.txtPorc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(155, 138);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(64, 13);
-            this.label21.TabIndex = 20;
-            this.label21.Text = "% Muestra:";
+            this.cboOperador.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem1.Tag = "SABINO NAVARRO";
+            radListDataItem1.Text = "SABINO NAVARRO";
+            radListDataItem2.Tag = "SERGIO RUIZ";
+            radListDataItem2.Text = "SERGIO RUIZ ";
+            this.cboOperador.Items.Add(radListDataItem1);
+            this.cboOperador.Items.Add(radListDataItem2);
+            this.cboOperador.Location = new System.Drawing.Point(355, 33);
+            this.cboOperador.Name = "cboOperador";
+            this.cboOperador.Size = new System.Drawing.Size(164, 20);
+            this.cboOperador.SortStyle = Telerik.WinControls.Enumerations.SortStyle.Ascending;
+            this.cboOperador.TabIndex = 2;
             // 
             // frmCalidadUno
             // 
@@ -931,6 +938,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
@@ -945,7 +953,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTurno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOperador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCaptura)).EndInit();
             this.pnlCaptura.ResumeLayout(false);
@@ -966,7 +973,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCav2_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboOperador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1002,7 +1009,6 @@
         private Telerik.WinControls.UI.RadTextBox txtColor;
         private Telerik.WinControls.UI.RadTextBox txtOp;
         private System.Windows.Forms.Label label6;
-        private Telerik.WinControls.UI.RadTextBox txtOperador;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Telerik.WinControls.UI.RadTextBox txtLista;
@@ -1043,5 +1049,6 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement6;
         private Telerik.WinControls.UI.RadTextBox txtPorc;
         private System.Windows.Forms.Label label21;
+        private Telerik.WinControls.UI.RadDropDownList cboOperador;
     }
 }

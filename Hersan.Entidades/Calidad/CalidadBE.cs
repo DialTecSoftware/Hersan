@@ -174,6 +174,7 @@ namespace Hersan.Entidades.Calidad
             Reflex1 = new ColoresBE();
             Reflex2 = new ColoresBE();
             Piezas = 0;
+            Muestra = 0;
             Lista = 0;
             OP = string.Empty;
             Fecha = string.Empty;
@@ -188,6 +189,7 @@ namespace Hersan.Entidades.Calidad
         public ColoresBE Reflex1 { get; set; }
         public ColoresBE Reflex2 { get; set; }
         public int Piezas { get; set; }
+        public decimal Muestra { get; set; }
         public string OP { get; set; }
         public int Lista { get; set; }
         public string Fecha { get; set; }

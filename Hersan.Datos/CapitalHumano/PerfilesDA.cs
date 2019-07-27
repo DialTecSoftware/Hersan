@@ -16,6 +16,8 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_USP_CHU_PERFILES_OBTENER = "CHU_Perfiles_Obtener";
         const string CONST_USP_CHU_PERFILES_ACTUALIZA = "CHU_Perfiles_Actualiza";
         const string CONST_USP_CHU_PERFILES_ELIMINAR = "CHU_Perfiles_Eliminar";
+        const string CONST_USP_CHU_PERFIL_CONSULTA = "CHU_Perfil_Consulta";
+
         const string CONST_USP_CHU_TABULADOR_PUESTOS_OBTENER = "CHU_Tabulador_Puestos_Obtener";
         #endregion
 
@@ -132,6 +134,43 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
+        public List<PerfilesBE> CHU_Perfil_Consulta(PerfilesBE Item)
+        {
+            List<PerfilesBE> oList = new List<PerfilesBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_USP_CHU_PERFIL_CONSULTA, conn)) {
+                        cmd.Parameters.AddWithValue("@Perfil", Item.Sel);
+                        cmd.Parameters.AddWithValue("@IdEntidad", Item.Puesto.Departamentos.Entidades.Id);
+                        cmd.Parameters.AddWithValue("@IdDepto", Item.Puesto.Departamentos.Id);
+                        cmd.Parameters.AddWithValue("@IdPuesto", Item.Puesto.Id);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                PerfilesBE obj = new PerfilesBE();
+
+                                obj.Id = int.Parse(reader["PER_Id"].ToString());
+                                obj.Puesto.Departamentos.Entidades.Id = int.Parse(reader["ENT_Id"].ToString());
+                                obj.Puesto.Departamentos.Id = int.Parse(reader["DEP_Id"].ToString());
+                                obj.Puesto.Id = int.Parse(reader["PUE_Id"].ToString());
+                                obj.Puesto.Departamentos.Entidades.Nombre = reader["ENT_Nombre"].ToString();
+                                obj.Puesto.Departamentos.Nombre = reader["DEP_Nombre"].ToString();
+                                obj.Puesto.Nombre = reader["PUE_Nombre"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
         public List<TabuladorBE> CHU_Tabulador_Puestos_Obtener()
         {
             List<TabuladorBE> oList = new List<TabuladorBE>();

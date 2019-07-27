@@ -19,6 +19,8 @@ namespace Hersan.CH.Contract
         [OperationContract]
         int CHU_Perfiles_Elimina(int IdPerfil, int IdUsuario);
         [OperationContract]
+        List<PerfilesBE> CHU_Perfil_Consulta(PerfilesBE Item);
+        [OperationContract]
         List<TabuladorBE> CHU_Tabulador_Puestos_Obtener();
         #endregion
 

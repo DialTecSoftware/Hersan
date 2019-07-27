@@ -345,6 +345,7 @@ namespace Hersan.Datos.Calidad
                                 Obj.Reflex1.Id = int.Parse(reader["Reflex1"].ToString());
                                 Obj.Reflex2.Id = int.Parse(reader["Reflex2"].ToString());
                                 Obj.Piezas = int.Parse(reader["Piezas"].ToString());
+                                Obj.Muestra = decimal.Parse(reader["Muestra"].ToString());
                                 Obj.OP = reader["OP"].ToString();
                                 Obj.Lista = int.Parse(reader["Lista"].ToString());
 

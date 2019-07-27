@@ -155,6 +155,12 @@
     <Compile Include="frmPerfil.Designer.cs">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPerfilConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerfilConsulta.Designer.cs">
+      <DependentUpon>frmPerfilConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeguimientoCandidatos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPerfil.resx">
       <DependentUpon>frmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerfilConsulta.resx">
+      <DependentUpon>frmPerfilConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeguimientoCandidatos.resx">
       <DependentUpon>frmSeguimientoCandidatos.cs</DependentUpon>

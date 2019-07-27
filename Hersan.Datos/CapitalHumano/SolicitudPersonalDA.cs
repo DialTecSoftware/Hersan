@@ -47,7 +47,9 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Sueldo = decimal.Parse(reader["SPE_Sueldo"].ToString());
                                 obj.Justificacion = (reader["SPE_Justificacion"].ToString());
                                 obj.Indicadores = (reader["SPE_Indicadores"].ToString());
-                                obj.Estado = (reader["Estado"].ToString());
+                                obj.Estado = reader["Estado"].ToString();
+                                obj.DatosUsuario.FechaCreacion = DateTime.Parse(reader["SPE_FechaCreacion"].ToString());
+
                                 oList.Add(obj);
                             }
                         }
@@ -58,7 +60,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
         public int CHU_SolicitudP_Guardar(SolicitudPersonalBE obj)
         {
             int Result = 0;
@@ -85,7 +86,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
         public int CHU_SolicitudP_Actualizar(SolicitudPersonalBE obj)
         {
             int Result = 0;
@@ -113,7 +113,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
-
         public int CHU_SolicitudP_ActualizarDictamen(SolicitudPersonalBE obj)
         {
             int Result = 0;
@@ -136,5 +135,6 @@ namespace Hersan.Datos.CapitalHumano
                 throw ex;
             }
         }
+
     }
 }

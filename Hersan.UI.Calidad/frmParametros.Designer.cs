@@ -76,6 +76,10 @@
             this.txtPosicion = new Telerik.WinControls.UI.RadTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.btnSalir = new Telerik.WinControls.UI.RadButton();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtObserva = new Telerik.WinControls.UI.RadTextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtCavidades = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtVelocidad1)).BeginInit();
@@ -107,6 +111,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtVelocidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPosicion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObserva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCavidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,10 +283,10 @@
             // 
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(509, 178);
+            this.btnGuardar.Location = new System.Drawing.Point(515, 237);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(80, 40);
-            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -306,91 +312,89 @@
             this.radGroupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.radGroupBox2.ForeColor = System.Drawing.Color.Red;
             this.radGroupBox2.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
-            this.radGroupBox2.HeaderText = "CARGA";
+            this.radGroupBox2.HeaderText = "MANTO. PRESIÓN  ( MPI )";
             this.radGroupBox2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radGroupBox2.Location = new System.Drawing.Point(284, 12);
             this.radGroupBox2.Name = "radGroupBox2";
             this.radGroupBox2.Size = new System.Drawing.Size(228, 141);
             this.radGroupBox2.TabIndex = 42;
             this.radGroupBox2.TabStop = false;
-            this.radGroupBox2.Text = "CARGA";
+            this.radGroupBox2.Text = "MANTO. PRESIÓN  ( MPI )";
             // 
             // txtPosicionC2
             // 
-            this.txtPosicionC2.Location = new System.Drawing.Point(171, 59);
+            this.txtPosicionC2.Location = new System.Drawing.Point(171, 110);
             this.txtPosicionC2.Name = "txtPosicionC2";
             this.txtPosicionC2.Size = new System.Drawing.Size(44, 20);
-            this.txtPosicionC2.TabIndex = 12;
+            this.txtPosicionC2.TabIndex = 16;
             this.txtPosicionC2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPosicionC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtPosicionC1
             // 
-            this.txtPosicionC1.Location = new System.Drawing.Point(106, 59);
+            this.txtPosicionC1.Location = new System.Drawing.Point(106, 110);
             this.txtPosicionC1.Name = "txtPosicionC1";
             this.txtPosicionC1.Size = new System.Drawing.Size(44, 20);
-            this.txtPosicionC1.TabIndex = 11;
+            this.txtPosicionC1.TabIndex = 15;
             this.txtPosicionC1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPosicionC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(28, 63);
+            this.label13.Location = new System.Drawing.Point(40, 114);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 13);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "POSICIÓN:";
+            this.label13.Size = new System.Drawing.Size(49, 13);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "TIEMPO:";
             // 
             // txtVelocidadC2
             // 
-            this.txtVelocidadC2.Location = new System.Drawing.Point(171, 109);
+            this.txtVelocidadC2.Location = new System.Drawing.Point(171, 85);
             this.txtVelocidadC2.Name = "txtVelocidadC2";
             this.txtVelocidadC2.Size = new System.Drawing.Size(44, 20);
-            this.txtVelocidadC2.TabIndex = 16;
+            this.txtVelocidadC2.TabIndex = 10;
             this.txtVelocidadC2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtVelocidadC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // radTextBox11
             // 
-            this.radTextBox11.Location = new System.Drawing.Point(173, 109);
+            this.radTextBox11.Location = new System.Drawing.Point(173, 83);
             this.radTextBox11.Name = "radTextBox11";
             this.radTextBox11.Size = new System.Drawing.Size(41, 20);
-            this.radTextBox11.TabIndex = 11;
+            this.radTextBox11.TabIndex = 14;
             // 
             // txtVelocidadC1
             // 
-            this.txtVelocidadC1.Location = new System.Drawing.Point(106, 109);
+            this.txtVelocidadC1.Location = new System.Drawing.Point(106, 85);
             this.txtVelocidadC1.Name = "txtVelocidadC1";
             this.txtVelocidadC1.Size = new System.Drawing.Size(44, 20);
-            this.txtVelocidadC1.TabIndex = 15;
+            this.txtVelocidadC1.TabIndex = 13;
             this.txtVelocidadC1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtVelocidadC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtPresionC2
             // 
-            this.txtPresionC2.Location = new System.Drawing.Point(171, 85);
+            this.txtPresionC2.Location = new System.Drawing.Point(171, 59);
             this.txtPresionC2.Name = "txtPresionC2";
             this.txtPresionC2.Size = new System.Drawing.Size(44, 20);
-            this.txtPresionC2.TabIndex = 14;
+            this.txtPresionC2.TabIndex = 12;
             this.txtPresionC2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPresionC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // radTextBox15
             // 
-            this.radTextBox15.Location = new System.Drawing.Point(173, 83);
+            this.radTextBox15.Location = new System.Drawing.Point(173, 57);
             this.radTextBox15.Name = "radTextBox15";
             this.radTextBox15.Size = new System.Drawing.Size(41, 20);
             this.radTextBox15.TabIndex = 7;
             // 
             // txtPresionC1
             // 
-            this.txtPresionC1.Location = new System.Drawing.Point(106, 85);
+            this.txtPresionC1.Location = new System.Drawing.Point(106, 59);
             this.txtPresionC1.Name = "txtPresionC1";
             this.txtPresionC1.Size = new System.Drawing.Size(44, 20);
-            this.txtPresionC1.TabIndex = 13;
+            this.txtPresionC1.TabIndex = 11;
             this.txtPresionC1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPresionC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
@@ -421,7 +425,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(19, 113);
+            this.label10.Location = new System.Drawing.Point(19, 89);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 13);
             this.label10.TabIndex = 2;
@@ -432,7 +436,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(34, 89);
+            this.label11.Location = new System.Drawing.Point(34, 63);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 1;
@@ -556,15 +560,15 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(551, 51);
+            this.label19.Location = new System.Drawing.Point(288, 163);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(61, 13);
+            this.label19.Size = new System.Drawing.Size(100, 13);
             this.label19.TabIndex = 51;
-            this.label19.Text = "POSICIÓN:";
+            this.label19.Text = "POSICIÓN CARGA:";
             // 
             // txtRetardo
             // 
-            this.txtRetardo.Location = new System.Drawing.Point(617, 98);
+            this.txtRetardo.Location = new System.Drawing.Point(393, 210);
             this.txtRetardo.Name = "txtRetardo";
             this.txtRetardo.Size = new System.Drawing.Size(44, 20);
             this.txtRetardo.TabIndex = 19;
@@ -573,7 +577,7 @@
             // 
             // txtVelocidad
             // 
-            this.txtVelocidad.Location = new System.Drawing.Point(617, 73);
+            this.txtVelocidad.Location = new System.Drawing.Point(393, 185);
             this.txtVelocidad.Name = "txtVelocidad";
             this.txtVelocidad.Size = new System.Drawing.Size(44, 20);
             this.txtVelocidad.TabIndex = 18;
@@ -585,7 +589,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(566, 77);
+            this.label21.Location = new System.Drawing.Point(342, 189);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(46, 13);
             this.label21.TabIndex = 47;
@@ -593,19 +597,19 @@
             // 
             // txtPosicion
             // 
-            this.txtPosicion.Location = new System.Drawing.Point(617, 47);
+            this.txtPosicion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPosicion.Location = new System.Drawing.Point(393, 159);
             this.txtPosicion.Name = "txtPosicion";
-            this.txtPosicion.Size = new System.Drawing.Size(44, 20);
+            this.txtPosicion.Size = new System.Drawing.Size(105, 20);
             this.txtPosicion.TabIndex = 17;
             this.txtPosicion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPosicion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(523, 102);
+            this.label20.Location = new System.Drawing.Point(299, 214);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(89, 13);
             this.label20.TabIndex = 53;
@@ -615,20 +619,68 @@
             // 
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSalir.Location = new System.Drawing.Point(595, 178);
+            this.btnSalir.Location = new System.Drawing.Point(515, 287);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 40);
-            this.btnSalir.TabIndex = 22;
+            this.btnSalir.TabIndex = 23;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(12, 241);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 13);
+            this.label17.TabIndex = 54;
+            this.label17.Text = "OBSERVACIONES:";
+            // 
+            // txtObserva
+            // 
+            this.txtObserva.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtObserva.Location = new System.Drawing.Point(12, 257);
+            this.txtObserva.Multiline = true;
+            this.txtObserva.Name = "txtObserva";
+            // 
+            // 
+            // 
+            this.txtObserva.RootElement.StretchVertically = true;
+            this.txtObserva.Size = new System.Drawing.Size(261, 69);
+            this.txtObserva.TabIndex = 20;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(291, 271);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(68, 13);
+            this.label18.TabIndex = 56;
+            this.label18.Text = "CAVIDADES:";
+            // 
+            // txtCavidades
+            // 
+            this.txtCavidades.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCavidades.Location = new System.Drawing.Point(291, 287);
+            this.txtCavidades.MaxLength = 20;
+            this.txtCavidades.Name = "txtCavidades";
+            this.txtCavidades.Size = new System.Drawing.Size(184, 20);
+            this.txtCavidades.TabIndex = 21;
+            // 
             // frmParametros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 231);
+            this.ClientSize = new System.Drawing.Size(606, 339);
+            this.Controls.Add(this.txtCavidades);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.txtObserva);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.txtPosicion);
@@ -686,6 +738,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtVelocidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPosicion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObserva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCavidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -711,9 +765,6 @@
         private Telerik.WinControls.UI.RadTextBox txtVelocidad3;
         private Telerik.WinControls.UI.RadButton btnGuardar;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
-        private Telerik.WinControls.UI.RadTextBox txtPosicionC2;
-        private Telerik.WinControls.UI.RadTextBox txtPosicionC1;
-        private System.Windows.Forms.Label label13;
         private Telerik.WinControls.UI.RadTextBox txtVelocidadC2;
         private Telerik.WinControls.UI.RadTextBox radTextBox11;
         private Telerik.WinControls.UI.RadTextBox txtVelocidadC1;
@@ -741,5 +792,12 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label16;
         private Telerik.WinControls.UI.RadButton btnSalir;
+        private System.Windows.Forms.Label label17;
+        private Telerik.WinControls.UI.RadTextBox txtObserva;
+        private System.Windows.Forms.Label label18;
+        private Telerik.WinControls.UI.RadTextBox txtCavidades;
+        private Telerik.WinControls.UI.RadTextBox txtPosicionC2;
+        private Telerik.WinControls.UI.RadTextBox txtPosicionC1;
+        private System.Windows.Forms.Label label13;
     }
 }

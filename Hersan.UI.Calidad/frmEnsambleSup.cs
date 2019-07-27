@@ -22,6 +22,7 @@ namespace Hersan.UI.Calidad
         List<EnsambleParametrosBE> oList;
         List<EnsambleParametrosDetalleBE> oDetalle = new List<EnsambleParametrosDetalleBE>();
         private List<ReflejantesBE> oReflejantes = new List<ReflejantesBE>();
+        List<string> oMaquinas = new List<string>();
         bool Flag = true;
         #endregion
 
@@ -34,6 +35,10 @@ namespace Hersan.UI.Calidad
             try {
                 this.WindowState = FormWindowState.Normal;
                 this.StartPosition = FormStartPosition.CenterScreen;
+
+                oMaquinas.Add("S1");
+                oMaquinas.Add("S8");
+                ((Telerik.WinControls.UI.GridViewComboBoxColumn)this.gvDatos.Columns["Maquina"]).DataSource = oMaquinas;
 
                 CargarProductos();
                 CargaCarcasas();

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnsambleSup));
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn5 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn17 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn18 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn19 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn20 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.cboReflejante2 = new Telerik.WinControls.UI.RadDropDownList();
             this.cboReflejante1 = new Telerik.WinControls.UI.RadDropDownList();
@@ -281,112 +281,118 @@
             // 
             // gvDatos
             // 
+            this.gvDatos.AutoScroll = true;
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDatos.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
+            this.gvDatos.MasterTemplate.AllowCellContextMenu = false;
+            this.gvDatos.MasterTemplate.AllowColumnReorder = false;
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
-            gridViewDateTimeColumn5.FieldName = "Fecha";
-            gridViewDateTimeColumn5.HeaderText = "FECHA";
-            gridViewDateTimeColumn5.MaxWidth = 150;
-            gridViewDateTimeColumn5.MinWidth = 150;
-            gridViewDateTimeColumn5.Name = "Fecha";
-            gridViewDateTimeColumn5.ReadOnly = true;
-            gridViewDateTimeColumn5.Width = 150;
-            gridViewTextBoxColumn21.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            gridViewTextBoxColumn21.FieldName = "Maquina";
-            gridViewTextBoxColumn21.HeaderText = "MÁQUINA";
-            gridViewTextBoxColumn21.MaxWidth = 60;
-            gridViewTextBoxColumn21.MinWidth = 60;
-            gridViewTextBoxColumn21.Name = "Maquina";
-            gridViewTextBoxColumn21.Width = 60;
-            gridViewDecimalColumn17.FieldName = "Presion";
-            gridViewDecimalColumn17.FormatString = "{0:N2}";
-            gridViewDecimalColumn17.HeaderText = "PRESIÓN";
-            gridViewDecimalColumn17.MaxWidth = 60;
-            gridViewDecimalColumn17.MinWidth = 60;
-            gridViewDecimalColumn17.Name = "Presion";
-            gridViewDecimalColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn17.ThousandsSeparator = true;
-            gridViewDecimalColumn17.Width = 60;
-            gridViewDecimalColumn18.FieldName = "Energia";
-            gridViewDecimalColumn18.FormatString = "{0:N2}";
-            gridViewDecimalColumn18.HeaderText = "ENERGÍA";
-            gridViewDecimalColumn18.MaxWidth = 60;
-            gridViewDecimalColumn18.MinWidth = 60;
-            gridViewDecimalColumn18.Name = "Energia";
-            gridViewDecimalColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn18.ThousandsSeparator = true;
-            gridViewDecimalColumn18.Width = 60;
-            gridViewTextBoxColumn22.FieldName = "Colapso";
-            gridViewTextBoxColumn22.HeaderText = "COLAPSO";
-            gridViewTextBoxColumn22.MaxWidth = 200;
-            gridViewTextBoxColumn22.MinWidth = 150;
-            gridViewTextBoxColumn22.Name = "Colapso";
-            gridViewTextBoxColumn22.Width = 150;
-            gridViewTextBoxColumn23.FieldName = "Tiempo";
-            gridViewTextBoxColumn23.HeaderText = "TIEMPO";
-            gridViewTextBoxColumn23.MaxWidth = 50;
-            gridViewTextBoxColumn23.MinWidth = 50;
-            gridViewTextBoxColumn23.Name = "Tiempo";
-            gridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn19.FieldName = "Planeada";
-            gridViewDecimalColumn19.FormatString = "{0:N0}";
-            gridViewDecimalColumn19.HeaderText = "PROD. PLANEADA";
-            gridViewDecimalColumn19.MaxWidth = 65;
-            gridViewDecimalColumn19.Minimum = new decimal(new int[] {
+            this.gvDatos.MasterTemplate.AllowRowHeaderContextMenu = false;
+            this.gvDatos.MasterTemplate.AllowRowResize = false;
+            this.gvDatos.MasterTemplate.AutoGenerateColumns = false;
+            gridViewDateTimeColumn1.FieldName = "Fecha";
+            gridViewDateTimeColumn1.HeaderText = "FECHA";
+            gridViewDateTimeColumn1.MaxWidth = 150;
+            gridViewDateTimeColumn1.MinWidth = 150;
+            gridViewDateTimeColumn1.Name = "Fecha";
+            gridViewDateTimeColumn1.ReadOnly = true;
+            gridViewDateTimeColumn1.Width = 150;
+            gridViewComboBoxColumn1.FieldName = "Maquina";
+            gridViewComboBoxColumn1.HeaderText = "MÁQUINA";
+            gridViewComboBoxColumn1.MaxWidth = 100;
+            gridViewComboBoxColumn1.MinWidth = 60;
+            gridViewComboBoxColumn1.Name = "Maquina";
+            gridViewComboBoxColumn1.Width = 60;
+            gridViewDecimalColumn1.FieldName = "Presion";
+            gridViewDecimalColumn1.FormatString = "{0:N2}";
+            gridViewDecimalColumn1.HeaderText = "PRESIÓN";
+            gridViewDecimalColumn1.MaxWidth = 60;
+            gridViewDecimalColumn1.MinWidth = 60;
+            gridViewDecimalColumn1.Name = "Presion";
+            gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn1.ThousandsSeparator = true;
+            gridViewDecimalColumn1.Width = 60;
+            gridViewDecimalColumn2.FieldName = "Energia";
+            gridViewDecimalColumn2.FormatString = "{0:N2}";
+            gridViewDecimalColumn2.HeaderText = "ENERGÍA";
+            gridViewDecimalColumn2.MaxWidth = 60;
+            gridViewDecimalColumn2.MinWidth = 60;
+            gridViewDecimalColumn2.Name = "Energia";
+            gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn2.ThousandsSeparator = true;
+            gridViewDecimalColumn2.Width = 60;
+            gridViewTextBoxColumn1.FieldName = "Colapso";
+            gridViewTextBoxColumn1.HeaderText = "COLAPSO";
+            gridViewTextBoxColumn1.MaxWidth = 200;
+            gridViewTextBoxColumn1.MinWidth = 150;
+            gridViewTextBoxColumn1.Name = "Colapso";
+            gridViewTextBoxColumn1.Width = 150;
+            gridViewTextBoxColumn2.FieldName = "Tiempo";
+            gridViewTextBoxColumn2.HeaderText = "TIEMPO";
+            gridViewTextBoxColumn2.MaxWidth = 50;
+            gridViewTextBoxColumn2.MinWidth = 50;
+            gridViewTextBoxColumn2.Name = "Tiempo";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn3.FieldName = "Planeada";
+            gridViewDecimalColumn3.FormatString = "{0:N0}";
+            gridViewDecimalColumn3.HeaderText = "PROD. PLANEADA";
+            gridViewDecimalColumn3.MaxWidth = 65;
+            gridViewDecimalColumn3.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn19.MinWidth = 65;
-            gridViewDecimalColumn19.Name = "Planeada";
-            gridViewDecimalColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn19.ThousandsSeparator = true;
-            gridViewDecimalColumn19.Width = 65;
-            gridViewDecimalColumn19.WrapText = true;
-            gridViewDecimalColumn20.FieldName = "Real";
-            gridViewDecimalColumn20.FormatString = "{0:N0}";
-            gridViewDecimalColumn20.HeaderText = "PROD. REAL";
-            gridViewDecimalColumn20.MaxWidth = 55;
-            gridViewDecimalColumn20.Minimum = new decimal(new int[] {
+            gridViewDecimalColumn3.MinWidth = 65;
+            gridViewDecimalColumn3.Name = "Planeada";
+            gridViewDecimalColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn3.ThousandsSeparator = true;
+            gridViewDecimalColumn3.Width = 65;
+            gridViewDecimalColumn3.WrapText = true;
+            gridViewDecimalColumn4.FieldName = "Real";
+            gridViewDecimalColumn4.FormatString = "{0:N0}";
+            gridViewDecimalColumn4.HeaderText = "PROD. REAL";
+            gridViewDecimalColumn4.MaxWidth = 55;
+            gridViewDecimalColumn4.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn20.MinWidth = 55;
-            gridViewDecimalColumn20.Name = "Real";
-            gridViewDecimalColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn20.ThousandsSeparator = true;
-            gridViewDecimalColumn20.Width = 55;
-            gridViewDecimalColumn20.WrapText = true;
-            gridViewTextBoxColumn24.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            gridViewTextBoxColumn24.FieldName = "Comentarios";
-            gridViewTextBoxColumn24.HeaderText = "COMENTARIOS";
-            gridViewTextBoxColumn24.MaxWidth = 200;
-            gridViewTextBoxColumn24.MinWidth = 180;
-            gridViewTextBoxColumn24.Name = "Comentarios";
-            gridViewTextBoxColumn24.Width = 180;
-            gridViewTextBoxColumn25.FieldName = "Estatus";
-            gridViewTextBoxColumn25.HeaderText = "Estatus";
-            gridViewTextBoxColumn25.IsVisible = false;
-            gridViewTextBoxColumn25.Name = "Estatus";
+            gridViewDecimalColumn4.MinWidth = 55;
+            gridViewDecimalColumn4.Name = "Real";
+            gridViewDecimalColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn4.ThousandsSeparator = true;
+            gridViewDecimalColumn4.Width = 55;
+            gridViewDecimalColumn4.WrapText = true;
+            gridViewTextBoxColumn3.ColumnCharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            gridViewTextBoxColumn3.FieldName = "Comentarios";
+            gridViewTextBoxColumn3.HeaderText = "COMENTARIOS";
+            gridViewTextBoxColumn3.MaxWidth = 200;
+            gridViewTextBoxColumn3.MinWidth = 180;
+            gridViewTextBoxColumn3.Name = "Comentarios";
+            gridViewTextBoxColumn3.Width = 180;
+            gridViewTextBoxColumn4.FieldName = "Estatus";
+            gridViewTextBoxColumn4.HeaderText = "Estatus";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "Estatus";
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDateTimeColumn5,
-            gridViewTextBoxColumn21,
-            gridViewDecimalColumn17,
-            gridViewDecimalColumn18,
-            gridViewTextBoxColumn22,
-            gridViewTextBoxColumn23,
-            gridViewDecimalColumn19,
-            gridViewDecimalColumn20,
-            gridViewTextBoxColumn24,
-            gridViewTextBoxColumn25});
+            gridViewDateTimeColumn1,
+            gridViewComboBoxColumn1,
+            gridViewDecimalColumn1,
+            gridViewDecimalColumn2,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDecimalColumn3,
+            gridViewDecimalColumn4,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4});
             this.gvDatos.MasterTemplate.EnableAlternatingRowColor = true;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition5;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.ShowGroupPanel = false;

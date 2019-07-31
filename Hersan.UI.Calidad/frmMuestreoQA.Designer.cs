@@ -275,6 +275,7 @@
             this.txtMuestra.Size = new System.Drawing.Size(60, 20);
             this.txtMuestra.TabIndex = 77;
             this.txtMuestra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMuestra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             // 
             // label9
             // 
@@ -315,6 +316,7 @@
             this.txtOP.Size = new System.Drawing.Size(91, 20);
             this.txtOP.TabIndex = 8;
             this.txtOP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtOP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             // 
             // label7
             // 
@@ -439,6 +441,7 @@
             this.txtPiezas.Size = new System.Drawing.Size(91, 20);
             this.txtPiezas.TabIndex = 7;
             this.txtPiezas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPiezas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtPiezas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPiezas_KeyPress);
             // 
             // label1

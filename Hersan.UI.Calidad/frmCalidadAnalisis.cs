@@ -186,6 +186,17 @@ namespace Hersan.UI.Calidad
                 throw ex;
             }
         }
+        private void Contol_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.Enter) {
+                    SendKeys.Send("{TAB}");
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
 
         private void CargarColores()
         {

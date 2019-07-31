@@ -110,13 +110,7 @@ namespace Hersan.UI.Calidad
         }
         private void txtLista_KeyDown(object sender, KeyEventArgs e)
         {
-            try {
-                if (e.KeyData == Keys.Enter) {
-                    CargaGrid();
-                }
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
+
         }
         private void gvDatos_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
@@ -138,6 +132,16 @@ namespace Hersan.UI.Calidad
                 }
             } catch (Exception ex) {
                 throw ex;
+            }
+        }
+        private void Contol_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.Enter) {
+                    SendKeys.Send("{TAB}");
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -222,6 +226,7 @@ namespace Hersan.UI.Calidad
 
             try {
                 oData = new System.Data.DataTable("Datos");
+                oData.Columns.Add("IdDetalle");
                 oData.Columns.Add("IdParametro");
                 oData.Columns.Add("Maquina");
                 oData.Columns.Add("Presion");
@@ -243,7 +248,8 @@ namespace Hersan.UI.Calidad
             try {
                 foreach (var item in oDetalle) {
                     DataRow oRow = oData.NewRow();
-                    oRow["IdParametro"] = item.IdParametro; //int.Parse(txtId.Text) == 0 ? 0 : int.Parse(txtId.Text);
+                    oRow["IdDetalle"] = item.Id;
+                    oRow["IdParametro"] = item.IdParametro;
                     oRow["Maquina"] = item.Maquina;
                     oRow["Presion"] = item.Presion;
                     oRow["Energia"] = item.Energia;

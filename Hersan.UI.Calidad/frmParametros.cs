@@ -116,6 +116,16 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al capturar el dato\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void Control_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.Enter) {
+                    SendKeys.Send("{TAB}");
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
 
         private void Iniciales()
         {
@@ -165,5 +175,6 @@ namespace Hersan.UI.Calidad
             }
         }
 
+        
     }
 }

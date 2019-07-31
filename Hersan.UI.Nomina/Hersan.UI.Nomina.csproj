@@ -34,6 +34,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -59,11 +61,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\WCF_Nomina\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFactores.Designer.cs">
+      <DependentUpon>frmFactores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrestamos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrestamos.Designer.cs">
       <DependentUpon>frmPrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSemanas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSemanas.Designer.cs">
+      <DependentUpon>frmSemanas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubsidios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubsidios.Designer.cs">
+      <DependentUpon>frmSubsidios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTablaISR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTablaISR.Designer.cs">
+      <DependentUpon>frmTablaISR.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -73,14 +104,77 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmFactores.resx">
+      <DependentUpon>frmFactores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrestamos.resx">
       <DependentUpon>frmPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSemanas.resx">
+      <DependentUpon>frmSemanas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubsidios.resx">
+      <DependentUpon>frmSubsidios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTablaISR.resx">
+      <DependentUpon>frmTablaISR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina.wsdl" />
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Hersan.Entidades.Nomina.FactoresBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Nomina.ISRBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Nomina.SemanasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Nomina.SubsidiosBE.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WCF_Nomina\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Nomina\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Nomina\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Nomina\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
+      <Project>{4e3994ef-5056-4289-9c62-dc1140fd764e}</Project>
+      <Name>Hersan.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hersan.Negocio\Hersan.Negocio.csproj">
+      <Project>{9DC9D350-B0E3-4481-AC7A-DBE3729C8955}</Project>
+      <Name>Hersan.Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

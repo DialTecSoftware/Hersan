@@ -1,10 +1,12 @@
 ﻿using Hersan.Entidades.Ensamble;
+using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -24,12 +26,14 @@ namespace Hersan.UI.APT
         private void frmInventario_Load(object sender, EventArgs e)
         {
             try {
+                var t = Task.Run(() => CargaAlmacenes());
+                t.Wait();
 
-                CargaProductos();
+                var t1 = Task.Run(() => CargaProductos());
+                t1.Wait();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
+            }        }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
@@ -48,16 +52,30 @@ namespace Hersan.UI.APT
         }
         private void cboProductos_ItemCheckedChanged(object sender, Telerik.WinControls.UI.RadCheckedListDataItemEventArgs e)
         {
-            try {
-                if (e.Item.Checked) {
-                    CargaCarcasas(int.Parse(e.Item.Value.ToString()));
+            try {                
+                if (cboProductos.CheckedItems.Count == 1) {
+                    if (e.Item.Checked) {
+                        CargaCarcasas(int.Parse(e.Item.Value.ToString()));
+                    }
                 }
             } catch (Exception ex) {
                 throw ex;
             }
         }
 
-
+        private void CargaAlmacenes()
+        {
+            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            try {
+                cboAlmacen.ValueMember = "Id";
+                cboAlmacen.DisplayMember = "Nombre";
+                cboAlmacen.DataSource = oEnsamble.APT_Almacenes_Combo(BaseWinBP.UsuarioLogueado.Empresa.Id);
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                oEnsamble = null;
+            }
+        }
         private void CargaProductos()
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
@@ -100,7 +118,6 @@ namespace Hersan.UI.APT
                 oCatalogos = null;
             }
         }
-
        
     }
 }

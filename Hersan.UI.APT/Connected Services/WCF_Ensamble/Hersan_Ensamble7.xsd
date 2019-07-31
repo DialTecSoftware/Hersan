@@ -186,6 +186,7 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
       <xs:element minOccurs="0" name="Lista" type="xs:int" />
+      <xs:element minOccurs="0" name="Muestra" type="xs:decimal" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Piezas" type="xs:int" />

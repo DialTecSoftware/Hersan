@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlmacenes));
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -55,6 +56,7 @@
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -178,7 +180,7 @@
             this.commandBarLabel1.ForeColor = System.Drawing.Color.Navy;
             this.commandBarLabel1.Name = "commandBarLabel1";
             this.commandBarLabel1.StretchHorizontally = true;
-            this.commandBarLabel1.Text = "CATÁLOGO DE ALMACENES";
+            this.commandBarLabel1.Text = "ALMACENES PROD. TERMINADO";
             // 
             // radPanel1
             // 
@@ -269,28 +271,36 @@
             // 
             // 
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
-            gridViewTextBoxColumn3.HeaderText = "Nombre";
-            gridViewTextBoxColumn3.MaxWidth = 250;
-            gridViewTextBoxColumn3.MinWidth = 150;
-            gridViewTextBoxColumn3.Name = "column1";
-            gridViewTextBoxColumn3.Width = 150;
-            gridViewTextBoxColumn4.HeaderText = "Abrev";
-            gridViewTextBoxColumn4.MaxWidth = 70;
-            gridViewTextBoxColumn4.MinWidth = 60;
-            gridViewTextBoxColumn4.Name = "column2";
-            gridViewTextBoxColumn4.Width = 60;
-            gridViewCheckBoxColumn2.HeaderText = "Activo";
-            gridViewCheckBoxColumn2.MaxWidth = 60;
-            gridViewCheckBoxColumn2.MinWidth = 60;
-            gridViewCheckBoxColumn2.Name = "column3";
-            gridViewCheckBoxColumn2.Width = 60;
+            gridViewTextBoxColumn1.FieldName = "Id";
+            gridViewTextBoxColumn1.HeaderText = "Id";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "Id";
+            gridViewTextBoxColumn2.FieldName = "Nombre";
+            gridViewTextBoxColumn2.HeaderText = "Nombre";
+            gridViewTextBoxColumn2.MaxWidth = 300;
+            gridViewTextBoxColumn2.MinWidth = 200;
+            gridViewTextBoxColumn2.Name = "Nombre";
+            gridViewTextBoxColumn2.Width = 200;
+            gridViewTextBoxColumn3.FieldName = "Abrev";
+            gridViewTextBoxColumn3.HeaderText = "Abrev";
+            gridViewTextBoxColumn3.MaxWidth = 70;
+            gridViewTextBoxColumn3.MinWidth = 60;
+            gridViewTextBoxColumn3.Name = "Abrev";
+            gridViewTextBoxColumn3.Width = 60;
+            gridViewCheckBoxColumn1.FieldName = "DatosUsuario.Estatus";
+            gridViewCheckBoxColumn1.HeaderText = "Activo";
+            gridViewCheckBoxColumn1.MaxWidth = 60;
+            gridViewCheckBoxColumn1.MinWidth = 60;
+            gridViewCheckBoxColumn1.Name = "Estatus";
+            gridViewCheckBoxColumn1.Width = 60;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewCheckBoxColumn2});
+            gridViewCheckBoxColumn1});
             this.gvDatos.MasterTemplate.ShowFilteringRow = false;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ReadOnly = true;
             this.gvDatos.ShowGroupPanel = false;
@@ -303,6 +313,11 @@
             // 
             this.commandBarStripElement2.DisplayName = "commandBarStripElement2";
             this.commandBarStripElement2.Name = "commandBarStripElement2";
+            // 
+            // commandBarStripElement3
+            // 
+            this.commandBarStripElement3.DisplayName = "commandBarStripElement3";
+            this.commandBarStripElement3.Name = "commandBarStripElement3";
             // 
             // frmAlmacenes
             // 
@@ -318,7 +333,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
-            this.Text = "CATÁLOGO DE ALMACENES";
+            this.Text = "ALMACENES PROD. TERMINADO";
             this.Load += new System.EventHandler(this.frmAlmacenes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
@@ -358,5 +373,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtId;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
     }
 }

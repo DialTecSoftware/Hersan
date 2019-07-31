@@ -3,9 +3,9 @@ using Hersan.Entidades.Comun;
 
 namespace Hersan.Entidades.APT
 {
-    public class AlmacenBE
+    public class AlmacenPTBE
     {
-        public AlmacenBE()
+        public AlmacenPTBE()
         {
             Id = 0;
             Empresa = new EmpresasBE();

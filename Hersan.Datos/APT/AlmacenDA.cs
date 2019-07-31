@@ -19,18 +19,20 @@ namespace Hersan.Datos.APT
         #endregion
 
 
-        public List<AlmacenBE> APT_Almacenes_Obtener()
+        public List<AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa)
         {
-            List<AlmacenBE> oList = new List<AlmacenBE>();
+            List<AlmacenPTBE> oList = new List<AlmacenPTBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_APT_ALMACENES_OBTENER, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEmp", IdEmpresa);
+
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
-                                AlmacenBE obj = new AlmacenBE();
+                                AlmacenPTBE obj = new AlmacenPTBE();
 
                                 obj.Id = int.Parse(reader["APT_Id"].ToString());
                                 obj.Empresa.Id = int.Parse(reader["EMP_Id"].ToString());
@@ -48,7 +50,7 @@ namespace Hersan.Datos.APT
                 throw ex;
             }
         }
-        public int APT_Almacenes_Guardar(AlmacenBE obj)
+        public int APT_Almacenes_Guardar(AlmacenPTBE obj)
         {
             int Result = 0;
             try {
@@ -69,7 +71,7 @@ namespace Hersan.Datos.APT
                 throw ex;
             }
         }
-        public int APT_Almacenes_Actualizar(AlmacenBE obj)
+        public int APT_Almacenes_Actualizar(AlmacenPTBE obj)
         {
             int Result = 0;
             try {
@@ -93,9 +95,9 @@ namespace Hersan.Datos.APT
                 throw ex;
             }
         }
-        public List<AlmacenBE> APT_Almacenes_Combo(int IdEmpresa)
+        public List<AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa)
         {
-            List<AlmacenBE> oList = new List<AlmacenBE>();
+            List<AlmacenPTBE> oList = new List<AlmacenPTBE>();
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
@@ -106,7 +108,7 @@ namespace Hersan.Datos.APT
 
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
-                                AlmacenBE obj = new AlmacenBE();
+                                AlmacenPTBE obj = new AlmacenPTBE();
 
                                 obj.Id = int.Parse(reader["APT_Id"].ToString());
                                 obj.Nombre = reader["APT_Nombre"].ToString();

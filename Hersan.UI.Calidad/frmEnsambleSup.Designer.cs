@@ -184,12 +184,13 @@
             // 
             // txtLista
             // 
+            this.txtLista.AcceptsReturn = true;
             this.txtLista.Location = new System.Drawing.Point(67, 41);
             this.txtLista.Name = "txtLista";
             this.txtLista.Size = new System.Drawing.Size(76, 20);
             this.txtLista.TabIndex = 2;
             this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtLista.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLista_KeyDown);
+            this.txtLista.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtLista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             this.txtLista.Leave += new System.EventHandler(this.txtOP_Leave);
             // 
@@ -204,11 +205,13 @@
             // 
             // txtOP
             // 
+            this.txtOP.AcceptsReturn = true;
             this.txtOP.Location = new System.Drawing.Point(67, 16);
             this.txtOP.Name = "txtOP";
             this.txtOP.Size = new System.Drawing.Size(97, 20);
             this.txtOP.TabIndex = 1;
             this.txtOP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtOP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtOP.Leave += new System.EventHandler(this.txtOP_Leave);
             // 
             // label1

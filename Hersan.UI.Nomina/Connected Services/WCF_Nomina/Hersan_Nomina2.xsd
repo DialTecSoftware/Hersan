@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" />
+  <xs:element name="Nom_Factores_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Nom_Factores_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Nom_Factores_ObtenerResult" nillable="true" type="q1:ArrayOfFactoresBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Subsidios_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Subsidios_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Subsidios_ObtenerResult" nillable="true" type="q2:ArrayOfSubsidiosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_ISR_Semanal_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_ISR_Semanal_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_ISR_Semanal_ObtenerResult" nillable="true" type="q3:ArrayOfISRBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Semanas_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Anio" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Semanas_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Semanas_ObtenerResult" nillable="true" type="q4:ArrayOfSemanasBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Semanas_generar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Anio" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Semanas_generarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NOM_Semanas_generarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

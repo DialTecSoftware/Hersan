@@ -147,20 +147,24 @@
             // 
             // txtVelocidad1
             // 
+            this.txtVelocidad1.AcceptsReturn = true;
             this.txtVelocidad1.Location = new System.Drawing.Point(193, 85);
             this.txtVelocidad1.Name = "txtVelocidad1";
             this.txtVelocidad1.Size = new System.Drawing.Size(44, 20);
             this.txtVelocidad1.TabIndex = 6;
             this.txtVelocidad1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVelocidad1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtVelocidad1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtVelocidad2
             // 
+            this.txtVelocidad2.AcceptsReturn = true;
             this.txtVelocidad2.Location = new System.Drawing.Point(146, 85);
             this.txtVelocidad2.Name = "txtVelocidad2";
             this.txtVelocidad2.Size = new System.Drawing.Size(44, 20);
             this.txtVelocidad2.TabIndex = 5;
             this.txtVelocidad2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVelocidad2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtVelocidad2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // radTextBox7
@@ -172,29 +176,35 @@
             // 
             // txtVelocidad3
             // 
+            this.txtVelocidad3.AcceptsReturn = true;
             this.txtVelocidad3.Location = new System.Drawing.Point(99, 85);
             this.txtVelocidad3.Name = "txtVelocidad3";
             this.txtVelocidad3.Size = new System.Drawing.Size(44, 20);
             this.txtVelocidad3.TabIndex = 4;
             this.txtVelocidad3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVelocidad3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtVelocidad3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtPresion1
             // 
+            this.txtPresion1.AcceptsReturn = true;
             this.txtPresion1.Location = new System.Drawing.Point(193, 59);
             this.txtPresion1.Name = "txtPresion1";
             this.txtPresion1.Size = new System.Drawing.Size(44, 20);
             this.txtPresion1.TabIndex = 3;
             this.txtPresion1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPresion1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtPresion1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtPresion2
             // 
+            this.txtPresion2.AcceptsReturn = true;
             this.txtPresion2.Location = new System.Drawing.Point(146, 59);
             this.txtPresion2.Name = "txtPresion2";
             this.txtPresion2.Size = new System.Drawing.Size(44, 20);
             this.txtPresion2.TabIndex = 2;
             this.txtPresion2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPresion2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtPresion2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // radTextBox2
@@ -206,11 +216,13 @@
             // 
             // txtPresion3
             // 
+            this.txtPresion3.AcceptsReturn = true;
             this.txtPresion3.Location = new System.Drawing.Point(99, 59);
             this.txtPresion3.Name = "txtPresion3";
             this.txtPresion3.Size = new System.Drawing.Size(44, 20);
             this.txtPresion3.TabIndex = 1;
             this.txtPresion3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPresion3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtPresion3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label6
@@ -323,19 +335,23 @@
             // 
             // txtPosicionC2
             // 
+            this.txtPosicionC2.AcceptsReturn = true;
             this.txtPosicionC2.Location = new System.Drawing.Point(171, 110);
             this.txtPosicionC2.Name = "txtPosicionC2";
             this.txtPosicionC2.Size = new System.Drawing.Size(44, 20);
             this.txtPosicionC2.TabIndex = 16;
             this.txtPosicionC2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPosicionC2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // txtPosicionC1
             // 
+            this.txtPosicionC1.AcceptsReturn = true;
             this.txtPosicionC1.Location = new System.Drawing.Point(106, 110);
             this.txtPosicionC1.Name = "txtPosicionC1";
             this.txtPosicionC1.Size = new System.Drawing.Size(44, 20);
             this.txtPosicionC1.TabIndex = 15;
             this.txtPosicionC1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPosicionC1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // label13
             // 
@@ -350,11 +366,13 @@
             // 
             // txtVelocidadC2
             // 
+            this.txtVelocidadC2.AcceptsReturn = true;
             this.txtVelocidadC2.Location = new System.Drawing.Point(171, 85);
             this.txtVelocidadC2.Name = "txtVelocidadC2";
             this.txtVelocidadC2.Size = new System.Drawing.Size(44, 20);
             this.txtVelocidadC2.TabIndex = 10;
             this.txtVelocidadC2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVelocidadC2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtVelocidadC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // radTextBox11
@@ -366,20 +384,24 @@
             // 
             // txtVelocidadC1
             // 
+            this.txtVelocidadC1.AcceptsReturn = true;
             this.txtVelocidadC1.Location = new System.Drawing.Point(106, 85);
             this.txtVelocidadC1.Name = "txtVelocidadC1";
             this.txtVelocidadC1.Size = new System.Drawing.Size(44, 20);
             this.txtVelocidadC1.TabIndex = 13;
             this.txtVelocidadC1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVelocidadC1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtVelocidadC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtPresionC2
             // 
+            this.txtPresionC2.AcceptsReturn = true;
             this.txtPresionC2.Location = new System.Drawing.Point(171, 59);
             this.txtPresionC2.Name = "txtPresionC2";
             this.txtPresionC2.Size = new System.Drawing.Size(44, 20);
             this.txtPresionC2.TabIndex = 12;
             this.txtPresionC2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPresionC2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtPresionC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // radTextBox15
@@ -391,11 +413,13 @@
             // 
             // txtPresionC1
             // 
+            this.txtPresionC1.AcceptsReturn = true;
             this.txtPresionC1.Location = new System.Drawing.Point(106, 59);
             this.txtPresionC1.Name = "txtPresionC1";
             this.txtPresionC1.Size = new System.Drawing.Size(44, 20);
             this.txtPresionC1.TabIndex = 11;
             this.txtPresionC1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPresionC1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtPresionC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label8
@@ -489,37 +513,45 @@
             // 
             // txtZona2
             // 
+            this.txtZona2.AcceptsReturn = true;
             this.txtZona2.Location = new System.Drawing.Point(137, 59);
             this.txtZona2.Name = "txtZona2";
             this.txtZona2.Size = new System.Drawing.Size(44, 20);
             this.txtZona2.TabIndex = 9;
             this.txtZona2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtZona2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtZona2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtZona3
             // 
+            this.txtZona3.AcceptsReturn = true;
             this.txtZona3.Location = new System.Drawing.Point(195, 59);
             this.txtZona3.Name = "txtZona3";
             this.txtZona3.Size = new System.Drawing.Size(44, 20);
             this.txtZona3.TabIndex = 10;
             this.txtZona3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtZona3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtZona3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtZona1
             // 
+            this.txtZona1.AcceptsReturn = true;
             this.txtZona1.Location = new System.Drawing.Point(80, 59);
             this.txtZona1.Name = "txtZona1";
             this.txtZona1.Size = new System.Drawing.Size(41, 20);
             this.txtZona1.TabIndex = 8;
+            this.txtZona1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtZona1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtZona4
             // 
+            this.txtZona4.AcceptsReturn = true;
             this.txtZona4.Location = new System.Drawing.Point(21, 59);
             this.txtZona4.Name = "txtZona4";
             this.txtZona4.Size = new System.Drawing.Size(44, 20);
             this.txtZona4.TabIndex = 7;
             this.txtZona4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtZona4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtZona4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label7
@@ -568,20 +600,24 @@
             // 
             // txtRetardo
             // 
+            this.txtRetardo.AcceptsReturn = true;
             this.txtRetardo.Location = new System.Drawing.Point(393, 210);
             this.txtRetardo.Name = "txtRetardo";
             this.txtRetardo.Size = new System.Drawing.Size(44, 20);
             this.txtRetardo.TabIndex = 19;
             this.txtRetardo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRetardo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtRetardo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // txtVelocidad
             // 
+            this.txtVelocidad.AcceptsReturn = true;
             this.txtVelocidad.Location = new System.Drawing.Point(393, 185);
             this.txtVelocidad.Name = "txtVelocidad";
             this.txtVelocidad.Size = new System.Drawing.Size(44, 20);
             this.txtVelocidad.TabIndex = 18;
             this.txtVelocidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVelocidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             this.txtVelocidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label21
@@ -597,12 +633,14 @@
             // 
             // txtPosicion
             // 
+            this.txtPosicion.AcceptsReturn = true;
             this.txtPosicion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPosicion.Location = new System.Drawing.Point(393, 159);
             this.txtPosicion.Name = "txtPosicion";
             this.txtPosicion.Size = new System.Drawing.Size(105, 20);
             this.txtPosicion.TabIndex = 17;
             this.txtPosicion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPosicion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // label20
             // 
@@ -641,6 +679,7 @@
             // 
             // txtObserva
             // 
+            this.txtObserva.AcceptsReturn = true;
             this.txtObserva.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObserva.Location = new System.Drawing.Point(12, 257);
             this.txtObserva.Multiline = true;
@@ -651,6 +690,7 @@
             this.txtObserva.RootElement.StretchVertically = true;
             this.txtObserva.Size = new System.Drawing.Size(261, 69);
             this.txtObserva.TabIndex = 20;
+            this.txtObserva.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // label18
             // 
@@ -665,12 +705,14 @@
             // 
             // txtCavidades
             // 
+            this.txtCavidades.AcceptsReturn = true;
             this.txtCavidades.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCavidades.Location = new System.Drawing.Point(291, 287);
             this.txtCavidades.MaxLength = 20;
             this.txtCavidades.Name = "txtCavidades";
             this.txtCavidades.Size = new System.Drawing.Size(184, 20);
             this.txtCavidades.TabIndex = 21;
+            this.txtCavidades.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // frmParametros
             // 

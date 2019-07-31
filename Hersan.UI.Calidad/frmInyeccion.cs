@@ -70,6 +70,16 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void txtOP_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.Enter ) {
+                    SendKeys.Send("{TAB}");
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void txtOP_Leave(object sender, EventArgs e)
         {
             try {
@@ -194,5 +204,6 @@ namespace Hersan.UI.Calidad
             }
         }
 
+        
     }
 }

@@ -130,20 +130,24 @@
             // 
             // txtObserva
             // 
+            this.txtObserva.AcceptsReturn = true;
             this.txtObserva.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObserva.Location = new System.Drawing.Point(20, 237);
             this.txtObserva.Multiline = true;
             this.txtObserva.Name = "txtObserva";
             this.txtObserva.Size = new System.Drawing.Size(374, 51);
             this.txtObserva.TabIndex = 13;
+            this.txtObserva.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             // 
             // txtCav12
             // 
+            this.txtCav12.AcceptsReturn = true;
             this.txtCav12.Location = new System.Drawing.Point(317, 178);
             this.txtCav12.Name = "txtCav12";
             this.txtCav12.Size = new System.Drawing.Size(64, 20);
             this.txtCav12.TabIndex = 12;
             this.txtCav12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label9
@@ -158,11 +162,13 @@
             // 
             // txtCav11
             // 
+            this.txtCav11.AcceptsReturn = true;
             this.txtCav11.Location = new System.Drawing.Point(218, 178);
             this.txtCav11.Name = "txtCav11";
             this.txtCav11.Size = new System.Drawing.Size(64, 20);
             this.txtCav11.TabIndex = 11;
             this.txtCav11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label10
@@ -177,11 +183,13 @@
             // 
             // txtCav10
             // 
+            this.txtCav10.AcceptsReturn = true;
             this.txtCav10.Location = new System.Drawing.Point(119, 178);
             this.txtCav10.Name = "txtCav10";
             this.txtCav10.Size = new System.Drawing.Size(64, 20);
             this.txtCav10.TabIndex = 10;
             this.txtCav10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label11
@@ -196,11 +204,13 @@
             // 
             // txtCav9
             // 
+            this.txtCav9.AcceptsReturn = true;
             this.txtCav9.Location = new System.Drawing.Point(20, 178);
             this.txtCav9.Name = "txtCav9";
             this.txtCav9.Size = new System.Drawing.Size(64, 20);
             this.txtCav9.TabIndex = 9;
             this.txtCav9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label12
@@ -215,11 +225,13 @@
             // 
             // txtCav8
             // 
+            this.txtCav8.AcceptsReturn = true;
             this.txtCav8.Location = new System.Drawing.Point(317, 117);
             this.txtCav8.Name = "txtCav8";
             this.txtCav8.Size = new System.Drawing.Size(64, 20);
             this.txtCav8.TabIndex = 8;
             this.txtCav8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label5
@@ -234,11 +246,13 @@
             // 
             // txtCav7
             // 
+            this.txtCav7.AcceptsReturn = true;
             this.txtCav7.Location = new System.Drawing.Point(218, 117);
             this.txtCav7.Name = "txtCav7";
             this.txtCav7.Size = new System.Drawing.Size(64, 20);
             this.txtCav7.TabIndex = 7;
             this.txtCav7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label6
@@ -253,11 +267,13 @@
             // 
             // txtCav6
             // 
+            this.txtCav6.AcceptsReturn = true;
             this.txtCav6.Location = new System.Drawing.Point(119, 117);
             this.txtCav6.Name = "txtCav6";
             this.txtCav6.Size = new System.Drawing.Size(64, 20);
             this.txtCav6.TabIndex = 6;
             this.txtCav6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label7
@@ -272,11 +288,13 @@
             // 
             // txtCav5
             // 
+            this.txtCav5.AcceptsReturn = true;
             this.txtCav5.Location = new System.Drawing.Point(20, 117);
             this.txtCav5.Name = "txtCav5";
             this.txtCav5.Size = new System.Drawing.Size(64, 20);
             this.txtCav5.TabIndex = 5;
             this.txtCav5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label8
@@ -291,11 +309,13 @@
             // 
             // txtCav4
             // 
+            this.txtCav4.AcceptsReturn = true;
             this.txtCav4.Location = new System.Drawing.Point(317, 59);
             this.txtCav4.Name = "txtCav4";
             this.txtCav4.Size = new System.Drawing.Size(64, 20);
             this.txtCav4.TabIndex = 4;
             this.txtCav4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label4
@@ -310,11 +330,13 @@
             // 
             // txtCav3
             // 
+            this.txtCav3.AcceptsReturn = true;
             this.txtCav3.Location = new System.Drawing.Point(218, 59);
             this.txtCav3.Name = "txtCav3";
             this.txtCav3.Size = new System.Drawing.Size(64, 20);
             this.txtCav3.TabIndex = 3;
             this.txtCav3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label3
@@ -329,11 +351,13 @@
             // 
             // txtCav2
             // 
+            this.txtCav2.AcceptsReturn = true;
             this.txtCav2.Location = new System.Drawing.Point(119, 59);
             this.txtCav2.Name = "txtCav2";
             this.txtCav2.Size = new System.Drawing.Size(64, 20);
             this.txtCav2.TabIndex = 2;
             this.txtCav2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label2
@@ -348,11 +372,13 @@
             // 
             // txtCav1
             // 
+            this.txtCav1.AcceptsReturn = true;
             this.txtCav1.Location = new System.Drawing.Point(20, 59);
             this.txtCav1.Name = "txtCav1";
             this.txtCav1.Size = new System.Drawing.Size(64, 20);
             this.txtCav1.TabIndex = 1;
             this.txtCav1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCav1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtCav1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // lbl
@@ -396,11 +422,13 @@
             // 
             // txtMovil
             // 
+            this.txtMovil.AcceptsReturn = true;
             this.txtMovil.Location = new System.Drawing.Point(116, 90);
             this.txtMovil.Name = "txtMovil";
             this.txtMovil.Size = new System.Drawing.Size(64, 20);
             this.txtMovil.TabIndex = 16;
             this.txtMovil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMovil.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtMovil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label13
@@ -415,11 +443,13 @@
             // 
             // txtFija
             // 
+            this.txtFija.AcceptsReturn = true;
             this.txtFija.Location = new System.Drawing.Point(116, 58);
             this.txtFija.Name = "txtFija";
             this.txtFija.Size = new System.Drawing.Size(64, 20);
             this.txtFija.TabIndex = 15;
             this.txtFija.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFija.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtFija.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
             // 
             // label14

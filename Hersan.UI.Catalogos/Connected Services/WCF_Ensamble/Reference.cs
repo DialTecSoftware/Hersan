@@ -213,6 +213,18 @@ namespace Hersan.UI.Catalogos.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GraficaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_GuardarResponse")]
+        int APT_Almacenes_Guardar(Hersan.Entidades.APT.AlmacenPTBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ActualizarResponse")]
+        int APT_Almacenes_Actualizar(Hersan.Entidades.APT.AlmacenPTBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -500,6 +512,22 @@ namespace Hersan.UI.Catalogos.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final) {
             return base.Channel.CAL_ResguardoQA_Grafica(Item, Inicial, Final);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa) {
+            return base.Channel.APT_Almacenes_Obtener(IdEmpresa);
+        }
+        
+        public int APT_Almacenes_Guardar(Hersan.Entidades.APT.AlmacenPTBE obj) {
+            return base.Channel.APT_Almacenes_Guardar(obj);
+        }
+        
+        public int APT_Almacenes_Actualizar(Hersan.Entidades.APT.AlmacenPTBE obj) {
+            return base.Channel.APT_Almacenes_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa) {
+            return base.Channel.APT_Almacenes_Combo(IdEmpresa);
         }
     }
 }

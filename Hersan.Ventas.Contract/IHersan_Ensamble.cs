@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Calidad;
+﻿using Hersan.Entidades.APT;
+using Hersan.Entidades.Calidad;
 using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Ensamble;
 using Hersan.Entidades.Inyeccion;
@@ -91,7 +92,6 @@ namespace Hersan.Ensamble.Contract
         List<PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final);
         #endregion
 
-
         #region Módulo Calidad
         #region Pantallas Calidad        
         [OperationContract]
@@ -172,6 +172,17 @@ namespace Hersan.Ensamble.Contract
 
         [OperationContract]
         List<CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(CalidadResguardoQA Item, string Inicial, string Final);
+        #endregion
+
+        #region APT
+        [OperationContract]
+        List<AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa);
+        [OperationContract]
+        int APT_Almacenes_Guardar(AlmacenPTBE obj);
+        [OperationContract]
+        int APT_Almacenes_Actualizar(AlmacenPTBE obj);
+        [OperationContract]
+        List<AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa);
         #endregion
     }
 }

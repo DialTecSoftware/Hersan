@@ -109,7 +109,7 @@
   <xs:element name="ArrayOfEnsambleParametrosDetalleBE" nillable="true" type="tns:ArrayOfEnsambleParametrosDetalleBE" />
   <xs:complexType name="EnsambleParametrosDetalleBE">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Colapso" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Colapso" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Comentarios" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Energia" type="xs:decimal" />
       <xs:element minOccurs="0" name="Estatus" type="xs:boolean" />
@@ -185,7 +185,10 @@
       <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="Lista" type="xs:int" />
+      <xs:element minOccurs="0" name="Muestra" type="xs:decimal" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Piezas" type="xs:int" />
       <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Producto" nillable="true" type="q10:TipoProductoBE" />
       <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflex1" nillable="true" type="q11:ColoresBE" />
@@ -205,11 +208,9 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdResguardo" type="xs:int" />
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
-      <xs:element minOccurs="0" name="Lista" type="xs:int" />
       <xs:element minOccurs="0" name="Lote" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Maximo" type="xs:decimal" />
       <xs:element minOccurs="0" name="Minimo" type="xs:decimal" />
-      <xs:element minOccurs="0" name="OP" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Promedio" type="xs:int" />
       <xs:element minOccurs="0" name="Valor0" type="xs:int" />
       <xs:element minOccurs="0" name="Valor1" type="xs:int" />

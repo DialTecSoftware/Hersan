@@ -63,6 +63,7 @@
             // 
             // lblEmpresa
             // 
+            this.lblEmpresa.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lblEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblEmpresa.ForeColor = System.Drawing.Color.White;
             this.lblEmpresa.Name = "lblEmpresa";
@@ -72,6 +73,7 @@
             // lblUsuario
             // 
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
             this.lblUsuario.Name = "lblUsuario";
@@ -81,11 +83,11 @@
             // lblPerfil
             // 
             this.lblPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.lblPerfil.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lblPerfil.ForeColor = System.Drawing.Color.White;
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(34, 17);
             this.lblPerfil.Text = "Perfil";
-            this.lblPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Principal
             // 

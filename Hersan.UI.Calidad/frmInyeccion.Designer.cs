@@ -184,6 +184,7 @@
             this.txtOP.Size = new System.Drawing.Size(133, 20);
             this.txtOP.TabIndex = 1;
             this.txtOP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOP_KeyDown);
             this.txtOP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOP_KeyPress);
             this.txtOP.Leave += new System.EventHandler(this.txtOP_Leave);
             // 

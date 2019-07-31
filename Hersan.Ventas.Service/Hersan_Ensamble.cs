@@ -8,6 +8,8 @@ using Hersan.Entidades.Inyeccion;
 using Hersan.Negocio.Calidad;
 using Hersan.Entidades.Calidad;
 using System.Data;
+using Hersan.Entidades.APT;
+using Hersan.Negocio.APT;
 
 namespace Hersan.Ensamble.Service
 {
@@ -301,6 +303,25 @@ namespace Hersan.Ensamble.Service
         public List<CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(CalidadResguardoQA Item, string Inicial, string Final)
         {
             return new CalidadBP().CAL_ResguardoQA_Grafica(Item, Inicial, Final);
+        }
+        #endregion
+
+        #region APT
+        public List<AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa)
+        {
+            return new AlmacenBP().APT_Almacenes_Obtener(IdEmpresa);
+        }
+        public int APT_Almacenes_Guardar(AlmacenPTBE obj)
+        {
+            return new AlmacenBP().APT_Almacenes_Guardar(obj);
+        }
+        public int APT_Almacenes_Actualizar(AlmacenPTBE obj)
+        {
+            return new AlmacenBP().APT_Almacenes_Actualizar(obj);
+        }
+        public List<AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa)
+        {
+            return new AlmacenBP().APT_Almacenes_Combo(IdEmpresa);
         }
         #endregion
     }

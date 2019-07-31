@@ -161,6 +161,16 @@ namespace Hersan.UI.Calidad
                 RadMessageBox.Show("Ocurrió un error al agregar los datos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void txtNorma_KeyDown(object sender, KeyEventArgs e)
+        {
+            try {
+                if (e.KeyData == Keys.Enter) {
+                    SendKeys.Send("{TAB}");
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error en la captura\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void gvDatos_CurrentRowChanged(object sender, Telerik.WinControls.UI.CurrentRowChangedEventArgs e)
         {
             try {
@@ -262,7 +272,7 @@ namespace Hersan.UI.Calidad
             } catch (Exception ex) {
                 throw ex;
             }
-        }
-
+        }        
+      
     }
 }

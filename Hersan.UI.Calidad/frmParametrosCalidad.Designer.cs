@@ -252,6 +252,7 @@
             this.txtNorma.TabIndex = 2;
             this.txtNorma.Text = "0";
             this.txtNorma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNorma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNorma_KeyDown);
             this.txtNorma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNorma_KeyPress);
             // 
             // label1

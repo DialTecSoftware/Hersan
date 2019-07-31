@@ -86,8 +86,10 @@
   <xs:element name="TempMoldesBE" nillable="true" type="tns:TempMoldesBE" />
   <xs:complexType name="ParametrosInyeccion">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Cavidades" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
-      <xs:element minOccurs="0" name="Posicion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Observa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Posicion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PosicionC1" type="xs:decimal" />
       <xs:element minOccurs="0" name="PosicionC2" type="xs:decimal" />
       <xs:element minOccurs="0" name="Presion" type="xs:decimal" />

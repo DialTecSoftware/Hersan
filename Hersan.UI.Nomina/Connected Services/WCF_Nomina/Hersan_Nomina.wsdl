@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Hersan_Nomina" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IHersan_Nomina_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" />
+      <xsd:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHersan_Nomina_Nom_Factores_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:Nom_Factores_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_Nom_Factores_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Nom_Factores_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_Subsidios_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_Subsidios_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_Subsidios_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_Subsidios_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_ISR_Semanal_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_ISR_Semanal_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_ISR_Semanal_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_ISR_Semanal_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_Semanas_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_Semanas_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_Semanas_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_Semanas_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_Semanas_generar_InputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_Semanas_generar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_Semanas_generar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_Semanas_generarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHersan_Nomina">
+    <wsdl:operation name="Nom_Factores_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Nomina/Nom_Factores_Obtener" message="tns:IHersan_Nomina_Nom_Factores_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Nomina/Nom_Factores_ObtenerResponse" message="tns:IHersan_Nomina_Nom_Factores_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NOM_Subsidios_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_Subsidios_Obtener" message="tns:IHersan_Nomina_NOM_Subsidios_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_Subsidios_ObtenerResponse" message="tns:IHersan_Nomina_NOM_Subsidios_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NOM_ISR_Semanal_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_ISR_Semanal_Obtener" message="tns:IHersan_Nomina_NOM_ISR_Semanal_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_ISR_Semanal_ObtenerResponse" message="tns:IHersan_Nomina_NOM_ISR_Semanal_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NOM_Semanas_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_Semanas_Obtener" message="tns:IHersan_Nomina_NOM_Semanas_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_Semanas_ObtenerResponse" message="tns:IHersan_Nomina_NOM_Semanas_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NOM_Semanas_generar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_Semanas_generar" message="tns:IHersan_Nomina_NOM_Semanas_generar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_Semanas_generarResponse" message="tns:IHersan_Nomina_NOM_Semanas_generar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IHersan_Nomina" type="tns:IHersan_Nomina">
+    <wsp:PolicyReference URI="#WSHttpBinding_IHersan_Nomina_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Nom_Factores_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Nomina/Nom_Factores_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NOM_Subsidios_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Nomina/NOM_Subsidios_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NOM_ISR_Semanal_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Nomina/NOM_ISR_Semanal_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NOM_Semanas_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Nomina/NOM_Semanas_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NOM_Semanas_generar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Nomina/NOM_Semanas_generar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Hersan_Nomina">
+    <wsdl:port name="WSHttpBinding_IHersan_Nomina" binding="tns:WSHttpBinding_IHersan_Nomina">
+      <soap12:address location="http://localhost:60744/Hersan_Nomina.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:60744/Hersan_Nomina.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

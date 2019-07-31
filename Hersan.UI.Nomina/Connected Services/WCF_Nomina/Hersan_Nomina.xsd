@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
+  <xs:complexType name="ArrayOfFactoresBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactoresBE" nillable="true" type="tns:FactoresBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactoresBE" nillable="true" type="tns:ArrayOfFactoresBE" />
+  <xs:complexType name="FactoresBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aguinaldo" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q1:GeneralBE" />
+      <xs:element minOccurs="0" name="De" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Factor" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Hasta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Prima" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Vacaciones" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactoresBE" nillable="true" type="tns:FactoresBE" />
+  <xs:complexType name="ArrayOfSubsidiosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubsidiosBE" nillable="true" type="tns:SubsidiosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubsidiosBE" nillable="true" type="tns:ArrayOfSubsidiosBE" />
+  <xs:complexType name="SubsidiosBE">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q2:GeneralBE" />
+      <xs:element minOccurs="0" name="De" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Hasta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Subsidio" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubsidiosBE" nillable="true" type="tns:SubsidiosBE" />
+  <xs:complexType name="ArrayOfISRBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ISRBE" nillable="true" type="tns:ISRBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfISRBE" nillable="true" type="tns:ArrayOfISRBE" />
+  <xs:complexType name="ISRBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cuota" type="xs:decimal" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q3:GeneralBE" />
+      <xs:element minOccurs="0" name="De" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Hasta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Porcentaje" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ISRBE" nillable="true" type="tns:ISRBE" />
+  <xs:complexType name="ArrayOfSemanasBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SemanasBE" nillable="true" type="tns:SemanasBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSemanasBE" nillable="true" type="tns:ArrayOfSemanasBE" />
+  <xs:complexType name="SemanasBE">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q4:GeneralBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Inicia" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Semana" type="xs:int" />
+      <xs:element minOccurs="0" name="Termina" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SemanasBE" nillable="true" type="tns:SemanasBE" />
+</xs:schema>

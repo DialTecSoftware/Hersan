@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="47a02ee0-f610-4489-8c85-d2af23626f3d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60744/Hersan_Nomina.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Hersan_Nomina.wsdl" MetadataType="Wsdl" ID="38d86cd6-ef34-4e36-b0bd-b4a557be2b60" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?wsdl" />
+    <MetadataFile FileName="Hersan_Nomina.xsd" MetadataType="Schema" ID="425d1805-ff2c-4a18-ad03-495ca28af0d6" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd2" />
+    <MetadataFile FileName="Hersan_Nomina1.xsd" MetadataType="Schema" ID="fe48aa80-d6ad-494c-8374-48eac93d7a40" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd3" />
+    <MetadataFile FileName="Hersan_Nomina2.xsd" MetadataType="Schema" ID="582a9a3e-a453-4e93-87ba-d9daa732f25b" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd0" />
+    <MetadataFile FileName="Hersan_Nomina3.xsd" MetadataType="Schema" ID="72343251-1e0f-4886-a390-d51d849c3ed8" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd1" />
+    <MetadataFile FileName="Hersan_Nomina.disco" MetadataType="Disco" ID="cd2803ad-f959-407d-b498-f64f82dffb20" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

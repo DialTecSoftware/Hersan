@@ -375,21 +375,25 @@
             // 
             // txtOp
             // 
+            this.txtOp.AcceptsReturn = true;
             this.txtOp.Location = new System.Drawing.Point(90, 11);
             this.txtOp.Name = "txtOp";
             this.txtOp.Size = new System.Drawing.Size(113, 20);
             this.txtOp.TabIndex = 1;
             this.txtOp.TabStop = false;
             this.txtOp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtOp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             // 
             // txtOperador
             // 
+            this.txtOperador.AcceptsReturn = true;
             this.txtOperador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOperador.Location = new System.Drawing.Point(378, 11);
             this.txtOperador.Name = "txtOperador";
             this.txtOperador.Size = new System.Drawing.Size(190, 20);
             this.txtOperador.TabIndex = 5;
             this.txtOperador.Visible = false;
+            this.txtOperador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             // 
             // label5
             // 
@@ -405,11 +409,13 @@
             // 
             // txtLista
             // 
+            this.txtLista.AcceptsReturn = true;
             this.txtLista.Location = new System.Drawing.Point(90, 36);
             this.txtLista.Name = "txtLista";
             this.txtLista.Size = new System.Drawing.Size(73, 20);
             this.txtLista.TabIndex = 2;
             this.txtLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLista.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Contol_KeyDown);
             this.txtLista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLista_KeyPress);
             // 
             // label2

@@ -178,6 +178,10 @@
       <Project>{c7a0e85c-70a0-40cc-a42c-d917c1c99827}</Project>
       <Name>Hersan.UI.Catalogos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hersan.UI.Nomina\Hersan.UI.Nomina.csproj">
+      <Project>{30e0036f-f557-4d89-9399-0da36906df2a}</Project>
+      <Name>Hersan.UI.Nomina</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hersan.UI.Seguridad\Hersan.UI.Seguridad.csproj">
       <Project>{63cbf2e1-5e97-4f81-bf0c-ddda05b444af}</Project>
       <Name>Hersan.UI.Seguridad</Name>

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APT\AlmacenPTBP.cs" />
     <Compile Include="BaseWinBP.cs" />
     <Compile Include="Calidad\CalidadBP.cs" />
     <Compile Include="Calidad\EnsambleBP.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Ensamble\ServiciosBP.cs" />
     <Compile Include="Catalogos\TiposClienteBP.cs" />
     <Compile Include="Impersonar.cs" />
+    <Compile Include="Nomina\FactoresBP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relchec\DiasFestBP.cs" />
     <Compile Include="Relchec\HorariosBP.cs" />

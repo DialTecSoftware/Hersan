@@ -18,6 +18,7 @@
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" />
       <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" />
+      <xsd:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IHersan_Ensamble_ABC_Clientes_Guardar_InputMessage">
@@ -410,6 +411,30 @@
   <wsdl:message name="IHersan_Ensamble_CAL_ResguardoQA_Grafica_OutputMessage">
     <wsdl:part name="parameters" element="tns:CAL_ResguardoQA_GraficaResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_APT_Almacenes_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:APT_Almacenes_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_APT_Almacenes_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APT_Almacenes_ObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_APT_Almacenes_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:APT_Almacenes_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_APT_Almacenes_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APT_Almacenes_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_APT_Almacenes_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:APT_Almacenes_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_APT_Almacenes_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APT_Almacenes_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_APT_Almacenes_Combo_InputMessage">
+    <wsdl:part name="parameters" element="tns:APT_Almacenes_Combo" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_APT_Almacenes_Combo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APT_Almacenes_ComboResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_Ensamble">
     <wsdl:operation name="ABC_Clientes_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Guardar" message="tns:IHersan_Ensamble_ABC_Clientes_Guardar_InputMessage" />
@@ -670,6 +695,22 @@
     <wsdl:operation name="CAL_ResguardoQA_Grafica">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Grafica_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GraficaResponse" message="tns:IHersan_Ensamble_CAL_ResguardoQA_Grafica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APT_Almacenes_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Obtener" message="tns:IHersan_Ensamble_APT_Almacenes_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ObtenerResponse" message="tns:IHersan_Ensamble_APT_Almacenes_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APT_Almacenes_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Guardar" message="tns:IHersan_Ensamble_APT_Almacenes_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_GuardarResponse" message="tns:IHersan_Ensamble_APT_Almacenes_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APT_Almacenes_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Actualizar" message="tns:IHersan_Ensamble_APT_Almacenes_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ActualizarResponse" message="tns:IHersan_Ensamble_APT_Almacenes_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APT_Almacenes_Combo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Combo" message="tns:IHersan_Ensamble_APT_Almacenes_Combo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ComboResponse" message="tns:IHersan_Ensamble_APT_Almacenes_Combo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Ensamble" type="tns:IHersan_Ensamble">
@@ -1253,6 +1294,42 @@
     </wsdl:operation>
     <wsdl:operation name="CAL_ResguardoQA_Grafica">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APT_Almacenes_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Obtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APT_Almacenes_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APT_Almacenes_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APT_Almacenes_Combo">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Combo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

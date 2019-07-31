@@ -4,6 +4,7 @@
   <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
   <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" />
   <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" />
   <xs:element name="ABC_Clientes_Guardar">
     <xs:complexType>
       <xs:sequence>
@@ -1184,6 +1185,62 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ResguardoQA_GraficaResult" nillable="true" type="q62:ArrayOfCalidadResguardoQADetalle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Almacenes_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdEmpresa" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Almacenes_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="APT_Almacenes_ObtenerResult" nillable="true" type="q63:ArrayOfAlmacenPTBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Almacenes_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="obj" nillable="true" type="q64:AlmacenPTBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Almacenes_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APT_Almacenes_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Almacenes_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="obj" nillable="true" type="q65:AlmacenPTBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Almacenes_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APT_Almacenes_ActualizarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Almacenes_Combo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdEmpresa" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Almacenes_ComboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="APT_Almacenes_ComboResult" nillable="true" type="q66:ArrayOfAlmacenPTBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

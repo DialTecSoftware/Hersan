@@ -61,6 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\WCF_CHumano\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WCF_Nomina\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -130,6 +135,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.wsdl" />
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano7.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Nomina\Hersan_Nomina.wsdl" />
     <None Include="Connected Services\WCF_Nomina\Hersan_Nomina.xsd">
       <SubType>Designer</SubType>
@@ -143,12 +173,38 @@
     <None Include="Connected Services\WCF_Nomina\Hersan_Nomina3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenSustitucionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DigitalizadosDetalleBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.EmpleadosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.EvaluacionInduccionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteConocimiento.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteDocumentos.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteEconomicos.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteEmpleos.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteEstudios.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteFamilia.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteGenerales.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteReferencias.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedienteSalud.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedientesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.ExpedientesDatosPersonales.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.NuevoPuestoBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PerfilesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.PreguntasEvaluacionBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SeguimientoCandidatosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.SolicitudPersonalBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.TabuladorBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.FactoresBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.ISRBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.SemanasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.SubsidiosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Relchec.HorariosBE.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WCF_CHumano\" />
     <WCFMetadataStorage Include="Connected Services\WCF_Nomina\" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +231,21 @@
       <Project>{9DC9D350-B0E3-4481-AC7A-DBE3729C8955}</Project>
       <Name>Hersan.Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_CHumano\Hersan_CHumano.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_CHumano\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_CHumano\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_CHumano\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

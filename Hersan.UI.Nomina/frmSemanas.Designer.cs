@@ -39,7 +39,7 @@
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.btnGenerar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
@@ -66,7 +66,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(671, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(671, 78);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -84,9 +84,9 @@
             // 
             this.commandBarStripElement1.DisplayName = "commandBarStripElement1";
             this.commandBarStripElement1.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
-            this.btnGenerar,
+            this.btnGuardar,
             this.commandBarSeparator1,
-            this.btnEliminar,
+            this.btnGenerar,
             this.commandBarSeparator2,
             this.btnSalir,
             this.commandBarSeparator3,
@@ -115,15 +115,15 @@
             this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
             // 
-            // btnEliminar
+            // btnGuardar
             // 
-            this.btnEliminar.DisplayName = "commandBarButton2";
-            this.btnEliminar.DrawText = true;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnGuardar.DisplayName = "commandBarButton2";
+            this.btnGuardar.DrawText = true;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // commandBarSeparator2
             // 
@@ -161,7 +161,7 @@
             this.radPanel1.Controls.Add(this.dtAnio);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 53);
+            this.radPanel1.Location = new System.Drawing.Point(0, 78);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(671, 56);
             this.radPanel1.TabIndex = 1;
@@ -171,6 +171,7 @@
             this.dtAnio.CustomFormat = "yyyy";
             this.dtAnio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtAnio.Location = new System.Drawing.Point(73, 19);
+            this.dtAnio.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dtAnio.Name = "dtAnio";
             this.dtAnio.ShowUpDown = true;
             this.dtAnio.Size = new System.Drawing.Size(60, 20);
@@ -178,6 +179,7 @@
             this.dtAnio.TabStop = false;
             this.dtAnio.Text = "2019";
             this.dtAnio.Value = new System.DateTime(2019, 7, 30, 11, 56, 33, 784);
+            this.dtAnio.ValueChanged += new System.EventHandler(this.dtAnio_ValueChanged);
             // 
             // label1
             // 
@@ -191,13 +193,14 @@
             // gvDatos
             // 
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDatos.Location = new System.Drawing.Point(0, 109);
+            this.gvDatos.Location = new System.Drawing.Point(0, 134);
             // 
             // 
             // 
+            this.gvDatos.MasterTemplate.AllowAddNewRow = false;
             this.gvDatos.MasterTemplate.AllowDeleteRow = false;
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
-            gridViewCheckBoxColumn1.FieldName = "DatosUsuaro.Estatus";
+            gridViewCheckBoxColumn1.FieldName = "DatosUsuario.Estatus";
             gridViewCheckBoxColumn1.HeaderText = "";
             gridViewCheckBoxColumn1.MaxWidth = 50;
             gridViewCheckBoxColumn1.MinWidth = 30;
@@ -208,6 +211,7 @@
             gridViewTextBoxColumn1.MaxWidth = 100;
             gridViewTextBoxColumn1.MinWidth = 80;
             gridViewTextBoxColumn1.Name = "Semana";
+            gridViewTextBoxColumn1.ReadOnly = true;
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn1.Width = 80;
             gridViewDateTimeColumn1.FieldName = "Inicia";
@@ -217,6 +221,7 @@
             gridViewDateTimeColumn1.MaxWidth = 100;
             gridViewDateTimeColumn1.MinWidth = 80;
             gridViewDateTimeColumn1.Name = "Inicia";
+            gridViewDateTimeColumn1.ReadOnly = true;
             gridViewDateTimeColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDateTimeColumn1.Width = 80;
             gridViewDateTimeColumn2.FieldName = "Termina";
@@ -226,6 +231,7 @@
             gridViewDateTimeColumn2.MaxWidth = 100;
             gridViewDateTimeColumn2.MinWidth = 80;
             gridViewDateTimeColumn2.Name = "Termina";
+            gridViewDateTimeColumn2.ReadOnly = true;
             gridViewDateTimeColumn2.Width = 80;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewCheckBoxColumn1,
@@ -235,10 +241,9 @@
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
             this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gvDatos.Name = "gvDatos";
-            this.gvDatos.ReadOnly = true;
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(671, 270);
+            this.gvDatos.Size = new System.Drawing.Size(671, 245);
             this.gvDatos.TabIndex = 2;
             // 
             // commandBarStripElement2
@@ -287,7 +292,7 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement1;
         private Telerik.WinControls.UI.CommandBarButton btnGenerar;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator1;
-        private Telerik.WinControls.UI.CommandBarButton btnEliminar;
+        private Telerik.WinControls.UI.CommandBarButton btnGuardar;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
         private Telerik.WinControls.UI.CommandBarButton btnSalir;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator3;

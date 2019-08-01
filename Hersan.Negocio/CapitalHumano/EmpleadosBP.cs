@@ -32,5 +32,9 @@ namespace Hersan.Negocio.CapitalHumano
         {
             return new EmpleadosDA().CHU_Empleados_Credencial(IdExpediente);
         }
+        public List<EmpleadosBE> CHU_Empleados_Combo()
+        {
+            return new EmpleadosDA().CHU_Empleados_Combo();
+        }
     }
 }

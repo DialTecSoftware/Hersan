@@ -310,6 +310,10 @@ namespace Hersan.CH.Service
         {
             return new EmpleadosBP().CHU_Empleados_Credencial(IdExpediente);
         }
+        public List<EmpleadosBE> CHU_Empleados_Combo()
+        {
+            return new EmpleadosBP().CHU_Empleados_Combo();
+        }
         #endregion
     }
 }

@@ -26,8 +26,9 @@
     <ProductName>Sistema Integral Hersan HiTec</ProductName>
     <PublisherName>Sistema Integral Hersan HiTec</PublisherName>
     <SuiteName>Sistema Integral Hersan HiTec</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

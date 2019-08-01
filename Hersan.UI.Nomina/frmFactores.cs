@@ -25,7 +25,7 @@ namespace Hersan.UI.Nomina
             try {
                 CargarGrid();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)

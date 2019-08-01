@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hersan.Entidades.Nomina;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,19 +12,132 @@ namespace Hersan.UI.Nomina
 {
     public partial class frmPrestamos : Telerik.WinControls.UI.RadForm
     {
+        #region Variables
+        WCF_Nomina.Hersan_NominaClient oNomina;
+        WCF_CHumano.Hersan_CHumanoClient oCHUmano;
+        List<SemanasBE> oList = new List<SemanasBE>();
+        List<PrestamosDetalleBE> oPrestamo;
+        int NumPagos = 0;
+        int Semana = 0;
+        decimal Importe = 0;
+        decimal Tasa = 0;
+        decimal ImpPago = 0;
+        #endregion
+
         public frmPrestamos()
         {
             InitializeComponent();
         }
         private void frmPrestamos_Load(object sender, EventArgs e)
         {
+            try {
+                //System.Threading.Tasks.Task task = new System.Threading.Tasks.Task(() => { CargaSemanas(); });
+                //task.Start();
 
+                CargaSemanas();
+                CargaEmpleados();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            try {
+                GenerarTablaAmortizacion();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            try {
+                this.Close();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try {
+                System.Globalization.CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+                if (char.IsNumber(e.KeyChar) || e.KeyChar == 8 || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void txtImporte_TextChanged(object sender, EventArgs e)
+        {
+            try {
+                CalcularImportePago();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void txtPagos_TextChanged(object sender, EventArgs e)
+        {
+            try {
+                CalcularImportePago();
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void cboSemana_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try {
+                //CALCULO DE PAGOS
+                int Semanas = oList.FindAll(item => item.Semana > int.Parse(cboSemana.Text)).Count;
+                txtPagos.Text = Semanas.ToString();
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
 
 
+        private void CargaSemanas()
+        {
+            oNomina = new WCF_Nomina.Hersan_NominaClient();
+            List<SemanasBE> oAux = new List<SemanasBE>();
+            try {
+                oAux = oNomina.NOM_Semanas_Obtener(DateTime.Today.Year);
+                oList = oAux.FindAll(item => item.Termina >= DateTime.Today && item.DatosUsuario.Estatus == true && item.Termina.Year == DateTime.Today.Year);
+
+                cboSemana.ValueMember = "Id";
+                cboSemana.DisplayMember = "Semana";
+                cboSemana.DataSource = oList;
+            } catch (Exception ex) {
+                throw ex;
+            } finally { oNomina = null; }
+        }
+        private void CargaEmpleados()
+        {
+            oCHUmano = new WCF_CHumano.Hersan_CHumanoClient();
+            try {
+                cboEmpleados.ValueMember = "Id";
+                cboEmpleados.DisplayMember = "Numero";
+                cboEmpleados.DataSource = oCHUmano.CHU_Empleados_Combo();               
+            } catch (Exception ex) {
+                throw ex;
+            } finally { oCHUmano = null; }
+        }
         private bool ValidarCampos()
         {
-            return false;
+            return true;
             //try {
             //    string msg = string.Empty;
             //    LimpiarErrores();
@@ -54,46 +168,47 @@ namespace Hersan.UI.Nomina
         }
         private void GenerarTablaAmortizacion()
         {
-            //int i = 0;
-            //decimal Saldo = 0;
+            int i = 0;
+            decimal Saldo = 0;
 
-            //lstDet = new List<PrestamoDetBE>();
+            oPrestamo = new List<PrestamosDetalleBE>();
 
-            //try {
-            //    if (ValidarCampos()) {
+            try {
+                if (ValidarCampos()) {
 
-            //        NumPagos = int.Parse(txtPagos.Text);
-            //        Semana = int.Parse(mcbSemana.Text.ToString());
-            //        Importe = decimal.Parse(txtImporte.Text);
-            //        Tasa = decimal.Parse(mcbTasa.Text.ToString());
-            //        ImpPago = decimal.Parse(txtImpPago.Text);
-            //        Saldo = Importe;
+                    NumPagos = int.Parse(txtPagos.Text);
+                    Semana = oList.Find(item=> item.Id > int.Parse(cboSemana.SelectedValue.ToString())).Semana;
+                    Importe = decimal.Parse(txtImporte.Text);
+                    Tasa = decimal.Parse(txtTasa.Text.ToString());
+                    ImpPago = decimal.Parse(txtPago.Text);
+                    Saldo = Importe;
 
-            //        for (i = 1; i <= NumPagos; i++) {
-            //            PrestamoDetBE obj = new PrestamoDetBE();
-            //            obj.NumPago = i;
-            //            obj.Semana = CalcularSemana(Semana, i - 1);
-            //            obj.Capital = Saldo;
-            //            obj.ImportePago = ImpPago;
-            //            obj.ImporteInteres = (Saldo * Tasa) / 100;
-            //            obj.Abono = ImpPago - obj.ImporteInteres;
-            //            Saldo = Saldo - obj.Abono;
-            //            obj.Saldo = Saldo;
-            //            obj.Estatus = "VIGENTE";
-            //            lstDet.Add(obj);
-            //        }
+                    for (i = 1; i <= NumPagos; i++) {
+                        PrestamosDetalleBE obj = new PrestamosDetalleBE();
+                        obj.NoPago = i;
+                        obj.Semana = CalcularSemana(Semana, i - 1);
+                        obj.Fecha = oList.Find(item => item.Semana == obj.Semana).Inicia;
+                        obj.Capital = Saldo;
+                        obj.ImportePago = ImpPago;
+                        obj.Interes= (Saldo * Tasa) / 100;
+                        obj.Abono = ImpPago - obj.Interes;
+                        Saldo = Saldo - obj.Abono;
+                        obj.Saldo = Saldo;
+                        obj.Estatus = "VIGENTE";
 
-            //        lstDet[NumPagos - 1].ImportePago = ImpPago + (lstDet[NumPagos - 2].Saldo - lstDet[NumPagos - 1].Abono);
-            //        lstDet[NumPagos - 1].Abono = (ImpPago - lstDet[NumPagos - 1].ImporteInteres) + (lstDet[NumPagos - 2].Saldo - lstDet[NumPagos - 1].Abono);
-            //        lstDet[NumPagos - 1].Saldo = 0;
+                        oPrestamo.Add(obj);
+                    }
 
-            //        dgGrid.DataSource = lstDet;
-            //    }
+                    oPrestamo[NumPagos - 1].ImportePago = ImpPago + (oPrestamo[NumPagos - 2].Saldo - oPrestamo[NumPagos - 1].Abono);
+                    oPrestamo[NumPagos - 1].Abono = (ImpPago - oPrestamo[NumPagos - 1].Interes) + (oPrestamo[NumPagos - 2].Saldo - oPrestamo[NumPagos - 1].Abono);
+                    oPrestamo[NumPagos - 1].Saldo = 0;
 
-            //} catch (Exception ex) {
-            //    //throw ex;
-            //    RadMessageBox.Show(ex.Message, this.Text + "Generar Tabla Amortización", MessageBoxButtons.OK, RadMessageIcon.Error);
-            //}
+                    dgGrid.DataSource = oPrestamo;
+                }
+
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrío un error al generar la tabla de amortizaciones\n"+ ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
         private void GuardarInformacion()
         {
@@ -142,7 +257,6 @@ namespace Hersan.UI.Nomina
         }
         private int CalcularSemana(int Semana, int Incremento)
         {
-
             int Anio = 0;
             int SumAnio = 0;
             int Sem = 0;
@@ -174,49 +288,39 @@ namespace Hersan.UI.Nomina
                 } else {
                     Resultado = Semana + Incremento;
                 }
-
             }
 
             return Resultado;
         }
         private void CalcularImportePago()
         {
+            double tasa = 0;
+            double dividendo = 0;
+            int Potencia = 0;
+            double divisor = 0;
 
-            //double tasa = 0;
-            //double dividendo = 0;
-            //int Potencia = 0;
-            //double divisor = 0;
+            try {
+                if ((txtImporte.Text.Trim() != string.Empty) & (txtPagos.Text.Trim() != string.Empty)) {
+                    if ((double.Parse(txtImporte.Text) > 0) & (int.Parse(txtPagos.Text) > 0)) {
+                        tasa = double.Parse(txtTasa.Text.ToString()) / 100;
+                        dividendo = double.Parse(txtImporte.Text) * tasa;
+                        Potencia = int.Parse(txtPagos.Text.ToString()) * -1;
+                        divisor = 1 - (System.Math.Pow((1 + tasa), Potencia));
 
-            ////Tipo de Préstamo Normal
-            //if (txtImporte.Enabled && txtPagos.Enabled && txtImpPago.Enabled && mcbTasa.Enabled) {
-            //    if ((txtImporte.Text.Trim() != string.Empty) & (txtPagos.Text.Trim() != string.Empty)) {
-            //        if ((double.Parse(txtImporte.Text) > 0) & (int.Parse(txtPagos.Text) > 0)) {
-            //            tasa = double.Parse(mcbTasa.Text.ToString()) / 100;
-            //            dividendo = double.Parse(txtImporte.Text) * tasa;
-            //            Potencia = int.Parse(txtPagos.Text.ToString()) * -1;
-            //            divisor = 1 - (System.Math.Pow((1 + tasa), Potencia));
+                        txtPago.Text = (dividendo / divisor).ToString("#,0.00");
+                    }
+                }
+                if (txtImporte.Text.Trim() == string.Empty || txtPagos.Text.Trim() == string.Empty) {
+                    txtPago.Text = "0.00";
+                } else if ((int.Parse(txtPagos.Text.ToString()) == 0) || (double.Parse(txtImporte.Text.Trim()) == 0)) {
+                    txtPago.Text = "0.00";
+                }
 
-            //            txtImpPago.Text = (dividendo / divisor).ToString("#,0.00");
-            //        }
-            //    }
-            //} else
-            //    //Tipo de Préstamo tasa Cero
-            //    if (txtImporte.Enabled && txtPagos.Enabled && txtImpPago.Enabled && !mcbTasa.Enabled) {
-            //    dividendo = (txtImporte.Text.Trim().Length == 0 ? 0 : double.Parse(txtImporte.Text)) / int.Parse(txtPagos.Text.ToString());
-            //    txtImpPago.Text = dividendo.ToString("#,0.00");
-            //} else {
-            //    //Tipo de Préstamo Sin Pago
-            //    txtImpPago.Text = "0.00";
-            //    txtPagos.Text = "0";
-            //}
+                dgGrid.DataSource = null;
+            } catch (Exception ex) {
+                throw ex;
+            }
 
-            //if (txtImporte.Text.Trim() == string.Empty) {
-            //    txtImpPago.Text = "0.00";
-            //} else if ((int.Parse(txtPagos.Text.ToString()) == 0) | (double.Parse(txtImporte.Text.Trim()) == 0)) {
-            //    txtImpPago.Text = "0.00";
-            //}
-
-            //dgGrid.DataSource = null;
         }
         private void ImprimirPrestamo()
         {
@@ -261,7 +365,6 @@ namespace Hersan.UI.Nomina
             //    RadMessageBox.Show("Ocurrió un error al generar la tabla" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
             //}
         }
-
-       
+        
     }
 }

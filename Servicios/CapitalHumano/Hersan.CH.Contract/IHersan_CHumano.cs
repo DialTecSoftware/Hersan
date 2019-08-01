@@ -183,6 +183,8 @@ namespace Hersan.CH.Contract
         int CHU_Empleados_Elimina(int IdEmp, int IdUsuario);
         [OperationContract]
         DataTable CHU_Empleados_Credencial(int IdExpediente);
+        [OperationContract]
+        List<EmpleadosBE> CHU_Empleados_Combo();
         #endregion
     }
 }

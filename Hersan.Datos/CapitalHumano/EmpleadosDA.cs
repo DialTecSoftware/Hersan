@@ -15,7 +15,7 @@ namespace Hersan.Datos.CapitalHumano
         const string CONST_CHU_EMP_ACTUALIZAR = "CHU_Empleados_Actualiza";
         const string CONST_CHU_EMP_ELIMINAR = "CHU_Empleados_Eliminar";
         const string CONST_CHU_EMPLEADOS_CREDENCIAL = "CHU_Empleados_Credencial";
-        
+        const string CONST_CHU_EMPLEADOS_COMBO = "CHU_Empleados_Combo";
         #endregion
 
 
@@ -154,6 +154,37 @@ namespace Hersan.Datos.CapitalHumano
                 return oData;
             } catch (Exception ex) {
                 throw ex;
+            }
+        }
+        public List<EmpleadosBE> CHU_Empleados_Combo()
+        {
+            List<EmpleadosBE> oList = new List<EmpleadosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMPLEADOS_COMBO, conn)) {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                EmpleadosBE obj = new EmpleadosBE();
+
+                                obj.Id = int.Parse(reader["EMP_Id"].ToString());
+                                obj.Numero = int.Parse(reader["EMP_Numero"].ToString());
+                                obj.Expedientes.DatosPersonales.Nombres = reader["EDP_Nombres"].ToString();
+                                obj.Expedientes.DatosPersonales.APaterno = reader["EDP_APaterno"].ToString();
+                                obj.Expedientes.DatosPersonales.AMaterno = reader["EDP_AMaterno"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+
+
             }
         }
     }

@@ -52,7 +52,17 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.ColumnGroupsViewDefinition columnGroupsViewDefinition1 = new Telerik.WinControls.UI.ColumnGroupsViewDefinition();
+            Telerik.WinControls.UI.GridViewColumnGroup gridViewColumnGroup1 = new Telerik.WinControls.UI.GridViewColumnGroup();
+            Telerik.WinControls.UI.GridViewColumnGroupRow gridViewColumnGroupRow1 = new Telerik.WinControls.UI.GridViewColumnGroupRow();
+            Telerik.WinControls.UI.GridViewColumnGroup gridViewColumnGroup2 = new Telerik.WinControls.UI.GridViewColumnGroup();
+            Telerik.WinControls.UI.GridViewColumnGroupRow gridViewColumnGroupRow2 = new Telerik.WinControls.UI.GridViewColumnGroupRow();
+            Telerik.WinControls.UI.GridViewColumnGroup gridViewColumnGroup3 = new Telerik.WinControls.UI.GridViewColumnGroup();
+            Telerik.WinControls.UI.GridViewColumnGroupRow gridViewColumnGroupRow3 = new Telerik.WinControls.UI.GridViewColumnGroupRow();
+            Telerik.WinControls.UI.GridViewColumnGroup gridViewColumnGroup4 = new Telerik.WinControls.UI.GridViewColumnGroup();
+            Telerik.WinControls.UI.GridViewColumnGroupRow gridViewColumnGroupRow4 = new Telerik.WinControls.UI.GridViewColumnGroupRow();
+            Telerik.WinControls.UI.GridViewColumnGroup gridViewColumnGroup5 = new Telerik.WinControls.UI.GridViewColumnGroup();
+            Telerik.WinControls.UI.GridViewColumnGroupRow gridViewColumnGroupRow5 = new Telerik.WinControls.UI.GridViewColumnGroupRow();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -200,11 +210,17 @@
             // 
             // gvDatos
             // 
+            this.gvDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this.gvDatos.Cursor = System.Windows.Forms.Cursors.Default;
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDatos.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.gvDatos.ForeColor = System.Drawing.Color.Black;
+            this.gvDatos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gvDatos.Location = new System.Drawing.Point(0, 53);
             // 
             // 
             // 
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Fecha";
             gridViewTextBoxColumn1.FormatString = "{0:dd/MM/yyyy}";
             gridViewTextBoxColumn1.HeaderText = "Fecha";
@@ -213,6 +229,7 @@
             gridViewTextBoxColumn1.Name = "Fecha";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn1.Width = 70;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Hora";
             gridViewTextBoxColumn2.HeaderText = "Hora";
             gridViewTextBoxColumn2.MaxWidth = 70;
@@ -220,6 +237,7 @@
             gridViewTextBoxColumn2.Name = "Hora";
             gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn2.Width = 70;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Presion3";
             gridViewTextBoxColumn3.FormatString = "{0:N2}";
             gridViewTextBoxColumn3.HeaderText = "Presión 3";
@@ -228,6 +246,7 @@
             gridViewTextBoxColumn3.Name = "Pres3";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn3.Width = 70;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Presion2";
             gridViewTextBoxColumn4.FormatString = "{0:N2}";
             gridViewTextBoxColumn4.HeaderText = "Presión 2";
@@ -236,6 +255,7 @@
             gridViewTextBoxColumn4.Name = "Pres2";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn4.Width = 70;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "Presion1";
             gridViewTextBoxColumn5.FormatString = "{0:N2}";
             gridViewTextBoxColumn5.HeaderText = "Presión 1";
@@ -244,6 +264,7 @@
             gridViewTextBoxColumn5.Name = "Pres1";
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn5.Width = 70;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "Velocidad3";
             gridViewTextBoxColumn6.FormatString = "{0:N2}";
             gridViewTextBoxColumn6.HeaderText = "Velocidad 3";
@@ -252,6 +273,7 @@
             gridViewTextBoxColumn6.Name = "Vel3";
             gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn6.Width = 70;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "Velocidad2";
             gridViewTextBoxColumn7.FormatString = "{0:N2}";
             gridViewTextBoxColumn7.HeaderText = "Velocidad 2";
@@ -260,6 +282,7 @@
             gridViewTextBoxColumn7.Name = "Vel2";
             gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn7.Width = 70;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "Velocidad1";
             gridViewTextBoxColumn8.FormatString = "{0:N2}";
             gridViewTextBoxColumn8.HeaderText = "Velocidad 1";
@@ -268,6 +291,7 @@
             gridViewTextBoxColumn8.Name = "Vel1";
             gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn8.Width = 70;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
             gridViewTextBoxColumn9.FieldName = "PresionC1";
             gridViewTextBoxColumn9.FormatString = "{0:N2}";
             gridViewTextBoxColumn9.HeaderText = "Presión 1";
@@ -276,6 +300,7 @@
             gridViewTextBoxColumn9.Name = "PresC1";
             gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn9.Width = 70;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
             gridViewTextBoxColumn10.FieldName = "VelocidadC1";
             gridViewTextBoxColumn10.FormatString = "{0:N2}";
             gridViewTextBoxColumn10.HeaderText = "Velocidad 1";
@@ -284,6 +309,7 @@
             gridViewTextBoxColumn10.Name = "Velc1";
             gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn10.Width = 70;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
             gridViewTextBoxColumn11.FieldName = "PosicionC1";
             gridViewTextBoxColumn11.FormatString = "{0:N2}";
             gridViewTextBoxColumn11.HeaderText = "Tiempo 1";
@@ -292,6 +318,7 @@
             gridViewTextBoxColumn11.Name = "PosC1";
             gridViewTextBoxColumn11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn11.Width = 70;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
             gridViewTextBoxColumn12.FieldName = "PresionC2";
             gridViewTextBoxColumn12.FormatString = "{0:N2}";
             gridViewTextBoxColumn12.HeaderText = "Presión 2";
@@ -300,6 +327,7 @@
             gridViewTextBoxColumn12.Name = "PresC2";
             gridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn12.Width = 70;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
             gridViewTextBoxColumn13.FieldName = "VelocidadC2";
             gridViewTextBoxColumn13.FormatString = "{0:N2}";
             gridViewTextBoxColumn13.HeaderText = "Velocidad 2";
@@ -308,6 +336,7 @@
             gridViewTextBoxColumn13.Name = "VelC2";
             gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn13.Width = 70;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
             gridViewTextBoxColumn14.FieldName = "PosicionC2";
             gridViewTextBoxColumn14.FormatString = "{0:N2}";
             gridViewTextBoxColumn14.HeaderText = "Tiempo 2";
@@ -316,6 +345,7 @@
             gridViewTextBoxColumn14.Name = "PosC2";
             gridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn14.Width = 70;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
             gridViewTextBoxColumn15.FieldName = "Zona4";
             gridViewTextBoxColumn15.FormatString = "{0:N2}";
             gridViewTextBoxColumn15.HeaderText = "Zona N";
@@ -324,6 +354,7 @@
             gridViewTextBoxColumn15.Name = "Zona4";
             gridViewTextBoxColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn15.Width = 70;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
             gridViewTextBoxColumn16.FieldName = "Zona1";
             gridViewTextBoxColumn16.FormatString = "{0:N2}";
             gridViewTextBoxColumn16.HeaderText = "Zona 1";
@@ -332,6 +363,7 @@
             gridViewTextBoxColumn16.Name = "Zona1";
             gridViewTextBoxColumn16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn16.Width = 70;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
             gridViewTextBoxColumn17.FieldName = "Zona2";
             gridViewTextBoxColumn17.FormatString = "{0:N2}";
             gridViewTextBoxColumn17.HeaderText = "Zona 2";
@@ -340,6 +372,7 @@
             gridViewTextBoxColumn17.Name = "Zona2";
             gridViewTextBoxColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn17.Width = 70;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
             gridViewTextBoxColumn18.FieldName = "Zona3";
             gridViewTextBoxColumn18.FormatString = "{0:N2}";
             gridViewTextBoxColumn18.HeaderText = "Zona 3";
@@ -348,15 +381,18 @@
             gridViewTextBoxColumn18.Name = "Zona3";
             gridViewTextBoxColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn18.Width = 70;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
             gridViewTextBoxColumn19.FieldName = "Posicion";
             gridViewTextBoxColumn19.FormatString = "{0:N2}";
             gridViewTextBoxColumn19.HeaderText = "Posición Carga";
             gridViewTextBoxColumn19.MaxWidth = 70;
             gridViewTextBoxColumn19.MinWidth = 70;
             gridViewTextBoxColumn19.Name = "Posicion";
+            gridViewTextBoxColumn19.RowSpan = 30;
             gridViewTextBoxColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn19.Width = 70;
             gridViewTextBoxColumn19.WrapText = true;
+            gridViewTextBoxColumn20.EnableExpressionEditor = false;
             gridViewTextBoxColumn20.FieldName = "Velocidad";
             gridViewTextBoxColumn20.FormatString = "{0:N2}";
             gridViewTextBoxColumn20.HeaderText = "Carga";
@@ -365,6 +401,7 @@
             gridViewTextBoxColumn20.Name = "Velocidad";
             gridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn20.Width = 70;
+            gridViewTextBoxColumn21.EnableExpressionEditor = false;
             gridViewTextBoxColumn21.FieldName = "Retardo";
             gridViewTextBoxColumn21.FormatString = "{0:N2}";
             gridViewTextBoxColumn21.HeaderText = "Enfriamiento";
@@ -373,12 +410,14 @@
             gridViewTextBoxColumn21.Name = "Retardo";
             gridViewTextBoxColumn21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn21.Width = 70;
+            gridViewTextBoxColumn22.EnableExpressionEditor = false;
             gridViewTextBoxColumn22.FieldName = "Cavidades";
             gridViewTextBoxColumn22.HeaderText = "Cavidades";
             gridViewTextBoxColumn22.MaxWidth = 100;
             gridViewTextBoxColumn22.MinWidth = 70;
             gridViewTextBoxColumn22.Name = "Cavidades";
             gridViewTextBoxColumn22.Width = 70;
+            gridViewTextBoxColumn23.EnableExpressionEditor = false;
             gridViewTextBoxColumn23.FieldName = "Observa";
             gridViewTextBoxColumn23.HeaderText = "Observaciones";
             gridViewTextBoxColumn23.MaxWidth = 250;
@@ -410,9 +449,55 @@
             gridViewTextBoxColumn22,
             gridViewTextBoxColumn23});
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
-            this.gvDatos.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gridViewColumnGroup1.Name = "group1";
+            gridViewColumnGroupRow1.ColumnNames.Add("Fecha");
+            gridViewColumnGroupRow1.ColumnNames.Add("Hora");
+            gridViewColumnGroup1.Rows.Add(gridViewColumnGroupRow1);
+            gridViewColumnGroup1.RowSpan = 30;
+            gridViewColumnGroup1.Text = "";
+            gridViewColumnGroup2.Name = "group2";
+            gridViewColumnGroupRow2.ColumnNames.Add("Pres3");
+            gridViewColumnGroupRow2.ColumnNames.Add("Pres2");
+            gridViewColumnGroupRow2.ColumnNames.Add("Pres1");
+            gridViewColumnGroupRow2.ColumnNames.Add("Vel3");
+            gridViewColumnGroupRow2.ColumnNames.Add("Vel2");
+            gridViewColumnGroupRow2.ColumnNames.Add("Vel1");
+            gridViewColumnGroup2.Rows.Add(gridViewColumnGroupRow2);
+            gridViewColumnGroup2.Text = "INYECCIÓN";
+            gridViewColumnGroup3.Name = "group3";
+            gridViewColumnGroupRow3.ColumnNames.Add("PresC1");
+            gridViewColumnGroupRow3.ColumnNames.Add("Velc1");
+            gridViewColumnGroupRow3.ColumnNames.Add("PosC1");
+            gridViewColumnGroupRow3.ColumnNames.Add("PresC2");
+            gridViewColumnGroupRow3.ColumnNames.Add("VelC2");
+            gridViewColumnGroupRow3.ColumnNames.Add("PosC2");
+            gridViewColumnGroup3.Rows.Add(gridViewColumnGroupRow3);
+            gridViewColumnGroup3.Text = "MPI";
+            gridViewColumnGroup4.Name = "group4";
+            gridViewColumnGroupRow4.ColumnNames.Add("Zona4");
+            gridViewColumnGroupRow4.ColumnNames.Add("Zona1");
+            gridViewColumnGroupRow4.ColumnNames.Add("Zona2");
+            gridViewColumnGroupRow4.ColumnNames.Add("Zona3");
+            gridViewColumnGroup4.Rows.Add(gridViewColumnGroupRow4);
+            gridViewColumnGroup4.Text = "TEMPERATURAS";
+            gridViewColumnGroup5.Name = "group5";
+            gridViewColumnGroupRow5.ColumnNames.Add("Posicion");
+            gridViewColumnGroupRow5.ColumnNames.Add("Velocidad");
+            gridViewColumnGroupRow5.ColumnNames.Add("Retardo");
+            gridViewColumnGroupRow5.ColumnNames.Add("Cavidades");
+            gridViewColumnGroupRow5.ColumnNames.Add("Observa");
+            gridViewColumnGroup5.Rows.Add(gridViewColumnGroupRow5);
+            gridViewColumnGroup5.RowSpan = 40;
+            gridViewColumnGroup5.Text = "";
+            columnGroupsViewDefinition1.ColumnGroups.Add(gridViewColumnGroup1);
+            columnGroupsViewDefinition1.ColumnGroups.Add(gridViewColumnGroup2);
+            columnGroupsViewDefinition1.ColumnGroups.Add(gridViewColumnGroup3);
+            columnGroupsViewDefinition1.ColumnGroups.Add(gridViewColumnGroup4);
+            columnGroupsViewDefinition1.ColumnGroups.Add(gridViewColumnGroup5);
+            this.gvDatos.MasterTemplate.ViewDefinition = columnGroupsViewDefinition1;
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.ReadOnly = true;
+            this.gvDatos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
             this.gvDatos.Size = new System.Drawing.Size(801, 290);

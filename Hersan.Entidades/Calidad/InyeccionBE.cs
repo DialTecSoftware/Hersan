@@ -171,6 +171,8 @@ namespace Hersan.Entidades.Inyeccion
             Observa = string.Empty;
             Cavidades = string.Empty;
             IdUsuario = 0;
+            Fecha = string.Empty;
+            Hora = string.Empty;
         }
 
         public decimal Presion1 { get; set; }
@@ -196,5 +198,23 @@ namespace Hersan.Entidades.Inyeccion
         public string Observa { get; set; }
         public string Cavidades { get; set; }
         public int IdUsuario{ get; set; }
+        public string Fecha { get; set; }
+        public string Hora { get; set; }
+    }
+
+    public class TemperaturasConsBE
+    {
+        public TemperaturasConsBE()
+        {
+            Fecha = string.Empty;
+            Hora = string.Empty;
+            Temperatura = new TemperaturasBE();
+            Molde = new TempMoldesBE();
+        }
+
+        public string Fecha { get; set; }
+        public string Hora { get; set; }
+        public TemperaturasBE Temperatura { get; set; }
+        public TempMoldesBE Molde { get; set; }
     }
 }

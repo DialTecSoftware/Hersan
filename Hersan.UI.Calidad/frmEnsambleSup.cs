@@ -125,14 +125,14 @@ namespace Hersan.UI.Calidad
         }
         private void cboProducto_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-            try {
-                if (Flag) {
-                    if (cboProducto.SelectedValue != null)
-                        CargaGrid();
-                }
-            } catch (Exception ex) {
-                throw ex;
-            }
+            //try {
+            //    if (Flag) {
+            //        if (cboProducto.SelectedValue != null)
+            //            CargaGrid();
+            //    }
+            //} catch (Exception ex) {
+            //    throw ex;
+            //}
         }
         private void Contol_KeyDown(object sender, KeyEventArgs e)
         {

@@ -99,7 +99,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(854, 102);
+            this.radPanel1.Size = new System.Drawing.Size(858, 102);
             this.radPanel1.TabIndex = 0;
             // 
             // cboReflejante2
@@ -229,9 +229,9 @@
             this.radPanel3.Controls.Add(this.btnSalir);
             this.radPanel3.Controls.Add(this.btnGuardar);
             this.radPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.radPanel3.Location = new System.Drawing.Point(0, 297);
+            this.radPanel3.Location = new System.Drawing.Point(0, 299);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(854, 47);
+            this.radPanel3.Size = new System.Drawing.Size(858, 47);
             this.radPanel3.TabIndex = 29;
             // 
             // btnBuscar
@@ -279,7 +279,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 102);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(854, 195);
+            this.radPanel2.Size = new System.Drawing.Size(858, 197);
             this.radPanel2.TabIndex = 30;
             // 
             // gvDatos
@@ -400,7 +400,7 @@
             this.gvDatos.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(854, 195);
+            this.gvDatos.Size = new System.Drawing.Size(858, 197);
             this.gvDatos.TabIndex = 10;
             this.gvDatos.CellEndEdit += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gvDatos_CellEndEdit);
             // 
@@ -408,7 +408,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 344);
+            this.ClientSize = new System.Drawing.Size(858, 346);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.radPanel1);
@@ -422,6 +422,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PARÁMETROS ENSAMBLE";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmEnsambleSup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);

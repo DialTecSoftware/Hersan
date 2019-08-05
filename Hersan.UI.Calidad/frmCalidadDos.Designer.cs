@@ -105,7 +105,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(601, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(605, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -233,7 +233,7 @@
             this.radGroupBox1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radGroupBox1.Location = new System.Drawing.Point(0, 53);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(601, 159);
+            this.radGroupBox1.Size = new System.Drawing.Size(605, 159);
             this.radGroupBox1.TabIndex = 4;
             // 
             // txtPorc
@@ -474,7 +474,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel1.Location = new System.Drawing.Point(0, 212);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(601, 225);
+            this.radPanel1.Size = new System.Drawing.Size(605, 227);
             this.radPanel1.TabIndex = 5;
             // 
             // gvDatos
@@ -621,7 +621,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(601, 225);
+            this.gvDatos.Size = new System.Drawing.Size(605, 227);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gvDatos_CellFormatting);
             this.gvDatos.CellEndEdit += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gvDatos_CellEndEdit);
@@ -630,7 +630,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 437);
+            this.ClientSize = new System.Drawing.Size(605, 439);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radCommandBar1);
@@ -641,6 +641,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "CALIDAD ENSAMBLE";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmCalidadDos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();

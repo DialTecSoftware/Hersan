@@ -18,6 +18,9 @@ namespace Hersan.Datos.Calidad
         const string CONS_USP_PRO_PARAMETROS_GUARDAR = "PRO_Parametros_Guardar";
         const string CONS_USP_PRO_PARAMETROS_OBTENER = "PRO_Parametros_Obtener";
         const string CONS_USP_PRO_INYECCION_CONSULTA = "PRO_Inyeccion_Consulta";
+
+        const string CONS_USP_PRO_TEMPERATURAS_CONSULTA = "PRO_Temperaturas_Consulta";
+        const string CONS_USP_PRO_PARAMETROS_CONSULTA = "PRO_Parametros_Consulta";
         #endregion
 
         public int PRO_Inyeccion_Guardar(InyeccionBE Obj, DataTable Detalle)
@@ -219,6 +222,49 @@ namespace Hersan.Datos.Calidad
                 throw ex;
             }
         }
+        public List<TemperaturasConsBE> PRO_Temperaturas_Consulta()
+        {
+            List<TemperaturasConsBE> oList = new List<TemperaturasConsBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_TEMPERATURAS_CONSULTA, conn)) {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                TemperaturasConsBE obj = new TemperaturasConsBE();
+
+                                obj.Fecha = reader["Fecha"].ToString();
+                                obj.Hora = reader["Hora"].ToString();
+                                obj.Temperatura.Cav1 = decimal.Parse(reader["CAV1"].ToString());
+                                obj.Temperatura.Cav2 = decimal.Parse(reader["CAV2"].ToString());
+                                obj.Temperatura.Cav3 = decimal.Parse(reader["CAV3"].ToString());
+                                obj.Temperatura.Cav4 = decimal.Parse(reader["CAV4"].ToString());
+                                obj.Temperatura.Cav5 = decimal.Parse(reader["CAV5"].ToString());
+                                obj.Temperatura.Cav6 = decimal.Parse(reader["CAV6"].ToString());
+                                obj.Temperatura.Cav7 = decimal.Parse(reader["CAV7"].ToString());
+                                obj.Temperatura.Cav8 = decimal.Parse(reader["CAV8"].ToString());
+                                obj.Temperatura.Cav9 = decimal.Parse(reader["CAV9"].ToString());
+                                obj.Temperatura.Cav10 = decimal.Parse(reader["CAV10"].ToString());
+                                obj.Temperatura.Cav11 = decimal.Parse(reader["CAV11"].ToString());
+                                obj.Temperatura.Cav12 = decimal.Parse(reader["CAV12"].ToString());
+                                obj.Temperatura.Observa = reader["Comentarios"].ToString();
+
+                                obj.Molde.Fija = decimal.Parse(reader["Fija"].ToString());
+                                obj.Molde.Movil = decimal.Parse(reader["Movil"].ToString());
+
+                                oList.Add(obj);
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
 
         public int PRO_TemperaturasMolde_Guardar(TempMoldesBE Obj)
         {
@@ -329,7 +375,56 @@ namespace Hersan.Datos.Calidad
                 throw ex;
             }
         }
-      
+        public List<ParametrosInyeccion> PRO_Parametros_Consulta()
+        {
+            List<ParametrosInyeccion> oList = new List<ParametrosInyeccion>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_USP_PRO_PARAMETROS_CONSULTA, conn)) {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                ParametrosInyeccion obj = new ParametrosInyeccion();
+
+                                obj.Presion1 = decimal.Parse(reader["Presion1"].ToString());
+                                obj.Presion2 = decimal.Parse(reader["Presion2"].ToString());
+                                obj.Presion3 = decimal.Parse(reader["Presion3"].ToString());
+                                obj.Velocidad1 = decimal.Parse(reader["Velocidad1"].ToString());
+                                obj.Velocidad2 = decimal.Parse(reader["Velocidad2"].ToString());
+                                obj.Velocidad3 = decimal.Parse(reader["Velocidad3"].ToString());
+                                obj.PosicionC1 = decimal.Parse(reader["PosicionC1"].ToString());
+                                obj.PosicionC2 = decimal.Parse(reader["PosicionC2"].ToString());
+                                obj.PresionC1 = decimal.Parse(reader["PresionC1"].ToString());
+                                obj.PresionC2 = decimal.Parse(reader["PresionC2"].ToString());
+                                obj.VelocidadC1 = decimal.Parse(reader["VelocidadC1"].ToString());
+                                obj.VelocidadC2 = decimal.Parse(reader["VelocidadC2"].ToString());
+                                obj.Posicion = reader["Posicion"].ToString();
+                                obj.Presion = decimal.Parse(reader["Presion"].ToString());
+                                obj.Velocidad = decimal.Parse(reader["Velocidad"].ToString());
+                                obj.Retardo = decimal.Parse(reader["RetardEnfria"].ToString());
+                                obj.Zona4 = decimal.Parse(reader["Zona4"].ToString());
+                                obj.Zona3 = decimal.Parse(reader["Zona3"].ToString());
+                                obj.Zona2 = decimal.Parse(reader["Zona2"].ToString());
+                                obj.Zona1 = decimal.Parse(reader["Zona1"].ToString());
+                                obj.Observa = reader["Observa"].ToString();
+                                obj.Cavidades = reader["Cavidades"].ToString();
+                                obj.Fecha = reader["Fecha"].ToString();
+                                obj.Hora = reader["Hora"].ToString();
+
+                                oList.Add(obj);
+                            }
+                        }
+
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
 
     }
 }

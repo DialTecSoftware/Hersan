@@ -246,6 +246,7 @@ namespace Hersan.Datos.Calidad
                                 item.Obs3 = int.Parse(reader["Obs3"].ToString());
                                 item.Obs4 = int.Parse(reader["Obs4"].ToString());
                                 item.Obs5 = int.Parse(reader["Obs5"].ToString());
+                                item.Maquina = reader["Maquina"].ToString();
 
                                 oList.Add(item);
                             }

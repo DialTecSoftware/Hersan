@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 140);
+            this.ClientSize = new System.Drawing.Size(363, 142);
             this.Controls.Add(this.dtHasta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtDesde);
@@ -131,6 +131,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GRAFICAS HISTÓRICAS";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmGraficaHistorica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnHistograma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeries)).EndInit();

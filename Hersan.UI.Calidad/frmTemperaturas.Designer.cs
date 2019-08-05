@@ -492,7 +492,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 359);
+            this.ClientSize = new System.Drawing.Size(641, 361);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.radGroupBox2);
             this.Controls.Add(this.radGroupBox1);
@@ -507,6 +507,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TEMPERATURAS INYECCIÓN";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmTemperaturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

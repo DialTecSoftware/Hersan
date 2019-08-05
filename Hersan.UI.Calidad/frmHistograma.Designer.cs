@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.CartesianArea cartesianArea2 = new Telerik.WinControls.UI.CartesianArea();
-            Telerik.WinControls.UI.CategoricalAxis categoricalAxis2 = new Telerik.WinControls.UI.CategoricalAxis();
-            Telerik.WinControls.UI.LinearAxis linearAxis2 = new Telerik.WinControls.UI.LinearAxis();
-            Telerik.WinControls.UI.BarSeries barSeries3 = new Telerik.WinControls.UI.BarSeries();
-            Telerik.WinControls.UI.BarSeries barSeries4 = new Telerik.WinControls.UI.BarSeries();
+            Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CategoricalAxis categoricalAxis1 = new Telerik.WinControls.UI.CategoricalAxis();
+            Telerik.WinControls.UI.LinearAxis linearAxis1 = new Telerik.WinControls.UI.LinearAxis();
+            Telerik.WinControls.UI.BarSeries barSeries1 = new Telerik.WinControls.UI.BarSeries();
+            Telerik.WinControls.UI.BarSeries barSeries2 = new Telerik.WinControls.UI.BarSeries();
             this.PageView = new Telerik.WinControls.UI.RadPageView();
             this.Page1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.chart1 = new Telerik.WinControls.UI.RadChartView();
@@ -65,7 +65,7 @@
             this.PageView.Location = new System.Drawing.Point(0, 0);
             this.PageView.Name = "PageView";
             this.PageView.SelectedPage = this.Page1;
-            this.PageView.Size = new System.Drawing.Size(832, 580);
+            this.PageView.Size = new System.Drawing.Size(836, 582);
             this.PageView.TabIndex = 0;
             this.PageView.SelectedPageChanged += new System.EventHandler(this.PageView_SelectedPageChanged);
             // 
@@ -75,52 +75,52 @@
             this.Page1.ItemSize = new System.Drawing.SizeF(65F, 28F);
             this.Page1.Location = new System.Drawing.Point(10, 37);
             this.Page1.Name = "Page1";
-            this.Page1.Size = new System.Drawing.Size(811, 532);
+            this.Page1.Size = new System.Drawing.Size(815, 534);
             this.Page1.Tag = "Val1";
             this.Page1.Text = "Cavidad 1";
             this.Page1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // chart1
             // 
-            this.chart1.AreaDesign = cartesianArea2;
-            categoricalAxis2.IsPrimary = true;
-            categoricalAxis2.LabelRotationAngle = 300D;
-            categoricalAxis2.Title = "Reflectividad";
-            linearAxis2.AxisType = Telerik.Charting.AxisType.Second;
-            linearAxis2.IsPrimary = true;
-            linearAxis2.LabelRotationAngle = 300D;
-            linearAxis2.TickOrigin = null;
-            linearAxis2.Title = "Frecuencia";
+            this.chart1.AreaDesign = cartesianArea1;
+            categoricalAxis1.IsPrimary = true;
+            categoricalAxis1.LabelRotationAngle = 300D;
+            categoricalAxis1.Title = "Reflectividad";
+            linearAxis1.AxisType = Telerik.Charting.AxisType.Second;
+            linearAxis1.IsPrimary = true;
+            linearAxis1.LabelRotationAngle = 300D;
+            linearAxis1.TickOrigin = null;
+            linearAxis1.Title = "Frecuencia";
             this.chart1.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
-            categoricalAxis2,
-            linearAxis2});
+            categoricalAxis1,
+            linearAxis1});
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.EnableAnalytics = false;
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             this.chart1.SelectionMode = Telerik.WinControls.UI.ChartSelectionMode.SingleDataPoint;
-            barSeries3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            barSeries3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            barSeries3.HorizontalAxis = categoricalAxis2;
-            barSeries3.LabelMode = Telerik.WinControls.UI.BarLabelModes.Top;
-            barSeries3.LegendTitle = null;
-            barSeries3.ShowLabels = true;
-            barSeries3.VerticalAxis = linearAxis2;
-            barSeries4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(158)))), ((int)(((byte)(144)))));
-            barSeries4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(158)))), ((int)(((byte)(144)))));
-            barSeries4.HorizontalAxis = categoricalAxis2;
-            barSeries4.LabelMode = Telerik.WinControls.UI.BarLabelModes.Top;
-            barSeries4.LegendTitle = null;
-            barSeries4.ShowLabels = true;
-            barSeries4.VerticalAxis = linearAxis2;
+            barSeries1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            barSeries1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            barSeries1.HorizontalAxis = categoricalAxis1;
+            barSeries1.LabelMode = Telerik.WinControls.UI.BarLabelModes.Top;
+            barSeries1.LegendTitle = null;
+            barSeries1.ShowLabels = true;
+            barSeries1.VerticalAxis = linearAxis1;
+            barSeries2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(158)))), ((int)(((byte)(144)))));
+            barSeries2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(158)))), ((int)(((byte)(144)))));
+            barSeries2.HorizontalAxis = categoricalAxis1;
+            barSeries2.LabelMode = Telerik.WinControls.UI.BarLabelModes.Top;
+            barSeries2.LegendTitle = null;
+            barSeries2.ShowLabels = true;
+            barSeries2.VerticalAxis = linearAxis1;
             this.chart1.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
-            barSeries3,
-            barSeries4});
+            barSeries1,
+            barSeries2});
             this.chart1.ShowGrid = false;
             this.chart1.ShowPanZoom = true;
             this.chart1.ShowTitle = true;
             this.chart1.ShowTrackBall = true;
-            this.chart1.Size = new System.Drawing.Size(811, 532);
+            this.chart1.Size = new System.Drawing.Size(815, 534);
             this.chart1.TabIndex = 1;
             this.chart1.Title = "Cavidad";
             this.chart1.UseDataSource = false;
@@ -193,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 580);
+            this.ClientSize = new System.Drawing.Size(836, 582);
             this.Controls.Add(this.PageView);
             this.MinimizeBox = false;
             this.Name = "frmHistograma";
@@ -203,6 +203,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "HISTOGRAMAS";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmHistograma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PageView)).EndInit();
             this.PageView.ResumeLayout(false);

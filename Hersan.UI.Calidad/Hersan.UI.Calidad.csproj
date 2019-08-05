@@ -57,6 +57,10 @@
     <Reference Include="Telerik.WinControls.ChartView, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.GridView, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.RadDock, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\Telerik.WinControls.Themes.MaterialTeal.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2019.1.117.40\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
@@ -162,6 +166,18 @@
     <Compile Include="frmParametrosCalidad.Designer.cs">
       <DependentUpon>frmParametrosCalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmParametrosConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParametrosConsulta.Designer.cs">
+      <DependentUpon>frmParametrosConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemperaturaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemperaturaConsulta.Designer.cs">
+      <DependentUpon>frmTemperaturaConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTemperaturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +227,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmParametrosCalidad.resx">
       <DependentUpon>frmParametrosCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParametrosConsulta.resx">
+      <DependentUpon>frmParametrosConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemperaturaConsulta.resx">
+      <DependentUpon>frmTemperaturaConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTemperaturas.resx">
       <DependentUpon>frmTemperaturas.cs</DependentUpon>
@@ -273,6 +295,10 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble8.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Hersan.Entidades.APT.AlmacenPTBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadEnsambleBE.datasource" />
@@ -310,6 +336,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.OrganigramaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.PuestosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.ReflejantesBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.RegimenSATBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TipoProductoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposClienteBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Catalogos.TiposContratoBE.datasource" />
@@ -323,6 +350,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.InyeccionDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.ParametrosInyeccion.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TemperaturasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TemperaturasConsBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TempMoldesBE.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">

@@ -73,7 +73,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(273, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 77;
             this.label3.Text = "Reflejante 2:";
             // 
@@ -82,7 +82,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(273, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.Size = new System.Drawing.Size(84, 17);
             this.label4.TabIndex = 76;
             this.label4.Text = "Reflejante 1:";
             // 
@@ -108,7 +108,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(16, 49);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.Size = new System.Drawing.Size(63, 17);
             this.label10.TabIndex = 75;
             this.label10.Text = "Carcasa:";
             // 
@@ -117,7 +117,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(11, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.Size = new System.Drawing.Size(69, 17);
             this.label6.TabIndex = 74;
             this.label6.Text = "Producto:";
             // 
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 168);
+            this.ClientSize = new System.Drawing.Size(526, 170);
             this.Controls.Add(this.btnHistograma);
             this.Controls.Add(this.dtHasta);
             this.Controls.Add(this.label2);
@@ -204,6 +204,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "FILTROS GRÁFICA";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmFiltrosGraficaQA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboReflejante1)).EndInit();

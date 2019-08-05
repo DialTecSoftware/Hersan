@@ -85,8 +85,8 @@ namespace Hersan.Negocio
 
         public static bool EnviarMail(string emisor, string destinatario, string asunto, string CuerpoMsg, string smtp, string pwd, int port)
         {
+            bool Flag = false;
             try {
-
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient(smtp);
                 mail.From = new MailAddress(emisor);
@@ -98,11 +98,12 @@ namespace Hersan.Negocio
                 SmtpServer.Credentials = new System.Net.NetworkCredential(emisor, pwd);
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
-                return true;
-            } catch {
-                return false;
+                Flag = true;
+            } catch (Exception ex) {
+                Flag = false;
+                throw ex;
             }
-
+            return Flag;
         }
 
         public static bool EnviarMail(string emisor, string destinatario, string asunto, string CuerpoMsg, string smtp, string pwd, int port, bool ssl)

@@ -42,6 +42,9 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.UsoCFDIBE> ABC_UsoCFDI_Combo();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.RegimenSATBE> ABC_RegimenFiscal_Combo();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_GuardarResponse")]
         int ENS_Servicios_Guardar(Hersan.Entidades.Ensamble.ServiciosBE obj);
         
@@ -129,8 +132,14 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_GuardarResponse")]
         int PRO_Parametros_Guardar(System.Data.DataTable Tabla);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_ConsultaResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Inyeccion.TemperaturasConsBE> PRO_Temperaturas_Consulta();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_ObtenerResponse")]
         Hersan.Entidades.Inyeccion.ParametrosInyeccion PRO_Parametros_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_ConsultaResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Inyeccion.ParametrosInyeccion> PRO_Parametros_Consulta();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Guarda", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_GuardaResponse")]
         int CAL_InspeccionInyeccion_Guarda(Hersan.Entidades.Calidad.CalidadBE Obj, System.Data.DataTable Detalle);
@@ -210,6 +219,18 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GraficaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_GuardarResponse")]
+        int APT_Almacenes_Guardar(Hersan.Entidades.APT.AlmacenPTBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ActualizarResponse")]
+        int APT_Almacenes_Actualizar(Hersan.Entidades.APT.AlmacenPTBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ComboResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -273,6 +294,10 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.UsoCFDIBE> ABC_UsoCFDI_Combo() {
             return base.Channel.ABC_UsoCFDI_Combo();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.RegimenSATBE> ABC_RegimenFiscal_Combo() {
+            return base.Channel.ABC_RegimenFiscal_Combo();
         }
         
         public int ENS_Servicios_Guardar(Hersan.Entidades.Ensamble.ServiciosBE obj) {
@@ -391,8 +416,16 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
             return base.Channel.PRO_Parametros_Guardar(Tabla);
         }
         
+        public System.Collections.Generic.List<Hersan.Entidades.Inyeccion.TemperaturasConsBE> PRO_Temperaturas_Consulta() {
+            return base.Channel.PRO_Temperaturas_Consulta();
+        }
+        
         public Hersan.Entidades.Inyeccion.ParametrosInyeccion PRO_Parametros_Obtener() {
             return base.Channel.PRO_Parametros_Obtener();
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Inyeccion.ParametrosInyeccion> PRO_Parametros_Consulta() {
+            return base.Channel.PRO_Parametros_Consulta();
         }
         
         public int CAL_InspeccionInyeccion_Guarda(Hersan.Entidades.Calidad.CalidadBE Obj, System.Data.DataTable Detalle) {
@@ -493,6 +526,22 @@ namespace Hersan.UI.Calidad.WCF_Ensamble {
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final) {
             return base.Channel.CAL_ResguardoQA_Grafica(Item, Inicial, Final);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa) {
+            return base.Channel.APT_Almacenes_Obtener(IdEmpresa);
+        }
+        
+        public int APT_Almacenes_Guardar(Hersan.Entidades.APT.AlmacenPTBE obj) {
+            return base.Channel.APT_Almacenes_Guardar(obj);
+        }
+        
+        public int APT_Almacenes_Actualizar(Hersan.Entidades.APT.AlmacenPTBE obj) {
+            return base.Channel.APT_Almacenes_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa) {
+            return base.Channel.APT_Almacenes_Combo(IdEmpresa);
         }
     }
 }

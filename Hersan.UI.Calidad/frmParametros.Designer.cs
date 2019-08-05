@@ -718,7 +718,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 339);
+            this.ClientSize = new System.Drawing.Size(610, 341);
             this.Controls.Add(this.txtCavidades);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.txtObserva);
@@ -745,6 +745,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PARÁMETROS INYECCIÓN";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmParametros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

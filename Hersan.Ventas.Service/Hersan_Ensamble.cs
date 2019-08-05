@@ -186,6 +186,10 @@ namespace Hersan.Ensamble.Service
         {
             return new InyecccionBP().PRO_TemperaturasMolde_Obtener();
         }
+        public List<TemperaturasConsBE> PRO_Temperaturas_Consulta()
+        {
+            return new InyecccionBP().PRO_Temperaturas_Consulta();
+        }
         public int PRO_Parametros_Guardar(DataTable Tabla)
         {
             return new InyecccionBP().PRO_Parametros_Guardar(Tabla);
@@ -194,7 +198,10 @@ namespace Hersan.Ensamble.Service
         {
             return new InyecccionBP().PRO_Parametros_Obtener();
         }
-
+        public List<ParametrosInyeccion> PRO_Parametros_Consulta()
+        {
+            return new InyecccionBP().PRO_Parametros_Consulta();
+        }
 
         public int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, DataTable Detalle)
         {

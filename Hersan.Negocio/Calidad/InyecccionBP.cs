@@ -27,6 +27,11 @@ namespace Hersan.Negocio.Calidad
         {
             return new InyeccionDA().PRO_Temperaturas_Obtener();
         }
+        public List<TemperaturasConsBE> PRO_Temperaturas_Consulta()
+        {
+            return new InyeccionDA().PRO_Temperaturas_Consulta();
+        }
+
         public int PRO_TemperaturasMolde_Guardar(TempMoldesBE Obj)
         {
             return new InyeccionDA().PRO_TemperaturasMolde_Guardar(Obj);
@@ -42,6 +47,10 @@ namespace Hersan.Negocio.Calidad
         public ParametrosInyeccion PRO_Parametros_Obtener()
         {
             return new InyeccionDA().PRO_Parametros_Obtener();
+        }
+        public List<ParametrosInyeccion> PRO_Parametros_Consulta()
+        {
+            return new InyeccionDA().PRO_Parametros_Consulta();
         }
     }
 }

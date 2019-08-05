@@ -93,6 +93,7 @@ namespace Hersan.Ensamble.Contract
         #endregion
 
         #region Módulo Calidad
+
         #region Pantallas Calidad        
         [OperationContract]
         int PRO_Inyeccion_Guardar(InyeccionBE Obj, DataTable Detalle);
@@ -111,7 +112,11 @@ namespace Hersan.Ensamble.Contract
         [OperationContract]
         int PRO_Parametros_Guardar(DataTable Tabla);
         [OperationContract]
+        List<TemperaturasConsBE> PRO_Temperaturas_Consulta();
+        [OperationContract]
         ParametrosInyeccion PRO_Parametros_Obtener();
+        [OperationContract]
+        List<ParametrosInyeccion> PRO_Parametros_Consulta();
 
         [OperationContract]
         int CAL_InspeccionInyeccion_Guarda(CalidadBE Obj, DataTable Detalle);
@@ -156,6 +161,7 @@ namespace Hersan.Ensamble.Contract
         List<CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha);
         #endregion
 
+        #region Gráficas
         [OperationContract]
         List<CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista);
         [OperationContract]
@@ -172,6 +178,8 @@ namespace Hersan.Ensamble.Contract
 
         [OperationContract]
         List<CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(CalidadResguardoQA Item, string Inicial, string Final);
+        #endregion
+
         #endregion
 
         #region APT

@@ -55,7 +55,7 @@
             this.PageView.Location = new System.Drawing.Point(0, 0);
             this.PageView.Name = "PageView";
             this.PageView.SelectedPage = this.Page1;
-            this.PageView.Size = new System.Drawing.Size(781, 448);
+            this.PageView.Size = new System.Drawing.Size(785, 450);
             this.PageView.TabIndex = 1;
             this.PageView.SelectedPageChanged += new System.EventHandler(this.PageView_SelectedPageChanged);
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.PageView.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
@@ -69,7 +69,7 @@
             this.Page1.ItemSize = new System.Drawing.SizeF(56F, 28F);
             this.Page1.Location = new System.Drawing.Point(10, 37);
             this.Page1.Name = "Page1";
-            this.Page1.Size = new System.Drawing.Size(760, 400);
+            this.Page1.Size = new System.Drawing.Size(764, 402);
             this.Page1.Tag = "Valor0";
             this.Page1.Text = "Valor 0°";
             this.Page1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,7 +110,7 @@
             this.chart1.ShowPanZoom = true;
             this.chart1.ShowTitle = true;
             this.chart1.ShowTrackBall = true;
-            this.chart1.Size = new System.Drawing.Size(760, 400);
+            this.chart1.Size = new System.Drawing.Size(764, 402);
             this.chart1.TabIndex = 1;
             this.chart1.Title = "Valor";
             this.chart1.UseDataSource = false;
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 448);
+            this.ClientSize = new System.Drawing.Size(785, 450);
             this.Controls.Add(this.PageView);
             this.Name = "frmGraficaQA";
             // 
@@ -146,6 +146,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "HISTOGRAMA";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmGraficaQA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PageView)).EndInit();
             this.PageView.ResumeLayout(false);

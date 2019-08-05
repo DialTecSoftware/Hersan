@@ -84,7 +84,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(783, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(787, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -165,7 +165,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(783, 71);
+            this.radPanel1.Size = new System.Drawing.Size(787, 71);
             this.radPanel1.TabIndex = 1;
             // 
             // cboColores
@@ -453,7 +453,7 @@
             this.gvDatos.Name = "gvDatos";
             this.gvDatos.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(783, 253);
+            this.gvDatos.Size = new System.Drawing.Size(787, 255);
             this.gvDatos.TabIndex = 2;
             // 
             // commandBarStripElement2
@@ -470,7 +470,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 377);
+            this.ClientSize = new System.Drawing.Size(787, 379);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -481,6 +481,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "PRODUCCIÓN INYECCIÓN";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmInyeccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

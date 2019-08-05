@@ -125,7 +125,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(781, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(785, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -264,7 +264,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(781, 142);
+            this.radPanel1.Size = new System.Drawing.Size(785, 142);
             this.radPanel1.TabIndex = 1;
             // 
             // txtMuestra
@@ -487,7 +487,7 @@
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel2.Location = new System.Drawing.Point(0, 195);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(781, 191);
+            this.radPanel2.Size = new System.Drawing.Size(785, 193);
             this.radPanel2.TabIndex = 2;
             // 
             // gvDatos
@@ -616,7 +616,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(781, 191);
+            this.gvDatos.Size = new System.Drawing.Size(785, 193);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.ViewCellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gvDatos_ViewCellFormatting);
             // 
@@ -634,7 +634,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 386);
+            this.ClientSize = new System.Drawing.Size(785, 388);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -645,6 +645,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "MUESTREO DE RESGUARDO (CALIDAD)";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmMuestreoQA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

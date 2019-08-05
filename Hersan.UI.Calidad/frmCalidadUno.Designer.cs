@@ -43,6 +43,7 @@
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.cboOperador = new Telerik.WinControls.UI.RadDropDownList();
             this.txtPorc = new Telerik.WinControls.UI.RadTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtIdDetalle = new Telerik.WinControls.UI.RadTextBox();
@@ -99,10 +100,10 @@
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.cboOperador = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboOperador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).BeginInit();
@@ -136,7 +137,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCav2_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboOperador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,7 +147,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(559, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(563, 53);
             this.radCommandBar1.TabIndex = 2;
             // 
             // commandBarRowElement1
@@ -276,9 +276,24 @@
             this.radGroupBox1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radGroupBox1.Location = new System.Drawing.Point(0, 53);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(559, 169);
+            this.radGroupBox1.Size = new System.Drawing.Size(563, 169);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "LISTA INYECCIÓN";
+            // 
+            // cboOperador
+            // 
+            this.cboOperador.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem1.Tag = "SABINO NAVARRO";
+            radListDataItem1.Text = "SABINO NAVARRO";
+            radListDataItem2.Tag = "SERGIO RUIZ";
+            radListDataItem2.Text = "SERGIO RUIZ ";
+            this.cboOperador.Items.Add(radListDataItem1);
+            this.cboOperador.Items.Add(radListDataItem2);
+            this.cboOperador.Location = new System.Drawing.Point(355, 33);
+            this.cboOperador.Name = "cboOperador";
+            this.cboOperador.Size = new System.Drawing.Size(164, 20);
+            this.cboOperador.SortStyle = Telerik.WinControls.Enumerations.SortStyle.Ascending;
+            this.cboOperador.TabIndex = 2;
             // 
             // txtPorc
             // 
@@ -611,7 +626,7 @@
             this.pnlCaptura.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.pnlCaptura.Location = new System.Drawing.Point(0, 222);
             this.pnlCaptura.Name = "pnlCaptura";
-            this.pnlCaptura.Size = new System.Drawing.Size(559, 172);
+            this.pnlCaptura.Size = new System.Drawing.Size(563, 174);
             this.pnlCaptura.TabIndex = 4;
             this.pnlCaptura.Text = "REFLECTIVIDAD";
             this.pnlCaptura.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
@@ -900,26 +915,11 @@
             this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
             this.commandBarStripElement6.Name = "commandBarStripElement6";
             // 
-            // cboOperador
-            // 
-            this.cboOperador.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Tag = "SABINO NAVARRO";
-            radListDataItem1.Text = "SABINO NAVARRO";
-            radListDataItem2.Tag = "SERGIO RUIZ";
-            radListDataItem2.Text = "SERGIO RUIZ ";
-            this.cboOperador.Items.Add(radListDataItem1);
-            this.cboOperador.Items.Add(radListDataItem2);
-            this.cboOperador.Location = new System.Drawing.Point(355, 33);
-            this.cboOperador.Name = "cboOperador";
-            this.cboOperador.Size = new System.Drawing.Size(164, 20);
-            this.cboOperador.SortStyle = Telerik.WinControls.Enumerations.SortStyle.Ascending;
-            this.cboOperador.TabIndex = 2;
-            // 
             // frmCalidadUno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 394);
+            this.ClientSize = new System.Drawing.Size(563, 396);
             this.Controls.Add(this.pnlCaptura);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radCommandBar1);
@@ -933,11 +933,13 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CALIDAD INYECCIÓN";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmCalidadUno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboOperador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).EndInit();
@@ -973,7 +975,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCav2_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCav1_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboOperador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

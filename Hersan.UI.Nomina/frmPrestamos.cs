@@ -31,11 +31,11 @@ namespace Hersan.UI.Nomina
         private void frmPrestamos_Load(object sender, EventArgs e)
         {
             try {
-                //System.Threading.Tasks.Task task = new System.Threading.Tasks.Task(() => { CargaSemanas(); });
-                //task.Start();
+                System.Threading.Tasks.Task task = new System.Threading.Tasks.Task(() => { CargaSemanas(); });
+                task.RunSynchronously();
 
-                CargaSemanas();
-                CargaEmpleados();
+                task = new System.Threading.Tasks.Task(() => { CargaEmpleados(); });
+                task.RunSynchronously();                
             } catch (Exception ex) {
                 throw ex;
             }
@@ -98,7 +98,6 @@ namespace Hersan.UI.Nomina
         }
         private void cboSemana_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             try {
                 //CALCULO DE PAGOS
                 int Semanas = oList.FindAll(item => item.Semana > int.Parse(cboSemana.Text)).Count;

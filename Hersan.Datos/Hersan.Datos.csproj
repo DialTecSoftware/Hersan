@@ -108,6 +108,7 @@
     <Compile Include="Ensamble\ProductosDA.cs" />
     <Compile Include="Ensamble\ServiciosDA.cs" />
     <Compile Include="Nomina\FactoresDA.cs" />
+    <Compile Include="Nomina\ParametrosDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relchec\DiasFestDA.cs" />
     <Compile Include="Relchec\HorariosDA.cs" />

@@ -69,4 +69,44 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SemanasBE" nillable="true" type="tns:SemanasBE" />
+  <xs:complexType name="ArrayOfCuotasBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CuotasBE" nillable="true" type="tns:CuotasBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCuotasBE" nillable="true" type="tns:ArrayOfCuotasBE" />
+  <xs:complexType name="CuotasBE">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q5:GeneralBE" />
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="tns:CuotasDetalleBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuotasBE" nillable="true" type="tns:CuotasBE" />
+  <xs:complexType name="CuotasDetalleBE">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q6:GeneralBE" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Patron" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Prestacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Trabajador" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuotasDetalleBE" nillable="true" type="tns:CuotasDetalleBE" />
+  <xs:complexType name="ParametrosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ahorro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Asistencia" type="xs:decimal" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q7:GeneralBE" />
+      <xs:element minOccurs="0" name="Dias" type="xs:int" />
+      <xs:element minOccurs="0" name="Horas" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Puntualidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UMA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Vales" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametrosBE" nillable="true" type="tns:ParametrosBE" />
 </xs:schema>

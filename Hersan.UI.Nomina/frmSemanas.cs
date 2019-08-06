@@ -87,6 +87,5 @@ namespace Hersan.UI.Nomina
             }
         }
 
-       
     }
 }

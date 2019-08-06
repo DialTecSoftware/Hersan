@@ -18,5 +18,12 @@ namespace Hersan.Nomina.Contract
         List<SemanasBE> NOM_Semanas_Obtener(int Anio);
         [OperationContract]
         int NOM_Semanas_generar(int Anio);
+        [OperationContract]
+        List<CuotasBE> NOM_Cuotas_Obtener();
+
+        [OperationContract]
+        ParametrosBE Nom_Parametros_Obtener();
+        [OperationContract]
+        int Nom_Parametros_Guardar(ParametrosBE item);
     }
 }

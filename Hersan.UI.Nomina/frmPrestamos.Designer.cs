@@ -39,17 +39,17 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -66,6 +66,7 @@
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.dgGrid = new Telerik.WinControls.UI.RadGridView();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.cboEmpleados = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.cboSemana = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
             this.txtPago = new Telerik.WinControls.UI.RadTextBox();
@@ -81,12 +82,15 @@
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.cboEmpleados = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgGrid.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana.EditorControl.MasterTemplate)).BeginInit();
@@ -95,9 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTasa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImporte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +109,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(760, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(764, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -352,7 +353,7 @@
             this.dgGrid.ReadOnly = true;
             this.dgGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgGrid.ShowGroupPanel = false;
-            this.dgGrid.Size = new System.Drawing.Size(760, 249);
+            this.dgGrid.Size = new System.Drawing.Size(764, 251);
             this.dgGrid.TabIndex = 2;
             // 
             // radPanel1
@@ -373,8 +374,84 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(760, 119);
+            this.radPanel1.Size = new System.Drawing.Size(764, 119);
             this.radPanel1.TabIndex = 1;
+            // 
+            // cboEmpleados
+            // 
+            this.cboEmpleados.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            // 
+            // cboEmpleados.NestedRadGridView
+            // 
+            this.cboEmpleados.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.cboEmpleados.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cboEmpleados.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cboEmpleados.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cboEmpleados.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cboEmpleados.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.cboEmpleados.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.AllowColumnReorder = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.AllowDragToGroup = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.AllowRowResize = false;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "Id";
+            gridViewTextBoxColumn9.HeaderText = "Id";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "Id";
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "Numero";
+            gridViewTextBoxColumn10.HeaderText = "Numero";
+            gridViewTextBoxColumn10.Name = "Numero";
+            gridViewTextBoxColumn11.AllowGroup = false;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "Expedientes.DatosPersonales.Nombres";
+            gridViewTextBoxColumn11.HeaderText = "Nombre";
+            gridViewTextBoxColumn11.Name = "Nombre";
+            gridViewTextBoxColumn11.ReadOnly = true;
+            gridViewTextBoxColumn11.Width = 100;
+            gridViewTextBoxColumn12.AllowGroup = false;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "Expedientes.DatosPersonales.APaterno";
+            gridViewTextBoxColumn12.HeaderText = "AP. Paterno";
+            gridViewTextBoxColumn12.IsVisible = false;
+            gridViewTextBoxColumn12.Name = "APaterno";
+            gridViewTextBoxColumn12.ReadOnly = true;
+            gridViewTextBoxColumn12.Width = 100;
+            gridViewTextBoxColumn13.AllowGroup = false;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "Expedientes.DatosPersonales.AMaterno";
+            gridViewTextBoxColumn13.HeaderText = "AP. Materno";
+            gridViewTextBoxColumn13.IsVisible = false;
+            gridViewTextBoxColumn13.Name = "AMaterno";
+            gridViewTextBoxColumn13.ReadOnly = true;
+            gridViewTextBoxColumn13.Width = 100;
+            this.cboEmpleados.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13});
+            this.cboEmpleados.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.EnableSorting = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.ShowRowHeaderColumn = false;
+            this.cboEmpleados.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.cboEmpleados.EditorControl.Name = "NestedRadGridView";
+            this.cboEmpleados.EditorControl.ReadOnly = true;
+            this.cboEmpleados.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cboEmpleados.EditorControl.ShowGroupPanel = false;
+            this.cboEmpleados.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.cboEmpleados.EditorControl.TabIndex = 0;
+            this.cboEmpleados.Location = new System.Drawing.Point(127, 24);
+            this.cboEmpleados.Name = "cboEmpleados";
+            this.cboEmpleados.Size = new System.Drawing.Size(207, 20);
+            this.cboEmpleados.TabIndex = 1;
+            this.cboEmpleados.TabStop = false;
             // 
             // cboSemana
             // 
@@ -574,87 +651,11 @@
             this.commandBarStripElement4.DisplayName = "commandBarStripElement4";
             this.commandBarStripElement4.Name = "commandBarStripElement4";
             // 
-            // cboEmpleados
-            // 
-            this.cboEmpleados.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            // 
-            // cboEmpleados.NestedRadGridView
-            // 
-            this.cboEmpleados.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.cboEmpleados.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cboEmpleados.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cboEmpleados.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cboEmpleados.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cboEmpleados.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // 
-            // 
-            this.cboEmpleados.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.AllowColumnReorder = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.AllowDragToGroup = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.AllowRowResize = false;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "Id";
-            gridViewTextBoxColumn9.HeaderText = "Id";
-            gridViewTextBoxColumn9.IsVisible = false;
-            gridViewTextBoxColumn9.Name = "Id";
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "Numero";
-            gridViewTextBoxColumn10.HeaderText = "Numero";
-            gridViewTextBoxColumn10.Name = "Numero";
-            gridViewTextBoxColumn11.AllowGroup = false;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "Expedientes.DatosPersonales.Nombres";
-            gridViewTextBoxColumn11.HeaderText = "Nombre";
-            gridViewTextBoxColumn11.Name = "Nombre";
-            gridViewTextBoxColumn11.ReadOnly = true;
-            gridViewTextBoxColumn11.Width = 100;
-            gridViewTextBoxColumn12.AllowGroup = false;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "Expedientes.DatosPersonales.APaterno";
-            gridViewTextBoxColumn12.HeaderText = "AP. Paterno";
-            gridViewTextBoxColumn12.IsVisible = false;
-            gridViewTextBoxColumn12.Name = "APaterno";
-            gridViewTextBoxColumn12.ReadOnly = true;
-            gridViewTextBoxColumn12.Width = 100;
-            gridViewTextBoxColumn13.AllowGroup = false;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "Expedientes.DatosPersonales.AMaterno";
-            gridViewTextBoxColumn13.HeaderText = "AP. Materno";
-            gridViewTextBoxColumn13.IsVisible = false;
-            gridViewTextBoxColumn13.Name = "AMaterno";
-            gridViewTextBoxColumn13.ReadOnly = true;
-            gridViewTextBoxColumn13.Width = 100;
-            this.cboEmpleados.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13});
-            this.cboEmpleados.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.EnableSorting = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.ShowRowHeaderColumn = false;
-            this.cboEmpleados.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
-            this.cboEmpleados.EditorControl.Name = "NestedRadGridView";
-            this.cboEmpleados.EditorControl.ReadOnly = true;
-            this.cboEmpleados.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cboEmpleados.EditorControl.ShowGroupPanel = false;
-            this.cboEmpleados.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.cboEmpleados.EditorControl.TabIndex = 0;
-            this.cboEmpleados.Location = new System.Drawing.Point(127, 24);
-            this.cboEmpleados.Name = "cboEmpleados";
-            this.cboEmpleados.Size = new System.Drawing.Size(207, 20);
-            this.cboEmpleados.TabIndex = 1;
-            this.cboEmpleados.TabStop = false;
-            // 
             // frmPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 421);
+            this.ClientSize = new System.Drawing.Size(764, 423);
             this.Controls.Add(this.dgGrid);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -665,6 +666,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "CAPTURA DE PRÉSTAMOS";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmPrestamos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgGrid.MasterTemplate)).EndInit();
@@ -672,6 +674,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana)).EndInit();
@@ -680,9 +685,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTasa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImporte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -723,5 +725,6 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement4;
         private Telerik.WinControls.UI.RadMultiColumnComboBox cboEmpleados;
+        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
     }
 }

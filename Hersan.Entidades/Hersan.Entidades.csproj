@@ -110,6 +110,7 @@
     <Compile Include="Ensamble\ServiciosBE.cs" />
     <Compile Include="Calidad\InyeccionBE.cs" />
     <Compile Include="Nomina\FactoresBE.cs" />
+    <Compile Include="Nomina\ParametrosBE.cs" />
     <Compile Include="Nomina\PrestamosBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relchec\DiasFestBE.cs" />

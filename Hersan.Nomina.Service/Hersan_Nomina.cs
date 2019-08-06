@@ -11,6 +11,7 @@ namespace Hersan.Nomina.Service
 {
     public class Hersan_Nomina: IHersan_Nomina
     {
+        #region Tablas 
         public List<FactoresBE> Nom_Factores_Obtener()
         {
             return new FactoresBP().Nom_Factores_Obtener();
@@ -31,5 +32,21 @@ namespace Hersan.Nomina.Service
         {
             return new FactoresBP().NOM_Semanas_generar(Anio);
         }
+        public List<CuotasBE> NOM_Cuotas_Obtener()
+        {
+            return new FactoresBP().NOM_Cuotas_Obtener();
+        }
+        #endregion
+
+        #region Parametros
+        public ParametrosBE Nom_Parametros_Obtener()
+        {
+            return new ParametrosBP().Nom_Parametros_Obtener();
+        }
+        public int Nom_Parametros_Guardar(ParametrosBE item)
+        {
+            return new ParametrosBP().Nom_Parametros_Guardar(item);
+        }
+        #endregion
     }
 }

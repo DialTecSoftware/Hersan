@@ -45,6 +45,7 @@
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
@@ -58,7 +59,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(584, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(588, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -203,7 +204,7 @@
             this.gvDatos.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(584, 297);
+            this.gvDatos.Size = new System.Drawing.Size(588, 299);
             this.gvDatos.TabIndex = 1;
             this.gvDatos.TitleText = "SUBSIDIOS";
             // 
@@ -221,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 350);
+            this.ClientSize = new System.Drawing.Size(588, 352);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radCommandBar1);
             this.Name = "frmSubsidios";
@@ -231,6 +232,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "TABLA DE SUBSIDIOS";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmSubsidios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
@@ -254,5 +256,6 @@
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement2;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
+        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
     }
 }

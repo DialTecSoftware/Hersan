@@ -48,6 +48,8 @@
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
+            this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
@@ -61,7 +63,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(620, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(624, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -254,7 +256,7 @@
             this.gvDatos.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(620, 333);
+            this.gvDatos.Size = new System.Drawing.Size(624, 335);
             this.gvDatos.TabIndex = 0;
             this.gvDatos.TitleText = "FACTORES";
             // 
@@ -268,11 +270,16 @@
             this.commandBarStripElement3.DisplayName = "commandBarStripElement3";
             this.commandBarStripElement3.Name = "commandBarStripElement3";
             // 
+            // commandBarStripElement4
+            // 
+            this.commandBarStripElement4.DisplayName = "commandBarStripElement4";
+            this.commandBarStripElement4.Name = "commandBarStripElement4";
+            // 
             // frmFactores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 386);
+            this.ClientSize = new System.Drawing.Size(624, 388);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radCommandBar1);
             this.Name = "frmFactores";
@@ -282,6 +289,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "TABLA DE FACTORES INTEGRADOS";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmFactores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
@@ -305,5 +313,7 @@
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement2;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
+        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement4;
     }
 }

@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboEmpresas = new Telerik.WinControls.UI.RadDropDownList();
             this.rtxtUsuario = new Telerik.WinControls.UI.RadTextBox();
+            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).BeginInit();
@@ -199,5 +200,6 @@
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadDropDownList cboEmpresas;
         private Telerik.WinControls.UI.RadTextBox rtxtUsuario;
+        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
     }
 }

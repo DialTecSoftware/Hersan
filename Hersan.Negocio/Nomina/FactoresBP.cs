@@ -30,5 +30,9 @@ namespace Hersan.Negocio.Nomina
         {
             return new FactoresDA().NOM_Semanas_generar(Anio);
         }
+        public List<CuotasBE> NOM_Cuotas_Obtener()
+        {
+            return new FactoresDA().NOM_Cuotas_Obtener();
+        }
     }
 }

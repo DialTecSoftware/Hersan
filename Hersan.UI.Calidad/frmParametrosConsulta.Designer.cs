@@ -79,6 +79,9 @@
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
+            this.commandBarStripElement7 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
+            this.commandBarStripElement8 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
@@ -97,7 +100,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(801, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(805, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -213,6 +216,7 @@
             this.gvDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this.gvDatos.Cursor = System.Windows.Forms.Cursors.Default;
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDatos.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextRow;
             this.gvDatos.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gvDatos.ForeColor = System.Drawing.Color.Black;
             this.gvDatos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -220,6 +224,14 @@
             // 
             // 
             // 
+            this.gvDatos.MasterTemplate.AllowAddNewRow = false;
+            this.gvDatos.MasterTemplate.AllowColumnChooser = false;
+            this.gvDatos.MasterTemplate.AllowColumnReorder = false;
+            this.gvDatos.MasterTemplate.AllowDeleteRow = false;
+            this.gvDatos.MasterTemplate.AllowDragToGroup = false;
+            this.gvDatos.MasterTemplate.AllowEditRow = false;
+            this.gvDatos.MasterTemplate.AllowRowResize = false;
+            this.gvDatos.MasterTemplate.AutoGenerateColumns = false;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Fecha";
             gridViewTextBoxColumn1.FormatString = "{0:dd/MM/yyyy}";
@@ -448,6 +460,7 @@
             gridViewTextBoxColumn21,
             gridViewTextBoxColumn22,
             gridViewTextBoxColumn23});
+            this.gvDatos.MasterTemplate.ShowFilteringRow = false;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
             gridViewColumnGroup1.Name = "group1";
             gridViewColumnGroupRow1.ColumnNames.Add("Fecha");
@@ -500,14 +513,24 @@
             this.gvDatos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(801, 290);
+            this.gvDatos.Size = new System.Drawing.Size(805, 292);
             this.gvDatos.TabIndex = 0;
+            // 
+            // commandBarStripElement7
+            // 
+            this.commandBarStripElement7.DisplayName = "commandBarStripElement7";
+            this.commandBarStripElement7.Name = "commandBarStripElement7";
+            // 
+            // commandBarStripElement8
+            // 
+            this.commandBarStripElement8.DisplayName = "commandBarStripElement8";
+            this.commandBarStripElement8.Name = "commandBarStripElement8";
             // 
             // frmParametrosConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 343);
+            this.ClientSize = new System.Drawing.Size(805, 345);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radCommandBar1);
             this.Name = "frmParametrosConsulta";
@@ -517,6 +540,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "CONSULTA HISTORICA DE PARÁMETROS";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmParametrosConsulta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
@@ -544,5 +568,8 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement5;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement6;
         private Telerik.WinControls.UI.RadGridView gvDatos;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement7;
+        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement8;
     }
 }

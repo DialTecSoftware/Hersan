@@ -29,6 +29,15 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Semanas_generar", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Semanas_generarResponse")]
         int NOM_Semanas_generar(int Anio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Cuotas_Obtener", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Cuotas_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Nomina.CuotasBE> NOM_Cuotas_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/Nom_Parametros_Obtener", ReplyAction="http://tempuri.org/IHersan_Nomina/Nom_Parametros_ObtenerResponse")]
+        Hersan.Entidades.Nomina.ParametrosBE Nom_Parametros_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/Nom_Parametros_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/Nom_Parametros_GuardarResponse")]
+        int Nom_Parametros_Guardar(Hersan.Entidades.Nomina.ParametrosBE item);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -76,6 +85,18 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         public int NOM_Semanas_generar(int Anio) {
             return base.Channel.NOM_Semanas_generar(Anio);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Nomina.CuotasBE> NOM_Cuotas_Obtener() {
+            return base.Channel.NOM_Cuotas_Obtener();
+        }
+        
+        public Hersan.Entidades.Nomina.ParametrosBE Nom_Parametros_Obtener() {
+            return base.Channel.Nom_Parametros_Obtener();
+        }
+        
+        public int Nom_Parametros_Guardar(Hersan.Entidades.Nomina.ParametrosBE item) {
+            return base.Channel.Nom_Parametros_Guardar(item);
         }
     }
 }

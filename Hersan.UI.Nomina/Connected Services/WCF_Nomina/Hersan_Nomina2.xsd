@@ -65,4 +65,42 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="NOM_Cuotas_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Cuotas_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Cuotas_ObtenerResult" nillable="true" type="q5:ArrayOfCuotasBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Nom_Parametros_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Nom_Parametros_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Nom_Parametros_ObtenerResult" nillable="true" type="q6:ParametrosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Nom_Parametros_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="item" nillable="true" type="q7:ParametrosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Nom_Parametros_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Nom_Parametros_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

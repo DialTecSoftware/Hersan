@@ -15,6 +15,8 @@ namespace Hersan.Datos.Nomina
         const string USP_NOM_ISR_SEMANAL_OBTENER = "NOM_ISR_Semanal_Obtener";
         const string USP_NOM_SEMANAS_GENERAR = "NOM_Semanas_Generar";
         const string USP_NOM_SEMANAS_OBTENER = "NOM_Semanas_Obtener";
+
+        const string USP_NOM_CUOTAS_OBTENER = "NOM_Cuotas_Obtener";
         #endregion
 
         public List<FactoresBE> Nom_Factores_Obtener()
@@ -156,5 +158,36 @@ namespace Hersan.Datos.Nomina
             }
         }
 
+        public List<CuotasBE> NOM_Cuotas_Obtener()
+        {
+            List<CuotasBE> oList = new List<CuotasBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(USP_NOM_CUOTAS_OBTENER, conn)) {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                CuotasBE obj = new CuotasBE();
+
+                                obj.Id = int.Parse(reader["CUO_Id"].ToString());
+                                obj.Nombre = reader["CUO_Nombre"].ToString();
+                                obj.Detalle.Prestacion = reader["CDE_Prestacion"].ToString();
+                                obj.Detalle.Patron = decimal.Parse(reader["CDE_Patron"].ToString());
+                                obj.Detalle.Trabajador = decimal.Parse(reader["CDE_Patron"].ToString());
+                                obj.Detalle.Total = decimal.Parse(reader["CDE_Trabajador"].ToString());
+
+                                oList.Add(obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
     }
 }

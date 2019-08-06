@@ -86,4 +86,40 @@ namespace Hersan.Entidades.Nomina
         public DateTime Termina { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
+
+    public class CuotasBE
+    {
+        public CuotasBE()
+        {
+            Id = 0;
+            Nombre = string.Empty;
+            Detalle = new CuotasDetalleBE();
+            DatosUsuario = new GeneralBE();
+        }
+
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public CuotasDetalleBE Detalle { get; set; }
+        public GeneralBE DatosUsuario { get; set; }
+    }
+
+    public class CuotasDetalleBE
+    {
+        public CuotasDetalleBE()
+        {
+            Id = 0;
+            Prestacion = string.Empty;
+            Patron = 0;
+            Trabajador = 0;
+            Total = 0;
+            DatosUsuario = new GeneralBE();
+        }
+
+        public int Id { get; set; }
+        public string Prestacion { get; set; }
+        public decimal Patron { get; set; }
+        public decimal Trabajador { get; set; }
+        public decimal Total { get; set; }
+        public GeneralBE DatosUsuario { get; set; }
+    }
 }

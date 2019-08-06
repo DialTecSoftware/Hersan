@@ -80,6 +80,7 @@
             this.txtObserva = new Telerik.WinControls.UI.RadTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtCavidades = new Telerik.WinControls.UI.RadTextBox();
+            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtVelocidad1)).BeginInit();
@@ -718,7 +719,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 341);
+            this.ClientSize = new System.Drawing.Size(614, 343);
             this.Controls.Add(this.txtCavidades);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.txtObserva);
@@ -842,5 +843,6 @@
         private Telerik.WinControls.UI.RadTextBox txtPosicionC2;
         private Telerik.WinControls.UI.RadTextBox txtPosicionC1;
         private System.Windows.Forms.Label label13;
+        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
     }
 }

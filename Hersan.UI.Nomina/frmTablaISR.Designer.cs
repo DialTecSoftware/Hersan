@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTablaISR));
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTablaISR));
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
+            this.gvDatos = new Telerik.WinControls.UI.RadGridView();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).BeginInit();
@@ -59,7 +60,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(522, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(526, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -89,6 +90,47 @@
             this.commandBarStripElement1.OverflowButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             this.commandBarStripElement1.StretchHorizontally = true;
             ((Telerik.WinControls.UI.RadCommandBarOverflowButton)(this.commandBarStripElement1.GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DisplayName = "commandBarButton1";
+            this.btnGuardar.DrawText = true;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // commandBarSeparator1
+            // 
+            this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
+            this.commandBarSeparator1.Name = "commandBarSeparator1";
+            this.commandBarSeparator1.VisibleInOverflowMenu = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.DisplayName = "commandBarButton2";
+            this.btnSalir.DrawText = true;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // commandBarSeparator2
+            // 
+            this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
+            this.commandBarSeparator2.Name = "commandBarSeparator2";
+            this.commandBarSeparator2.VisibleInOverflowMenu = false;
+            // 
+            // commandBarLabel1
+            // 
+            this.commandBarLabel1.DisplayName = "commandBarLabel1";
+            this.commandBarLabel1.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
+            this.commandBarLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.commandBarLabel1.Name = "commandBarLabel1";
+            this.commandBarLabel1.StretchHorizontally = true;
+            this.commandBarLabel1.Text = "TABLA DE ISR SEMANAL";
             // 
             // gvDatos
             // 
@@ -176,52 +218,9 @@
             this.gvDatos.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell;
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(522, 238);
+            this.gvDatos.Size = new System.Drawing.Size(526, 240);
             this.gvDatos.TabIndex = 2;
             this.gvDatos.TitleText = "ISR";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.DisplayName = "commandBarButton1";
-            this.btnGuardar.DrawText = true;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // commandBarSeparator1
-            // 
-            this.commandBarSeparator1.DisplayName = "commandBarSeparator1";
-            this.commandBarSeparator1.Name = "commandBarSeparator1";
-            this.commandBarSeparator1.Text = "";
-            this.commandBarSeparator1.VisibleInOverflowMenu = false;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.DisplayName = "commandBarButton2";
-            this.btnSalir.DrawText = true;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // commandBarSeparator2
-            // 
-            this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
-            this.commandBarSeparator2.Name = "commandBarSeparator2";
-            this.commandBarSeparator2.Text = "";
-            this.commandBarSeparator2.VisibleInOverflowMenu = false;
-            // 
-            // commandBarLabel1
-            // 
-            this.commandBarLabel1.DisplayName = "commandBarLabel1";
-            this.commandBarLabel1.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
-            this.commandBarLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.commandBarLabel1.Name = "commandBarLabel1";
-            this.commandBarLabel1.StretchHorizontally = true;
-            this.commandBarLabel1.Text = "TABLA DE ISR SEMANAL";
             // 
             // commandBarStripElement2
             // 
@@ -237,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 291);
+            this.ClientSize = new System.Drawing.Size(526, 293);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radCommandBar1);
             this.Name = "frmTablaISR";
@@ -247,6 +246,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.Text = "TABLA ISR SEMANAL";
+            this.ThemeName = "MaterialTeal";
             this.Load += new System.EventHandler(this.frmTablaISR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos.MasterTemplate)).EndInit();
@@ -270,5 +270,6 @@
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement2;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
+        private Telerik.WinControls.Themes.MaterialTealTheme materialTealTheme1;
     }
 }

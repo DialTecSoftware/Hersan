@@ -84,6 +84,12 @@
     <Compile Include="frmFactores.Designer.cs">
       <DependentUpon>frmFactores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNomina.Designer.cs">
+      <DependentUpon>frmNomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmParametros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFactores.resx">
       <DependentUpon>frmFactores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNomina.resx">
+      <DependentUpon>frmNomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmParametros.resx">
       <DependentUpon>frmParametros.cs</DependentUpon>
@@ -192,6 +201,12 @@
     <None Include="Connected Services\WCF_Nomina\Hersan_Nomina3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina41.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenSustitucionBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DigitalizadosDetalleBE.datasource" />
@@ -217,6 +232,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.CuotasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.FactoresBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.ISRBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Nomina.NominaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.ParametrosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.SemanasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.SubsidiosBE.datasource" />

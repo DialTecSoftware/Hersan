@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleados));
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -351,7 +351,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 20);
+            this.label4.Location = new System.Drawing.Point(75, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 9;
@@ -359,7 +359,7 @@
             // 
             // txtNumEmp
             // 
-            this.txtNumEmp.Location = new System.Drawing.Point(115, 17);
+            this.txtNumEmp.Location = new System.Drawing.Point(130, 16);
             this.txtNumEmp.MaxLength = 10;
             this.txtNumEmp.Name = "txtNumEmp";
             this.txtNumEmp.Size = new System.Drawing.Size(70, 20);
@@ -434,9 +434,10 @@
             // 
             // txtSueldoIntegrado
             // 
-            this.txtSueldoIntegrado.Location = new System.Drawing.Point(115, 94);
+            this.txtSueldoIntegrado.Location = new System.Drawing.Point(130, 93);
             this.txtSueldoIntegrado.MaxLength = 7;
             this.txtSueldoIntegrado.Name = "txtSueldoIntegrado";
+            this.txtSueldoIntegrado.ReadOnly = true;
             this.txtSueldoIntegrado.Size = new System.Drawing.Size(70, 20);
             this.txtSueldoIntegrado.TabIndex = 35;
             this.txtSueldoIntegrado.Text = "0.00";
@@ -445,7 +446,7 @@
             // 
             // txtSueldoDiario
             // 
-            this.txtSueldoDiario.Location = new System.Drawing.Point(115, 68);
+            this.txtSueldoDiario.Location = new System.Drawing.Point(130, 67);
             this.txtSueldoDiario.Name = "txtSueldoDiario";
             this.txtSueldoDiario.Size = new System.Drawing.Size(70, 20);
             this.txtSueldoDiario.TabIndex = 35;
@@ -456,24 +457,24 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 97);
+            this.label14.Location = new System.Drawing.Point(25, 97);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(93, 13);
+            this.label14.Size = new System.Drawing.Size(100, 13);
             this.label14.TabIndex = 34;
-            this.label14.Text = "Sueldo diario Int";
+            this.label14.Text = "Sueldo Diario Int.:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(33, 71);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.Size = new System.Drawing.Size(92, 13);
             this.label7.TabIndex = 34;
-            this.label7.Text = "Sueldo diario";
+            this.label7.Text = "Sueldo Semanal:";
             // 
             // txtPension
             // 
-            this.txtPension.Location = new System.Drawing.Point(115, 43);
+            this.txtPension.Location = new System.Drawing.Point(130, 42);
             this.txtPension.MaxLength = 7;
             this.txtPension.Name = "txtPension";
             this.txtPension.Size = new System.Drawing.Size(70, 20);
@@ -484,7 +485,7 @@
             // 
             // txtCuenta
             // 
-            this.txtCuenta.Location = new System.Drawing.Point(115, 120);
+            this.txtCuenta.Location = new System.Drawing.Point(130, 116);
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(119, 20);
             this.txtCuenta.TabIndex = 6;
@@ -494,16 +495,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 120);
+            this.label5.Location = new System.Drawing.Point(60, 120);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 30;
-            this.label5.Text = "No Cuenta";
+            this.label5.Text = "No Cuenta:";
             // 
             // dtIMSS
             // 
             this.dtIMSS.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtIMSS.Location = new System.Drawing.Point(115, 170);
+            this.dtIMSS.Location = new System.Drawing.Point(130, 163);
             this.dtIMSS.Name = "dtIMSS";
             this.dtIMSS.Size = new System.Drawing.Size(84, 20);
             this.dtIMSS.TabIndex = 4;
@@ -514,43 +515,43 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(44, 172);
+            this.label8.Location = new System.Drawing.Point(67, 167);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 13);
+            this.label8.Size = new System.Drawing.Size(58, 13);
             this.label8.TabIndex = 33;
-            this.label8.Text = "Fecha IMSS";
+            this.label8.Text = "Alta IMSS:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(65, 197);
+            this.label9.Location = new System.Drawing.Point(78, 192);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.Size = new System.Drawing.Size(47, 13);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Estatus";
+            this.label9.Text = "Estatus:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 46);
+            this.label10.Location = new System.Drawing.Point(62, 46);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 15;
-            this.label10.Text = "Pension %";
+            this.label10.Text = "% Pension:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 149);
+            this.label11.Location = new System.Drawing.Point(27, 144);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 13);
+            this.label11.Size = new System.Drawing.Size(98, 13);
             this.label11.TabIndex = 16;
-            this.label11.Text = "Fecha de Ingreso";
+            this.label11.Text = "Fecha de Ingreso:";
             // 
             // dtFecha
             // 
             this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha.Location = new System.Drawing.Point(115, 146);
+            this.dtFecha.Location = new System.Drawing.Point(130, 140);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(84, 20);
             this.dtFecha.TabIndex = 3;
@@ -560,19 +561,19 @@
             // 
             // cboEstatus
             // 
-            radListDataItem4.Text = "Vigente";
+            radListDataItem1.Text = "Vigente";
+            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem2.Text = "Baja";
+            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem3.Text = "Vacaciones";
+            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem4.Text = "Incapacidad";
             radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            radListDataItem5.Text = "Baja";
-            radListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            radListDataItem6.Text = "Vacaciones";
-            radListDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            radListDataItem7.Text = "Incapacidad";
-            radListDataItem7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cboEstatus.Items.Add(radListDataItem1);
+            this.cboEstatus.Items.Add(radListDataItem2);
+            this.cboEstatus.Items.Add(radListDataItem3);
             this.cboEstatus.Items.Add(radListDataItem4);
-            this.cboEstatus.Items.Add(radListDataItem5);
-            this.cboEstatus.Items.Add(radListDataItem6);
-            this.cboEstatus.Items.Add(radListDataItem7);
-            this.cboEstatus.Location = new System.Drawing.Point(115, 196);
+            this.cboEstatus.Location = new System.Drawing.Point(130, 188);
             this.cboEstatus.Name = "cboEstatus";
             this.cboEstatus.Size = new System.Drawing.Size(102, 20);
             this.cboEstatus.TabIndex = 5;
@@ -606,7 +607,7 @@
             this.txtFonacot.Name = "txtFonacot";
             this.txtFonacot.Size = new System.Drawing.Size(92, 20);
             this.txtFonacot.TabIndex = 10;
-            this.txtFonacot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFonacot.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFonacot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entero_KeyPress);
             // 
             // label12
@@ -686,7 +687,7 @@
             this.txtcantidad.Location = new System.Drawing.Point(89, 82);
             this.txtcantidad.MaxLength = 5;
             this.txtcantidad.Name = "txtcantidad";
-            this.txtcantidad.Size = new System.Drawing.Size(132, 20);
+            this.txtcantidad.Size = new System.Drawing.Size(82, 20);
             this.txtcantidad.TabIndex = 8;
             this.txtcantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtcantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);
@@ -727,12 +728,12 @@
             // 
             // cboTipoF
             // 
-            radListDataItem8.Text = "Cuota Fija";
-            radListDataItem9.Text = "Porcentaje de Desc";
-            radListDataItem10.Text = "VSM";
-            this.cboTipoF.Items.Add(radListDataItem8);
-            this.cboTipoF.Items.Add(radListDataItem9);
-            this.cboTipoF.Items.Add(radListDataItem10);
+            radListDataItem5.Text = "Cuota Fija";
+            radListDataItem6.Text = "Porcentaje de Desc";
+            radListDataItem7.Text = "VSM";
+            this.cboTipoF.Items.Add(radListDataItem5);
+            this.cboTipoF.Items.Add(radListDataItem6);
+            this.cboTipoF.Items.Add(radListDataItem7);
             this.cboTipoF.Location = new System.Drawing.Point(77, 72);
             this.cboTipoF.Name = "cboTipoF";
             this.cboTipoF.Size = new System.Drawing.Size(135, 20);
@@ -772,7 +773,7 @@
             // 
             this.txtInfonavit.Location = new System.Drawing.Point(77, 102);
             this.txtInfonavit.Name = "txtInfonavit";
-            this.txtInfonavit.Size = new System.Drawing.Size(97, 20);
+            this.txtInfonavit.Size = new System.Drawing.Size(80, 20);
             this.txtInfonavit.TabIndex = 8;
             this.txtInfonavit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtInfonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_KeyPress);

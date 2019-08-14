@@ -33,10 +33,12 @@ namespace Hersan.Datos.Nomina
                                 obj.Asistencia = decimal.Parse(reader["PAR_Asistencia"].ToString());
                                 obj.Dias = int.Parse(reader["PAR_Dias"].ToString());
                                 obj.Horas = int.Parse(reader["PAR_Horas"].ToString());
+                                obj.Faltas = int.Parse(reader["PAR_Faltas"].ToString());
+                                obj.Retardos = int.Parse(reader["PAR_Retardos"].ToString());
                                 obj.Puntualidad = decimal.Parse(reader["PAR_Puntualidad"].ToString());
                                 obj.UMA = decimal.Parse(reader["PAR_UMA"].ToString());
                                 obj.Vales = decimal.Parse(reader["PAR_Vales"].ToString());
-
+                                obj.Interes = decimal.Parse(reader["PAR_Interes"].ToString());
                             }
                         }
                     }
@@ -55,11 +57,14 @@ namespace Hersan.Datos.Nomina
                     using (SqlCommand cmd = new SqlCommand(CONS_NOM_PARAMETROS_GUARDAR, conn)) {
                         cmd.Parameters.AddWithValue("@Dias", item.Dias);
                         cmd.Parameters.AddWithValue("@Horas", item.Horas);
+                        cmd.Parameters.AddWithValue("@Faltas", item.Faltas);
+                        cmd.Parameters.AddWithValue("@Retardos", item.Retardos);
                         cmd.Parameters.AddWithValue("@Vales", item.Vales);
                         cmd.Parameters.AddWithValue("@UMA", item.UMA);
                         cmd.Parameters.AddWithValue("@Asistencia", item.Asistencia);
                         cmd.Parameters.AddWithValue("@Puntualidad", item.Puntualidad);
                         cmd.Parameters.AddWithValue("@Ahorro", item.Ahorro);
+                        cmd.Parameters.AddWithValue("@Interes", item.Interes);
                         cmd.Parameters.AddWithValue("@IdUsuario", item.DatosUsuario.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;

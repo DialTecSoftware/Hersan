@@ -103,4 +103,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="NOM_CalculoNomina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Semana" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_CalculoNominaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_CalculoNominaResult" nillable="true" type="q8:ArrayOfNominaBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

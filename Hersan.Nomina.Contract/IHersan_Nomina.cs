@@ -25,5 +25,8 @@ namespace Hersan.Nomina.Contract
         ParametrosBE Nom_Parametros_Obtener();
         [OperationContract]
         int Nom_Parametros_Guardar(ParametrosBE item);
+
+        [OperationContract]
+        List<NominaBE> NOM_CalculoNomina(int Semana);
     }
 }

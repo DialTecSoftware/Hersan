@@ -8,7 +8,6 @@ namespace Hersan.Datos.Nomina
 {
     public class FactoresDA : BaseDA
     {
-
         #region Constantes
         const string USP_NOM_FACTORES_OBTENER = "Nom_Factores_Obtener";
         const string USP_NOM_SUBSIDIOS_OBTENER = "NOM_Subsidios_Obtener";

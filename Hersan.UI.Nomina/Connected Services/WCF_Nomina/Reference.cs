@@ -38,6 +38,9 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/Nom_Parametros_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/Nom_Parametros_GuardarResponse")]
         int Nom_Parametros_Guardar(Hersan.Entidades.Nomina.ParametrosBE item);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_CalculoNomina", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_CalculoNominaResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Nomina.NominaBE> NOM_CalculoNomina(int Semana);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,6 +100,10 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         public int Nom_Parametros_Guardar(Hersan.Entidades.Nomina.ParametrosBE item) {
             return base.Channel.Nom_Parametros_Guardar(item);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Nomina.NominaBE> NOM_CalculoNomina(int Semana) {
+            return base.Channel.NOM_CalculoNomina(Semana);
         }
     }
 }

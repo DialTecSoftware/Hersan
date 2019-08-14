@@ -80,6 +80,7 @@ namespace Hersan.Entidades.Nomina
             Termina = DateTime.Today;
             DatosUsuario = new GeneralBE();
         }
+
         public int Id { get; set; }
         public int Semana { get; set; }
         public DateTime Inicia { get; set; }

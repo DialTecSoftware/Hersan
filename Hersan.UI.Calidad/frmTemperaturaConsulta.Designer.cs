@@ -168,6 +168,7 @@
             // 
             // gvDatos
             // 
+            this.gvDatos.AutoSizeRows = true;
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvDatos.Location = new System.Drawing.Point(0, 53);
             // 
@@ -201,6 +202,7 @@
             0});
             gridViewDecimalColumn1.MinWidth = 70;
             gridViewDecimalColumn1.Name = "Cav1";
+            gridViewDecimalColumn1.RowSpan = 30;
             gridViewDecimalColumn1.ShowUpDownButtons = false;
             gridViewDecimalColumn1.ThousandsSeparator = true;
             gridViewDecimalColumn1.Width = 70;
@@ -367,13 +369,14 @@
             gridViewDecimalColumn14.Name = "Movil";
             gridViewDecimalColumn14.Width = 70;
             gridViewDecimalColumn14.WrapText = true;
-            gridViewTextBoxColumn3.FieldName = "Temperatura.Obserca";
+            gridViewTextBoxColumn3.FieldName = "Temperatura.Observa";
             gridViewTextBoxColumn3.HeaderText = "Comentarios";
-            gridViewTextBoxColumn3.MaxWidth = 250;
-            gridViewTextBoxColumn3.MinWidth = 200;
+            gridViewTextBoxColumn3.MaxWidth = 350;
+            gridViewTextBoxColumn3.MinWidth = 300;
             gridViewTextBoxColumn3.Multiline = true;
             gridViewTextBoxColumn3.Name = "Observa";
-            gridViewTextBoxColumn3.Width = 200;
+            gridViewTextBoxColumn3.RowSpan = 30;
+            gridViewTextBoxColumn3.Width = 300;
             gridViewTextBoxColumn3.WrapText = true;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,

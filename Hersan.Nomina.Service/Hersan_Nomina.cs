@@ -48,5 +48,13 @@ namespace Hersan.Nomina.Service
             return new ParametrosBP().Nom_Parametros_Guardar(item);
         }
         #endregion
+
+        #region Cálculo Nómina
+        public List<NominaBE> NOM_CalculoNomina(int Semana)
+        {
+            return new NominaBP().NOM_CalculoNomina(Semana);
+        }
+
+        #endregion
     }
 }

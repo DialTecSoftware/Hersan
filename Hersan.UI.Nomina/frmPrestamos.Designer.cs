@@ -563,6 +563,7 @@
             this.txtTasa.AcceptsReturn = true;
             this.txtTasa.Location = new System.Drawing.Point(499, 24);
             this.txtTasa.Name = "txtTasa";
+            this.txtTasa.ReadOnly = true;
             this.txtTasa.Size = new System.Drawing.Size(43, 20);
             this.txtTasa.TabIndex = 4;
             this.txtTasa.Text = "3.00";

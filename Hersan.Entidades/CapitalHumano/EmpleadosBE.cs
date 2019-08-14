@@ -38,8 +38,8 @@ namespace Hersan.Entidades.CapitalHumano
         public string NumeroCuenta { get; set; }
         public decimal Pension { get; set; }
         public decimal Ahorro { get; set; }
-        public decimal  SueldoDiario { get; set; }
-        public decimal  SueldoDiarioIntegrado { get; set; }
+        public decimal SueldoDiario { get; set; }
+        public decimal SueldoDiarioIntegrado { get; set; }
         public string EstatusEmpleado { get; set; }
         public string FechaIngreso { get; set; }
         public GeneralBE DatosUsuarios { get; set; }

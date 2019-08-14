@@ -42,9 +42,12 @@ namespace Hersan.UI.Nomina
                 obj.Asistencia = spAsistencia.Value;
                 obj.Dias = int.Parse(spDias.Value.ToString());
                 obj.Horas = int.Parse(spHoras.Value.ToString());
+                obj.Faltas = int.Parse(spFaltas.Value.ToString());
+                obj.Retardos = int.Parse(spRetardo.Value.ToString());
                 obj.Puntualidad = spPuntual.Value;
                 obj.UMA = spUMA.Value;
                 obj.Vales = spVales.Value;
+                obj.Interes = spInteres.Value;
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                 if(oNomina.Nom_Parametros_Guardar(obj) > 0) {
@@ -78,13 +81,17 @@ namespace Hersan.UI.Nomina
                     spAsistencia.Value = obj.Asistencia;
                     spDias.Value = obj.Dias;
                     spHoras.Value = obj.Horas;
+                    spFaltas.Value = obj.Faltas;
+                    spRetardo.Value = obj.Retardos;
                     spPuntual.Value = obj.Puntualidad;
                     spUMA.Value = obj.UMA;
                     spVales.Value = obj.Vales;
+                    spInteres.Value = obj.Interes;
                 }
             } catch (Exception ex) {
                 throw ex;
             } finally { oNomina = null; }
         }
+        
     }
 }

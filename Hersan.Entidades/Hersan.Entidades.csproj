@@ -102,6 +102,7 @@
     <Compile Include="Catalogos\RegimenSATBE.cs" />
     <Compile Include="Catalogos\TipoProductoBE.cs" />
     <Compile Include="Catalogos\TiposClienteBE.cs" />
+    <Compile Include="Comun\CustomAttributeBE.cs" />
     <Compile Include="Ensamble\CaracteristicasBE.cs" />
     <Compile Include="Comun\GeneralBE.cs" />
     <Compile Include="Comun\ResultadoBE.cs" />

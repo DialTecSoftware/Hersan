@@ -1,10 +1,7 @@
-﻿using Hersan.Entidades.Nomina;
+﻿using Hersan.Entidades.CapitalHumano;
+using Hersan.Entidades.Nomina;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -17,6 +14,7 @@ namespace Hersan.UI.Nomina
         WCF_CHumano.Hersan_CHumanoClient oCHUmano;
         List<SemanasBE> oList = new List<SemanasBE>();
         List<PrestamosDetalleBE> oPrestamo;
+        List<EmpleadosBE> oEmpleados = new List<EmpleadosBE>();
         int NumPagos = 0;
         int Semana = 0;
         decimal Importe = 0;
@@ -29,24 +27,34 @@ namespace Hersan.UI.Nomina
             InitializeComponent();
         }
         private void frmPrestamos_Load(object sender, EventArgs e)
-        {
+        {            
             try {
                 System.Threading.Tasks.Task task = new System.Threading.Tasks.Task(() => { CargaSemanas(); });
                 task.RunSynchronously();
 
                 task = new System.Threading.Tasks.Task(() => { CargaEmpleados(); });
-                task.RunSynchronously();                
+                task.RunSynchronously();
+
+                ObtenerParametros();                 
             } catch (Exception ex) {
                 throw ex;
             }
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            try {
 
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            try {
+                System.Data.DataTable oData = Negocio.BaseWinBP.ToDataTable(oPrestamo);
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void btnGenerar_Click(object sender, EventArgs e)
         {
@@ -58,7 +66,11 @@ namespace Hersan.UI.Nomina
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            try {
 
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -68,19 +80,7 @@ namespace Hersan.UI.Nomina
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-        private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try {
-                System.Globalization.CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
-                if (char.IsNumber(e.KeyChar) || e.KeyChar == 8 || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
-                    e.Handled = false;
-                else
-                    e.Handled = true;
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-        private void txtImporte_TextChanged(object sender, EventArgs e)
+        private void txtPagos_ValueChanged(object sender, EventArgs e)
         {
             try {
                 CalcularImportePago();
@@ -88,7 +88,7 @@ namespace Hersan.UI.Nomina
                 throw ex;
             }
         }
-        private void txtPagos_TextChanged(object sender, EventArgs e)
+        private void txtImporte_ValueChanged(object sender, EventArgs e)
         {
             try {
                 CalcularImportePago();
@@ -100,14 +100,31 @@ namespace Hersan.UI.Nomina
         {
             try {
                 //CALCULO DE PAGOS
-                int Semanas = oList.FindAll(item => item.Semana > int.Parse(cboSemana.Text)).Count;
-                txtPagos.Text = Semanas.ToString();
+                decimal Semanas = oList.FindAll(item => item.Semana > int.Parse(cboSemana.Text)).Count;                
+                txtPagos.Value = Semanas;
+                txtPagos.Maximum = Semanas;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        private void cboEmpleados_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try {
+                if (cboEmpleados.SelectedValue != null) 
+                    txtImporte.Maximum = oEmpleados.Find(item => item.Id == int.Parse(cboEmpleados.SelectedValue.ToString())).Ahorro;
             } catch (Exception ex) {
                 throw ex;
             }
         }
 
+        private void LimpiarCampos()
+        {
+            try {
 
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
         private void CargaSemanas()
         {
             oNomina = new WCF_Nomina.Hersan_NominaClient();
@@ -127,9 +144,10 @@ namespace Hersan.UI.Nomina
         {
             oCHUmano = new WCF_CHumano.Hersan_CHumanoClient();
             try {
+                oEmpleados = oCHUmano.CHU_Empleados_Combo();
                 cboEmpleados.ValueMember = "Id";
                 cboEmpleados.DisplayMember = "Numero";
-                cboEmpleados.DataSource = oCHUmano.CHU_Empleados_Combo();               
+                cboEmpleados.DataSource = oEmpleados;
             } catch (Exception ex) {
                 throw ex;
             } finally { oCHUmano = null; }
@@ -175,9 +193,9 @@ namespace Hersan.UI.Nomina
             try {
                 if (ValidarCampos()) {
 
-                    NumPagos = int.Parse(txtPagos.Text);
+                    NumPagos = int.Parse(txtPagos.Value.ToString());
                     Semana = oList.Find(item=> item.Id > int.Parse(cboSemana.SelectedValue.ToString())).Semana;
-                    Importe = decimal.Parse(txtImporte.Text);
+                    Importe = txtImporte.Value;
                     Tasa = decimal.Parse(txtTasa.Text.ToString());
                     ImpPago = decimal.Parse(txtPago.Text);
                     Saldo = Importe;
@@ -299,19 +317,19 @@ namespace Hersan.UI.Nomina
             double divisor = 0;
 
             try {
-                if ((txtImporte.Text.Trim() != string.Empty) & (txtPagos.Text.Trim() != string.Empty)) {
-                    if ((double.Parse(txtImporte.Text) > 0) & (int.Parse(txtPagos.Text) > 0)) {
+                if ((txtImporte.Value !=0 ) && (txtPagos.Value != 0)) {
+                    if (txtImporte.Value > 0 && txtPagos.Value > 0) {
                         tasa = double.Parse(txtTasa.Text.ToString()) / 100;
-                        dividendo = double.Parse(txtImporte.Text) * tasa;
-                        Potencia = int.Parse(txtPagos.Text.ToString()) * -1;
+                        dividendo = double.Parse(txtImporte.Value.ToString()) * tasa;
+                        Potencia = int.Parse(txtPagos.Value.ToString()) * -1;
                         divisor = 1 - (System.Math.Pow((1 + tasa), Potencia));
 
                         txtPago.Text = (dividendo / divisor).ToString("#,0.00");
                     }
                 }
-                if (txtImporte.Text.Trim() == string.Empty || txtPagos.Text.Trim() == string.Empty) {
+                if (txtImporte.Value == 0 || txtPagos.Value == 0) {
                     txtPago.Text = "0.00";
-                } else if ((int.Parse(txtPagos.Text.ToString()) == 0) || (double.Parse(txtImporte.Text.Trim()) == 0)) {
+                } else if ((int.Parse(txtPagos.Value.ToString()) == 0) || txtImporte.Value == 0) {
                     txtPago.Text = "0.00";
                 }
 
@@ -363,6 +381,15 @@ namespace Hersan.UI.Nomina
             //} catch (Exception ex) {
             //    RadMessageBox.Show("Ocurrió un error al generar la tabla" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
             //}
+        }
+        private void ObtenerParametros()
+        {
+            oNomina = new WCF_Nomina.Hersan_NominaClient();
+            try {
+                txtTasa.Text = oNomina.Nom_Parametros_Obtener().Interes.ToString();
+            } catch (Exception ex) {
+                throw ex;
+            } finally { oNomina = null; }
         }
         
     }

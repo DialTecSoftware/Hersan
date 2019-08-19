@@ -164,6 +164,7 @@ namespace Hersan.Datos.CapitalHumano
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONST_CHU_EMPLEADOS_COMBO, conn)) {
                         cmd.CommandType = CommandType.StoredProcedure;
+
                         using (SqlDataReader reader = cmd.ExecuteReader()) {
                             while (reader.Read()) {
                                 EmpleadosBE obj = new EmpleadosBE();
@@ -173,6 +174,7 @@ namespace Hersan.Datos.CapitalHumano
                                 obj.Expedientes.DatosPersonales.Nombres = reader["EDP_Nombres"].ToString();
                                 obj.Expedientes.DatosPersonales.APaterno = reader["EDP_APaterno"].ToString();
                                 obj.Expedientes.DatosPersonales.AMaterno = reader["EDP_AMaterno"].ToString();
+                                obj.Ahorro = decimal.Parse(reader["FAhorro"].ToString());
 
                                 oList.Add(obj);
                             }

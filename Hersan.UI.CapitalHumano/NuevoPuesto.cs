@@ -17,7 +17,7 @@ namespace Hersan.UI.CapitalHumano
         CapitalHumano.WCF_CHumano.Hersan_CHumanoClient oCHumano;
         List<NuevoPuestoBE> oList = new List<NuevoPuestoBE>();
         List<EntidadesBE> oEntidades = new List<EntidadesBE>();
-        BaseWinBP lista = new BaseWinBP();
+        //BaseWinBP lista = new BaseWinBP();
 
         public frmNuevoPuesto()
         {

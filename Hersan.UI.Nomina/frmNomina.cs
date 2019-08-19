@@ -32,7 +32,7 @@ namespace Hersan.UI.Nomina
         {
             oNomina = new WCF_Nomina.Hersan_NominaClient();
             try {
-                oList = oNomina.NOM_CalculoNomina(int.Parse(cboSemana.SelectedValue.ToString()));
+                oList = oNomina.NOM_CalculoNomina(int.Parse(cboSemana.Text));
                 gvDatos.DataSource = oList;
             } catch (Exception ex) {
                 throw ex;
@@ -67,19 +67,18 @@ namespace Hersan.UI.Nomina
             try {
                 oSemanas = oNomina.NOM_Semanas_Obtener(DateTime.Today.Year);                
 
-                cboSemana.ValueMember = "Semana";
+                cboSemana.ValueMember = "Id";
                 cboSemana.DisplayMember = "Semana";
                 cboSemana.DataSource = oSemanas;
 
                 if (oSemanas.Count > 0) {
                     oAux = oSemanas.FindAll(item => item.Termina >= DateTime.Today && item.DatosUsuario.Estatus == true && item.Termina.Year == DateTime.Today.Year);
-                    cboSemana.SelectedValue = oSemanas.Find(item => item.Semana == oAux[0].Semana).Semana;
+                    cboSemana.SelectedValue = oSemanas.Find(item => item.Id == oAux[0].Id).Id;
                 }
             } catch (Exception ex) {
                 throw ex;
             } finally { oNomina = null; }
         }
-
         
     }
 }

@@ -689,6 +689,18 @@ namespace Hersan.UI.CapitalHumano
                 RadMessageBox.Show("Ocurrió un error al seleccionar la colonia\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void cboColonia_Leave(object sender, EventArgs e)
+        {
+            try {
+                if (cboColonia.SelectedValue == null) {
+                    RadMessageBox.Show("La colonia capturada no existe en el catálogo\nSeleccione una colonia válida", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    cboColonia.SelectedIndex = 0;
+                    cboColonia.Focus();
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al seleccionar la colonia\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
         private void cboEdoNac_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
@@ -1296,8 +1308,8 @@ namespace Hersan.UI.CapitalHumano
                 if (oExpediente.Count > 0) {
 
                     #region  SE CARGA EL EXPEDIENTE
-                    txtExpediente.Text = IdExpediente.ToString();
-                    txtId.Text = IdExpediente.ToString();
+                    txtExpediente.Text = oExpediente[0].Id.ToString();
+                    txtId.Text = oExpediente[0].Id.ToString();
                     cboEntidad.SelectedValue = oExpediente[0].Puesto.Departamentos.Entidades.Id;
                     cboDepto.SelectedValue = oExpediente[0].Puesto.Departamentos.Id;
                     cboPuesto.SelectedValue = oExpediente[0].Puesto.Id;
@@ -1345,7 +1357,7 @@ namespace Hersan.UI.CapitalHumano
 
                     #region SE CARGA LA INFO DE DOCUMENTOS
                     ExpedienteDocumentos oDoctos = new ExpedienteDocumentos();
-                    oAux.IdExpediente = int.Parse(txtId.Text);
+                    oDoctos.IdExpediente = int.Parse(txtId.Text);
                     var oListDoctos = oCHumano.CHU_ExpedientesDocumentos_Consultar(oDoctos);
 
                     txtCurp.Text = oListDoctos[0].CURP;
@@ -1368,6 +1380,6 @@ namespace Hersan.UI.CapitalHumano
 
         }
         #endregion
-
+       
     }
 }

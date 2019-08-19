@@ -2,6 +2,7 @@
 using Hersan.Entidades.Comun;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,7 @@ namespace Hersan.Entidades.Nomina
             DatosUsuario = new GeneralBE();
         }
 
+        [Description("Read"), Category("Appearance")]
         public bool Sel { get; set; }
         public int Id { get; set; }
         public int NoPago { get; set; }
@@ -63,10 +65,15 @@ namespace Hersan.Entidades.Nomina
         public DateTime Fecha { get; set; }
         public decimal Capital { get; set; }
         public decimal Interes { get; set; }
+
+        [Description("Read"), Category("Appearance")]
         public decimal ImportePago { get; set; }
         public decimal Abono { get; set; }
         public decimal Saldo { get; set; }
+
+        [Description("Read"), Category("Appearance")]
         public string Estatus { get; set; }
+        [Description("Read"), Category("Appearance")]
         public GeneralBE DatosUsuario { get; set; }
 
     }

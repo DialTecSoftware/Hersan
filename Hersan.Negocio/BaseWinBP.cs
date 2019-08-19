@@ -1,6 +1,7 @@
 ﻿using Hersan.Entidades.Seguridad;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -12,31 +13,12 @@ using System.Threading.Tasks;
 
 namespace Hersan.Negocio
 {
-    public class BaseWinBP
+    public static class BaseWinBP
     {
         public const string Sistema = "Hersan";
         //public const string RegRFC = @"/^[a-zA-Z]{3,4}(\d{6})((\D|\d){2,3})?$/";
         public const string RegRFC = @"^([A - Z\s]{4})\d{6}([A - Z\w]{3})$";
         public const string RegCURP = @" /[a-zA-Z]{4,4}[0-9]{6}[a-zA-Z]{6,6}[0-9]{2}/";
-
-        /// <summary>
-        /// Procesos que están en la Base de Datos
-        /// </summary>
-        public enum Procesos
-        {
-            Diseño,
-            Modelista,
-            Producción,
-            Implementación,
-            Ventas,
-            Administración,
-            Coordinador,
-            Proveedor,
-            Maquila,
-            Calidad,
-            Almacen,
-            Etiquetas
-        }
 
         private static UsuariosBE _usuarioLogueado;
         public static UsuariosBE UsuarioLogueado {
@@ -309,6 +291,41 @@ namespace Hersan.Negocio
         public static void AbrirArchivo(string Ruta)
         {
             System.Diagnostics.Process.Start(Ruta);
+        }
+
+        public static System.Data.DataTable ToDataTable<T>(this IList<T> data)
+        {
+            System.Data.DataTable table = new System.Data.DataTable();
+            
+            if (typeof(T).IsValueType || typeof(T).Equals(typeof(string))) {
+                System.Data.DataColumn dc = new System.Data.DataColumn("Value");
+                table.Columns.Add(dc);
+                foreach (T item in data) {
+                    System.Data.DataRow dr = table.NewRow();
+                    dr[0] = item;
+                    table.Rows.Add(dr);
+                }             
+            } else {
+                PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
+                foreach (PropertyDescriptor prop in properties)
+                    if (String.IsNullOrEmpty(prop.Description))
+                        table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);                  
+                
+                foreach (T item in data) {
+                    System.Data.DataRow row = table.NewRow();
+                    foreach (PropertyDescriptor prop in properties) {
+                        if (String.IsNullOrEmpty(prop.Description)) {
+                            try {
+                                row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                            } catch {
+                                row[prop.Name] = DBNull.Value;
+                            }
+                        }
+                    }
+                    table.Rows.Add(row);
+                }
+            }
+            return table;
         }
     }
 

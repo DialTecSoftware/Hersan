@@ -309,8 +309,7 @@ namespace Hersan.Negocio
                 PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
                 foreach (PropertyDescriptor prop in properties)
                     if (String.IsNullOrEmpty(prop.Description))
-                        table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);                  
-                
+                        table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);                
                 foreach (T item in data) {
                     System.Data.DataRow row = table.NewRow();
                     foreach (PropertyDescriptor prop in properties) {

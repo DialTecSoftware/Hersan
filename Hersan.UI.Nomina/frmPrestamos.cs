@@ -44,7 +44,7 @@ namespace Hersan.UI.Nomina
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             try {
-
+                LimpiarCampos();
             } catch (Exception ex) {
                 throw ex;
             }

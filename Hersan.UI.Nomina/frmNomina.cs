@@ -1,4 +1,5 @@
 ﻿using Hersan.Entidades.Nomina;
+using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -36,7 +37,11 @@ namespace Hersan.UI.Nomina
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            try {
 
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {

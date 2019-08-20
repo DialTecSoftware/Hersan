@@ -16,6 +16,7 @@ namespace Hersan.Entidades.Nomina
             Id = 0;
             Empleado = new EmpleadosBE();
             ImporteTotal = 0;
+            Tasa = 0;
             NoPagos = 0;
             ImportePago = 0;
             SemanaAplica = 0;
@@ -27,7 +28,7 @@ namespace Hersan.Entidades.Nomina
 
         public int Id { get; set; }
         public EmpleadosBE Empleado { get; set; }
-        //public TasaBE Tasa { get; set; }
+        public decimal Tasa { get; set; }
         public decimal ImporteTotal { get; set; }
         public int NoPagos { get; set; }
         public decimal ImportePago { get; set; }

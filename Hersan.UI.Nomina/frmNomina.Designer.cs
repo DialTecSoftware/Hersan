@@ -65,6 +65,8 @@
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnGuardar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnImprimir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
@@ -79,8 +81,6 @@
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement7 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
@@ -171,6 +171,22 @@
             this.commandBarSeparator2.DisplayName = "commandBarSeparator2";
             this.commandBarSeparator2.Name = "commandBarSeparator2";
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.DisplayName = "commandBarButton1";
+            this.btnEliminar.DrawText = true;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Text = "Borrar Marcados";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // commandBarSeparator5
+            // 
+            this.commandBarSeparator5.DisplayName = "commandBarSeparator5";
+            this.commandBarSeparator5.Name = "commandBarSeparator5";
+            this.commandBarSeparator5.VisibleInOverflowMenu = false;
             // 
             // btnImprimir
             // 
@@ -612,23 +628,6 @@
             // 
             this.commandBarStripElement5.DisplayName = "commandBarStripElement5";
             this.commandBarStripElement5.Name = "commandBarStripElement5";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayName = "commandBarButton1";
-            this.btnEliminar.DrawText = true;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Borrar Marcados";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // commandBarSeparator5
-            // 
-            this.commandBarSeparator5.DisplayName = "commandBarSeparator5";
-            this.commandBarSeparator5.Name = "commandBarSeparator5";
-            this.commandBarSeparator5.Text = "";
-            this.commandBarSeparator5.VisibleInOverflowMenu = false;
             // 
             // commandBarStripElement6
             // 

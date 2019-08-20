@@ -23,6 +23,7 @@
     <MetadataSource Address="http://localhost:60744/Hersan_Nomina.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="Hersan_Nomina5.xsd" MetadataType="Schema" ID="4354e9b2-39bd-4ed7-a4ee-b73d053a199e" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd6" />
     <MetadataFile FileName="Hersan_Nomina4.xsd" MetadataType="Schema" ID="dd79cd50-c5f4-4cea-a765-2a7ab64c7879" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd4" />
     <MetadataFile FileName="Hersan_Nomina.wsdl" MetadataType="Wsdl" ID="38d86cd6-ef34-4e36-b0bd-b4a557be2b60" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?wsdl" />
     <MetadataFile FileName="Hersan_Nomina.xsd" MetadataType="Schema" ID="425d1805-ff2c-4a18-ad03-495ca28af0d6" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd2" />

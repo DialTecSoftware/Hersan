@@ -1,10 +1,6 @@
 ﻿using Hersan.Entidades.Nomina;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -44,7 +40,13 @@ namespace Hersan.UI.Nomina
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            try {
+                gvDatos.DataSource = null;
+                oList.RemoveAll(item => item.Sel == true);
+                gvDatos.DataSource = oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {

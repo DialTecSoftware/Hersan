@@ -56,5 +56,12 @@ namespace Hersan.Nomina.Service
         }
 
         #endregion
+
+        #region Préstamos
+        public int NOM_Prestamos_Guardar(PrestamosBE Obj, System.Data.DataTable Detalle)
+        {
+            return new NominaBP().NOM_Prestamos_Guardar(Obj, Detalle);
+        }
+        #endregion
     }
 }

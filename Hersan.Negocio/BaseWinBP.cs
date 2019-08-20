@@ -295,7 +295,7 @@ namespace Hersan.Negocio
 
         public static System.Data.DataTable ToDataTable<T>(this IList<T> data)
         {
-            System.Data.DataTable table = new System.Data.DataTable();
+            System.Data.DataTable table = new System.Data.DataTable("Tabla");
             
             if (typeof(T).IsValueType || typeof(T).Equals(typeof(string))) {
                 System.Data.DataColumn dc = new System.Data.DataColumn("Value");

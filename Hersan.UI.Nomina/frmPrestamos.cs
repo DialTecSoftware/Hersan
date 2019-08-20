@@ -1,5 +1,6 @@
 ﻿using Hersan.Entidades.CapitalHumano;
 using Hersan.Entidades.Nomina;
+using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -50,8 +51,43 @@ namespace Hersan.UI.Nomina
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try {
-                System.Data.DataTable oData = Negocio.BaseWinBP.ToDataTable(oPrestamo);
+            oNomina = new WCF_Nomina.Hersan_NominaClient();
+            int Result = 0;
+            try {                
+                try {
+                    if(RadMessageBox.Show("Esta acción generará el prestamo para el empleado\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No) {
+                        return;
+                    } 
+
+                    System.Data.DataTable oData = BaseWinBP.ToDataTable(oPrestamo);
+                    if (ValidarCampos()) {
+                        if (dgGrid.RowCount == 0) {
+                            btnGenerar_Click(new object(), new EventArgs());
+                        }
+
+                        PrestamosBE obj = new PrestamosBE();
+                        obj.Empleado.Id = int.Parse(cboEmpleados.SelectedValue.ToString());
+                        obj.Tasa = decimal.Parse(txtTasa.Text);
+                        obj.ImporteTotal = decimal.Parse(txtImporte.Text);
+                        obj.NoPagos = (txtPagos.Enabled == true ? int.Parse(txtPagos.Text) : 0);
+                        obj.ImportePago = decimal.Parse(txtPago.Text);
+                        obj.SemanaAplica = int.Parse(cboSemana.Text);
+                        obj.Estatus = "VIGENTE";
+                        obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
+
+                        Result = oNomina.NOM_Prestamos_Guardar(obj, oData);
+                        if (Result == 0) {
+                            RadMessageBox.Show("Ocurrió un error al generar el préstamo",this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                        } else {
+                            RadMessageBox.Show("Se ha generado el préstamo No. " + Result.ToString() , this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                            LimpiarCampos();
+                        }
+                    }
+                } catch (Exception ex) {
+                    RadMessageBox.Show("Ocurrió un error al guardar el préstamo\n"+ ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                } finally { oNomina = null; }
+
+                
             } catch (Exception ex) {
                 throw ex;
             }
@@ -100,9 +136,9 @@ namespace Hersan.UI.Nomina
         {
             try {
                 //CALCULO DE PAGOS
-                decimal Semanas = oList.FindAll(item => item.Semana > int.Parse(cboSemana.Text)).Count;                
-                txtPagos.Value = Semanas;
+                decimal Semanas = oList.FindAll(item => item.Semana > int.Parse(cboSemana.Text)).Count;
                 txtPagos.Maximum = Semanas;
+                txtPagos.Value = Semanas;
             } catch (Exception ex) {
                 throw ex;
             }
@@ -117,10 +153,25 @@ namespace Hersan.UI.Nomina
             }
         }
 
+        private void ObtenerParametros()
+        {
+            oNomina = new WCF_Nomina.Hersan_NominaClient();
+            try {
+                txtTasa.Text = oNomina.Nom_Parametros_Obtener().Interes.ToString();
+            } catch (Exception ex) {
+                throw ex;
+            } finally { oNomina = null; }
+        }
         private void LimpiarCampos()
         {
             try {
-
+                txtId.Text = "0";
+                txtImporte.Value = txtImporte.Minimum;
+                txtPago.Text = "0";
+                txtPagos.Value = txtPagos.Minimum;                
+                cboEmpleados.SelectedIndex = 0;
+                cboSemana.SelectedIndex = 0;
+                dgGrid.DataSource = null;
             } catch (Exception ex) {
                 throw ex;
             }
@@ -227,51 +278,6 @@ namespace Hersan.UI.Nomina
                 RadMessageBox.Show("Ocurrío un error al generar la tabla de amortizaciones\n"+ ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-        private void GuardarInformacion()
-        {
-
-            //frmEspera fe = new frmEspera(this);
-            //int Maquila = 0;
-            //int Folio = 0;
-            //PrestamoBE obj = new PrestamoBE();
-
-            //try {
-            //    if (ValidarCampos()) {
-
-            //        if (dgGrid.RowCount == 0) {
-            //            //GenerarTablaAmortizacion();                  
-            //            btnGenerar_Click(new object(), new EventArgs());
-            //        }
-
-            //        Maquila = int.Parse(mcbMaquila.SelectedValue.ToString());
-
-            //        obj.Maquila = new Entidades.Catalogos.MaquiladorBE();
-            //        obj.Maquila.ID = Maquila;
-            //        obj.Tasa = new TasaBE();
-            //        obj.Tasa.IDTasa = (mcbTasa.Enabled == true ? int.Parse(mcbTasa.SelectedValue.ToString()) : 0);
-            //        obj.ImporteTotal = decimal.Parse(txtImporte.Text);
-            //        obj.NumPagos = (txtPagos.Enabled == true ? int.Parse(txtPagos.Text) : 0);
-            //        obj.ImportePago = (txtImpPago.Enabled == true ? decimal.Parse(txtImpPago.Text) : 0);
-            //        obj.SemanaAplica = int.Parse(mcbSemana.Text);
-            //        obj.Concepto = "";
-            //        obj.Estatus = "VIGENTE";
-            //        obj.Tipo = int.Parse(cboTipo.SelectedValue.ToString());
-            //        obj.Fecha = DateTime.Now; //No se usa en este tipo de prestamo pero si en hormas.
-            //        fe.Start();
-            //        Folio = oService.GuardarPrestamoMaquila(obj, lstDet, IdUsuario);
-            //        if (Folio > 0) {
-            //            RadMessageBox.Show("El Préstamo se Guardó con Éxito con el Número de Folio " + Folio.ToString() + ". ", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-            //            LimpiarCampos();
-            //            LLenarComboSemanas();
-            //        }
-            //        fe.Stop();
-
-            //    }
-            //} catch (Exception ex) {
-            //    RadMessageBox.Show(ex.Message, this.Text + " - Guardar Información", MessageBoxButtons.OK, RadMessageIcon.Error);
-            //} finally { fe.Dispose(); }
-
-        }
         private int CalcularSemana(int Semana, int Incremento)
         {
             int Anio = 0;
@@ -341,56 +347,20 @@ namespace Hersan.UI.Nomina
         }
         private void ImprimirPrestamo()
         {
-            //List<PrestamoSelBE> lstPrestamo;
-            //SIS4E.Negocio.ListToDataTable oTable = new ListToDataTable(); ;
-            //frmReportViewer Preview = new frmReportViewer();
-
-            //frmEspera fEspera = new frmEspera(this);
-
+            //frmViewer frm = new frmViewer();
             //try {
             //    if (dgGrid.RowCount > 0) {
-            //        fEspera.Start();
-            //        lstPrestamo = oService.ObtenerPrestamoTablaAmortizacion(mcbMaquila.Text, Importe, NumPagos, ImpPago, Semana, Tasa);
-            //        Preview.iReport = new Reportes.rptPRE_PrestamoMaquila();
+            //        frm.iReport = new Reportes.rptPrestamos();
             //        //Preview.iReport.SetDataSource(oTable.ToDataTable(lstPrestamo));
-            //        Preview.iReport.SetDataSource(oService.ObtenerPrestamoTablaAmortizacionDT(mcbMaquila.Text, Importe, NumPagos, ImpPago, Semana, Tasa));
-            //        fEspera.Stop();
-            //        Preview.ShowDialog();
+            //        frm.iReport.SetDataSource(BaseWinBP.ToDataTable(oPrestamo));
+            //        frm.ShowDialog();
             //    } else {
-
+            //        RadMessageBox.Show("Debe generar la tabla de amortización para imprimir", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
             //    }
             //} catch (Exception ex) {
-            //    RadMessageBox.Show(ex.Message, this.Text + " - Imprimir Préstamo", MessageBoxButtons.OK, RadMessageIcon.Error);
+            //    RadMessageBox.Show("Ocurrió un error al imprimir el préstamo\n"+ ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             //}
 
         }
-        private void GenerarTabla(int Tipo)
-        {
-            //try {
-            //    PrestamoDetBE obj = new PrestamoDetBE();
-            //    obj.Semana = int.Parse(mcbSemana.Text.ToString());
-            //    obj.Capital = decimal.Parse(txtImporte.Text.Trim().Length == 0 ? "0" : txtImporte.Text.Trim());
-            //    obj.NumPago = int.Parse(txtPagos.Text);
-            //    obj.ImportePago = decimal.Parse(txtImpPago.Text);
-
-            //    lstDet = oService.ObtenerTablaAmortizacion(Tipo, decimal.Parse(mcbTasa.Text.ToString()), obj);
-            //    dgGrid.DataSource = lstDet;
-
-            //    if (dgGrid.RowCount == 0)
-            //        RadMessageBox.Show("No se ha generado la tabla, revise los valores", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-            //} catch (Exception ex) {
-            //    RadMessageBox.Show("Ocurrió un error al generar la tabla" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-            //}
-        }
-        private void ObtenerParametros()
-        {
-            oNomina = new WCF_Nomina.Hersan_NominaClient();
-            try {
-                txtTasa.Text = oNomina.Nom_Parametros_Obtener().Interes.ToString();
-            } catch (Exception ex) {
-                throw ex;
-            } finally { oNomina = null; }
-        }
-        
     }
 }

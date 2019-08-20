@@ -8,6 +8,7 @@ namespace Hersan.Nomina.Contract
     [ServiceContract]
     public interface IHersan_Nomina
     {
+        #region Nomina
         [OperationContract]
         List<FactoresBE> Nom_Factores_Obtener();
         [OperationContract]
@@ -28,5 +29,12 @@ namespace Hersan.Nomina.Contract
 
         [OperationContract]
         List<NominaBE> NOM_CalculoNomina(int Semana);
+        #endregion
+
+        #region Préstamos
+        [OperationContract]
+        int NOM_Prestamos_Guardar(PrestamosBE Obj, System.Data.DataTable Detalle);
+
+        #endregion
     }
 }

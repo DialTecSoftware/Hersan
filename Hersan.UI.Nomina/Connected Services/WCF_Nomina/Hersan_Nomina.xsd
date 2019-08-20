@@ -126,6 +126,7 @@
       <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Empleado" nillable="true" type="q9:EmpleadosBE" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Percepciones" nillable="true" type="tns:PercepcionesBE" />
+      <xs:element minOccurs="0" name="Sel" type="xs:boolean" />
       <xs:element minOccurs="0" name="Semana" nillable="true" type="tns:SemanasBE" />
       <xs:element minOccurs="0" name="Total" type="xs:decimal" />
     </xs:sequence>
@@ -159,6 +160,7 @@
       <xs:element minOccurs="0" name="ImporteTotal" type="xs:decimal" />
       <xs:element minOccurs="0" name="NoPagos" type="xs:int" />
       <xs:element minOccurs="0" name="SemanaAplica" type="xs:int" />
+      <xs:element minOccurs="0" name="Tasa" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PrestamosBE" nillable="true" type="tns:PrestamosBE" />

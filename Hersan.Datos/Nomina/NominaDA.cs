@@ -11,6 +11,7 @@ namespace Hersan.Datos.Nomina
         #region Constantes
         const string CONS_NOM_CALCULONOMINA = "NOM_CalculoNomina";
 
+        const string CONS_NOM_PRESTAMOS_GUARDAR = "NOM_Prestamos_Guardar";
         #endregion
 
         public List<NominaBE> NOM_CalculoNomina(int Semana)
@@ -65,6 +66,37 @@ namespace Hersan.Datos.Nomina
                 }
                 return oList;
             } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public int NOM_Prestamos_Guardar(PrestamosBE Obj, DataTable Detalle)
+        {
+            int Result = 0;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL")))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_NOM_PRESTAMOS_GUARDAR, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@IdEmpleado", Obj.Empleado.Id);
+                        cmd.Parameters.AddWithValue("@Importe", Obj.ImporteTotal);
+                        cmd.Parameters.AddWithValue("@Pagos", Obj.NoPagos);
+                        cmd.Parameters.AddWithValue("@ImportePago", Obj.ImportePago);
+                        cmd.Parameters.AddWithValue("@Semana", Obj.SemanaAplica);
+                        cmd.Parameters.AddWithValue("@Tasa", Obj.Tasa);
+                        cmd.Parameters.AddWithValue("@Detalle", Detalle);
+                        cmd.Parameters.AddWithValue("@IdUsuario", Obj.DatosUsuario.IdUsuarioModif);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

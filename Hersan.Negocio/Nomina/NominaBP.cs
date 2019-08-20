@@ -12,5 +12,10 @@ namespace Hersan.Negocio.Nomina
         {
             return new NominaDA().NOM_CalculoNomina(Semana);
         }
+
+        public int NOM_Prestamos_Guardar(PrestamosBE Obj, System.Data.DataTable Detalle)
+        {
+            return new NominaDA().NOM_Prestamos_Guardar(Obj, Detalle);
+        }
     }
 }

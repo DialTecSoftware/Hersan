@@ -15,6 +15,7 @@
       <xsd:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
       <xsd:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" />
       <xsd:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+      <xsd:import schemaLocation="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IHersan_Nomina_Nom_Factores_Obtener_InputMessage">
@@ -71,6 +72,12 @@
   <wsdl:message name="IHersan_Nomina_NOM_CalculoNomina_OutputMessage">
     <wsdl:part name="parameters" element="tns:NOM_CalculoNominaResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_Prestamos_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_Prestamos_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Nomina_NOM_Prestamos_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NOM_Prestamos_GuardarResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHersan_Nomina">
     <wsdl:operation name="Nom_Factores_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Nomina/Nom_Factores_Obtener" message="tns:IHersan_Nomina_Nom_Factores_Obtener_InputMessage" />
@@ -107,6 +114,10 @@
     <wsdl:operation name="NOM_CalculoNomina">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_CalculoNomina" message="tns:IHersan_Nomina_NOM_CalculoNomina_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_CalculoNominaResponse" message="tns:IHersan_Nomina_NOM_CalculoNomina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NOM_Prestamos_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_Guardar" message="tns:IHersan_Nomina_NOM_Prestamos_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_GuardarResponse" message="tns:IHersan_Nomina_NOM_Prestamos_Guardar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IHersan_Nomina" type="tns:IHersan_Nomina">
@@ -186,6 +197,15 @@
     </wsdl:operation>
     <wsdl:operation name="NOM_CalculoNomina">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Nomina/NOM_CalculoNomina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NOM_Prestamos_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_Guardar" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

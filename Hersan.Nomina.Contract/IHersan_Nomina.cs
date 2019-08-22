@@ -36,5 +36,12 @@ namespace Hersan.Nomina.Contract
         int NOM_Prestamos_Guardar(PrestamosBE Obj, System.Data.DataTable Detalle);
 
         #endregion
+
+        #region Incidencias
+        [OperationContract]
+        int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista);
+        [OperationContract]
+        List<IncidenciasBE> NOM_Incidencias_Obtener(int Semana);
+        #endregion
     }
 }

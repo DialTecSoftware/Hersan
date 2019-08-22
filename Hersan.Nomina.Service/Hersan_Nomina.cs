@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 
 namespace Hersan.Nomina.Service
 {
-    public class Hersan_Nomina: IHersan_Nomina
-    {
+    public class Hersan_Nomina : IHersan_Nomina {
         #region Tablas 
         public List<FactoresBE> Nom_Factores_Obtener()
         {
@@ -63,5 +62,17 @@ namespace Hersan.Nomina.Service
             return new NominaBP().NOM_Prestamos_Guardar(Obj, Detalle);
         }
         #endregion
+
+        #region Incidencias
+        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista)
+        {
+            return new NominaBP().NOM_Incidencias_Guardar(Lista);
+        }
+        public List<IncidenciasBE> NOM_Incidencias_Obtener(int Semana)
+        {
+            return new NominaBP().NOM_Incidencias_Obtener(Semana);
+        }
+        #endregion
+
     }
 }

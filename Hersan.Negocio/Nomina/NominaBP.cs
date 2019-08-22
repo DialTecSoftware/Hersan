@@ -17,5 +17,14 @@ namespace Hersan.Negocio.Nomina
         {
             return new NominaDA().NOM_Prestamos_Guardar(Obj, Detalle);
         }
+
+        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista)
+        {
+            return new NominaDA().NOM_Incidencias_Guardar(Lista);
+        }
+        public List<IncidenciasBE> NOM_Incidencias_Obtener(int Semana)
+        {
+            return new NominaDA().NOM_Incidencias_Obtener(Semana);
+        }
     }
 }

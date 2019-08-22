@@ -193,4 +193,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PercepcionesBE" nillable="true" type="tns:PercepcionesBE" />
+  <xs:complexType name="ArrayOfIncidenciasBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IncidenciasBE" nillable="true" type="tns:IncidenciasBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIncidenciasBE" nillable="true" type="tns:ArrayOfIncidenciasBE" />
+  <xs:complexType name="IncidenciasBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bono" type="xs:decimal" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q15:GeneralBE" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Hersan.Entidades.CapitalHumano" minOccurs="0" name="Empleado" nillable="true" type="q16:EmpleadosBE" />
+      <xs:element minOccurs="0" name="Extra" type="xs:int" />
+      <xs:element minOccurs="0" name="Faltas" type="xs:int" />
+      <xs:element minOccurs="0" name="Retardos" type="xs:int" />
+      <xs:element minOccurs="0" name="Semana" nillable="true" type="tns:SemanasBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IncidenciasBE" nillable="true" type="tns:IncidenciasBE" />
 </xs:schema>

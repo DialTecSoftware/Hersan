@@ -96,6 +96,12 @@
     <Compile Include="frmFactores.Designer.cs">
       <DependentUpon>frmFactores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIncidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIncidencias.Designer.cs">
+      <DependentUpon>frmIncidencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNomina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFactores.resx">
       <DependentUpon>frmFactores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIncidencias.resx">
+      <DependentUpon>frmIncidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNomina.resx">
       <DependentUpon>frmNomina.cs</DependentUpon>
@@ -265,6 +274,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.TabuladorBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.CuotasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.FactoresBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Nomina.IncidenciasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.ISRBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.NominaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.ParametrosBE.datasource" />

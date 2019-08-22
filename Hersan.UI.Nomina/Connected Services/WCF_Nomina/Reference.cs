@@ -44,6 +44,12 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_GuardarResponse")]
         int NOM_Prestamos_Guardar(Hersan.Entidades.Nomina.PrestamosBE Obj, System.Data.DataTable Detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_GuardarResponse")]
+        int NOM_Incidencias_Guardar(System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> Lista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> NOM_Incidencias_Obtener(int Semana);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +117,14 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         public int NOM_Prestamos_Guardar(Hersan.Entidades.Nomina.PrestamosBE Obj, System.Data.DataTable Detalle) {
             return base.Channel.NOM_Prestamos_Guardar(Obj, Detalle);
+        }
+        
+        public int NOM_Incidencias_Guardar(System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> Lista) {
+            return base.Channel.NOM_Incidencias_Guardar(Lista);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> NOM_Incidencias_Obtener(int Semana) {
+            return base.Channel.NOM_Incidencias_Obtener(Semana);
         }
     }
 }

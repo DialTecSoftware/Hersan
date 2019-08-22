@@ -12,6 +12,9 @@ namespace Hersan.Datos.Nomina
         const string CONS_NOM_CALCULONOMINA = "NOM_CalculoNomina";
 
         const string CONS_NOM_PRESTAMOS_GUARDAR = "NOM_Prestamos_Guardar";
+
+        const string CONS_NOM_INCIDENCIAS_GUARDAR = "NOM_Incidencias_Guardar";
+        const string CONS_NOM_INCIDENCIAS_OBTENER = "NOM_Incidencias_Obtener";
         #endregion
 
         public List<NominaBE> NOM_CalculoNomina(int Semana)
@@ -87,7 +90,7 @@ namespace Hersan.Datos.Nomina
                         cmd.Parameters.AddWithValue("@Semana", Obj.SemanaAplica);
                         cmd.Parameters.AddWithValue("@Tasa", Obj.Tasa);
                         cmd.Parameters.AddWithValue("@Detalle", Detalle);
-                        cmd.Parameters.AddWithValue("@IdUsuario", Obj.DatosUsuario.IdUsuarioModif);
+                        cmd.Parameters.AddWithValue("@IdUsuario", Obj.DatosUsuario.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         Result = Convert.ToInt32(cmd.ExecuteScalar());
@@ -100,6 +103,82 @@ namespace Hersan.Datos.Nomina
                 throw ex;
             }
         }
+
+        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    SqlTransaction transaction;
+                    transaction = conn.BeginTransaction("Tran");
+
+                    try {
+                        Lista.ForEach(item => {
+                            using (SqlCommand cmd = new SqlCommand(CONS_NOM_INCIDENCIAS_GUARDAR, conn)) {
+                                cmd.Connection = conn;
+                                cmd.Transaction = transaction;
+
+                                cmd.Parameters.AddWithValue("@Semana", item.Semana.Semana);
+                                cmd.Parameters.AddWithValue("@IdEmpleado", item.Empleado.Id);
+                                cmd.Parameters.AddWithValue("@Faltas", item.Faltas);
+                                cmd.Parameters.AddWithValue("@Retardos", item.Retardos);
+                                cmd.Parameters.AddWithValue("@Bono", item.Bono);
+                                cmd.Parameters.AddWithValue("@Extras", item.Extra);
+                                cmd.Parameters.AddWithValue("@IdUsuario", item.DatosUsuario.IdUsuarioCreo);
+
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.ExecuteNonQuery();
+                            }
+                        });
+                        transaction.Commit();
+                        Result = 1;
+                    } catch (Exception ex) {
+                        transaction.Rollback();
+                    }                
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<IncidenciasBE> NOM_Incidencias_Obtener(int Semana)
+        {
+            List<IncidenciasBE> oList = new List<IncidenciasBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(CONS_NOM_INCIDENCIAS_OBTENER, conn)) {
+                        cmd.Parameters.AddWithValue("@Semana", Semana);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using(SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                IncidenciasBE Obj = new IncidenciasBE();
+
+                                Obj.Empleado.Id = int.Parse(reader["EMP_Id"].ToString());
+                                Obj.Empleado.Numero = int.Parse(reader["EMP_Numero"].ToString());
+                                Obj.Empleado.Expedientes.Puesto.Departamentos.Nombre = reader["DEP_Nombre"].ToString();
+                                Obj.Empleado.Expedientes.DatosPersonales.Nombres = reader["Nombre"].ToString();
+                                Obj.Semana.Semana = int.Parse(reader["Semana"].ToString());
+                                Obj.Faltas = int.Parse(reader["Faltas"].ToString());
+                                Obj.Retardos = int.Parse(reader["Retardos"].ToString());
+                                Obj.Bono = decimal.Parse(reader["Bono"].ToString());
+                                Obj.Extra = int.Parse(reader["Extras"].ToString());
+
+                                oList.Add(Obj);
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
 
     }
 }

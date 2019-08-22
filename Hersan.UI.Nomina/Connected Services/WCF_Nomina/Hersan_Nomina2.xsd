@@ -144,4 +144,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="NOM_Incidencias_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Lista" nillable="true" type="q10:ArrayOfIncidenciasBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Incidencias_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NOM_Incidencias_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Incidencias_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Semana" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Incidencias_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Incidencias_ObtenerResult" nillable="true" type="q11:ArrayOfIncidenciasBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -18,6 +18,7 @@ namespace Hersan.Entidades.Nomina {
             Retardos = 0;
             Bono = 0;
             Extra = 0;
+            Fonacot = false;
             DatosUsuario = new GeneralBE();
         }
 
@@ -28,6 +29,7 @@ namespace Hersan.Entidades.Nomina {
         public int Retardos { get; set; }
         public decimal Bono { get; set; }
         public int Extra { get; set; }
+        public bool Fonacot { get; set; }
         public GeneralBE DatosUsuario { get; set; }
 
     }

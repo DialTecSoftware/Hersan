@@ -50,6 +50,9 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> NOM_Incidencias_Obtener(int Semana);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_ImportarFonacot", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_ImportarFonacotResponse")]
+        bool NOM_ImportarFonacot(string Nombre, byte[] Archivo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -125,6 +128,10 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         public System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> NOM_Incidencias_Obtener(int Semana) {
             return base.Channel.NOM_Incidencias_Obtener(Semana);
+        }
+        
+        public bool NOM_ImportarFonacot(string Nombre, byte[] Archivo) {
+            return base.Channel.NOM_ImportarFonacot(Nombre, Archivo);
         }
     }
 }

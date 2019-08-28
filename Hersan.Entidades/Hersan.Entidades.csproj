@@ -110,6 +110,7 @@
     <Compile Include="Ensamble\PreciosBE.cs" />
     <Compile Include="Ensamble\ServiciosBE.cs" />
     <Compile Include="Calidad\InyeccionBE.cs" />
+    <Compile Include="Nomina\FonacotBE.cs" />
     <Compile Include="Nomina\FactoresBE.cs" />
     <Compile Include="Nomina\IncidenciasBE.cs" />
     <Compile Include="Nomina\NominaBE.cs" />

@@ -1,7 +1,9 @@
 ﻿using Hersan.Entidades.Nomina;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 
 namespace Hersan.Datos.Nomina
@@ -9,10 +11,10 @@ namespace Hersan.Datos.Nomina
     public class NominaDA : BaseDA  
     {
         #region Constantes
+        private string RutaDoctos = @ConfigurationManager.AppSettings["RutaDoctos"];
+
         const string CONS_NOM_CALCULONOMINA = "NOM_CalculoNomina";
-
         const string CONS_NOM_PRESTAMOS_GUARDAR = "NOM_Prestamos_Guardar";
-
         const string CONS_NOM_INCIDENCIAS_GUARDAR = "NOM_Incidencias_Guardar";
         const string CONS_NOM_INCIDENCIAS_OBTENER = "NOM_Incidencias_Obtener";
         #endregion
@@ -48,6 +50,7 @@ namespace Hersan.Datos.Nomina
                                 obj.Percepciones.Vales = decimal.Parse(reader["Vales"].ToString());
                                 obj.Percepciones.HBono = decimal.Parse(reader["HBono"].ToString());
                                 obj.Percepciones.HExtra = decimal.Parse(reader["HExtra"].ToString());
+                                obj.Percepciones.Bono = decimal.Parse(reader["Bono"].ToString());
                                 obj.Percepciones.Total = decimal.Parse(reader["TotalPercepciones"].ToString());
 
                                 /* DEDUCCIONES */
@@ -104,7 +107,7 @@ namespace Hersan.Datos.Nomina
             }
         }
 
-        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista)
+        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista, List<FonacotBE> Fonacot)
         {
             int Result = 0;
             try {
@@ -135,6 +138,7 @@ namespace Hersan.Datos.Nomina
                         Result = 1;
                     } catch (Exception ex) {
                         transaction.Rollback();
+                        throw ex;
                     }                
                 }
                 return Result;
@@ -177,6 +181,38 @@ namespace Hersan.Datos.Nomina
             } catch (Exception ex) {
                 throw ex;
             }
+        }
+        public bool NOM_ImportarFonacot(string Archivo)
+        {
+            bool Result = false;
+            string Ruta = RutaDoctos + Archivo;
+            // make sure your sheet name is correct, here sheet name is sheet1, so you can change your sheet name if have            different
+            string Tabla = "NOM_Fonacot";
+            string Query = "select ANIO_EMISION, MES_EMISION, NO_FONACOT, RFC, NO_SS, NOMBRE, CLAVE_EMPLEADO, RETENCION_MENSUAL, RETENCION_REAL From [cedulaCSV]";
+
+            try {
+                //create our connection strings
+                string Excelconn = @"provider=microsoft.jet.oledb.4.0;data source=" + Ruta + ";extended properties=" + "\"excel 8.0;hdr=yes;\"";
+                string SQLConn = RecuperarCadenaDeConexion("coneccionSQL");
+
+                //series of commands to bulk copy data from the excel file into our sql table
+                OleDbConnection oledbconn = new OleDbConnection(Excelconn);
+                OleDbCommand oledbcmd = new OleDbCommand(Query, oledbconn);
+                oledbconn.Open();
+            
+                OleDbDataReader dr = oledbcmd.ExecuteReader();
+                SqlBulkCopy bulkcopy = new SqlBulkCopy(SQLConn);
+                bulkcopy.DestinationTableName = Tabla;
+                while (dr.Read()) {
+                    bulkcopy.WriteToServer(dr);
+                }
+
+                oledbconn.Close();
+                Result = true;
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return Result;
         }
 
 

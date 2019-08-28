@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="47a02ee0-f610-4489-8c85-d2af23626f3d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cdebb883-f2d7-40d7-af39-c6edb3eadf55" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,15 +23,15 @@
     <MetadataSource Address="http://localhost:60744/Hersan_Nomina.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Hersan_Nomina5.xsd" MetadataType="Schema" ID="4354e9b2-39bd-4ed7-a4ee-b73d053a199e" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd6" />
-    <MetadataFile FileName="Hersan_Nomina4.xsd" MetadataType="Schema" ID="dd79cd50-c5f4-4cea-a765-2a7ab64c7879" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd4" />
-    <MetadataFile FileName="Hersan_Nomina.wsdl" MetadataType="Wsdl" ID="38d86cd6-ef34-4e36-b0bd-b4a557be2b60" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?wsdl" />
-    <MetadataFile FileName="Hersan_Nomina.xsd" MetadataType="Schema" ID="425d1805-ff2c-4a18-ad03-495ca28af0d6" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd2" />
-    <MetadataFile FileName="Hersan_Nomina1.xsd" MetadataType="Schema" ID="fe48aa80-d6ad-494c-8374-48eac93d7a40" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd3" />
-    <MetadataFile FileName="Hersan_Nomina2.xsd" MetadataType="Schema" ID="582a9a3e-a453-4e93-87ba-d9daa732f25b" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd0" />
-    <MetadataFile FileName="Hersan_Nomina3.xsd" MetadataType="Schema" ID="72343251-1e0f-4886-a390-d51d849c3ed8" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd1" />
-    <MetadataFile FileName="Hersan_Nomina.disco" MetadataType="Disco" ID="cd2803ad-f959-407d-b498-f64f82dffb20" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?disco" />
-    <MetadataFile FileName="Hersan_Nomina41.xsd" MetadataType="Schema" ID="f0588ede-f904-486f-84df-78f1a8887caf" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd5" />
+    <MetadataFile FileName="Hersan_Nomina.xsd" MetadataType="Schema" ID="8fdded85-b841-4460-9ad0-4c862a1cff99" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd6" />
+    <MetadataFile FileName="Hersan_Nomina1.xsd" MetadataType="Schema" ID="99f75f19-1261-4cf8-8bab-96d3788dc6fe" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd4" />
+    <MetadataFile FileName="Hersan_Nomina.wsdl" MetadataType="Wsdl" ID="cb8fb0b9-fbd4-424e-abf7-7c812c2357d6" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?wsdl" />
+    <MetadataFile FileName="Hersan_Nomina2.xsd" MetadataType="Schema" ID="413bb273-c1c5-4792-9994-67e1f25d88c9" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd2" />
+    <MetadataFile FileName="Hersan_Nomina3.xsd" MetadataType="Schema" ID="61eb3d70-1607-4100-8e50-05102963a9cc" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd3" />
+    <MetadataFile FileName="Hersan_Nomina4.xsd" MetadataType="Schema" ID="ba563ca6-8f6c-42ef-9e24-db75dc893f50" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd0" />
+    <MetadataFile FileName="Hersan_Nomina5.xsd" MetadataType="Schema" ID="0bbae6f4-64aa-46bb-87f4-e66f193a536f" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd1" />
+    <MetadataFile FileName="Hersan_Nomina.disco" MetadataType="Disco" ID="4645aaf9-9945-4da8-a9f7-bddeae3bdf71" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?disco" />
+    <MetadataFile FileName="Hersan_Nomina6.xsd" MetadataType="Schema" ID="37498d0e-f6ce-480d-8be0-2f0309069edd" SourceId="1" SourceUrl="http://localhost:60744/Hersan_Nomina.svc?xsd=xsd5" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

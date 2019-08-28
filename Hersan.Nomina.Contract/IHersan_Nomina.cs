@@ -42,6 +42,8 @@ namespace Hersan.Nomina.Contract
         int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista);
         [OperationContract]
         List<IncidenciasBE> NOM_Incidencias_Obtener(int Semana);
+        [OperationContract]
+        bool NOM_ImportarFonacot(string Nombre, Byte[] Archivo);
         #endregion
     }
 }

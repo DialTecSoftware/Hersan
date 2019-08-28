@@ -72,6 +72,10 @@ namespace Hersan.Nomina.Service
         {
             return new NominaBP().NOM_Incidencias_Obtener(Semana);
         }
+        public bool NOM_ImportarFonacot(string Nombre, Byte[] Archivo)
+        {
+            return new NominaBP().NOM_ImportarFonacot(Nombre, Archivo);
+        }
         #endregion
 
     }

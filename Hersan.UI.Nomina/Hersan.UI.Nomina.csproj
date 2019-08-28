@@ -43,10 +43,13 @@
     <Reference Include="CrystalDecisions.Windows.Forms">
       <HintPath>..\Hersan.UI.CapitalHumano\bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -244,10 +247,10 @@
     <None Include="Connected Services\WCF_Nomina\Hersan_Nomina4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina41.xsd">
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina5.xsd">
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina6.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
@@ -289,21 +292,6 @@
     <WCFMetadataStorage Include="Connected Services\WCF_Nomina\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCF_Nomina\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCF_Nomina\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCF_Nomina\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Hersan.Entidades\Hersan.Entidades.csproj">
       <Project>{4e3994ef-5056-4289-9c62-dc1140fd764e}</Project>
       <Name>Hersan.Entidades</Name>
@@ -328,9 +316,23 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Nomina\Hersan_Nomina.disco" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Nomina\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Nomina\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Nomina\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

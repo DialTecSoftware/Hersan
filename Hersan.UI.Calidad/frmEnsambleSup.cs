@@ -23,7 +23,7 @@ namespace Hersan.UI.Calidad
         List<EnsambleParametrosDetalleBE> oDetalle = new List<EnsambleParametrosDetalleBE>();
         private List<ReflejantesBE> oReflejantes = new List<ReflejantesBE>();
         List<string> oMaquinas = new List<string>();
-        bool Flag = true;
+        bool Flag = false;
         #endregion
 
         public frmEnsambleSup()
@@ -35,6 +35,7 @@ namespace Hersan.UI.Calidad
             try {
                 this.WindowState = FormWindowState.Normal;
                 this.StartPosition = FormStartPosition.CenterScreen;
+                Flag = false;
 
                 oMaquinas.Add("S1");
                 oMaquinas.Add("S8");

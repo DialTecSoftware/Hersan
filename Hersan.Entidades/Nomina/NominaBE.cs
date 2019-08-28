@@ -37,6 +37,7 @@ namespace Hersan.Entidades.Nomina
             Vales = 0;
             HBono = 0;
             HExtra = 0;
+            Bono = 0;
             Total = 0;
             DatosUsuario = new GeneralBE();
         }
@@ -46,6 +47,7 @@ namespace Hersan.Entidades.Nomina
         public decimal Vales { get; set; }
         public decimal HBono { get; set; }
         public decimal HExtra { get; set; }
+        public decimal Bono { get; set; }
         public decimal Total { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }

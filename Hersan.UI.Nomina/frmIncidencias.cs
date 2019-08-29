@@ -46,7 +46,7 @@ namespace Hersan.UI.Nomina
                 if (oList.FindAll(item=> item.Semana.Semana == int.Parse(cboSemana.Text)).Count == 0) {
                     if (RadMessageBox.Show("Desea guardar las incidencias de la semana...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         oList.ForEach(item => item.Semana.Semana = int.Parse(cboSemana.Text));
-                        int Result = oNomina.NOM_Incidencias_Guardar(oList);
+                        int Result = oNomina.NOM_Incidencias_Guardar(oList, oFonacot);
                         if (Result == 0)
                             RadMessageBox.Show("Ocurrió un error al guardar las incidencias", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                         else {
@@ -74,6 +74,11 @@ namespace Hersan.UI.Nomina
         {
             OpenFileDialog oDialog = new OpenFileDialog();
             try {
+                if(oList.FindAll(item => item.Semana.Semana == int.Parse(cboSemana.Text)).Count > 0) {
+                    RadMessageBox.Show("Las incidencias ya se encuentran guardadas y no pueden modificarse", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
                 oDialog.InitialDirectory = "";
                 oDialog.Filter = "csv files (*.csv)|*.csv";
                 oDialog.RestoreDirectory = true;
@@ -85,19 +90,20 @@ namespace Hersan.UI.Nomina
                 if (oDialog.ShowDialog() == DialogResult.OK) {
                     oFonacot.Clear();
                     LeerCSV(oDialog.FileName);
-                    if(oFonacot.Count > 0) {
-                        gvDatos.DataSource = null;
+                    if(oFonacot.Count > 0) {                        
                         oList.ForEach(item => {
-                        var aux = oFonacot.Find(x => x.CLAVE_EMPLEADO == item.Empleado.Numero); // && x.NO_FONACOT == item.Empleado.Fonacot && x.NO_SS == item.Empleado.Expedientes.Documentos.IMSS);
+                        var aux = oFonacot.Find(x => x.CLAVE_EMPLEADO == item.Empleado.Numero && x.NO_SS == item.Empleado.Expedientes.Documentos.IMSS);
                             if (aux != null) {
                                 item.Fonacot = true;
                             }else
                                 item.Fonacot = false;
                         });
+                        RadMessageBox.Show("Archivo cargado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                     }
                 }
 
-                gvDatos.DataSource = oList;
+                gvDatos.DataSource = null;
+                gvDatos.DataSource = oList;                
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar el archivo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -186,7 +192,6 @@ namespace Hersan.UI.Nomina
                 throw ex;
             }
         }
-
 
     }
 }

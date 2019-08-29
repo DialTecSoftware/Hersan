@@ -21,6 +21,9 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Subsidios_Obtener", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Subsidios_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Nomina.SubsidiosBE> NOM_Subsidios_Obtener();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Nomina_Obtener", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Nomina_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Nomina.NominaBE> NOM_Nomina_Obtener(int Semana);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_ISR_Semanal_Obtener", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_ISR_Semanal_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Nomina.ISRBE> NOM_ISR_Semanal_Obtener();
         
@@ -42,11 +45,14 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_CalculoNomina", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_CalculoNominaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Nomina.NominaBE> NOM_CalculoNomina(int Semana);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_CalculoNomina_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_CalculoNomina_GuardarResponse")]
+        int NOM_CalculoNomina_Guardar(int Semana, string Excluir, int IdUsuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_GuardarResponse")]
         int NOM_Prestamos_Guardar(Hersan.Entidades.Nomina.PrestamosBE Obj, System.Data.DataTable Detalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_GuardarResponse")]
-        int NOM_Incidencias_Guardar(System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> Lista);
+        int NOM_Incidencias_Guardar(System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> Lista, System.Collections.Generic.List<Hersan.Entidades.Nomina.FonacotBE> Fonacot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_Obtener", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> NOM_Incidencias_Obtener(int Semana);
@@ -90,6 +96,10 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
             return base.Channel.NOM_Subsidios_Obtener();
         }
         
+        public System.Collections.Generic.List<Hersan.Entidades.Nomina.NominaBE> NOM_Nomina_Obtener(int Semana) {
+            return base.Channel.NOM_Nomina_Obtener(Semana);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Nomina.ISRBE> NOM_ISR_Semanal_Obtener() {
             return base.Channel.NOM_ISR_Semanal_Obtener();
         }
@@ -118,12 +128,16 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
             return base.Channel.NOM_CalculoNomina(Semana);
         }
         
+        public int NOM_CalculoNomina_Guardar(int Semana, string Excluir, int IdUsuario) {
+            return base.Channel.NOM_CalculoNomina_Guardar(Semana, Excluir, IdUsuario);
+        }
+        
         public int NOM_Prestamos_Guardar(Hersan.Entidades.Nomina.PrestamosBE Obj, System.Data.DataTable Detalle) {
             return base.Channel.NOM_Prestamos_Guardar(Obj, Detalle);
         }
         
-        public int NOM_Incidencias_Guardar(System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> Lista) {
-            return base.Channel.NOM_Incidencias_Guardar(Lista);
+        public int NOM_Incidencias_Guardar(System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> Lista, System.Collections.Generic.List<Hersan.Entidades.Nomina.FonacotBE> Fonacot) {
+            return base.Channel.NOM_Incidencias_Guardar(Lista, Fonacot);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> NOM_Incidencias_Obtener(int Semana) {

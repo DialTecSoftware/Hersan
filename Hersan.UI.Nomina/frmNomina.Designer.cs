@@ -35,8 +35,8 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -45,8 +45,8 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -58,6 +58,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -74,7 +75,6 @@
             this.commandBarSeparator4 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.chkFonacot = new Telerik.WinControls.UI.RadCheckBox();
             this.cboSemana = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gvDatos = new Telerik.WinControls.UI.RadGridView();
@@ -87,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkFonacot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana.EditorControl.MasterTemplate)).BeginInit();
@@ -232,25 +231,13 @@
             // 
             // radPanel1
             // 
-            this.radPanel1.Controls.Add(this.chkFonacot);
             this.radPanel1.Controls.Add(this.cboSemana);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(819, 102);
+            this.radPanel1.Size = new System.Drawing.Size(819, 66);
             this.radPanel1.TabIndex = 0;
-            // 
-            // chkFonacot
-            // 
-            this.chkFonacot.AutoSize = false;
-            this.chkFonacot.CheckAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkFonacot.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
-            this.chkFonacot.Location = new System.Drawing.Point(17, 47);
-            this.chkFonacot.Name = "chkFonacot";
-            this.chkFonacot.Size = new System.Drawing.Size(114, 18);
-            this.chkFonacot.TabIndex = 5;
-            this.chkFonacot.Text = "Calcular Fonacot:";
             // 
             // cboSemana
             // 
@@ -325,6 +312,7 @@
             this.cboSemana.Size = new System.Drawing.Size(207, 20);
             this.cboSemana.TabIndex = 4;
             this.cboSemana.TabStop = false;
+            this.cboSemana.SelectedIndexChanged += new System.EventHandler(this.CboSemana_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -340,7 +328,7 @@
             this.gvDatos.AutoScroll = true;
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvDatos.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextRow;
-            this.gvDatos.Location = new System.Drawing.Point(0, 155);
+            this.gvDatos.Location = new System.Drawing.Point(0, 119);
             // 
             // 
             // 
@@ -352,15 +340,20 @@
             this.gvDatos.MasterTemplate.AllowDragToGroup = false;
             this.gvDatos.MasterTemplate.AllowRowResize = false;
             this.gvDatos.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.FieldName = "Empleado.Id";
-            gridViewTextBoxColumn3.HeaderText = "IdEmpleado";
-            gridViewTextBoxColumn3.IsPinned = true;
+            gridViewTextBoxColumn3.FieldName = "Semana.Semana";
+            gridViewTextBoxColumn3.HeaderText = "Semana";
             gridViewTextBoxColumn3.IsVisible = false;
-            gridViewTextBoxColumn3.Name = "IdEmpleado";
-            gridViewTextBoxColumn3.PinPosition = Telerik.WinControls.UI.PinnedColumnPosition.Left;
-            gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.RowSpan = 30;
-            gridViewTextBoxColumn3.Width = 43;
+            gridViewTextBoxColumn3.Name = "Semana";
+            gridViewTextBoxColumn3.Width = 23;
+            gridViewTextBoxColumn4.FieldName = "Empleado.Id";
+            gridViewTextBoxColumn4.HeaderText = "IdEmpleado";
+            gridViewTextBoxColumn4.IsPinned = true;
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "IdEmpleado";
+            gridViewTextBoxColumn4.PinPosition = Telerik.WinControls.UI.PinnedColumnPosition.Left;
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.RowSpan = 30;
+            gridViewTextBoxColumn4.Width = 43;
             gridViewCheckBoxColumn1.FieldName = "Sel";
             gridViewCheckBoxColumn1.HeaderText = "";
             gridViewCheckBoxColumn1.IsPinned = true;
@@ -368,98 +361,98 @@
             gridViewCheckBoxColumn1.MinWidth = 30;
             gridViewCheckBoxColumn1.Name = "Sel";
             gridViewCheckBoxColumn1.PinPosition = Telerik.WinControls.UI.PinnedColumnPosition.Left;
-            gridViewCheckBoxColumn1.ReadOnly = true;
             gridViewCheckBoxColumn1.RowSpan = 30;
             gridViewCheckBoxColumn1.Width = 30;
-            gridViewTextBoxColumn4.FieldName = "Empleado.Numero";
-            gridViewTextBoxColumn4.HeaderText = "Empleado No. ";
-            gridViewTextBoxColumn4.IsPinned = true;
-            gridViewTextBoxColumn4.MaxWidth = 80;
-            gridViewTextBoxColumn4.MinWidth = 60;
-            gridViewTextBoxColumn4.Name = "Numero";
-            gridViewTextBoxColumn4.PinPosition = Telerik.WinControls.UI.PinnedColumnPosition.Left;
-            gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.RowSpan = 30;
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 60;
-            gridViewTextBoxColumn4.WrapText = true;
-            gridViewTextBoxColumn5.FieldName = "Empleado.Expedientes.Puesto.Departamentos.Nombre";
-            gridViewTextBoxColumn5.HeaderText = "Departamento";
+            gridViewTextBoxColumn5.FieldName = "Empleado.Numero";
+            gridViewTextBoxColumn5.HeaderText = "Empleado No. ";
             gridViewTextBoxColumn5.IsPinned = true;
-            gridViewTextBoxColumn5.MaxWidth = 100;
-            gridViewTextBoxColumn5.MinWidth = 90;
-            gridViewTextBoxColumn5.Name = "Depto";
+            gridViewTextBoxColumn5.MaxWidth = 80;
+            gridViewTextBoxColumn5.MinWidth = 60;
+            gridViewTextBoxColumn5.Name = "Numero";
             gridViewTextBoxColumn5.PinPosition = Telerik.WinControls.UI.PinnedColumnPosition.Left;
             gridViewTextBoxColumn5.ReadOnly = true;
-            gridViewTextBoxColumn5.Width = 90;
-            gridViewTextBoxColumn6.FieldName = "Empleado.Expedientes.DatosPersonales.Nombres";
-            gridViewTextBoxColumn6.HeaderText = "Nombre";
+            gridViewTextBoxColumn5.RowSpan = 30;
+            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn5.Width = 60;
+            gridViewTextBoxColumn5.WrapText = true;
+            gridViewTextBoxColumn6.FieldName = "Empleado.Expedientes.Puesto.Departamentos.Nombre";
+            gridViewTextBoxColumn6.HeaderText = "Departamento";
             gridViewTextBoxColumn6.IsPinned = true;
-            gridViewTextBoxColumn6.MaxWidth = 200;
-            gridViewTextBoxColumn6.MinWidth = 150;
-            gridViewTextBoxColumn6.Name = "Nombre";
+            gridViewTextBoxColumn6.MaxWidth = 100;
+            gridViewTextBoxColumn6.MinWidth = 90;
+            gridViewTextBoxColumn6.Name = "Depto";
             gridViewTextBoxColumn6.PinPosition = Telerik.WinControls.UI.PinnedColumnPosition.Left;
             gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.Width = 150;
-            gridViewTextBoxColumn7.FieldName = "Empleado.SueldoDiario";
-            gridViewTextBoxColumn7.FormatString = "{0:C2}";
-            gridViewTextBoxColumn7.HeaderText = "Sueldo Semanal";
-            gridViewTextBoxColumn7.MaxWidth = 100;
-            gridViewTextBoxColumn7.MinWidth = 80;
-            gridViewTextBoxColumn7.Name = "Sueldo";
+            gridViewTextBoxColumn6.Width = 90;
+            gridViewTextBoxColumn7.FieldName = "Empleado.Expedientes.DatosPersonales.Nombres";
+            gridViewTextBoxColumn7.HeaderText = "Nombre";
+            gridViewTextBoxColumn7.IsPinned = true;
+            gridViewTextBoxColumn7.MaxWidth = 200;
+            gridViewTextBoxColumn7.MinWidth = 150;
+            gridViewTextBoxColumn7.Name = "Nombre";
+            gridViewTextBoxColumn7.PinPosition = Telerik.WinControls.UI.PinnedColumnPosition.Left;
             gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn7.Width = 80;
-            gridViewTextBoxColumn7.WrapText = true;
-            gridViewTextBoxColumn8.FieldName = "Percepciones.Puntualidad";
+            gridViewTextBoxColumn7.Width = 150;
+            gridViewTextBoxColumn8.FieldName = "Empleado.SueldoDiario";
             gridViewTextBoxColumn8.FormatString = "{0:C2}";
-            gridViewTextBoxColumn8.HeaderText = "Premio Puntualidad";
+            gridViewTextBoxColumn8.HeaderText = "Sueldo Semanal";
             gridViewTextBoxColumn8.MaxWidth = 100;
             gridViewTextBoxColumn8.MinWidth = 80;
-            gridViewTextBoxColumn8.Name = "Puntualidad";
+            gridViewTextBoxColumn8.Name = "Sueldo";
             gridViewTextBoxColumn8.ReadOnly = true;
             gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn8.Width = 80;
             gridViewTextBoxColumn8.WrapText = true;
-            gridViewTextBoxColumn9.FieldName = "Percepciones.Asistencia";
+            gridViewTextBoxColumn9.FieldName = "Percepciones.Puntualidad";
             gridViewTextBoxColumn9.FormatString = "{0:C2}";
-            gridViewTextBoxColumn9.HeaderText = "Premio Asistencia";
+            gridViewTextBoxColumn9.HeaderText = "Premio Puntualidad";
             gridViewTextBoxColumn9.MaxWidth = 100;
             gridViewTextBoxColumn9.MinWidth = 80;
-            gridViewTextBoxColumn9.Name = "Asistencia";
+            gridViewTextBoxColumn9.Name = "Puntualidad";
             gridViewTextBoxColumn9.ReadOnly = true;
             gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn9.Width = 80;
             gridViewTextBoxColumn9.WrapText = true;
-            gridViewTextBoxColumn10.FieldName = "Percepciones.Vales";
+            gridViewTextBoxColumn10.FieldName = "Percepciones.Asistencia";
             gridViewTextBoxColumn10.FormatString = "{0:C2}";
-            gridViewTextBoxColumn10.HeaderText = "Vales";
+            gridViewTextBoxColumn10.HeaderText = "Premio Asistencia";
             gridViewTextBoxColumn10.MaxWidth = 100;
-            gridViewTextBoxColumn10.MinWidth = 70;
-            gridViewTextBoxColumn10.Name = "Vales";
+            gridViewTextBoxColumn10.MinWidth = 80;
+            gridViewTextBoxColumn10.Name = "Asistencia";
             gridViewTextBoxColumn10.ReadOnly = true;
             gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn10.Width = 70;
-            gridViewTextBoxColumn11.FieldName = "Percepciones.HBono";
+            gridViewTextBoxColumn10.Width = 80;
+            gridViewTextBoxColumn10.WrapText = true;
+            gridViewTextBoxColumn11.FieldName = "Percepciones.Vales";
             gridViewTextBoxColumn11.FormatString = "{0:C2}";
-            gridViewTextBoxColumn11.HeaderText = "Horas Bono";
+            gridViewTextBoxColumn11.HeaderText = "Vales";
             gridViewTextBoxColumn11.MaxWidth = 100;
-            gridViewTextBoxColumn11.MinWidth = 60;
-            gridViewTextBoxColumn11.Name = "HBono";
+            gridViewTextBoxColumn11.MinWidth = 70;
+            gridViewTextBoxColumn11.Name = "Vales";
             gridViewTextBoxColumn11.ReadOnly = true;
             gridViewTextBoxColumn11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn11.Width = 60;
-            gridViewTextBoxColumn11.WrapText = true;
-            gridViewTextBoxColumn12.FieldName = "Percepciones.HExtra";
+            gridViewTextBoxColumn11.Width = 70;
+            gridViewTextBoxColumn12.FieldName = "Percepciones.HBono";
             gridViewTextBoxColumn12.FormatString = "{0:C2}";
-            gridViewTextBoxColumn12.HeaderText = "Horas Extra";
+            gridViewTextBoxColumn12.HeaderText = "Horas Bono";
+            gridViewTextBoxColumn12.IsVisible = false;
             gridViewTextBoxColumn12.MaxWidth = 100;
             gridViewTextBoxColumn12.MinWidth = 60;
-            gridViewTextBoxColumn12.Name = "HExtra";
+            gridViewTextBoxColumn12.Name = "HBono";
             gridViewTextBoxColumn12.ReadOnly = true;
             gridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn12.Width = 60;
             gridViewTextBoxColumn12.WrapText = true;
+            gridViewTextBoxColumn13.FieldName = "Percepciones.HExtra";
+            gridViewTextBoxColumn13.FormatString = "{0:C2}";
+            gridViewTextBoxColumn13.HeaderText = "Horas Extra";
+            gridViewTextBoxColumn13.MaxWidth = 100;
+            gridViewTextBoxColumn13.MinWidth = 60;
+            gridViewTextBoxColumn13.Name = "HExtra";
+            gridViewTextBoxColumn13.ReadOnly = true;
+            gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn13.Width = 60;
+            gridViewTextBoxColumn13.WrapText = true;
             gridViewDecimalColumn1.FieldName = "Percepciones.Bono";
             gridViewDecimalColumn1.FormatString = "{0:C2}";
             gridViewDecimalColumn1.HeaderText = "Bono";
@@ -475,126 +468,126 @@
             gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDecimalColumn1.ThousandsSeparator = true;
             gridViewDecimalColumn1.Width = 60;
-            gridViewTextBoxColumn13.FieldName = "Percepciones.Total";
-            gridViewTextBoxColumn13.FormatString = "{0:C2}";
-            gridViewTextBoxColumn13.HeaderText = "Total Percepciones";
-            gridViewTextBoxColumn13.MaxWidth = 100;
-            gridViewTextBoxColumn13.MinWidth = 90;
-            gridViewTextBoxColumn13.Name = "Percepciones";
-            gridViewTextBoxColumn13.ReadOnly = true;
-            gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn13.Width = 90;
-            gridViewTextBoxColumn13.WrapText = true;
-            gridViewTextBoxColumn14.FieldName = "Deducciones.Imss";
+            gridViewTextBoxColumn14.FieldName = "Percepciones.Total";
             gridViewTextBoxColumn14.FormatString = "{0:C2}";
-            gridViewTextBoxColumn14.HeaderText = "IMSS";
+            gridViewTextBoxColumn14.HeaderText = "Total Percepciones";
             gridViewTextBoxColumn14.MaxWidth = 100;
-            gridViewTextBoxColumn14.MinWidth = 70;
-            gridViewTextBoxColumn14.Name = "Imss";
+            gridViewTextBoxColumn14.MinWidth = 90;
+            gridViewTextBoxColumn14.Name = "Percepciones";
             gridViewTextBoxColumn14.ReadOnly = true;
             gridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn14.Width = 70;
-            gridViewTextBoxColumn15.FieldName = "Deducciones.Fonacot";
+            gridViewTextBoxColumn14.Width = 90;
+            gridViewTextBoxColumn14.WrapText = true;
+            gridViewTextBoxColumn15.FieldName = "Deducciones.Imss";
             gridViewTextBoxColumn15.FormatString = "{0:C2}";
-            gridViewTextBoxColumn15.HeaderText = "Fonacot";
+            gridViewTextBoxColumn15.HeaderText = "IMSS";
             gridViewTextBoxColumn15.MaxWidth = 100;
             gridViewTextBoxColumn15.MinWidth = 70;
-            gridViewTextBoxColumn15.Name = "Fonacot";
+            gridViewTextBoxColumn15.Name = "Imss";
             gridViewTextBoxColumn15.ReadOnly = true;
             gridViewTextBoxColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn15.Width = 70;
-            gridViewTextBoxColumn16.FieldName = "Deducciones.Infonavit";
+            gridViewTextBoxColumn16.FieldName = "Deducciones.Fonacot";
             gridViewTextBoxColumn16.FormatString = "{0:C2}";
-            gridViewTextBoxColumn16.HeaderText = "Infonavit";
+            gridViewTextBoxColumn16.HeaderText = "Fonacot";
             gridViewTextBoxColumn16.MaxWidth = 100;
             gridViewTextBoxColumn16.MinWidth = 70;
-            gridViewTextBoxColumn16.Name = "Infonavit";
+            gridViewTextBoxColumn16.Name = "Fonacot";
             gridViewTextBoxColumn16.ReadOnly = true;
             gridViewTextBoxColumn16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn16.Width = 70;
-            gridViewTextBoxColumn17.FieldName = "Deducciones.FAhorro";
+            gridViewTextBoxColumn17.FieldName = "Deducciones.Infonavit";
             gridViewTextBoxColumn17.FormatString = "{0:C2}";
-            gridViewTextBoxColumn17.HeaderText = "Fondo Ahorro";
+            gridViewTextBoxColumn17.HeaderText = "Infonavit";
             gridViewTextBoxColumn17.MaxWidth = 100;
             gridViewTextBoxColumn17.MinWidth = 70;
-            gridViewTextBoxColumn17.Name = "FAhorro";
+            gridViewTextBoxColumn17.Name = "Infonavit";
             gridViewTextBoxColumn17.ReadOnly = true;
             gridViewTextBoxColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn17.Width = 70;
-            gridViewTextBoxColumn17.WrapText = true;
-            gridViewTextBoxColumn18.FieldName = "Deducciones.Aportacion";
+            gridViewTextBoxColumn18.FieldName = "Deducciones.FAhorro";
             gridViewTextBoxColumn18.FormatString = "{0:C2}";
-            gridViewTextBoxColumn18.HeaderText = "Aportación Voluntaria";
+            gridViewTextBoxColumn18.HeaderText = "Fondo Ahorro";
             gridViewTextBoxColumn18.MaxWidth = 100;
-            gridViewTextBoxColumn18.MinWidth = 80;
-            gridViewTextBoxColumn18.Name = "Aportacion";
+            gridViewTextBoxColumn18.MinWidth = 70;
+            gridViewTextBoxColumn18.Name = "FAhorro";
             gridViewTextBoxColumn18.ReadOnly = true;
             gridViewTextBoxColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn18.Width = 80;
+            gridViewTextBoxColumn18.Width = 70;
             gridViewTextBoxColumn18.WrapText = true;
-            gridViewTextBoxColumn19.FieldName = "Deducciones.Prestamo.ImportePago";
+            gridViewTextBoxColumn19.FieldName = "Deducciones.Aportacion";
             gridViewTextBoxColumn19.FormatString = "{0:C2}";
-            gridViewTextBoxColumn19.HeaderText = "Abono a Préstamo";
+            gridViewTextBoxColumn19.HeaderText = "Aportación Voluntaria";
             gridViewTextBoxColumn19.MaxWidth = 100;
             gridViewTextBoxColumn19.MinWidth = 80;
-            gridViewTextBoxColumn19.Name = "Prestamo";
+            gridViewTextBoxColumn19.Name = "Aportacion";
             gridViewTextBoxColumn19.ReadOnly = true;
             gridViewTextBoxColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn19.Width = 80;
             gridViewTextBoxColumn19.WrapText = true;
-            gridViewTextBoxColumn20.FieldName = "Deducciones.Faltas";
+            gridViewTextBoxColumn20.FieldName = "Deducciones.Prestamo.ImportePago";
             gridViewTextBoxColumn20.FormatString = "{0:C2}";
-            gridViewTextBoxColumn20.HeaderText = "Deducción x Faltas";
+            gridViewTextBoxColumn20.HeaderText = "Abono a Préstamo";
             gridViewTextBoxColumn20.MaxWidth = 100;
             gridViewTextBoxColumn20.MinWidth = 80;
-            gridViewTextBoxColumn20.Name = "Faltas";
+            gridViewTextBoxColumn20.Name = "Prestamo";
             gridViewTextBoxColumn20.ReadOnly = true;
             gridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn20.Width = 80;
             gridViewTextBoxColumn20.WrapText = true;
-            gridViewTextBoxColumn21.FieldName = "Deducciones.Pension";
+            gridViewTextBoxColumn21.FieldName = "Deducciones.Faltas";
             gridViewTextBoxColumn21.FormatString = "{0:C2}";
-            gridViewTextBoxColumn21.HeaderText = "Pensión Alimenticia";
+            gridViewTextBoxColumn21.HeaderText = "Deducción x Faltas";
             gridViewTextBoxColumn21.MaxWidth = 100;
             gridViewTextBoxColumn21.MinWidth = 80;
-            gridViewTextBoxColumn21.Name = "Pension";
+            gridViewTextBoxColumn21.Name = "Faltas";
             gridViewTextBoxColumn21.ReadOnly = true;
             gridViewTextBoxColumn21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn21.Width = 80;
             gridViewTextBoxColumn21.WrapText = true;
-            gridViewTextBoxColumn22.FieldName = "Deducciones.ISR";
+            gridViewTextBoxColumn22.FieldName = "Deducciones.Pension";
             gridViewTextBoxColumn22.FormatString = "{0:C2}";
-            gridViewTextBoxColumn22.HeaderText = "ISR";
+            gridViewTextBoxColumn22.HeaderText = "Pensión Alimenticia";
             gridViewTextBoxColumn22.MaxWidth = 100;
-            gridViewTextBoxColumn22.MinWidth = 70;
-            gridViewTextBoxColumn22.Name = "ISR";
+            gridViewTextBoxColumn22.MinWidth = 80;
+            gridViewTextBoxColumn22.Name = "Pension";
             gridViewTextBoxColumn22.ReadOnly = true;
             gridViewTextBoxColumn22.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn22.Width = 70;
-            gridViewTextBoxColumn23.FieldName = "Deducciones.Total";
+            gridViewTextBoxColumn22.Width = 80;
+            gridViewTextBoxColumn22.WrapText = true;
+            gridViewTextBoxColumn23.FieldName = "Deducciones.ISR";
             gridViewTextBoxColumn23.FormatString = "{0:C2}";
-            gridViewTextBoxColumn23.HeaderText = "Total Deducciones";
+            gridViewTextBoxColumn23.HeaderText = "ISR";
             gridViewTextBoxColumn23.MaxWidth = 100;
-            gridViewTextBoxColumn23.MinWidth = 90;
-            gridViewTextBoxColumn23.Name = "Deducciones";
+            gridViewTextBoxColumn23.MinWidth = 70;
+            gridViewTextBoxColumn23.Name = "ISR";
             gridViewTextBoxColumn23.ReadOnly = true;
             gridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn23.Width = 90;
-            gridViewTextBoxColumn23.WrapText = true;
-            gridViewTextBoxColumn24.FieldName = "Total";
+            gridViewTextBoxColumn23.Width = 70;
+            gridViewTextBoxColumn24.FieldName = "Deducciones.Total";
             gridViewTextBoxColumn24.FormatString = "{0:C2}";
-            gridViewTextBoxColumn24.HeaderText = "Sueldo Neto";
+            gridViewTextBoxColumn24.HeaderText = "Total Deducciones";
             gridViewTextBoxColumn24.MaxWidth = 100;
-            gridViewTextBoxColumn24.MinWidth = 80;
-            gridViewTextBoxColumn24.Name = "Total";
+            gridViewTextBoxColumn24.MinWidth = 90;
+            gridViewTextBoxColumn24.Name = "Deducciones";
             gridViewTextBoxColumn24.ReadOnly = true;
             gridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn24.Width = 80;
+            gridViewTextBoxColumn24.Width = 90;
             gridViewTextBoxColumn24.WrapText = true;
+            gridViewTextBoxColumn25.FieldName = "Total";
+            gridViewTextBoxColumn25.FormatString = "{0:C2}";
+            gridViewTextBoxColumn25.HeaderText = "Sueldo Neto";
+            gridViewTextBoxColumn25.MaxWidth = 100;
+            gridViewTextBoxColumn25.MinWidth = 80;
+            gridViewTextBoxColumn25.Name = "Total";
+            gridViewTextBoxColumn25.ReadOnly = true;
+            gridViewTextBoxColumn25.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn25.Width = 80;
+            gridViewTextBoxColumn25.WrapText = true;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn3,
-            gridViewCheckBoxColumn1,
             gridViewTextBoxColumn4,
+            gridViewCheckBoxColumn1,
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
@@ -603,8 +596,8 @@
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11,
             gridViewTextBoxColumn12,
-            gridViewDecimalColumn1,
             gridViewTextBoxColumn13,
+            gridViewDecimalColumn1,
             gridViewTextBoxColumn14,
             gridViewTextBoxColumn15,
             gridViewTextBoxColumn16,
@@ -615,7 +608,8 @@
             gridViewTextBoxColumn21,
             gridViewTextBoxColumn22,
             gridViewTextBoxColumn23,
-            gridViewTextBoxColumn24});
+            gridViewTextBoxColumn24,
+            gridViewTextBoxColumn25});
             this.gvDatos.MasterTemplate.EnableAlternatingRowColor = true;
             this.gvDatos.MasterTemplate.ShowFilteringRow = false;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
@@ -624,7 +618,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(819, 227);
+            this.gvDatos.Size = new System.Drawing.Size(819, 263);
             this.gvDatos.TabIndex = 1;
             this.gvDatos.TitleText = "NÓMINA CALCULADA";
             // 
@@ -679,7 +673,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkFonacot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSemana)).EndInit();
@@ -711,7 +704,6 @@
         private Telerik.WinControls.UI.CommandBarLabel commandBarLabel1;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement2;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
-        private Telerik.WinControls.UI.RadCheckBox chkFonacot;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement4;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement5;
         private Telerik.WinControls.UI.CommandBarButton btnEliminar;

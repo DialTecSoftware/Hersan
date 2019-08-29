@@ -3,9 +3,6 @@ using Hersan.Negocio.Nomina;
 using Hersan.Nomina.Contract;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hersan.Nomina.Service
 {
@@ -53,7 +50,14 @@ namespace Hersan.Nomina.Service
         {
             return new NominaBP().NOM_CalculoNomina(Semana);
         }
-
+        public int NOM_CalculoNomina_Guardar(int Semana, string Excluir, int IdUsuario)
+        {
+            return new NominaBP().NOM_CalculoNomina_Guardar(Semana, Excluir, IdUsuario);
+        }
+        public List<NominaBE> NOM_Nomina_Obtener(int Semana)
+        {
+            return new NominaBP().NOM_Nomina_Obtener(Semana);
+        }
         #endregion
 
         #region Préstamos
@@ -64,9 +68,9 @@ namespace Hersan.Nomina.Service
         #endregion
 
         #region Incidencias
-        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista)
+        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista, List<FonacotBE> Fonacot)
         {
-            return new NominaBP().NOM_Incidencias_Guardar(Lista);
+            return new NominaBP().NOM_Incidencias_Guardar(Lista, Fonacot);
         }
         public List<IncidenciasBE> NOM_Incidencias_Obtener(int Semana)
         {

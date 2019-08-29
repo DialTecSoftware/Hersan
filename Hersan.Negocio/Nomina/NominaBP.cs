@@ -31,13 +31,21 @@ namespace Hersan.Negocio.Nomina
         {
             return new NominaDA().NOM_CalculoNomina(Semana);
         }
+        public int NOM_CalculoNomina_Guardar(int Semana, string Excluir, int IdUsuario)
+        {
+            return new NominaDA().NOM_CalculoNomina_Guardar(Semana, Excluir, IdUsuario);
+        }
+        public List<NominaBE> NOM_Nomina_Obtener(int Semana)
+        {
+            return new NominaDA().NOM_Nomina_Obtener(Semana);
+        }
         public int NOM_Prestamos_Guardar(PrestamosBE Obj, System.Data.DataTable Detalle)
         {
             return new NominaDA().NOM_Prestamos_Guardar(Obj, Detalle);
         }
-        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista)
+        public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista, List<FonacotBE> Fonacot)
         {
-            return new NominaDA().NOM_Incidencias_Guardar(Lista);
+            return new NominaDA().NOM_Incidencias_Guardar(Lista, Fonacot);
         }
         public List<IncidenciasBE> NOM_Incidencias_Obtener(int Semana)
         {

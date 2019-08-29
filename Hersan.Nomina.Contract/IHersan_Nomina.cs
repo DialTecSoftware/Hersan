@@ -14,6 +14,8 @@ namespace Hersan.Nomina.Contract
         [OperationContract]
         List<SubsidiosBE> NOM_Subsidios_Obtener();
         [OperationContract]
+        List<NominaBE> NOM_Nomina_Obtener(int Semana);
+        [OperationContract]
         List<ISRBE> NOM_ISR_Semanal_Obtener();
         [OperationContract]
         List<SemanasBE> NOM_Semanas_Obtener(int Anio);
@@ -29,6 +31,9 @@ namespace Hersan.Nomina.Contract
 
         [OperationContract]
         List<NominaBE> NOM_CalculoNomina(int Semana);
+
+        [OperationContract]
+        int NOM_CalculoNomina_Guardar(int Semana, string Excluir, int IdUsuario);
         #endregion
 
         #region Préstamos
@@ -39,7 +44,7 @@ namespace Hersan.Nomina.Contract
 
         #region Incidencias
         [OperationContract]
-        int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista);
+        int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista, List<FonacotBE> Fonacot);
         [OperationContract]
         List<IncidenciasBE> NOM_Incidencias_Obtener(int Semana);
         [OperationContract]

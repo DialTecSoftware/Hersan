@@ -25,6 +25,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="NOM_Nomina_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Semana" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Nomina_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Nomina_ObtenerResult" nillable="true" type="q3:ArrayOfNominaBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NOM_ISR_Semanal_Obtener">
     <xs:complexType>
       <xs:sequence />
@@ -33,7 +47,7 @@
   <xs:element name="NOM_ISR_Semanal_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_ISR_Semanal_ObtenerResult" nillable="true" type="q3:ArrayOfISRBE" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_ISR_Semanal_ObtenerResult" nillable="true" type="q4:ArrayOfISRBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -47,7 +61,7 @@
   <xs:element name="NOM_Semanas_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Semanas_ObtenerResult" nillable="true" type="q4:ArrayOfSemanasBE" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Semanas_ObtenerResult" nillable="true" type="q5:ArrayOfSemanasBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -73,7 +87,7 @@
   <xs:element name="NOM_Cuotas_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Cuotas_ObtenerResult" nillable="true" type="q5:ArrayOfCuotasBE" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Cuotas_ObtenerResult" nillable="true" type="q6:ArrayOfCuotasBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -85,14 +99,14 @@
   <xs:element name="Nom_Parametros_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Nom_Parametros_ObtenerResult" nillable="true" type="q6:ParametrosBE" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Nom_Parametros_ObtenerResult" nillable="true" type="q7:ParametrosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Nom_Parametros_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="item" nillable="true" type="q7:ParametrosBE" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="item" nillable="true" type="q8:ParametrosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -113,14 +127,30 @@
   <xs:element name="NOM_CalculoNominaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_CalculoNominaResult" nillable="true" type="q8:ArrayOfNominaBE" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_CalculoNominaResult" nillable="true" type="q9:ArrayOfNominaBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_CalculoNomina_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Semana" type="xs:int" />
+        <xs:element minOccurs="0" name="Excluir" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_CalculoNomina_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NOM_CalculoNomina_GuardarResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="NOM_Prestamos_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Obj" nillable="true" type="q9:PrestamosBE" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Obj" nillable="true" type="q10:PrestamosBE" />
         <xs:element minOccurs="0" name="Detalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -147,7 +177,8 @@
   <xs:element name="NOM_Incidencias_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Lista" nillable="true" type="q10:ArrayOfIncidenciasBE" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Lista" nillable="true" type="q11:ArrayOfIncidenciasBE" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Fonacot" nillable="true" type="q12:ArrayOfFonacotBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -168,7 +199,7 @@
   <xs:element name="NOM_Incidencias_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Incidencias_ObtenerResult" nillable="true" type="q11:ArrayOfIncidenciasBE" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Incidencias_ObtenerResult" nillable="true" type="q13:ArrayOfIncidenciasBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

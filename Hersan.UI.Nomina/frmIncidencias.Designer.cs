@@ -69,6 +69,7 @@
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.btnimportar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -87,7 +88,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(777, 78);
+            this.radCommandBar1.Size = new System.Drawing.Size(777, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -202,7 +203,7 @@
             this.radPanel1.Controls.Add(this.cboSemana);
             this.radPanel1.Controls.Add(this.label1);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Location = new System.Drawing.Point(0, 78);
+            this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(777, 64);
             this.radPanel1.TabIndex = 1;
@@ -296,7 +297,7 @@
             this.gvDatos.AutoScroll = true;
             this.gvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvDatos.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextCell;
-            this.gvDatos.Location = new System.Drawing.Point(0, 142);
+            this.gvDatos.Location = new System.Drawing.Point(0, 117);
             // 
             // 
             // 
@@ -430,7 +431,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(777, 233);
+            this.gvDatos.Size = new System.Drawing.Size(777, 258);
             this.gvDatos.TabIndex = 2;
             this.gvDatos.TitleText = "INCIDENCIAS";
             // 
@@ -470,6 +471,11 @@
             this.commandBarSeparator5.Name = "commandBarSeparator5";
             this.commandBarSeparator5.Text = "";
             this.commandBarSeparator5.VisibleInOverflowMenu = false;
+            // 
+            // commandBarStripElement6
+            // 
+            this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
+            this.commandBarStripElement6.Name = "commandBarStripElement6";
             // 
             // frmIncidencias
             // 
@@ -528,5 +534,6 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement5;
         private Telerik.WinControls.UI.CommandBarButton btnimportar;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator5;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement6;
     }
 }

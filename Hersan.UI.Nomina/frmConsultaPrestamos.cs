@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI.Export;
 
 namespace Hersan.UI.Nomina
 {
@@ -65,7 +66,11 @@ namespace Hersan.UI.Nomina
         }
         private void BtnExportar_Click(object sender, EventArgs e)
         {
-
+            try {
+                ExportarInformacion();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al exportar los préstamos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
         }
         private void BtnSalir_Click(object sender, EventArgs e)
         {
@@ -125,6 +130,34 @@ namespace Hersan.UI.Nomina
             } catch (Exception ex) {
                 throw ex;
             } finally { oCHUmano = null; }
+        }
+        private void ExportarInformacion()
+        {
+            try {
+                if (gvDatos.RowCount > 0) {
+                    if (RadMessageBox.Show("El listado se exportará en formato de excel, desea continuar...?", this.Text, MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                        SaveFileDialog saveFile = new SaveFileDialog();
+                        saveFile.Filter = "xls Excel|*.xls";
+                        saveFile.Title = "Guardar Archivo";
+                        saveFile.ShowDialog();
+
+                        if (saveFile.FileName != "") {
+                            var exportar = new ExportToExcelML(gvDatos);
+                            exportar.ExportVisualSettings = true;
+                            exportar.HiddenColumnOption = HiddenOption.DoNotExport;
+                            exportar.ExportHierarchy = true;
+                            exportar.FileExtension = "xls";
+                            exportar.SheetName = "Préstamos";
+                            exportar.RunExport(saveFile.FileName);
+                        }
+
+                        RadMessageBox.Show("Archivo exportado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    }
+                }
+            } catch(Exception ex) {
+                throw ex;
+            }
+
         }
 
     }

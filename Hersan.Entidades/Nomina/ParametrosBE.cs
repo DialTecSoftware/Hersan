@@ -16,6 +16,8 @@ namespace Hersan.Entidades.Nomina
             Puntualidad = 0;
             Ahorro = 0;
             Interes = 0;
+            Danios = 0;
+            Extras = 0;
             DatosUsuario = new GeneralBE();
         }
 
@@ -30,6 +32,8 @@ namespace Hersan.Entidades.Nomina
         public decimal Puntualidad { get; set; }
         public decimal Ahorro { get; set; }
         public decimal Interes { get; set; }
+        public decimal Danios { get; set; }
+        public int Extras { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
 }

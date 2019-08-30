@@ -48,6 +48,9 @@ namespace Hersan.UI.Nomina
                 obj.UMA = spUMA.Value;
                 obj.Vales = spVales.Value;
                 obj.Interes = spInteres.Value;
+                obj.Danios = spInfonavit.Value;
+                obj.Extras = int.Parse(spExtras.Value.ToString());
+                
                 obj.DatosUsuario.IdUsuarioCreo = BaseWinBP.UsuarioLogueado.ID;
 
                 if(oNomina.Nom_Parametros_Guardar(obj) > 0) {
@@ -87,6 +90,8 @@ namespace Hersan.UI.Nomina
                     spUMA.Value = obj.UMA;
                     spVales.Value = obj.Vales;
                     spInteres.Value = obj.Interes;
+                    spExtras.Value = obj.Extras;
+                    spInfonavit.Value = obj.Danios;
                 }
             } catch (Exception ex) {
                 throw ex;

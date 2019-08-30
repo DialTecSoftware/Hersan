@@ -66,6 +66,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.spExtras = new Telerik.WinControls.UI.RadSpinEditor();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
@@ -80,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spVales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spHoras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spExtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,6 +179,8 @@
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.radGroupBox1.Controls.Add(this.spExtras);
+            this.radGroupBox1.Controls.Add(this.label12);
             this.radGroupBox1.Controls.Add(this.spInfonavit);
             this.radGroupBox1.Controls.Add(this.label11);
             this.radGroupBox1.Controls.Add(this.spInteres);
@@ -547,6 +552,28 @@
             this.commandBarStripElement5.DisplayName = "commandBarStripElement5";
             this.commandBarStripElement5.Name = "commandBarStripElement5";
             // 
+            // spExtras
+            // 
+            this.spExtras.BackColor = System.Drawing.Color.White;
+            this.spExtras.EnableAnalytics = false;
+            this.spExtras.Location = new System.Drawing.Point(598, 157);
+            this.spExtras.Name = "spExtras";
+            this.spExtras.ShowUpDownButtons = false;
+            this.spExtras.Size = new System.Drawing.Size(55, 20);
+            this.spExtras.TabIndex = 12;
+            this.spExtras.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spExtras.ThousandsSeparator = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label12.Location = new System.Drawing.Point(445, 161);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(151, 13);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Max. Horas Extras x Semana:";
+            // 
             // frmParametros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,6 +605,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spVales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spHoras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spExtras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -623,5 +651,7 @@
         private System.Windows.Forms.Label label10;
         private Telerik.WinControls.UI.RadSpinEditor spInfonavit;
         private System.Windows.Forms.Label label11;
+        private Telerik.WinControls.UI.RadSpinEditor spExtras;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -65,6 +65,10 @@ namespace Hersan.Nomina.Service
         {
             return new NominaBP().NOM_Prestamos_Guardar(Obj, Detalle);
         }
+        public List<PrestamosBE> NOM_Prestamos_Consulta(PrestamosBE item)
+        {
+            return new NominaBP().NOM_Prestamos_Consulta(item);
+        }
         #endregion
 
         #region Incidencias

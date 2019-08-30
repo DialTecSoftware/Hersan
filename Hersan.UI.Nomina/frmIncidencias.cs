@@ -92,7 +92,7 @@ namespace Hersan.UI.Nomina
                     LeerCSV(oDialog.FileName);
                     if(oFonacot.Count > 0) {                        
                         oList.ForEach(item => {
-                        var aux = oFonacot.Find(x => x.CLAVE_EMPLEADO == item.Empleado.Numero && x.NO_SS == item.Empleado.Expedientes.Documentos.IMSS);
+                            var aux = oFonacot.Find(x => x.CLAVE_EMPLEADO == item.Empleado.Numero && x.NO_SS == item.Empleado.Expedientes.Documentos.IMSS);
                             if (aux != null) {
                                 item.Fonacot = true;
                             }else

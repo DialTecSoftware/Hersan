@@ -38,7 +38,7 @@ namespace Hersan.UI.Nomina
 
                 ObtenerParametros();                 
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace Hersan.UI.Nomina
             try {
                 LimpiarCampos();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al limpiar los campos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace Hersan.UI.Nomina
             try {
                 GenerarTablaAmortizacion();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al generar la tabla de amortización\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace Hersan.UI.Nomina
             try {
 
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al imprimir\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace Hersan.UI.Nomina
             try {
                 CalcularImportePago();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al calcular el importe del pago\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void txtImporte_ValueChanged(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace Hersan.UI.Nomina
             try {
                 CalcularImportePago();
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al calcular el importe del pago\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void cboSemana_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace Hersan.UI.Nomina
                 txtPagos.Maximum = Semanas;
                 txtPagos.Value = Semanas;
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al seleccionar la semana\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void cboEmpleados_SelectedValueChanged(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace Hersan.UI.Nomina
                 if (cboEmpleados.SelectedValue != null) 
                     txtImporte.Maximum = oEmpleados.Find(item => item.Id == int.Parse(cboEmpleados.SelectedValue.ToString())).Ahorro;
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al seleccionar el empleado\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 

@@ -22,7 +22,7 @@ namespace Hersan.Entidades.Nomina
             SemanaAplica = 0;
             FechaAplica = DateTime.Today;
             Estatus = string.Empty;
-            Detalle = new PrestamosDetalleBE();
+            Detalle = new List<PrestamosDetalleBE>();
             DatosUsuario = new GeneralBE();
         }
 
@@ -32,10 +32,12 @@ namespace Hersan.Entidades.Nomina
         public decimal ImporteTotal { get; set; }
         public int NoPagos { get; set; }
         public decimal ImportePago { get; set; }
+        public decimal Pagado { get; set; }
+        public decimal Saldo { get; set; }
         public int SemanaAplica { get; set; }
         public DateTime FechaAplica { get; set; }
         public string Estatus { get; set; }
-        public PrestamosDetalleBE Detalle { get; set; }
+        public List<PrestamosDetalleBE> Detalle { get; set; }
         public GeneralBE DatosUsuario { get; set; }
         
     }

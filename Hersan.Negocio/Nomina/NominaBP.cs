@@ -38,11 +38,7 @@ namespace Hersan.Negocio.Nomina
         public List<NominaBE> NOM_Nomina_Obtener(int Semana)
         {
             return new NominaDA().NOM_Nomina_Obtener(Semana);
-        }
-        public int NOM_Prestamos_Guardar(PrestamosBE Obj, System.Data.DataTable Detalle)
-        {
-            return new NominaDA().NOM_Prestamos_Guardar(Obj, Detalle);
-        }
+        }        
         public int NOM_Incidencias_Guardar(List<IncidenciasBE> Lista, List<FonacotBE> Fonacot)
         {
             return new NominaDA().NOM_Incidencias_Guardar(Lista, Fonacot);
@@ -63,6 +59,15 @@ namespace Hersan.Negocio.Nomina
             } catch (Exception ex) {
                 throw ex;
             }
+        }
+
+        public int NOM_Prestamos_Guardar(PrestamosBE Obj, System.Data.DataTable Detalle)
+        {
+            return new NominaDA().NOM_Prestamos_Guardar(Obj, Detalle);
+        }
+        public List<PrestamosBE> NOM_Prestamos_Consulta(PrestamosBE item)
+        {
+            return new NominaDA().NOM_Prestamos_Consulta(item);
         }
     }
 }

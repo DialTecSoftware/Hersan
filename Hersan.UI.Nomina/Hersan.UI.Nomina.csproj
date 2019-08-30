@@ -66,6 +66,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.117.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -86,6 +87,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaPrestamos.Designer.cs">
+      <DependentUpon>frmConsultaPrestamos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCuotas.cs">
       <SubType>Form</SubType>
@@ -161,6 +168,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmConsultaPrestamos.resx">
+      <DependentUpon>frmConsultaPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCuotas.resx">
       <DependentUpon>frmCuotas.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +291,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.ISRBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.NominaBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.ParametrosBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Nomina.PrestamosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.SemanasBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Nomina.SubsidiosBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Relchec.HorariosBE.datasource" />

@@ -174,11 +174,25 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="NOM_Prestamos_Consulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="item" nillable="true" type="q11:PrestamosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NOM_Prestamos_ConsultaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Prestamos_ConsultaResult" nillable="true" type="q12:ArrayOfPrestamosBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NOM_Incidencias_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Lista" nillable="true" type="q11:ArrayOfIncidenciasBE" />
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Fonacot" nillable="true" type="q12:ArrayOfFonacotBE" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Lista" nillable="true" type="q13:ArrayOfIncidenciasBE" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="Fonacot" nillable="true" type="q14:ArrayOfFonacotBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -199,7 +213,7 @@
   <xs:element name="NOM_Incidencias_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Incidencias_ObtenerResult" nillable="true" type="q13:ArrayOfIncidenciasBE" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Nomina" minOccurs="0" name="NOM_Incidencias_ObtenerResult" nillable="true" type="q15:ArrayOfIncidenciasBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

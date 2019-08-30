@@ -15,11 +15,12 @@ namespace Hersan.Datos.Nomina
 
         const string CONS_NOM_CALCULONOMINA = "NOM_CalculoNomina";
         const string CONS_NOM_CALCULONOMINA_GUARDAR = "NOM_CalculoNomina_Guardar";
-        const string CONS_NOM_NOMINA_OBTENER = "NOM_Nomina_Obtener";
-        const string CONS_NOM_PRESTAMOS_GUARDAR = "NOM_Prestamos_Guardar";
+        const string CONS_NOM_NOMINA_OBTENER = "NOM_Nomina_Obtener";        
         const string CONS_NOM_INCIDENCIAS_GUARDAR = "NOM_Incidencias_Guardar";
         const string CONS_NOM_INCIDENCIAS_OBTENER = "NOM_Incidencias_Obtener";
         const string CONS_NOM_FONACOT_GUARDAR = "NOM_Fonacot_Guardar";
+        const string CONS_NOM_PRESTAMOS_GUARDAR = "NOM_Prestamos_Guardar";
+        const string CONS_NOM_PRESTAMOS_CONSULTA = "NOM_Prestamos_Consulta";
         #endregion
 
         public List<NominaBE> NOM_CalculoNomina(int Semana)
@@ -151,36 +152,6 @@ namespace Hersan.Datos.Nomina
                 }
                 return oList;
             } catch (Exception ex) {
-                throw ex;
-            }
-        }
-        public int NOM_Prestamos_Guardar(PrestamosBE Obj, DataTable Detalle)
-        {
-            int Result = 0;
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL")))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(CONS_NOM_PRESTAMOS_GUARDAR, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@IdEmpleado", Obj.Empleado.Id);
-                        cmd.Parameters.AddWithValue("@Importe", Obj.ImporteTotal);
-                        cmd.Parameters.AddWithValue("@Pagos", Obj.NoPagos);
-                        cmd.Parameters.AddWithValue("@ImportePago", Obj.ImportePago);
-                        cmd.Parameters.AddWithValue("@Semana", Obj.SemanaAplica);
-                        cmd.Parameters.AddWithValue("@Tasa", Obj.Tasa);
-                        cmd.Parameters.AddWithValue("@Detalle", Detalle);
-                        cmd.Parameters.AddWithValue("@IdUsuario", Obj.DatosUsuario.IdUsuarioCreo);
-
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        Result = Convert.ToInt32(cmd.ExecuteScalar());
-                    }
-                }
-                return Result;
-            }
-            catch (Exception ex)
-            {
                 throw ex;
             }
         }
@@ -317,6 +288,95 @@ namespace Hersan.Datos.Nomina
             return Result;
         }
 
+        public int NOM_Prestamos_Guardar(PrestamosBE Obj, DataTable Detalle)
+        {
+            int Result = 0;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_NOM_PRESTAMOS_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEmpleado", Obj.Empleado.Id);
+                        cmd.Parameters.AddWithValue("@Importe", Obj.ImporteTotal);
+                        cmd.Parameters.AddWithValue("@Pagos", Obj.NoPagos);
+                        cmd.Parameters.AddWithValue("@ImportePago", Obj.ImportePago);
+                        cmd.Parameters.AddWithValue("@Semana", Obj.SemanaAplica);
+                        cmd.Parameters.AddWithValue("@Tasa", Obj.Tasa);
+                        cmd.Parameters.AddWithValue("@Detalle", Detalle);
+                        cmd.Parameters.AddWithValue("@IdUsuario", Obj.DatosUsuario.IdUsuarioCreo);
 
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                return Result;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+        public List<PrestamosBE> NOM_Prestamos_Consulta(PrestamosBE item)
+        {
+            List<PrestamosBE> oList = new List<PrestamosBE>();
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_NOM_PRESTAMOS_CONSULTA, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEmpleado", item.Empleado.Id);
+                        cmd.Parameters.AddWithValue("@Desde", item.SemanaAplica);
+                        cmd.Parameters.AddWithValue("@Hasta", item.NoPagos);
+                        cmd.Parameters.AddWithValue("@Folio", item.Id);
+                        cmd.Parameters.AddWithValue("@Estatus", item.Empleado.NumeroCuenta);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                PrestamosBE obj = new PrestamosBE();
+
+                                obj.Id = int.Parse(reader["PRE_Id"].ToString());
+                                obj.Empleado.Id = int.Parse(reader["EMP_Id"].ToString());
+                                obj.Empleado.Numero = int.Parse(reader["EMP_Numero"].ToString());
+                                obj.Empleado.Expedientes.DatosPersonales.Nombres = reader["Nombre"].ToString();
+                                obj.ImporteTotal = decimal.Parse(reader["PRE_ImporteTotal"].ToString());
+                                obj.NoPagos = int.Parse(reader["PRE_NumPagos"].ToString());
+                                obj.ImportePago = decimal.Parse(reader["PRE_ImportePago"].ToString());
+                                obj.Pagado = decimal.Parse(reader["Pagado"].ToString());
+                                obj.Saldo = decimal.Parse(reader["Saldo"].ToString());
+                                obj.SemanaAplica = int.Parse(reader["PRE_SemanaAplica"].ToString());
+                                obj.FechaAplica = DateTime.Parse(reader["PRE_FechaPago"].ToString());
+                                obj.Tasa = decimal.Parse(reader["PRE_Tasa"].ToString());
+                                obj.Estatus = reader["PRE_Estatus"].ToString();
+                                obj.DatosUsuario.FechaCreacion = DateTime.Parse(reader["PRE_FechaCreacion"].ToString());
+
+                                oList.Add(obj);
+                            }
+
+                            /* Detalle de Préstamos */
+                            if (reader.NextResult()) {                                
+                                while (reader.Read()) {
+                                    PrestamosDetalleBE Detalle = new PrestamosDetalleBE();
+                                    Detalle.Id = int.Parse(reader["PRE_Id"].ToString());
+                                    Detalle.NoPago = int.Parse(reader["PRD_NoPago"].ToString());
+                                    Detalle.Semana = int.Parse(reader["PRD_Semana"].ToString());
+                                    Detalle.Fecha = DateTime.Parse(reader["PRD_Fecha"].ToString());
+                                    Detalle.Capital = decimal.Parse(reader["PRD_Capital"].ToString());
+                                    Detalle.Interes = decimal.Parse(reader["PRD_Interes"].ToString());
+                                    Detalle.Abono = decimal.Parse(reader["PRD_Abono"].ToString());
+                                    Detalle.Saldo = decimal.Parse(reader["PRD_Saldo"].ToString());
+                                    Detalle.Estatus = reader["PRD_Estatus"].ToString();
+
+                                    oList.ForEach(Item => {
+                                        if (Item.Id == Detalle.Id)
+                                            Item.Detalle.Add(Detalle);
+                                    });
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+                return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
     }
 }

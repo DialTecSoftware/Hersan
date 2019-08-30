@@ -194,6 +194,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ParametrosBE" nillable="true" type="tns:ParametrosBE" />
+  <xs:complexType name="ArrayOfPrestamosBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrestamosBE" nillable="true" type="tns:PrestamosBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrestamosBE" nillable="true" type="tns:ArrayOfPrestamosBE" />
   <xs:complexType name="ArrayOfIncidenciasBE">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="IncidenciasBE" nillable="true" type="tns:IncidenciasBE" />

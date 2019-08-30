@@ -51,6 +51,9 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_GuardarResponse")]
         int NOM_Prestamos_Guardar(Hersan.Entidades.Nomina.PrestamosBE Obj, System.Data.DataTable Detalle);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_Consulta", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Prestamos_ConsultaResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Nomina.PrestamosBE> NOM_Prestamos_Consulta(Hersan.Entidades.Nomina.PrestamosBE item);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_Guardar", ReplyAction="http://tempuri.org/IHersan_Nomina/NOM_Incidencias_GuardarResponse")]
         int NOM_Incidencias_Guardar(System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> Lista, System.Collections.Generic.List<Hersan.Entidades.Nomina.FonacotBE> Fonacot);
         
@@ -134,6 +137,10 @@ namespace Hersan.UI.Nomina.WCF_Nomina {
         
         public int NOM_Prestamos_Guardar(Hersan.Entidades.Nomina.PrestamosBE Obj, System.Data.DataTable Detalle) {
             return base.Channel.NOM_Prestamos_Guardar(Obj, Detalle);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Nomina.PrestamosBE> NOM_Prestamos_Consulta(Hersan.Entidades.Nomina.PrestamosBE item) {
+            return base.Channel.NOM_Prestamos_Consulta(item);
         }
         
         public int NOM_Incidencias_Guardar(System.Collections.Generic.List<Hersan.Entidades.Nomina.IncidenciasBE> Lista, System.Collections.Generic.List<Hersan.Entidades.Nomina.FonacotBE> Fonacot) {

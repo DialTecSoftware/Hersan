@@ -30,21 +30,15 @@ namespace Hersan.UI.Nomina
         private void FrmConsultaPrestamos_Load(object sender, EventArgs e)
         {
             try {
-                System.Threading.Tasks.Task task = new System.Threading.Tasks.Task(() => { CargaEmpleados(); });
-                task.RunSynchronously();
-
+                CargaEmpleados();
                 CargaSemanas();
-
-                //task = new System.Threading.Tasks.Task(() => { CargaSemanas(); });
-                //task.RunSynchronously();
-
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            oNomina = new WCF_Nomina.Hersan_NominaClient();
+            oNomina = new WCF_Nomina.Hersan_NominaClient();            
             try {
                 PrestamosBE item = new PrestamosBE();
                 item.Empleado.Id = int.Parse(cboEmpleados.SelectedValue.ToString());
@@ -54,6 +48,7 @@ namespace Hersan.UI.Nomina
                 item.Empleado.NumeroCuenta = opVigente.IsChecked ? "VIGENTE" : opPagado.IsChecked ? "PAGADO" : "";
 
                 oPrestamo = oNomina.NOM_Prestamos_Consulta(item);
+                oDetalle.Clear();
                 oPrestamo.ForEach(Item => {
                     oDetalle.AddRange(Item.Detalle.FindAll(x => x.Id > 0));
                 });
@@ -67,7 +62,26 @@ namespace Hersan.UI.Nomina
         private void BtnExportar_Click(object sender, EventArgs e)
         {
             try {
-                ExportarInformacion();
+                if (gvDatos.RowCount > 0) {
+                    if (RadMessageBox.Show("El listado se exportará en formato de excel, desea continuar...?", this.Text, MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                        SaveFileDialog saveFile = new SaveFileDialog();
+                        saveFile.Filter = "Excel|*.xls";
+                        saveFile.Title = "Guardar Archivo";
+                        saveFile.ShowDialog();
+
+                        if (saveFile.FileName != "") {
+                            var exportar = new ExportToExcelML(gvDatos);
+                            exportar.ExportVisualSettings = true;
+                            exportar.HiddenColumnOption = HiddenOption.DoNotExport;
+                            exportar.ExportHierarchy = true;
+                            exportar.FileExtension = "xls";
+                            exportar.SheetName = "Préstamos";
+                            exportar.RunExport(saveFile.FileName);
+                        }
+
+                        RadMessageBox.Show("Archivo exportado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                    }
+                }
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al exportar los préstamos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -130,34 +144,6 @@ namespace Hersan.UI.Nomina
             } catch (Exception ex) {
                 throw ex;
             } finally { oCHUmano = null; }
-        }
-        private void ExportarInformacion()
-        {
-            try {
-                if (gvDatos.RowCount > 0) {
-                    if (RadMessageBox.Show("El listado se exportará en formato de excel, desea continuar...?", this.Text, MessageBoxButtons.YesNo) == DialogResult.Yes) {
-                        SaveFileDialog saveFile = new SaveFileDialog();
-                        saveFile.Filter = "xls Excel|*.xls";
-                        saveFile.Title = "Guardar Archivo";
-                        saveFile.ShowDialog();
-
-                        if (saveFile.FileName != "") {
-                            var exportar = new ExportToExcelML(gvDatos);
-                            exportar.ExportVisualSettings = true;
-                            exportar.HiddenColumnOption = HiddenOption.DoNotExport;
-                            exportar.ExportHierarchy = true;
-                            exportar.FileExtension = "xls";
-                            exportar.SheetName = "Préstamos";
-                            exportar.RunExport(saveFile.FileName);
-                        }
-
-                        RadMessageBox.Show("Archivo exportado correctamente", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
-                    }
-                }
-            } catch(Exception ex) {
-                throw ex;
-            }
-
         }
 
     }

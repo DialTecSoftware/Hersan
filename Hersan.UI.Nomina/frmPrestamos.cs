@@ -100,14 +100,6 @@ namespace Hersan.UI.Nomina
                 RadMessageBox.Show("Ocurrió un error al generar la tabla de amortización\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            try {
-
-            } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al imprimir\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             try {
@@ -243,7 +235,6 @@ namespace Hersan.UI.Nomina
 
             try {
                 if (ValidarCampos()) {
-
                     NumPagos = int.Parse(txtPagos.Value.ToString());
                     Semana = oList.Find(item=> item.Id > int.Parse(cboSemana.SelectedValue.ToString())).Semana;
                     Importe = txtImporte.Value;
@@ -345,22 +336,23 @@ namespace Hersan.UI.Nomina
             }
 
         }
-        private void ImprimirPrestamo()
-        {
-            //frmViewer frm = new frmViewer();
-            //try {
-            //    if (dgGrid.RowCount > 0) {
-            //        frm.iReport = new Reportes.rptPrestamos();
-            //        //Preview.iReport.SetDataSource(oTable.ToDataTable(lstPrestamo));
-            //        frm.iReport.SetDataSource(BaseWinBP.ToDataTable(oPrestamo));
-            //        frm.ShowDialog();
-            //    } else {
-            //        RadMessageBox.Show("Debe generar la tabla de amortización para imprimir", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-            //    }
-            //} catch (Exception ex) {
-            //    RadMessageBox.Show("Ocurrió un error al imprimir el préstamo\n"+ ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            //}
 
-        }
+        //private void ImprimirPrestamo()
+        //{
+        //    frmViewer frm = new frmViewer();
+        //    try {
+        //        if (dgGrid.RowCount > 0) {
+        //            frm.iReport = new Reportes.rptPrestamos();
+        //            //Preview.iReport.SetDataSource(oTable.ToDataTable(lstPrestamo));
+        //            frm.iReport.SetDataSource(BaseWinBP.ToDataTable(oPrestamo));
+        //            frm.ShowDialog();
+        //        } else {
+        //            RadMessageBox.Show("Debe generar la tabla de amortización para imprimir", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+        //        }
+        //    } catch (Exception ex) {
+        //        RadMessageBox.Show("Ocurrió un error al imprimir el préstamo\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+        //    }
+
+        //}
     }
 }

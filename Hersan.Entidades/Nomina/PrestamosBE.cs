@@ -3,9 +3,6 @@ using Hersan.Entidades.Comun;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hersan.Entidades.Nomina
 {
@@ -27,6 +24,8 @@ namespace Hersan.Entidades.Nomina
         }
 
         public int Id { get; set; }
+
+        [Description("Read"), Category("Appearance")]
         public EmpleadosBE Empleado { get; set; }
         public decimal Tasa { get; set; }
         public decimal ImporteTotal { get; set; }
@@ -35,9 +34,17 @@ namespace Hersan.Entidades.Nomina
         public decimal Pagado { get; set; }
         public decimal Saldo { get; set; }
         public int SemanaAplica { get; set; }
+
+        [Description("Read"), Category("Appearance")]
         public DateTime FechaAplica { get; set; }
+
+        [Description("Read"), Category("Appearance")]
         public string Estatus { get; set; }
+
+        [Description("Read"), Category("Appearance")]
         public List<PrestamosDetalleBE> Detalle { get; set; }
+
+        [Description("Read"), Category("Appearance")]
         public GeneralBE DatosUsuario { get; set; }
         
     }
@@ -76,6 +83,7 @@ namespace Hersan.Entidades.Nomina
 
         [Description("Read"), Category("Appearance")]
         public string Estatus { get; set; }
+
         [Description("Read"), Category("Appearance")]
         public GeneralBE DatosUsuario { get; set; }
 

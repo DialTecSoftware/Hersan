@@ -89,6 +89,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\Prestamos.cs">
+      <DependentUpon>Prestamos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\Prestamos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prestamos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultaPrestamos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +271,17 @@
     </None>
     <None Include="Connected Services\WCF_Nomina\Hersan_Nomina6.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\Prestamos.xsc">
+      <DependentUpon>Prestamos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Prestamos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Prestamos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\Prestamos.xss">
+      <DependentUpon>Prestamos.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenNuevoPuestoBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.CapitalHumano.DictamenSustitucionBE.datasource" />

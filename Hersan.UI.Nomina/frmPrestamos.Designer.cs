@@ -409,7 +409,7 @@
             // cboEmpleados
             // 
             this.cboEmpleados.AutoScroll = true;
-            this.cboEmpleados.AutoSizeDropDownColumnMode = Telerik.WinControls.UI.BestFitColumnMode.HeaderCells;
+            this.cboEmpleados.AutoSizeDropDownColumnMode = Telerik.WinControls.UI.BestFitColumnMode.DisplayedDataCells;
             this.cboEmpleados.AutoSizeDropDownHeight = true;
             this.cboEmpleados.AutoSizeDropDownToBestFit = true;
             this.cboEmpleados.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
@@ -439,7 +439,9 @@
             gridViewTextBoxColumn10.AllowGroup = false;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
             gridViewTextBoxColumn10.FieldName = "Numero";
-            gridViewTextBoxColumn10.HeaderText = "Numero";
+            gridViewTextBoxColumn10.HeaderText = "No.";
+            gridViewTextBoxColumn10.MaxWidth = 60;
+            gridViewTextBoxColumn10.MinWidth = 40;
             gridViewTextBoxColumn10.Name = "Numero";
             gridViewTextBoxColumn10.ReadOnly = true;
             gridViewTextBoxColumn10.VisibleInColumnChooser = false;
@@ -447,26 +449,34 @@
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
             gridViewTextBoxColumn11.FieldName = "Expedientes.DatosPersonales.Nombres";
             gridViewTextBoxColumn11.HeaderText = "Nombre";
+            gridViewTextBoxColumn11.MaxWidth = 120;
+            gridViewTextBoxColumn11.MinWidth = 70;
             gridViewTextBoxColumn11.Name = "Nombre";
             gridViewTextBoxColumn11.ReadOnly = true;
             gridViewTextBoxColumn11.VisibleInColumnChooser = false;
-            gridViewTextBoxColumn11.Width = 100;
+            gridViewTextBoxColumn11.Width = 120;
             gridViewTextBoxColumn12.AllowGroup = false;
             gridViewTextBoxColumn12.EnableExpressionEditor = false;
             gridViewTextBoxColumn12.FieldName = "Expedientes.DatosPersonales.APaterno";
             gridViewTextBoxColumn12.HeaderText = "AP. Paterno";
+            gridViewTextBoxColumn12.MaxWidth = 90;
+            gridViewTextBoxColumn12.MinWidth = 70;
             gridViewTextBoxColumn12.Name = "APaterno";
             gridViewTextBoxColumn12.ReadOnly = true;
             gridViewTextBoxColumn12.VisibleInColumnChooser = false;
-            gridViewTextBoxColumn12.Width = 100;
+            gridViewTextBoxColumn12.Width = 70;
+            gridViewTextBoxColumn12.WrapText = true;
             gridViewTextBoxColumn13.AllowGroup = false;
             gridViewTextBoxColumn13.EnableExpressionEditor = false;
             gridViewTextBoxColumn13.FieldName = "Expedientes.DatosPersonales.AMaterno";
             gridViewTextBoxColumn13.HeaderText = "AP. Materno";
+            gridViewTextBoxColumn13.MaxWidth = 90;
+            gridViewTextBoxColumn13.MinWidth = 70;
             gridViewTextBoxColumn13.Name = "AMaterno";
             gridViewTextBoxColumn13.ReadOnly = true;
             gridViewTextBoxColumn13.VisibleInColumnChooser = false;
-            gridViewTextBoxColumn13.Width = 100;
+            gridViewTextBoxColumn13.Width = 70;
+            gridViewTextBoxColumn13.WrapText = true;
             gridViewDecimalColumn1.AllowGroup = false;
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "Ahorro";

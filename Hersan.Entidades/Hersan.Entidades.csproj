@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APT\AlmacenBE.cs" />
+    <Compile Include="APT\UbicacionesBE.cs" />
     <Compile Include="Calidad\CalidadBE.cs" />
     <Compile Include="Calidad\EnsambleBE.cs" />
     <Compile Include="Calidad\NormaBE.cs" />

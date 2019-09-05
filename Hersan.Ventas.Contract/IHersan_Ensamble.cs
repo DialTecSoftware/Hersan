@@ -191,6 +191,13 @@ namespace Hersan.Ensamble.Contract
         int APT_Almacenes_Actualizar(AlmacenPTBE obj);
         [OperationContract]
         List<AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa);
+        [OperationContract]
+        List<UbicacionesBE> APT_Ubicacion_Obtener();
+        [OperationContract]
+        int APT_Ubicacion_Guardar(UbicacionesBE obj);
+        [OperationContract]
+        int APT_Ubicacion_Actualizar(UbicacionesBE obj);
+
         #endregion
     }
 }

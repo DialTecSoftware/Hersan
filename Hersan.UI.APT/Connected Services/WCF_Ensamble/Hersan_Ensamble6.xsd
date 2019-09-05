@@ -702,6 +702,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="PRO_Temperaturas_Consulta">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PRO_Temperaturas_ConsultaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" minOccurs="0" name="PRO_Temperaturas_ConsultaResult" nillable="true" type="q35:ArrayOfTemperaturasConsBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PRO_Parametros_Obtener">
     <xs:complexType>
       <xs:sequence />
@@ -710,14 +722,26 @@
   <xs:element name="PRO_Parametros_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" minOccurs="0" name="PRO_Parametros_ObtenerResult" nillable="true" type="q35:ParametrosInyeccion" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" minOccurs="0" name="PRO_Parametros_ObtenerResult" nillable="true" type="q36:ParametrosInyeccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PRO_Parametros_Consulta">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PRO_Parametros_ConsultaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" minOccurs="0" name="PRO_Parametros_ConsultaResult" nillable="true" type="q37:ArrayOfParametrosInyeccion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_InspeccionInyeccion_Guarda">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q36:CalidadBE" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q38:CalidadBE" />
         <xs:element minOccurs="0" name="Detalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -831,21 +855,21 @@
   <xs:element name="CAL_ReflejantesNorma_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ReflejantesNorma_ObtenerResult" nillable="true" type="q37:ArrayOfNormaBE" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ReflejantesNorma_ObtenerResult" nillable="true" type="q39:ArrayOfNormaBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_InspeccionInyeccion_Analisis">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q38:CalidadBE" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q40:CalidadBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_InspeccionInyeccion_AnalisisResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" minOccurs="0" name="CAL_InspeccionInyeccion_AnalisisResult" nillable="true" type="q39:ArrayOfInyeccionBE" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Inyeccion" minOccurs="0" name="CAL_InspeccionInyeccion_AnalisisResult" nillable="true" type="q41:ArrayOfInyeccionBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -859,14 +883,14 @@
   <xs:element name="CAL_InspeccionInyeccion_AnalisisDetalleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionInyeccion_AnalisisDetalleResult" nillable="true" type="q40:ArrayOfCalidadDetalleBE" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionInyeccion_AnalisisDetalleResult" nillable="true" type="q42:ArrayOfCalidadDetalleBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PRO_Ensamble_Parametros_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q41:EnsambleParametrosBE" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q43:EnsambleParametrosBE" />
         <xs:element minOccurs="0" name="Detalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -893,14 +917,14 @@
   <xs:element name="PRO_Ensamble_Parametros_Obtener">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q42:EnsambleParametrosBE" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q44:EnsambleParametrosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PRO_Ensamble_Parametros_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="PRO_Ensamble_Parametros_ObtenerResult" nillable="true" type="q43:ArrayOfEnsambleParametrosBE" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="PRO_Ensamble_Parametros_ObtenerResult" nillable="true" type="q45:ArrayOfEnsambleParametrosBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -914,14 +938,14 @@
   <xs:element name="CAL_InspeccionEnsamble_ConsultarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_ConsultarResult" nillable="true" type="q44:ArrayOfCalidadEnsambleBE" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_ConsultarResult" nillable="true" type="q46:ArrayOfCalidadEnsambleBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_InspeccionEnsamble_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q45:CalidadEnsambleBE" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q47:CalidadEnsambleBE" />
         <xs:element minOccurs="0" name="Detalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -948,7 +972,7 @@
   <xs:element name="CAL_InspeccionEnsamble_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q46:CalidadEnsambleBE" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q48:CalidadEnsambleBE" />
         <xs:element minOccurs="0" name="Detalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -982,21 +1006,21 @@
   <xs:element name="CAL_InspeccionEnsamble_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_ObtenerResult" nillable="true" type="q47:ArrayOfCalidadEnsambleDetalleBE" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_ObtenerResult" nillable="true" type="q49:ArrayOfCalidadEnsambleDetalleBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_InspeccionEnsamble_Analisis">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q48:CalidadEnsambleBE" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q50:CalidadEnsambleBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_InspeccionEnsamble_AnalisisResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_AnalisisResult" nillable="true" type="q49:ArrayOfCalidadEnsambleBE" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_AnalisisResult" nillable="true" type="q51:ArrayOfCalidadEnsambleBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1010,14 +1034,14 @@
   <xs:element name="CAL_InspeccionEnsamble_AnalisisDetalleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_AnalisisDetalleResult" nillable="true" type="q50:ArrayOfCalidadEnsambleDetalleBE" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_AnalisisDetalleResult" nillable="true" type="q52:ArrayOfCalidadEnsambleDetalleBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_ResguardoQA_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q51:CalidadResguardoQA" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q53:CalidadResguardoQA" />
         <xs:element minOccurs="0" name="Detalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -1044,7 +1068,7 @@
   <xs:element name="CAL_ResguardoQA_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q52:CalidadResguardoQA" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q54:CalidadResguardoQA" />
         <xs:element minOccurs="0" name="Detalle" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -1079,7 +1103,7 @@
   <xs:element name="CAL_ResguardoQA_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ResguardoQA_ObtenerResult" nillable="true" type="q53:ArrayOfCalidadResguardoQA" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ResguardoQA_ObtenerResult" nillable="true" type="q55:ArrayOfCalidadResguardoQA" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1093,7 +1117,7 @@
   <xs:element name="CAL_AnalisisInyeccion_HistogramaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_HistogramaResult" nillable="true" type="q54:ArrayOfCalidadGraficasCavidades" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_HistogramaResult" nillable="true" type="q56:ArrayOfCalidadGraficasCavidades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1108,7 +1132,7 @@
   <xs:element name="CAL_AnalisisInyeccion_GraficaControlResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_GraficaControlResult" nillable="true" type="q55:ArrayOfCalidadGraficasCavidades" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_GraficaControlResult" nillable="true" type="q57:ArrayOfCalidadGraficasCavidades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1123,7 +1147,7 @@
   <xs:element name="CAL_AnalisisInyeccion_Histograma_HistoricoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_Histograma_HistoricoResult" nillable="true" type="q56:ArrayOfCalidadGraficasValores" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_Histograma_HistoricoResult" nillable="true" type="q58:ArrayOfCalidadGraficasValores" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1138,7 +1162,7 @@
   <xs:element name="CAL_AnalisisInyeccion_GraficaSeriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_GraficaSeriesResult" nillable="true" type="q57:ArrayOfCalidadGraficaSeries" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_AnalisisInyeccion_GraficaSeriesResult" nillable="true" type="q59:ArrayOfCalidadGraficaSeries" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1152,14 +1176,14 @@
   <xs:element name="CAL_InspeccionEnsamble_HistogramaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_HistogramaResult" nillable="true" type="q58:ArrayOfCalidadGraficasValores" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_HistogramaResult" nillable="true" type="q60:ArrayOfCalidadGraficasValores" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_InspeccionEnsamble_HistogramaHistorico">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q59:CalidadResguardoQA" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Obj" nillable="true" type="q61:CalidadResguardoQA" />
         <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1168,14 +1192,14 @@
   <xs:element name="CAL_InspeccionEnsamble_HistogramaHistoricoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_HistogramaHistoricoResult" nillable="true" type="q60:ArrayOfCalidadGraficasValores" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_InspeccionEnsamble_HistogramaHistoricoResult" nillable="true" type="q62:ArrayOfCalidadGraficasValores" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CAL_ResguardoQA_Grafica">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Item" nillable="true" type="q61:CalidadResguardoQA" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="Item" nillable="true" type="q63:CalidadResguardoQA" />
         <xs:element minOccurs="0" name="Inicial" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1184,7 +1208,7 @@
   <xs:element name="CAL_ResguardoQA_GraficaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ResguardoQA_GraficaResult" nillable="true" type="q62:ArrayOfCalidadResguardoQADetalle" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Calidad" minOccurs="0" name="CAL_ResguardoQA_GraficaResult" nillable="true" type="q64:ArrayOfCalidadResguardoQADetalle" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1198,14 +1222,14 @@
   <xs:element name="APT_Almacenes_ObtenerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="APT_Almacenes_ObtenerResult" nillable="true" type="q63:ArrayOfAlmacenPTBE" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="APT_Almacenes_ObtenerResult" nillable="true" type="q65:ArrayOfAlmacenPTBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="APT_Almacenes_Guardar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="obj" nillable="true" type="q64:AlmacenPTBE" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="obj" nillable="true" type="q66:AlmacenPTBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1219,7 +1243,7 @@
   <xs:element name="APT_Almacenes_Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="obj" nillable="true" type="q65:AlmacenPTBE" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="obj" nillable="true" type="q67:AlmacenPTBE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1240,7 +1264,47 @@
   <xs:element name="APT_Almacenes_ComboResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="APT_Almacenes_ComboResult" nillable="true" type="q66:ArrayOfAlmacenPTBE" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="APT_Almacenes_ComboResult" nillable="true" type="q68:ArrayOfAlmacenPTBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Ubicacion_Obtener">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Ubicacion_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="APT_Ubicacion_ObtenerResult" nillable="true" type="q69:ArrayOfUbicacionesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Ubicacion_Guardar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="obj" nillable="true" type="q70:UbicacionesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Ubicacion_GuardarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APT_Ubicacion_GuardarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Ubicacion_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" minOccurs="0" name="obj" nillable="true" type="q71:UbicacionesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APT_Ubicacion_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APT_Ubicacion_ActualizarResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

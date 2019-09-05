@@ -1,12 +1,7 @@
-﻿using Hersan.Entidades.Ensamble;
+﻿using Hersan.Entidades.Catalogos;
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -16,8 +11,7 @@ namespace Hersan.UI.APT
     {
         WCF_Catalogos.Hersan_CatalogosClient oCatalogos;
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
-        private List<ProductoEnsambleBE> oProductos = new List<ProductoEnsambleBE>();
-
+        private List<FamiliasBE> oFamilias = new List<FamiliasBE>();
 
         public frmInventario()
         {
@@ -26,11 +20,8 @@ namespace Hersan.UI.APT
         private void frmInventario_Load(object sender, EventArgs e)
         {
             try {
-                var t = Task.Run(() => CargaAlmacenes());
-                t.Wait();
-
-                var t1 = Task.Run(() => CargaProductos());
-                t1.Wait();
+                CargaAlmacenes();
+                CargaFamilias();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }        }
@@ -52,10 +43,10 @@ namespace Hersan.UI.APT
         }
         private void cboProductos_ItemCheckedChanged(object sender, Telerik.WinControls.UI.RadCheckedListDataItemEventArgs e)
         {
-            try {                
-                if (cboProductos.CheckedItems.Count == 1) {
+            try {
+                if (cboFamilias.CheckedItems.Count == 1) {
                     if (e.Item.Checked) {
-                        CargaCarcasas(int.Parse(e.Item.Value.ToString()));
+
                     }
                 }
             } catch (Exception ex) {
@@ -76,45 +67,18 @@ namespace Hersan.UI.APT
                 oEnsamble = null;
             }
         }
-        private void CargaProductos()
+        private void CargaFamilias()
         {
-            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
-            try {
-                oProductos = oEnsamble.ENS_ProductosCotizacion_Combo(true, "PESOS");
-                cboProductos.DisplayMember = "Producto.Nombre";
-                cboProductos.ValueMember = "Producto.Id";
-                cboProductos.DataSource = oProductos;
-
-                if (oProductos.Count > 0)
-                    cboProductos.SelectedIndex = 0;
-            } catch (Exception ex) {
-                throw ex;
-            } finally {
-                oEnsamble = null;
-            }
-        }
-        private void CargaCarcasas(int IdProducto)
-        {
-            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                if (cboProductos.SelectedValue != null) {
-                    var Ficha = oProductos.Find(item => item.Producto.Id == IdProducto);
-                    
-                    /* COLORES DE CARCASA */
-                    cboCarcasa.DisplayMember = "Nombre";
-                    cboCarcasa.ValueMember = "Id";
-                    cboCarcasa.DataSource = oEnsamble.ENS_CarcasasCotizacion_Combo(Ficha.Id);
+                oFamilias = oCatalogos.ENS_Familias_Combo(0);
+                cboFamilias.DisplayMember = "Nombre";
+                cboFamilias.ValueMember = "Id";
+                cboFamilias.DataSource = oFamilias;
 
-                    /* REFLEJANTES */
-                    cboReflejante.DisplayMember = "Nombre";
-                    cboReflejante.ValueMember = "Id";
-                    cboReflejante.DataSource = oEnsamble.ENS_ReflejanteCotizacion_Combo(Ficha.Id);
-                }
             } catch (Exception ex) {
                 throw ex;
             } finally {
-                oEnsamble = null;
                 oCatalogos = null;
             }
         }

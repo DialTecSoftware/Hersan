@@ -84,9 +84,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TempMoldesBE" nillable="true" type="tns:TempMoldesBE" />
+  <xs:complexType name="ArrayOfTemperaturasConsBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TemperaturasConsBE" nillable="true" type="tns:TemperaturasConsBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTemperaturasConsBE" nillable="true" type="tns:ArrayOfTemperaturasConsBE" />
+  <xs:complexType name="TemperaturasConsBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Molde" nillable="true" type="tns:TempMoldesBE" />
+      <xs:element minOccurs="0" name="Temperatura" nillable="true" type="tns:TemperaturasBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TemperaturasConsBE" nillable="true" type="tns:TemperaturasConsBE" />
   <xs:complexType name="ParametrosInyeccion">
     <xs:sequence>
       <xs:element minOccurs="0" name="Cavidades" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hora" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
       <xs:element minOccurs="0" name="Observa" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Posicion" nillable="true" type="xs:string" />
@@ -112,6 +129,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ParametrosInyeccion" nillable="true" type="tns:ParametrosInyeccion" />
+  <xs:complexType name="ArrayOfParametrosInyeccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParametrosInyeccion" nillable="true" type="tns:ParametrosInyeccion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParametrosInyeccion" nillable="true" type="tns:ArrayOfParametrosInyeccion" />
   <xs:complexType name="ArrayOfInyeccionBE">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="InyeccionBE" nillable="true" type="tns:InyeccionBE" />

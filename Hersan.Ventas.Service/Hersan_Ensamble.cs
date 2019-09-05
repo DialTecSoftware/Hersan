@@ -330,6 +330,18 @@ namespace Hersan.Ensamble.Service
         {
             return new AlmacenBP().APT_Almacenes_Combo(IdEmpresa);
         }
+        public List<UbicacionesBE> APT_Ubicacion_Obtener()
+        {
+            return new UbicacionesBP().APT_Ubicacion_Obtener();
+        }
+        public int APT_Ubicacion_Guardar(UbicacionesBE obj)
+        {
+            return new UbicacionesBP().APT_Ubicacion_Guardar(obj);
+        }
+        public int APT_Ubicacion_Actualizar(UbicacionesBE obj)
+        {
+            return new UbicacionesBP().APT_Ubicacion_Actualizar(obj);
+        }
         #endregion
     }
 }

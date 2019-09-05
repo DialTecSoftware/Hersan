@@ -2,6 +2,7 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.APT" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" />
   <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" />
+  <xs:import schemaLocation="http://localhost:62534/Hersan_Ensamble.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" />
   <xs:complexType name="ArrayOfAlmacenPTBE">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AlmacenPTBE" nillable="true" type="tns:AlmacenPTBE" />
@@ -18,4 +19,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AlmacenPTBE" nillable="true" type="tns:AlmacenPTBE" />
+  <xs:complexType name="ArrayOfUbicacionesBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UbicacionesBE" nillable="true" type="tns:UbicacionesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUbicacionesBE" nillable="true" type="tns:ArrayOfUbicacionesBE" />
+  <xs:complexType name="UbicacionesBE">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Carcasa" nillable="true" type="q3:ColoresBE" />
+      <xs:element minOccurs="0" name="Columna" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q4:GeneralBE" />
+      <xs:element minOccurs="0" name="Fila" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="Producto" nillable="true" type="q5:ProductoEnsambleBE" />
+      <xs:element minOccurs="0" name="Rack" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflejante" nillable="true" type="q6:ReflejantesBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UbicacionesBE" nillable="true" type="tns:UbicacionesBE" />
 </xs:schema>

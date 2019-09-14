@@ -18,228 +18,454 @@ namespace Hersan.UI.APT.WCF_Ensamble {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_GuardarResponse")]
         int ABC_Clientes_Guardar(System.Data.DataSet Tablas, string Entidades, int IdUsuario);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABC_Clientes_GuardarAsync(System.Data.DataSet Tablas, string Entidades, int IdUsuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_ActualizarResponse")]
         int ABC_Clientes_Actualizar(System.Data.DataSet Tablas, string Entidades, int IdUsuario, bool Estatus);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ABC_Clientes_ActualizarAsync(System.Data.DataSet Tablas, string Entidades, int IdUsuario, bool Estatus);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Buscar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_BuscarResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Buscar(Hersan.Entidades.Ensamble.ClientesBE Lista, string Entidades);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Buscar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_BuscarResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE>> ABC_Clientes_BuscarAsync(Hersan.Entidades.Ensamble.ClientesBE Lista, string Entidades);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Obtener(int IdCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_Clientes_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE>> ABC_Clientes_ObtenerAsync(int IdCliente);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_ClientesAgente_Combo(int IdAgente);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE>> ABC_ClientesAgente_ComboAsync(int IdAgente);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_GuardarResponse")]
         int ABC_ClientesAgente_Guardar(Hersan.Entidades.Ensamble.ClientesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_ClientesAgente_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ABC_ClientesAgente_GuardarAsync(Hersan.Entidades.Ensamble.ClientesBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.FormasPagoBE> ABC_FormaPago_Combo();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_FormaPago_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.FormasPagoBE>> ABC_FormaPago_ComboAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_MetodoPago_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_MetodoPago_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.MetodosPagoBE> ABC_MetodoPago_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_MetodoPago_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_MetodoPago_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.MetodosPagoBE>> ABC_MetodoPago_ComboAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.UsoCFDIBE> ABC_UsoCFDI_Combo();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_UsoCFDI_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.UsoCFDIBE>> ABC_UsoCFDI_ComboAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.RegimenSATBE> ABC_RegimenFiscal_Combo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ABC_RegimenFiscal_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.RegimenSATBE>> ABC_RegimenFiscal_ComboAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_GuardarResponse")]
         int ENS_Servicios_Guardar(Hersan.Entidades.Ensamble.ServiciosBE obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ENS_Servicios_GuardarAsync(Hersan.Entidades.Ensamble.ServiciosBE obj);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_ActualizarResponse")]
         int ENS_Servicios_Actualizar(Hersan.Entidades.Ensamble.ServiciosBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ENS_Servicios_ActualizarAsync(Hersan.Entidades.Ensamble.ServiciosBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Obtener();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE>> ENS_Servicios_ObtenerAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Combo(int IdEntidad, string Moneda);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Servicios_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE>> ENS_Servicios_ComboAsync(int IdEntidad, string Moneda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ServiciosCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ServiciosCotizacion_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_ServiciosCotizacion_Combo(string Moneda);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ServiciosCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ServiciosCotizacion_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE>> ENS_ServiciosCotizacion_ComboAsync(string Moneda);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_GuardarResponse")]
         int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ENS_Precios_GuardarAsync(System.Data.DataTable oData, string Moneda, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener(string Moneda);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE>> ENS_Precios_ObtenerAsync(string Moneda);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_GuardarResponse")]
         int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ENS_ProductosFicha_GuardarAsync(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_ActualizarResponse")]
         int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ENS_ProductosFicha_ActualizarAsync(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosFicha_Obtener(Hersan.Entidades.Ensamble.ProductoEnsambleBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosFicha_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE>> ENS_ProductosFicha_ObtenerAsync(Hersan.Entidades.Ensamble.ProductoEnsambleBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosCotizacion_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ProductosCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ProductosCotizacion_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE>> ENS_ProductosCotizacion_ComboAsync(bool Nacional, string Moneda);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_CarcasasCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_CarcasasCotizacion_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoresBE> ENS_CarcasasCotizacion_Combo(int IdFicha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_CarcasasCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_CarcasasCotizacion_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoresBE>> ENS_CarcasasCotizacion_ComboAsync(int IdFicha);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE> ENS_ReflejanteCotizacion_Combo(int IdFicha);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE>> ENS_ReflejanteCotizacion_ComboAsync(int IdFicha);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_GuardarResponse")]
         int ENS_Cotizacion_Guardar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_GuardarResponse")]
+        System.Threading.Tasks.Task<int> ENS_Cotizacion_GuardarAsync(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Buscar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_BuscarResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Buscar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_BuscarResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE>> ENS_Cotizacion_BuscarAsync(int IdCliente, string Nombre, string Inicial, string Final);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE>> ENS_Cotizacion_ObtenerAsync(int IdCotizacion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ActualizarResponse")]
         int ENS_Cotizacion_Actualizar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ENS_Cotizacion_ActualizarAsync(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Reporte", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteResponse")]
         System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Reporte", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> ENS_Cotizacion_ReporteAsync(int IdCotiza);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalleResponse")]
         System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ReporteDetalleResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> ENS_Cotizacion_ReporteDetalleAsync(int IdCotiza);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ConsultaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_ConsultaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE>> ENS_Cotizacion_ConsultaAsync(int IdAgente, int IdCotiza, string Inicial, string Final);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_ConsultaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Pedido_ConsultaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE>> ENS_Pedido_ConsultaAsync(int IdAgente, int Pedido, string Inicial, string Final);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_GuardarResponse")]
         int PRO_Inyeccion_Guardar(Hersan.Entidades.Inyeccion.InyeccionBE Obj, System.Data.DataTable Detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_GuardarResponse")]
+        System.Threading.Tasks.Task<int> PRO_Inyeccion_GuardarAsync(Hersan.Entidades.Inyeccion.InyeccionBE Obj, System.Data.DataTable Detalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionDetalleBE> PRO_Inyeccion_Obtener(Hersan.Entidades.Inyeccion.InyeccionBE Obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionDetalleBE>> PRO_Inyeccion_ObtenerAsync(Hersan.Entidades.Inyeccion.InyeccionBE Obj);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_ConsultaResponse")]
         Hersan.Entidades.Inyeccion.InyeccionBE PRO_Inyeccion_Consulta(int Lista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Inyeccion_ConsultaResponse")]
+        System.Threading.Tasks.Task<Hersan.Entidades.Inyeccion.InyeccionBE> PRO_Inyeccion_ConsultaAsync(int Lista);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_GuardarResponse")]
         int PRO_Temperaturas_Guardar(Hersan.Entidades.Inyeccion.TemperaturasBE Obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_GuardarResponse")]
+        System.Threading.Tasks.Task<int> PRO_Temperaturas_GuardarAsync(Hersan.Entidades.Inyeccion.TemperaturasBE Obj);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_ObtenerResponse")]
         Hersan.Entidades.Inyeccion.TemperaturasBE PRO_Temperaturas_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_ObtenerResponse")]
+        System.Threading.Tasks.Task<Hersan.Entidades.Inyeccion.TemperaturasBE> PRO_Temperaturas_ObtenerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_GuardarResponse")]
         int PRO_TemperaturasMolde_Guardar(Hersan.Entidades.Inyeccion.TempMoldesBE Obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_GuardarResponse")]
+        System.Threading.Tasks.Task<int> PRO_TemperaturasMolde_GuardarAsync(Hersan.Entidades.Inyeccion.TempMoldesBE Obj);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_ObtenerResponse")]
         Hersan.Entidades.Inyeccion.TempMoldesBE PRO_TemperaturasMolde_Obtener();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_TemperaturasMolde_ObtenerResponse")]
+        System.Threading.Tasks.Task<Hersan.Entidades.Inyeccion.TempMoldesBE> PRO_TemperaturasMolde_ObtenerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_GuardarResponse")]
         int PRO_Parametros_Guardar(System.Data.DataTable Tabla);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_GuardarResponse")]
+        System.Threading.Tasks.Task<int> PRO_Parametros_GuardarAsync(System.Data.DataTable Tabla);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_ConsultaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Inyeccion.TemperaturasConsBE> PRO_Temperaturas_Consulta();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Temperaturas_ConsultaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Inyeccion.TemperaturasConsBE>> PRO_Temperaturas_ConsultaAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_ObtenerResponse")]
         Hersan.Entidades.Inyeccion.ParametrosInyeccion PRO_Parametros_Obtener();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_ObtenerResponse")]
+        System.Threading.Tasks.Task<Hersan.Entidades.Inyeccion.ParametrosInyeccion> PRO_Parametros_ObtenerAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_ConsultaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Inyeccion.ParametrosInyeccion> PRO_Parametros_Consulta();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_Consulta", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Parametros_ConsultaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Inyeccion.ParametrosInyeccion>> PRO_Parametros_ConsultaAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Guarda", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_GuardaResponse")]
         int CAL_InspeccionInyeccion_Guarda(Hersan.Entidades.Calidad.CalidadBE Obj, System.Data.DataTable Detalle);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Guarda", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_GuardaResponse")]
+        System.Threading.Tasks.Task<int> CAL_InspeccionInyeccion_GuardaAsync(Hersan.Entidades.Calidad.CalidadBE Obj, System.Data.DataTable Detalle);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Actualiza", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_ActualizaResponse")]
         int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, System.Data.DataTable Detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Actualiza", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_ActualizaResponse")]
+        System.Threading.Tasks.Task<int> CAL_InspeccionInyeccion_ActualizaAsync(int IdInyeccion, System.Data.DataTable Detalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_GuardarResponse")]
         int CAL_ReflejantesNorma_Guardar(System.Data.DataTable Tabla, int IdUsuario);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_GuardarResponse")]
+        System.Threading.Tasks.Task<int> CAL_ReflejantesNorma_GuardarAsync(System.Data.DataTable Tabla, int IdUsuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_ActualizarResponse")]
         int CAL_ReflejantesNorma_Actualizar(System.Data.DataTable Tabla, int IdUsuario, bool Estatus);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> CAL_ReflejantesNorma_ActualizarAsync(System.Data.DataTable Tabla, int IdUsuario, bool Estatus);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.NormaBE> CAL_ReflejantesNorma_Obtener();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ReflejantesNorma_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.NormaBE>> CAL_ReflejantesNorma_ObtenerAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Analisis", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionBE> CAL_InspeccionInyeccion_Analisis(Hersan.Entidades.Calidad.CalidadBE Obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_Analisis", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionBE>> CAL_InspeccionInyeccion_AnalisisAsync(Hersan.Entidades.Calidad.CalidadBE Obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalleRespon" +
             "se")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadDetalleBE> CAL_InspeccionInyeccion_AnalisisDetalle(int Lista);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionInyeccion_AnalisisDetalleRespon" +
+            "se")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadDetalleBE>> CAL_InspeccionInyeccion_AnalisisDetalleAsync(int Lista);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_GuardarResponse")]
         int PRO_Ensamble_Parametros_Guardar(Hersan.Entidades.Calidad.EnsambleParametrosBE Obj, System.Data.DataTable Detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_GuardarResponse")]
+        System.Threading.Tasks.Task<int> PRO_Ensamble_Parametros_GuardarAsync(Hersan.Entidades.Calidad.EnsambleParametrosBE Obj, System.Data.DataTable Detalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.EnsambleParametrosBE> PRO_Ensamble_Parametros_Obtener(Hersan.Entidades.Calidad.EnsambleParametrosBE Obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/PRO_Ensamble_Parametros_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.EnsambleParametrosBE>> PRO_Ensamble_Parametros_ObtenerAsync(Hersan.Entidades.Calidad.EnsambleParametrosBE Obj);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Consultar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ConsultarResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleBE> CAL_InspeccionEnsamble_Consultar(int Lista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Consultar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ConsultarResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleBE>> CAL_InspeccionEnsamble_ConsultarAsync(int Lista);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_GuardarResponse")]
         int CAL_InspeccionEnsamble_Guardar(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj, System.Data.DataTable Detalle);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_GuardarResponse")]
+        System.Threading.Tasks.Task<int> CAL_InspeccionEnsamble_GuardarAsync(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj, System.Data.DataTable Detalle);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ActualizarResponse")]
         int CAL_InspeccionEnsamble_Actualizar(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj, System.Data.DataTable Detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> CAL_InspeccionEnsamble_ActualizarAsync(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj, System.Data.DataTable Detalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE> CAL_InspeccionEnsamble_Obtener(int Lista);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE>> CAL_InspeccionEnsamble_ObtenerAsync(int Lista);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Analisis", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleBE> CAL_InspeccionEnsamble_Analisis(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Analisis", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleBE>> CAL_InspeccionEnsamble_AnalisisAsync(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisDetalleRespons" +
             "e")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE> CAL_InspeccionEnsamble_AnalisisDetalle(int Lista);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisDetalle", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_AnalisisDetalleRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE>> CAL_InspeccionEnsamble_AnalisisDetalleAsync(int Lista);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GuardarResponse")]
         int CAL_ResguardoQA_Guardar(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GuardarResponse")]
+        System.Threading.Tasks.Task<int> CAL_ResguardoQA_GuardarAsync(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_ActualizarResponse")]
         int CAL_ResguardoQA_Actualizar(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> CAL_ResguardoQA_ActualizarAsync(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQA>> CAL_ResguardoQA_ObtenerAsync(int IdProducto, string Fecha);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_HistogramaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_HistogramaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades>> CAL_AnalisisInyeccion_HistogramaAsync(int Lista);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControl", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControlResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControl", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaControlResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades>> CAL_AnalisisInyeccion_GraficaControlAsync(int Lista, string Fecha);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_Historico", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_HistoricoRes" +
             "ponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores> CAL_AnalisisInyeccion_Histograma_Historico(string Inicial, string Final);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_Historico", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_Histograma_HistoricoRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores>> CAL_AnalisisInyeccion_Histograma_HistoricoAsync(string Inicial, string Final);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeries", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeriesResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficaSeries> CAL_AnalisisInyeccion_GraficaSeries(string Inicial, string Final);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeries", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_AnalisisInyeccion_GraficaSeriesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficaSeries>> CAL_AnalisisInyeccion_GraficaSeriesAsync(string Inicial, string Final);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Histograma", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores> CAL_InspeccionEnsamble_Histograma(int Lista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_Histograma", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores>> CAL_InspeccionEnsamble_HistogramaAsync(int Lista);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaHistorico", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaHistoricoRes" +
             "ponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores> CAL_InspeccionEnsamble_HistogramaHistorico(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, string Inicial, string Final);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaHistorico", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_InspeccionEnsamble_HistogramaHistoricoRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores>> CAL_InspeccionEnsamble_HistogramaHistoricoAsync(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, string Inicial, string Final);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GraficaResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_Grafica", ReplyAction="http://tempuri.org/IHersan_Ensamble/CAL_ResguardoQA_GraficaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle>> CAL_ResguardoQA_GraficaAsync(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE>> APT_Almacenes_ObtenerAsync(int IdEmpresa);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_GuardarResponse")]
         int APT_Almacenes_Guardar(Hersan.Entidades.APT.AlmacenPTBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_GuardarResponse")]
+        System.Threading.Tasks.Task<int> APT_Almacenes_GuardarAsync(Hersan.Entidades.APT.AlmacenPTBE obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ActualizarResponse")]
         int APT_Almacenes_Actualizar(Hersan.Entidades.APT.AlmacenPTBE obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> APT_Almacenes_ActualizarAsync(Hersan.Entidades.APT.AlmacenPTBE obj);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Almacenes_ComboResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE>> APT_Almacenes_ComboAsync(int IdEmpresa);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.APT.UbicacionesBE> APT_Ubicacion_Obtener();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_ObtenerResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.APT.UbicacionesBE>> APT_Ubicacion_ObtenerAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_GuardarResponse")]
         int APT_Ubicacion_Guardar(Hersan.Entidades.APT.UbicacionesBE obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_GuardarResponse")]
+        System.Threading.Tasks.Task<int> APT_Ubicacion_GuardarAsync(Hersan.Entidades.APT.UbicacionesBE obj);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_ActualizarResponse")]
         int APT_Ubicacion_Actualizar(Hersan.Entidades.APT.UbicacionesBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_Actualizar", ReplyAction="http://tempuri.org/IHersan_Ensamble/APT_Ubicacion_ActualizarResponse")]
+        System.Threading.Tasks.Task<int> APT_Ubicacion_ActualizarAsync(Hersan.Entidades.APT.UbicacionesBE obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -273,296 +499,592 @@ namespace Hersan.UI.APT.WCF_Ensamble {
             return base.Channel.ABC_Clientes_Guardar(Tablas, Entidades, IdUsuario);
         }
         
+        public System.Threading.Tasks.Task<int> ABC_Clientes_GuardarAsync(System.Data.DataSet Tablas, string Entidades, int IdUsuario) {
+            return base.Channel.ABC_Clientes_GuardarAsync(Tablas, Entidades, IdUsuario);
+        }
+        
         public int ABC_Clientes_Actualizar(System.Data.DataSet Tablas, string Entidades, int IdUsuario, bool Estatus) {
             return base.Channel.ABC_Clientes_Actualizar(Tablas, Entidades, IdUsuario, Estatus);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABC_Clientes_ActualizarAsync(System.Data.DataSet Tablas, string Entidades, int IdUsuario, bool Estatus) {
+            return base.Channel.ABC_Clientes_ActualizarAsync(Tablas, Entidades, IdUsuario, Estatus);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Buscar(Hersan.Entidades.Ensamble.ClientesBE Lista, string Entidades) {
             return base.Channel.ABC_Clientes_Buscar(Lista, Entidades);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE>> ABC_Clientes_BuscarAsync(Hersan.Entidades.Ensamble.ClientesBE Lista, string Entidades) {
+            return base.Channel.ABC_Clientes_BuscarAsync(Lista, Entidades);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_Clientes_Obtener(int IdCliente) {
             return base.Channel.ABC_Clientes_Obtener(IdCliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE>> ABC_Clientes_ObtenerAsync(int IdCliente) {
+            return base.Channel.ABC_Clientes_ObtenerAsync(IdCliente);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE> ABC_ClientesAgente_Combo(int IdAgente) {
             return base.Channel.ABC_ClientesAgente_Combo(IdAgente);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ClientesBE>> ABC_ClientesAgente_ComboAsync(int IdAgente) {
+            return base.Channel.ABC_ClientesAgente_ComboAsync(IdAgente);
+        }
+        
         public int ABC_ClientesAgente_Guardar(Hersan.Entidades.Ensamble.ClientesBE obj) {
             return base.Channel.ABC_ClientesAgente_Guardar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ABC_ClientesAgente_GuardarAsync(Hersan.Entidades.Ensamble.ClientesBE obj) {
+            return base.Channel.ABC_ClientesAgente_GuardarAsync(obj);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.FormasPagoBE> ABC_FormaPago_Combo() {
             return base.Channel.ABC_FormaPago_Combo();
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.FormasPagoBE>> ABC_FormaPago_ComboAsync() {
+            return base.Channel.ABC_FormaPago_ComboAsync();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.MetodosPagoBE> ABC_MetodoPago_Combo() {
             return base.Channel.ABC_MetodoPago_Combo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.MetodosPagoBE>> ABC_MetodoPago_ComboAsync() {
+            return base.Channel.ABC_MetodoPago_ComboAsync();
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.UsoCFDIBE> ABC_UsoCFDI_Combo() {
             return base.Channel.ABC_UsoCFDI_Combo();
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.UsoCFDIBE>> ABC_UsoCFDI_ComboAsync() {
+            return base.Channel.ABC_UsoCFDI_ComboAsync();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.RegimenSATBE> ABC_RegimenFiscal_Combo() {
             return base.Channel.ABC_RegimenFiscal_Combo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.RegimenSATBE>> ABC_RegimenFiscal_ComboAsync() {
+            return base.Channel.ABC_RegimenFiscal_ComboAsync();
         }
         
         public int ENS_Servicios_Guardar(Hersan.Entidades.Ensamble.ServiciosBE obj) {
             return base.Channel.ENS_Servicios_Guardar(obj);
         }
         
+        public System.Threading.Tasks.Task<int> ENS_Servicios_GuardarAsync(Hersan.Entidades.Ensamble.ServiciosBE obj) {
+            return base.Channel.ENS_Servicios_GuardarAsync(obj);
+        }
+        
         public int ENS_Servicios_Actualizar(Hersan.Entidades.Ensamble.ServiciosBE obj) {
             return base.Channel.ENS_Servicios_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ENS_Servicios_ActualizarAsync(Hersan.Entidades.Ensamble.ServiciosBE obj) {
+            return base.Channel.ENS_Servicios_ActualizarAsync(obj);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Obtener() {
             return base.Channel.ENS_Servicios_Obtener();
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE>> ENS_Servicios_ObtenerAsync() {
+            return base.Channel.ENS_Servicios_ObtenerAsync();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_Servicios_Combo(int IdEntidad, string Moneda) {
             return base.Channel.ENS_Servicios_Combo(IdEntidad, Moneda);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE>> ENS_Servicios_ComboAsync(int IdEntidad, string Moneda) {
+            return base.Channel.ENS_Servicios_ComboAsync(IdEntidad, Moneda);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE> ENS_ServiciosCotizacion_Combo(string Moneda) {
             return base.Channel.ENS_ServiciosCotizacion_Combo(Moneda);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE>> ENS_ServiciosCotizacion_ComboAsync(string Moneda) {
+            return base.Channel.ENS_ServiciosCotizacion_ComboAsync(Moneda);
+        }
+        
         public int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario) {
             return base.Channel.ENS_Precios_Guardar(oData, Moneda, IdUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<int> ENS_Precios_GuardarAsync(System.Data.DataTable oData, string Moneda, int IdUsuario) {
+            return base.Channel.ENS_Precios_GuardarAsync(oData, Moneda, IdUsuario);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener(string Moneda) {
             return base.Channel.ENS_Precios_Obtener(Moneda);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE>> ENS_Precios_ObtenerAsync(string Moneda) {
+            return base.Channel.ENS_Precios_ObtenerAsync(Moneda);
+        }
+        
         public int ENS_ProductosFicha_Guardar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario) {
             return base.Channel.ENS_ProductosFicha_Guardar(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<int> ENS_ProductosFicha_GuardarAsync(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario) {
+            return base.Channel.ENS_ProductosFicha_GuardarAsync(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario);
         }
         
         public int ENS_ProductosFicha_Actualizar(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus) {
             return base.Channel.ENS_ProductosFicha_Actualizar(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
         }
         
+        public System.Threading.Tasks.Task<int> ENS_ProductosFicha_ActualizarAsync(System.Data.DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus) {
+            return base.Channel.ENS_ProductosFicha_ActualizarAsync(Tablas, Imagen, Colores, Reflejantes, Accesorios, IdUsuario, Estatus);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosFicha_Obtener(Hersan.Entidades.Ensamble.ProductoEnsambleBE obj) {
             return base.Channel.ENS_ProductosFicha_Obtener(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE>> ENS_ProductosFicha_ObtenerAsync(Hersan.Entidades.Ensamble.ProductoEnsambleBE obj) {
+            return base.Channel.ENS_ProductosFicha_ObtenerAsync(obj);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE> ENS_ProductosCotizacion_Combo(bool Nacional, string Moneda) {
             return base.Channel.ENS_ProductosCotizacion_Combo(Nacional, Moneda);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ProductoEnsambleBE>> ENS_ProductosCotizacion_ComboAsync(bool Nacional, string Moneda) {
+            return base.Channel.ENS_ProductosCotizacion_ComboAsync(Nacional, Moneda);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoresBE> ENS_CarcasasCotizacion_Combo(int IdFicha) {
             return base.Channel.ENS_CarcasasCotizacion_Combo(IdFicha);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.ColoresBE>> ENS_CarcasasCotizacion_ComboAsync(int IdFicha) {
+            return base.Channel.ENS_CarcasasCotizacion_ComboAsync(IdFicha);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE> ENS_ReflejanteCotizacion_Combo(int IdFicha) {
             return base.Channel.ENS_ReflejanteCotizacion_Combo(IdFicha);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE>> ENS_ReflejanteCotizacion_ComboAsync(int IdFicha) {
+            return base.Channel.ENS_ReflejanteCotizacion_ComboAsync(IdFicha);
+        }
+        
         public int ENS_Cotizacion_Guardar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle) {
             return base.Channel.ENS_Cotizacion_Guardar(obj, oDetalle);
+        }
+        
+        public System.Threading.Tasks.Task<int> ENS_Cotizacion_GuardarAsync(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle) {
+            return base.Channel.ENS_Cotizacion_GuardarAsync(obj, oDetalle);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Buscar(int IdCliente, string Nombre, string Inicial, string Final) {
             return base.Channel.ENS_Cotizacion_Buscar(IdCliente, Nombre, Inicial, Final);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE>> ENS_Cotizacion_BuscarAsync(int IdCliente, string Nombre, string Inicial, string Final) {
+            return base.Channel.ENS_Cotizacion_BuscarAsync(IdCliente, Nombre, Inicial, Final);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Obtener(int IdCotizacion) {
             return base.Channel.ENS_Cotizacion_Obtener(IdCotizacion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE>> ENS_Cotizacion_ObtenerAsync(int IdCotizacion) {
+            return base.Channel.ENS_Cotizacion_ObtenerAsync(IdCotizacion);
         }
         
         public int ENS_Cotizacion_Actualizar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle) {
             return base.Channel.ENS_Cotizacion_Actualizar(obj, oDetalle);
         }
         
+        public System.Threading.Tasks.Task<int> ENS_Cotizacion_ActualizarAsync(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle) {
+            return base.Channel.ENS_Cotizacion_ActualizarAsync(obj, oDetalle);
+        }
+        
         public System.Data.DataTable ENS_Cotizacion_Reporte(int IdCotiza) {
             return base.Channel.ENS_Cotizacion_Reporte(IdCotiza);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> ENS_Cotizacion_ReporteAsync(int IdCotiza) {
+            return base.Channel.ENS_Cotizacion_ReporteAsync(IdCotiza);
         }
         
         public System.Data.DataTable ENS_Cotizacion_ReporteDetalle(int IdCotiza) {
             return base.Channel.ENS_Cotizacion_ReporteDetalle(IdCotiza);
         }
         
+        public System.Threading.Tasks.Task<System.Data.DataTable> ENS_Cotizacion_ReporteDetalleAsync(int IdCotiza) {
+            return base.Channel.ENS_Cotizacion_ReporteDetalleAsync(IdCotiza);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Cotizacion_Consulta(int IdAgente, int IdCotiza, string Inicial, string Final) {
             return base.Channel.ENS_Cotizacion_Consulta(IdAgente, IdCotiza, Inicial, Final);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE>> ENS_Cotizacion_ConsultaAsync(int IdAgente, int IdCotiza, string Inicial, string Final) {
+            return base.Channel.ENS_Cotizacion_ConsultaAsync(IdAgente, IdCotiza, Inicial, Final);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE> ENS_Pedido_Consulta(int IdAgente, int Pedido, string Inicial, string Final) {
             return base.Channel.ENS_Pedido_Consulta(IdAgente, Pedido, Inicial, Final);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.PedidosBE>> ENS_Pedido_ConsultaAsync(int IdAgente, int Pedido, string Inicial, string Final) {
+            return base.Channel.ENS_Pedido_ConsultaAsync(IdAgente, Pedido, Inicial, Final);
+        }
+        
         public int PRO_Inyeccion_Guardar(Hersan.Entidades.Inyeccion.InyeccionBE Obj, System.Data.DataTable Detalle) {
             return base.Channel.PRO_Inyeccion_Guardar(Obj, Detalle);
+        }
+        
+        public System.Threading.Tasks.Task<int> PRO_Inyeccion_GuardarAsync(Hersan.Entidades.Inyeccion.InyeccionBE Obj, System.Data.DataTable Detalle) {
+            return base.Channel.PRO_Inyeccion_GuardarAsync(Obj, Detalle);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionDetalleBE> PRO_Inyeccion_Obtener(Hersan.Entidades.Inyeccion.InyeccionBE Obj) {
             return base.Channel.PRO_Inyeccion_Obtener(Obj);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionDetalleBE>> PRO_Inyeccion_ObtenerAsync(Hersan.Entidades.Inyeccion.InyeccionBE Obj) {
+            return base.Channel.PRO_Inyeccion_ObtenerAsync(Obj);
+        }
+        
         public Hersan.Entidades.Inyeccion.InyeccionBE PRO_Inyeccion_Consulta(int Lista) {
             return base.Channel.PRO_Inyeccion_Consulta(Lista);
+        }
+        
+        public System.Threading.Tasks.Task<Hersan.Entidades.Inyeccion.InyeccionBE> PRO_Inyeccion_ConsultaAsync(int Lista) {
+            return base.Channel.PRO_Inyeccion_ConsultaAsync(Lista);
         }
         
         public int PRO_Temperaturas_Guardar(Hersan.Entidades.Inyeccion.TemperaturasBE Obj) {
             return base.Channel.PRO_Temperaturas_Guardar(Obj);
         }
         
+        public System.Threading.Tasks.Task<int> PRO_Temperaturas_GuardarAsync(Hersan.Entidades.Inyeccion.TemperaturasBE Obj) {
+            return base.Channel.PRO_Temperaturas_GuardarAsync(Obj);
+        }
+        
         public Hersan.Entidades.Inyeccion.TemperaturasBE PRO_Temperaturas_Obtener() {
             return base.Channel.PRO_Temperaturas_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<Hersan.Entidades.Inyeccion.TemperaturasBE> PRO_Temperaturas_ObtenerAsync() {
+            return base.Channel.PRO_Temperaturas_ObtenerAsync();
         }
         
         public int PRO_TemperaturasMolde_Guardar(Hersan.Entidades.Inyeccion.TempMoldesBE Obj) {
             return base.Channel.PRO_TemperaturasMolde_Guardar(Obj);
         }
         
+        public System.Threading.Tasks.Task<int> PRO_TemperaturasMolde_GuardarAsync(Hersan.Entidades.Inyeccion.TempMoldesBE Obj) {
+            return base.Channel.PRO_TemperaturasMolde_GuardarAsync(Obj);
+        }
+        
         public Hersan.Entidades.Inyeccion.TempMoldesBE PRO_TemperaturasMolde_Obtener() {
             return base.Channel.PRO_TemperaturasMolde_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<Hersan.Entidades.Inyeccion.TempMoldesBE> PRO_TemperaturasMolde_ObtenerAsync() {
+            return base.Channel.PRO_TemperaturasMolde_ObtenerAsync();
         }
         
         public int PRO_Parametros_Guardar(System.Data.DataTable Tabla) {
             return base.Channel.PRO_Parametros_Guardar(Tabla);
         }
         
+        public System.Threading.Tasks.Task<int> PRO_Parametros_GuardarAsync(System.Data.DataTable Tabla) {
+            return base.Channel.PRO_Parametros_GuardarAsync(Tabla);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Inyeccion.TemperaturasConsBE> PRO_Temperaturas_Consulta() {
             return base.Channel.PRO_Temperaturas_Consulta();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Inyeccion.TemperaturasConsBE>> PRO_Temperaturas_ConsultaAsync() {
+            return base.Channel.PRO_Temperaturas_ConsultaAsync();
         }
         
         public Hersan.Entidades.Inyeccion.ParametrosInyeccion PRO_Parametros_Obtener() {
             return base.Channel.PRO_Parametros_Obtener();
         }
         
+        public System.Threading.Tasks.Task<Hersan.Entidades.Inyeccion.ParametrosInyeccion> PRO_Parametros_ObtenerAsync() {
+            return base.Channel.PRO_Parametros_ObtenerAsync();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Inyeccion.ParametrosInyeccion> PRO_Parametros_Consulta() {
             return base.Channel.PRO_Parametros_Consulta();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Inyeccion.ParametrosInyeccion>> PRO_Parametros_ConsultaAsync() {
+            return base.Channel.PRO_Parametros_ConsultaAsync();
         }
         
         public int CAL_InspeccionInyeccion_Guarda(Hersan.Entidades.Calidad.CalidadBE Obj, System.Data.DataTable Detalle) {
             return base.Channel.CAL_InspeccionInyeccion_Guarda(Obj, Detalle);
         }
         
+        public System.Threading.Tasks.Task<int> CAL_InspeccionInyeccion_GuardaAsync(Hersan.Entidades.Calidad.CalidadBE Obj, System.Data.DataTable Detalle) {
+            return base.Channel.CAL_InspeccionInyeccion_GuardaAsync(Obj, Detalle);
+        }
+        
         public int CAL_InspeccionInyeccion_Actualiza(int IdInyeccion, System.Data.DataTable Detalle) {
             return base.Channel.CAL_InspeccionInyeccion_Actualiza(IdInyeccion, Detalle);
+        }
+        
+        public System.Threading.Tasks.Task<int> CAL_InspeccionInyeccion_ActualizaAsync(int IdInyeccion, System.Data.DataTable Detalle) {
+            return base.Channel.CAL_InspeccionInyeccion_ActualizaAsync(IdInyeccion, Detalle);
         }
         
         public int CAL_ReflejantesNorma_Guardar(System.Data.DataTable Tabla, int IdUsuario) {
             return base.Channel.CAL_ReflejantesNorma_Guardar(Tabla, IdUsuario);
         }
         
+        public System.Threading.Tasks.Task<int> CAL_ReflejantesNorma_GuardarAsync(System.Data.DataTable Tabla, int IdUsuario) {
+            return base.Channel.CAL_ReflejantesNorma_GuardarAsync(Tabla, IdUsuario);
+        }
+        
         public int CAL_ReflejantesNorma_Actualizar(System.Data.DataTable Tabla, int IdUsuario, bool Estatus) {
             return base.Channel.CAL_ReflejantesNorma_Actualizar(Tabla, IdUsuario, Estatus);
+        }
+        
+        public System.Threading.Tasks.Task<int> CAL_ReflejantesNorma_ActualizarAsync(System.Data.DataTable Tabla, int IdUsuario, bool Estatus) {
+            return base.Channel.CAL_ReflejantesNorma_ActualizarAsync(Tabla, IdUsuario, Estatus);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.NormaBE> CAL_ReflejantesNorma_Obtener() {
             return base.Channel.CAL_ReflejantesNorma_Obtener();
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.NormaBE>> CAL_ReflejantesNorma_ObtenerAsync() {
+            return base.Channel.CAL_ReflejantesNorma_ObtenerAsync();
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionBE> CAL_InspeccionInyeccion_Analisis(Hersan.Entidades.Calidad.CalidadBE Obj) {
             return base.Channel.CAL_InspeccionInyeccion_Analisis(Obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Inyeccion.InyeccionBE>> CAL_InspeccionInyeccion_AnalisisAsync(Hersan.Entidades.Calidad.CalidadBE Obj) {
+            return base.Channel.CAL_InspeccionInyeccion_AnalisisAsync(Obj);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadDetalleBE> CAL_InspeccionInyeccion_AnalisisDetalle(int Lista) {
             return base.Channel.CAL_InspeccionInyeccion_AnalisisDetalle(Lista);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadDetalleBE>> CAL_InspeccionInyeccion_AnalisisDetalleAsync(int Lista) {
+            return base.Channel.CAL_InspeccionInyeccion_AnalisisDetalleAsync(Lista);
+        }
+        
         public int PRO_Ensamble_Parametros_Guardar(Hersan.Entidades.Calidad.EnsambleParametrosBE Obj, System.Data.DataTable Detalle) {
             return base.Channel.PRO_Ensamble_Parametros_Guardar(Obj, Detalle);
+        }
+        
+        public System.Threading.Tasks.Task<int> PRO_Ensamble_Parametros_GuardarAsync(Hersan.Entidades.Calidad.EnsambleParametrosBE Obj, System.Data.DataTable Detalle) {
+            return base.Channel.PRO_Ensamble_Parametros_GuardarAsync(Obj, Detalle);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.EnsambleParametrosBE> PRO_Ensamble_Parametros_Obtener(Hersan.Entidades.Calidad.EnsambleParametrosBE Obj) {
             return base.Channel.PRO_Ensamble_Parametros_Obtener(Obj);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.EnsambleParametrosBE>> PRO_Ensamble_Parametros_ObtenerAsync(Hersan.Entidades.Calidad.EnsambleParametrosBE Obj) {
+            return base.Channel.PRO_Ensamble_Parametros_ObtenerAsync(Obj);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleBE> CAL_InspeccionEnsamble_Consultar(int Lista) {
             return base.Channel.CAL_InspeccionEnsamble_Consultar(Lista);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleBE>> CAL_InspeccionEnsamble_ConsultarAsync(int Lista) {
+            return base.Channel.CAL_InspeccionEnsamble_ConsultarAsync(Lista);
         }
         
         public int CAL_InspeccionEnsamble_Guardar(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj, System.Data.DataTable Detalle) {
             return base.Channel.CAL_InspeccionEnsamble_Guardar(Obj, Detalle);
         }
         
+        public System.Threading.Tasks.Task<int> CAL_InspeccionEnsamble_GuardarAsync(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj, System.Data.DataTable Detalle) {
+            return base.Channel.CAL_InspeccionEnsamble_GuardarAsync(Obj, Detalle);
+        }
+        
         public int CAL_InspeccionEnsamble_Actualizar(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj, System.Data.DataTable Detalle) {
             return base.Channel.CAL_InspeccionEnsamble_Actualizar(Obj, Detalle);
+        }
+        
+        public System.Threading.Tasks.Task<int> CAL_InspeccionEnsamble_ActualizarAsync(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj, System.Data.DataTable Detalle) {
+            return base.Channel.CAL_InspeccionEnsamble_ActualizarAsync(Obj, Detalle);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE> CAL_InspeccionEnsamble_Obtener(int Lista) {
             return base.Channel.CAL_InspeccionEnsamble_Obtener(Lista);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE>> CAL_InspeccionEnsamble_ObtenerAsync(int Lista) {
+            return base.Channel.CAL_InspeccionEnsamble_ObtenerAsync(Lista);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleBE> CAL_InspeccionEnsamble_Analisis(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj) {
             return base.Channel.CAL_InspeccionEnsamble_Analisis(Obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleBE>> CAL_InspeccionEnsamble_AnalisisAsync(Hersan.Entidades.Calidad.CalidadEnsambleBE Obj) {
+            return base.Channel.CAL_InspeccionEnsamble_AnalisisAsync(Obj);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE> CAL_InspeccionEnsamble_AnalisisDetalle(int Lista) {
             return base.Channel.CAL_InspeccionEnsamble_AnalisisDetalle(Lista);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE>> CAL_InspeccionEnsamble_AnalisisDetalleAsync(int Lista) {
+            return base.Channel.CAL_InspeccionEnsamble_AnalisisDetalleAsync(Lista);
+        }
+        
         public int CAL_ResguardoQA_Guardar(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle) {
             return base.Channel.CAL_ResguardoQA_Guardar(Obj, Detalle);
+        }
+        
+        public System.Threading.Tasks.Task<int> CAL_ResguardoQA_GuardarAsync(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle) {
+            return base.Channel.CAL_ResguardoQA_GuardarAsync(Obj, Detalle);
         }
         
         public int CAL_ResguardoQA_Actualizar(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle) {
             return base.Channel.CAL_ResguardoQA_Actualizar(Obj, Detalle);
         }
         
+        public System.Threading.Tasks.Task<int> CAL_ResguardoQA_ActualizarAsync(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, System.Data.DataTable Detalle) {
+            return base.Channel.CAL_ResguardoQA_ActualizarAsync(Obj, Detalle);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQA> CAL_ResguardoQA_Obtener(int IdProducto, string Fecha) {
             return base.Channel.CAL_ResguardoQA_Obtener(IdProducto, Fecha);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQA>> CAL_ResguardoQA_ObtenerAsync(int IdProducto, string Fecha) {
+            return base.Channel.CAL_ResguardoQA_ObtenerAsync(IdProducto, Fecha);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_Histograma(int Lista) {
             return base.Channel.CAL_AnalisisInyeccion_Histograma(Lista);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades>> CAL_AnalisisInyeccion_HistogramaAsync(int Lista) {
+            return base.Channel.CAL_AnalisisInyeccion_HistogramaAsync(Lista);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades> CAL_AnalisisInyeccion_GraficaControl(int Lista, string Fecha) {
             return base.Channel.CAL_AnalisisInyeccion_GraficaControl(Lista, Fecha);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasCavidades>> CAL_AnalisisInyeccion_GraficaControlAsync(int Lista, string Fecha) {
+            return base.Channel.CAL_AnalisisInyeccion_GraficaControlAsync(Lista, Fecha);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores> CAL_AnalisisInyeccion_Histograma_Historico(string Inicial, string Final) {
             return base.Channel.CAL_AnalisisInyeccion_Histograma_Historico(Inicial, Final);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores>> CAL_AnalisisInyeccion_Histograma_HistoricoAsync(string Inicial, string Final) {
+            return base.Channel.CAL_AnalisisInyeccion_Histograma_HistoricoAsync(Inicial, Final);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficaSeries> CAL_AnalisisInyeccion_GraficaSeries(string Inicial, string Final) {
             return base.Channel.CAL_AnalisisInyeccion_GraficaSeries(Inicial, Final);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficaSeries>> CAL_AnalisisInyeccion_GraficaSeriesAsync(string Inicial, string Final) {
+            return base.Channel.CAL_AnalisisInyeccion_GraficaSeriesAsync(Inicial, Final);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores> CAL_InspeccionEnsamble_Histograma(int Lista) {
             return base.Channel.CAL_InspeccionEnsamble_Histograma(Lista);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores>> CAL_InspeccionEnsamble_HistogramaAsync(int Lista) {
+            return base.Channel.CAL_InspeccionEnsamble_HistogramaAsync(Lista);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores> CAL_InspeccionEnsamble_HistogramaHistorico(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, string Inicial, string Final) {
             return base.Channel.CAL_InspeccionEnsamble_HistogramaHistorico(Obj, Inicial, Final);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadGraficasValores>> CAL_InspeccionEnsamble_HistogramaHistoricoAsync(Hersan.Entidades.Calidad.CalidadResguardoQA Obj, string Inicial, string Final) {
+            return base.Channel.CAL_InspeccionEnsamble_HistogramaHistoricoAsync(Obj, Inicial, Final);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle> CAL_ResguardoQA_Grafica(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final) {
             return base.Channel.CAL_ResguardoQA_Grafica(Item, Inicial, Final);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Calidad.CalidadResguardoQADetalle>> CAL_ResguardoQA_GraficaAsync(Hersan.Entidades.Calidad.CalidadResguardoQA Item, string Inicial, string Final) {
+            return base.Channel.CAL_ResguardoQA_GraficaAsync(Item, Inicial, Final);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Obtener(int IdEmpresa) {
             return base.Channel.APT_Almacenes_Obtener(IdEmpresa);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE>> APT_Almacenes_ObtenerAsync(int IdEmpresa) {
+            return base.Channel.APT_Almacenes_ObtenerAsync(IdEmpresa);
         }
         
         public int APT_Almacenes_Guardar(Hersan.Entidades.APT.AlmacenPTBE obj) {
             return base.Channel.APT_Almacenes_Guardar(obj);
         }
         
+        public System.Threading.Tasks.Task<int> APT_Almacenes_GuardarAsync(Hersan.Entidades.APT.AlmacenPTBE obj) {
+            return base.Channel.APT_Almacenes_GuardarAsync(obj);
+        }
+        
         public int APT_Almacenes_Actualizar(Hersan.Entidades.APT.AlmacenPTBE obj) {
             return base.Channel.APT_Almacenes_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> APT_Almacenes_ActualizarAsync(Hersan.Entidades.APT.AlmacenPTBE obj) {
+            return base.Channel.APT_Almacenes_ActualizarAsync(obj);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE> APT_Almacenes_Combo(int IdEmpresa) {
             return base.Channel.APT_Almacenes_Combo(IdEmpresa);
         }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.APT.AlmacenPTBE>> APT_Almacenes_ComboAsync(int IdEmpresa) {
+            return base.Channel.APT_Almacenes_ComboAsync(IdEmpresa);
+        }
+        
         public System.Collections.Generic.List<Hersan.Entidades.APT.UbicacionesBE> APT_Ubicacion_Obtener() {
             return base.Channel.APT_Ubicacion_Obtener();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.APT.UbicacionesBE>> APT_Ubicacion_ObtenerAsync() {
+            return base.Channel.APT_Ubicacion_ObtenerAsync();
         }
         
         public int APT_Ubicacion_Guardar(Hersan.Entidades.APT.UbicacionesBE obj) {
             return base.Channel.APT_Ubicacion_Guardar(obj);
         }
         
+        public System.Threading.Tasks.Task<int> APT_Ubicacion_GuardarAsync(Hersan.Entidades.APT.UbicacionesBE obj) {
+            return base.Channel.APT_Ubicacion_GuardarAsync(obj);
+        }
+        
         public int APT_Ubicacion_Actualizar(Hersan.Entidades.APT.UbicacionesBE obj) {
             return base.Channel.APT_Ubicacion_Actualizar(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> APT_Ubicacion_ActualizarAsync(Hersan.Entidades.APT.UbicacionesBE obj) {
+            return base.Channel.APT_Ubicacion_ActualizarAsync(obj);
         }
     }
 }

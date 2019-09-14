@@ -34,18 +34,21 @@ namespace Hersan.Datos.APT {
                                 obj.Id = int.Parse(reader["UBI_Id"].ToString());
                                 obj.Almacen.Id = int.Parse(reader["APT_Id"].ToString());
                                 obj.Almacen.Nombre = reader["APT_Nombre"].ToString();
+                                obj.Producto.Codigo = reader["Codigo"].ToString();
                                 obj.Producto.Producto.Id = int.Parse(reader["TPR_Id"].ToString());
                                 obj.Producto.Producto.Nombre = reader["Producto"].ToString();
                                 obj.Carcasa.Id = int.Parse(reader["IdCarcasa"].ToString());
                                 obj.Carcasa.Nombre = reader["Carcasa"].ToString();
-                                obj.Reflejante.Clave = reader["COM_Tipo"].ToString();
-                                obj.Reflejante.Nombre = reader["Reflejante"].ToString();                                
+                                obj.Reflejante.Tipo = reader["COM_Tipo"].ToString();
+                                obj.Reflejante.Nombre = reader["Reflejante"].ToString();
+                                obj.Reflejante.Clave = reader["IdComp"].ToString();
                                 obj.Rack = reader["UBI_Rack"].ToString();
                                 obj.Fila = int.Parse(reader["UBI_Fila"].ToString());
                                 obj.Columna = int.Parse(reader["UBI_Columna"].ToString());
                                 obj.Minimo = decimal.Parse(reader["UBI_Mínimo"].ToString());
                                 obj.Maximo = decimal.Parse(reader["UBI_Maximo"].ToString());
                                 obj.DatosUsuario.Estatus = bool.Parse(reader["UBI_Estatus"].ToString());
+                                
 
                                 oList.Add(obj);
                             }
@@ -64,8 +67,9 @@ namespace Hersan.Datos.APT {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_APT_UBICACION_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEmpresa", obj.Almacen.Empresa.Id);
                         cmd.Parameters.AddWithValue("@IdAlmacen", obj.Almacen.Id);
-                        cmd.Parameters.AddWithValue("@IdFicha", obj.Producto.Id);
+                        cmd.Parameters.AddWithValue("@IdProducto", obj.Producto.Id);
                         cmd.Parameters.AddWithValue("@IdColor", obj.Carcasa.Id);
                         cmd.Parameters.AddWithValue("@IdReflex", obj.Reflejante.Nombre);
                         cmd.Parameters.AddWithValue("@Rack", obj.Rack);

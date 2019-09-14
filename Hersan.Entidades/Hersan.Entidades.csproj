@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APT\AlmacenBE.cs" />
+    <Compile Include="APT\OrdenCompraBE.cs" />
     <Compile Include="APT\UbicacionesBE.cs" />
     <Compile Include="Calidad\CalidadBE.cs" />
     <Compile Include="Calidad\EnsambleBE.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Catalogos\PaisesBE.cs" />
     <Compile Include="CapitalHumano\PuestosBE.cs" />
     <Compile Include="CapitalHumano\TiposContratoBE.cs" />
+    <Compile Include="Catalogos\ProveedorBE.cs" />
     <Compile Include="Catalogos\ReflejantesBE.cs" />
     <Compile Include="Catalogos\RegimenSATBE.cs" />
     <Compile Include="Catalogos\TipoProductoBE.cs" />

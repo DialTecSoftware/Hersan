@@ -85,9 +85,9 @@ namespace Hersan.Ensamble.Service
         #endregion
 
         #region Precios
-        public int ENS_Precios_Guardar(DataTable oData, string Moneda, int IdUsuario)
+        public int ENS_Precios_Guardar(int IdEmpresa, DataTable oData, string Moneda, int IdUsuario)
         {
-            return new PreciosBP().ENS_Precios_Guardar(oData, Moneda, IdUsuario);
+            return new PreciosBP().ENS_Precios_Guardar(IdEmpresa, oData, Moneda, IdUsuario);
         }
         public List<PreciosBE> ENS_Precios_Obtener(string Moneda)
         {

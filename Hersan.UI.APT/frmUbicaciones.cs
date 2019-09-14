@@ -7,7 +7,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -20,6 +23,8 @@ namespace Hersan.UI.APT
         #region Variables
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
         private List<ProductoEnsambleBE> oProductos = new List<ProductoEnsambleBE>();
+        private List<ColoresBE> oCarcasas = new List<ColoresBE>();
+        private List<ReflejantesBE> oReflejantes = new List<ReflejantesBE>();
         #endregion
 
         public frmUbicaciones()
@@ -33,12 +38,8 @@ namespace Hersan.UI.APT
                 Grupo.GroupNames.Add("Almacen", ListSortDirection.Ascending);
                 this.gvDatos.GroupDescriptors.Add(Grupo);
 
-                System.Threading.Tasks.Task task = new System.Threading.Tasks.Task(() => { CargaAlmacenes(); });
-                task.RunSynchronously();
-
-                task = new System.Threading.Tasks.Task(() => { CargaProductos(); });
-                task.RunSynchronously();
-
+                CargaAlmacenes();
+                CargaProductos();
                 CargarDatos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -74,6 +75,7 @@ namespace Hersan.UI.APT
                 }
 
                 obj.Id = int.Parse(txtId.Text);
+                obj.Almacen.Empresa.Id = BaseWinBP.UsuarioLogueado.Empresa.Id;
                 obj.Almacen.Id = int.Parse(cboAlmacen.SelectedValue.ToString());
                 obj.Producto.Id = int.Parse(cboTipo.SelectedValue.ToString());
                 obj.Carcasa.Id = int.Parse(cboColores.SelectedValue.ToString());
@@ -159,18 +161,27 @@ namespace Hersan.UI.APT
             try {
                 if (cboTipo.SelectedValue != null) {
                     var Ficha = oProductos.Find(item => item.Producto.Id == int.Parse(cboTipo.SelectedValue.ToString()));
-                    /* COLORES DE CARCASA */
-                    cboColores.DisplayMember = "Nombre";
-                    cboColores.ValueMember = "Id";
-                    cboColores.DataSource = oEnsamble.ENS_CarcasasCotizacion_Combo(Ficha.Id);
-                    
-                    /* REFLEJANTES */
-                    cboReflejantes.DisplayMember = "Nombre";
-                    cboReflejantes.ValueMember = "Id";
-                    cboReflejantes.DataSource = oEnsamble.ENS_ReflejanteCotizacion_Combo(Ficha.Id);
+                    if (Ficha != null) { 
+                        /* COLORES DE CARCASA */
+                        oCarcasas = oEnsamble.ENS_CarcasasCotizacion_Combo(Ficha.Id);
+                        cboColores.DisplayMember = "Nombre";
+                        cboColores.ValueMember = "Id";
+                        cboColores.DataSource = oCarcasas;
+
+                        /* REFLEJANTES */
+                        oReflejantes = oEnsamble.ENS_ReflejanteCotizacion_Combo(Ficha.Id);
+                        cboReflejantes.DisplayMember = "Nombre";
+                        cboReflejantes.ValueMember = "Id";
+                        cboReflejantes.DataSource = oReflejantes;
+
+                        txtCavidades.Text = Ficha.Reflejantes.ToString();
+                    } else {
+                        RadMessageBox.Show("El producto seleccionado no existe o está incompletos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Info);
+                        cboTipo.SelectedIndex = 0;
+                    }
                 }
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrio un error al seleccionar el producto\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally {
                 oEnsamble = null;
             }
@@ -182,8 +193,12 @@ namespace Hersan.UI.APT
                     txtId.Text = e.CurrentRow.Cells["Id"].Value.ToString();
                     cboTipo.SelectedValue = int.Parse(e.CurrentRow.Cells["IdProducto"].Value.ToString());
                     cboColores.SelectedValue = int.Parse(e.CurrentRow.Cells["IdCarcasa"].Value.ToString());
-                    foreach (var item in e.CurrentRow.Cells["Reflejante"].Value.ToString().Split('-')) {
-                        cboReflejantes.Items[cboReflejantes.FindString(item)].Checked = true;
+                    foreach (var item in e.CurrentRow.Cells["IdComp"].Value.ToString().Split(',')) {
+                        foreach(var valor in cboReflejantes.Items) {
+                            if(int.Parse(valor.Value.ToString()) == int.Parse(item.ToString())) {
+                                cboReflejantes.Items[valor.Index].Checked = true;
+                            }
+                        }
                     }
                     cboRack.Text = e.CurrentRow.Cells["Rack"].Value.ToString();
                     spFila.Value = decimal.Parse(e.CurrentRow.Cells["Fila"].Value.ToString());
@@ -196,14 +211,29 @@ namespace Hersan.UI.APT
                 RadMessageBox.Show("Ocurrio un error al seleccionar el registro\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void CboReflejantes_ItemCheckedChanged(object sender, RadCheckedListDataItemEventArgs e)
+        {
+            try {
+                if(cboReflejantes.CheckedItems.Count > int.Parse(txtCavidades.Text)) {
+                    RadMessageBox.Show("Sólo puede seleccionar " + txtCavidades.Text + " Reflejante(s).", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    e.Item.Checked = false;
+                }         
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al seleccionar el reflejante\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
 
         private void CargaAlmacenes()
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
+                Task<List<AlmacenPTBE>> Aux = oEnsamble.APT_Almacenes_ComboAsync(BaseWinBP.UsuarioLogueado.Empresa.Id);
+                Aux.Wait();                
+
                 cboAlmacen.ValueMember = "Id";
                 cboAlmacen.DisplayMember = "Nombre";
-                cboAlmacen.DataSource = oEnsamble.APT_Almacenes_Combo(BaseWinBP.UsuarioLogueado.Empresa.Id);
+                cboAlmacen.DataSource = Aux.Result;
             } catch (Exception ex) {
                 throw ex;
             } finally {
@@ -214,9 +244,12 @@ namespace Hersan.UI.APT
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
-                oProductos = oEnsamble.ENS_ProductosCotizacion_Combo(true, "");
+                Task<List<ProductoEnsambleBE>> Aux = oEnsamble.ENS_ProductosCotizacion_ComboAsync(true, "");
+                Aux.Wait();
+                oProductos = Aux.Result;
+
                 cboTipo.DisplayMember = "Producto.Nombre";
-                cboTipo.ValueMember = "Id";
+                cboTipo.ValueMember = "Producto.Id";
                 cboTipo.DataSource = oProductos;
 
                 if (oProductos.Count > 0)
@@ -248,7 +281,10 @@ namespace Hersan.UI.APT
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
-                gvDatos.DataSource = oEnsamble.APT_Ubicacion_Obtener();
+                Task<List<UbicacionesBE>> Aux = oEnsamble.APT_Ubicacion_ObtenerAsync();
+                Aux.Wait();
+
+                gvDatos.DataSource = Aux.Result;
             } catch (Exception ex) {
                 throw ex;
             } finally {
@@ -256,5 +292,6 @@ namespace Hersan.UI.APT
             }
         }
 
+        
     }
 }

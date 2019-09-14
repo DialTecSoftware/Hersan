@@ -13,13 +13,14 @@ namespace Hersan.Datos.Ensamble
         const string CONS_USP_ENS_PRECIOS_OBTENER = "ENS_Precios_Obtener";
         #endregion
 
-        public int ENS_Precios_Guardar(DataTable oData, string Moneda, int IdUsuario)
+        public int ENS_Precios_Guardar(int IdEmpresa, DataTable oData, string Moneda, int IdUsuario)
         {
             int Result = 0;
             try {
                 using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(CONS_USP_ENS_PRECIOS_GUARDAR, conn)) {
+                        cmd.Parameters.AddWithValue("@IdEmpresa", IdEmpresa);
                         cmd.Parameters.AddWithValue("@Precios", oData);
                         cmd.Parameters.AddWithValue("@Moneda", Moneda);
                         cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);

@@ -1,6 +1,7 @@
 ﻿using Hersan.Entidades.Ensamble;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -20,6 +21,9 @@ namespace Hersan.UI.APT
         private void FrmOrdenCompra_Load(object sender, EventArgs e)
         {
             try {
+                dtFecha.MinDate = DateTime.Today.AddDays(2);
+                dtFecha.Value = DateTime.Today;
+
                 CargaProductos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
@@ -86,15 +90,28 @@ namespace Hersan.UI.APT
                 RadMessageBox.Show("Ocurrió un error al agregar el producto a la Orden de Compra\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-
+        private void CboReflejantes_ItemCheckedChanged(object sender, Telerik.WinControls.UI.RadCheckedListDataItemEventArgs e)
+        {
+            try {
+                if (cboReflejantes.CheckedItems.Count > int.Parse(txtCavidades.Text)) {
+                    RadMessageBox.Show("Sólo puede seleccionar " + txtCavidades.Text + " Reflejante(s).", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    e.Item.Checked = false;
+                }
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrio un error al seleccionar el reflejante\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
 
         private void CargaProductos()
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
-                oProductos = oEnsamble.ENS_ProductosCotizacion_Combo(true, "");
+                Task<List<ProductoEnsambleBE>> Aux = oEnsamble.ENS_ProductosCotizacion_ComboAsync(true, "");
+                Aux.Wait();
+                oProductos = Aux.Result;
+                
                 cboTipo.DisplayMember = "Producto.Nombre";
-                cboTipo.ValueMember = "Id";
+                cboTipo.ValueMember = "Producto.Id";
                 cboTipo.DataSource = oProductos;
 
                 if (oProductos.Count > 0)
@@ -105,5 +122,7 @@ namespace Hersan.UI.APT
                 oEnsamble = null;
             }
         }
+
+       
     }
 }

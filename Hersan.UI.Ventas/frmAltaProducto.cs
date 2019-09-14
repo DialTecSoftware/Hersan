@@ -438,7 +438,7 @@ namespace Hersan.UI.Ensamble
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
                 ProductoEnsambleBE obj = new ProductoEnsambleBE();
-                //obj.Id = int.Parse(txtId.Text);
+                obj.Id = int.Parse(txtId.Text);
                 obj.Entidad.Id = int.Parse(cboEntidad.SelectedValue.ToString());
                 obj.Familia.Id = int.Parse(cboFamilia.SelectedValue.ToString());
                 obj.Producto.Id = int.Parse(cboTipo.SelectedValue.ToString());                

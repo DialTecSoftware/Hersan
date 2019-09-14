@@ -10,6 +10,7 @@ namespace Hersan.Entidades.Ensamble
         public ProductoEnsambleBE()
         {
             Id = 0;
+            Codigo = string.Empty;
             Entidad = new EntidadesBE();
             Familia = new FamiliasBE();
             Producto = new TipoProductoBE();
@@ -24,6 +25,7 @@ namespace Hersan.Entidades.Ensamble
         }
 
         public int Id { get; set; }
+        public string Codigo { get; set; }
         public EntidadesBE Entidad { get; set; }
         public FamiliasBE Familia { get; set; }
         public TipoProductoBE Producto { get; set; }
@@ -53,7 +55,5 @@ namespace Hersan.Entidades.Ensamble
         public string Tipo { get; set; }
         public string Concepto { get; set; }
     }
-
-
-    
+           
 }

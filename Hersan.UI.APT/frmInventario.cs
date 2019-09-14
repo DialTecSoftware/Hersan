@@ -1,7 +1,9 @@
-﻿using Hersan.Entidades.Catalogos;
+﻿using Hersan.Entidades.APT;
+using Hersan.Entidades.Catalogos;
 using Hersan.Negocio;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -41,16 +43,19 @@ namespace Hersan.UI.APT
                 RadMessageBox.Show("Ocurrió un error al cerrar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
-        private void cboProductos_ItemCheckedChanged(object sender, Telerik.WinControls.UI.RadCheckedListDataItemEventArgs e)
+        private void CboFamilias_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
+            oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                if (cboFamilias.CheckedItems.Count == 1) {
-                    if (e.Item.Checked) {
-
-                    }
+                if (cboFamilias.SelectedValue != null) {
+                    cboTipo.DisplayMember = "Nombre";
+                    cboTipo.ValueMember = "Id";
+                    cboTipo.DataSource = oCatalogos.ENS_TipoProducto_Combo(int.Parse(cboFamilias.SelectedValue.ToString()));
                 }
             } catch (Exception ex) {
-                throw ex;
+                RadMessageBox.Show("Ocurrió un error al seleccionar la familia\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            } finally {
+                oCatalogos = null;
             }
         }
 
@@ -58,9 +63,12 @@ namespace Hersan.UI.APT
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             try {
+                Task<List<AlmacenPTBE>> Aux = oEnsamble.APT_Almacenes_ComboAsync(BaseWinBP.UsuarioLogueado.Empresa.Id);
+                Aux.Wait();
+
                 cboAlmacen.ValueMember = "Id";
                 cboAlmacen.DisplayMember = "Nombre";
-                cboAlmacen.DataSource = oEnsamble.APT_Almacenes_Combo(BaseWinBP.UsuarioLogueado.Empresa.Id);
+                cboAlmacen.DataSource = Aux.Result;
             } catch (Exception ex) {
                 throw ex;
             } finally {
@@ -71,7 +79,10 @@ namespace Hersan.UI.APT
         {
             oCatalogos = new WCF_Catalogos.Hersan_CatalogosClient();
             try {
-                oFamilias = oCatalogos.ENS_Familias_Combo(0);
+                Task<List<FamiliasBE>> Aux = oCatalogos.ENS_Familias_ComboAsync(0);
+                Aux.Wait();
+
+                oFamilias = Aux.Result;
                 cboFamilias.DisplayMember = "Nombre";
                 cboFamilias.ValueMember = "Id";
                 cboFamilias.DataSource = oFamilias;
@@ -82,6 +93,6 @@ namespace Hersan.UI.APT
                 oCatalogos = null;
             }
         }
-       
+        
     }
 }

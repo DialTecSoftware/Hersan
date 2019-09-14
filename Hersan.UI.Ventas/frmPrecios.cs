@@ -82,7 +82,7 @@ namespace Hersan.UI.Ensamble
                         #endregion
 
                         //PROCESO DE GUARDADO Y ACTUALIZACION
-                        int Result = oEnsamble.ENS_Precios_Guardar(oData, cboMonedas.SelectedValue.ToString(), BaseWinBP.UsuarioLogueado.ID);
+                        int Result = oEnsamble.ENS_Precios_Guardar(BaseWinBP.UsuarioLogueado.Empresa.Id, oData, cboMonedas.SelectedValue.ToString(), BaseWinBP.UsuarioLogueado.ID);
                         if (Result == 0) {
                             RadMessageBox.Show("Ocurrió un error al guardar los precios", this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
                         } else {

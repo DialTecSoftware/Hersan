@@ -274,6 +274,9 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble42.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble43.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble5.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -283,6 +286,8 @@
     <None Include="Connected Services\WCF_Ensamble\Hersan_Ensamble7.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Hersan.Entidades.APT.AlmacenPTBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.APT.UbicacionesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadEnsambleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Calidad.CalidadEnsambleDetalleBE.datasource" />
@@ -333,6 +338,7 @@
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.InyeccionDetalleBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.ParametrosInyeccion.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TemperaturasBE.datasource" />
+    <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TemperaturasConsBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Inyeccion.TempMoldesBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.MenusBE.datasource" />
     <None Include="Properties\DataSources\Hersan.Entidades.Seguridad.RolesBE.datasource" />

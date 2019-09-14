@@ -71,6 +71,8 @@ namespace Hersan.Ensamble.Contract
         List<ColoresBE> ENS_CarcasasCotizacion_Combo(int IdFicha);
         [OperationContract]
         List<ReflejantesBE> ENS_ReflejanteCotizacion_Combo(int IdFicha);
+        [OperationContract]
+        string ENS_CodigoProducto_Obtener(int IdProducto, int IdCarcasa, string Reflejantes);
         #endregion
 
         #region Cotizaciones y Pedidos

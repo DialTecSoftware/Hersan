@@ -16,6 +16,7 @@ namespace Hersan.Datos.Ensamble
         const string CONS_ENS_PRODUCTOSCOTIZACION_COMBO = "ENS_ProductosCotizacion_Combo";
         const string CONS_ENS_CARCASASCOTIZACION_COMBO = "ENS_CarcasasCotizacion_Combo";
         const string CONS_ENS_REFLEJANTECOTIZACION_COMBO = "ENS_ReflejanteCotizacion_Combo";
+        const string CONS_ENS_CODIGOPRODUCTO_OBTENER = "ENS_CodigoProducto_Obtener";
         #endregion
 
         public int ENS_ProductosFicha_Guardar(DataSet Tablas, string Colores, string Reflejantes, string Accesorios, int IdUsuario)
@@ -217,6 +218,27 @@ namespace Hersan.Datos.Ensamble
                     }
                 }
                 return oList;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public string ENS_CodigoProducto_Obtener(int IdProducto, int IdCarcasa, string Reflejantes)
+        {
+            string Result = string.Empty;
+            try {
+                using (SqlConnection conn = new SqlConnection(RecuperarCadenaDeConexion("coneccionSQL"))) {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(CONS_ENS_CODIGOPRODUCTO_OBTENER, conn)) {
+                        cmd.Parameters.AddWithValue("@IdProducto", IdProducto);
+                        cmd.Parameters.AddWithValue("@IdCarcasa", IdCarcasa);
+                        cmd.Parameters.AddWithValue("@Reflex", Reflejantes);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Result = cmd.ExecuteScalar().ToString();
+                    }
+                }
+                return Result;
             } catch (Exception ex) {
                 throw ex;
             }

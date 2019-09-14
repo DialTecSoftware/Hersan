@@ -22,7 +22,6 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <UpdateUrl>http://localhost/Hersan/</UpdateUrl>
     <ProductName>Sistema Integral Hersan HiTec</ProductName>
     <PublisherName>Sistema Integral Hersan HiTec</PublisherName>
     <SuiteName>Sistema Integral Hersan HiTec</SuiteName>

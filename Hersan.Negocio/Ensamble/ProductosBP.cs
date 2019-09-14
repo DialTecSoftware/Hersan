@@ -9,8 +9,7 @@ using System.IO;
 
 namespace Hersan.Negocio.Ensamble
 {
-    public class ProductosBP
-    {
+    public class ProductosBP {
         private string RutaImagen = @ConfigurationManager.AppSettings["RutaImagen"];
 
         private void GuardarImagen(int IdProducto, Byte[] Imagen)
@@ -49,14 +48,14 @@ namespace Hersan.Negocio.Ensamble
             try {
                 Tablas.Tables["Dimensiones"].Rows[0]["PFD_RutaImagen"] = RutaImagen;
                 int IdProducto = new ProductosDA().ENS_ProductosFicha_Guardar(Tablas, Colores, Reflejantes, Accesorios, IdUsuario);
-                
+
                 if (IdProducto > 0 && Imagen != null) {
                     GuardarImagen(IdProducto, Imagen);
                 }
                 return IdProducto;
             } catch (Exception ex) {
                 throw ex;
-            }            
+            }
         }
         public int ENS_ProductosFicha_Actualizar(DataSet Tablas, byte[] Imagen, string Colores, string Reflejantes, string Accesorios, int IdUsuario, bool Estatus)
         {
@@ -95,6 +94,10 @@ namespace Hersan.Negocio.Ensamble
         public List<ReflejantesBE> ENS_ReflejanteCotizacion_Combo(int IdFicha)
         {
             return new ProductosDA().ENS_ReflejanteCotizacion_Combo(IdFicha);
+        }
+        public string ENS_CodigoProducto_Obtener(int IdProducto, int IdCarcasa, string Reflejantes)
+        {
+            return new ProductosDA().ENS_CodigoProducto_Obtener(IdProducto, IdCarcasa, Reflejantes);
         }
     }
 }

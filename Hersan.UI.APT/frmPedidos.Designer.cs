@@ -190,7 +190,7 @@
             this.toolPedidos.Location = new System.Drawing.Point(1, 22);
             this.toolPedidos.Name = "toolPedidos";
             this.toolPedidos.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolPedidos.Size = new System.Drawing.Size(769, 359);
+            this.toolPedidos.Size = new System.Drawing.Size(769, 302);
             this.toolPedidos.Text = "Pedidos";
             this.toolPedidos.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide;
             // 
@@ -303,7 +303,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(769, 359);
+            this.gvDatos.Size = new System.Drawing.Size(769, 302);
             this.gvDatos.TabIndex = 1;
             this.gvDatos.CurrentRowChanged += new Telerik.WinControls.UI.CurrentRowChangedEventHandler(this.gvDatos_CurrentRowChanged);
             // 
@@ -318,9 +318,9 @@
             // 
             this.toolTabStrip2.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.toolTabStrip2.SelectedIndex = 0;
-            this.toolTabStrip2.Size = new System.Drawing.Size(771, 383);
-            this.toolTabStrip2.SizeInfo.AbsoluteSize = new System.Drawing.Size(200, 383);
-            this.toolTabStrip2.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, 183);
+            this.toolTabStrip2.Size = new System.Drawing.Size(771, 326);
+            this.toolTabStrip2.SizeInfo.AbsoluteSize = new System.Drawing.Size(200, 326);
+            this.toolTabStrip2.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, 126);
             this.toolTabStrip2.TabIndex = 2;
             this.toolTabStrip2.TabStop = false;
             // 
@@ -332,9 +332,9 @@
             // 
             // 
             this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentContainer1.SizeInfo.AbsoluteSize = new System.Drawing.Size(200, 110);
+            this.documentContainer1.SizeInfo.AbsoluteSize = new System.Drawing.Size(200, 169);
             this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
-            this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, -80);
+            this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, -23);
             this.documentContainer1.TabIndex = 3;
             // 
             // documentTabStrip1
@@ -348,7 +348,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(771, 112);
+            this.documentTabStrip1.Size = new System.Drawing.Size(771, 169);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             // 
@@ -360,7 +360,7 @@
             this.docDetalle.Location = new System.Drawing.Point(6, 29);
             this.docDetalle.Name = "docDetalle";
             this.docDetalle.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.docDetalle.Size = new System.Drawing.Size(759, 77);
+            this.docDetalle.Size = new System.Drawing.Size(759, 134);
             this.docDetalle.Text = "Detalle";
             this.docDetalle.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -421,7 +421,7 @@
             this.gvDetalle.Name = "gvDetalle";
             this.gvDetalle.ShowGroupPanel = false;
             this.gvDetalle.ShowNoDataText = false;
-            this.gvDetalle.Size = new System.Drawing.Size(759, 77);
+            this.gvDetalle.Size = new System.Drawing.Size(759, 134);
             this.gvDetalle.TabIndex = 3;
             // 
             // commandBarStripElement2

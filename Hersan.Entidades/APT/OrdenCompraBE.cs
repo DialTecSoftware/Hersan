@@ -1,15 +1,15 @@
 ﻿using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Comun;
+using Hersan.Entidades.Ensamble;
 using System;
 using System.Collections.Generic;
 
-namespace Hersan.Entidades.APT {
-    public class OrdenCompraBE 
+namespace Hersan.Entidades.APT 
     {
+    public class OrdenCompraBE {
         public OrdenCompraBE()
         {
             Id = 0;
-            Almacen = new AlmacenPTBE();
             Proveedor = new ProveedorBE();
             FEntrega = DateTime.Today;
             Enviada = false;
@@ -17,7 +17,6 @@ namespace Hersan.Entidades.APT {
             DatosUsuario = new GeneralBE();
         }
         public int Id { get; set; }
-        public AlmacenPTBE Almacen { get; set; }
         public ProveedorBE Proveedor { get; set; }
         public DateTime FEntrega { get; set; }
         public bool Enviada { get; set; }
@@ -31,7 +30,7 @@ namespace Hersan.Entidades.APT {
         {
             Sel = false;
             Id = 0;
-            Producto = new TipoProductoBE();
+            Producto = new ProductoEnsambleBE();
             Carcasa = new ColoresBE();
             Sugerido = 0;
             Solicitado = 0;
@@ -44,7 +43,7 @@ namespace Hersan.Entidades.APT {
 
         public bool Sel { get; set; }
         public int Id { get; set; }
-        public TipoProductoBE Producto { get; set; }
+        public ProductoEnsambleBE Producto { get; set; }
         public ColoresBE Carcasa { get; set; }
         public int Sugerido { get; set; }
         public int Solicitado { get; set; }

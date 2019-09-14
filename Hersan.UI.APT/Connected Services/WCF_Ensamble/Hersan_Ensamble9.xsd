@@ -27,11 +27,14 @@
   <xs:element name="ArrayOfUbicacionesBE" nillable="true" type="tns:ArrayOfUbicacionesBE" />
   <xs:complexType name="UbicacionesBE">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Almacen" nillable="true" type="tns:AlmacenPTBE" />
       <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Carcasa" nillable="true" type="q3:ColoresBE" />
       <xs:element minOccurs="0" name="Columna" type="xs:int" />
       <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Comun" minOccurs="0" name="DatosUsuario" nillable="true" type="q4:GeneralBE" />
       <xs:element minOccurs="0" name="Fila" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Maximo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Minimo" type="xs:decimal" />
       <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Ensamble" minOccurs="0" name="Producto" nillable="true" type="q5:ProductoEnsambleBE" />
       <xs:element minOccurs="0" name="Rack" nillable="true" type="xs:string" />
       <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="Reflejante" nillable="true" type="q6:ReflejantesBE" />

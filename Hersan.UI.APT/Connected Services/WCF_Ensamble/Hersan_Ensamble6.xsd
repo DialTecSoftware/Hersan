@@ -239,6 +239,7 @@
   <xs:element name="ENS_Precios_Guardar">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="IdEmpresa" type="xs:int" />
         <xs:element minOccurs="0" name="oData" nillable="true">
           <xs:complexType>
             <xs:annotation>
@@ -395,6 +396,22 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Hersan.Entidades.Catalogos" minOccurs="0" name="ENS_ReflejanteCotizacion_ComboResult" nillable="true" type="q20:ArrayOfReflejantesBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_CodigoProducto_Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+        <xs:element minOccurs="0" name="IdCarcasa" type="xs:int" />
+        <xs:element minOccurs="0" name="Reflejantes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ENS_CodigoProducto_ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ENS_CodigoProducto_ObtenerResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

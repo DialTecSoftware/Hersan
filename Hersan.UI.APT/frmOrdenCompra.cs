@@ -1,4 +1,5 @@
-﻿using Hersan.Entidades.Ensamble;
+﻿using Hersan.Entidades.APT;
+using Hersan.Entidades.Ensamble;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Hersan.UI.APT
         #region Variables
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
         private List<ProductoEnsambleBE> oProductos = new List<ProductoEnsambleBE>();
+        private List<OrdenCompraDetalleBE> oDetalle = new List<OrdenCompraDetalleBE>();
         #endregion
 
         public frmOrdenCompra()
@@ -84,11 +86,34 @@ namespace Hersan.UI.APT
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
+            string IdComp = string.Empty;
+            string Reflex = string.Empty;
             try {
+                if (cboTipo.SelectedValue != null && cboColores.SelectedValue != null && cboReflejantes.CheckedItems.Count > 0) {
+                    gvDatos.DataSource = null;
 
+                    OrdenCompraDetalleBE obj = new OrdenCompraDetalleBE();
+                    obj.Producto.Producto.Id = int.Parse(cboTipo.SelectedValue.ToString());
+                    obj.Producto.Producto.Nombre = cboTipo.Text;
+                    obj.Carcasa.Id = int.Parse(cboColores.SelectedValue.ToString());
+                    obj.Carcasa.Nombre = cboColores.Text;
+
+                    foreach (var item in cboReflejantes.CheckedItems) {
+                        IdComp += item.Value.ToString() + ",";
+                        Reflex += item.Text + ",";
+                    }
+                    Task<string> Aux = oEnsamble.ENS_CodigoProducto_ObtenerAsync(obj.Producto.Producto.Id, obj.Carcasa.Id, IdComp);
+                    obj.Producto.Codigo = Aux.Result;
+                    obj.Sugerido = int.Parse(spSugerido.Value.ToString());
+                    obj.Solicitado = int.Parse(spSolicitado.Value.ToString());
+
+                    oDetalle.Add(obj);
+                }
+                gvDatos.DataSource = oDetalle;
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al agregar el producto a la Orden de Compra\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
+            } finally { oEnsamble = null; }
         }
         private void CboReflejantes_ItemCheckedChanged(object sender, Telerik.WinControls.UI.RadCheckedListDataItemEventArgs e)
         {

@@ -106,10 +106,10 @@ namespace Hersan.UI.APT.WCF_Ensamble {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Ensamble.ServiciosBE>> ENS_ServiciosCotizacion_ComboAsync(string Moneda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_GuardarResponse")]
-        int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario);
+        int ENS_Precios_Guardar(int IdEmpresa, System.Data.DataTable oData, string Moneda, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_GuardarResponse")]
-        System.Threading.Tasks.Task<int> ENS_Precios_GuardarAsync(System.Data.DataTable oData, string Moneda, int IdUsuario);
+        System.Threading.Tasks.Task<int> ENS_Precios_GuardarAsync(int IdEmpresa, System.Data.DataTable oData, string Moneda, int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Precios_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Precios_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener(string Moneda);
@@ -152,6 +152,12 @@ namespace Hersan.UI.APT.WCF_Ensamble {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_Combo", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_ComboResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE>> ENS_ReflejanteCotizacion_ComboAsync(int IdFicha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_CodigoProducto_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_CodigoProducto_ObtenerResponse")]
+        string ENS_CodigoProducto_Obtener(int IdProducto, int IdCarcasa, string Reflejantes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_CodigoProducto_Obtener", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_CodigoProducto_ObtenerResponse")]
+        System.Threading.Tasks.Task<string> ENS_CodigoProducto_ObtenerAsync(int IdProducto, int IdCarcasa, string Reflejantes);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Guardar", ReplyAction="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_GuardarResponse")]
         int ENS_Cotizacion_Guardar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle);
@@ -615,12 +621,12 @@ namespace Hersan.UI.APT.WCF_Ensamble {
             return base.Channel.ENS_ServiciosCotizacion_ComboAsync(Moneda);
         }
         
-        public int ENS_Precios_Guardar(System.Data.DataTable oData, string Moneda, int IdUsuario) {
-            return base.Channel.ENS_Precios_Guardar(oData, Moneda, IdUsuario);
+        public int ENS_Precios_Guardar(int IdEmpresa, System.Data.DataTable oData, string Moneda, int IdUsuario) {
+            return base.Channel.ENS_Precios_Guardar(IdEmpresa, oData, Moneda, IdUsuario);
         }
         
-        public System.Threading.Tasks.Task<int> ENS_Precios_GuardarAsync(System.Data.DataTable oData, string Moneda, int IdUsuario) {
-            return base.Channel.ENS_Precios_GuardarAsync(oData, Moneda, IdUsuario);
+        public System.Threading.Tasks.Task<int> ENS_Precios_GuardarAsync(int IdEmpresa, System.Data.DataTable oData, string Moneda, int IdUsuario) {
+            return base.Channel.ENS_Precios_GuardarAsync(IdEmpresa, oData, Moneda, IdUsuario);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Ensamble.PreciosBE> ENS_Precios_Obtener(string Moneda) {
@@ -677,6 +683,14 @@ namespace Hersan.UI.APT.WCF_Ensamble {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Hersan.Entidades.Catalogos.ReflejantesBE>> ENS_ReflejanteCotizacion_ComboAsync(int IdFicha) {
             return base.Channel.ENS_ReflejanteCotizacion_ComboAsync(IdFicha);
+        }
+        
+        public string ENS_CodigoProducto_Obtener(int IdProducto, int IdCarcasa, string Reflejantes) {
+            return base.Channel.ENS_CodigoProducto_Obtener(IdProducto, IdCarcasa, Reflejantes);
+        }
+        
+        public System.Threading.Tasks.Task<string> ENS_CodigoProducto_ObtenerAsync(int IdProducto, int IdCarcasa, string Reflejantes) {
+            return base.Channel.ENS_CodigoProducto_ObtenerAsync(IdProducto, IdCarcasa, Reflejantes);
         }
         
         public int ENS_Cotizacion_Guardar(Hersan.Entidades.Ensamble.PedidosBE obj, System.Data.DataTable oDetalle) {

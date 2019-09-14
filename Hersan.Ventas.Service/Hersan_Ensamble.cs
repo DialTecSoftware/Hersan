@@ -120,6 +120,10 @@ namespace Hersan.Ensamble.Service
         {
             return new ProductosBP().ENS_ReflejanteCotizacion_Combo(IdFicha);
         }
+        public string ENS_CodigoProducto_Obtener(int IdProducto, int IdCarcasa, string Reflejantes)
+        {
+            return new ProductosBP().ENS_CodigoProducto_Obtener(IdProducto, IdCarcasa, Reflejantes);
+        }
         #endregion
 
         #region Cotizaciones y Pedidos

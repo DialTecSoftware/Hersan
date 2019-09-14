@@ -159,6 +159,12 @@
   <wsdl:message name="IHersan_Ensamble_ENS_ReflejanteCotizacion_Combo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ENS_ReflejanteCotizacion_ComboResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_ENS_CodigoProducto_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_CodigoProducto_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Ensamble_ENS_CodigoProducto_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ENS_CodigoProducto_ObtenerResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_Ensamble_ENS_Cotizacion_Guardar_InputMessage">
     <wsdl:part name="parameters" element="tns:ENS_Cotizacion_Guardar" />
   </wsdl:message>
@@ -557,6 +563,10 @@
     <wsdl:operation name="ENS_ReflejanteCotizacion_Combo">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_Combo" message="tns:IHersan_Ensamble_ENS_ReflejanteCotizacion_Combo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_ComboResponse" message="tns:IHersan_Ensamble_ENS_ReflejanteCotizacion_Combo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ENS_CodigoProducto_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_CodigoProducto_Obtener" message="tns:IHersan_Ensamble_ENS_CodigoProducto_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_CodigoProducto_ObtenerResponse" message="tns:IHersan_Ensamble_ENS_CodigoProducto_Obtener_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ENS_Cotizacion_Guardar">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Ensamble/ENS_Cotizacion_Guardar" message="tns:IHersan_Ensamble_ENS_Cotizacion_Guardar_InputMessage" />
@@ -966,6 +976,15 @@
     </wsdl:operation>
     <wsdl:operation name="ENS_ReflejanteCotizacion_Combo">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ENS_ReflejanteCotizacion_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENS_CodigoProducto_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Ensamble/ENS_CodigoProducto_Obtener" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

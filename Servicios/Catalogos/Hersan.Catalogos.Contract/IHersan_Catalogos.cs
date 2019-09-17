@@ -281,5 +281,14 @@ namespace Hersan.Catalogos.Contract
         [OperationContract]
         List<MonedasBE> ABC_Monedas_Combo();
         #endregion
+
+        #region Proveedores
+        [OperationContract]
+        int ABC_Proveedores_Guardar(ProveedorBE obj);
+        [OperationContract]
+        int ABC_Proveedores_Actualizar(ProveedorBE obj);
+        [OperationContract]
+        List<ProveedorBE> ABC_Proveedores_Obtener(int IdEmpresa);
+        #endregion
     }
 }

@@ -210,6 +210,8 @@ namespace Hersan.Datos.Ensamble
 
                                 obj.Id = int.Parse(reader["COM_Id"].ToString());
                                 obj.Clave = reader["COM_Clave"].ToString();
+                                obj.Tipo = reader["COM_Tipo"].ToString();
+                                obj.Color.Nombre = reader["COL_Nombre"].ToString();
                                 obj.Nombre = reader["Reflejante"].ToString();
 
                                 oList.Add(obj);

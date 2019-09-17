@@ -237,7 +237,7 @@ namespace Hersan.UI.Ensamble
 
                 ActualizaGrid();
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrió un error al eliminar el producto y/o servicio\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void btnTodos_Click(object sender, EventArgs e)
@@ -260,7 +260,7 @@ namespace Hersan.UI.Ensamble
 
                 ActualizaGrid();
             } catch (Exception ex) {
-                RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("Ocurrió un error al eliminar los productos y/o servicios\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
         private void txtId_KeyDown(object sender, KeyEventArgs e)

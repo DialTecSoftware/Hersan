@@ -24,10 +24,10 @@ namespace Hersan.UI.Catalogos
         private void frmEmpresas_Load(object sender, EventArgs e)
         {
             try {
-                LimpiarCampos();
-                CargarDatos();
+                LimpiarCampos();                
                 CargaEstados();
                 CargaRegimen();
+                CargarDatos();
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al cargar la pantalla\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
@@ -196,10 +196,10 @@ namespace Hersan.UI.Catalogos
                         txtInterior.Text = obj.NoInterior;
                         txtRFC.Text = obj.RFC;
                         txtTelefono.Text = obj.Telefonos;
+                        cboRegimen.SelectedValue = obj.RegimenFiscal.Id;
+                        cboEstado.SelectedValue = obj.Estado.Id;
                         cboCiudad.SelectedValue = obj.Ciudad.Id;
                         cboColonia.SelectedValue = obj.Colonia.Id;
-                        cboEstado.SelectedValue = obj.Estado.Id;
-                        cboRegimen.SelectedValue = obj.RegimenFiscal.Id;
                     }
                 }
             } catch (Exception ex) {

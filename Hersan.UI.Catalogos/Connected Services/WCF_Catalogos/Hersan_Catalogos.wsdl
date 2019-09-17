@@ -59,6 +59,24 @@
   <wsdl:message name="IHersan_Catalogos_ABC_Monedas_Combo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ABC_Monedas_ComboResponse" />
   </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Proveedores_Guardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Proveedores_Guardar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Proveedores_Guardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Proveedores_GuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Proveedores_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Proveedores_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Proveedores_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Proveedores_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Proveedores_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Proveedores_Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IHersan_Catalogos_ABC_Proveedores_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ABC_Proveedores_ObtenerResponse" />
+  </wsdl:message>
   <wsdl:message name="IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage">
     <wsdl:part name="parameters" element="tns:ABCEmpresas_Obtener" />
   </wsdl:message>
@@ -598,6 +616,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo" message="tns:IHersan_Catalogos_ABC_Monedas_Combo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ComboResponse" message="tns:IHersan_Catalogos_ABC_Monedas_Combo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ABC_Proveedores_Guardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Guardar" message="tns:IHersan_Catalogos_ABC_Proveedores_Guardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_GuardarResponse" message="tns:IHersan_Catalogos_ABC_Proveedores_Guardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Proveedores_Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Actualizar" message="tns:IHersan_Catalogos_ABC_Proveedores_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_ActualizarResponse" message="tns:IHersan_Catalogos_ABC_Proveedores_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Proveedores_Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Obtener" message="tns:IHersan_Catalogos_ABC_Proveedores_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_ObtenerResponse" message="tns:IHersan_Catalogos_ABC_Proveedores_Obtener_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ABCEmpresas_Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_ObtenerResponse" message="tns:IHersan_Catalogos_ABCEmpresas_Obtener_OutputMessage" />
@@ -998,6 +1028,33 @@
     </wsdl:operation>
     <wsdl:operation name="ABC_Monedas_Combo">
       <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Proveedores_Guardar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Guardar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Proveedores_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Proveedores_Obtener">
+      <soap12:operation soapAction="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Obtener" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

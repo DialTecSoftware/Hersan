@@ -37,6 +37,15 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_Combo", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Monedas_ComboResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Combo();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Guardar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_GuardarResponse")]
+        int ABC_Proveedores_Guardar(Hersan.Entidades.Catalogos.ProveedorBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Actualizar", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_ActualizarResponse")]
+        int ABC_Proveedores_Actualizar(Hersan.Entidades.Catalogos.ProveedorBE obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABC_Proveedores_ObtenerResponse")]
+        System.Collections.Generic.List<Hersan.Entidades.Catalogos.ProveedorBE> ABC_Proveedores_Obtener(int IdEmpresa);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_Obtener", ReplyAction="http://tempuri.org/IHersan_Catalogos/ABCEmpresas_ObtenerResponse")]
         System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE> ABCEmpresas_Obtener(int IdEmpresa);
         
@@ -346,6 +355,18 @@ namespace Hersan.UI.Catalogos.WCF_Catalogos {
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.MonedasBE> ABC_Monedas_Combo() {
             return base.Channel.ABC_Monedas_Combo();
+        }
+        
+        public int ABC_Proveedores_Guardar(Hersan.Entidades.Catalogos.ProveedorBE obj) {
+            return base.Channel.ABC_Proveedores_Guardar(obj);
+        }
+        
+        public int ABC_Proveedores_Actualizar(Hersan.Entidades.Catalogos.ProveedorBE obj) {
+            return base.Channel.ABC_Proveedores_Actualizar(obj);
+        }
+        
+        public System.Collections.Generic.List<Hersan.Entidades.Catalogos.ProveedorBE> ABC_Proveedores_Obtener(int IdEmpresa) {
+            return base.Channel.ABC_Proveedores_Obtener(IdEmpresa);
         }
         
         public System.Collections.Generic.List<Hersan.Entidades.Catalogos.EmpresasBE> ABCEmpresas_Obtener(int IdEmpresa) {

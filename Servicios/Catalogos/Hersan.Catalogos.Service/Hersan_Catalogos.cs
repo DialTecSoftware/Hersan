@@ -459,6 +459,21 @@ namespace Hersan.Catalogos.Service
             return new MonedasBP().ABC_Monedas_Combo();
         }
         #endregion
+
+        #region Proveedores
+        public int ABC_Proveedores_Guardar(ProveedorBE obj)
+        {
+            return new ProveedorBP().ABC_Proveedores_Guardar(obj);
+        }
+        public int ABC_Proveedores_Actualizar(ProveedorBE obj)
+        {
+            return new ProveedorBP().ABC_Proveedores_Actualizar(obj);
+        }
+        public List<ProveedorBE> ABC_Proveedores_Obtener(int IdEmpresa)
+        {
+            return new ProveedorBP().ABC_Proveedores_Obtener(IdEmpresa);
+        }
+        #endregion
     }
 }
 

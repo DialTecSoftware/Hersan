@@ -1,4 +1,5 @@
 ﻿using Hersan.Entidades.APT;
+using Hersan.Entidades.Catalogos;
 using Hersan.Entidades.Ensamble;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Hersan.UI.APT
         WCF_Ensamble.Hersan_EnsambleClient oEnsamble;
         private List<ProductoEnsambleBE> oProductos = new List<ProductoEnsambleBE>();
         private List<OrdenCompraDetalleBE> oDetalle = new List<OrdenCompraDetalleBE>();
+        private List<ReflejantesBE> oReflex = new List<ReflejantesBE>();
         #endregion
 
         public frmOrdenCompra()
@@ -63,14 +65,17 @@ namespace Hersan.UI.APT
                     var Ficha = oProductos.Find(item => item.Producto.Id == int.Parse(cboTipo.SelectedValue.ToString()));
                     if (Ficha != null) {
                         /* COLORES DE CARCASA */
+                        Task<List<ColoresBE>> Car = oEnsamble.ENS_CarcasasCotizacion_ComboAsync(Ficha.Id);
                         cboColores.DisplayMember = "Nombre";
                         cboColores.ValueMember = "Id";
-                        cboColores.DataSource = oEnsamble.ENS_CarcasasCotizacion_Combo(Ficha.Id);
+                        cboColores.DataSource = Car.Result;
 
                         /* REFLEJANTES */
+                        Task<List<ReflejantesBE>> Aux = oEnsamble.ENS_ReflejanteCotizacion_ComboAsync(Ficha.Id);
+                        oReflex = Aux.Result;
                         cboReflejantes.DisplayMember = "Nombre";
                         cboReflejantes.ValueMember = "Id";
-                        cboReflejantes.DataSource = oEnsamble.ENS_ReflejanteCotizacion_Combo(Ficha.Id);
+                        cboReflejantes.DataSource = oReflex;
 
                         txtCavidades.Text = Ficha.Reflejantes.ToString();
                     } else {
@@ -88,6 +93,7 @@ namespace Hersan.UI.APT
         {
             oEnsamble = new WCF_Ensamble.Hersan_EnsambleClient();
             string IdComp = string.Empty;
+            string Tipo = string.Empty;
             string Reflex = string.Empty;
             try {
                 if (cboTipo.SelectedValue != null && cboColores.SelectedValue != null && cboReflejantes.CheckedItems.Count > 0) {
@@ -101,16 +107,23 @@ namespace Hersan.UI.APT
 
                     foreach (var item in cboReflejantes.CheckedItems) {
                         IdComp += item.Value.ToString() + ",";
-                        Reflex += item.Text + ",";
+                        Tipo = oReflex.Find(x => x.Tipo == item.Text.Split('-')[0].ToString().Trim()).Tipo;
+                        Reflex += oReflex.Find(x => x.Id == int.Parse(item.Value.ToString())).Color.Nombre + "-";
                     }
                     Task<string> Aux = oEnsamble.ENS_CodigoProducto_ObtenerAsync(obj.Producto.Producto.Id, obj.Carcasa.Id, IdComp);
                     obj.Producto.Codigo = Aux.Result;
                     obj.Sugerido = int.Parse(spSugerido.Value.ToString());
                     obj.Solicitado = int.Parse(spSolicitado.Value.ToString());
+                    
+                    obj.Producto.Producto.Familia.Clave = IdComp;
+                    obj.Producto.Producto.Familia.Entidad.Nombre = Tipo;
+                    obj.Producto.Producto.Familia.Nombre = Reflex.Substring(0,Reflex.Length-1);
 
                     oDetalle.Add(obj);
                 }
                 gvDatos.DataSource = oDetalle;
+                cboReflejantes.CheckedItems.Clear();
+
             } catch (Exception ex) {
                 RadMessageBox.Show("Ocurrió un error al agregar el producto a la Orden de Compra\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             } finally { oEnsamble = null; }
@@ -126,6 +139,56 @@ namespace Hersan.UI.APT
                 RadMessageBox.Show("Ocurrio un error al seleccionar el reflejante\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        private void BtnQuitar_Click(object sender, EventArgs e)
+        {
+            try {
+                if (oDetalle.FindAll(item => item.Sel == true).Count > 0) {
+                    if (RadMessageBox.Show("Esta acción eliminara los elementos seleccionados\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
+                        return;
+                } else {
+                    RadMessageBox.Show("No hay productos seleccionados", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
+                if (spOC.Value == 0)
+                    oDetalle.RemoveAll(item => item.Sel == true);
+                else {
+                    oDetalle.ForEach(item => {
+                        if (item.Sel == true)
+                            item.DatosUsuario.Estatus = false;
+                    });
+                    oDetalle.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                }
+
+                ActualizaGrid();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al quitar el producto\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void BtnTodos_Click(object sender, EventArgs e)
+        {
+            try {
+                if (oDetalle.Count > 0) {
+                    if (RadMessageBox.Show("Esta acción eliminara todos los elementos\nDesea continuar...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
+                        return;
+                } else {
+                    RadMessageBox.Show("No se han agregado productos", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
+                if (spOC.Value == 0)
+                    oDetalle.Clear();
+                else {
+                    oDetalle.ForEach(item => item.DatosUsuario.Estatus = false);
+                    oDetalle.RemoveAll(item => item.DatosUsuario.Estatus == false);
+                }
+
+                ActualizaGrid();
+            } catch (Exception ex) {
+                RadMessageBox.Show("Ocurrió un error al eliminar los productos\n" + ex.Message, this.Text, MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
 
         private void CargaProductos()
         {
@@ -147,7 +210,14 @@ namespace Hersan.UI.APT
                 oEnsamble = null;
             }
         }
-
-       
+        private void ActualizaGrid()
+        {
+            try {
+                gvDatos.DataSource = null;
+                gvDatos.DataSource = oDetalle.FindAll(item => item.DatosUsuario.Estatus == true);
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
     }
 }

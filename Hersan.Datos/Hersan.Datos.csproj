@@ -87,6 +87,7 @@
     <Compile Include="Catalogos\ColoresDA.cs" />
     <Compile Include="Catalogos\CondicionesExpDA.cs" />
     <Compile Include="Catalogos\MonedasDA.cs" />
+    <Compile Include="Catalogos\ProveedorDA.cs" />
     <Compile Include="Catalogos\ReflejantesDA.cs" />
     <Compile Include="Catalogos\ContactosDA.cs" />
     <Compile Include="Catalogos\DepartamentosDA.cs" />

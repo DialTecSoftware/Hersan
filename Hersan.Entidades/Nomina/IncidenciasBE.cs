@@ -30,6 +30,9 @@ namespace Hersan.Entidades.Nomina {
         public decimal Bono { get; set; }
         public int Extra { get; set; }
         public bool Fonacot { get; set; }
+        public bool Supervisor { get; set; }
+        public bool Operador { get; set; }
+        public int Horas { get; set; }
         public GeneralBE DatosUsuario { get; set; }
 
     }

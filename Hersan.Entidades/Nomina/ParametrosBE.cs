@@ -34,6 +34,8 @@ namespace Hersan.Entidades.Nomina
         public decimal Interes { get; set; }
         public decimal Danios { get; set; }
         public int Extras { get; set; }
+        public decimal Supervisor { get; set; }
+        public decimal Operador { get; set; }
         public GeneralBE DatosUsuario { get; set; }
     }
 }

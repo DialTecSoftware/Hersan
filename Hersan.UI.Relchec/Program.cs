@@ -14,7 +14,7 @@ namespace Hersan.UI.Relchec
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTrabajadorHorario());
+            Application.Run(new DiasFest());
         }
     }
 }

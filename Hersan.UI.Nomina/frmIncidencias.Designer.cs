@@ -45,6 +45,9 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn4 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.materialTealTheme1 = new Telerik.WinControls.Themes.MaterialTealTheme();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
@@ -56,6 +59,8 @@
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnBorrar = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnimportar = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarSeparator3 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarLabel1 = new Telerik.WinControls.UI.CommandBarLabel();
@@ -67,8 +72,6 @@
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnimportar = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarSeparator5 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.commandBarStripElement6 = new Telerik.WinControls.UI.CommandBarStripElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -88,7 +91,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(777, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(842, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -173,6 +176,22 @@
             this.commandBarSeparator2.Name = "commandBarSeparator2";
             this.commandBarSeparator2.VisibleInOverflowMenu = false;
             // 
+            // btnimportar
+            // 
+            this.btnimportar.DisplayName = "Cargar Fonacot";
+            this.btnimportar.DrawText = true;
+            this.btnimportar.Image = ((System.Drawing.Image)(resources.GetObject("btnimportar.Image")));
+            this.btnimportar.Name = "btnimportar";
+            this.btnimportar.Text = "Cargar Fonacot";
+            this.btnimportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnimportar.Click += new System.EventHandler(this.Btnimportar_Click);
+            // 
+            // commandBarSeparator5
+            // 
+            this.commandBarSeparator5.DisplayName = "commandBarSeparator5";
+            this.commandBarSeparator5.Name = "commandBarSeparator5";
+            this.commandBarSeparator5.VisibleInOverflowMenu = false;
+            // 
             // btnSalir
             // 
             this.btnSalir.DisplayName = "commandBarButton3";
@@ -205,7 +224,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 53);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(777, 64);
+            this.radPanel1.Size = new System.Drawing.Size(842, 64);
             this.radPanel1.TabIndex = 1;
             // 
             // cboSemana
@@ -337,7 +356,7 @@
             gridViewTextBoxColumn5.ReadOnly = true;
             gridViewTextBoxColumn5.RowSpan = 30;
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn5.Width = 70;
+            gridViewTextBoxColumn5.Width = 62;
             gridViewTextBoxColumn5.WrapText = true;
             gridViewTextBoxColumn6.FieldName = "Empleado.Expedientes.Puesto.Departamentos.Nombre";
             gridViewTextBoxColumn6.HeaderText = "Departamento";
@@ -345,14 +364,14 @@
             gridViewTextBoxColumn6.MinWidth = 100;
             gridViewTextBoxColumn6.Name = "Depto";
             gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.Width = 150;
+            gridViewTextBoxColumn6.Width = 122;
             gridViewTextBoxColumn7.FieldName = "Empleado.Expedientes.DatosPersonales.Nombres";
             gridViewTextBoxColumn7.HeaderText = "Nombre";
             gridViewTextBoxColumn7.MaxWidth = 200;
             gridViewTextBoxColumn7.MinWidth = 150;
             gridViewTextBoxColumn7.Name = "Nombre";
             gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 200;
+            gridViewTextBoxColumn7.Width = 156;
             gridViewDecimalColumn1.DecimalPlaces = 0;
             gridViewDecimalColumn1.FieldName = "Faltas";
             gridViewDecimalColumn1.FormatString = "{0:N0}";
@@ -367,7 +386,7 @@
             gridViewDecimalColumn1.Name = "Faltas";
             gridViewDecimalColumn1.ShowUpDownButtons = false;
             gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn1.Width = 60;
+            gridViewDecimalColumn1.Width = 52;
             gridViewDecimalColumn2.DecimalPlaces = 0;
             gridViewDecimalColumn2.FieldName = "Retardos";
             gridViewDecimalColumn2.FormatString = "{0:N0}";
@@ -382,7 +401,7 @@
             gridViewDecimalColumn2.Name = "Retardos";
             gridViewDecimalColumn2.ShowUpDownButtons = false;
             gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn2.Width = 60;
+            gridViewDecimalColumn2.Width = 52;
             gridViewDecimalColumn3.FieldName = "Bono";
             gridViewDecimalColumn3.FormatString = "{0:N2}";
             gridViewDecimalColumn3.HeaderText = "Importe Bono";
@@ -403,7 +422,7 @@
             gridViewDecimalColumn4.Name = "Extras";
             gridViewDecimalColumn4.ShowUpDownButtons = false;
             gridViewDecimalColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn4.Width = 65;
+            gridViewDecimalColumn4.Width = 62;
             gridViewDecimalColumn4.WrapText = true;
             gridViewCheckBoxColumn2.FieldName = "Fonacot";
             gridViewCheckBoxColumn2.HeaderText = "Fonacot";
@@ -411,6 +430,33 @@
             gridViewCheckBoxColumn2.MinWidth = 50;
             gridViewCheckBoxColumn2.Name = "Fonacot";
             gridViewCheckBoxColumn2.ReadOnly = true;
+            gridViewDecimalColumn5.DecimalPlaces = 0;
+            gridViewDecimalColumn5.FieldName = "Horas";
+            gridViewDecimalColumn5.FormatString = "{0:N2}";
+            gridViewDecimalColumn5.HeaderText = "Horas";
+            gridViewDecimalColumn5.MaxWidth = 90;
+            gridViewDecimalColumn5.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn5.MinWidth = 70;
+            gridViewDecimalColumn5.Name = "Horas";
+            gridViewDecimalColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn5.ThousandsSeparator = true;
+            gridViewDecimalColumn5.Width = 73;
+            gridViewCheckBoxColumn3.FieldName = "Supervisor";
+            gridViewCheckBoxColumn3.HeaderText = "Supervisor";
+            gridViewCheckBoxColumn3.MaxWidth = 80;
+            gridViewCheckBoxColumn3.MinWidth = 70;
+            gridViewCheckBoxColumn3.Name = "Supervisor";
+            gridViewCheckBoxColumn3.Width = 73;
+            gridViewCheckBoxColumn4.FieldName = "Operador";
+            gridViewCheckBoxColumn4.HeaderText = "Operador";
+            gridViewCheckBoxColumn4.MaxWidth = 70;
+            gridViewCheckBoxColumn4.MinWidth = 50;
+            gridViewCheckBoxColumn4.Name = "Operador";
+            gridViewCheckBoxColumn4.Width = 55;
             this.gvDatos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
@@ -422,7 +468,10 @@
             gridViewDecimalColumn2,
             gridViewDecimalColumn3,
             gridViewDecimalColumn4,
-            gridViewCheckBoxColumn2});
+            gridViewCheckBoxColumn2,
+            gridViewDecimalColumn5,
+            gridViewCheckBoxColumn3,
+            gridViewCheckBoxColumn4});
             this.gvDatos.MasterTemplate.EnableAlternatingRowColor = true;
             this.gvDatos.MasterTemplate.ShowFilteringRow = false;
             this.gvDatos.MasterTemplate.ShowRowHeaderColumn = false;
@@ -431,7 +480,7 @@
             this.gvDatos.ShowGroupPanel = false;
             this.gvDatos.ShowGroupPanelScrollbars = false;
             this.gvDatos.ShowNoDataText = false;
-            this.gvDatos.Size = new System.Drawing.Size(777, 258);
+            this.gvDatos.Size = new System.Drawing.Size(842, 258);
             this.gvDatos.TabIndex = 2;
             this.gvDatos.TitleText = "INCIDENCIAS";
             // 
@@ -455,23 +504,6 @@
             this.commandBarStripElement5.DisplayName = "commandBarStripElement5";
             this.commandBarStripElement5.Name = "commandBarStripElement5";
             // 
-            // btnimportar
-            // 
-            this.btnimportar.DisplayName = "Cargar Fonacot";
-            this.btnimportar.DrawText = true;
-            this.btnimportar.Image = ((System.Drawing.Image)(resources.GetObject("btnimportar.Image")));
-            this.btnimportar.Name = "btnimportar";
-            this.btnimportar.Text = "Cargar Fonacot";
-            this.btnimportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnimportar.Click += new System.EventHandler(this.Btnimportar_Click);
-            // 
-            // commandBarSeparator5
-            // 
-            this.commandBarSeparator5.DisplayName = "commandBarSeparator5";
-            this.commandBarSeparator5.Name = "commandBarSeparator5";
-            this.commandBarSeparator5.Text = "";
-            this.commandBarSeparator5.VisibleInOverflowMenu = false;
-            // 
             // commandBarStripElement6
             // 
             this.commandBarStripElement6.DisplayName = "commandBarStripElement6";
@@ -481,7 +513,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 375);
+            this.ClientSize = new System.Drawing.Size(842, 375);
             this.Controls.Add(this.gvDatos);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);

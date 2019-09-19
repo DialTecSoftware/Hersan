@@ -43,6 +43,11 @@ namespace Hersan.UI.Nomina
         {
             oNomina = new WCF_Nomina.Hersan_NominaClient();
             try {
+                if (oList.FindAll(x => x.Operador == x.Supervisor && x.Operador == true).Count > 0) {
+                    RadMessageBox.Show("Hay empleados seleccionador como: \"Operador y Supervisor\",\nCorrija para continuar", this.Text, MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+
                 if (oList.FindAll(item=> item.Semana.Semana == int.Parse(cboSemana.Text)).Count == 0) {
                     if (RadMessageBox.Show("Desea guardar las incidencias de la semana...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes) {
                         oList.ForEach(item => item.Semana.Semana = int.Parse(cboSemana.Text));
@@ -83,9 +88,11 @@ namespace Hersan.UI.Nomina
                 oDialog.Filter = "csv files (*.csv)|*.csv";
                 oDialog.RestoreDirectory = true;
 
-                if(oFonacot.Count > 0)
-                    if(RadMessageBox.Show("Ya se ha cargado el archivo de fonacot\nDesea cargarlo de nuevo...?",this.Text, MessageBoxButtons.YesNo,RadMessageIcon.Question) == DialogResult.No)
+                if (oFonacot.Count > 0) {
+                    var Valor = oFonacot.FirstOrDefault();
+                    if (RadMessageBox.Show("Ya se ha cargado el archivo: " + Valor.ANIO_EMISION.ToString() + "-"+ Valor.MES_EMISION.ToString()  + "\nDesea cargar otro archivo...?", this.Text, MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.No)
                         return;
+                }
 
                 if (oDialog.ShowDialog() == DialogResult.OK) {
                     oFonacot.Clear();

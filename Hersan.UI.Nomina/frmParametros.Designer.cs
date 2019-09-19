@@ -41,6 +41,8 @@
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.spExtras = new Telerik.WinControls.UI.RadSpinEditor();
+            this.label12 = new System.Windows.Forms.Label();
             this.spInfonavit = new Telerik.WinControls.UI.RadSpinEditor();
             this.label11 = new System.Windows.Forms.Label();
             this.spInteres = new Telerik.WinControls.UI.RadSpinEditor();
@@ -66,11 +68,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.commandBarStripElement4 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarStripElement5 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.spExtras = new Telerik.WinControls.UI.RadSpinEditor();
-            this.label12 = new System.Windows.Forms.Label();
+            this.spSupervisor = new Telerik.WinControls.UI.RadSpinEditor();
+            this.label13 = new System.Windows.Forms.Label();
+            this.spOperador = new Telerik.WinControls.UI.RadSpinEditor();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spExtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spInfonavit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spInteres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRetardo)).BeginInit();
@@ -82,7 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.spVales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spHoras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spExtras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spSupervisor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spOperador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +99,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(719, 53);
+            this.radCommandBar1.Size = new System.Drawing.Size(1082, 53);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -179,6 +185,10 @@
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.radGroupBox1.Controls.Add(this.spOperador);
+            this.radGroupBox1.Controls.Add(this.label14);
+            this.radGroupBox1.Controls.Add(this.spSupervisor);
+            this.radGroupBox1.Controls.Add(this.label13);
             this.radGroupBox1.Controls.Add(this.spExtras);
             this.radGroupBox1.Controls.Add(this.label12);
             this.radGroupBox1.Controls.Add(this.spInfonavit);
@@ -213,9 +223,31 @@
             this.radGroupBox1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radGroupBox1.Location = new System.Drawing.Point(0, 53);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(719, 209);
+            this.radGroupBox1.Size = new System.Drawing.Size(1082, 209);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "CÁLCULO NÓMINA";
+            // 
+            // spExtras
+            // 
+            this.spExtras.BackColor = System.Drawing.Color.White;
+            this.spExtras.EnableAnalytics = false;
+            this.spExtras.Location = new System.Drawing.Point(598, 157);
+            this.spExtras.Name = "spExtras";
+            this.spExtras.ShowUpDownButtons = false;
+            this.spExtras.Size = new System.Drawing.Size(55, 20);
+            this.spExtras.TabIndex = 12;
+            this.spExtras.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spExtras.ThousandsSeparator = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label12.Location = new System.Drawing.Point(445, 161);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(151, 13);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Max. Horas Extras x Semana:";
             // 
             // spInfonavit
             // 
@@ -552,33 +584,67 @@
             this.commandBarStripElement5.DisplayName = "commandBarStripElement5";
             this.commandBarStripElement5.Name = "commandBarStripElement5";
             // 
-            // spExtras
+            // spSupervisor
             // 
-            this.spExtras.BackColor = System.Drawing.Color.White;
-            this.spExtras.EnableAnalytics = false;
-            this.spExtras.Location = new System.Drawing.Point(598, 157);
-            this.spExtras.Name = "spExtras";
-            this.spExtras.ShowUpDownButtons = false;
-            this.spExtras.Size = new System.Drawing.Size(55, 20);
-            this.spExtras.TabIndex = 12;
-            this.spExtras.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.spExtras.ThousandsSeparator = true;
+            this.spSupervisor.BackColor = System.Drawing.Color.White;
+            this.spSupervisor.DecimalPlaces = 2;
+            this.spSupervisor.EnableAnalytics = false;
+            this.spSupervisor.Location = new System.Drawing.Point(930, 38);
+            this.spSupervisor.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.spSupervisor.Name = "spSupervisor";
+            this.spSupervisor.ShowUpDownButtons = false;
+            this.spSupervisor.Size = new System.Drawing.Size(68, 20);
+            this.spSupervisor.TabIndex = 13;
+            this.spSupervisor.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spSupervisor.ThousandsSeparator = true;
             // 
-            // label12
+            // label13
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label12.Location = new System.Drawing.Point(445, 161);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(151, 13);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Max. Horas Extras x Semana:";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label13.Location = new System.Drawing.Point(787, 42);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(139, 13);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Sueldo Noche Supervisor:";
+            // 
+            // spOperador
+            // 
+            this.spOperador.BackColor = System.Drawing.Color.White;
+            this.spOperador.DecimalPlaces = 2;
+            this.spOperador.EnableAnalytics = false;
+            this.spOperador.Location = new System.Drawing.Point(930, 63);
+            this.spOperador.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.spOperador.Name = "spOperador";
+            this.spOperador.ShowUpDownButtons = false;
+            this.spOperador.Size = new System.Drawing.Size(68, 20);
+            this.spOperador.TabIndex = 14;
+            this.spOperador.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spOperador.ThousandsSeparator = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label14.Location = new System.Drawing.Point(793, 67);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(133, 13);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Sueldo Noche Inyección:";
             // 
             // frmParametros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 323);
+            this.ClientSize = new System.Drawing.Size(1082, 323);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radCommandBar1);
             this.Name = "frmParametros";
@@ -594,6 +660,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spExtras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spInfonavit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spInteres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRetardo)).EndInit();
@@ -605,7 +672,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.spVales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spHoras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spExtras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spSupervisor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spOperador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -653,5 +721,9 @@
         private System.Windows.Forms.Label label11;
         private Telerik.WinControls.UI.RadSpinEditor spExtras;
         private System.Windows.Forms.Label label12;
+        private Telerik.WinControls.UI.RadSpinEditor spOperador;
+        private System.Windows.Forms.Label label14;
+        private Telerik.WinControls.UI.RadSpinEditor spSupervisor;
+        private System.Windows.Forms.Label label13;
     }
 }

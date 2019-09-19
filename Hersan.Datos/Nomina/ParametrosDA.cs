@@ -41,6 +41,9 @@ namespace Hersan.Datos.Nomina
                                 obj.Interes = decimal.Parse(reader["PAR_Interes"].ToString());
                                 obj.Danios = decimal.Parse(reader["PAR_SeguroDanos"].ToString());
                                 obj.Extras = int.Parse(reader["PAR_HorasExtra"].ToString());
+                                obj.Supervisor = decimal.Parse(reader["PAR_SdoSupervisor"].ToString());
+                                obj.Operador = decimal.Parse(reader["PAR_SdoOperador"].ToString());
+
                             }
                         }
                     }
@@ -69,6 +72,8 @@ namespace Hersan.Datos.Nomina
                         cmd.Parameters.AddWithValue("@Interes", item.Interes);
                         cmd.Parameters.AddWithValue("@Danios", item.Danios);
                         cmd.Parameters.AddWithValue("@Extras", item.Extras);
+                        cmd.Parameters.AddWithValue("@@Supervisor", item.Supervisor);
+                        cmd.Parameters.AddWithValue("@@Operador", item.Operador);
                         cmd.Parameters.AddWithValue("@IdUsuario", item.DatosUsuario.IdUsuarioCreo);
 
                         cmd.CommandType = CommandType.StoredProcedure;

@@ -104,6 +104,9 @@ namespace Hersan.UI.APT
                     obj.Producto.Producto.Nombre = cboTipo.Text;
                     obj.Carcasa.Id = int.Parse(cboColores.SelectedValue.ToString());
                     obj.Carcasa.Nombre = cboColores.Text;
+                    obj.Sugerido = int.Parse(spSugerido.Value.ToString());
+                    obj.Solicitado = int.Parse(spSolicitado.Value.ToString());
+                    obj.Fecha = dtFecha.Value;
 
                     foreach (var item in cboReflejantes.CheckedItems) {
                         IdComp += item.Value.ToString() + ",";
@@ -112,8 +115,6 @@ namespace Hersan.UI.APT
                     }
                     Task<string> Aux = oEnsamble.ENS_CodigoProducto_ObtenerAsync(obj.Producto.Producto.Id, obj.Carcasa.Id, IdComp);
                     obj.Producto.Codigo = Aux.Result;
-                    obj.Sugerido = int.Parse(spSugerido.Value.ToString());
-                    obj.Solicitado = int.Parse(spSolicitado.Value.ToString());
                     
                     obj.Producto.Producto.Familia.Clave = IdComp;
                     obj.Producto.Producto.Familia.Entidad.Nombre = Tipo;

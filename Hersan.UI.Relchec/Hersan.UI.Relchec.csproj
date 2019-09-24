@@ -86,7 +86,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\TelerikCommon.dll</HintPath>
     </Reference>
     <Reference Include="ZKSoftwareAPI">
-      <HintPath>..\..\..\..\Documents\ZKSoftwareAPI v1.0\ZKSoftwareAPI.dll</HintPath>
+      <HintPath>..\Relchec\ZKSoftwareAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

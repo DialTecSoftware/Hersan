@@ -11,14 +11,13 @@ namespace Hersan.Entidades.APT
         {
             Id = 0;
             Proveedor = new ProveedorBE();
-            FEntrega = DateTime.Today;
             Enviada = false;
             Detalle = new List<OrdenCompraDetalleBE>();
             DatosUsuario = new GeneralBE();
         }
+
         public int Id { get; set; }
         public ProveedorBE Proveedor { get; set; }
-        public DateTime FEntrega { get; set; }
         public bool Enviada { get; set; }
         public GeneralBE DatosUsuario { get; set; }
         public List<OrdenCompraDetalleBE> Detalle { get; set; }
@@ -35,6 +34,7 @@ namespace Hersan.Entidades.APT
             Sugerido = 0;
             Solicitado = 0;
             Precio = 0;
+            Fecha = DateTime.Today;
             Comentarios = string.Empty;
             Cancelada = false;
             Reflejante = new List<OrdenCompraComponentesBE>();
@@ -48,6 +48,7 @@ namespace Hersan.Entidades.APT
         public int Sugerido { get; set; }
         public int Solicitado { get; set; }
         public decimal Precio { get; set; }
+        public DateTime Fecha { get; set; }
         public string Comentarios { get; set; }
         public bool Cancelada { get; set; }
         public GeneralBE DatosUsuario { get; set; }
